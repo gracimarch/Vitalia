@@ -107,4 +107,57 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
         window.scrollTo(0, 0);
     }, 500); // Ajusta el tiempo según sea necesario
+
+    // Funcionalidad para el desplazamiento ajustado
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault(); // Evita el desplazamiento predeterminado
+
+            // Obtiene el destino del desplazamiento
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                // Calcula la posición de desplazamiento con ajuste
+                const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const adjustedOffsetTop = offsetTop - 100; // Ajuste de 100px
+
+                // Realiza el desplazamiento suave
+                window.scrollTo({
+                    top: adjustedOffsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Funcionalidad para el botón de volver arriba
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 200) { // Cambia el valor según cuándo quieres que aparezca el botón
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Funcionalidad para compartir en redes sociales
+    document.querySelector('.btn_wrap').addEventListener('click', function () {
+        const text = document.getElementById('share-text').innerText;
+        const encodedText = encodeURIComponent(text);
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`;
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodedText}`;
+
+        // Abre las URLs de compartición en nuevas pestañas
+        window.open(facebookUrl, '_blank');
+        window.open(twitterUrl, '_blank');
+    });
 });
