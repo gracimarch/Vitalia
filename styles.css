@@ -37,7 +37,7 @@ body {
 }
 
 .header .container {
-    max-width: 1200px;
+    max-width: 1190px;
     margin: 0 auto;
 }
 
@@ -845,12 +845,13 @@ a.block:hover {
     margin-top: 20px;
     padding: 80px;
     text-align: center;
-    color: #333;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-image: url(images/degradadoFondoFooter2.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50px 50px 0 0;
 }
 
 .footer-content {
-    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -865,6 +866,7 @@ a.block:hover {
     height: 30px;
     margin-right: 20px;
     align-self: center;
+    filter: brightness(100);
 }
 
 .footer-socials {
@@ -875,12 +877,12 @@ a.block:hover {
 
 .social-icon i {
     font-size: 24px;
-    color: #1f1f1f;
+    color: #fffcf4;
     transition: all 0.3s ease;
 }
 
-.social-icon:hover i {
-    color: #60a3cf;
+.social-icon:hover i, .footer-link:hover {
+    color: #c9fff3;
 }
 
 .footer-links {
@@ -891,41 +893,146 @@ a.block:hover {
     text-decoration: underline;
     font-size: 16px;
     transition: all 0.3s ease;
-    color: #1f1f1f;
-}
-
-.footer-link:hover {
-    color: #60a3cf;
+    color: #fffcf4;
 }
 
 .separator {
     margin: 0 10px;
-    color: #1f1f1f;
+    color: #fffcf4;
 }
 
 .footer-bottom p {
     font-size: 14px;
-    color: #777;
+    color: #fffcf4;
     margin: 0;
 }
 
 @media (max-width: 1200px) {
     .footer {
-        background-size: contain;
-        background-position: center top;
+        padding: 60px;
+        border-radius: 25px 25px 0 0;
     }
 }
 
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #af84cf;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#scrollToTop i {
+    width: 24px;
+    height: 24px;
+    color: #fffcf4;
+}
+
+#scrollToTop.show {
+    opacity: 1;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .footer {
-        height: 100px;
-        background-size: cover;
+    #scrollToTop {
+        bottom: 15px;
+        right: 15px;
     }
 }
 
-@media (max-width: 480px) {
-    .footer {
-        height: 400px;
-        background-size: cover;
-    }
+.social-share i {
+    opacity: 0;
+    font-size: 28px;
+    color: #1F1E1E;
+    will-change: transform;
+    transform: scale(.1);
+    transition: all .3s ease;
+}
+
+.btn_wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    width: 190px;
+    height: 55px;
+    background-color: #EEEEED;
+    border-radius: 80px;
+    padding: 0 18px;
+    will-change: transform;
+    transition: all 0.3s ease;
+    margin: 15px auto;
+}
+
+.btn_wrap:hover {
+    transform: scale(1.1);
+}
+
+.btn_wrap span {
+    position: absolute;
+    z-index: 97;
+    width: 230px;
+    height: 72px;
+    border-radius: 80px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 70px;
+    letter-spacing: 2px;
+    color: #EEEEED;
+    background-color: #da631f;
+    padding: 0 18px;
+    transition: all 1.2s ease;
+}
+
+.btn_wrap .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 80px;
+}
+
+.btn_wrap .container i {
+    color: #1f1f1f;
+    transition: all 0.3s ease;
+}
+
+.btn_wrap .container i:hover {
+    color: #da631f;
+}
+
+.btn_wrap:hover span {
+    transition-delay: .25s;
+    transform: translateX(-215px);
+}
+
+.btn_wrap:hover i {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.dr {
+    position: absolute;
+    bottom: 16px; 
+    right: 16px;
+    width: 100px;
+}
+
+.btn_wrap img {
+    margin-right: 7px;
+    height: 22px;
+    vertical-align: middle;
 }
