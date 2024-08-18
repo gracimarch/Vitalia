@@ -2,16 +2,17 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentAudio = null;
     let currentAudioButton = null;
 
-    // Funcionalidad para el manejo de audios y botones de play/pause
+    window.addEventListener('load', function () {
+        document.body.classList.add('loaded');
+    });
+
     document.querySelectorAll('.audio-button').forEach(button => {
         button.addEventListener('click', function () {
             const audio = this.nextElementSibling.querySelector('audio');
             const playPauseBtnImg = this.querySelector('img');
 
             if (currentAudio && currentAudio !== audio) {
-                // Pausa el audio que estaba en reproducción
                 currentAudio.pause();
-                // Cambia el icono de play a pausa en el botón anterior
                 currentAudioButton.querySelector('img').src = 'images/reproducirIconoMeditaciones.png';
             }
 
@@ -35,15 +36,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Funcionalidad para la barra de progreso del audio
     const updateProgressBar = (audio, progressBar, currentTimeDisplay) => {
         const duration = audio.duration;
         const currentTime = audio.currentTime;
 
-        // Utiliza una interpolación para suavizar el movimiento
         const percentage = (currentTime / duration) * 100;
         const currentWidth = parseFloat(progressBar.style.width) || 0;
-        const step = (percentage - currentWidth) * 0.1; // Ajusta el factor para la suavidad
+        const step = (percentage - currentWidth) * 0.1;
 
         if (Math.abs(step) > 0.1) {
             progressBar.style.width = (currentWidth + step) + '%';
@@ -55,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
         currentTimeDisplay.textContent = formatTime(currentTime);
     };
 
-    // Formatea el tiempo en minutos y segundos
     function formatTime(seconds) {
         const minutes = Math.floor(seconds / 60);
         const secs = Math.floor(seconds % 60);
@@ -87,14 +85,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Funcionalidad para fijar el header al desplazar la página con animación de desvanecimiento
     const header = document.querySelector('.header');
     const headerPlaceholder = document.createElement('div');
     headerPlaceholder.classList.add('header-placeholder');
     header.parentNode.insertBefore(headerPlaceholder, header);
 
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) { // Cambia 50 por el valor en px que desees
+        if (window.scrollY > 50) {
             header.classList.add('fixed');
             headerPlaceholder.style.display = 'block';
         } else {
@@ -103,26 +100,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Desplazarse al principio de la página con retraso
     setTimeout(() => {
         window.scrollTo(0, 0);
-    }, 500); // Ajusta el tiempo según sea necesario
+    }, 500);
 
-    // Funcionalidad para el desplazamiento ajustado
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault(); // Evita el desplazamiento predeterminado
 
-            // Obtiene el destino del desplazamiento
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                // Calcula la posición de desplazamiento con ajuste
                 const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
-                const adjustedOffsetTop = offsetTop - 100; // Ajuste de 100px
+                const adjustedOffsetTop = offsetTop - 100;
 
-                // Realiza el desplazamiento suave
                 window.scrollTo({
                     top: adjustedOffsetTop,
                     behavior: 'smooth'
@@ -131,11 +122,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Funcionalidad para el botón de volver arriba
     const scrollToTopBtn = document.getElementById('scrollToTop');
 
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 200) { // Cambia el valor según cuándo quieres que aparezca el botón
+        if (window.scrollY > 200) {
             scrollToTopBtn.classList.add('show');
         } else {
             scrollToTopBtn.classList.remove('show');
@@ -147,17 +137,5 @@ document.addEventListener('DOMContentLoaded', function () {
             top: 0,
             behavior: 'smooth'
         });
-    });
-
-    // Funcionalidad para compartir en redes sociales
-    document.querySelector('.btn_wrap').addEventListener('click', function () {
-        const text = document.getElementById('share-text').innerText;
-        const encodedText = encodeURIComponent(text);
-        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`;
-        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodedText}`;
-
-        // Abre las URLs de compartición en nuevas pestañas
-        window.open(facebookUrl, '_blank');
-        window.open(twitterUrl, '_blank');
     });
 });
