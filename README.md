@@ -1,4 +1,4 @@
-# Vitalia, Plataforma de Bienestar
+# Vitalia, Plataforma de Bienestar 🧘‍♀️🪻
 
 ## Transformando Tu Bienestar con IA
 
@@ -13,3 +13,8 @@ Descubre una plataforma diseñada para ofrecerte un plan de bienestar totalmente
 ## Únete a Nosotros
 
 Comienza tu viaje hacia un bienestar integral con una plataforma que se adapta a ti. ¡Es el momento de transformar tu vida! https://vitalia-selfcare.vercel.app/
+
+## Contacto
+
+Instagram: https://www.instagram.com/vitalia.selfcare/
+E-mail: vitalia.selfcare@gmail.com
