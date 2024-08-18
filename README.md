@@ -17,4 +17,5 @@ Comienza tu viaje hacia un bienestar integral con una plataforma que se adapta a
 ## Contacto
 
 Instagram: https://www.instagram.com/vitalia.selfcare/
+
 E-mail: vitalia.selfcare@gmail.com
