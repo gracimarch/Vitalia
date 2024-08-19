@@ -14,10 +14,6 @@ body {
     padding: 0;
 }
 
-:root {
-    --blanco: #fffcf4;
-}
-
 .pagina {
     max-width: 1200px;
     margin: 0 auto;
