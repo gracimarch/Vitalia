@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vitalia</title>
+    <title>Vitalia, tu web de bienestar</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 
     <link rel="icon" href="images/vitaliaLogo.png" type="image/x-icon">
 
-    <meta name="description" content="Explora 'Vitalia, Tu Web de Bienestar', donde combinamos IA y acompañamiento emocional para mejorar tu calidad de vida. Únete a nosotros y descubre cómo podemos ayudarte a alcanzar un bienestar integral y sostenible.">
+    <meta name="description" content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
+    <meta name="keywords" content="Bienestar, Salud mental, Inteligencia Artificial, Blog, Meditación, Fitness, Nutrición">
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/bouncy.js"></script>
 
@@ -24,17 +24,20 @@
         - Bootstrap: https://getbootstrap.com/
         - Bootstrap Icons: https://icons.getbootstrap.com/
         - Icons8: https://icons8.com/
+        - LDRS: https://uiball.com/ldrs/
     -->
 
 </head>
 <body>
 
+    <!-- Pantalla de carga -->
     <div id="loader">
         <l-bouncy size="45" speed="1.75" color="black"></l-bouncy>
     </div>    
 
+    <!-- Encabezado -->
     <header class="header">
-        <div class="container">
+        <div class="container" id="nav-header">
             <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="#welcome">
                     <img src="images/vitaliaLogoNavBar.png" alt="Vitalia Logo" class="logo">
@@ -73,6 +76,7 @@
 
     <div class="pagina" id="welcome">
 
+        <!-- Mensaje de bienvenida -->
         <section class="welcome">
             <div class="welcome-section">
                 <h1 class="welcome-heading">¡Te damos la bienvenida, <span class="welcome-name">(nombre)</span>!</h1>
@@ -80,6 +84,7 @@
             </div>
         </section>
     
+        <!-- Artículos que te llevan a las distintas secciones de la página -->
         <section class="articles">
             <div class="container">
                 <a href="#lecturas" class="block" id="lee">
@@ -138,16 +143,18 @@
             </div>
         </section>
 
+        <!-- Lecturas -->
         <section class="reading" id="lecturas">
             <div class="reading-section">
                 <div class="reading-content">
                     <img src="images/lecturaIconoTitulo.png" alt="Ícono de lectura" class="reading-icon">
-                    <h1 class="reading-heading">Lecturas que transforman</h1>
+                    <h2 class="reading-heading">Lecturas que transforman</h2>
                 </div>
                 <p class="reading-subtext">Artículos seleccionados de nuestro blog para tu crecimiento</p>
             </div>
         </section>
 
+        <!-- Lecturas seleccionadas -->
         <section class="lecturas">
             <div class="container">
                 <a href="#" class="bloque" id="productividad">
@@ -195,16 +202,18 @@
             </div>
         </section>
 
+        <!-- Ejercicios -->
         <section class="reading" id="ejercicios">
             <div class="reading-section">
                 <div class="reading-content">
                     <img src="images/pesaIconoTitulo.png" alt="Ícono de lectura" class="reading-icon">
-                    <h1 class="reading-heading">Rutina de Ejercicio Ideal</h1>
+                    <h2 class="reading-heading">Rutina de Ejercicio Ideal</h2>
                 </div>
                 <p class="reading-subtext">Artículos seleccionados de nuestro blog para tu crecimiento</p>
             </div>
         </section>
 
+        <!-- Ejercicios seleccionados -->
         <section class="ejercicios">
             <div class="container">
                 <a href="#" class="bloque" id="ejercicio1">
@@ -253,16 +262,18 @@
             </div>
         </section>
 
+        <!-- Meditaciones -->
         <section class="reading" id="meditaciones">
             <div class="reading-section">
                 <div class="reading-content">
                     <img src="images/meditarIconoTitulo.png" alt="Ícono de lectura" class="reading-icon">
-                    <h1 class="reading-heading">Meditaciones para tu Bienestar diario</h1>
+                    <h2 class="reading-heading">Meditaciones para tu Bienestar diario</h2>
                 </div>
                 <p class="reading-subtext">Encuentra tu centro con sesiones personalizadas</p>
             </div>
         </section>
 
+        <!-- Meditaciones seleccionadas -->
         <section class="audio-blocks">
             <div class="audio-block">
                 <button class="audio-button" id="button1">
@@ -380,16 +391,18 @@
             </div>
         </section>        
 
+        <!-- Planes alimenticios -->
         <section class="reading" id="dietas">
             <div class="reading-section">
                 <div class="reading-content">
                     <img src="images/planIconoTitulo1.png" alt="Ícono de lectura" class="reading-icon">
-                    <h1 class="reading-heading">Planes Alimenticios Adaptados a Ti</h1>
+                    <h2 class="reading-heading">Planes Alimenticios Adaptados a Ti</h2>
                 </div>
                 <p class="reading-subtext">Recetas y dietas para una vida saludable</p>
             </div>
         </section>
 
+        <!-- Planes alimenticios seleccionados -->
         <section class="lecturas">
             <div class="container">
                 <a href="#" class="bloque" id="dieta1">
@@ -443,10 +456,11 @@
             </div>
         </section>
 
+        <!-- Agradecimiento -->
         <section class="thanks">
             <div class="thanks-section">
                 <div class="thanks-content">
-                    <h1 class="thanks-heading">¡Gracias por Elegirnos!</h1>
+                    <h2 class="thanks-heading">¡Gracias por Elegirnos!</h2>
                 </div>
                 <p class="thanks-subtext">Recuerda que actualizamos nuestra página todas las semanas con nuevo contenido para tu bienestar. Vuelve pronto y no te pierdas lo que tenemos para ti.</p>
             </div>
@@ -454,6 +468,7 @@
 
     </div>
 
+    <!-- Pie de página -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-top">
@@ -471,22 +486,21 @@
                 </div>
             </div>
             <div class="footer-links">
-                <a href="#" class="footer-link">Términos y Condiciones</a>
+                <a href="documentos/Política de Privacidad .pdf" target="_blank" class="footer-link">Políticas de Privacidad</a>
                 <span class="separator">|</span>
-                <a href="#" class="footer-link">Políticas de Privacidad</a>
+                <a href="documentos/Términos y Condiciones.pdf" target="_blank" class="footer-link">Términos y Condiciones</a>
             </div>
             <div class="footer-bottom">
                 <p>© 2024 Vitalia. Todos los derechos reservados</p>
             </div>
         </div>
-    </footer>
+    </footer>    
 
-    <!-- Botón de Volver Arriba -->
+    <!-- Botón que desplaza hasta arriba -->
     <button id="scrollToTop" aria-label="Volver arriba">
         <i class="bi bi-chevron-up" alt="Ícono para subir"></i>
     </button>
 
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
