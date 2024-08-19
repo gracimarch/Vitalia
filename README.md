@@ -1,4 +1,4 @@
-# Vitalia, Plataforma de Bienestar 🧘‍♀️🪻
+# Vitalia, Plataforma de Bienestar 🧘‍♀️🌻
 
 ## Transformando Tu Bienestar con IA
 
