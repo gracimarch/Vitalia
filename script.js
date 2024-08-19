@@ -4,12 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let lastScrollPosition = 0;
     const header = document.querySelector('.header');
 
-    // Ocultar el loader cuando el contenido se haya cargado completamente
     window.addEventListener('load', function () {
         document.body.classList.add('loaded');
     });
 
-    // Funcionalidad para el manejo de audios y botones de play/pause
     document.querySelectorAll('.audio-button').forEach(button => {
         button.addEventListener('click', function () {
             const audio = this.nextElementSibling.querySelector('audio');
@@ -40,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Funcionalidad para la barra de progreso del audio
     const updateProgressBar = (audio, progressBar, currentTimeDisplay) => {
         const duration = audio.duration;
         const currentTime = audio.currentTime;
@@ -81,7 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Animación de desplazamiento suave del header
     window.addEventListener('scroll', function () {
         const currentScrollPosition = window.pageYOffset;
 
@@ -94,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
         lastScrollPosition = currentScrollPosition;
     });
 
-    // Funcionalidad para el botón de volver arriba
     const scrollToTopBtn = document.getElementById('scrollToTop');
 
     window.addEventListener('scroll', function () {
