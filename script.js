@@ -3,11 +3,21 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentAudioButton = null;
     let lastScrollPosition = 0;
     const header = document.querySelector('.header');
+    const loader = document.getElementById('loader');
+    const body = document.body;
 
+    // No permitir que el usuario scrollee mientras esté la pantalla de carga
     window.addEventListener('load', function () {
-        document.body.classList.add('loaded');
+        loader.style.display = 'none';
+        body.classList.remove('no-scroll');
     });
 
+    // Mantener'no-scroll' hasta que esté completamente cargada
+    window.addEventListener('load', function () {
+        body.classList.remove('no-scroll');
+    });
+
+    // Audios y botones de play/pause
     document.querySelectorAll('.audio-button').forEach(button => {
         button.addEventListener('click', function () {
             const audio = this.nextElementSibling.querySelector('audio');
@@ -38,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Barra de progreso del audio
     const updateProgressBar = (audio, progressBar, currentTimeDisplay) => {
         const duration = audio.duration;
         const currentTime = audio.currentTime;
@@ -78,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Animación de desplazamiento suave del header
     window.addEventListener('scroll', function () {
         const currentScrollPosition = window.pageYOffset;
 
@@ -90,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         lastScrollPosition = currentScrollPosition;
     });
 
+    // Botón de volver arriba
     const scrollToTopBtn = document.getElementById('scrollToTop');
 
     window.addEventListener('scroll', function () {
@@ -106,4 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
             behavior: 'smooth'
         });
     });
+
+    // Añadir 'no-scroll' a la web mientras el loader está visible
+    body.classList.add('no-scroll');
 });
