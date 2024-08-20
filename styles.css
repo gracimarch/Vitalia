@@ -1034,6 +1034,7 @@ a.block:hover {
     vertical-align: middle;
 }
 
+/* Pantalla de carga */
 #loader {
     position: fixed;
     top: 0;
@@ -1045,6 +1046,7 @@ a.block:hover {
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    overflow: hidden;
 }
 
 body.loaded #loader {
@@ -1054,4 +1056,10 @@ body.loaded #loader {
 .no-scroll {
     overflow: hidden;
     height: 100%;
+}
+
+@media (max-width: 768px) {
+    #loader {
+        background-color: #fffcf4;
+    }
 }
