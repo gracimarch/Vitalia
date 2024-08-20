@@ -1050,3 +1050,8 @@ a.block:hover {
 body.loaded #loader {
     display: none;
 }
+
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
