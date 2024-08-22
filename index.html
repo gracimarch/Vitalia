@@ -46,7 +46,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
+                        <li class="nav-item" id="first-nav-item">
                             <a class="nav-link" href="#">Blog</a>
                         </li>
                         <li class="nav-item">
@@ -58,7 +58,7 @@
                     </ul>
                     <div class="d-none d-lg-flex align-items-center">
                         <a class="nav-link" href="#">
-                            <i class="bi bi-star-fill star-icon"></i>
+                            <img src="images/coronaIconoNavbar.png" alt="Premium" class="premium">
                         </a>
                     </div>
                     <div class="d-lg-none">
@@ -71,7 +71,7 @@
                 </div>
             </nav>
         </div>
-    </header>
+    </header>  
 
     <div class="pagina" id="welcome">
 
@@ -271,117 +271,119 @@
 
         <!-- Meditaciones seleccionadas -->
         <section class="audio-blocks">
-            <div class="audio-block">
-                <button class="audio-button" id="button1">
-                    <img src="images/reproducirIconoMeditaciones.png" alt="Reproducir audio">
-                </button>
-                <div class="audio-info">
-                    <p class="duration">
-                        <img src="images/relojIconoMeditaciones.png" alt="Duración">
-                        7 minutos
-                    </p>
-                    <h3 class="title">Libera la tensión</h3>
-                    <div class="custom-audio-player">
-                        <span class="current-time">00:00</span>
-                        <div class="progress-container">
-                            <div class="progress-bar"></div>
+            <div class="container">
+                <div class="audio-block">
+                    <button class="audio-button" id="button1">
+                        <img src="images/reproducirIconoMeditaciones.png" alt="Reproducir audio">
+                    </button>
+                    <div class="audio-info">
+                        <p class="duration">
+                            <img src="images/relojIconoMeditaciones.png" alt="Duración">
+                            7 minutos
+                        </p>
+                        <h3 class="title">Libera la tensión</h3>
+                        <div class="custom-audio-player">
+                            <span class="current-time">00:00</span>
+                            <div class="progress-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <audio id="audio1" src="audios/meditacionSoltarTension_plan6y7.mp3"></audio>
                         </div>
-                        <audio id="audio1" src="audios/meditacionSoltarTension_plan6y7.mp3"></audio>
                     </div>
                 </div>
-            </div>
-            <div class="audio-block">
-                <button class="audio-button" id="button2">
-                    <img src="images/reproducirIconoMeditaciones.png" alt="Reproducir audio">
-                </button>
-                <div class="audio-info">
-                    <p class="duration">
-                        <img src="images/relojIconoMeditaciones.png" alt="Duración">
-                        9 minutos
-                    </p>
-                    <h3 class="title">Empieza el día positivamente</h3>
-                    <div class="custom-audio-player">
-                        <span class="current-time">00:00</span>
-                        <div class="progress-container">
-                            <div class="progress-bar"></div>
+                <div class="audio-block">
+                    <button class="audio-button" id="button2">
+                        <img src="images/reproducirIconoMeditaciones.png" alt="Reproducir audio">
+                    </button>
+                    <div class="audio-info">
+                        <p class="duration">
+                            <img src="images/relojIconoMeditaciones.png" alt="Duración">
+                            9 minutos
+                        </p>
+                        <h3 class="title">Empieza el día positivamente</h3>
+                        <div class="custom-audio-player">
+                            <span class="current-time">00:00</span>
+                            <div class="progress-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <audio id="audio1" src="audios/empezarPositivamente_plan6y7.mp3"></audio>
                         </div>
-                        <audio id="audio1" src="audios/empezarPositivamente_plan6y7.mp3"></audio>
                     </div>
                 </div>
-            </div>
-            <div class="audio-block">
-                <button class="audio-button" id="button3">
-                    <img src="images/reproducirIconoMeditaciones.png" alt="Reproducir audio">
-                </button>
-                <div class="audio-info">
-                    <p class="duration">
-                        <img src="images/relojIconoMeditaciones.png" alt="Duración">
-                        9 minutos
-                    </p>
-                    <h3 class="title">Siéntete seguro y en paz</h3>
-                    <div class="custom-audio-player">
-                        <span class="current-time">00:00</span>
-                        <div class="progress-container">
-                            <div class="progress-bar"></div>
+                <div class="audio-block">
+                    <button class="audio-button" id="button3">
+                        <img src="images/reproducirIconoMeditaciones.png" alt="Reproducir audio">
+                    </button>
+                    <div class="audio-info">
+                        <p class="duration">
+                            <img src="images/relojIconoMeditaciones.png" alt="Duración">
+                            9 minutos
+                        </p>
+                        <h3 class="title">Siéntete seguro y en paz</h3>
+                        <div class="custom-audio-player">
+                            <span class="current-time">00:00</span>
+                            <div class="progress-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <audio id="audio1" src="audios/sienteSeguroyPaz_plan4y6y7.mp3"></audio>
                         </div>
-                        <audio id="audio1" src="audios/sienteSeguroyPaz_plan4y6y7.mp3"></audio>
                     </div>
                 </div>
-            </div>
-            <div class="audio-block">
-                <button class="audio-button" id="button4">
-                    <img src="images/reproducirIconoMeditaciones.png" alt="Reproducir audio">
-                </button>
-                <div class="audio-info">
-                    <p class="duration">
-                        <img src="images/relojIconoMeditaciones.png" alt="Duración">
-                        1 minuto
-                    </p>
-                    <h3 class="title">Relajación en 1 minuto</h3>
-                    <div class="custom-audio-player">
-                        <span class="current-time">00:00</span>
-                        <div class="progress-container">
-                            <div class="progress-bar"></div>
+                <div class="audio-block">
+                    <button class="audio-button" id="button4">
+                        <img src="images/reproducirIconoMeditaciones.png" alt="Reproducir audio">
+                    </button>
+                    <div class="audio-info">
+                        <p class="duration">
+                            <img src="images/relojIconoMeditaciones.png" alt="Duración">
+                            1 minuto
+                        </p>
+                        <h3 class="title">Relajación en 1 minuto</h3>
+                        <div class="custom-audio-player">
+                            <span class="current-time">00:00</span>
+                            <div class="progress-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <audio id="audio1" src="audios/Relajación_1minuto_plan2y6.mp3"></audio>
                         </div>
-                        <audio id="audio1" src="audios/Relajación_1minuto_plan2y6.mp3"></audio>
                     </div>
                 </div>
-            </div>
-            <div class="audio-block">
-                <button class="audio-button" id="button5">
-                    <img src="images/reproducirIconoMeditaciones.png" alt="Reproducir audio">
-                </button>
-                <div class="audio-info">
-                    <p class="duration">
-                        <img src="images/relojIconoMeditaciones.png" alt="Duración">
-                        5 minutos
-                    </p>
-                    <h3 class="title">Meditación matutina</h3>
-                    <div class="custom-audio-player">
-                        <span class="current-time">00:00</span>
-                        <div class="progress-container">
-                            <div class="progress-bar"></div>
+                <div class="audio-block">
+                    <button class="audio-button" id="button5">
+                        <img src="images/reproducirIconoMeditaciones.png" alt="Reproducir audio">
+                    </button>
+                    <div class="audio-info">
+                        <p class="duration">
+                            <img src="images/relojIconoMeditaciones.png" alt="Duración">
+                            5 minutos
+                        </p>
+                        <h3 class="title">Meditación matutina</h3>
+                        <div class="custom-audio-player">
+                            <span class="current-time">00:00</span>
+                            <div class="progress-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <audio id="audio1" src="audios/meditacionMatutina_plan1y9y6.mp3"></audio>
                         </div>
-                        <audio id="audio1" src="audios/meditacionMatutina_plan1y9y6.mp3"></audio>
                     </div>
                 </div>
-            </div>
-            <div class="audio-block">
-                <button class="audio-button" id="button6">
-                    <img src="images/reproducirIconoMeditaciones.png" alt="Reproducir audio">
-                </button>
-                <div class="audio-info">
-                    <p class="duration">
-                        <img src="images/relojIconoMeditaciones.png" alt="Duración">
-                        2 minutos
-                    </p>
-                    <h3 class="title">Relajación corta para un buen sueño</h3>
-                    <div class="custom-audio-player">
-                        <span class="current-time">00:00</span>
-                        <div class="progress-container">
-                            <div class="progress-bar"></div>
+                <div class="audio-block">
+                    <button class="audio-button" id="button6">
+                        <img src="images/reproducirIconoMeditaciones.png" alt="Reproducir audio">
+                    </button>
+                    <div class="audio-info">
+                        <p class="duration">
+                            <img src="images/relojIconoMeditaciones.png" alt="Duración">
+                            2 minutos
+                        </p>
+                        <h3 class="title">Relajación corta para un buen sueño</h3>
+                        <div class="custom-audio-player">
+                            <span class="current-time">00:00</span>
+                            <div class="progress-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                            <audio id="audio1" src="audios/relajacionCortaDormir_plan2y6y8y9.mp3"></audio>
                         </div>
-                        <audio id="audio1" src="audios/relajacionCortaDormir_plan2y6y8y9.mp3"></audio>
                     </div>
                 </div>
             </div>
@@ -464,31 +466,58 @@
 
     </div>
 
-    <!-- Pie de página -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-top">
+    <!-- Pie de página-->
+    <footer class="footer row py-5 border-top">
+        <div class="col-lg-4 col-md-6 mb-3">
+            <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
                 <img src="images/vitaliaLogoFooter.png" alt="Logo de Vitalia" class="footer-logo">
-                <div class="footer-socials">
-                    <a href="https://www.facebook.com" target="_blank" class="social-icon">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a href="https://www.instagram.com/vitalia.selfcare/" target="_blank" class="social-icon">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a href="mailto:vitalia.selfcare@gmail.com?subject=Consulta%20-%20Vitalia&body=Me%20comunicaba%20porque..." target="_blank" class="social-icon">
-                        <i class="bi bi-envelope-fill"></i>
-                    </a>
-                </div>
+            </a>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com" target="_blank" class="social-icon">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/vitalia.selfcare/" target="_blank" class="social-icon">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="mailto:vitalia.selfcare@gmail.com?subject=Consulta%20-%20Vitalia&body=Me%20comunicaba%20porque..." target="_blank" class="social-icon">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
             </div>
             <div class="footer-links">
                 <a href="documentos/Política de Privacidad .pdf" target="_blank" class="footer-link">Políticas de Privacidad</a>
                 <span class="separator">|</span>
                 <a href="documentos/Términos y Condiciones.pdf" target="_blank" class="footer-link">Términos y Condiciones</a>
             </div>
-            <div class="footer-bottom">
-                <p>© 2024 Vitalia. Todos los derechos reservados</p>
-            </div>
+            <p class="text-body-secondary rights">&copy; 2024 Vitalia. Todos los derechos resevardos.</p>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-3 div-space">
+            <h5 class="subtittle">Blog</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Productividad</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Actividad física y emocional</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Hábitos alimenticios</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Salud mental y bienestar</a></li>
+            </ul>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-3">
+            <h5 class="subtittle">Mi espacio</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Artículos recomendados</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Rutinas de ejercicio</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Meditaciones</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Planes alimenticios</a></li>
+            </ul>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-3">
+            <h5 class="subtittle">Acerca de</h5>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">¿Qué es Vitalia?</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Preguntas frecuentes</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">¿Quiénes somos?</a></li>
+            </ul>
         </div>
     </footer>    
 
