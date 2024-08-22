@@ -817,8 +817,9 @@ a.block:hover {
 }
 
 .footer-logo {
+    margin: 5px 0;
     margin-left: -5px;
-    height: 30px;
+    height: 35px;
     align-self: center;
     filter: brightness(100);
 }
@@ -877,7 +878,6 @@ a.block:hover {
     color: #c9fff3;
 }
 
-
 .separator {
     margin: 0 10px;
     color: #fffcf4;
@@ -888,7 +888,6 @@ a.block:hover {
     color: #fffcf4;
     margin: 0;
 }
-
 
 .text-body-secondary {
     color: #ffffff !important;
