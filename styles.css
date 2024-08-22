@@ -20,7 +20,6 @@ body {
     padding-top: 100px;
 }
 
-/* Pantalla de carga */
 #loader {
     position: fixed;
     top: 0;
@@ -96,18 +95,8 @@ body.loaded #loader {
     color: #9d60cf;
 }
 
-.star-icon {
-    font-size: 28px;
-    color: #af84cf;
-    transition: all 0.3s ease;
-}
-
-.star-icon:hover {
-    color: #9d60cf;
-}
-
 .premium {
-    height: 24px;
+    height: 28px;
 }
 
 .navbar-toggler {
@@ -155,33 +144,10 @@ body.loaded #loader {
     transform: rotate(-45deg) translateY(50%);
 }
 
-@media (max-width: 940px) {
-    .navbar-nav {
-        text-align: center;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 14px;
-    }
+@media (max-width: 991px) {
 
     .navbar-collapse {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: #ffffff;
         padding: 15px 0;
-        border-radius: 0 0 5px 5px;
-        border: 1px solid #ddd;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        width: 78%;
-        margin: 0 auto;
-        margin-top: 11px;
-    }
-    
-    .navbar-collapse.show {
-        opacity: 1;
-        transform: translateY(0);
     }
 
     .navbar-toggler {
@@ -191,55 +157,18 @@ body.loaded #loader {
         background-color: transparent !important;
     }
 
-    .navbar-collapse {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: #ffffff;
-        padding: 2px 0;
-        border-radius: 0 0 5px 5px;
-        border: 1px solid #ddd;
-    }
-
-    .navbar-nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
     .navbar-nav .nav-item {
         border-bottom: 1px solid #ddd;
     }
 
-    #last-nav-item {
-        margin-top: -7px;
-        border-bottom: none;
-    }
-}
-
-@media (max-width: 767px) {
-    .navbar-toggler {
-        display: block;
-    }
-
-    .navbar-nav {
-        margin-top: 10px;
-    }
-
-    .navbar-nav .nav-link {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .d-none {
-        display: none;
+    .navbar-nav .nav-item {
+        margin-left: 0;
+        margin: 5px;
     }
 }
 
 .welcome, .reading, .thanks {
-    padding: 25px 0;
-    padding-top: 35px;
+    padding: 40px 0;
 }
 
 .welcome-section, .reading-section, .thanks-section {
@@ -344,7 +273,7 @@ a.block:hover {
 
 .content h3, .info-content h3 {
     font-size: 22.4px;
-    font-weight: bold;
+    font-weight: 600;
     text-decoration: underline;
     margin: 0;
 }
@@ -452,6 +381,7 @@ a.block:hover {
 .info-content .btn img {
     width: 20px;
     margin-right: 8px;
+    vertical-align: middle;
 }
 
 .info-content .btn:hover {
@@ -599,10 +529,14 @@ a.block:hover {
 
 .audio-blocks {
     margin: 0 auto;
-    max-width: calc(100% - 70px);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.audio-blocks .container {
+    display: flex;
+    flex-wrap: wrap;
     gap: 15px;
 }
 
@@ -610,7 +544,6 @@ a.block:hover {
     display: flex;
     align-items: center;
     flex: 1 1 calc(33.33% - 15px);
-    max-width: 100%;
     padding: 10px;
     background: none;
 }
@@ -870,29 +803,22 @@ a.block:hover {
 }
 
 .footer {
-    margin-top: 20px;
+    margin: 15px auto 0 auto;
     padding: 80px;
-    text-align: center;
     background-image: url(images/degradadoFondoFooter.png);
     background-size: cover;
     background-position: center;
     border-radius: 50px 50px 0 0;
+    width: 100%;
 }
 
-.footer-content {
-    margin: 0 auto;
-}
-
-.footer-top {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
+.div-space {
+    margin-left: auto;
 }
 
 .footer-logo {
+    margin-left: -5px;
     height: 30px;
-    margin-right: 20px;
     align-self: center;
     filter: brightness(100);
 }
@@ -900,6 +826,7 @@ a.block:hover {
 .footer-socials {
     display: flex;
     gap: 15px;
+    margin: 12px 0;
     align-items: center;
 }
 
@@ -913,8 +840,8 @@ a.block:hover {
     color: #c9fff3;
 }
 
-.footer-links {
-    margin-bottom: 12px;
+.rights {
+    margin: 15px 0;
 }
 
 .footer-link {
@@ -923,6 +850,33 @@ a.block:hover {
     transition: all 0.3s ease;
     color: #fffcf4;
 }
+
+.footer .nav-link {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.footer .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #c9fff3;
+    position: absolute;
+    left: 0;
+    transition: width 0.3s ease-in;
+}
+
+.footer .nav-link:hover::after {
+    width: 100%;
+}
+
+.footer .nav-link:hover {
+    color: #c9fff3;
+}
+
 
 .separator {
     margin: 0 10px;
@@ -933,6 +887,18 @@ a.block:hover {
     font-size: 14px;
     color: #fffcf4;
     margin: 0;
+}
+
+
+.text-body-secondary {
+    color: #ffffff !important;
+}
+
+.subtittle {
+    color: #fff !important;
+    text-decoration: underline;
+    font-weight: 700;
+    margin: 15px 0 !important;
 }
 
 @media (max-width: 1200px) {
@@ -985,7 +951,7 @@ a.block:hover {
     color: #1F1E1E;
     will-change: transform;
     transform: scale(.1);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 }
 
 .btn_wrap {
@@ -995,8 +961,8 @@ a.block:hover {
     align-items: center;
     overflow: hidden;
     cursor: pointer;
-    width: 190px;
-    height: 55px;
+    width: 175px;
+    height: 45px;
     background-color: #EEEEED;
     border-radius: 80px;
     padding: 0 18px;
@@ -1012,7 +978,7 @@ a.block:hover {
 .btn_wrap span {
     position: absolute;
     z-index: 97;
-    width: 230px;
+    width: 220px;
     height: 72px;
     border-radius: 80px;
     font-size: 14px;
@@ -1020,7 +986,7 @@ a.block:hover {
     line-height: 70px;
     letter-spacing: 2px;
     color: #EEEEED;
-    background-color: #da631f;
+    background-color: #f47428;
     padding: 0 18px;
     transition: all 1.2s ease;
 }
@@ -1043,7 +1009,7 @@ a.block:hover {
 
 .btn_wrap:hover span {
     transition-delay: .25s;
-    transform: translateX(-215px);
+    transform: translateX(-205px);
 }
 
 .btn_wrap:hover i {
@@ -1059,7 +1025,7 @@ a.block:hover {
 }
 
 .btn_wrap img {
-    margin-right: 7px;
-    height: 22px;
+    width: 20px;
+    margin-right: 8px;
     vertical-align: middle;
 }
