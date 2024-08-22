@@ -97,6 +97,11 @@ body.loaded #loader {
 
 .premium {
     height: 28px;
+    transition: all 0.3s ease;
+}
+
+.premium:hover {
+    transform: scale(1.1);
 }
 
 .navbar-toggler {
