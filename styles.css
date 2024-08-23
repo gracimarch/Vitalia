@@ -43,6 +43,25 @@ body.loaded #loader {
     height: 100%;
 }
 
+gradient-animation {
+  background-image: linear-gradient(45deg, #ffb3ba, #c49c6e, #bfbf76, #77b084, #ff7e74, #3b82f6, #c084fc, #db2777);
+  color: transparent;
+  -webkit-background-clip: text; /* Edge, Chrome */
+  background-clip: text; /* Safari, FF */
+  animation: gradientAnimation 8s linear infinite;
+  animation-direction: alternate;
+  background-size: 300% 100%;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0;
+  }
+  to {
+    background-position: 100%;
+  }
+}
+
 @media (max-width: 768px) {
     #loader {
         background-color: #fffcf4;
