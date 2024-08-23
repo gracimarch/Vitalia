@@ -53,15 +53,6 @@ gradient-animation {
   background-size: 300% 100%;
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0;
-  }
-  to {
-    background-position: 100%;
-  }
-}
-
 @media (max-width: 768px) {
     #loader {
         background-color: #fffcf4;
