@@ -52,6 +52,7 @@ h1 span {
   animation: gradientAnimation 8s linear infinite;
   animation-direction: alternate;
   background-size: 300% 100%;
+    font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
 
