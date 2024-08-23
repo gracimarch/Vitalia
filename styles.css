@@ -52,7 +52,6 @@ h1 span {
   animation: gradientAnimation 8s linear infinite;
   animation-direction: alternate;
   background-size: 300% 100%;
-    position: relative;
 }
 
 @keyframes gradientAnimation {
@@ -63,17 +62,6 @@ h1 span {
     background-position: 100%;
   }
 }
-
-h3 span::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
-            mix-blend-mode: multiply;
-        }
 
 .header {
     padding: 10px 20px;
