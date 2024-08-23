@@ -52,7 +52,7 @@ h1 span {
   animation: gradientAnimation 8s linear infinite;
   animation-direction: alternate;
   background-size: 300% 100%;
-  font-weight: 500 !important;
+  font-weight: 700 !important;
 }
 
 @keyframes gradientAnimation {
