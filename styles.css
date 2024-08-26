@@ -232,7 +232,7 @@ h1 span /* Welcome text */ {
     view-timeline-axis: block;
     animation-timeline: --blocks;
     animation-name: show;
-    animation-range: entry 45% cover 50%;
+    animation-range: entry 48% cover 50%;
     animation-fill-mode: both;
 }
 
