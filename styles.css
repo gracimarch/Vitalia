@@ -203,6 +203,33 @@ h1 span /* Welcome text */ {
   font-weight: 700 !important;
 }
 
+h2 /* Chrome animation */ {
+	background: #333 -webkit-gradient(linear, left top, right top, from(#333), to(#333), color-stop(0.5, #d3d3d3)) 0 0 no-repeat;
+	background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #d3d3d3 50%, transparent 60%, transparent 100%);
+	-webkit-background-size: 200px;
+	color: $text-color;
+	-webkit-background-clip: text;
+	-webkit-animation-name: shine;
+	-webkit-animation-duration: $duration;
+	-webkit-animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(211, 211, 211, 0.5);
+}
+
+@-webkit-keyframes shine {
+	0%, 10% {
+		background-position: -1000px;
+	}
+	20% {
+		background-position: top left;
+	}
+	90% {
+		background-position: top right;
+	}
+	100% {
+		background-position: 1000px;
+	}
+}
+
 .reading-icon {
     width: 24px;
     height: auto;
