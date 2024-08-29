@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         body.classList.remove('no-scroll');
     });
 
-    // Mantener'no-scroll' hasta que esté completamente cargada
+    // Mantener 'no-scroll' hasta que esté completamente cargada
     window.addEventListener('load', function () {
         body.classList.remove('no-scroll');
     });
@@ -122,4 +122,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Añadir 'no-scroll' a la web mientras el loader está visible
     body.classList.add('no-scroll');
+
+    // Animación de los blocks
+    const blocks = document.querySelectorAll('.articles .block, .articles .info-block, .lecturas .block, .lecturas .info-block, .reading .reading-section, .welcome .welcome-section, .ejercicios .block, .thanks .thanks-section, .audio-blocks .audio-block');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    blocks.forEach(block => {
+        observer.observe(block);
+    });
 });
