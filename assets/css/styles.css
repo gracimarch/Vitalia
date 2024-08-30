@@ -351,19 +351,19 @@ h1 span {
 }
 
 #lee {
-    background-image: url('../images/leeBloqueAtajos.png');
+    background-image: url('../images/leeBloqueAtajos.webp');
 }
 
 #ejercita {
-    background-image: url('../images/ejercitaBloqueAtajos.png');
+    background-image: url('../images/ejercitaBloqueAtajos.webp');
 }
 
 #medita {
-    background-image: url('../images/meditaBloqueAtajos.png');
+    background-image: url('../images/meditaBloqueAtajos.webp');
 }
 
 #alimentate {
-    background-image: url('../images/alimentateBloqueAtajos.png');
+    background-image: url('../images/alimentateBloqueAtajos.webp');
 }
 
 .content {
@@ -436,11 +436,11 @@ h1 span {
 }
 
 #reflexion {
-    background-image: url('../images/plan6BloqueInfo.png');
+    background-image: url('../images/plan6BloqueInfo.webp');
 }
 
 #blog {
-    background-image: url('../images/atajoBloqueLecturas.png');
+    background-image: url('../images/atajoBloqueLecturas.webp');
 }
 
 .info-block .info-content {
@@ -604,19 +604,19 @@ h1 span {
 }
 
 #productividad {
-    background-image: url('../images/art1BloqueLecturas.png');
+    background-image: url('../images/art1BloqueLecturas.webp');
 }
 
 #salud-mental {
-    background-image: url('../images/art2BloqueLecturas.png');
+    background-image: url('../images/art2BloqueLecturas.webp');
 }
 
 #nutricion {
-    background-image: url('../images/art3BloqueLecturas.png');
+    background-image: url('../images/art3BloqueLecturas.webp');
 }
 
 #bienestar {
-    background-image: url('../images/art4BloqueLecturas.png');
+    background-image: url('../images/art4BloqueLecturas.webp');
 }
 
 .audio-blocks {
@@ -652,32 +652,32 @@ h1 span {
 }
 
 #button1 {
-    background: url('../images/fondo1BloqueMeditaciones.png') no-repeat center center;
+    background: url('../images/fondo1BloqueMeditaciones.webp') no-repeat center center;
     background-size: cover;
 }
 
 #button2 {
-    background: url('../images/fondo2BloqueMeditaciones.png') no-repeat center center;
+    background: url('../images/fondo2BloqueMeditaciones.webp') no-repeat center center;
     background-size: cover;
 }
 
 #button3 {
-    background: url('../images/fondo3BloqueMeditaciones.png') no-repeat center center;
+    background: url('../images/fondo3BloqueMeditaciones.webp') no-repeat center center;
     background-size: cover;
 }
 
 #button4 {
-    background: url('../images/fondo4BloqueMeditaciones.png') no-repeat center center;
+    background: url('../images/fondo4BloqueMeditaciones.webp') no-repeat center center;
     background-size: cover;
 }
 
 #button5 {
-    background: url('../images/fondo5BloqueMeditaciones.png') no-repeat center center;
+    background: url('../images/fondo5BloqueMeditaciones.webp') no-repeat center center;
     background-size: cover;
 }
 
 #button6 {
-    background: url('../images/fondo6BloqueMeditaciones.png') no-repeat center center;
+    background: url('../images/fondo6BloqueMeditaciones.webp') no-repeat center center;
     background-size: cover;
 }
 
@@ -847,49 +847,49 @@ h1 span {
 }
 
 #ejercicio1 {
-    background-image: url('../images/rut1BloqueEjercicios.png');
+    background-image: url('../images/rut1BloqueEjercicios.webp');
 }
 
 #ejercicio2 {
-    background-image: url('../images/rut2BloqueEjercicios.png');
+    background-image: url('../images/rut2BloqueEjercicios.webp');
 }
 
 #ejercicio3 {
-    background-image: url('../images/rut3BloqueEjercicios.png');
+    background-image: url('../images/rut3BloqueEjercicios.webp');
 }
 
 #ejercicio4 {
-    background-image: url('../images/rut4BloqueEjercicios.png');
+    background-image: url('../images/rut4BloqueEjercicios.webp');
 }
 
 #dieta1 {
-    background-image: url('../images/plan1BloqueDietas.png');
+    background-image: url('../images/plan1BloqueDietas.webp');
 }
 
 #dieta2 {
-    background-image: url('../images/plan2BloqueDietas.png');
+    background-image: url('../images/plan2BloqueDietas.webp');
 }
 
 #dieta3 {
-    background-image: url('../images/plan3BloqueDietas.png');
+    background-image: url('../images/plan3BloqueDietas.webp');
 }
 
 #dieta4 {
-    background-image: url('../images/plan4BloqueDietas.png');
+    background-image: url('../images/plan4BloqueDietas.webp');
 }
 
 #dieta5 {
-    background-image: url('../images/plan5BloqueDietas.png');
+    background-image: url('../images/plan5BloqueDietas.webp');
 }
 
 #dieta6 {
-    background-image: url('../images/plan6BloqueDietas.png');
+    background-image: url('../images/plan6BloqueDietas.webp');
 }
 
 .footer {
     margin: 15px auto 0 auto;
     padding: 80px;
-    background-image: url(../images/degradadoFondoFooter.png);
+    background-image: url(../images/degradadoFondoFooter.webp);
     background-size: cover;
     background-position: center;
     border-radius: 50px 50px 0 0;
