@@ -71,6 +71,7 @@ body.loaded #loader {
 }
 
 .navbar-brand .logo {
+    width: 146px;
     height: 35px;
     transition: all 0.3s ease;
 }
@@ -93,6 +94,7 @@ body.loaded #loader {
 }
 
 .premium {
+    width: 32px;
     height: 28px;
     transition: all 0.3s ease;
 }
@@ -287,7 +289,7 @@ h1 span {
 
 .reading-icon {
     width: 24px;
-    height: auto;
+    height: 24px;
 }
 
 .welcome-heading, .reading-heading {
@@ -406,7 +408,8 @@ h1 span {
     }
 
     .reading-icon {
-        font-size: 20px;
+        width: 20px;
+        height: 20px;
     }
 
     .welcome-subtext {
@@ -903,6 +906,7 @@ h1 span {
 .footer-logo {
     margin: 5px 0;
     margin-left: -5px;
+    width: 146px;
     height: 35px;
     align-self: center;
     filter: brightness(100);
@@ -1000,6 +1004,7 @@ h1 span {
 
     .footer-logo {
         height: 28px;
+        width: 117px;
     }
 
     .social-icon i {
