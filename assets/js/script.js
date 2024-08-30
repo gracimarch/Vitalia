@@ -22,26 +22,29 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function () {
             const audio = this.nextElementSibling.querySelector('audio');
             const playPauseBtnImg = this.querySelector('img');
-
+    
+            // Detener el audio actual si es diferente al nuevo
             if (currentAudio && currentAudio !== audio) {
                 currentAudio.pause();
-                currentAudioButton.querySelector('img').src = 'images/reproducirIconoMeditaciones.png';
+                currentAudioButton.querySelector('img').src = 'assets/images/reproducirIconoMeditaciones.png';
             }
-
+    
+            // Reproducir o pausar el audio
             if (audio.paused) {
                 audio.play();
-                playPauseBtnImg.src = 'images/pausarIconoMeditaciones.png';
+                playPauseBtnImg.src = 'assets/images/pausarIconoMeditaciones.png';
                 currentAudio = audio;
                 currentAudioButton = button;
             } else {
                 audio.pause();
-                playPauseBtnImg.src = 'images/reproducirIconoMeditaciones.png';
+                playPauseBtnImg.src = 'assets/images/reproducirIconoMeditaciones.png';
                 currentAudio = null;
                 currentAudioButton = null;
             }
-
+    
+            // Restablecer el botón cuando el audio termine
             audio.addEventListener('ended', function () {
-                playPauseBtnImg.src = 'images/reproducirIconoMeditaciones.png';
+                playPauseBtnImg.src = 'assets/images/reproducirIconoMeditaciones.png';
                 currentAudio = null;
                 currentAudioButton = null;
             });
