@@ -245,7 +245,7 @@ body.loaded #loader {
 }
 
 .brightness:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.08);
 }
 
 .welcome, .reading, .thanks {
