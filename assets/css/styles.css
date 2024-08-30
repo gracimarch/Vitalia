@@ -9,7 +9,6 @@ html {
 body {
     font-family: 'Poppins', Calibri, sans-serif;
     background-color: #fffcf4;
-    color: #1f1f1f;
     margin: 0;
     padding: 0;
 }
@@ -266,7 +265,7 @@ body.loaded #loader {
     gap: 10px;
 }
 
-h1 span {
+.welcome-heading .welcome-name {
     display: inline-block;
     background-image: linear-gradient(45deg, #ff97a1, #f1ba7b, #d4d474, #77b084, #548be4, #c084fc, #e6438c);
     color: transparent;
@@ -279,12 +278,8 @@ h1 span {
 }
 
 @keyframes gradientAnimation {
-    0% {
-      background-position: 0%;
-    }
-    100% {
-      background-position: 100%;
-    }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
 .reading-icon {
