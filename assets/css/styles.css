@@ -84,12 +84,21 @@ body.loaded #loader {
 }
 
 .navbar-nav .nav-link {
-    color: #333;
+    color: #727272;
     transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
     color: #9d60cf;
+}
+
+#miespacio {
+    color: #292929;
+    font-weight: 600;
+}
+
+#miespacio:hover {
+    color: #8a4cbd;
 }
 
 .premium {
@@ -476,10 +485,11 @@ body.loaded #loader {
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 16px;
     text-decoration: none;
     margin-top: 20px;
     transition: all 0.6s ease;
+    font-family: 'Zilla Slab', Times New Roman, serif;
 }
 
 .info-content .btn i {
@@ -526,14 +536,15 @@ body.loaded #loader {
     width: 220px;
     height: 72px;
     border-radius: 80px;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
     line-height: 70px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: #EEEEED;
     background-color: #f47428;
     padding: 0 18px;
     transition: all 1.2s ease;
+    font-family: 'Zilla Slab', Times New Roman, serif;
 }
 
 .btn_wrap .container {
