@@ -147,7 +147,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const phrases = [
         "Estás exactamente donde necesitas estar en este momento",
         "Confía en el proceso, estás creciendo cada día",
-        "El bienestar comienza con un solo paso en la dirección correcta",
         "Hoy es el mejor día para cuidar de ti",
         "Cada pequeño avance es un gran logro en tu camino",
         "La paz interior se encuentra en el momento presente",
