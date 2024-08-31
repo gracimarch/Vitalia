@@ -142,4 +142,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Añadir 'no-scroll' a la web mientras el loader está visible
     body.classList.add('no-scroll');
+
+    // Cambiar la reflexión del día
+    const phrases = [
+        "Estás exactamente donde necesitas estar en este momento",
+        "Confía en el proceso, estás creciendo cada día",
+        "El bienestar comienza con un solo paso en la dirección correcta",
+        "Hoy es el mejor día para cuidar de ti",
+        "Cada pequeño avance es un gran logro en tu camino",
+        "La paz interior se encuentra en el momento presente",
+        "Donde estás ahora es justo donde necesitas estar",
+        "La calma que buscas está dentro de ti",
+        "Cada respiro es una nueva oportunidad para empezar de nuevo",
+        "Eres más fuerte de lo que crees, sigue adelante",
+        "Escucha a tu cuerpo y mente, ellos saben lo que necesitas",
+        "Tu bienestar es una prioridad, no una opción",
+        "El viaje hacia la paz interior comienza ahora",
+        "Abraza el presente, es un regalo para tu bienestar",
+        "Hoy elige cuidarte con amor y paciencia",
+        "La gratitud transforma el momento presente en suficiente",
+        "Estás creando un futuro lleno de bienestar y equilibrio",
+        "El equilibrio que buscas comienza desde dentro",
+        "Tu camino hacia la salud mental es único, y eso es lo que lo hace perfecto",
+        "Hoy es el día perfecto para reconectar contigo",
+        "La serenidad que buscas ya está en tu interior, solo necesitas detenerte y escuchar",
+        "Cada día es una nueva oportunidad para nutrir tu mente y tu cuerpo",
+        "Tu bienestar es una inversión en tu felicidad futura"
+    ];
+
+    const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+
+    document.getElementById("share-text").textContent = `"${randomPhrase}"`;
 });
