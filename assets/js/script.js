@@ -163,9 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "La gratitud transforma el momento presente en suficiente",
         "Estás creando un futuro lleno de bienestar y equilibrio",
         "El equilibrio que buscas comienza desde dentro",
-        "Tu camino hacia la salud mental es único, y eso es lo que lo hace perfecto",
         "Hoy es el día perfecto para reconectar contigo",
-        "La serenidad que buscas ya está en tu interior, solo necesitas detenerte y escuchar",
         "Cada día es una nueva oportunidad para nutrir tu mente y tu cuerpo",
         "Tu bienestar es una inversión en tu felicidad futura"
     ];
