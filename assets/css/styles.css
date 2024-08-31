@@ -441,6 +441,16 @@ body.loaded #loader {
     background-image: url('../images/atajoBloqueLecturas.webp');
 }
 
+@media (max-width: 991px) {
+    #reflexion {
+        background-image: url('../images/plan6BloqueInfoResponsive.webp');
+    }
+    
+    #blog {
+        background-image: url('../images/atajoBloqueLecturasResponsive.webp');
+    }
+}
+
 .info-block .info-content {
     max-width: 100%;
     margin: 0 auto;
@@ -562,7 +572,7 @@ body.loaded #loader {
 @media (max-width: 768px) {
     .btn {
         font-size: 14.4px;
-        padding: 6px 12px;
+        padding: 8px 16px;
     }
 
     .info-content h3 {
@@ -577,7 +587,7 @@ body.loaded #loader {
 @media (max-width: 480px) {
     .info-content .btn {
         font-size: 12.8px;
-        padding: 4px 10px;
+        padding: 7px 14px;
     }
 
     .info-content .btn .btn-icon {
@@ -615,7 +625,7 @@ body.loaded #loader {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    height: 150px;
+    height: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -691,6 +701,24 @@ body.loaded #loader {
 
 #bienestar {
     background-image: url('../images/art4BloqueLecturas.webp');
+}
+
+@media (max-width: 991px) {
+    #productividad {
+        background-image: url('../images/art1BloqueLecturasResponsive.webp');
+    }
+    
+    #salud-mental {
+        background-image: url('../images/art2BloqueLecturasResponsive.webp');
+    }
+    
+    #nutricion {
+        background-image: url('../images/art3BloqueLecturasResponsive.webp');
+    }
+    
+    #bienestar {
+        background-image: url('../images/art4BloqueLecturasResponsive.webp');
+    }
 }
 
 .audio-blocks {
@@ -958,6 +986,32 @@ body.loaded #loader {
 
 #dieta6 {
     background-image: url('../images/plan6BloqueDietas.webp');
+}
+
+@media (max-width: 991px) {
+    #dieta1 {
+        background-image: url('../images/plan1BloqueDietasResponsive.webp');
+    }
+    
+    #dieta2 {
+        background-image: url('../images/plan2BloqueDietasResponsive.webp');
+    }
+    
+    #dieta3 {
+        background-image: url('../images/plan3BloqueDietasResponsive.webp');
+    }
+    
+    #dieta4 {
+        background-image: url('../images/plan4BloqueDietasResponsive.webp');
+    }
+    
+    #dieta5 {
+        background-image: url('../images/plan5BloqueDietasResponsive.webp');
+    }
+    
+    #dieta6 {
+        background-image: url('../images/plan6BloqueDietasResponsive.webp');
+    }
 }
 
 .footer {
