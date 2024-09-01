@@ -330,6 +330,15 @@ body.loaded #loader {
     max-width: 800px;
 }
 
+@media (max-width: 1200px) {
+    .thanks-subtext {
+        font-size: 16px;
+    }
+    .thanks-heading {
+        font-size: 24px;
+    }
+}
+
 .articles {
     max-width: 1400px;
     margin: 0 auto;
@@ -377,7 +386,7 @@ body.loaded #loader {
     color: #fff;
 }
 
-.content h3, .info-content h3 {
+.content h3 {
     font-size: 22.4px;
     font-weight: 600;
     text-decoration: underline;
@@ -389,13 +398,18 @@ body.loaded #loader {
     margin: 5px 0 0;
 }
 
+#share-text {
+    font-size: 22.4px;
+    font-weight: 600;
+}
+
 @media (max-width: 1200px) {
     .articles .block {
         flex: 1 1 calc(50% - 15px);
     }
 
-    .content h3, .info-content h3 {
-        font-size: 19.2px;
+    .content h3, #share-text {
+        font-size: 20px;
     }
     
     .content p, .info-content p {
