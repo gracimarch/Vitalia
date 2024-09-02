@@ -331,12 +331,13 @@ th, td {
 
 td {
     font-family: 'Zilla Slab', Times New Roman, serif;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 th {
     background-color: #eefffe;
     font-family: 'Poppins', Calibri, sans-serif;
+    font-size: 16px;
 }
 
 td:first-child, th:first-child {
