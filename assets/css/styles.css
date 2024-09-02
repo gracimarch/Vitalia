@@ -273,7 +273,7 @@ body.loaded #loader {
     gap: 10px;
 }
 
-.welcome-heading .welcome-name {
+.welcome-name {
     display: inline-block;
     background-image: linear-gradient(45deg, #ff97a1, #f1ba7b, #d4d474, #77b084, #548be4, #c084fc, #e6438c);
     color: transparent;
@@ -282,7 +282,7 @@ body.loaded #loader {
     animation: gradientAnimation 8s linear infinite;
     animation-direction: alternate;
     background-size: 300% 100%;
-    font-weight: 700 !important;
+    font-weight: 700;
 }
 
 @keyframes gradientAnimation {
