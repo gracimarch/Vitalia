@@ -264,7 +264,7 @@ body.loaded #loader {
 }
 
 .item-indice {
-    color: #30cac2;
+    color: #2bc4bc;
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3 ease;
@@ -290,13 +290,53 @@ body.loaded #loader {
 
 .underline {
     text-decoration-line: underline;
-    text-decoration-color: #30cac2;
+    text-decoration-color: #2bc4bc;
     text-decoration-thickness: 2px;
     text-decoration-style: wavy;
 }
 
+.responsive-table {
+    width: 80%;
+    overflow-x: auto;
+    margin: 0 auto;
+    border: 0.05px solid #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    min-width: 150px; /* Set a minimum width for each column */
+}
+
+th {
+    background-color: #eefffe;
+}
+
+/* Ensure the first column is always visible */
+td:first-child, th:first-child {
+    position: sticky;
+    left: 0;
+    background-color: #eefffe;
+    z-index: 1;
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 600px) {
+    th, td {
+        padding: 5px;
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 1200px) {
-    .article {
+    .article { 
         margin: 0 20px;
     }
     
