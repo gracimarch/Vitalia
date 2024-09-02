@@ -184,12 +184,12 @@ body.loaded #loader {
 
 .tittle, .article, .article-tittle{
     opacity: 0;
-    transform: translateY(-5%);
+    transform: translateY(-4%);
 }
 
 .image {
     opacity: 0;
-    transform: translateY(-3%);
+    transform: translateY(-2%);
 }
 
 .animate {
