@@ -388,6 +388,7 @@ body.loaded #loader {
     font-weight: 600;
     text-decoration: underline;
     margin: 0;
+    font-size: 23px;
 }
 
 .content p, .info-content p {
