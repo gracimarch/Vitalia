@@ -656,7 +656,6 @@ body.loaded #loader {
     padding: 20px;
     color: #fff;
     text-decoration: none;
-    box-sizing: border-box;
     transition: all 0.3s ease;
 }
 
@@ -911,7 +910,6 @@ body.loaded #loader {
     padding: 20px;
     color: #fff;
     text-decoration: none;
-    box-sizing: border-box;
     transition: all 0.3s ease;
 }
 
