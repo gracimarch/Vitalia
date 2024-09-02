@@ -180,6 +180,10 @@ body.loaded #loader {
         margin-left: 0;
         margin: 5px;
     }
+
+    .nav-item#last-nav-item {
+        border-bottom: none;
+    }
 }
 
 .tittle, .article, .article-tittle{
