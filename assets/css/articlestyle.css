@@ -230,8 +230,24 @@ body.loaded #loader {
 
 .tittle h1 {
     font-size: 26px;
-    text-align: center;
     font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.reading-time {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 16px;
+}
+
+.reading-time i {
+    font-size: 18px;
+}
+
+.reading-time p {
+    margin: 0;
 }
 
 .image {
