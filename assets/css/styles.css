@@ -76,7 +76,7 @@ body.loaded #loader {
 }
 
 .navbar-brand .logo:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.08);
 }
 
 .navbar-nav .nav-item {
@@ -99,7 +99,7 @@ body.loaded #loader {
 }
 
 .premium:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.08);
 }
 
 .navbar-toggler-icon {
@@ -250,10 +250,11 @@ body.loaded #loader {
 
 .brightness {
     transition: all 0.3s ease !important;
+    filter: brightness(0.96);
 }
 
 .brightness:hover {
-    filter: brightness(1.08);
+    filter: brightness(1.02);
 }
 
 .welcome, .reading, .thanks {
@@ -306,7 +307,7 @@ body.loaded #loader {
 }
 
 .welcome-subtext, .reading-subtext {
-    color: #868686;
+    color: #707070;
     font-size: 19.2px;
     margin: 10px 0 0;
 }
@@ -321,7 +322,7 @@ body.loaded #loader {
 }
 
 .thanks-subtext {
-    color: #838382;
+    color: #707070;
     font-size: 19.2px;
     margin: 15px auto;
     max-width: 800px;
@@ -491,7 +492,7 @@ body.loaded #loader {
 .info-content .btn {
     display: inline-flex;
     align-items: center;
-    background-color: #f47428;
+    background-color: #175f80;
     color: #fff;
     border: none;
     border-radius: 20px;
@@ -510,7 +511,7 @@ body.loaded #loader {
 }
 
 .info-content .btn:hover {
-    background-color: #da631f;
+    background-color: #10597a;
     transform: scale(1.05);
 }
 
@@ -552,7 +553,7 @@ body.loaded #loader {
     line-height: 70px;
     letter-spacing: 1px;
     color: #EEEEED;
-    background-color: #f47428;
+    background-color: #175f80;
     padding: 0 18px;
     transition: all 1.2s ease;
     font-family: 'Zilla Slab', Times New Roman, serif;
@@ -571,7 +572,7 @@ body.loaded #loader {
 }
 
 .btn_wrap .container i:hover {
-    color: #f47428;
+    color: #175f80;
 }
 
 .btn_wrap:hover span {
