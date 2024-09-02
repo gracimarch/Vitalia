@@ -1,95 +1,258 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plan Energía y Vitalidad</title>
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <meta name="description" content="Descubre cuáles son los beneficios de incorporar un enfoque integral en el trabajo y cómo puedes practicarla en tu vida diaria.">
+    <meta name="keywords" content="enfoque integral, mindfulness, bienestar, productividad">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" >
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../assets/css/articlestyle.css">
+
+    <link rel="icon" href="../assets/images/vitaliaLogo.webp" type="image/webp">
+</head>
+    
   <body>
-    <h1>Plan Energía y Vitalidad</h1>
-<hr>
-<h3>Tipo de Alimentación: Balanceada y rica en nutrientes.</h3>
-<h4>Duración: 1 semana</h4>
+    <!-- Pantalla de carga -->
+    <div id="loader">
+        <l-hourglass size="40" bg-opacity="0.1" speed="1.75" color="#7134A2"></l-hourglass>
+    </div>
 
-<h2>Objetivo y Descripción General:</h2>
-<p>Este plan está diseñado para personas que buscan mantener altos niveles de energía y vitalidad a lo largo de la semana.</p>
-<p>La dieta se basa en alimentos integrales y densos en nutrientes, con un enfoque en vitaminas, minerales, y superalimentos que combaten el cansancio y apoyan la salud general. El objetivo es optimizar la energía mediante la ingesta de alimentos fáciles de digerir, ricos en fibra, y con propiedades antioxidantes, evitando el consumo excesivo de calorías que puedan sobrecargar el sistema digestivo.</p>
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container" id="nav-header">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/images/vitaliaLogoNavBar.webp" alt="Vitalia Logo" class="logo">
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <div class="middle"></div>
+                    </span>
+                </button>                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item" id="first-nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Mi espacio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Acerca de</a>
+                        </li>
+                    </ul>
+                <div class="d-none d-lg-flex align-items-center">
+                    <a class="nav-link" href="#">
+                        <img src="../assets/images/coronaIconoNavbar.webp" alt="Premium" class="premium">
+                    </a>
+                </div>
+                    <div class="d-lg-none">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item" id="last-nav-item">
+                                <a class="nav-link" href="#">Premium</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-<h1>Estructura Diaria:</h1>
-<table>
-  <tr>
-    <th>Tipo de Comida</th>
-    <th>Lunes</th>
-    <th>Martes</th>
-    <th>Miércoles</th>
-    <th>Jueves</th>
-    <th>Viernes</th>
-    <th>Sábado</th>
-    <th>Domingo</th>
-  </tr>
-  <tr>
-    <td><strong>Desayuno</strong></td>
-    <td>Smoothie verde (1 taza de espinaca, 1 plátano, 1 manzana, 1/2 taza de avena, 1 taza de leche).</td>
-    <td>Avena cocida (1/2 taza) con semillas de chía (1 cucharada), plátano en rodajas y una pizca de canela.</td>
-    <td>Yogur natural (1 taza) con granola casera y frutos rojos (1/2 taza).</td>
-    <td>Tostadas de pan integral con palta y huevo pochado (1 huevo).</td>
-    <td>Smoothie de mango y jengibre (1 taza de mango, 1/2 cucharadita de jengibre fresco rallado, 1 taza de yogur griego).</td>
-    <td>Panqueques de avena (1/2 taza de avena, 1 huevo, 1/2 taza de leche de almendras, miel y frutos rojos para servir).</td>
-    <td>Tostadas de pan integral con queso ricotta, miel y nueces.</td>
-  </tr>
-  <tr>
-    <td><strong>Almuerzo</strong></td>
-    <td>Ensalada de quinoa con garbanzos (1/2 taza de quinoa cocida, 1/2 taza de garbanzos cocidos, 1/4 palta, 1/2 taza de tomate cherry, pepino en rodajas, aderezo de limón).</td>
-    <td>Wrap de espinacas y hummus (1 tortilla de trigo integral, 1/2 taza de espinaca, 1/4 taza de hummus, zanahoria rallada).</td>
-    <td>Pasta integral con salsa de tomate y albahaca, acompañada de una ensalada verde.</td>
-    <td>Ensalada de lentejas (1/2 taza de lentejas cocidas, pepino, tomate, cebolla morada, aderezo de vinagreta).</td>
-    <td>Sopa de verduras (calabacín, zanahoria, apio) con garbanzos.</td>
-    <td>Ensalada de cuscús con garbanzos, pepino, tomate y menta.</td>
-    <td>Pizza casera de masa integral con tomate, albahaca, y queso mozzarella.</td>
-  </tr>
-  <tr>
-    <td><strong>Cena</strong></td>
-    <td>Salmón al horno (150g) con brócoli y zanahorias asadas (1 taza de cada uno).</td>
-    <td>Pechuga de pollo a la plancha (150g) con ensalada de rúcula, tomate y aguacate.</td>
-    <td>Tacos de pescado (150g de pescado blanco, tortillas de maíz, repollo rallado, aguacate).</td>
-    <td>Omelette de espinacas y champiñones con una rebanada de pan integral.</td>
-    <td>Pescado al vapor (150g) con arroz integral y espárragos.</td>
-    <td>Pollo al curry con arroz basmati y espinacas.</td>
-    <td>Ensalada de pollo a la parrilla con espinacas, fresas y nueces.</td>
-  </tr>
-  <tr>
-    <td><strong>Snacks</strong></td>
-    <td>Yogur griego (1/2 taza) con arándanos (1/4 taza) y nueces (1 cucharada).</td>
-    <td>Manzana.</td>
-    <td>Palitos de zanahoria con hummus.</td>
-    <td>Batido de frutas (1/2 taza de fresas, 1/2 plátano, 1 taza de leche de avena).</td>
-    <td>Almendras (1/4 taza) y una pieza de fruta (manzana o pera).</td>
-    <td>Yogur griego con miel y nueces.</td>
-    <td>Frutas frescas de temporada.</td>
-  </tr>
-</table>
+    <div class="pagina">
+        <div class="tittle">
+            <h2>Tipo de Alimentación: Balanceada y rica en nutrientes.</h3>
+            <h1>Plan Energía y Vitalidad</h1>
+            <div class="reading-time">
+                <i class="bi bi-clock" alt="Ícono de reloj"></i>
+                <p>Duración: 1 semana</p>
+            </div>
+        </div>
+    
+        <div class="article">
+            <p>Este plan está diseñado para personas que buscan mantener altos niveles de energía y vitalidad a lo largo de la semana.</p>
+            <p>La dieta se basa en alimentos integrales y densos en nutrientes, con un enfoque en vitaminas, minerales, y superalimentos que combaten el cansancio y apoyan la salud general. El objetivo es optimizar la energía mediante la ingesta de alimentos fáciles de digerir, ricos en fibra, y con propiedades antioxidantes, evitando el consumo excesivo de calorías que puedan sobrecargar el sistema digestivo.</p>
+        </div>
+    
+        <div class="article-tittle">
+            <h3>Estructura Diaria:</h3>
+        </div>
 
-<h2>Variaciones:</h2>
-<ul>
-  <li>Para celíacos: Sustituye la avena por avena sin gluten y las tortillas de trigo por tortillas de maíz.</li>
-  <li>Para intolerantes a la lactosa: Reemplaza el yogur y la leche con versiones sin lácteos.</li>
-  <li>Para vegetarianos: Sustituye el pollo y pescado por tofu o tempeh en las recetas.</li>
-</ul>
+    </div>
 
-<h2>Lista de Compras:</h2>
-<ul>
-  <li>Proteínas: Salmón, pechuga de pollo, pescado blanco, huevos, yogur griego.</li>
-  <li>Cereales y Legumbres: Avena, quinoa, arroz integral, pasta integral, lentejas, garbanzos, cuscús.</li>
-  <li>Frutas y Verduras: Espinacas, plátanos, manzanas, fresas, arándanos, tomate, pepino, zanahorias, brócoli, aguacate, champiñones, espárragos.</li>
-  <li>Lácteos y Sustitutos: Leche de almendras, queso ricotta.</li>
-  <li>Otros: Tortillas de trigo o maíz, semillas de chía, nueces, almendras, miel, especias (jengibre, canela, romero, menta), aceite de oliva, vinagreta.</li>
-</ul>
+    <div class="responsive-table">
+        <table>
+            <tr>
+                <th>Tipo de Comida</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+                <th>Sábado</th>
+                <th>Domingo</th>
+            </tr>
+            <tr>
+                <td><strong>Desayuno</strong></td>
+                <td>Smoothie verde (1 taza de espinaca, 1 plátano, 1 manzana, 1/2 taza de avena, 1 taza de leche).</td>
+                <td>Avena cocida (1/2 taza) con semillas de chía (1 cucharada), plátano en rodajas y una pizca de canela.</td>
+                <td>Yogur natural (1 taza) con granola casera y frutos rojos (1/2 taza).</td>
+                <td>Tostadas de pan integral con palta y huevo pochado (1 huevo).</td>
+                <td>Smoothie de mango y jengibre (1 taza de mango, 1/2 cucharadita de jengibre fresco rallado, 1 taza de yogur griego).</td>
+                <td>Panqueques de avena (1/2 taza de avena, 1 huevo, 1/2 taza de leche de almendras, miel y frutos rojos para servir).</td>
+                <td>Tostadas de pan integral con queso ricotta, miel y nueces.</td>
+            </tr>
+            <tr>
+                <td><strong>Almuerzo</strong></td>
+                <td>Ensalada de quinoa con garbanzos (1/2 taza de quinoa cocida, 1/2 taza de garbanzos cocidos, 1/4 palta, 1/2 taza de tomate cherry, pepino en rodajas, aderezo de limón).</td>
+                <td>Wrap de espinacas y hummus (1 tortilla de trigo integral, 1/2 taza de espinaca, 1/4 taza de hummus, zanahoria rallada).</td>
+                <td>Pasta integral con salsa de tomate y albahaca, acompañada de una ensalada verde.</td>
+                <td>Ensalada de lentejas (1/2 taza de lentejas cocidas, pepino, tomate, cebolla morada, aderezo de vinagreta).</td>
+                <td>Sopa de verduras (calabacín, zanahoria, apio) con garbanzos.</td>
+                <td>Ensalada de cuscús con garbanzos, pepino, tomate y menta.</td>
+                <td>Pizza casera de masa integral con tomate, albahaca, y queso mozzarella.</td>
+            </tr>
+            <tr>
+                <td><strong>Cena</strong></td>
+                <td>Salmón al horno (150g) con brócoli y zanahorias asadas (1 taza de cada uno).</td>
+                <td>Pechuga de pollo a la plancha (150g) con ensalada de rúcula, tomate y aguacate.</td>
+                <td>Tacos de pescado (150g de pescado blanco, tortillas de maíz, repollo rallado, aguacate).</td>
+                <td>Omelette de espinacas y champiñones con una rebanada de pan integral.</td>
+                <td>Pescado al vapor (150g) con arroz integral y espárragos.</td>
+                <td>Pollo al curry con arroz basmati y espinacas.</td>
+                <td>Ensalada de pollo a la parrilla con espinacas, fresas y nueces.</td>
+            </tr>
+            <tr>
+                <td><strong>Snacks</strong></td>
+                <td>Yogur griego (1/2 taza) con arándanos (1/4 taza) y nueces (1 cucharada).</td>
+                <td>Manzana.</td>
+                <td>Palitos de zanahoria con hummus.</td>
+                <td>Batido de frutas (1/2 taza de fresas, 1/2 plátano, 1 taza de leche de avena).</td>
+                <td>Almendras (1/4 taza) y una pieza de fruta (manzana o pera).</td>
+                <td>Yogur griego con miel y nueces.</td>
+                <td>Frutas frescas de temporada.</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="pagina">
 
-<h2>Sugerencias Adicionales:</h2>
-<ol>
-  <li>Hidratación: Bebe al menos 8 vasos de agua al día. Considera infusiones de menta o jengibre para un extra de energía.</li>
-  <li>Tiempos de Comida: Intenta comer a las mismas horas todos los días para regular el metabolismo.</li>
-  <li>Adherencia: Prepara algunas comidas o ingredientes con anticipación, como cocinar la quinoa o cortar las verduras, para facilitar la preparación diaria.</li>
-</ol>
-<p>Este plan está diseñado para maximizar tu energía y bienestar, proporcionando todos los nutrientes necesarios para mantener tu cuerpo y mente activos. ¡Mucha suerte con tu plan de comidas y que tengas un buen comienzo de semana!</p>
-      
-  </body>
+        <div class="article-tittle">
+            <h3>Variaciones:</h3>
+        </div>
+    
+        <div class="article">
+            <ul>
+                <li>Para celíacos: Sustituye la avena por avena sin gluten y las tortillas de trigo por tortillas de maíz.</li>
+                <li>Para intolerantes a la lactosa: Reemplaza el yogur y la leche con versiones sin lácteos.</li>
+                <li>Para vegetarianos: Sustituye el pollo y pescado por tofu o tempeh en las recetas.</li>
+            </ul>
+        </div>
+    
+        <div class="article-tittle">
+            <h3>Lista de compras</h3>
+        </div>
+        
+        <div class="article">
+            <ul>
+                <li>Proteínas: Salmón, pechuga de pollo, pescado blanco, huevos, yogur griego.</li>
+                <li>Cereales y Legumbres: Avena, quinoa, arroz integral, pasta integral, lentejas, garbanzos, cuscús.</li>
+                <li>Frutas y Verduras: Espinacas, plátanos, manzanas, fresas, arándanos, tomate, pepino, zanahorias, brócoli, aguacate, champiñones, espárragos.</li>
+                <li>Lácteos y Sustitutos: Leche de almendras, queso ricotta.</li>
+                <li>Otros: Tortillas de trigo o maíz, semillas de chía, nueces, almendras, miel, especias (jengibre, canela, romero, menta), aceite de oliva, vinagreta.</li>
+            </ul>
+        </div>
+    
+        <div class="article-tittle">
+            <h3>Sugerencias Adicionales:</h3>
+        </div>
+    
+        <div class="article">
+            <ol>
+                <li>Hidratación: Bebe al menos 8 vasos de agua al día. Considera infusiones de menta o jengibre para un extra de energía.</li>
+                <li>Tiempos de Comida: Intenta comer a las mismas horas todos los días para regular el metabolismo.</li>
+                <li>Adherencia: Prepara algunas comidas o ingredientes con anticipación, como cocinar la quinoa o cortar las verduras, para facilitar la preparación diaria.</li>
+            </ol>
+            <p>Este plan está diseñado para maximizar tu energía y bienestar, proporcionando todos los nutrientes necesarios para mantener tu cuerpo y mente activos. ¡Mucha suerte con tu plan de comidas y que tengas un buen comienzo de semana!</p>
+        </div>
+
+    </div>
+    
+        <!-- Pie de página-->
+        <footer class="footer row py-5 border-top">
+          <div class="col-lg-4 col-md-6 mb-3">
+              <a href="#" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                  <img src="../assets/images/vitaliaLogoFooter.webp" alt="Logo de Vitalia" class="footer-logo">
+              </a>
+              <div class="footer-socials">
+                  <a href="https://www.facebook.com" target="_blank" class="social-icon" alt="Ícono de Facebook, Vitalia">
+                      <i class="bi bi-facebook"></i>
+                  </a>
+                  <a href="https://www.instagram.com/vitalia.selfcare/" target="_blank" class="social-icon" alt="Ícono de Instagram, Vitalia">
+                      <i class="bi bi-instagram"></i>
+                  </a>
+                  <a href="mailto:vitalia.selfcare@gmail.com?subject=Consulta%20-%20Vitalia&body=Me%20comunicaba%20porque..." target="_blank" class="social-icon" alt="Ícono de E-mail, Vitalia">
+                      <i class="bi bi-envelope-fill"></i>
+                  </a>
+              </div>
+              <div class="footer-links">
+                  <a href="../assets/documentos/política-de-privacidad.pdf" target="_blank" class="footer-link">Políticas de Privacidad</a>
+                  <span class="separator">|</span>
+                  <a href="../assets/documentos/términos-y-condiciones.pdf" target="_blank" class="footer-link">Términos y Condiciones</a>
+              </div>
+              <p class="text-body-secondary rights">&copy; 2024 Vitalia. Todos los derechos resevardos.</p>
+          </div>
+          
+          <div class="col">
+          </div>
+  
+          <div class="col-lg-2 col-md-6 mb-3 div-space">
+              <h4 class="subtittle">Blog</h4>
+              <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Productividad</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Actividad física y emocional</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Hábitos alimenticios</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Salud mental y bienestar</a></li>
+              </ul>
+          </div>
+          
+          <div class="col-lg-2 col-md-6 mb-3">
+              <h4 class="subtittle">Mi espacio</h4>
+              <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="../index.html#lecturas-recomendadas" class="nav-link p-0 text-body-secondary">Artículos recomendados</a></li>
+                  <li class="nav-item mb-2"><a href="../index.html#ejercicios" class="nav-link p-0 text-body-secondary">Rutinas de ejercicio</a></li>
+                  <li class="nav-item mb-2"><a href="../index.html#meditaciones" class="nav-link p-0 text-body-secondary">Meditaciones</a></li>
+                  <li class="nav-item mb-2"><a href="../index.html#alimentaciones" class="nav-link p-0 text-body-secondary">Planes alimenticios</a></li>
+              </ul>
+          </div>
+          
+          <div class="col-lg-2 col-md-6 mb-3">
+              <h4 class="subtittle">Acerca de</h4>
+              <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">¿Qué es Vitalia?</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Preguntas frecuentes</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">¿Quiénes somos?</a></li>
+              </ul>
+          </div>
+      </footer>
+  
+      <!-- Botón que desplaza hasta arriba -->
+      <button id="scrollToTop" aria-label="Volver arriba">
+          <i class="bi bi-chevron-up" alt="Ícono para subir"></i>
+      </button>
+  
+      <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hourglass.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="../assets/js/articlescript.js"></script>
+
+</body>
 </html>
