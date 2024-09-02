@@ -182,13 +182,14 @@ body.loaded #loader {
     }
 }
 
-.tittle, .article, .article-tittle {
-    opacity: 0;
-    transform: translateY(-10%);
-}
-.image {
+.tittle, .article, .article-tittle{
     opacity: 0;
     transform: translateY(-5%);
+}
+
+.image {
+    opacity: 0;
+    transform: translateY(-3%);
 }
 
 .animate {
