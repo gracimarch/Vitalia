@@ -337,7 +337,7 @@ td:first-child, th:first-child {
     position: sticky;
     left: 0;
     background-color: #eefffe;
-    z-index: 1;
+    z-index: 6;
     font-family: 'Poppins', Calibri, sans-serif;
 }
 
@@ -381,9 +381,14 @@ td:first-child, th:first-child {
         font-size: 22px;
         margin: 0 15px;
     }
-    th, td {
-        padding: 5px;
-        font-size: 16px;
+
+    td:first-child, th {
+        position: sticky;
+        left: 0;
+        background-color: #eefffe;
+        z-index: 1;
+        font-family: 'Poppins', Calibri, sans-serif;
+        font-size: 15px;
     }
 }
 
