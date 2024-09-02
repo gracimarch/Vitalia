@@ -381,6 +381,10 @@ td:first-child, th:first-child {
         font-size: 22px;
         margin: 0 15px;
     }
+    th, td {
+        padding: 5px;
+        font-size: 16px;
+    }
 }
 
 #scrollToTop {
