@@ -14,7 +14,7 @@ body {
 }
 
 .pagina {
-    padding-top: 100px;
+    margin-top: 100px;
 }
 
 #loader {
@@ -84,21 +84,12 @@ body.loaded #loader {
 }
 
 .navbar-nav .nav-link {
-    color: #727272;
+    color: #333;
     transition: all 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
     color: #9d60cf;
-}
-
-#miespacio {
-    color: #292929;
-    font-weight: 600;
-}
-
-#miespacio:hover {
-    color: #8a4cbd;
 }
 
 .premium {
@@ -166,6 +157,9 @@ body.loaded #loader {
 }
 
 @media (max-width: 991px) {
+    .header {
+        padding: 10px 0;
+    }
 
     .navbar-collapse {
         padding: 15px 0;
