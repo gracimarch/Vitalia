@@ -58,7 +58,7 @@ body.loaded #loader {
 }
 
 .header .container {
-    max-width: 1200px;
+    max-width: 1170px;
     margin: 0 auto;
 }
 
@@ -145,12 +145,6 @@ body.loaded #loader {
     transform: rotate(-45deg) translateY(50%);
 }
 
-.navbar-toggler-icon .middle {
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.4s ease;
-}
-
 .navbar-toggler:not(.collapsed) .navbar-toggler-icon .middle {
     width: 0;
     opacity: 0;
@@ -158,7 +152,7 @@ body.loaded #loader {
 
 @media (max-width: 991px) {
     .header {
-        padding: 10px 0;
+        padding: 10px;
     }
 
     .navbar-nav .nav-item#first-nav-item {
@@ -174,16 +168,22 @@ body.loaded #loader {
 
     .navbar-nav .nav-item {
         border-bottom: 1px solid #ddd;
-    }
-
-    .navbar-nav .nav-item {
-        margin-left: 0;
-        margin: 5px;
+        margin: 5px 0;
     }
 
     .nav-item#last-nav-item {
         border-bottom: none;
     }
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 28px;
+    height: 18px;
+    vertical-align:
+    middle;content:"";
+    background: no-repeat center center;
+    background-size: 100% 100%;
 }
 
 .articles .block, .lecturas .block, .reading .reading-section, .welcome .welcome-section, .thanks .thanks-section, .audio-blocks .audio-block {
@@ -699,6 +699,10 @@ body.loaded #loader {
 
     .lecturas .block .reading-time img {
         width: 15px;
+    }
+
+    .articles, .lecturas, .audio-blocks, .ejercicios {
+        padding: 10px;
     }
 }
 
