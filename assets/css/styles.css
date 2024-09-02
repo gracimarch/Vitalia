@@ -384,8 +384,7 @@ body.loaded #loader {
     color: #fff;
 }
 
-.content h3 {
-    font-size: 22.4px;
+.content h4 {
     font-weight: 600;
     text-decoration: underline;
     margin: 0;
@@ -406,7 +405,7 @@ body.loaded #loader {
         flex: 1 1 calc(50% - 15px);
     }
 
-    .content h3, #share-text {
+    .content h4, #share-text {
         font-size: 20px;
     }
     
