@@ -34,18 +34,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
-    // Audios y botones de play/pause
+    // Manejador de audios y botones de play/pause
     document.querySelectorAll('.audio-button').forEach(button => {
         button.addEventListener('click', function () {
             const audio = this.nextElementSibling.querySelector('audio');
             const playPauseBtnImg = this.querySelector('img');
-    
+        
             // Detener el audio actual si es diferente al nuevo
             if (currentAudio && currentAudio !== audio) {
                 currentAudio.pause();
                 currentAudioButton.querySelector('img').src = 'assets/images/reproducirIconoMeditaciones.webp';
             }
-    
+        
             // Reproducir o pausar el audio
             if (audio.paused) {
                 audio.play();
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentAudio = null;
                 currentAudioButton = null;
             }
-    
+        
             // Restablecer el botón cuando el audio termine
             audio.addEventListener('ended', function () {
                 playPauseBtnImg.src = 'assets/images/reproducirIconoMeditaciones.webp';
@@ -68,46 +68,60 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Barra de progreso del audio
+    // Función para actualizar la barra de progreso y el tiempo actual
     const updateProgressBar = (audio, progressBar, currentTimeDisplay) => {
-        const duration = audio.duration;
-        const currentTime = audio.currentTime;
-        const percentage = (currentTime / duration) * 100;
+        if (audio.duration) {
+            const duration = audio.duration;
+            const currentTime = audio.currentTime;
+            const percentage = (currentTime / duration) * 100;
 
-        progressBar.style.width = percentage + '%';
-        currentTimeDisplay.textContent = formatTime(currentTime);
+            progressBar.style.width = percentage + '%';
+            if (currentTimeDisplay) {
+                currentTimeDisplay.textContent = formatTime(currentTime);
+            }
+        }
     };
 
+    // Función para formatear el tiempo en minutos y segundos
     function formatTime(seconds) {
         const minutes = Math.floor(seconds / 60);
         const secs = Math.floor(seconds % 60);
         return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
     }
 
+    // Configuración de cada reproductor de audio
     document.querySelectorAll('.custom-audio-player').forEach(player => {
         const audio = player.querySelector('audio');
         const progressBar = player.querySelector('.progress-bar');
         const currentTimeDisplay = player.querySelector('.current-time');
         const durationDisplay = player.querySelector('.duration-time');
-
-        audio.addEventListener('timeupdate', function () {
-            updateProgressBar(audio, progressBar, currentTimeDisplay);
-        });
-
-        audio.addEventListener('loadedmetadata', function () {
-            durationDisplay.textContent = formatTime(audio.duration);
-        });
-
-        progressBar.addEventListener('click', function (e) {
-            const rect = progressBar.getBoundingClientRect();
-            const offsetX = e.clientX - rect.left;
-            const width = rect.width;
-            const percentage = offsetX / width;
-            const newTime = percentage * audio.duration;
-
-            audio.currentTime = newTime;
-        });
-    });
+    
+        if (audio && progressBar && currentTimeDisplay) {
+            // Actualiza la barra de progreso durante la reproducción
+            audio.addEventListener('timeupdate', function () {
+                updateProgressBar(audio, progressBar, currentTimeDisplay);
+            });
+    
+            // Muestra la duración total del audio cuando se carga la metadata
+            audio.addEventListener('loadedmetadata', function () {
+                if (durationDisplay) {
+                    durationDisplay.textContent = formatTime(audio.duration);
+                }
+            });
+    
+            // Permite hacer clic en la barra de progreso para cambiar el tiempo de reproducción
+            progressBar.parentElement.addEventListener('click', function (e) {
+                const rect = this.getBoundingClientRect();
+                const offsetX = e.clientX - rect.left;
+                const width = rect.width;
+                const percentage = offsetX / width;
+                const newTime = percentage * audio.duration;
+    
+                audio.currentTime = newTime;
+                updateProgressBar(audio, progressBar, currentTimeDisplay);
+            });
+        }
+    });    
 
     // Animación de desplazamiento suave del header
     window.addEventListener('scroll', function () {
