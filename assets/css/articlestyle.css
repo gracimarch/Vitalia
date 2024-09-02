@@ -298,10 +298,15 @@ body.loaded #loader {
     text-decoration-style: wavy;
 }
 
+.container-table {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
 .responsive-table {
-    width: 80%;
+    max-width: 1400px;
     overflow-x: auto;
-    margin: 0 auto;
     border: 0.05px solid #ddd;
 }
 
@@ -328,7 +333,6 @@ th {
     font-family: 'Poppins', Calibri, sans-serif;
 }
 
-/* Ensure the first column is always visible */
 td:first-child, th:first-child {
     position: sticky;
     left: 0;
