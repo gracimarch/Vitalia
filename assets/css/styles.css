@@ -161,8 +161,8 @@ body.loaded #loader {
         padding: 10px 0;
     }
 
-    .navbar-collapse {
-        padding: 15px 0;
+    .navbar-nav .nav-item#first-nav-item {
+        padding-top: 20px;
     }
 
     .navbar-toggler {
