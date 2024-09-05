@@ -190,10 +190,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Función para compartir en LinkedIn
-    document.getElementById("shareLinkedIn").addEventListener("click", function() {
-        const text = "Hoy elige cuidarte con amor y paciencia. Frase del día de Vitalia, únete en https://vitalia-selfcare.vercel.app/ 🧘‍♀️🌷";
-        const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(text)}`;
-        window.open(url, '_blank', 'noopener,noreferrer');
+    document.getElementById('shareLinkedIn').addEventListener('click', function() {
+        const currentPhrase = getDisplayedPhrase();
+        const url = `https://www.linkedin.com/shareArticle?mini=true&url=https://vitalia-selfcare.vercel.app/&title=${encodeURIComponent(currentPhrase + "Frase del día de Vitalia, únete en https://vitalia-selfcare.vercel.app/ 🧘‍♀️🌷")}`;
+        window.open(url, '_blank');
     });
 
     // Función para compartir en Twitter
