@@ -182,6 +182,32 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-
     document.getElementById("share-text").textContent = `"${randomPhrase}"`;
+
+    // Función para obtener la frase que se está mostrando
+    function getDisplayedPhrase() {
+        return document.getElementById("share-text").textContent;
+    }
+
+    // Función para compartir en LinkedIn
+    document.getElementById("shareLinkedIn").addEventListener("click", function() {
+        const text = "Hoy elige cuidarte con amor y paciencia. Frase del día de Vitalia, únete en https://vitalia-selfcare.vercel.app/ 🧘‍♀️🌷";
+        const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(text)}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+    });
+
+    // Función para compartir en Twitter
+    document.getElementById('shareTwitter').addEventListener('click', function() {
+        const currentPhrase = getDisplayedPhrase();
+        const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(currentPhrase + ". Frase del día de Vitalia, únete en https://vitalia-selfcare.vercel.app/ 🧘‍♀️🌷")}`;
+        window.open(url, '_blank');
+    });
+
+    // Función para compartir en WhatsApp
+    document.getElementById('shareWhatsApp').addEventListener('click', function() {
+        const currentPhrase = getDisplayedPhrase();
+        const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(currentPhrase + ". Frase del día de Vitalia, únete en https://vitalia-selfcare.vercel.app/ 🧘‍♀️🌷")}`;
+        window.open(url, '_blank');
+    });
+
 });
