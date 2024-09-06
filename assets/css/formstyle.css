@@ -97,7 +97,7 @@ body.loaded #loader {
 .img-contain {
     position: relative;
     display: flex;
-    align-items: center; /* Centra verticalmente la imagen dentro de su contenedor */
+    align-items: center;
     flex: 1;
     max-width: 400px;
     height: 100%;
@@ -107,10 +107,10 @@ body.loaded #loader {
 .img-contain img {
     position: absolute;
     width: 100%;
-    max-width: 100%; /* Asegura que la imagen no desborde su contenedor */
+    max-width: 100%;
     height: auto;
-    margin: 0; /* Elimina cualquier margin interno de la imagen */
-    padding: 0; /* Elimina cualquier padding interno de la imagen */
+    margin: 0;
+    padding: 0;
 }
 
 #logo img {
@@ -209,13 +209,13 @@ body.loaded #loader {
 
 .form-row-name {
     display: flex;
-    flex-direction: row; /* Cambiamos a fila */
+    flex-direction: row;
     width: 100%;
-    justify-content: space-between; /* Añade espacio entre los elementos */
+    justify-content: space-between;
 }
 
 .half-width {
-    width: 48%; /* Asignamos un ancho del 48% a cada input para que quepan en una línea */
+    width: 48%;
 }
 
 #accept-terms {
@@ -293,7 +293,6 @@ input {
     border: none;
 }
 
-/* Hover effects for buttons */
 .prev-btn:hover, .next-btn:hover, .send-btn:hover {
     background-color: #af4de0;
     color: #fff;
@@ -306,25 +305,21 @@ input {
     margin: 0 auto;
 }
 
-/* Initially hide the "Atrás" button without animation */
 .prev-btn {
     display: none;
     opacity: 0;
 }
 
-/* Initially hide the "Enviar" button */
 .send-btn.hidden {
     display: none;
     opacity: 0;
 }
 
-/* Initially show the "Continuar →" button */
 .next-btn.hidden {
     display: none;
     opacity: 0;
 }
 
-/* Animation for sliding the 'Atrás' button in from the right */
 @keyframes slideInFromRight {
     from {
         transform: translateX(30px);
@@ -336,7 +331,6 @@ input {
     }
 }
 
-/* Animation for sliding the 'Atrás' button out to the right */
 @keyframes slideOutToRight {
     from {
         transform: translateX(0);
@@ -348,7 +342,6 @@ input {
     }
 }
 
-/* Animation for the 'Continuar →' button sliding out to the left */
 @keyframes slideOutToLeft {
     from {
         transform: translateX(0);
@@ -360,7 +353,6 @@ input {
     }
 }
 
-/* Animation for the 'Enviar' button sliding in from the left */
 @keyframes slideInFromLeft {
     from {
         transform: translateX(-30px);
@@ -372,50 +364,38 @@ input {
     }
 }
 
-/* When the 'Atrás' button is active, apply slide-in animation */
 .prev-btn.active {
     display: inline-block;
     animation: slideInFromRight 0.6s ease forwards;
 }
 
-/* Apply slide-out animation when hiding */
 .prev-btn.hidden {
     animation: slideOutToRight 0.6s ease forwards;
     opacity: 0;
-    pointer-events: none; /* Disable interaction during the hiding animation */
+    pointer-events: none;
 }
 
-/* Apply slide-out animation for the 'Continuar →' button when hiding */
 .next-btn.hidden {
     animation: slideOutToLeft 0.6s ease forwards;
     opacity: 0;
-    pointer-events: none; /* Disable interaction during the hiding animation */
+    pointer-events: none;
 }
 
-/* When the 'Continuar →' button is active, apply slide-in animation */
 .next-btn.active {
     display: inline-block;
     animation: slideInFromLeft 0.6s ease forwards;
 }
 
-/* When the 'Enviar' button is active, apply slide-in animation */
 .send-btn.active {
     display: inline-block;
     animation: slideInFromLeft 0.6s ease forwards;
     opacity: 1;
 }
 
-/* Apply slide-out animation when hiding */
 .send-btn.hidden {
     animation: slideOutToLeft 0.6s ease forwards;
     opacity: 0;
-    pointer-events: none; /* Disable interaction during the hiding animation */
-}
-
-.error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
+    pointer-events: none;
 }
 
 .hidden {
