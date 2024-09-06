@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector("form");
-    const submitButton = document.querySelector(".send-btn");
+    // Selección del formulario
+    const form = document.getElementById('myForm');
 
     // Función para validar los campos del formulario
     function validateForm() {
         let isValid = true;
         const errorMessages = new Set();
-        const fields = form.querySelectorAll("input[required], select[required], textarea[required]");
+        const fields = form.querySelectorAll("input[required], select[required]");
         const emailInputs = form.querySelectorAll("input[type='email']");
         const passwordInputs = form.querySelectorAll("input[type='password']");
         const checkboxes = form.querySelectorAll("input[type='checkbox'][required]");
@@ -35,10 +35,16 @@ document.addEventListener("DOMContentLoaded", function() {
         passwordInputs.forEach(passwordInput => {
             if (!validatePassword(passwordInput.value)) {
                 passwordInput.classList.add('error');
-                errorMessages.add("— La contraseña debe tener mínimo 6 caracteres y contener al menos una letra mayúscula, una minúscula y un número.");
+                errorMessages.add("— La contraseña debe tener al menos una letra mayúscula, una minúscula y un número.");
                 isValid = false;
             }
         });
+
+        if (passwordInputs[0].value !== passwordInputs[1].value) {
+            passwordInputs[1].classList.add('error');
+            errorMessages.add("— Las contraseñas no coinciden.");
+            isValid = false;
+        }
 
         const checkedCheckboxes = Array.from(checkboxes).some(checkbox => checkbox.checked);
         if (!checkedCheckboxes) {
@@ -54,13 +60,18 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
+        // Validación de términos y condiciones
+        const termsCheckbox = document.getElementById('terms');
+        if (!termsCheckbox.checked) {
+            errorMessages.add("— Debe aceptar los términos y condiciones.");
+            isValid = false;
+        }
+
         if (!isValid) {
             alert(Array.from(errorMessages).join('\n'));
         } else {
             alert("Formulario enviado correctamente.");
         }
-
-        return isValid;
     }
 
     function validateEmail(email) {
@@ -73,37 +84,6 @@ document.addEventListener("DOMContentLoaded", function() {
         return regex.test(password);
     }
 
-    // Función para capturar los datos del formulario
-    function captureFormData() {
-        const formData = {};
-        const inputs = form.querySelectorAll("input, select, textarea");
-
-        inputs.forEach(input => {
-            if (input.type === "checkbox" || input.type === "radio") {
-                if (input.checked) {
-                    if (!formData[input.name]) {
-                        formData[input.name] = [];
-                    }
-                    formData[input.name].push(input.value);
-                }
-            } else {
-                formData[input.name || input.id] = input.value.trim();
-            }
-        });
-
-        console.log("Datos del formulario:", formData);
-    }
-
-    // Asegúrate de que el listener no se añada más de una vez
-    function handleSubmit(event) {
-        console.log("Submit button clicked");
-        event.preventDefault(); // Evitar la recarga de la página
-        if (validateForm()) {
-            captureFormData(); // Captura y muestra los datos en consola
-        }
-    }
-
-    // Limpia cualquier listener previo para evitar duplicaciones
-    submitButton.removeEventListener("click", handleSubmit);
-    submitButton.addEventListener("click", handleSubmit);
+    // Añadir eventos a los botones
+    document.querySelector('.send-btn').addEventListener('click', validateForm);
 });
