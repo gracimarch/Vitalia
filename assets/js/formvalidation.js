@@ -1,115 +1,107 @@
-// Selección del formulario y botón de envío
-const form = document.getElementById('myForm');
-const submitButton = document.querySelector('.send-btn');
-let hasSubmitted = false; // Bandera para controlar el envío
-
-// Función para validar los campos del formulario
-function validateForm() {
-    let isValid = true;
-    const errorMessages = new Set();
-    const fields = form.querySelectorAll("input[required], select[required], textarea[required]");
-    const emailInputs = form.querySelectorAll("input[type='email']");
-    const passwordInputs = form.querySelectorAll("input[type='password']");
-    const checkboxes = form.querySelectorAll("input[type='checkbox'][required]");
-    const radios = form.querySelectorAll("input[type='radio'][required]");
-
-    // Limpiar errores
-    fields.forEach(field => field.classList.remove('error'));
-    emailInputs.forEach(emailInput => emailInput.classList.remove('error'));
-    passwordInputs.forEach(passwordInput => passwordInput.classList.remove('error'));
-
-    // Validar campos requeridos
-    fields.forEach(field => {
-        if (!field.value.trim()) {
-            field.classList.add('error');
-            errorMessages.add("— Todos los campos de texto deben ser completados.");
-            isValid = false;
+$(document).ready(function() {
+    function validateForm() {
+        // Validación de email
+        const email = $('input[type="email"]').val();
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert("Por favor, ingrese un correo electrónico válido.");
+            return false;
         }
-    });
 
-    // Validar correos electrónicos
-    emailInputs.forEach(emailInput => {
-        if (!validateEmail(emailInput.value)) {
-            emailInput.classList.add('error');
-            errorMessages.add("— Ingrese una dirección de correo electrónico válida.");
-            isValid = false;
+        // Validación de nombre y apellido
+        const firstName = $('#firstName').val();
+        const lastName = $('#lastName').val();
+        const nombrePattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]{1,30}$/; // Validación para nombres con máximo 30 caracteres
+        if (!nombrePattern.test(firstName) || !nombrePattern.test(lastName)) {
+            alert("Por favor, ingrese un nombre y apellido válidos (máximo 30 caracteres).");
+            return false;
         }
-    });
 
-    // Validar contraseñas
-    passwordInputs.forEach(passwordInput => {
-        if (!validatePassword(passwordInput.value)) {
-            passwordInput.classList.add('error');
-            errorMessages.add("— La contraseña debe tener al menos una letra mayúscula, una minúscula y un número.");
-            isValid = false;
+        // Validación de edad
+        const edad = parseInt($('input[type="number"]').val(), 10);
+        if (edad < 13 || edad > 100 || isNaN(edad)) {
+            alert("Por favor, ingrese una edad válida (entre 13 y 100 años).");
+            return false;
         }
-    });
 
-    if (passwordInputs.length > 1 && passwordInputs[0].value !== passwordInputs[1].value) {
-        passwordInputs[1].classList.add('error');
-        errorMessages.add("— Las contraseñas no coinciden.");
-        isValid = false;
-    }
-
-    // Validar casillas de verificación
-    const checkedCheckboxes = Array.from(checkboxes).some(checkbox => checkbox.checked);
-    if (!checkedCheckboxes) {
-        errorMessages.add("— Seleccione al menos una opción en las casillas de verificación.");
-        isValid = false;
-    }
-
-    // Validar botones de opción
-    const radioGroups = new Set(Array.from(radios).map(radio => radio.name));
-    radioGroups.forEach(name => {
-        if (!document.querySelector(`input[name="${name}"]:checked`)) {
-            errorMessages.add("— Seleccione una opción en los grupos de botones.");
-            isValid = false;
+        // Validación de país seleccionado
+        const pais = $('select.form-control').val();
+        if (!pais) {
+            alert("Por favor, seleccione un país.");
+            return false;
         }
-    });
 
-    // Validar términos y condiciones
-    const termsCheckbox = document.getElementById('terms');
-    if (termsCheckbox && !termsCheckbox.checked) {
-        errorMessages.add("— Debe aceptar los términos y condiciones.");
-        isValid = false;
-    }
+        // Validación de aceptar términos
+        const acceptTermsChecked = $('#accept-terms input[type="checkbox"]').is(":checked");
+        if (!acceptTermsChecked) {
+            alert("Debe aceptar los términos y condiciones para continuar.");
+            return false;
+        }
 
-    if (!isValid) {
-        alert(Array.from(errorMessages).join('\n'));
-        return false;
-    } else {
+        // Validación de checkboxes
+        const validateCheckboxGroup = (name) => {
+            const checkedCount = $(`input[name="${name}"]:checked`).length;
+            return checkedCount > 0;
+        };
+
+        if (!validateCheckboxGroup('objetivos-mentales') || !validateCheckboxGroup('obstaculos-bienestar')) {
+            alert("Por favor, asegúrese de responder todas las preguntas.");
+            return false;
+        }
+
+        // Validación de preguntas con al menos una opción marcada
+        const radioGroups = $('input[type="radio"]').map(function() {
+            return $(this).attr('name');
+        }).get();
+
+        // Elimina duplicados para verificar cada grupo solo una vez
+        const uniqueRadioGroups = [...new Set(radioGroups)];
+
+        // Verifica si cada grupo tiene al menos una opción marcada
+        for (let group of uniqueRadioGroups) {
+            if (!$(`input[name="${group}"]:checked`).length) {
+                alert("Por favor, asegúrese de responder todas las preguntas.");
+                return false;
+            }
+        }
+
+        // Validación de contraseña y repetición de contraseña
+        const password = $('input[placeholder="Crea una contraseña"]').val();
+        const confirmPassword = $('input[placeholder="Repite tu contraseña"]').val();
+        if (password === "" || confirmPassword === "" || password !== confirmPassword) {
+            alert("Las contraseñas no coinciden o no se han completado.");
+            return false;
+        }
+
+        // Recoge los datos del formulario
+        const formData = {
+            email: email,
+            firstName: firstName,
+            lastName: lastName,
+            edad: edad,
+            pais: pais,
+            objetivosMentales: $('input[name="objetivos-mentales"]:checked').map(function() {
+                return $(this).val();
+            }).get(),
+            obstaculosBienestar: $('input[name="obstaculos-bienestar"]:checked').map(function() {
+                return $(this).val();
+            }).get(),
+            respuestasRadio: uniqueRadioGroups.reduce((acc, group) => {
+                acc[group] = $(`input[name="${group}"]:checked`).val();
+                return acc;
+            }, {}),
+            password: password
+        };
+
+        // Imprime los datos en la consola
+        console.log("Datos del formulario:", formData);
+
         return true;
     }
-}
 
-function validateEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
-
-function validatePassword(password) {
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
-    return regex.test(password);
-}
-
-// Manejar el envío del formulario
-submitButton.addEventListener('click', (event) => {
-    event.preventDefault(); // Evitar el envío automático del formulario
-
-    if (!hasSubmitted) {
+    // Evento click en el botón de enviar
+    $('.send-btn').click(function() {
         if (validateForm()) {
-            // Mostrar datos en la consola
-            const formData = new FormData(form);
-            const formDataObject = Object.fromEntries(formData.entries());
-            console.log("Formulario enviado con éxito. Datos:", formDataObject);
-            
-            alert("Formulario enviado correctamente.");
-            hasSubmitted = true;
         }
-    }
-});
-
-// Restablecer el estado de envío al cambiar el formulario
-form.addEventListener('reset', () => {
-    hasSubmitted = false; // Permitir el reenvío después de restablecer
+    });
 });
