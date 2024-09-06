@@ -1,5 +1,6 @@
 // Selección del formulario
 const form = document.getElementById('myForm');
+let hasSubmitted = false; // Bandera para controlar el envío
 
 // Función para validar los campos del formulario
 function validateForm() {
@@ -74,17 +75,18 @@ function validateForm() {
 
     if (!isValid) {
         alert(Array.from(errorMessages).join('\n'));
+        return false;
     } else {
-        // Enviar datos a la consola
-        const formData = new FormData(form);
-        const formDataObject = Object.fromEntries(formData.entries());
-        console.log("Formulario enviado con éxito. Datos:", formDataObject);
+        // Enviar datos a la consola solo si no se ha enviado previamente
+        if (!hasSubmitted) {
+            const formData = new FormData(form);
+            const formDataObject = Object.fromEntries(formData.entries());
+            console.log("Formulario enviado con éxito. Datos:", formDataObject);
 
-        // Asegurarse de que la alerta se muestre solo una vez
-        if (!form.dataset.submitted) {
             alert("Formulario enviado correctamente.");
-            form.dataset.submitted = "true";
+            hasSubmitted = true;
         }
+        return true;
     }
 }
 
@@ -101,10 +103,13 @@ function validatePassword(password) {
 // Añadir eventos a los botones
 document.querySelector('.send-btn').addEventListener('click', (event) => {
     event.preventDefault(); // Evitar que el formulario se envíe automáticamente
-    validateForm();
+    if (validateForm()) {
+        // Aquí puedes realizar cualquier acción adicional si es necesario
+        // Por ejemplo, enviar el formulario mediante JavaScript si es necesario
+    }
 });
 
 // Restablecer el estado de envío al cambiar el formulario
 form.addEventListener('reset', () => {
-    form.dataset.submitted = "false";
+    hasSubmitted = false; // Permitir el reenvío después de restablecer
 });
