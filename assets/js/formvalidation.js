@@ -2,22 +2,22 @@ document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector("form");
     const submitButton = document.querySelector(".send-btn");
 
-    // Function to validate form fields
+    // Función para validar los campos del formulario
     function validateForm() {
         let isValid = true;
-        const errorMessages = new Set(); // To store unique error messages
+        const errorMessages = new Set(); // Para almacenar mensajes de error únicos
         const fields = form.querySelectorAll("input[required], select[required], textarea[required]");
         const emailInputs = form.querySelectorAll("input[type='email']");
         const passwordInputs = form.querySelectorAll("input[type='password']");
         const checkboxes = form.querySelectorAll("input[type='checkbox'][required]");
         const radios = form.querySelectorAll("input[type='radio'][required]");
 
-        // Reset previous errors
+        // Reiniciar los errores anteriores
         fields.forEach(field => field.classList.remove('error'));
         emailInputs.forEach(emailInput => emailInput.classList.remove('error'));
         passwordInputs.forEach(passwordInput => passwordInput.classList.remove('error'));
 
-        // Check for empty required fields
+        // Verificar si los campos están vacíos
         fields.forEach(field => {
             if (!field.value.trim()) {
                 field.classList.add('error');
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Check for email format
+        // Verificar el formato del correo
         emailInputs.forEach(emailInput => {
             if (!validateEmail(emailInput.value)) {
                 emailInput.classList.add('error');
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Check for password validity
+        // Verificar la contraseña
         passwordInputs.forEach(passwordInput => {
             if (!validatePassword(passwordInput.value)) {
                 passwordInput.classList.add('error');
@@ -44,14 +44,14 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Check for checked checkboxes (only one checkbox needs to be checked)
+        // Verificar que se haya seleccionado al menos una casilla de verificación
         const checkedCheckboxes = Array.from(checkboxes).some(checkbox => checkbox.checked);
         if (!checkedCheckboxes) {
             errorMessages.add("Seleccione al menos una opción en las casillas de verificación.");
             isValid = false;
         }
 
-        // Check for selected radio buttons
+        // Verificar que se haya seleccionado una opción en los botones de radio
         const radioGroups = new Set(Array.from(radios).map(radio => radio.name));
         radioGroups.forEach(name => {
             if (!document.querySelector(`input[name="${name}"]:checked`)) {
@@ -60,40 +60,40 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        // Display the error messages or success message
+        // Mostrar los mensajes de error o el mensaje de éxito
         if (!isValid) {
             alert(Array.from(errorMessages).join('\n'));
         } else {
             alert("Formulario enviado correctamente.");
-            setTimeout(() => location.reload(), 0); // Reload the page
+            setTimeout(() => location.reload(), 0);
         }
 
         return isValid;
     }
 
-    // Validate email format
+    // Validar formato de correo electrónico
     function validateEmail(email) {
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return regex.test(email);
     }
 
-    // Validate password (at least one uppercase, one lowercase, and one number)
+    // Validar contraseña (al menos una mayúscula, una minúscula y un número)
     function validatePassword(password) {
         const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
         return regex.test(password);
     }
 
-    // Handle form submit
+    // Manejar el envío del formulario al hacer clic en el botón
     submitButton.addEventListener("click", (event) => {
         if (!validateForm()) {
-            event.preventDefault(); // Prevent form submission if validation fails
+            event.preventDefault();
         }
     });
 
-    // Optionally, handle form submit via form submission as well
+    // Opcionalmente, manejar el envío del formulario mediante submit del formulario
     form.addEventListener("submit", (event) => {
         if (!validateForm()) {
-            event.preventDefault(); // Prevent form submission if validation fails
+            event.preventDefault();
         }
     });
 });
