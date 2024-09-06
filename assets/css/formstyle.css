@@ -74,7 +74,7 @@ body.loaded #loader {
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
     max-width: 1300px;
     background-color: #fffbf7;
-    min-height: 640px;
+    min-height: 620px;
 }
 
 .formulario {
@@ -112,7 +112,7 @@ body.loaded #loader {
 }
 
 #title {
-    padding: 30px 0;
+    padding: 25px 0;
 }
 
 #title h1 {
@@ -131,6 +131,7 @@ body.loaded #loader {
     flex-direction: column;
     max-width: 100%;
     width: 550px;
+    min-height: 330px;
 }
 
 .form-holder {
@@ -169,6 +170,7 @@ body.loaded #loader {
     padding-right: 20px;
     max-width: 100%;
     width: 800px;
+    min-height: 330px;
 }
 
 .form-row-scroll::-webkit-scrollbar {
@@ -234,7 +236,7 @@ input {
 
 .progress-container {
     display: flex;
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 .progress {
