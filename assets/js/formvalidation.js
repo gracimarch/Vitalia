@@ -85,8 +85,9 @@ function validateForm() {
 
             alert("Formulario enviado correctamente.");
             hasSubmitted = true;
+            return true; // Asegurarse de que se permita el envío del formulario
         }
-        return true;
+        return false; // Prevenir el envío adicional
     }
 }
 
@@ -104,8 +105,7 @@ function validatePassword(password) {
 document.querySelector('.send-btn').addEventListener('click', (event) => {
     event.preventDefault(); // Evitar que el formulario se envíe automáticamente
     if (validateForm()) {
-        // Aquí puedes realizar cualquier acción adicional si es necesario
-        // Por ejemplo, enviar el formulario mediante JavaScript si es necesario
+        form.submit(); // Enviar el formulario manualmente si la validación es exitosa
     }
 });
 
