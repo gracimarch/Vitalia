@@ -1,0 +1,423 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', Calibri, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    background-image: url(../../formulario/images/background.webp);
+    background-size: 81vh;
+    background-repeat: no-repeat;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fffcf4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+body.loaded #loader {
+    display: none;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto 20px auto;
+    padding: 20px 0 20px 20px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    max-width: 1300px;
+    background-color: #fffbf7;
+    min-height: 740px;
+}
+
+.formulario {
+    padding: 20px 0 20px 50px;
+}
+
+.form-and-image {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-contain {
+    position: relative;
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen dentro de su contenedor */
+    flex: 1;
+    max-width: 400px;
+    height: 100%;
+    margin-top: 68px;
+}
+
+.img-contain img {
+    position: absolute;
+    width: 100%;
+    max-width: 100%; /* Asegura que la imagen no desborde su contenedor */
+    height: auto;
+    margin: 0; /* Elimina cualquier margin interno de la imagen */
+    padding: 0; /* Elimina cualquier padding interno de la imagen */
+}
+
+#logo img {
+    width: 116px;
+    top: 0;
+    left: 0;
+}
+
+#title {
+    padding: 40px 0;
+}
+
+#title h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#title p {
+    font-size: 16px;
+    color: #777;
+}
+
+.form-row-width {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-holder {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.form-holder:last-child {
+    margin-bottom: 5px;
+}
+
+.form-holder p {
+    font-size: 15px;
+}
+
+.form-holder label {
+    font-size: 15px;
+}
+
+#edad {
+    width: 25%;
+}
+
+#pais {
+    width: 48%;
+}
+
+.form-control {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background-color: #f3f1ee;
+    font-size: 15px;
+    color: #333;
+}
+
+.form-row-scroll {
+    height: 40.6vh;
+    width: 32vw;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 20px;
+}
+
+.form-row-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.form-row-scroll::-webkit-scrollbar-track {
+    background: #e8e3df;
+    border-radius: 25px;
+}
+
+.form-row-scroll::-webkit-scrollbar-thumb {
+    background: #a5a29e;;
+    border-radius: 25px;
+    border: 1px solid #e8e3df;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+    .form-row-scroll {
+        scrollbar-color: #a5a29e #e8e3df;
+    }
+}
+
+.form-row-name {
+    display: flex;
+    flex-direction: row; /* Cambiamos a fila */
+    width: 100%;
+    justify-content: space-between; /* Añade espacio entre los elementos */
+}
+
+.half-width {
+    width: 48%; /* Asignamos un ancho del 48% a cada input para que quepan en una línea */
+}
+
+#accept-terms {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 12px;
+    color: #333;
+}
+
+#accept-terms input[type="checkbox"] {
+    margin: 10px 10px 10px 0;
+    padding: 8px;
+}
+
+#accept-terms p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+#accept-terms a {
+    color: #af4de0;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+input {
+    background-color: #f3f1ee;
+}
+
+.progress-container {
+    display: flex;
+    margin-top: 40px;
+}
+
+.progress {
+    display: flex;
+    gap: 10px;
+    background-color: #fffbf7;
+}
+
+.step {
+    width: 18px;
+    background-color: #ddd;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.step.active {
+    width: 45px;
+    background-color: #af4de0;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.prev-btn, .next-btn, .send-btn {
+    background-color: #fff;
+    color: #333;
+    padding: 15px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+/* Hover effects for buttons */
+.prev-btn:hover, .next-btn:hover, .send-btn:hover {
+    background-color: #af4de0;
+    color: #fff;
+}
+
+.buttons {
+    max-width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+/* Initially hide the "Atrás" button without animation */
+.prev-btn {
+    display: none;
+    opacity: 0;
+}
+
+/* Initially hide the "Enviar" button */
+.send-btn.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* Initially show the "Continuar →" button */
+.next-btn.hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* Animation for sliding the 'Atrás' button in from the right */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for sliding the 'Atrás' button out to the right */
+@keyframes slideOutToRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+}
+
+/* Animation for the 'Continuar →' button sliding out to the left */
+@keyframes slideOutToLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+}
+
+/* Animation for the 'Enviar' button sliding in from the left */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* When the 'Atrás' button is active, apply slide-in animation */
+.prev-btn.active {
+    display: inline-block;
+    animation: slideInFromRight 0.6s ease forwards;
+}
+
+/* Apply slide-out animation when hiding */
+.prev-btn.hidden {
+    animation: slideOutToRight 0.6s ease forwards;
+    opacity: 0;
+    pointer-events: none; /* Disable interaction during the hiding animation */
+}
+
+/* Apply slide-out animation for the 'Continuar →' button when hiding */
+.next-btn.hidden {
+    animation: slideOutToLeft 0.6s ease forwards;
+    opacity: 0;
+    pointer-events: none; /* Disable interaction during the hiding animation */
+}
+
+/* When the 'Continuar →' button is active, apply slide-in animation */
+.next-btn.active {
+    display: inline-block;
+    animation: slideInFromLeft 0.6s ease forwards;
+}
+
+/* When the 'Enviar' button is active, apply slide-in animation */
+.send-btn.active {
+    display: inline-block;
+    animation: slideInFromLeft 0.6s ease forwards;
+    opacity: 1;
+}
+
+/* Apply slide-out animation when hiding */
+.send-btn.hidden {
+    animation: slideOutToLeft 0.6s ease forwards;
+    opacity: 0;
+    pointer-events: none; /* Disable interaction during the hiding animation */
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.hidden {
+    display: none;
+}
