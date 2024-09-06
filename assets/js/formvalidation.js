@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         fields.forEach(field => {
             if (!field.value.trim()) {
                 field.classList.add('error');
-                errorMessages.add("Todos los campos de texto deben ser completados.");
+                errorMessages.add("— Todos los campos de texto deben ser completados.");
                 isValid = false;
             }
         });
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
         emailInputs.forEach(emailInput => {
             if (!validateEmail(emailInput.value)) {
                 emailInput.classList.add('error');
-                errorMessages.add("Ingrese una dirección de correo electrónico válida.");
+                errorMessages.add("— Ingrese una dirección de correo electrónico válida.");
                 isValid = false;
             }
         });
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         passwordInputs.forEach(passwordInput => {
             if (!validatePassword(passwordInput.value)) {
                 passwordInput.classList.add('error');
-                errorMessages.add("La contraseña debe tener mínimo 6 caracteres y contener al menos una letra mayúscula, una minúscula y un número.");
+                errorMessages.add("— La contraseña debe tener mínimo 6 caracteres y contener al menos una letra mayúscula, una minúscula y un número.");
                 isValid = false;
             }
         });
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Verificar que se haya seleccionado al menos una casilla de verificación
         const checkedCheckboxes = Array.from(checkboxes).some(checkbox => checkbox.checked);
         if (!checkedCheckboxes) {
-            errorMessages.add("Seleccione al menos una opción en las casillas de verificación.");
+            errorMessages.add("— Seleccione al menos una opción en las casillas de verificación.");
             isValid = false;
         }
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const radioGroups = new Set(Array.from(radios).map(radio => radio.name));
         radioGroups.forEach(name => {
             if (!document.querySelector(`input[name="${name}"]:checked`)) {
-                errorMessages.add("Seleccione una opción en los grupos de botones.");
+                errorMessages.add("— Seleccione una opción en los grupos de botones.");
                 isValid = false;
             }
         });
