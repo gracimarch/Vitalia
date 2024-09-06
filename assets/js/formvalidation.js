@@ -1,5 +1,6 @@
-// Selección del formulario
+// Selección del formulario y botón de envío
 const form = document.getElementById('myForm');
+const submitButton = document.querySelector('.send-btn');
 let hasSubmitted = false; // Bandera para controlar el envío
 
 // Función para validar los campos del formulario
@@ -77,17 +78,7 @@ function validateForm() {
         alert(Array.from(errorMessages).join('\n'));
         return false;
     } else {
-        // Enviar datos a la consola solo si no se ha enviado previamente
-        if (!hasSubmitted) {
-            const formData = new FormData(form);
-            const formDataObject = Object.fromEntries(formData.entries());
-            console.log("Formulario enviado con éxito. Datos:", formDataObject);
-
-            alert("Formulario enviado correctamente.");
-            hasSubmitted = true;
-            return true; // Asegurarse de que se permita el envío del formulario
-        }
-        return false; // Prevenir el envío adicional
+        return true;
     }
 }
 
@@ -101,11 +92,20 @@ function validatePassword(password) {
     return regex.test(password);
 }
 
-// Añadir eventos a los botones
-document.querySelector('.send-btn').addEventListener('click', (event) => {
-    event.preventDefault(); // Evitar que el formulario se envíe automáticamente
-    if (validateForm()) {
-        form.submit(); // Enviar el formulario manualmente si la validación es exitosa
+// Manejar el envío del formulario
+submitButton.addEventListener('click', (event) => {
+    event.preventDefault(); // Evitar el envío automático del formulario
+
+    if (!hasSubmitted) {
+        if (validateForm()) {
+            // Mostrar datos en la consola
+            const formData = new FormData(form);
+            const formDataObject = Object.fromEntries(formData.entries());
+            console.log("Formulario enviado con éxito. Datos:", formDataObject);
+            
+            alert("Formulario enviado correctamente.");
+            hasSubmitted = true;
+        }
     }
 });
 
