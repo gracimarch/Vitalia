@@ -340,186 +340,192 @@
                         </div>
                     </section>
 
-                    <section class="form-row-scroll section" id="section3">
-                        <div class="form-holder">
-                            <p>¿Tienes algún tipo de discapacidad que te impida realizar actividad física (movilidad reducida)?</p>
-                            <div>
-                                <input type="radio" id="discapacidad-si" name="disability" value="Sí" required>
-                                <label for="discapacidad-si">Sí</label>
+                    <section class="section" id="section3">
+                        <div class="form-row-scroll">
+                            <div class="form-holder">
+                                <p>¿Tienes algún tipo de discapacidad que te impida realizar actividad física (movilidad reducida)?</p>
+                                <div>
+                                    <input type="radio" id="discapacidad-si" name="disability" value="Sí" required>
+                                    <label for="discapacidad-si">Sí</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="discapacidad-no" name="disability" value="No" required>
+                                    <label for="discapacidad-no">No</label>
+                                </div>
                             </div>
-                            <div>
-                                <input type="radio" id="discapacidad-no" name="disability" value="No" required>
-                                <label for="discapacidad-no">No</label>
+                
+                            <div class="form-holder">
+                                <p>¿Cuál es tu nivel de actividad física actual?</p>
+                                <div>
+                                    <input type="radio" id="sedentario" name="physicalActivity" value="Sedentario" required>
+                                    <label for="sedentario">Sedentario (muy poco o nada de ejercicio)</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="moderado" name="physicalActivity" value="Moderado" required>
+                                    <label for="moderado">Moderado (ejercicio ocasional)</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="activo" name="physicalActivity" value="Activo" required>
+                                    <label for="activo">Activo (ejercicio regular)</label>
+                                </div>
                             </div>
-                        </div>
-            
-                        <div class="form-holder">
-                            <p>¿Cuál es tu nivel de actividad física actual?</p>
-                            <div>
-                                <input type="radio" id="sedentario" name="physicalActivity" value="Sedentario" required>
-                                <label for="sedentario">Sedentario (muy poco o nada de ejercicio)</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="moderado" name="physicalActivity" value="Moderado" required>
-                                <label for="moderado">Moderado (ejercicio ocasional)</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="activo" name="physicalActivity" value="Activo" required>
-                                <label for="activo">Activo (ejercicio regular)</label>
-                            </div>
-                        </div>
-            
-                        <div class="form-holder">
-                            <p>¿Cómo describirías tu dieta?</p>
-                            <div>
-                                <input type="radio" id="vegetariana" name="diet" value="Vegetariana" required>
-                                <label for="vegetariana">Vegetariana</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="vegana" name="diet" value="Vegana" required>
-                                <label for="vegana">Vegana</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="omnivora" name="diet" value="Omnívora" required>
-                                <label for="omnivora">Omnívora</label>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="form-row-scroll section">
-                        <div class="form-holder">
-                            <p>¿Cuáles son tus objetivos mentales?</p>
-                            <div>
-                                <input type="checkbox" id="reducir-estres" name="objetivos-mentales"
-                                    value="Reducir el estrés" required>
-                                <label for="reducir-estres">Reducir el estrés</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="mejorar-sueno" name="objetivos-mentales"
-                                    value="Mejorar el sueño" required>
-                                <label for="mejorar-sueno">Mejorar el sueño</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="aumentar-calidad-vida" name="objetivos-mentales"
-                                    value="Aumentar mi calidad de vida" required>
-                                <label for="aumentar-calidad-vida">Aumentar mi calidad de vida</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="mejorar-relacion" name="objetivos-mentales"
-                                    value="Mejorar mi relación conmigo mismo/a y con los demás" required>
-                                <label for="mejorar-relacion">Mejorar mi relación conmigo mismo/a y con los demás</label>
-                            </div>
-                        </div>
-    
-                        <div class="form-holder">
-                            <p>¿Qué obstáculos enfrentas para mantener una rutina de bienestar?</p>
-                            <div>
-                                <input type="checkbox" id="falta-tiempo" name="obstaculos-bienestar"
-                                    value="Falta de tiempo" required>
-                                <label for="falta-tiempo">Falta de tiempo</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="cansancio-fatiga" name="obstaculos-bienestar"
-                                    value="Cansancio o fatiga" required>
-                                <label for="cansancio-fatiga">Cansancio o fatiga</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="autoexigencia" name="obstaculos-bienestar"
-                                    value="Niveles altos de autoexigencia" required>
-                                <label for="autoexigencia">Niveles altos de autoexigencia</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="problemas-fisicos" name="obstaculos-bienestar"
-                                    value="Problemas físicos (movilidad reducida)" required>
-                                <label for="problemas-fisicos">Problemas físicos (movilidad reducida)</label>
-                            </div>
-                        </div>
-    
-                        <div class="form-holder">
-                            <p>¿Cómo es tu calidad del sueño? (Selecciona una)</p>
-                            <div>
-                                <input type="radio" id="menos-de-5-horas" name="calidad-sueño"
-                                    value="Duermo menos de 5 horas por noche" required>
-                                <label for="menos-de-5-horas">Duermo menos de 5 horas por noche</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="entre-5-7-horas" name="calidad-sueño"
-                                    value="Duermo entre 5 y 7 horas por noche" required>
-                                <label for="entre-5-7-horas">Duermo entre 5 y 7 horas por noche</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="mas-de-7-horas" name="calidad-sueño"
-                                    value="Duermo más de 7 horas por noche" required>
-                                <label for="mas-de-7-horas">Duermo más de 7 horas por noche</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="problemas-para-dormir" name="calidad-sueño"
-                                    value="Tengo problemas para dormir" required>
-                                <label for="problemas-para-dormir">Tengo problemas para dormir</label>
+                
+                            <div class="form-holder">
+                                <p>¿Cómo describirías tu dieta?</p>
+                                <div>
+                                    <input type="radio" id="vegetariana" name="diet" value="Vegetariana" required>
+                                    <label for="vegetariana">Vegetariana</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="vegana" name="diet" value="Vegana" required>
+                                    <label for="vegana">Vegana</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="omnivora" name="diet" value="Omnívora" required>
+                                    <label for="omnivora">Omnívora</label>
+                                </div>
                             </div>
                         </div>
                     </section>
 
-                    <section class="form-row-scroll section">
-                        <div class="form-holder">
-                            <p>¿Cómo describirías tu nivel de estrés y/o ansiedad?</p>
-                            <div>
-                                <input type="radio" id="estres-bajo" name="estres-ansiedad" value="Bajo" required>
-                                <label for="estres-bajo">Bajo</label>
+                    <section class="section" id="section4">
+                        <div class="form-row-scroll">
+                            <div class="form-holder">
+                                <p>¿Cuáles son tus objetivos mentales?</p>
+                                <div>
+                                    <input type="checkbox" id="reducir-estres" name="objetivos-mentales"
+                                        value="Reducir el estrés" required>
+                                    <label for="reducir-estres">Reducir el estrés</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mejorar-sueno" name="objetivos-mentales"
+                                        value="Mejorar el sueño" required>
+                                    <label for="mejorar-sueno">Mejorar el sueño</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="aumentar-calidad-vida" name="objetivos-mentales"
+                                        value="Aumentar mi calidad de vida" required>
+                                    <label for="aumentar-calidad-vida">Aumentar mi calidad de vida</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="mejorar-relacion" name="objetivos-mentales"
+                                        value="Mejorar mi relación conmigo mismo/a y con los demás" required>
+                                    <label for="mejorar-relacion">Mejorar mi relación conmigo mismo/a y con los demás</label>
+                                </div>
                             </div>
-                            <div>
-                                <input type="radio" id="estres-moderado" name="estres-ansiedad" value="Moderado" required>
-                                <label for="estres-moderado">Moderado</label>
+        
+                            <div class="form-holder">
+                                <p>¿Qué obstáculos enfrentas para mantener una rutina de bienestar?</p>
+                                <div>
+                                    <input type="checkbox" id="falta-tiempo" name="obstaculos-bienestar"
+                                        value="Falta de tiempo" required>
+                                    <label for="falta-tiempo">Falta de tiempo</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="cansancio-fatiga" name="obstaculos-bienestar"
+                                        value="Cansancio o fatiga" required>
+                                    <label for="cansancio-fatiga">Cansancio o fatiga</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="autoexigencia" name="obstaculos-bienestar"
+                                        value="Niveles altos de autoexigencia" required>
+                                    <label for="autoexigencia">Niveles altos de autoexigencia</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="problemas-fisicos" name="obstaculos-bienestar"
+                                        value="Problemas físicos (movilidad reducida)" required>
+                                    <label for="problemas-fisicos">Problemas físicos (movilidad reducida)</label>
+                                </div>
                             </div>
-                            <div>
-                                <input type="radio" id="estres-alto" name="estres-ansiedad" value="Alto" required>
-                                <label for="estres-alto">Alto</label>
+        
+                            <div class="form-holder">
+                                <p>¿Cómo es tu calidad del sueño? (Selecciona una)</p>
+                                <div>
+                                    <input type="radio" id="menos-de-5-horas" name="calidad-sueño"
+                                        value="Duermo menos de 5 horas por noche" required>
+                                    <label for="menos-de-5-horas">Duermo menos de 5 horas por noche</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="entre-5-7-horas" name="calidad-sueño"
+                                        value="Duermo entre 5 y 7 horas por noche" required>
+                                    <label for="entre-5-7-horas">Duermo entre 5 y 7 horas por noche</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="mas-de-7-horas" name="calidad-sueño"
+                                        value="Duermo más de 7 horas por noche" required>
+                                    <label for="mas-de-7-horas">Duermo más de 7 horas por noche</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="problemas-para-dormir" name="calidad-sueño"
+                                        value="Tengo problemas para dormir" required>
+                                    <label for="problemas-para-dormir">Tengo problemas para dormir</label>
+                                </div>
                             </div>
                         </div>
-    
-                        <div class="form-holder">
-                            <p>¿Cómo describirías tu rutina diaria? (Selecciona una)</p>
-                            <div>
-                                <input type="radio" id="tiempo-libre" name="rutina-diaria"
-                                    value="Tengo mucho tiempo libre y puedo organizar mi día con flexibilidad" required>
-                                <label for="tiempo-libre">Tengo mucho tiempo libre y puedo organizar mi día con
-                                    flexibilidad</label>
+                    </section>
+
+                    <section class="section" id="section5">
+                        <div class="form-row-scroll">
+                            <div class="form-holder">
+                                <p>¿Cómo describirías tu nivel de estrés y/o ansiedad?</p>
+                                <div>
+                                    <input type="radio" id="estres-bajo" name="estres-ansiedad" value="Bajo" required>
+                                    <label for="estres-bajo">Bajo</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="estres-moderado" name="estres-ansiedad" value="Moderado" required>
+                                    <label for="estres-moderado">Moderado</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="estres-alto" name="estres-ansiedad" value="Alto" required>
+                                    <label for="estres-alto">Alto</label>
+                                </div>
                             </div>
-                            <div>
-                                <input type="radio" id="tiempo-libre-moderado" name="rutina-diaria"
-                                    value="Tengo tiempo libre moderado" required>
-                                <label for="tiempo-libre-moderado">Tengo tiempo libre moderado</label>
+        
+                            <div class="form-holder">
+                                <p>¿Cómo describirías tu rutina diaria? (Selecciona una)</p>
+                                <div>
+                                    <input type="radio" id="tiempo-libre" name="rutina-diaria"
+                                        value="Tengo mucho tiempo libre y puedo organizar mi día con flexibilidad" required>
+                                    <label for="tiempo-libre">Tengo mucho tiempo libre y puedo organizar mi día con
+                                        flexibilidad</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="tiempo-libre-moderado" name="rutina-diaria"
+                                        value="Tengo tiempo libre moderado" required>
+                                    <label for="tiempo-libre-moderado">Tengo tiempo libre moderado</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="persona-ocupada" name="rutina-diaria"
+                                        value="Soy una persona ocupada con un horario ajustado" required>
+                                    <label for="persona-ocupada">Soy una persona ocupada con un horario ajustado</label>
+                                </div>
                             </div>
-                            <div>
-                                <input type="radio" id="persona-ocupada" name="rutina-diaria"
-                                    value="Soy una persona ocupada con un horario ajustado" required>
-                                <label for="persona-ocupada">Soy una persona ocupada con un horario ajustado</label>
-                            </div>
-                        </div>
-    
-                        <div class="form-holder">
-                            <p>¿Cómo definirías tu estilo de vida?</p>
-                            <div>
-                                <input type="radio" id="persona-espiritual" name="estilo-de-vida"
-                                    value="Soy una persona espiritual" required>
-                                <label for="persona-espiritual">Soy una persona espiritual</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="persona-fit" name="estilo-de-vida"
-                                    value="Soy entusiasta del fitness y la vida saludable" required>
-                                <label for="persona-fit">Soy entusiasta del fitness y la vida saludable</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="persona-relajada" name="estilo-de-vida"
-                                    value="Soy una persona relajada y centrada en el equilibrio personal" required>
-                                <label for="persona-relajada">Soy una persona relajada y centrada en el equilibrio
-                                    personal</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="persona-ecologica" name="estilo-de-vida"
-                                    value="Soy una persona enfocada en llevar un estilo de vida ecológico" required>
-                                <label for="persona-ecologica">Soy una persona enfocada en llevar un estilo de vida
-                                    ecológico</label>
+        
+                            <div class="form-holder">
+                                <p>¿Cómo definirías tu estilo de vida?</p>
+                                <div>
+                                    <input type="radio" id="persona-espiritual" name="estilo-de-vida"
+                                        value="Soy una persona espiritual" required>
+                                    <label for="persona-espiritual">Soy una persona espiritual</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="persona-fit" name="estilo-de-vida"
+                                        value="Soy entusiasta del fitness y la vida saludable" required>
+                                    <label for="persona-fit">Soy entusiasta del fitness y la vida saludable</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="persona-relajada" name="estilo-de-vida"
+                                        value="Soy una persona relajada y centrada en el equilibrio personal" required>
+                                    <label for="persona-relajada">Soy una persona relajada y centrada en el equilibrio
+                                        personal</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="persona-ecologica" name="estilo-de-vida"
+                                        value="Soy una persona enfocada en llevar un estilo de vida ecológico" required>
+                                    <label for="persona-ecologica">Soy una persona enfocada en llevar un estilo de vida
+                                        ecológico</label>
+                                </div>
                             </div>
                         </div>
                     </section>
