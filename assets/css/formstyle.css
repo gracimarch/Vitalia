@@ -65,19 +65,23 @@ body.loaded #loader {
     }
 }
 
+.pagina {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
-    margin: 20px auto 10px auto;
+    margin: 15px;
     padding: 20px 0 20px 20px;
     border-radius: 20px;
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
-    max-width: 1300px;
     background-color: #fffbf7;
 }
 
 .formulario {
-    padding: 15px 0 15px 30px;
+    padding: 15px 0 15px 15px;
 }
 
 #logo img {
@@ -167,7 +171,8 @@ body.loaded #loader {
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 20px;
-    width: 930px;
+    width: 65vw;
+    max-width: 900px;
 }
 
 .form-row-scroll::-webkit-scrollbar {
@@ -287,10 +292,9 @@ input {
 }
 
 .buttons {
-    max-width: 1300px;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: 15px;
 }
 
 .prev-btn {
@@ -388,4 +392,70 @@ input {
 
 .hidden {
     display: none;
+}
+
+@media (max-width: 1100px) {
+    .form-row-scroll {
+        width: 62vw;
+    }
+}
+
+@media (max-width: 1020px) {
+    .form-row-scroll {
+        width: 58vw;
+    }
+}
+
+@media (max-width: 930px) {
+    .img-contain {
+        display: none;
+    }
+
+    .form-row-scroll {
+        width: 88vw;
+    }
+}
+
+@media (max-width: 810px) {
+    .form-row-scroll {
+        width: 86vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .wrapper {
+        padding: 20px;
+    }
+    
+    .formulario {
+        padding: 15px;
+    }
+
+    .form-row-scroll {
+        width: 84vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row-scroll {
+        width: 82vw;
+    }
+}
+
+@media (max-width: 550px) {
+    .form-row-scroll {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-row-scroll {
+        width: 78vw;
+    }
+}
+
+@media (max-width: 660px) {
+    .form-row-width {
+        width: 100%;
+    }
 }
