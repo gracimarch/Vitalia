@@ -2,49 +2,52 @@ document.addEventListener("DOMContentLoaded", function() {
     const sections = document.querySelectorAll(".section");
     const steps = document.querySelectorAll(".step");
     let currentStep = 0;
-    let isTransitioning = false; // Lock to prevent multiple clicks
+    let isTransitioning = false;
     const loader = document.getElementById('loader');
     const body = document.body;
     const nextButton = document.querySelector('.next-btn');
     const prevButton = document.querySelector('.prev-btn');
     const sendButton = document.querySelector('.send-btn');
 
-    // No permitir que el usuario scrollee mientras esté la pantalla de carga
+    // No permitir que el usuario haga scroll mientras esté la pantalla de carga
     window.addEventListener('load', function () {
         loader.style.display = 'none';
         body.classList.remove('no-scroll');
     });
 
+    // Actualizar los botones de navegación
     function updateButtons() {
         if (currentStep === 0) {
             if (prevButton.classList.contains('active')) {
-                prevButton.classList.add('hidden'); // Slide-out animation
+                prevButton.classList.add('hidden');
                 prevButton.addEventListener('animationend', function hideButton() {
-                    prevButton.style.display = 'none'; // Fully hide after animation
-                    prevButton.classList.remove('active', 'hidden'); // Reset classes
-                    prevButton.removeEventListener('animationend', hideButton); // Clean up
+                    prevButton.style.display = 'none';
+                    prevButton.classList.remove('active', 'hidden');
+                    prevButton.removeEventListener('animationend', hideButton);
                 }, { once: true });
             }
         } else {
             if (!prevButton.classList.contains('active')) {
                 prevButton.style.display = 'inline-block';
                 prevButton.classList.add('active');
-                prevButton.classList.remove('hidden'); // Ensure it's visible
+                prevButton.classList.remove('hidden');
             }
         }
 
+        // Al llegar a la última sección, ocultar el botón Continuar y mostrar el botón Enviar
         if (currentStep === sections.length - 1) {
-            nextButton.classList.add('hidden'); // Hide the "Continuar →" button with animation
-            sendButton.classList.remove('hidden'); // Show the "Enviar" button
+            nextButton.classList.add('hidden');
+            sendButton.classList.remove('hidden');
         } else {
-            nextButton.classList.remove('hidden'); // Show the "Continuar →" button
-            sendButton.classList.add('hidden'); // Hide the "Enviar" button with animation
+            nextButton.classList.remove('hidden');
+            sendButton.classList.add('hidden');
         }
     }
 
+    // Función para mostrar la sección correspondiente según el índice
     function showSection(index) {
-        if (isTransitioning) return; // Prevent additional clicks
-        isTransitioning = true; // Lock transitions
+        if (isTransitioning) return;
+        isTransitioning = true;
 
         const currentSection = document.querySelector('.section.active');
         const newSection = sections[index];
@@ -56,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 newSection.classList.add('active', 'fade-in');
                 newSection.addEventListener('animationend', function removeFadeIn() {
                     newSection.classList.remove('fade-in');
-                    isTransitioning = false; // Unlock transitions
+                    isTransitioning = false;
                 }, { once: true });
                 currentSection.removeEventListener('animationend', hideSection);
             }, { once: true });
@@ -64,10 +67,11 @@ document.addEventListener("DOMContentLoaded", function() {
             newSection.classList.add('active', 'fade-in');
             newSection.addEventListener('animationend', function removeFadeIn() {
                 newSection.classList.remove('fade-in');
-                isTransitioning = false; // Unlock transitions
+                isTransitioning = false;
             }, { once: true });
         }
 
+        // Actualizar el estado de los pasos (marcar el paso actual como activo)
         steps.forEach((step, i) => {
             step.classList.toggle('active', i === index);
         });
@@ -75,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
         updateButtons();
     }
 
+    // Manejar el clic en los botones Siguiente
     document.querySelectorAll(".next-btn").forEach(button => {
         button.addEventListener("click", () => {
             if (currentStep < sections.length - 1) {
@@ -86,16 +91,18 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Manejar el clic en los botones Anterior
     document.querySelectorAll(".prev-btn").forEach(button => {
         button.addEventListener("click", () => {
             if (currentStep > 0) {
-                prevButton.classList.remove('active'); // Remove 'active' to hide the button smoothly
+                prevButton.classList.remove('active');
                 currentStep--;
                 showSection(currentStep);
             }
         });
     });
 
+    // Permitir que el usuario navegue entre las secciones haciendo clic en los pasos
     steps.forEach((step, index) => {
         step.addEventListener("click", () => {
             currentStep = index;
@@ -103,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Show the first section on page load and update buttons
+    // Mostrar la primera sección al cargar la página y actualizar los botones
     showSection(currentStep);
     updateButtons();
 });
