@@ -80,7 +80,11 @@ function validateForm() {
         const formDataObject = Object.fromEntries(formData.entries());
         console.log("Formulario enviado con éxito. Datos:", formDataObject);
 
-        alert("Formulario enviado correctamente.");
+        // Asegurarse de que la alerta se muestre solo una vez
+        if (!form.dataset.submitted) {
+            alert("Formulario enviado correctamente.");
+            form.dataset.submitted = "true";
+        }
     }
 }
 
@@ -98,4 +102,9 @@ function validatePassword(password) {
 document.querySelector('.send-btn').addEventListener('click', (event) => {
     event.preventDefault(); // Evitar que el formulario se envíe automáticamente
     validateForm();
+});
+
+// Restablecer el estado de envío al cambiar el formulario
+form.addEventListener('reset', () => {
+    form.dataset.submitted = "false";
 });
