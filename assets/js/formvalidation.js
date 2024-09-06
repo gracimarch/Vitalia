@@ -94,10 +94,16 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Datos del formulario:", formData);
     }
 
-    submitButton.addEventListener("click", (event) => {
-        event.preventDefault();  // Evitar la recarga de la página
+    // Asegúrate de que el listener no se añada más de una vez
+    function handleSubmit(event) {
+        console.log("Submit button clicked");
+        event.preventDefault(); // Evitar la recarga de la página
         if (validateForm()) {
-            const data = captureFormData();
+            captureFormData(); // Captura y muestra los datos en consola
         }
-    });
+    }
+
+    // Limpia cualquier listener previo para evitar duplicaciones
+    submitButton.removeEventListener("click", handleSubmit);
+    submitButton.addEventListener("click", handleSubmit);
 });
