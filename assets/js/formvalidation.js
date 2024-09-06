@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         fields.forEach(field => {
             if (!field.value.trim()) {
                 field.classList.add('error');
-                errorMessages.add("Todos los campos obligatorios deben ser completados.");
+                errorMessages.add("Todos los campos de texto deben ser completados.");
                 isValid = false;
             }
         });
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         passwordInputs.forEach(passwordInput => {
             if (!validatePassword(passwordInput.value)) {
                 passwordInput.classList.add('error');
-                errorMessages.add("La contraseña debe contener al menos una letra mayúscula, una minúscula y un número.");
+                errorMessages.add("La contraseña debe tener mínimo 6 caracteres y contener al menos una letra mayúscula, una minúscula y un número.");
                 isValid = false;
             }
         });
