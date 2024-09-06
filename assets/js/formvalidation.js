@@ -92,14 +92,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         console.log("Datos del formulario:", formData);
-        return formData;
     }
 
     submitButton.addEventListener("click", (event) => {
         event.preventDefault();  // Evitar la recarga de la página
         if (validateForm()) {
-            const data = captureFormData();  // Capturamos y mostramos los datos en consola
-            console.log(data);
+            const data = captureFormData();
         }
     });
 });
