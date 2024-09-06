@@ -96,11 +96,21 @@ $(document).ready(function() {
         // Imprime los datos en la consola
         console.log("Datos del formulario:", formData);
 
-        return true;
+        // Muestra alerta de éxito
+        alert("Formulario enviado correctamente.");
+
+        // Borra los datos del formulario
+        $('input[type="text"], input[type="email"], input[type="number"], input[type="password"]').val('');
+        $('select.form-control').val('');
+        $('input[type="checkbox"]').prop('checked', false);
+        $('input[type="radio"]').prop('checked', false);
+
+        return false; // Evita el envío del formulario
     }
 
     // Evento click en el botón de enviar
-    $('.send-btn').click(function() {
+    $('.send-btn').click(function(event) {
+        event.preventDefault(); // Previene el envío del formulario
         if (validateForm()) {
         }
     });
