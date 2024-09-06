@@ -74,7 +74,6 @@ body.loaded #loader {
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
     max-width: 1300px;
     background-color: #fffbf7;
-    min-height: 620px;
 }
 
 .formulario {
@@ -97,9 +96,9 @@ body.loaded #loader {
     display: flex;
     align-items: center;
     flex: 1;
-    max-width: 350px;
+    max-width: 320px;
     height: 100%;
-    margin-top: 47px;
+    margin-top: 64px;
 }
 
 .img-contain img {
@@ -130,8 +129,8 @@ body.loaded #loader {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    width: 550px;
-    min-height: 330px;
+    width: 530px;
+    height: 320px;
 }
 
 .form-holder {
@@ -162,15 +161,13 @@ body.loaded #loader {
 }
 
 .form-row-scroll {
-    height: 40.6vh;
+    height: 320px;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     padding-right: 20px;
-    max-width: 100%;
-    width: 800px;
-    min-height: 330px;
+    width: 930px;
 }
 
 .form-row-scroll::-webkit-scrollbar {
@@ -285,6 +282,10 @@ input {
     color: #fff;
 }
 
+.next-btn {
+    margin-left: auto;
+}
+
 .buttons {
     max-width: 1300px;
     display: flex;
@@ -353,34 +354,34 @@ input {
 
 .prev-btn.active {
     display: inline-block;
-    animation: slideInFromRight 0.6s ease forwards;
+    animation: slideInFromLeft 0.6s ease forwards;
 }
 
 .prev-btn.hidden {
-    animation: slideOutToRight 0.6s ease forwards;
+    animation: slideOutToLeft 0.6s ease forwards;
     opacity: 0;
     pointer-events: none;
 }
 
 .next-btn.hidden {
-    animation: slideOutToLeft 0.6s ease forwards;
+    animation: slideOutToRight 0.6s ease forwards;
     opacity: 0;
     pointer-events: none;
 }
 
 .next-btn.active {
     display: inline-block;
-    animation: slideInFromLeft 0.6s ease forwards;
+    animation: slideInFromRight 0.6s ease forwards;
 }
 
 .send-btn.active {
     display: inline-block;
-    animation: slideInFromLeft 0.6s ease forwards;
+    animation: slideInFromRight 0.6s ease forwards;
     opacity: 1;
 }
 
 .send-btn.hidden {
-    animation: slideOutToLeft 0.6s ease forwards;
+    animation: slideOutToRight 0.6s ease forwards;
     opacity: 0;
     pointer-events: none;
 }
