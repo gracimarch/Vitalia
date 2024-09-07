@@ -1,18 +1,38 @@
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+import { auth } from './firebase.js';
+
 $(document).ready(function() {
+    function sanitizeInput(input) {
+        // Evita inyección de scripts
+        const div = document.createElement('div');
+        div.textContent = input;
+        return div.innerHTML;
+    }
+
     function validateForm() {
         // Validación de email
         const email = $('input[type="email"]').val();
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-            alert("Por favor, ingrese un correo electrónico válido.");
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        // Validación de longitud y patrón
+        if (email.length > 254 || !emailPattern.test(email)) {
+            alert("Por favor, ingrese un correo electrónico válido que no exceda los 254 caracteres.");
+            return false;
+        }
+
+        // Validación de dominios de correo prohibidos
+        const forbiddenDomains = ["mailinator.com", "tempmail.com", "10minutemail.com"];
+        const domain = email.split('@')[1];
+        if (forbiddenDomains.includes(domain)) {
+            alert("El dominio de correo electrónico que estás utilizando no está permitido.");
             return false;
         }
 
         // Validación de nombre y apellido
-        const firstName = $('#firstName').val();
-        const lastName = $('#lastName').val();
+        const firstName = sanitizeInput($('#firstName').val());
+        const lastName = sanitizeInput($('#lastName').val());
         const nombrePattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]{1,30}$/; // Validación para nombres con máximo 30 caracteres
-        if (!nombrePattern.test(firstName) || !nombrePattern.test(lastName)) {
+        if (!nombrePattern.test(firstName) || !nombrePattern.test(lastName) || firstName.length > 30 || lastName.length > 30) {
             alert("Por favor, ingrese un nombre y apellido válidos (máximo 30 caracteres).");
             return false;
         }
@@ -65,11 +85,16 @@ $(document).ready(function() {
             }
         }
 
-        // Validación de contraseña y repetición de contraseña
+        // Validación de contraseña segura
         const password = $('input[placeholder="Crea una contraseña"]').val();
         const confirmPassword = $('input[placeholder="Repite tu contraseña"]').val();
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
         if (password === "" || confirmPassword === "" || password !== confirmPassword) {
             alert("Las contraseñas no coinciden o no se han completado.");
+            return false;
+        }
+        if (!passwordPattern.test(password)) {
+            alert("La contraseña debe tener al menos 8 caracteres, una letra mayúscula, un número y un carácter especial.");
             return false;
         }
 
@@ -93,25 +118,34 @@ $(document).ready(function() {
             password: password
         };
 
-        // Imprime los datos en la consola
-        console.log("Datos del formulario:", formData);
+        // Lógica para crear usuario con Firebase
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Usuario creado correctamente
+                const user = userCredential.user;
+                console.log("Usuario registrado:", user);
+                alert("Formulario enviado correctamente.");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
 
-        // Muestra alerta de éxito
-        alert("Formulario enviado correctamente.");
+                // Manejo específico para email ya en uso
+                if (errorCode === 'auth/email-already-in-use') {
+                    alert("El correo electrónico ya está en uso. Por favor, use otro.");
+                } else {
+                    // Manejo de otros errores
+                    console.error("Error en el registro:", errorCode, errorMessage);
+                    alert("Error en el registro: " + errorMessage);
+                }
+            });
 
-        // Borra los datos del formulario
-        $('input[type="text"], input[type="email"], input[type="number"], input[type="password"]').val('');
-        $('select.form-control').val('');
-        $('input[type="checkbox"]').prop('checked', false);
-        $('input[type="radio"]').prop('checked', false);
-
-        return false; // Evita el envío del formulario
+        return false;
     }
 
     // Evento click en el botón de enviar
     $('.send-btn').click(function(event) {
-        event.preventDefault(); // Previene el envío del formulario
-        if (validateForm()) {
-        }
+        event.preventDefault();
+        validateForm();
     });
 });
