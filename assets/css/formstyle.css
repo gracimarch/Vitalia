@@ -1,6 +1,6 @@
 :root {
-    --purple: #B76EE4;
-  }  
+    --purple: #9D43D9;
+}  
 
 * {
     box-sizing: border-box;
@@ -16,8 +16,14 @@ body {
     margin: 0;
     padding: 0;
     background-image: url(../../formulario/images/background.webp);
-    background-size: 81vh;
+    background-size: auto 100vh;
     background-repeat: no-repeat;
+}
+
+@media (max-height: 745px) {
+    body {
+        background-size: auto 100%;
+    }
 }
 
 #loader {
@@ -85,7 +91,7 @@ body.loaded #loader {
 }
 
 .formulario {
-    padding: 15px 0 15px 45px;
+    padding: 15px 0 15px 25px;
 }
 
 #logo img {
@@ -121,6 +127,7 @@ body.loaded #loader {
 
 #title {
     padding: 25px 0;
+    width: 530px;
 }
 
 #title h1 {
@@ -132,7 +139,7 @@ body.loaded #loader {
 
 #title p {
     font-size: 16px;
-    color: #777;
+    color: #707070;
 }
 
 .form-row-width {
@@ -177,7 +184,7 @@ body.loaded #loader {
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 20px;
-    width: 55vw;
+    width: 40vw;
     max-width: 900px;
 }
 
@@ -228,7 +235,7 @@ body.loaded #loader {
 
 #accept-terms p {
     margin: 0;
-    color: #777;
+    color: #707070;
     font-size: 14px;
 }
 
@@ -400,31 +407,90 @@ input {
     display: none;
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 2000px) {
     .form-row-scroll {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 1999px) {
+    .form-row-scroll {
+        max-width: 800px;
+        width: 50vw;
+    }
+}
+
+@media (max-width: 1600px) {
+    .form-row-scroll {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 1335px) {
+    .form-row-scroll {
+        max-width: auto;
+        width: 100vw;
+    }
+}
+
+@media (max-width: 1195px) {
+    .form-row-scroll {
+        max-width: 780px;
+        width: 70vw;
+    }
+}
+
+@media (max-width: 1180px) {
+    .form-row-scroll {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 1150px) {
+    .form-row-scroll {
+        max-width: 730px;
+    }
+}
+
+@media (max-width: 1130px) {
+    .form-row-scroll {
+        max-width: 700px;
         width: 62vw;
     }
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1040px) {
     .form-row-scroll {
         width: 58vw;
     }
 }
 
-@media (max-width: 930px) {
+@media (max-width: 950px) {
+    .form-row-scroll {
+        width: 56vw;
+    }
+}
+
+@media (max-width: 900px) {
     .img-contain {
         display: none;
     }
 
     .form-row-scroll {
+        max-width: 780px;
         width: 88vw;
     }
 }
 
-@media (max-width: 810px) {
+@media (max-width: 840px) {
     .form-row-scroll {
+        max-width: 720px;
         width: 86vw;
+    }
+
+    body {
+        background-image: url(../../formulario/images/img-bg-responsive1.webp);
+        background-size: 100vw;
     }
 }
 
@@ -438,38 +504,46 @@ input {
     }
 
     .form-row-scroll {
-        width: 84vw;
+        max-width: 720px;
+        width: 86vw;
+    }
+
+    .form-holder p, .form-holder label {
+        font-size: 13px;
+    }
+
+    #title h1 {
+        font-size: 24px;
+    }
+    
+    #title p {
+        font-size: 14px;
+    }
+
+    #accept-terms p, #accept-terms a {
+        font-size: 12px;
+    }
+
+    .form-row-width, #title {
+        width: 100%;
     }
 }
 
 @media (max-width: 600px) {
     .form-row-scroll {
-        width: 82vw;
+        max-width: 710px;
+        width: 84vw;
     }
 }
 
 @media (max-width: 550px) {
     .form-row-scroll {
-        width: 80vw;
+        width: 82vw;
     }
 }
 
 @media (max-width: 480px) {
     .form-row-scroll {
-        width: 78vw;
-    }
-}
-
-@media (max-width: 660px) {
-    .form-row-width {
-        width: 100%;
-    }
-
-    #title p {
-        font-size: 14px;
-    }
-
-    #title h1 {
-        font-size: 23px;
+        width: 80vw;
     }
 }
