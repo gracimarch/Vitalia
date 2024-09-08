@@ -1,3 +1,7 @@
+:root {
+    --purple: var(#E27CE7);
+  }  
+
 * {
     box-sizing: border-box;
 }
@@ -66,7 +70,7 @@ body.loaded #loader {
 }
 
 .pagina {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -81,11 +85,12 @@ body.loaded #loader {
 }
 
 .formulario {
-    padding: 15px 0 15px 15px;
+    padding: 15px 0 15px 45px;
 }
 
 #logo img {
-    width: 116px;
+    width: 110px;
+    margin-bottom: 10px;
     top: 0;
     left: 0;
 }
@@ -120,6 +125,7 @@ body.loaded #loader {
 
 #title h1 {
     font-size: 26px;
+    margin-top: 15px;
     font-weight: bold;
     color: #333;
 }
@@ -171,7 +177,7 @@ body.loaded #loader {
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 20px;
-    width: 65vw;
+    width: 55vw;
     max-width: 900px;
 }
 
@@ -227,7 +233,7 @@ body.loaded #loader {
 }
 
 #accept-terms a {
-    color: #af4de0;
+    color: var(--purple);
     text-decoration: underline;
     font-size: 14px;
 }
@@ -248,7 +254,7 @@ input {
 }
 
 .step {
-    width: 18px;
+    width: 15px;
     background-color: #ddd;
     border-radius: 20px;
     transition: all 0.3s ease;
@@ -257,7 +263,7 @@ input {
 
 .step.active {
     width: 45px;
-    background-color: #af4de0;
+    background-color: var(--purple);
 }
 
 .section {
@@ -283,7 +289,7 @@ input {
 }
 
 .prev-btn:hover, .next-btn:hover, .send-btn:hover {
-    background-color: #af4de0;
+    background-color: var(--purple);
     color: #fff;
 }
 
@@ -457,5 +463,13 @@ input {
 @media (max-width: 660px) {
     .form-row-width {
         width: 100%;
+    }
+
+    #title p {
+        font-size: 14px;
+    }
+
+    #title h1 {
+        font-size: 23px;
     }
 }
