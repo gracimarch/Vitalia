@@ -136,7 +136,7 @@ $(document).ready(function() {
                 } else {
                     // Manejo de otros errores
                     console.error("Error en el registro:", errorCode, errorMessage);
-                    alert("Error en el registro: " + errorMessage);
+                    alert("Ha habido un error en el registro: " + errorMessage + "Te sugerimos intentar registrar tu usuario con otro mail.");
                 }
             });
 
