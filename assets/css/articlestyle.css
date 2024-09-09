@@ -191,7 +191,7 @@ body.loaded #loader {
     background-size: 100% 100%;
 }
 
-.tittle, .article, .article-tittle{
+.title, .article, .article-title{
     opacity: 0;
     transform: translateY(-4%);
 }
@@ -205,11 +205,11 @@ body.loaded #loader {
     animation: slideInTop 0.5s ease-out forwards;
 }
 
-.tittle.animate {
+.title.animate {
     animation-delay: 0.1s;
 }
 
-.article-tittle.animate {
+.article-title.animate {
     animation-delay: 0.2s;
 }
 
@@ -228,17 +228,17 @@ body.loaded #loader {
     }
 }
 
-.tittle {
+.title {
     text-align: center;
     margin: 0 20px 60px 20px;
 }
 
-.tittle h3 {
+.title h3 {
     color: #868686;
     font-size: 18px;
 }
 
-.tittle h1 {
+.title h1 {
     font-size: 26px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -291,7 +291,7 @@ body.loaded #loader {
     text-align: justify;
 }
 
-.article-tittle h2 {
+.article-title h2 {
     text-align: center;
     font-weight: 600;
     padding: 50px 0 10px 0;
@@ -370,21 +370,21 @@ td:first-child, th:first-child {
         font-size: 18px;
     }
 
-    .tittle h3 {
+    .title h3 {
         font-size: 18px;
     }
     
-    .tittle h1 {
+    .title h1 {
         font-size: 22px;
         text-align: center;
         font-weight: 600;
     }
 
-    .tittle p {
+    .title p {
         font-size: 16px;
     }
 
-    .article-tittle h2 {
+    .article-title h2 {
         font-size: 22px;
         margin: 0 15px;
     }
@@ -522,7 +522,7 @@ td:first-child, th:first-child {
     color: #ffffff !important;
 }
 
-.subtittle {
+.subtitle {
     color: #fff !important;
     text-decoration: underline;
     font-weight: 700;
@@ -546,7 +546,7 @@ td:first-child, th:first-child {
         font-size: 14px !important;
     }
 
-    .subtittle {
+    .subtitle {
         font-size: 16px;
     }
 
