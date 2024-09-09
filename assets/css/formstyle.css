@@ -96,9 +96,48 @@ body.loaded #loader {
 
 #logo img {
     width: 110px;
-    margin-bottom: 10px;
     top: 0;
     left: 0;
+}
+
+.progress-container {
+    display: flex;
+    margin: 30px 0;
+}
+
+.progress {
+    display: flex;
+    gap: 10px;
+    background-color: #fffbf7;
+}
+
+.step {
+    width: 15px;
+    background-color: #ddd;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.step.active {
+    width: 45px;
+    background-color: var(--purple);
+}
+
+#title {
+    width: 530px;
+}
+
+#title h1 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+}
+
+#title p {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #707070;
 }
 
 .form-and-image {
@@ -125,23 +164,6 @@ body.loaded #loader {
     padding: 0;
 }
 
-#title {
-    padding: 25px 0;
-    width: 530px;
-}
-
-#title h1 {
-    font-size: 26px;
-    margin-top: 15px;
-    font-weight: bold;
-    color: #333;
-}
-
-#title p {
-    font-size: 16px;
-    color: #707070;
-}
-
 .form-row-width {
     display: flex;
     flex-direction: column;
@@ -159,11 +181,7 @@ body.loaded #loader {
     margin-bottom: 5px;
 }
 
-.form-holder p {
-    font-size: 15px;
-}
-
-.form-holder label {
+.form-holder p, .form-holder label, .form-holder input {
     font-size: 15px;
 }
 
@@ -247,30 +265,6 @@ body.loaded #loader {
 
 input {
     background-color: #f3f1ee;
-}
-
-.progress-container {
-    display: flex;
-    margin-top: 25px;
-}
-
-.progress {
-    display: flex;
-    gap: 10px;
-    background-color: #fffbf7;
-}
-
-.step {
-    width: 15px;
-    background-color: #ddd;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.step.active {
-    width: 45px;
-    background-color: var(--purple);
 }
 
 .section {
@@ -436,19 +430,21 @@ input {
 @media (max-width: 1195px) {
     .form-row-scroll {
         max-width: 780px;
-        width: 70vw;
+        width: 68vw;
     }
 }
 
 @media (max-width: 1180px) {
     .form-row-scroll {
         max-width: 750px;
+        width: 68vw;
     }
 }
 
 @media (max-width: 1150px) {
     .form-row-scroll {
         max-width: 730px;
+        width: 66vw;
     }
 }
 
@@ -466,25 +462,19 @@ input {
 }
 
 @media (max-width: 950px) {
-    .form-row-scroll {
-        width: 56vw;
-    }
-}
-
-@media (max-width: 900px) {
     .img-contain {
         display: none;
     }
 
     .form-row-scroll {
-        max-width: 780px;
+        max-width: 830px;
         width: 88vw;
     }
 }
 
 @media (max-width: 840px) {
     .form-row-scroll {
-        max-width: 720px;
+        max-width: 820px;
         width: 86vw;
     }
 
@@ -503,12 +493,7 @@ input {
         padding: 15px;
     }
 
-    .form-row-scroll {
-        max-width: 720px;
-        width: 86vw;
-    }
-
-    .form-holder p, .form-holder label {
+    .form-holder p, .form-holder label, .form-holder input {
         font-size: 13px;
     }
 
@@ -516,8 +501,12 @@ input {
         font-size: 24px;
     }
     
-    #title p {
+    #title p, .prev-btn, .next-btn, .send-btn {
         font-size: 14px;
+    }
+
+    .prev-btn, .next-btn, .send-btn {
+        padding: 15px 30px;
     }
 
     #accept-terms p, #accept-terms a {
