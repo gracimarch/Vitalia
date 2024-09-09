@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         body.classList.remove('no-scroll');
 
         // Animación de los blocks
-        const blocks = document.querySelectorAll('.tittle, .article, .image, .article-tittle, .responsive-table');
+        const blocks = document.querySelectorAll('.title, .article, .image, .article-title, .responsive-table');
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
