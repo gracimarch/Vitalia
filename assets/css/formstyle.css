@@ -272,11 +272,7 @@ input {
     margin-bottom: 8px;
 }
 
-input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-input[type="radio"] {
+input[type="checkbox"], input[type="radio"] {
     margin-right: 6px;
 }
 
