@@ -490,7 +490,7 @@ input {
 
     body {
         background-image: url(../../formulario/images/img-bg-responsive1.webp);
-        background-size: 100vw;
+        background-size: 100%;
     }
 }
 
