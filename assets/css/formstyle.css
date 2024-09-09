@@ -535,3 +535,21 @@ input {
         width: 80vw;
     }
 }
+
+@media (max-width: 420px) {
+    .form-row-scroll {
+        width: 78vw;
+    }
+}
+
+@media (max-width: 380px) {
+    .form-row-scroll {
+        width: 76vw;
+    }
+}
+
+@media (max-width: 350px) {
+    .form-row-scroll {
+        width: 74vw;
+    }
+}
