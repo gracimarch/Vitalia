@@ -181,8 +181,9 @@ body.loaded #loader {
     margin-bottom: 5px;
 }
 
-.form-holder p, .form-holder label, .form-holder input {
+.form-holder p, .form-holder label, .form-holder input, .form-holder select {
     font-size: 15px;
+    color: #333;
 }
 
 .form-control {
@@ -192,7 +193,6 @@ body.loaded #loader {
     border: 1px solid #ddd;
     background-color: #f3f1ee;
     font-size: 15px;
-    color: #333;
 }
 
 .form-row-scroll {
@@ -492,7 +492,7 @@ input {
         padding: 15px;
     }
 
-    .form-holder p, .form-holder label, .form-holder input {
+    .form-holder p, .form-holder label, .form-holder input, .form-holder select {
         font-size: 13px;
     }
 
