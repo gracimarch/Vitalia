@@ -181,7 +181,7 @@ body.loaded #loader {
     margin-bottom: 5px;
 }
 
-.form-holder p, .form-holder label, .form-holder input, .form-holder option {
+.form-holder p, .form-holder label, .form-holder input, .form-holder select {
     font-size: 15px;
     color: #333;
 }
@@ -508,7 +508,7 @@ label {
         padding: 15px;
     }
 
-    .form-holder p, .form-holder label, .form-holder input, .form-holder option {
+    .form-holder p, .form-holder label, .form-holder input, .form-holder select {
         font-size: 13px;
     }
 
