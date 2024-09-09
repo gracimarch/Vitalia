@@ -245,7 +245,7 @@ body.loaded #loader {
     color: #333;
 }
 
-#accept-terms input[type="checkbox"] {
+#accept-terms input[type="checkbox"]{
     margin: 10px 10px 10px 0;
     padding: 8px;
 }
@@ -264,6 +264,26 @@ body.loaded #loader {
 
 input {
     background-color: #f3f1ee;
+}
+
+.choice-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 6px;
+}
+
+label {
+    margin: 0;
+    white-space: normal;
+    word-break: break-word;
 }
 
 .section {
