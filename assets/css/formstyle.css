@@ -152,7 +152,7 @@ body.loaded #loader {
     flex: 1;
     max-width: 320px;
     height: 100%;
-    margin-top: 44px;
+    margin-top: 34px;
 }
 
 .img-contain img {
@@ -169,7 +169,7 @@ body.loaded #loader {
     flex-direction: column;
     max-width: 100%;
     width: 530px;
-    height: 300px;
+    height: 290px;
 }
 
 .form-holder {
@@ -196,7 +196,7 @@ body.loaded #loader {
 }
 
 .form-row-scroll {
-    height: 300px;
+    height: 290px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
