@@ -1,151 +1,123 @@
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
-import { auth } from './firebase.js';
-
-$(document).ready(function() {
+$(document).ready(function () {
     function sanitizeInput(input) {
-        // Evita inyección de scripts
         const div = document.createElement('div');
         div.textContent = input;
         return div.innerHTML;
     }
 
+    function showToastMessages(messages) {
+        messages.forEach((message, index) => {
+            setTimeout(() => {
+                Toastify({
+                    text: message,
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: "center", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                        background: "linear-gradient(to right, #9D43D9, #BD82B7)",
+                        borderRadius: "15px",
+                        maxWidth: "350px",
+                        whiteSpace: "normal",
+                        wordWrap: "break-word"
+                    },
+                    onClick: function () { } // Callback after click
+                }).showToast();
+            }, index * 3500); // Se muestra cada mensaje con 3.5 segundos de diferencia
+        });
+    }
+
     function validateForm() {
+        const errorMessages = [];
+
         // Validación de email
         const email = $('input[type="email"]').val();
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-        // Validación de longitud y patrón
         if (email.length > 254 || !emailPattern.test(email)) {
-            alert("Por favor, ingrese un correo electrónico válido que no exceda los 254 caracteres.");
-            return false;
+            errorMessages.push("Por favor, ingrese un correo electrónico válido que no exceda los 254 caracteres.");
         }
 
-        // Validación de dominios de correo prohibidos
         const forbiddenDomains = ["mailinator.com", "tempmail.com", "10minutemail.com"];
         const domain = email.split('@')[1];
         if (forbiddenDomains.includes(domain)) {
-            alert("El dominio de correo electrónico que estás utilizando no está permitido.");
-            return false;
+            errorMessages.push("El dominio de correo electrónico que estás utilizando no está permitido.");
         }
 
-        // Validación de nombre y apellido
-        const firstName = sanitizeInput($('#firstName').val());
-        const lastName = sanitizeInput($('#lastName').val());
-        const nombrePattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]{1,30}$/; // Validación para nombres con máximo 30 caracteres
-        if (!nombrePattern.test(firstName) || !nombrePattern.test(lastName) || firstName.length > 30 || lastName.length > 30) {
-            alert("Por favor, ingrese un nombre y apellido válidos (máximo 30 caracteres).");
-            return false;
+        // Validación de contraseña
+        const password = $('input[placeholder="Crea una contraseña"]').val();
+        const confirmPassword = $('input[placeholder="Repite tu contraseña"]').val();
+        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+        if (password === "" || confirmPassword === "" || password !== confirmPassword) {
+            errorMessages.push("Las contraseñas no coinciden o no se han completado.");
         }
-
-        // Validación de edad
-        const edad = parseInt($('input[type="number"]').val(), 10);
-        if (edad < 13 || edad > 100 || isNaN(edad)) {
-            alert("Por favor, ingrese una edad válida (entre 13 y 100 años).");
-            return false;
-        }
-
-        // Validación de país seleccionado
-        const pais = $('select.form-control').val();
-        if (!pais) {
-            alert("Por favor, seleccione un país.");
-            return false;
+        if (!passwordPattern.test(password)) {
+            errorMessages.push("La contraseña debe tener al menos 8 caracteres, una letra mayúscula, un número y un carácter especial.");
         }
 
         // Validación de aceptar términos
         const acceptTermsChecked = $('#accept-terms input[type="checkbox"]').is(":checked");
         if (!acceptTermsChecked) {
-            alert("Debe aceptar los términos y condiciones para continuar.");
-            return false;
+            errorMessages.push("Debe aceptar los términos y condiciones para continuar.");
         }
 
-        // Validación de checkboxes
-        const validateCheckboxGroup = (name) => {
-            const checkedCount = $(`input[name="${name}"]:checked`).length;
-            return checkedCount > 0;
-        };
+        // Validación de nombre y apellido
+        const firstName = sanitizeInput($('#firstName').val());
+        const lastName = sanitizeInput($('#lastName').val());
+        const nombrePattern = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]{1,30}$/;
+        if (!nombrePattern.test(firstName) || !nombrePattern.test(lastName) || firstName.length > 30 || lastName.length > 30) {
+            errorMessages.push("Por favor, ingrese un nombre y apellido válidos (máximo 30 caracteres).");
+        }
 
-        if (!validateCheckboxGroup('objetivos-mentales') || !validateCheckboxGroup('obstaculos-bienestar')) {
-            alert("Por favor, asegúrese de responder todas las preguntas.");
-            return false;
+        // Validación de país seleccionado
+        const pais = $('select.form-control').val();
+        if (!pais) {
+            errorMessages.push("Por favor, seleccione un país.");
+        }
+
+        // Validación de edad
+        const edad = parseInt($('input[type="number"]').val(), 10);
+        if (edad < 13 || edad > 100 || isNaN(edad)) {
+            errorMessages.push("Por favor, ingrese una edad válida (entre 13 y 100 años).");
         }
 
         // Validación de preguntas con al menos una opción marcada
-        const radioGroups = $('input[type="radio"]').map(function() {
+        const radioGroups = $('input[type="radio"]').map(function () {
             return $(this).attr('name');
         }).get();
-
-        // Elimina duplicados para verificar cada grupo solo una vez
         const uniqueRadioGroups = [...new Set(radioGroups)];
-
-        // Verifica si cada grupo tiene al menos una opción marcada
+        let questionsUnchecked = false;
         for (let group of uniqueRadioGroups) {
             if (!$(`input[name="${group}"]:checked`).length) {
-                alert("Por favor, asegúrese de responder todas las preguntas.");
-                return false;
+                questionsUnchecked = true;
+                break;
             }
         }
-
-        // Validación de contraseña segura
-        const password = $('input[placeholder="Crea una contraseña"]').val();
-        const confirmPassword = $('input[placeholder="Repite tu contraseña"]').val();
-        const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-        if (password === "" || confirmPassword === "" || password !== confirmPassword) {
-            alert("Las contraseñas no coinciden o no se han completado.");
-            return false;
+        if (questionsUnchecked) {
+            errorMessages.push("Por favor, asegúrese de responder todas las preguntas.");
         }
-        if (!passwordPattern.test(password)) {
-            alert("La contraseña debe tener al menos 8 caracteres, una letra mayúscula, un número y un carácter especial.");
+
+        // Mostrar todos los mensajes de error
+        if (errorMessages.length > 0) {
+            showToastMessages(errorMessages);
             return false;
         }
 
-        // Recoge los datos del formulario
-        const formData = {
-            email: email,
-            firstName: firstName,
-            lastName: lastName,
-            edad: edad,
-            pais: pais,
-            objetivosMentales: $('input[name="objetivos-mentales"]:checked').map(function() {
-                return $(this).val();
-            }).get(),
-            obstaculosBienestar: $('input[name="obstaculos-bienestar"]:checked').map(function() {
-                return $(this).val();
-            }).get(),
-            respuestasRadio: uniqueRadioGroups.reduce((acc, group) => {
-                acc[group] = $(`input[name="${group}"]:checked`).val();
-                return acc;
-            }, {}),
-            password: password
-        };
+        return true;
+    }
 
-        // Lógica para crear usuario con Firebase
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Usuario creado correctamente
-                const user = userCredential.user;
-                console.log("Usuario registrado:", user);
-                alert("Formulario enviado correctamente.");
-            })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-
-                // Manejo específico para email ya en uso
-                if (errorCode === 'auth/email-already-in-use') {
-                    alert("El correo electrónico ya está en uso. Por favor, use otro.");
-                } else {
-                    // Manejo de otros errores
-                    console.error("Error en el registro:", errorCode, errorMessage);
-                    alert("Ha habido un error en el registro: " + errorMessage + "Te sugerimos intentar registrar tu usuario con otro mail.");
-                }
-            });
-
-        return false;
+    function handleSubmit() {
+        if (validateForm()) {
+            // Si el formulario es válido, redirige al usuario
+            window.location.href = '../index.html'; // Redirige a la página principal
+        }
     }
 
     // Evento click en el botón de enviar
-    $('.send-btn').click(function(event) {
+    $('.send-btn').click(function (event) {
         event.preventDefault();
-        validateForm();
+        handleSubmit();
     });
 });
