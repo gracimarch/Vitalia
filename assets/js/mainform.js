@@ -1,1 +1,11 @@
-import './formvalidation.js'
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js"; 
+import { auth } from './firebase.js';
+import './formvalidation.js';
+
+onAuthStateChanged(auth, async(user) => {
+    if (user) {
+        // El usuario está autenticado
+    } else {
+        // El usuario no está autenticado
+    }
+});
