@@ -1,3 +1,6 @@
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+import { auth } from './firebase.js';
+
 $(document).ready(function () {
     function sanitizeInput(input) {
         const div = document.createElement('div');
@@ -13,9 +16,9 @@ $(document).ready(function () {
                     duration: 3000,
                     newWindow: true,
                     close: true,
-                    gravity: "top", // `top` or `bottom`
-                    position: "center", // `left`, `center` or `right`
-                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    gravity: "top",
+                    position: "center",
+                    stopOnFocus: true,
                     style: {
                         background: "linear-gradient(to right, #9D43D9, #BD82B7)",
                         borderRadius: "15px",
@@ -23,9 +26,9 @@ $(document).ready(function () {
                         whiteSpace: "normal",
                         wordWrap: "break-word"
                     },
-                    onClick: function () { } // Callback after click
+                    onClick: function () { }
                 }).showToast();
-            }, index * 3500); // Se muestra cada mensaje con 3.5 segundos de diferencia
+            }, index * 2500);
         });
     }
 
@@ -35,7 +38,6 @@ $(document).ready(function () {
         // Validación de email
         const email = $('input[type="email"]').val();
         const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
         if (email.length > 254 || !emailPattern.test(email)) {
             errorMessages.push("Por favor, ingrese un correo electrónico válido que no exceda los 254 caracteres.");
         }
@@ -108,14 +110,123 @@ $(document).ready(function () {
         return true;
     }
 
+    function calculatePoints() {
+        let planPoints = {
+            1: 0, // Plan para personas con discapacidad
+            2: 0, // Plan para personas ocupadas
+            3: 0, // Plan ecológico
+            4: 0, // Plan espiritual
+            5: 0, // Plan para personas activas
+            6: 0, // Plan holístico general
+            7: 0, // Plan para reducir estrés
+            8: 0, // Plan para dormir mejor
+            9: 0  // Plan para personas mayores
+        };
+
+        // Sumar puntos según respuestas
+        if ($('input[name="physicalActivity"]:checked').val() === 'Sedentario') {
+            planPoints[9] += 1;
+        } else if ($('input[name="physicalActivity"]:checked').val() === 'Activo') {
+            planPoints[5] += 1;
+        }
+
+        if ($('input[name="diet"]:checked').val() === 'Vegetariana' || $('input[name="diet"]:checked').val() === 'Vegana') {
+            planPoints[3] += 1;
+        }
+
+        if ($('#reducir-estres').is(':checked')) {
+            planPoints[7] += 1;
+        }
+        if ($('#mejorar-sueno').is(':checked')) {
+            planPoints[8] += 1;
+        }
+        if ($('#conectar-espiritual').is(':checked')) {
+            planPoints[4] += 1;
+        }
+
+        if ($('#falta-tiempo').is(':checked')) {
+            planPoints[2] += 1;
+        }
+        if ($('#cansancio-fatiga').is(':checked')) {
+            planPoints[8] += 1;
+        }
+        if ($('#autoexigencia').is(':checked')) {
+            planPoints[7] += 1;
+        }
+        if ($('#problemas-fisicos').is(':checked')) {
+            planPoints[1] += 1;
+        }
+        if ($('#persona-mayor').is(':checked')) {
+            planPoints[9] += 1;
+        }
+
+        if ($('input[name="calidad-sueño"]:checked').val() === 'Duermo menos de 5 horas' || $('input[name="calidad-sueño"]:checked').val() === 'Tengo problemas para dormir') {
+            planPoints[8] += 1;
+        }
+
+        if ($('input[name="estres-ansiedad"]:checked').val() === 'Alto') {
+            planPoints[7] += 1;
+        }
+
+        if ($('input[name="rutina-diaria"]:checked').val() === 'Soy una persona ocupada') {
+            planPoints[2] += 1;
+        } else if ($('input[name="rutina-diaria"]:checked').val() === 'Tengo tiempo libre moderado') {
+            planPoints[2] += 0.5;
+        }
+
+        if ($('input[name="estilo-de-vida"]:checked').val() === 'Soy una persona espiritual') {
+            planPoints[4] += 1;
+        } else if ($('input[name="estilo-de-vida"]:checked').val() === 'Soy entusiasta del fitness') {
+            planPoints[5] += 1;
+        } else if ($('input[name="estilo-de-vida"]:checked').val() === 'Soy una persona ecológica') {
+            planPoints[3] += 1;
+        }
+
+        return planPoints;
+    }
+
+    function assignPlan() {
+        const points = calculatePoints();
+        let selectedPlan = 6;
+
+        let maxPoints = 0;
+        for (const plan in points) {
+            if (points[plan] > maxPoints) {
+                maxPoints = points[plan];
+                selectedPlan = plan;
+            }
+        }
+
+        return selectedPlan;
+    }
+
     function handleSubmit() {
         if (validateForm()) {
-            // Si el formulario es válido, redirige al usuario
-            window.location.href = '../index.html'; // Redirige a la página principal
+            const email = $('input[type="email"]').val();
+            const password = $('input[placeholder="Crea una contraseña"]').val();
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    console.log("Usuario registrado:", user);
+
+                    const planAsignado = assignPlan();
+                    window.location.href = `../plan${planAsignado}.html`;
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+
+                    if (errorCode === 'auth/email-already-in-use') {
+                        alert("El correo electrónico ya está en uso. Por favor, use otro.");
+                    } else {
+                        alert("Error en el registro: " + errorMessage);
+                    }
+                });
         }
     }
 
-    // Evento click en el botón de enviar
+    // Evento de envío del formulario
     $('.send-btn').click(function (event) {
         event.preventDefault();
         handleSubmit();
