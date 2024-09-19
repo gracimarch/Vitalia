@@ -5,7 +5,9 @@ import './formvalidation.js';
 onAuthStateChanged(auth, async(user) => {
     if (user) {
         // El usuario está autenticado
+        console.log('Usuario autenticado')
     } else {
         // El usuario no está autenticado
+        console.log('Usuario no autenticado')
     }
 });
