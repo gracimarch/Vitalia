@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/</loc>
+  <lastmod>2024-09-22T04:00:56+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/index.html</loc>
+  <lastmod>2024-09-22T04:00:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/lecturas/beneficios-de-incorporar-un-enfoque-integral-en-el-trabajo.html</loc>
+  <lastmod>2024-09-22T04:00:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/lecturas/alimentacion-consciente-que-es-como-practicarla.html</loc>
+  <lastmod>2024-09-22T04:00:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/lecturas/energia-y-vitalidad.html</loc>
+  <lastmod>2024-09-22T04:00:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/assets/documentos/pol%C3%ADtica-de-privacidad.pdf</loc>
+  <lastmod>2024-09-22T04:00:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/assets/documentos/t%C3%A9rminos-y-condiciones.pdf</loc>
+  <lastmod>2024-09-22T04:00:56+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
