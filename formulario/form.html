@@ -393,27 +393,31 @@
                                         <input type="radio" id="omnivora" name="diet" value="Omnívora" required>
                                         <label for="omnivora">Omnívora</label>
                                     </div>
-                                 </div>
-                                    <div class="form-holder">
-                                        <p><b>¿Tienes alguna restricción alimentaria (intolerancias, alergias)?</b></p>
-                                        <div class="choice-container">
-                                            <input type="radio" id="ninguna" name="restriccion" value="Ninguna" required>
-                                            <label for="ninguna">Ninguna restricción</label>
-                                        </div>
-                                        <div class="choice-container">
-                                            <input type="radio" id="lactosa" name="restriccion" value="Intolerancia a la lactosa" required>
-                                            <label for="lactosa">Intolerancia a la lactosa</label>
-                                        </div>
-                                        <div class="choice-container">
-                                            <input type="radio" id="celiacia" name="restriccion" value="Celiaquía" required>
-                                            <label for="celiacia">Celiaquía (intolerancia al gluten)</label>
-                                        </div>
-                                        <div class="choice-container">
-                                            <input type="radio" id="otros" name="restriccion" value="Otros" required>
-                                            <label for="otros">Otros (especificar):</label>
-                                            <input type="text"  placeholder="Escribe aquí" class="specify-txt" id="otros-especificar" name="otros-especificar">
-                                        </div>
+                                </div>
+
+                                <div class="form-holder">
+                                    <p><b>¿Tienes alguna restricción alimentaria (intolerancias, alergias)?</b></p>
+                                    <div class="choice-container">
+                                        <input type="checkbox" id="ninguna" name="restriccion" value="Ninguna restricción" required>
+                                        <label for="ninguna">Ninguna restricción</label>
                                     </div>
+                                    <div class="choice-container">
+                                        <input type="checkbox" id="lactosa" name="restriccion" value="Intolerancia a la lactosa" required>
+                                        <label for="lactosa">Intolerancia a la lactosa</label>
+                                    </div>
+                                    <div class="choice-container">
+                                        <input type="checkbox" id="celiacia" name="restriccion" value="Celiaquía" required>
+                                        <label for="celiacia">Celiaquía (intolerancia al gluten)</label>
+                                    </div>
+                                    <div class="textinput-container">
+                                        <div class="choice-container">
+                                            <input type="checkbox" id="otros" name="restriccion" value="Otros" required>
+                                            <label for="otros">Otros (especificar):</label>
+                                        </div>
+                                        <input type="text" class="form-control otro-text" id="otros-especificar" name="otros-especificar">
+                                    </div>
+                                </div>
+                                
                             </div>
                         </section>
     
