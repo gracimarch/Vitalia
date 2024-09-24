@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const nextButton = document.querySelector('.next-btn');
     const prevButton = document.querySelector('.prev-btn');
     const sendButton = document.querySelector('.send-btn');
+    const ningunaCheckbox = document.getElementById('ninguna');
+    const otherCheckboxes = ['lactosa', 'celiacia', 'otros'].map(id => document.getElementById(id));
+    const otrosCheckbox = document.getElementById('otros');
+    const otrosEspecificar = document.getElementById('otros-especificar');
 
     // No permitir que el usuario haga scroll mientras esté la pantalla de carga
     window.addEventListener('load', function () {
@@ -113,4 +117,33 @@ document.addEventListener("DOMContentLoaded", function() {
     // Mostrar la primera sección al cargar la página y actualizar los botones
     showSection(currentStep);
     updateButtons();
+
+    // Desactiva el checkbox de otros
+    otrosCheckbox.disabled = true;
+
+    // Habilita, selecciona o deshabilita el checkbox
+    otrosEspecificar.addEventListener('input', function () {
+        if (otrosEspecificar.value.trim() !== "") {
+            otrosCheckbox.checked = true;
+        } else {
+            otrosCheckbox.checked = false;
+        }
+    });
+
+    // Validación: si se marca ninguna restricción se deseleccionan las demás, si se marcan las demás desactivar ninguna restricción
+    ningunaCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+            otherCheckboxes.forEach(function (checkbox) {
+                checkbox.checked = false;
+            });
+        }
+    });
+    otherCheckboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                ningunaCheckbox.checked = false;
+            }
+        });
+    });
+    
 });
