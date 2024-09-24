@@ -112,7 +112,7 @@ $(document).ready(function () {
 
     function calculatePoints() {
         let planPoints = {
-            1: 0, // Plan para personas con discapacidad
+            1: 0, // Plan para personas con movilidad reducida
             2: 0, // Plan para personas ocupadas
             3: 0, // Plan ecológico
             4: 0, // Plan espiritual
@@ -122,73 +122,121 @@ $(document).ready(function () {
             8: 0, // Plan para dormir mejor
             9: 0  // Plan para personas mayores
         };
-
-        // Sumar puntos según respuestas
-        if ($('input[name="physicalActivity"]:checked').val() === 'Sedentario') {
-            planPoints[9] += 1;
-        } else if ($('input[name="physicalActivity"]:checked').val() === 'Activo') {
-            planPoints[5] += 1;
+    
+        const disability = $('input[name="disability"]:checked').val();
+        const age = parseInt($('#age').val(), 10);
+        const qualityOfSleep = $('input[name="calidad-sueño"]:checked').val();
+        const physicalActivity = $('input[name="physicalActivity"]:checked').val();
+        const diet = $('input[name="diet"]:checked').val();
+        const lifeStyle = $('input[name="estilo-de-vida"]:checked').val();
+        const stressAnxiety = $('input[name="estres-ansiedad"]:checked').val();
+        const objectives = {
+            reduceStress: $('#reducir-estres').is(':checked'),
+            improveSleep: $('#mejorar-sueno').is(':checked'),
+            connectSpiritual: $('#conectar-espiritual').is(':checked')
+        };
+        const obstacles = {
+            lackOfTime: $('#falta-tiempo').is(':checked'),
+            physicalProblems: $('#problemas-fisicos').is(':checked'),
+            fatigue: $('#cansancio-fatiga').is(':checked'),
+            highSelfDemand: $('#autoexigencia').is(':checked'),
+            olderPerson: $('#persona-mayor').is(':checked')
+        };
+    
+        // Plan 1: Movilidad reducida
+        if (disability === 'Sí') {
+            planPoints[1] += 15;
         }
-
-        if ($('input[name="diet"]:checked').val() === 'Vegetariana' || $('input[name="diet"]:checked').val() === 'Vegana') {
-            planPoints[3] += 1;
+        if (obstacles.physicalProblems) {
+            planPoints[1] += 10;
         }
-
-        if ($('#reducir-estres').is(':checked')) {
-            planPoints[7] += 1;
+    
+        // Plan 2: Ocupados
+        let busyCount = 0;
+        if (obstacles.lackOfTime) busyCount += 1;
+        if (physicalActivity === 'Soy una persona ocupada') busyCount += 1;
+        if (lifeStyle === 'Soy una persona con una vida laboral intensa') busyCount += 1;
+        if (busyCount >= 2) {
+            planPoints[2] += 15;
+        } else if (busyCount === 1) {
+            planPoints[2] += 5;
         }
-        if ($('#mejorar-sueno').is(':checked')) {
-            planPoints[8] += 1;
+    
+        // Plan 3: Ecológico
+        if (diet === 'Vegetariana' || diet === 'Vegana') {
+            planPoints[3] += 10;
+            if (lifeStyle === 'Soy una persona enfocada en llevar un estilo de vida ecológico') {
+                planPoints[3] += 15;
+            }
         }
-        if ($('#conectar-espiritual').is(':checked')) {
-            planPoints[4] += 1;
+    
+        // Plan 4: Espiritual
+        if (objectives.connectSpiritual) {
+            planPoints[4] += 10;
         }
-
-        if ($('#falta-tiempo').is(':checked')) {
-            planPoints[2] += 1;
+        if (lifeStyle === 'Soy una persona espiritual') {
+            planPoints[4] += 15;
         }
-        if ($('#cansancio-fatiga').is(':checked')) {
-            planPoints[8] += 1;
+    
+        // Plan 5: Activos
+        if (physicalActivity === 'Activo' || physicalActivity === 'En transición') {
+            planPoints[5] += 10;
+            if (lifeStyle === 'Soy entusiasta del fitness') {
+                planPoints[5] += 15;
+            }
         }
-        if ($('#autoexigencia').is(':checked')) {
-            planPoints[7] += 1;
+    
+        // Plan 6: General
+        if (physicalActivity === 'Moderado') {
+            planPoints[6] += 10;
         }
-        if ($('#problemas-fisicos').is(':checked')) {
-            planPoints[1] += 1;
+        if (objectives.improveSleep) {
+            planPoints[6] += 10;
         }
-        if ($('#persona-mayor').is(':checked')) {
-            planPoints[9] += 1;
+        if (lifeStyle === 'Soy una persona centrada en el equilibrio personal') {
+            planPoints[6] += 15;
         }
-
-        if ($('input[name="calidad-sueño"]:checked').val() === 'Duermo menos de 5 horas' || $('input[name="calidad-sueño"]:checked').val() === 'Tengo problemas para dormir') {
-            planPoints[8] += 1;
+    
+        // Plan 7: Estrés
+        if (objectives.reduceStress) {
+            planPoints[7] += 10;
         }
-
-        if ($('input[name="estres-ansiedad"]:checked').val() === 'Alto') {
-            planPoints[7] += 1;
+        if (obstacles.highSelfDemand) {
+            planPoints[7] += 10;
         }
-
-        if ($('input[name="rutina-diaria"]:checked').val() === 'Soy una persona ocupada') {
-            planPoints[2] += 1;
-        } else if ($('input[name="rutina-diaria"]:checked').val() === 'Tengo tiempo libre moderado') {
-            planPoints[2] += 0.5;
+        if (stressAnxiety === 'Alto') {
+            planPoints[7] += 15;
         }
-
-        if ($('input[name="estilo-de-vida"]:checked').val() === 'Soy una persona espiritual') {
-            planPoints[4] += 1;
-        } else if ($('input[name="estilo-de-vida"]:checked').val() === 'Soy entusiasta del fitness') {
-            planPoints[5] += 1;
-        } else if ($('input[name="estilo-de-vida"]:checked').val() === 'Soy una persona ecológica') {
-            planPoints[3] += 1;
+    
+        // Plan 8: Dormir mejor
+        if (objectives.improveSleep) {
+            planPoints[8] += 10;
         }
-
+        if (obstacles.fatigue) {
+            planPoints[8] += 10;
+        }
+        if (qualityOfSleep === 'Duermo menos de 5 horas' || qualityOfSleep === 'Tengo problemas para dormir') {
+            planPoints[8] += 15;
+        }
+    
+        // Plan 9: Tercera edad
+        if (age > 65) {
+            planPoints[9] += 10;
+        }
+        if (obstacles.olderPerson) {
+            planPoints[9] += 10;
+        }
+        if (qualityOfSleep === 'Duermo menos de 5 horas' || qualityOfSleep === 'Tengo problemas para dormir') {
+            planPoints[9] += 10;
+        }
+    
         return planPoints;
     }
-
+    
     function assignPlan() {
         const points = calculatePoints();
-        let selectedPlan = 6;
-
+        let selectedPlan = 6; // Por defecto
+    
         let maxPoints = 0;
         for (const plan in points) {
             if (points[plan] > maxPoints) {
@@ -196,9 +244,20 @@ $(document).ready(function () {
                 selectedPlan = plan;
             }
         }
-
+    
+        if (maxPoints > 0) {
+            if (points[1] === maxPoints) selectedPlan = 1;
+            else if (points[2] === maxPoints) selectedPlan = 2;
+            else if (points[3] === maxPoints) selectedPlan = 3;
+            else if (points[4] === maxPoints) selectedPlan = 4;
+            else if (points[5] === maxPoints) selectedPlan = 5;
+            else if (points[7] === maxPoints) selectedPlan = 7;
+            else if (points[8] === maxPoints) selectedPlan = 8;
+            else if (points[9] === maxPoints) selectedPlan = 9;
+        }
+    
         return selectedPlan;
-    }
+    }    
 
     function handleSubmit() {
         if (validateForm()) {
