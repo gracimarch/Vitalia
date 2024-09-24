@@ -118,32 +118,31 @@ document.addEventListener("DOMContentLoaded", function() {
     showSection(currentStep);
     updateButtons();
 
-    // Desactiva el checkbox de otros
-    otrosCheckbox.disabled = true;
+    // Inicia deshabilitado el campo de texto
+    otrosEspecificar.disabled = true;
 
-    // Habilita, selecciona o deshabilita el checkbox
-    otrosEspecificar.addEventListener('input', function () {
-        if (otrosEspecificar.value.trim() !== "") {
-            otrosCheckbox.checked = true;
+    // Habilitar o deshabilitar el campo de texto cuando se seleccione o deseleccione otros
+    otrosCheckbox.addEventListener('change', function () {
+        if (otrosCheckbox.checked) {
+            otrosEspecificar.disabled = false;
+            otrosEspecificar.focus();
         } else {
-            otrosCheckbox.checked = false;
+            otrosEspecificar.value = "";
+            otrosEspecificar.disabled = true;
         }
     });
 
-    // Validación: si se marca ninguna restricción se deseleccionan las demás, si se marcan las demás desactivar ninguna restricción
+    // Si se selecciona ninguna, se desmarcan las demás opciones, y viceversa
     ningunaCheckbox.addEventListener('change', function () {
         if (this.checked) {
             otherCheckboxes.forEach(function (checkbox) {
                 checkbox.checked = false;
+                if (checkbox.id === 'otros') {
+                    otrosEspecificar.value = '';
+                    otrosEspecificar.disabled = true;
+                }
             });
         }
     });
-    otherCheckboxes.forEach(function (checkbox) {
-        checkbox.addEventListener('change', function () {
-            if (this.checked) {
-                ningunaCheckbox.checked = false;
-            }
-        });
-    });
-    
+
 });
