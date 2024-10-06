@@ -95,6 +95,8 @@
                 <p class="welcome-subtext">Comienza tu camino al bienestar, hoy mismo.</p>
             </div>
         </section>
+
+        
     
         <!-- Artículos que te llevan a las distintas secciones de la página -->
         <section class="articles" id="lecturas-recomendadas">
@@ -540,6 +542,30 @@
     </button>
 
     <script src="assets/js/script.js"></script>
+    
+    <!-- Personalizar el mensaje según la zona horaria -->
+    <script>
+    const currentHour = new Date().getHours();
+    let welcomeText = '';
+    let subtext = '';
 
+    if (currentHour >= 6 && currentHour < 12) {
+        welcomeText = '¡Buenos días!';
+        subtext = 'Comienza tu jornada con alegría junto a Vitalia.';
+    } else if (currentHour >= 13 && currentHour < 21) {
+        welcomeText = '¡Buenas tardes!';
+        subtext = 'Es un buen momento para recargar energías y cuidar de ti.';
+    } else if (currentHour >= 21 && currentHour < 24) {
+        welcomeText = '¡Buenas noches!';
+        subtext = 'Relájate y disfruta de tu bienestar.';
+    } else {
+        welcomeText = '¡Que descanses bien!';
+        subtext = 'Mañana te esperan nuevas oportunidades.';
+    }
+
+    // Actualizar el contenido del HTML
+    document.querySelector('.welcome-name').textContent = welcomeText;
+    document.querySelector('.welcome-subtext').textContent = subtext;
+    </script>
 </body>
 </html>
