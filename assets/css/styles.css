@@ -92,12 +92,12 @@ body.loaded #loader {
     color: #9d60cf;
 }
 
-.navbar-nav .nav-link#miespacio {
+.navbar-nav .nav-link#bold {
     color: #333;
     font-weight: 600;
 }
 
-.navbar-nav .nav-link#miespacio:hover {
+.navbar-nav .nav-link#bold:hover {
     color: #7f3eb4;
 }
 
@@ -307,12 +307,7 @@ body.loaded #loader {
 .welcome-heading, .reading-heading {
     font-size: 32px;
     margin: 0;
-}
-
-.thanks-heading {
-    font-size: 32px;
-    margin: 0;
-    color: #2e2e2e;
+    color: #1f1f1f;
 }
 
 .welcome-subtext, .reading-subtext {
