@@ -191,7 +191,12 @@ body.loaded #loader {
     background-size: 100% 100%;
 }
 
-.title, .article, .article-title{
+.article {
+    opacity: 0;
+    transform: translateY(-1.5%);
+}
+
+.title, .article-title{
     opacity: 0;
     transform: translateY(-4%);
 }
