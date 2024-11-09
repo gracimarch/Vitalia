@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitalia | Tu Web de Bienestar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hourglass.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" render></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" >
+
+    <link rel="stylesheet" href="assets/css/blogstyle.css">
+
+    <link rel="icon" href="assets/images/vitaliaLogo.webp" type="image/webp">
+
+    <meta name="description" content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
+    <meta name="keywords" content="Bienestar, Salud mental, Inteligencia Artificial, Blog, Meditación, Fitness, Nutrición">
+
+    <meta property="og:title" content="Vitalia | Tu Web de Bienestar">
+    <meta property="og:description" content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
+    <meta property="og:image" content="https://github.com/gracimarch/Vitalia/blob/main/assets/images/vitaliaPerfil.webp">
+    <meta property="og:url" content="https://vitalia-selfcare.vercel.app/">
+    <meta name="twitter:title" content="Vitalia | Tu Web de Bienestar">
+    <meta name="twitter:description" content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
+    <meta name="twitter:image" content="https://github.com/gracimarch/Vitalia/blob/main/assets/images/vitaliaPerfil.webp">
+
+    <!-- 
+    Créditos:
+        - Bootstrap: https://getbootstrap.com/
+        - Bootstrap Icons: https://icons.getbootstrap.com/
+        - Icons8: https://icons8.com/
+        - LDRS: https://uiball.com/ldrs/
+        - Yancy Min (botón compartir): https://dribbble.com/YancyMin
+    -->
+
+</head>
+<body>
+
+    <!-- Pantalla de carga -->
+    <div id="loader">
+        <l-hourglass size="40" bg-opacity="0.1" speed="1.75" color="#7134A2"></l-hourglass>
+    </div>
+
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container" id="nav-header">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                    <img src="assets/images/vitaliaLogoNavBar.webp" alt="Vitalia Logo" class="logo">
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <div class="middle"></div>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item" id="first-nav-item">
+                            <a class="nav-link" id="bold" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Mi espacio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Acerca de</a>
+                        </li>
+                    </ul>
+                    <div class="d-none d-lg-flex align-items-center">
+                        <a class="nav-link" href="#">
+                            <img src="assets/images/coronaIconoNavbar.webp" alt="Premium" class="premium">
+                        </a>
+                    </div>
+                    <div class="d-lg-none">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item" id="last-nav-item">
+                                <a class="nav-link" href="#">Premium</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="pagina" id="welcome">
+
+        <!-- Mensaje de bienvenida -->
+        <section class="welcome">
+            <div class="welcome-section">
+                <h1 class="welcome-heading">Conocimiento para tu Bienestar</h1>
+                <p class="welcome-subtext">Encuentra recursos, consejos y guías prácticas para mejorar tu día a día, todo en un solo lugar</p>
+                <a href="#" class="btn">
+                    <i class="bi bi-box-arrow-up-right" alt="Ícono de link externo"></i>
+                    Ir al blog
+                </a>
+            </div>
+        </section>
+
+        <!-- Lecturas -->
+        <section class="reading" id="lecturas">
+            <div class="reading-section">
+                <div class="reading-content">
+                    <img src="assets/images/lecturaIconoTitulo.webp" alt="Ícono de lectura" class="reading-icon">
+                    <h2 class="reading-heading">Categorías Destacadas</h2>
+                </div>
+                <p class="reading-subtext">Accede rápidamente a los temas que más interesan a nuestra comunidad</p>
+            </div>
+        </section>
+
+        <!-- Artículos que te llevan a las distintas secciones de la página -->
+        <section class="articles" id="lecturas-recomendadas">
+            <div class="container">
+                <a href="#productividad" class="block brightness" id="productiv">
+                    <div class="content">
+                        <h3>Productividad</h3>
+                    </div>
+                </a>
+                <a href="#ejercicios" class="block brightness" id="ejercita">
+                    <div class="content">
+                        <h3>Actividad Física y Movilidad</h3>
+                    </div>
+                </a>
+                <a href="#alimentaciones" class="block brightness" id="alimentate">
+                    <div class="content">
+                        <h3>Hábitos Alimenticios</h3>
+                    </div>
+                </a>
+                <a href="#salud-mental" class="block brightness" id="salud">
+                    <div class="content">
+                        <h3>Salud Mental y Bienestar</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Lecturas -->
+        <section class="reading" id="productividad">
+            <div class="reading-section">
+                <div class="reading-content">
+                    <img src="assets/images/lecturaIconoTitulo.webp" alt="Ícono de lectura" class="reading-icon">
+                    <h2 class="reading-heading">Productividad</h2>
+                </div>
+                <p class="reading-subtext">Accede rápidamente a los temas que más interesan a nuestra comunidad</p>
+            </div>
+        </section>
+
+        <!-- Lecturas seleccionadas -->
+        <section class="lecturas">
+            <div class="container">
+                <a href="lecturas/beneficios-de-incorporar-un-enfoque-integral-en-el-trabajo.html" class="block brightness" id="productividad1">
+                    <p>Productividad</p>
+                    <h3>Beneficios de Incorporar un Enfoque Integral en tu Trabajo</h3>
+                    <div class="reading-time">
+                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
+                        <p>X minutos de lectura</p>
+                    </div>
+                </a>
+                <a href="#" class="block brightness" id="salud-mental">
+                    <p>Salud mental y bienestar</p>
+                    <h3>Autocuidado: Pequeños Hábitos que Hacen la Diferencia</h3>
+                    <div class="reading-time">
+                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
+                        <p>X minutos de lectura</p>
+                    </div>
+                </a>
+                <a href="lecturas/alimentacion-consciente-que-es-como-practicarla.html" class="block brightness" id="nutricion">
+                    <p>Nutrición y dieta</p>
+                    <h3>Alimentación Consciente: Qué Es y Cómo Practicarla</h3>
+                    <div class="reading-time">
+                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
+                        <p>X minutos de lectura</p>
+                    </div>
+                </a>
+                <a href="#" class="block brightness" id="bienestar">
+                    <p>Salud mental y bienestar</p>
+                    <h3>Cómo Desarrollar una Mentalidad Positiva</h3>
+                    <div class="reading-time">
+                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
+                        <p>X minutos de lectura</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Pie de página-->
+    <footer class="footer row py-5 border-top">
+        <div class="col-lg-4 col-md-6 mb-3">
+            <a href="#" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                <img src="assets/images/vitaliaLogoFooter.webp" alt="Logo de Vitalia" class="footer-logo">
+            </a>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/profile.php?id=61565298270139" target="_blank" class="social-icon" aria-label="Facebook de Vitalia">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/vitalia.selfcare/" target="_blank" class="social-icon" aria-label="Instagram de Vitalia">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="mailto:vitalia.selfcare@gmail.com?subject=Consulta%20-%20Vitalia&body=Me%20comunicaba%20porque..." target="_blank" class="social-icon" aria-label="E-mail de Vitalia">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="assets/documentos/política-de-privacidad.pdf" target="_blank" class="footer-link">Políticas de Privacidad</a>
+                <span class="separator">|</span>
+                <a href="assets/documentos/términos-y-condiciones.pdf" target="_blank" class="footer-link">Términos y Condiciones</a>
+            </div>
+            <p class="text-body-secondary rights">&copy; 2024 Vitalia. Todos los derechos resevardos.</p>
+        </div>
+        
+        <div class="col">
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-3 div-space">
+            <h3 class="subtittle">Blog</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Productividad</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Actividad física y emocional</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Hábitos alimenticios</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Salud mental y bienestar</a></li>
+            </ul>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-3">
+            <h3 class="subtittle">Mi espacio</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#lecturas-recomendadas" class="nav-link p-0 text-body-secondary">Artículos recomendados</a></li>
+                <li class="nav-item mb-2"><a href="#ejercicios" class="nav-link p-0 text-body-secondary">Rutinas de ejercicio</a></li>
+                <li class="nav-item mb-2"><a href="#meditaciones" class="nav-link p-0 text-body-secondary">Meditaciones</a></li>
+                <li class="nav-item mb-2"><a href="#alimentaciones" class="nav-link p-0 text-body-secondary">Planes alimenticios</a></li>
+            </ul>
+        </div>
+        
+        <div class="col-lg-2 col-md-6 mb-3">
+            <h3 class="subtittle">Acerca de</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">¿Qué es Vitalia?</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Preguntas frecuentes</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">¿Quiénes somos?</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Botón que desplaza hasta arriba -->
+    <button id="scrollToTop" aria-label="Volver arriba">
+        <i class="bi bi-chevron-up" alt="Ícono para subir"></i>
+    </button>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>
