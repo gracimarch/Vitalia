@@ -195,6 +195,11 @@ body.loaded #loader {
     background-size: 100% 100%;
 }
 
+.welcome {
+    opacity: 0;
+    transform: translateY(-1.2%);
+}
+
 .articles .block, .lecturas .block, .reading .reading-section, .welcome .welcome-section, .thanks .thanks-section, .audio-blocks .audio-block {
     opacity: 0;
     transform: translateY(-10%);
@@ -209,7 +214,7 @@ body.loaded #loader {
     animation: slideInTop 0.5s ease-out forwards;
 }
 
-.reading .reading-section, .welcome .welcome-section, .thanks .thanks-section,
+.welcome, .reading .reading-section, .welcome .welcome-section, .thanks .thanks-section,
 .articles .block.animate:nth-child(1),
 .lecturas .block.animate:nth-child(1),
 .lecturas .block.animate:nth-child(2),
@@ -279,6 +284,10 @@ body.loaded #loader {
 
 .welcome-section {
     text-align: center;
+}
+
+.reading {
+    margin-top: 70px;
 }
 
 .reading-section, .thanks-section {
