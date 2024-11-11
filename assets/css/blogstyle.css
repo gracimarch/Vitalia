@@ -274,12 +274,14 @@ body.loaded #loader {
 .welcome {
     background-image: url(../images/fondoDegradadoBlog.webp);
     height: 646px;
-    background-size: 100%;
+    background-size: 105%;
     width: calc(100vw - 50px);
     margin: 50px auto;
     max-width: 1200px;
     align-content: center;
     border-radius: 15px;
+    max-width: 1150px;
+    background-position: center;
 }
 
 .thanks {
@@ -292,12 +294,24 @@ body.loaded #loader {
 }
 
 .reading {
-    margin-top: 70px;
+    padding: 40px 0;
 }
 
 .reading-section, .thanks-section {
     text-align: center;
     padding: 20px;
+}
+
+@media (max-width: 1250px) {
+    .welcome {
+        background-size: cover;
+    }
+}
+
+@media (max-width: 700px) {
+    .welcome {
+        background-image: url(../images/fondoDegradadoBlogResponsive.webp);
+    }
 }
 
 @media (max-width: 480px) {
@@ -364,12 +378,6 @@ body.loaded #loader {
     }
     .thanks-heading {
         font-size: 24px;
-    }
-}
-
-@media (max-width: 1250px) {
-    .welcome {
-        background-image: url(../images/fondoDegradadoBlogResponsive.webp);
     }
 }
 
