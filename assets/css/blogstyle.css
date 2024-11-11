@@ -282,8 +282,13 @@ body.loaded #loader {
     border-radius: 15px;
 }
 
+.thanks {
+    margin: 50px;
+}
+
 .welcome-section {
     text-align: center;
+    padding: 20px;
 }
 
 .reading {
@@ -295,9 +300,11 @@ body.loaded #loader {
     padding: 20px;
 }
 
-/*.welcome-content {
-
-}*/
+@media (max-width: 480px) {
+    .welcome {
+        height: 550px;
+    }
+}
 
 .reading-content, .thanks-content{
     display: flex;
@@ -670,16 +677,32 @@ body.loaded #loader {
     background-image: url('../images/art1BloqueLecturas.webp');
 }
 
-#salud-mental {
+#productividad2 {
     background-image: url('../images/art2BloqueLecturas.webp');
 }
 
-#nutricion {
+#productividad3 {
+    background-image: url('../images/art1-fondo.webp');
+}
+
+#productividad4 {
+    background-image: url('../images/art2-fondo.webp');
+}
+
+#salud-mental1 {
     background-image: url('../images/art3BloqueLecturas.webp');
 }
 
-#bienestar {
+#salud-mental2 {
     background-image: url('../images/art4BloqueLecturas.webp');
+}
+
+#salud-mental3 {
+    background-image: url('../images/art3-fondo.webp');
+}
+
+#salud-mental4 {
+    background-image: url('../images/art4-fondo.webp');
 }
 
 @media (max-width: 991px) {
