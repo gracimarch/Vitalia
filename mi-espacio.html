@@ -91,7 +91,7 @@
         <!-- Mensaje de bienvenida -->
         <section class="welcome">
             <div class="welcome-section">
-                <h1 class="welcome-heading">Te damos la bienvenida, <span class="welcome-name">(nombre)</span></h1>
+                <h1 class="welcome-heading">¡Te damos la bienvenida a <span class="welcome-name">Vitalia</span>!</h1>
                 <p class="welcome-subtext">Comienza tu camino al bienestar, hoy mismo.</p>
             </div>
         </section>
@@ -528,25 +528,18 @@
     <!-- Personalizar el mensaje según la zona horaria -->
     <script>
     const currentHour = new Date().getHours();
-    let welcomeText = '';
     let subtext = '';
 
     if (currentHour >= 6 && currentHour < 12) {
-        welcomeText = '¡buenos días!';
-        subtext = 'Comienza tu jornada con alegría junto a Vitalia.';
+        subtext = 'Inicia tu día con una sonrisa y un momento para ti. ';
     } else if (currentHour >= 13 && currentHour < 21) {
-        welcomeText = '¡buenas tardes!';
         subtext = 'Es un buen momento para recargar energías y cuidar de ti.';
     } else if (currentHour >= 21 && currentHour < 24) {
-        welcomeText = '¡buenas noches!';
         subtext = 'Relájate y disfruta de tu bienestar.';
     } else {
-        welcomeText = '¡que descanses bien!';
-        subtext = 'Mañana te esperan nuevas oportunidades.';
+        subtext = 'Dedica este momento a recargar energías y conectar contigo.';
     }
 
-    // Actualizar el contenido del HTML
-    document.querySelector('.welcome-name').textContent = welcomeText;
     document.querySelector('.welcome-subtext').textContent = subtext;
     </script>
 </body>
