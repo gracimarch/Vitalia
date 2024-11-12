@@ -218,7 +218,6 @@ body.loaded #loader {
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
-    margin-top: 20px;
     transition: all 0.6s ease;
     font-family: 'Zilla Slab', Times New Roman, serif;
 }
@@ -237,14 +236,13 @@ body.loaded #loader {
 
 @media (max-width: 768px) {
     .btn {
-        font-size: 14.4px;
+        font-size: 16px;
         padding: 8px 16px;
     }
 }
 
 @media (max-width: 480px) {
     .btn {
-        font-size: 12.8px;
         padding: 7px 14px;
     }
 
@@ -362,7 +360,7 @@ body.loaded #loader {
     }
 
     .text-white h4 {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .words-wrapper .words span {
@@ -380,7 +378,7 @@ body.loaded #loader {
     }
 
     .text-white h4 {
-        font-size: 13px;
+        font-size: 16px;
     }
 
     .words-wrapper .words span {
@@ -409,6 +407,21 @@ body.loaded #loader {
     color: #707070;
     font-size: 19.2px;
     margin: 10px 0;
+}
+
+@media (max-width: 1200px) {
+    .reading-heading {
+        font-size: 22px;
+    }
+
+    .reading-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .reading-subtext {
+        font-size: 15px;
+    }
 }
 
 .dif-txt {
@@ -479,33 +492,33 @@ body.loaded #loader {
 
 .rounded-lg {
     border-radius: 1rem !important;
-  }
-  
-  .text-small {
-    font-size: 0.9rem !important;
-  }
+}
 
-  .pricing{
-      color:#fff;
-  }
-  
-  .custom-separator {
+.text-small {
+    font-size: 0.9rem !important;
+}
+
+.pricing{
+    color:#fff;
+}
+
+.custom-separator {
     width: 5rem;
     height: 6px;
     border-radius: 1rem;
-  }
-  
-  .text-uppercase {
+}
+
+.text-uppercase {
     letter-spacing: 0.2em;
-  }
-  
-  .btn-warning{
+}
+
+.btn-warning{
     color: #fff;
-  }
-  
-  .btn-warning:hover{ 
+}
+
+.btn-warning:hover{ 
     color: #fff;
-  }
+}
   
 .pricing-txt {
     background: none;
