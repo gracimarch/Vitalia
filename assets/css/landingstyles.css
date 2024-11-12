@@ -232,6 +232,7 @@ body.loaded #loader {
 .btn:hover {
     background-color: #68a5a7;
     transform: scale(1.05);
+    color: #fff;
 }
 
 @media (max-width: 768px) {
