@@ -270,7 +270,7 @@ $(document).ready(function () {
                     console.log("Usuario registrado:", user);
 
                     const planAsignado = assignPlan();
-                    window.location.href = `../plan${planAsignado}.html`;
+                    window.location.href = `../mi-espacio.html`;
                 })
                 .catch((error) => {
                     const errorCode = error.code;
