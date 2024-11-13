@@ -8,9 +8,14 @@ html {
 
 body {
     font-family: 'Poppins', Calibri, sans-serif;
+    background: 
+        radial-gradient(circle at 80% 60%, rgba(153, 50, 204, 0.2), transparent 15%),
+        radial-gradient(circle at 85% 20%, rgba(186, 85, 211, 0.3), transparent 0%);
     background-color: #fffcf4;
     margin: 0;
     padding: 0;
+    justify-content: center;
+    align-items: center;
 }
 
 #loader {
@@ -34,6 +39,39 @@ body.loaded #loader {
 .no-scroll {
     overflow: hidden;
     height: 100%;
+}
+
+.linea {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border: 1px solid rgba(200, 200, 200, 0.5); 
+    border-radius: 50%;
+    top: 2000px;
+    left: -25vw;
+    transform: rotate(-15deg);
+}
+
+.linea-2 {
+    width: 500px;
+    height: 500px;
+    top: 2000px;
+    left: -30vw;
+}
+
+.estrella {
+    position: absolute;
+    top: 2200px;
+    left: 10.5vw;
+    color: #9d60cf;
+    font-size: 30px;
+}
+
+
+@media (max-width: 1005px) {
+    .linea, .linea-2, .estrella {
+        display: none;
+    }
 }
 
 /* Navbar */
@@ -187,7 +225,8 @@ body.loaded #loader {
     width: 28px;
     height: 18px;
     vertical-align:
-    middle;content:"";
+        middle;
+    content: "";
     background: no-repeat center center;
     background-size: 100% 100%;
 }
@@ -263,7 +302,7 @@ body.loaded #loader {
     font-style: italic;
     font-weight: 600;
     font-size: 69px;
-    
+
 }
 
 .text-white h4 {
@@ -305,7 +344,7 @@ body.loaded #loader {
 
 @media (max-width: 700px) {
     .words-wrapper .words {
-      width: var(--width-mobile) !important;
+        width: var(--width-mobile) !important;
     }
 }
 
@@ -388,12 +427,12 @@ body.loaded #loader {
 
 /* Features */
 
-.reading{
+.reading {
     padding: 0 0;
     padding-top: 10px;
 }
 
-.reading-section{
+.reading-section {
     text-align: center;
     padding: 20px;
 }
@@ -422,38 +461,50 @@ body.loaded #loader {
     .reading-subtext {
         font-size: 15px;
     }
+
+    .dif-txt {
+        font-size: 32;
+    }
 }
 
 .dif-txt {
     color: #9d60cf;
+    font-family: 'Zilla Slab', Times New Roman, serif !important;
+    font-style: italic;
+    font-size: 41px;
 }
 
 .pypersonalizado {
     align-items: center;
 }
 
-.service-26 h1, .service-26 h2, .service-26 h3, .service-26 h4, .service-26 h5, .service-26 h6 {
-  color: #333;
+.service-26 h1,
+.service-26 h2,
+.service-26 h3,
+.service-26 h4,
+.service-26 h5,
+.service-26 h6 {
+    color: #333;
 }
 
 .service-26 .font-weight-medium {
-	font-weight: 500;
+    font-weight: 500;
 }
 
 .service-26 .badge {
-	line-height: 14px;
+    line-height: 14px;
 }
 
 .service-26 .badge-info {
-	background: none;
+    background: none;
     border: 1px solid #9d60cf;
     color: #9d60cf;
-    font-family:'Poppins', Calibri, sans-serif;
+    font-family: 'Poppins', Calibri, sans-serif;
     font-weight: 500;
 }
 
 .service-26 .wrap-service-26 .max-box {
-  max-width: 580px;
+    max-width: 580px;
 }
 
 .feature-text {
@@ -465,7 +516,7 @@ body.loaded #loader {
     height: 300px;
 }
 
-@media (max-width: 781px) {
+@media (max-width: 992px) {
     .img-fluid {
         display: none;
     }
@@ -487,7 +538,73 @@ body.loaded #loader {
     width: 450px;
     margin-right: 0;
 }
+/* FAQs */
+/* FAQs */
 
+.wrapper-faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    width: 60%;
+}
+
+.container-faq {
+    background-color: #fffcf4;
+    color: #333;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.question {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #7f3eb4;
+    padding: 16px 20px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question::after {
+    content: "\002B";
+    font-size: 1.5rem;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.question.active::after {
+    transform: rotate(45deg);
+}
+
+.answercont {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.container-faq .answer {
+    padding: 0 20px 20px;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 790px) {
+    .wrapper-faq {
+        width: 90%;
+    }
+
+    .question {
+        font-size: 0.9rem;
+    }
+}
 /* Pricing section */
 
 .rounded-lg {
@@ -621,7 +738,8 @@ body.loaded #loader {
     transition: all 0.3s ease;
 }
 
-.social-icon:hover i, .footer-link:hover {
+.social-icon:hover i,
+.footer-link:hover {
     color: #c9fff3;
 }
 
