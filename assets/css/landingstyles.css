@@ -10,7 +10,7 @@ body {
     font-family: 'Poppins', Calibri, sans-serif;
     background: 
         radial-gradient(circle at 80% 60%, rgba(153, 50, 204, 0.2), transparent 15%),
-        radial-gradient(circle at 85% 20%, rgba(186, 85, 211, 0.3), transparent 0%);
+        radial-gradient(circle at 20% 82%, rgba(186, 85, 211, 0.3), transparent 10%);
     background-color: #fffcf4;
     margin: 0;
     padding: 0;
@@ -62,7 +62,7 @@ body.loaded #loader {
 .estrella {
     position: absolute;
     top: 2200px;
-    left: 7.5vw;
+    left: 10.5vw;
     color: #9d60cf;
     font-size: 30px;
 }
@@ -615,10 +615,6 @@ body.loaded #loader {
     font-size: 0.9rem !important;
 }
 
-.pricing {
-    color: #fff;
-}
-
 .custom-separator {
     width: 5rem;
     height: 6px;
@@ -652,6 +648,11 @@ body.loaded #loader {
 
 .pricing-sec h2 {
     padding-top: 10px;
+}
+
+.pricing-sec {
+    border: 1.5px solid rgba(200, 200, 200, 0.5); 
+    background-color: #fffcf4;
 }
 
 .btn-pricing {
