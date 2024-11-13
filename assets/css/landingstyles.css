@@ -498,8 +498,8 @@ body.loaded #loader {
     font-size: 0.9rem !important;
 }
 
-.pricing{
-    color:#fff;
+.pricing {
+    color: #fff;
 }
 
 .custom-separator {
@@ -512,25 +512,76 @@ body.loaded #loader {
     letter-spacing: 0.2em;
 }
 
-.btn-warning{
+.btn-warning {
     color: #fff;
 }
 
-.btn-warning:hover{ 
+.btn-warning:hover {
     color: #fff;
 }
-  
+
 .pricing-txt {
     background: none;
     border: 1px solid #9d60cf;
     color: #9d60cf;
-    font-family:'Poppins', Calibri, sans-serif;
+    font-family: 'Poppins', Calibri, sans-serif;
     padding: 2px;
 
 }
 
+.price-txt {
+    margin-top: 20px
+}
+
 .pricing-sec h2 {
     padding-top: 10px;
+}
+
+.btn-pricing {
+    font-size: 16px;
+}
+
+.btn-pricing:hover {
+    color: #fff;
+}
+
+#pricing-highlight {
+    padding-bottom: 60px;
+}
+
+#pricing-highlight div a {
+    background-color: #9d60cf;
+}
+
+.gradient-txt {
+    display: inline-block;
+    background-image: linear-gradient(45deg, #7dd191, #54afe4, #9d60cf, #9d60cf);
+    color: transparent;
+    -webkit-background-clip: text;
+    /* Edge, Chrome */
+    background-clip: text;
+    /* Safari, FF */
+    animation: gradientAnimation 4s linear infinite;
+    animation-direction: alternate;
+    background-size: 300% 100%;
+}
+
+.gradient-bg {
+    display: inline-block;
+    background-image: linear-gradient(45deg, #7dd191, #54afe4, #9d60cf, #9d60cf);
+    animation: gradientAnimation 4s linear infinite;
+    animation-direction: alternate;
+    background-size: 300% 100%;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 /* Footer */
