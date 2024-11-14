@@ -285,7 +285,7 @@ body.loaded #loader {
 }
 
 .thanks {
-    margin: 50px;
+    margin-top: 30px;
 }
 
 .welcome-section {
@@ -293,13 +293,36 @@ body.loaded #loader {
     padding: 20px;
 }
 
-.reading {
+.thanks-subtext {
+    color: #707070;
+    font-size: 19.2px;
+    margin: 15px auto;
+    max-width: 800px;
+}
+
+@media (max-width: 1200px) {
+    .thanks-subtext {
+        font-size: 16px;
+    }
+    .thanks-heading {
+        font-size: 24px;
+    }
+}
+
+.reading, .thanks {
     padding: 40px 0;
 }
 
 .reading-section, .thanks-section {
     text-align: center;
     padding: 20px;
+}
+
+.reading-content, .thanks-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 @media (max-width: 1250px) {
@@ -363,22 +386,6 @@ body.loaded #loader {
     animation-name: show;
     animation-range: entry 48% cover 50%;
     animation-fill-mode: both;
-}
-
-.thanks-subtext {
-    color: #707070;
-    font-size: 19.2px;
-    margin: 15px auto;
-    max-width: 800px;
-}
-
-@media (max-width: 1200px) {
-    .thanks-subtext {
-        font-size: 16px;
-    }
-    .thanks-heading {
-        font-size: 24px;
-    }
 }
 
 .articles {
