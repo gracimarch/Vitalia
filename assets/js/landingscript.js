@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         body.classList.remove('no-scroll');
 
         // Animación de los blocks
-        const blocks = document.querySelectorAll('.welcome, .articles .block, .articles .info-block, .lecturas .block, .lecturas .info-block, .reading .reading-section, .welcome .welcome-section, .ejercicios .block, .thanks .thanks-section, .audio-blocks .audio-block');
+        const blocks = document.querySelectorAll('.articles .block, .articles .info-block, .lecturas .block, .lecturas .info-block, .reading .reading-section, .welcome .welcome-section, .ejercicios .block, .thanks .thanks-section, .audio-blocks .audio-block');
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
