@@ -348,7 +348,6 @@ body.loaded #loader {
     }
 }
 
-
 @media (max-width: 1200px) {
     .text-white h1 {
         font-size: 54px;
@@ -448,9 +447,20 @@ body.loaded #loader {
     margin: 10px 0;
 }
 
+.dif-txt {
+    color: #9d60cf;
+    font-family: 'Zilla Slab', Times New Roman, serif !important;
+    font-style: italic;
+    font-size: 41px;
+}
+
 @media (max-width: 1200px) {
     .reading-heading {
         font-size: 22px;
+    }
+
+    .dif-txt {
+        font-size: 28px;
     }
 
     .reading-icon {
@@ -461,17 +471,6 @@ body.loaded #loader {
     .reading-subtext {
         font-size: 15px;
     }
-
-    .dif-txt {
-        font-size: 32;
-    }
-}
-
-.dif-txt {
-    color: #9d60cf;
-    font-family: 'Zilla Slab', Times New Roman, serif !important;
-    font-style: italic;
-    font-size: 41px;
 }
 
 .pypersonalizado {
@@ -520,6 +519,8 @@ body.loaded #loader {
     .img-fluid {
         display: none;
     }
+
+    
 }
 
 .col-md-5 {
