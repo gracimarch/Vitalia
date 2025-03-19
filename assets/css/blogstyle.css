@@ -379,6 +379,11 @@ body.loaded #loader {
     margin: 10px 0 0;
 }
 
+introduction {
+    color: #818589;
+    font-style: italic;
+}
+
 .container {
     view-timeline-name: --blocks;
     view-timeline-axis: block;
