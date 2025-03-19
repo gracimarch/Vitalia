@@ -206,9 +206,9 @@ body.loaded #loader {
     transform: translateY(-2%);
 }
 
-introduction {
-    color: #818589;
-    font-style: italic;
+#introduction {
+    color: #818589 !important;
+    font-style: italic !important;
 }
 
 .animate {
