@@ -206,6 +206,10 @@ body.loaded #loader {
     transform: translateY(-2%);
 }
 
+#intro {
+    color: #331;
+}
+
 .animate {
     animation: slideInTop 0.5s ease-out forwards;
 }
