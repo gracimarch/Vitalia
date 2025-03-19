@@ -207,8 +207,8 @@ body.loaded #loader {
 }
 
 #introduction {
-    color: #818589 !important;
-    font-style: italic !important;
+    color: #818589;
+    font-size: 2vw;
 }
 
 .animate {
