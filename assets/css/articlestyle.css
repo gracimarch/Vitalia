@@ -280,7 +280,7 @@ body.loaded #loader {
     height: auto;
     border-radius: 20px;
     display: block;
-    margin-top: 20px;
+    margin-top: 25px !important;
 }
 
 .item-indice {
