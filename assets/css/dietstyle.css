@@ -647,8 +647,12 @@ input[type="checkbox"], input[type="radio"] {
         font-size: 1.3rem;
     }
 
-    .mealtime, figcaption {
+    .mealtime {
         font-size: 0.8rem;
+    }
+
+    figcaption {
+        font-size: 0.65rem;
     }
 
     .mealtitle {
