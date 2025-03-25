@@ -41,24 +41,6 @@ body.loaded #loader {
     height: 100%;
 }
 
-.linea {
-    position: absolute;
-    width: 450px;
-    height: 450px;
-    border: 1px solid rgba(200, 200, 200, 0.5); 
-    border-radius: 50%;
-    top: 2000px;
-    left: -25vw;
-    transform: rotate(-15deg);
-}
-
-.linea-2 {
-    width: 500px;
-    height: 500px;
-    top: 2000px;
-    left: -30vw;
-}
-
 .estrella {
     position: absolute;
     top: 2200px;
@@ -71,6 +53,11 @@ body.loaded #loader {
 @media (max-width: 1005px) {
     .linea, .linea-2, .estrella {
         display: none;
+    }
+
+    body {
+        background: none;
+        background-color: #fffcf4;
     }
 }
 
@@ -238,12 +225,25 @@ body.loaded #loader {
 }
 
 .welcome {
-    background-image: url(../images/img-fondo-hero.webp);
+    background-image: url(../images/imgFondoHero.webp);
     height: 570px;
     max-width: 1150px;
     margin: 0 auto;
     margin-top: 100px;
     background-size: 105%;
+}
+
+@media (max-width: 760px) {
+    .welcome {
+        background-image: url(../images/imgFondoHeroCelular.webp);
+    }
+}
+
+
+@media (min-width: 1100px) {
+    .welcome {
+        background-image: url(../images/imgFondoHeroAncha.webp);
+    }
 }
 
 .btn {
@@ -340,12 +340,6 @@ body.loaded #loader {
 .words-wrapper .words span.next {
     transform: translate(-50%, 100%);
 
-}
-
-@media (max-width: 700px) {
-    .words-wrapper .words {
-        width: var(--width-mobile) !important;
-    }
 }
 
 @media (max-width: 1200px) {
@@ -520,7 +514,13 @@ body.loaded #loader {
         display: none;
     }
 
-    
+    .colpersonalizado {
+        width: max-content !important;
+    }
+
+    .py-5 {
+        padding: 0 30px;
+    }
 }
 
 .col-md-5 {
@@ -606,6 +606,7 @@ body.loaded #loader {
         font-size: 0.9rem;
     }
 }
+
 /* Pricing section */
 
 .rounded-lg {
@@ -614,12 +615,6 @@ body.loaded #loader {
 
 .text-small {
     font-size: 0.9rem !important;
-}
-
-.custom-separator {
-    width: 5rem;
-    height: 6px;
-    border-radius: 1rem;
 }
 
 .text-uppercase {
@@ -634,13 +629,16 @@ body.loaded #loader {
     color: #fff;
 }
 
+.col-lg-4 {
+    margin: 10px 0 !important;
+}
+
 .pricing-txt {
     background: none;
     border: 1px solid #9d60cf;
     color: #9d60cf;
     font-family: 'Poppins', Calibri, sans-serif;
     padding: 2px;
-
 }
 
 .price-txt {
@@ -662,14 +660,6 @@ body.loaded #loader {
 
 .btn-pricing:hover {
     color: #fff;
-}
-
-#pricing-highlight {
-    padding-bottom: 60px;
-}
-
-#pricing-highlight div a {
-    background-color: #9d60cf;
 }
 
 .gradient-txt {
