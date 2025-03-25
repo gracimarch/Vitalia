@@ -385,7 +385,7 @@ figcaption {
 }
 
 .recipemargin {
-    padding: 30px;
+    padding: 5px 30px;
     margin: 30px 0;
     max-height: 75vh;
     overflow-y: auto;
@@ -468,6 +468,7 @@ figcaption {
 
     .recipecontainer {
         width: 80%;
+        max-height: 50vh;
     }
 }
 
@@ -606,11 +607,6 @@ input[type="checkbox"], input[type="radio"] {
     .article {
         margin: 0 20px;
     }
-
-    .image {
-        padding: 0 20px;
-        width: 90%;
-    }
 }
 
 @media (max-width: 941px) {
@@ -635,6 +631,28 @@ input[type="checkbox"], input[type="radio"] {
     .article-title h2 {
         font-size: 22px;
         margin: 0 15px;
+    }
+
+    .image {
+        padding: 0 20px;
+        width: 95% !important;
+    }
+
+    .schedule-stage__title {
+        padding-left: 2rem;
+        padding-right: 0;
+    }
+
+    .weekday {
+        font-size: 1.3rem;
+    }
+
+    .mealtime, figcaption {
+        font-size: 0.8rem;
+    }
+
+    .mealtitle {
+        font-size: 1.15rem !important;
     }
 }
 
