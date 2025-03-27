@@ -29,6 +29,7 @@
     
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="/assets/js/mainform.js" type="module"></script>
+    <script type="module" src="/assets/js/firebaseconect.js"></script>
 
     <!-- Créditos:
         - Bootstrap: https://getbootstrap.com/
@@ -383,11 +384,7 @@
                                     <p><b>¿Cómo describirías tu dieta?</b></p>
                                     <div class="choice-container">
                                         <input type="radio" id="vegetariana" name="diet" value="Vegetariana" required>
-                                        <label for="vegetariana">Vegetariana</label>
-                                    </div>
-                                    <div class="choice-container">
-                                        <input type="radio" id="vegana" name="diet" value="Vegana" required>
-                                        <label for="vegana">Vegana</label>
+                                        <label for="vegetariana">Vegetariana o vegana</label>
                                     </div>
                                     <div class="choice-container">
                                         <input type="radio" id="omnivora" name="diet" value="Omnívora" required>
@@ -479,11 +476,6 @@
                                 <div class="form-holder">
                                     <p><b>¿Cómo es tu calidad del sueño?</b></p>
                                     <div class="choice-container">
-                                        <input type="radio" id="menos-de-5-horas" name="calidad-sueño"
-                                            value="Duermo menos de 5 horas por noche" required>
-                                        <label for="menos-de-5-horas">Duermo menos de 5 horas por noche</label>
-                                    </div>
-                                    <div class="choice-container">
                                         <input type="radio" id="entre-5-7-horas" name="calidad-sueño"
                                             value="Duermo entre 5 y 7 horas por noche" required>
                                         <label for="entre-5-7-horas">Duermo entre 5 y 7 horas por noche</label>
@@ -496,7 +488,7 @@
                                     <div class="choice-container">
                                         <input type="radio" id="problemas-para-dormir" name="calidad-sueño"
                                             value="Tengo problemas para dormir" required>
-                                        <label for="problemas-para-dormir">Tengo problemas para dormir</label>
+                                        <label for="problemas-para-dormir">Duermo menos de 5 horas por noche</label>
                                     </div>
                                 </div>
                             </div>
@@ -505,18 +497,14 @@
                         <section class="section" id="section5">
                             <div class="form-row-scroll">
                                 <div class="form-holder">
-                                    <p><b>¿Cómo describirías tu nivel de estrés y/o ansiedad?</b></p>
+                                    <p><b>¿Sientes estrés y/o ansiedad de forma frecuente?</b></p>
                                     <div class="choice-container">
                                         <input type="radio" id="estres-bajo" name="estres-ansiedad" value="Bajo" required>
-                                        <label for="estres-bajo">Bajo</label>
-                                    </div>
-                                    <div class="choice-container">
-                                        <input type="radio" id="estres-moderado" name="estres-ansiedad" value="Moderado" required>
-                                        <label for="estres-moderado">Moderado</label>
+                                        <label for="estres-bajo">No</label>
                                     </div>
                                     <div class="choice-container">
                                         <input type="radio" id="estres-alto" name="estres-ansiedad" value="Alto" required>
-                                        <label for="estres-alto">Alto</label>
+                                        <label for="estres-alto">Sí</label>
                                     </div>
                                 </div>
             
