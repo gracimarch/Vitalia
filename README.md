@@ -10,8 +10,6 @@ Descubre una plataforma diseñada para ofrecerte un plan de bienestar totalmente
 - **Chat en Tiempo Real:** Un chatbot impulsado por IA que te ofrece recomendaciones instantáneas y apoyo emocional cuando lo necesites.
 - **Contenido Exclusivo:** Accede a artículos y videos que te ayudarán a mejorar tu salud mental y física.
 
-[![Ver nuestra presentación en YouTube](https://img.youtube.com/vi/HnkO-6j1Vf0/0.jpg)](https://youtu.be/HnkO-6j1Vf0?si=Yykvn9824UVJD1fT)
-
 ## 👥 Únete a Nosotros
 
 Comienza tu viaje hacia un bienestar integral con una plataforma que se adapta a ti en [nuestro sitio web](https://vitalia-selfcare.vercel.app/). ¡Es el momento de transformar tu vida!
