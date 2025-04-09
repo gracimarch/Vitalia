@@ -4,8 +4,6 @@
 
 Descubre una plataforma diseñada para ofrecerte un plan de bienestar totalmente personalizado. Desde el primer momento, nuestro algoritmo te emparejará con el plan perfecto para ti, basado en tus necesidades y objetivos.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=HnkO-6j1Vf0" target="_blank">
-
 ### 🌷 Lo Más Destacado:
 
 - **Planes Personalizados:** Planes exclusivos que incluyen rutinas de ejercicio, meditaciones guiadas, y dietas adaptadas.
