@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fin de semana sin lácteos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hourglass.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" render></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/css/dietstyle.css">
+  <link rel="icon" href="../assets/images/vitaliaLogo.webp" type="image/webp">
+
+  <meta name="description"
+    content="Fin de semana sin lácteos: un plan alimenticio para cuidar la digestión y reducir la inflamación, sin renunciar al sabor y la variedad.">
+  <meta name="keywords" content="sin lácteos, fin de semana, plan alimenticio, dieta saludable, recetas sin lactosa">
+  <meta name="robots" content="index, follow">
+</head>
+
+<body>
+  <!-- Pantalla de carga -->
+  <div id="loader">
+    <l-hourglass size="40" bg-opacity="0.1" speed="1.75" color="#7134A2"></l-hourglass>
+  </div>
+
+  <!-- Encabezado -->
+  <header class="header">
+    <div class="container" id="nav-header">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../assets/images/vitaliaLogoNavBar.webp" alt="Vitalia Logo" class="logo">
+        </a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon">
+            <div class="middle"></div>
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item" id="first-nav-item">
+              <a class="nav-link" href="../blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="miespacio" href="../mi-espacio.html">Mi espacio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Acerca de</a>
+            </li>
+          </ul>
+          <div class="d-none d-lg-flex align-items-center">
+            <a class="nav-link" href="../index.html#premium">
+              <img src="../assets/images/coronaIconoNavbar.webp" alt="Premium" class="premium">
+            </a>
+          </div>
+          <div class="d-lg-none">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item" id="last-nav-item">
+                <a class="nav-link" href="../index.html#premium">Planes de suscripción</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="pagina">
+    <div class="title">
+      <h3>Tipo de Alimentación: Sin lácteos, ligero y natural</h3>
+      <h1>Fin de semana sin lácteos</h1>
+      <div class="reading-time">
+        <i class="bi bi-clock" alt="Ícono de reloj"></i>
+        <p>Duración: 1 fin de semana</p>
+      </div>
+    </div>
+
+    <div id="introduction" class="article">
+      <p>Este plan está pensado para quienes buscan cuidar su digestión,
+        reducir la inflamación o simplemente explorar una alimentación más ligera y natural. Es ideal para personas con
+        intolerancia a la lactosa o quienes quieren probar una alternativa saludable <strong class="underline">sin
+        renunciar al sabor ni a la variedad</strong>. Es perfecto para un reset digestivo, una pausa consciente o
+        simplemente para sentirte bien comiendo rico y sin lácteos.</p>
+    </div>
+
+    <div class="image">
+      <img src="../assets/images/imgFinSemanaSinLactosa.webp" alt="Imagen del plan sin lácteos">
+    </div>
+  </div>
+
+  <!-- Plan de comidas: Sábado y Domingo -->
+  <div class="food-plan">
+    <div class="schedule-container">
+      <!-- Sábado -->
+      <div class="schedule-stage__wrapper">
+        <hr class="divider" />
+        <section class="schedule-stage">
+          <div class="schedule-stage__title">
+            <h3 class="weekday">Sábado</h3>
+          </div>
+          <div class="schedule-stage_guide-container">
+            <!-- Desayuno: Porridge de avena con leche de almendra y frutas (10 minutos) -->
+            <div class="guide-slot">
+              <p class="mealtime">Desayuno</p>
+              <button class="open-recipe" data-target="recipe15">
+                <div class="guide-slot_card">
+                  <h4 class="mealtitle">Porridge de avena con leche de almendra y frutas</h4>
+                  <figure class="author-wrapper">
+                    <picture>
+                      <img src="/assets/images/meal-icon.webp" alt="" />
+                    </picture>
+                    <figcaption>Listo en 10 minutos</figcaption>
+                  </figure>
+                </div>
+              </button>
+            </div>
+            <!-- Almuerzo: Ensalada mediterránea de garbanzos y vegetales (20 minutos) -->
+            <div class="guide-slot">
+              <p class="mealtime">Almuerzo</p>
+              <button class="open-recipe" data-target="recipe16">
+                <div class="guide-slot_card">
+                  <h4 class="mealtitle">Ensalada mediterránea de garbanzos y vegetales</h4>
+                  <figure class="author-wrapper">
+                    <picture>
+                      <img src="/assets/images/meal-icon.webp" alt="" />
+                    </picture>
+                    <figcaption>Listo en 20 minutos</figcaption>
+                  </figure>
+                </div>
+              </button>
+            </div>
+            <!-- Cena: Estofado de ternera con verduras (40 minutos) -->
+            <div class="guide-slot">
+              <p class="mealtime">Cena</p>
+              <button class="open-recipe" data-target="recipe17">
+                <div class="guide-slot_card">
+                  <h4 class="mealtitle">Estofado de ternera con verduras</h4>
+                  <figure class="author-wrapper">
+                    <picture>
+                      <img src="/assets/images/meal-icon.webp" alt="" />
+                    </picture>
+                    <figcaption>Listo en 40 minutos</figcaption>
+                  </figure>
+                </div>
+              </button>
+            </div>
+            <!-- Snack: Rodaja de piña fresca (Listo inmediatamente) -->
+            <div class="guide-slot">
+              <p class="mealtime">Snack</p>
+              <button>
+                <div class="guide-slot_card">
+                  <h4 class="mealtitle">Rodaja de piña fresca</h4>
+                  <figure class="author-wrapper">
+                    <picture>
+                      <img src="/assets/images/ray-icon.webp" alt="" />
+                    </picture>
+                    <figcaption>Listo inmediatamente</figcaption>
+                  </figure>
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+        <hr class="divider" />
+      </div>
+
+      <!-- Domingo -->
+      <div class="schedule-stage__wrapper">
+        <section class="schedule-stage">
+          <div class="schedule-stage__title">
+            <h3 class="weekday">Domingo</h3>
+          </div>
+          <div class="schedule-stage_guide-container">
+            <!-- Desayuno: Smoothie bowl de frutas tropicales (7 minutos) -->
+            <div class="guide-slot">
+              <p class="mealtime">Desayuno</p>
+              <button class="open-recipe" data-target="recipe18">
+                <div class="guide-slot_card">
+                  <h4 class="mealtitle">Smoothie bowl de frutas tropicales</h4>
+                  <figure class="author-wrapper">
+                    <picture>
+                      <img src="/assets/images/meal-icon.webp" alt="" />
+                    </picture>
+                    <figcaption>Listo en 7 minutos</figcaption>
+                  </figure>
+                </div>
+              </button>
+            </div>
+            <!-- Almuerzo: Quiche sin lactosa de espinacas y champiñones (30 minutos) -->
+            <div class="guide-slot">
+              <p class="mealtime">Almuerzo</p>
+              <button class="open-recipe" data-target="recipe19">
+                <div class="guide-slot_card">
+                  <h4 class="mealtitle">Quiche sin lactosa de espinacas y champiñones</h4>
+                  <figure class="author-wrapper">
+                    <picture>
+                      <img src="/assets/images/meal-icon.webp" alt="" />
+                    </picture>
+                    <figcaption>Listo en 30 minutos</figcaption>
+                  </figure>
+                </div>
+              </button>
+            </div>
+            <!-- Cena: Sopa minestrone sin queso (35 minutos) -->
+            <div class="guide-slot">
+              <p class="mealtime">Cena</p>
+              <button class="open-recipe" data-target="recipe20">
+                <div class="guide-slot_card">
+                  <h4 class="mealtitle">Sopa minestrone sin queso</h4>
+                  <figure class="author-wrapper">
+                    <picture>
+                      <img src="/assets/images/meal-icon.webp" alt="" />
+                    </picture>
+                    <figcaption>Listo en 35 minutos</figcaption>
+                  </figure>
+                </div>
+              </button>
+            </div>
+            <!-- Snack: Mix de frutos secos (Listo inmediatamente) -->
+            <div class="guide-slot">
+              <p class="mealtime">Snack</p>
+              <button>
+                <div class="guide-slot_card">
+                  <h4 class="mealtitle">Mix de frutos secos</h4>
+                  <figure class="author-wrapper">
+                    <picture>
+                      <img src="/assets/images/ray-icon.webp" alt="" />
+                    </picture>
+                    <figcaption>Listo inmediatamente</figcaption>
+                  </figure>
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+        <hr class="divider" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Recetas -->
+  <div class="pagina-3">
+    <p id="darkscreen"></p>
+    <div id="recipes">
+      <!-- Recetas Sábado -->
+      <div class="recipecontainer" id="recipe15">
+        <a class="close" href="">X</a>
+        <div class="recipemargin">
+          <h6 class="rtitle">Porridge de avena con leche de almendra y frutas</h6>
+          <figure class="timealign">
+            <picture>
+              <img src="/assets/images/meal-icon.webp" alt="" />
+            </picture>
+            <figcaption>Listo en 10 minutos</figcaption>
+          </figure>
+          <img class="rimg" src="../assets/images/imgDietasPorridge.webp" alt="Imagen de la receta">
+          <ul>
+            <li><strong>1/2 taza de avena</strong></li>
+            <li><strong>1 taza de leche de almendra</strong></li>
+            <li><strong>Frutas variadas (banano, fresas, arándanos)</strong></li>
+            <li><strong>Miel o sirope de agave (opcional)</strong></li>
+          </ul>
+          <p>Cocina la avena con la leche de almendra a fuego medio, removiendo ocasionalmente, hasta que adquiera la
+            consistencia deseada. Sirve en un tazón y añade las frutas encima. Este desayuno reconfortante es ideal para
+            empezar el fin de semana con energía.</p>
+        </div>
+      </div>
+
+      <div class="recipecontainer" id="recipe16">
+        <a class="close" href="">X</a>
+        <div class="recipemargin">
+          <h6 class="rtitle">Ensalada mediterránea de garbanzos y vegetales</h6>
+          <figure class="timealign">
+            <picture>
+              <img src="/assets/images/meal-icon.webp" alt="" />
+            </picture>
+            <figcaption>Listo en 20 minutos</figcaption>
+          </figure>
+          <img class="rimg" src="../assets/images/imgDietasEnsaladaMediterranea.webp" alt="Imagen de la receta">
+          <ul>
+            <li><strong>1 taza de garbanzos cocidos</strong></li>
+            <li><strong>Tomate, pepino y pimiento en cubos</strong></li>
+            <li><strong>Aceitunas negras</strong></li>
+            <li><strong>Hojas de albahaca</strong></li>
+            <li><strong>Aceite de oliva y vinagre</strong></li>
+          </ul>
+          <p>En un tazón, combina los garbanzos con los vegetales cortados en cubos. Añade aceitunas y hojas de
+            albahaca, y aliña con aceite de oliva y vinagre al gusto para obtener una ensalada fresca y vibrante.</p>
+        </div>
+      </div>
+
+      <div class="recipecontainer" id="recipe17">
+        <a class="close" href="">X</a>
+        <div class="recipemargin">
+          <h6 class="rtitle">Estofado de ternera con verduras</h6>
+          <figure class="timealign">
+            <picture>
+              <img src="/assets/images/meal-icon.webp" alt="" />
+            </picture>
+            <figcaption>Listo en 40 minutos</figcaption>
+          </figure>
+          <img class="rimg" src="../assets/images/imgDietasEstofadoTernera.webp" alt="Imagen de la receta">
+          <ul>
+            <li><strong>300g de ternera en cubos</strong></li>
+            <li><strong>Patata, zanahoria y apio</strong></li>
+            <li><strong>Caldo de carne</strong></li>
+            <li><strong>Hierbas aromáticas</strong></li>
+          </ul>
+          <p>Dora la ternera en cubos en una olla con un poco de aceite. Incorpora las verduras cortadas y cúbrelo todo
+            con caldo de carne. Añade hierbas aromáticas y cocina a fuego lento durante 35-40 minutos hasta lograr un
+            estofado tierno y sabroso.</p>
+        </div>
+      </div>
+
+      <!-- Recetas Domingo -->
+      <div class="recipecontainer" id="recipe18">
+        <a class="close" href="">X</a>
+        <div class="recipemargin">
+          <h6 class="rtitle">Smoothie bowl de frutas tropicales</h6>
+          <figure class="timealign">
+            <picture>
+              <img src="/assets/images/meal-icon.webp" alt="" />
+            </picture>
+            <figcaption>Listo en 7 minutos</figcaption>
+          </figure>
+          <img class="rimg" src="../assets/images/imgDietasSmoothieTropical.webp" alt="Imagen de la receta">
+          <ul>
+            <li><strong>1 taza de frutas tropicales congeladas</strong></li>
+            <li><strong>1/2 taza de leche de coco</strong></li>
+            <li><strong>1 cucharadita de miel</strong></li>
+            <li><strong>Fruta fresca para decorar</strong></li>
+          </ul>
+          <p>Licúa las frutas congeladas con la leche de coco y la miel hasta obtener una mezcla cremosa. Sirve en un
+            bowl y decora con trozos de fruta fresca para un desayuno lleno de sabor y vitalidad.</p>
+        </div>
+      </div>
+
+      <div class="recipecontainer" id="recipe19">
+        <a class="close" href="">X</a>
+        <div class="recipemargin">
+          <h6 class="rtitle">Quiche sin lactosa de espinacas y champiñones</h6>
+          <figure class="timealign">
+            <picture>
+              <img src="/assets/images/meal-icon.webp" alt="" />
+            </picture>
+            <figcaption>Listo en 30 minutos</figcaption>
+          </figure>
+          <img class="rimg" src="../assets/images/imgDietasQuicheSinLactosa.webp" alt="Imagen de la receta">
+          <ul>
+            <li><strong>Masa sin lactosa (pre-hecha o casera)</strong></li>
+            <li><strong>150g de espinacas</strong></li>
+            <li><strong>100g de champiñones laminados</strong></li>
+            <li><strong>Huevos y especias</strong></li>
+          </ul>
+          <p>Extiende la masa en un molde y reserva. Saltea las espinacas y los champiñones con un toque de aceite y
+            sal. Bate los huevos, mezcla con las verduras, sazona y vierte sobre la masa. Hornea a 180°C durante 25-30
+            minutos hasta que el relleno se cuaje. Un almuerzo dominical perfecto.</p>
+        </div>
+      </div>
+
+      <div class="recipecontainer" id="recipe20">
+        <a class="close" href="">X</a>
+        <div class="recipemargin">
+          <h6 class="rtitle">Sopa minestrone sin queso</h6>
+          <figure class="timealign">
+            <picture>
+              <img src="/assets/images/meal-icon.webp" alt="" />
+            </picture>
+            <figcaption>Listo en 35 minutos</figcaption>
+          </figure>
+          <img class="rimg" src="../assets/images/imgDietasMinestrone.webp" alt="Imagen de la receta">
+          <ul>
+            <li><strong>Verduras variadas (zanahoria, apio, tomate, calabacín)</strong></li>
+            <li><strong>Pasta pequeña integral</strong></li>
+            <li><strong>Caldo vegetal</strong></li>
+            <li><strong>Hierbas frescas</strong></li>
+          </ul>
+          <p>Saltea las verduras picadas hasta que se ablanden y añade el caldo vegetal. Incorpora la pasta y cocina
+            hasta que esté al dente. Finaliza con hierbas frescas y sirve caliente. Una sopa reconfortante para cerrar
+            el fin de semana.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/js/dietasscript.js"></script>
+
+    <div class="pagina-2">
+      <div class="article-title" id="lista-de-compras">
+        <h2>Lista de compras</h2>
+      </div>
+      <div class="article">
+        <div>
+          <input type="checkbox">
+          <label><strong>Frutas y verduras:</strong> Banano, fresas, arándanos, kiwi, mango, manzana, aguacate, tomate,
+            pepino, zanahoria, espinaca, pimiento, berenjena, champiñones, calabaza, lechuga, albahaca.</label>
+        </div>
+        <div>
+          <input type="checkbox">
+          <label><strong>Proteínas:</strong> Ternera, pavo, pescado blanco, tofu, garbanzos, lentejas.</label>
+        </div>
+        <div>
+          <input type="checkbox">
+          <label><strong>Otros:</strong> Quinoa, arroz integral, pasta integral, avena, semillas de chía, masa sin
+            lactosa, aceite de oliva, leche de almendra,
+            granola, miel.</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página-->
+  <footer class="footer row py-5 border-top">
+    <div class="col-lg-4 col-md-6 mb-3">
+      <a href="#" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+        <img src="../assets/images/vitaliaLogoFooter.webp" alt="Logo de Vitalia" class="footer-logo">
+      </a>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=61565298270139" target="_blank" class="social-icon"
+          aria-label="Facebook de Vitalia">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/vitalia.selfcare/" target="_blank" class="social-icon"
+          aria-label="Instagram de Vitalia">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="mailto:vitalia.selfcare@gmail.com?subject=Consulta%20-%20Vitalia&body=Me%20comunicaba%20porque..."
+          target="_blank" class="social-icon" aria-label="E-mail de Vitalia">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+      </div>
+      <div class="footer-links">
+        <a href="../assets/documentos/política-de-privacidad.pdf" target="_blank" class="footer-link">Políticas de
+          Privacidad</a>
+        <span class="separator">|</span>
+        <a href="../assets/documentos/términos-y-condiciones.pdf" target="_blank" class="footer-link">Términos y
+          Condiciones</a>
+      </div>
+      <p class="text-body-secondary rights">&copy; 2024 Vitalia. Todos los derechos resevardos.</p>
+    </div>
+
+    <div class="col"></div>
+
+    <div class="col-lg-2 col-md-6 mb-3 div-space">
+      <h4 class="subtitle">Blog</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Productividad</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Actividad física y emocional</a>
+        </li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Hábitos alimenticios</a></li>
+        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Salud mental y bienestar</a></li>
+      </ul>
+    </div>
+
+    <div class="col-lg-2 col-md-6 mb-3">
+      <h4 class="subtitle">Mi espacio</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="../index.html#lecturas-recomendadas"
+            class="nav-link p-0 text-body-secondary">Artículos recomendados</a></li>
+        <li class="nav-item mb-2"><a href="../index.html#ejercicios" class="nav-link p-0 text-body-secondary">Rutinas de
+            ejercicio</a></li>
+        <li class="nav-item mb-2"><a href="../index.html#meditaciones"
+            class="nav-link p-0 text-body-secondary">Meditaciones</a></li>
+        <li class="nav-item mb-2"><a href="../index.html#alimentaciones" class="nav-link p-0 text-body-secondary">Planes
+            alimenticios</a></li>
+      </ul>
+    </div>
+
+    <div class="col-lg-2 col-md-6 mb-3">
+      <h4 class="subtitle">Acerca de</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="../index.html#que-es-vitalia" class="nav-link p-0 text-body-secondary">¿Qué
+            es Vitalia?</a></li>
+        <li class="nav-item mb-2"><a href="../index.html#preguntas-frecuentes"
+            class="nav-link p-0 text-body-secondary">Preguntas frecuentes</a></li>
+        <li class="nav-item mb-2"><a href="../index.html#premium" class="nav-link p-0 text-body-secondary">Planes de
+            suscripción</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    !function () {
+      var t = window,
+        e = document,
+        a = function () {
+          var t = e.createElement("script");
+          t.type = "text/javascript", t.async = !0, t.src = "https://bot.airdroid.com/widget/chatinsight-widget.js", t.onload = function () {
+            new ChatInsightWidget({ sid: 'DBEaEYro3pM7blsrV5tpn6D4uL6FBMBc', iFrameSid: 'asQotJ41ToI4oveBTqWAlrT0f_8AKYEM' })
+          };
+          var a = e.getElementsByTagName("script")[0];
+          a.parentNode.insertBefore(t, a)
+        };
+      "complete" === document.readyState ? a() : t.attachEvent ? t.attachEvent("onload", a) : t.addEventListener("load", a, !1)
+    }();
+  </script>
+
+  <script src="../assets/js/articlescript.js"></script>
+</body>
+
+</html>

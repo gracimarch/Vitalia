@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan alimenticio semanal para personas con intolerancia a la lactosa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hourglass.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" render></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/dietstyle.css">
+    <link rel="icon" href="../assets/images/vitaliaLogo.webp" type="image/webp">
+
+    <meta name="description"
+        content="Plan alimenticio semanal sin lactosa: una dieta completa y saludable para personas con intolerancia a la lactosa, con recetas creativas y fáciles de seguir.">
+    <meta name="keywords"
+        content="sin lactosa, intolerancia a la lactosa, plan alimenticio, dieta saludable, recetas sin lactosa">
+    <meta name="robots" content="index, follow">
+</head>
+
+<body>
+    <!-- Pantalla de carga -->
+    <div id="loader">
+        <l-hourglass size="40" bg-opacity="0.1" speed="1.75" color="#7134A2"></l-hourglass>
+    </div>
+
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container" id="nav-header">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/images/vitaliaLogoNavBar.webp" alt="Vitalia Logo" class="logo">
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <div class="middle"></div>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item" id="first-nav-item">
+                            <a class="nav-link" href="../blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="miespacio" href="../mi-espacio.html">Mi espacio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Acerca de</a>
+                        </li>
+                    </ul>
+                    <div class="d-none d-lg-flex align-items-center">
+                        <a class="nav-link" href="../index.html#premium">
+                            <img src="../assets/images/coronaIconoNavbar.webp" alt="Premium" class="premium">
+                        </a>
+                    </div>
+                    <div class="d-lg-none">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item" id="last-nav-item">
+                                <a class="nav-link" href="../index.html#premium">Planes de suscripción</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="pagina">
+        <div class="title">
+            <h3>Tipo de Alimentación: Sin lactosa, completa y saludable</h3>
+            <h1>Plan alimenticio semanal para personas con intolerancia a la lactosa</h1>
+            <div class="reading-time">
+                <i class="bi bi-clock" alt="Ícono de reloj"></i>
+                <p>Duración: 1 semana</p>
+            </div>
+        </div>
+
+        <div id="introduction" class="article">
+            <p>E¿Evitas los lácteos? Este plan fue creado especialmente para ti: una propuesta nutritiva y equilibrada, pensada
+                para quienes deben eliminar la lactosa de su dieta sin perder variedad. Descubrirás que comer bien sin lácteos no
+                solo es posible, ¡también es delicioso!
+            </p>
+        </div>
+
+        <div class="image">
+            <img src="../assets/images/imgDietasSinLactosa.webp" alt="Imagen del plan sin lactosa">
+        </div>
+    </div>
+
+    <!-- Plan de comidas -->
+    <div class="food-plan">
+        <div class="schedule-container">
+            <!-- Lunes -->
+            <div class="schedule-stage__wrapper">
+                <hr class="divider" />
+                <section class="schedule-stage">
+                    <div class="schedule-stage__title">
+                        <h3 class="weekday">Lunes</h3>
+                    </div>
+                    <div class="schedule-stage_guide-container">
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Desayuno</p>
+                            <button class="open-recipe" data-target="recipe1">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Chia pudding con leche de coco y frutas</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 5 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Almuerzo</p>
+                            <button class="open-recipe" data-target="recipe2">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Ensalada de quinoa con garbanzos y verduras asadas</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 20 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Cena</p>
+                            <button class="open-recipe" data-target="recipe3">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Sopa fría de pepino y menta</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 10 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Snack</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Rodajas de manzana con mantequilla de almendra</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo inmediatamente</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <hr class="divider" />
+            </div>
+
+            <!-- Martes -->
+            <div class="schedule-stage__wrapper">
+                <section class="schedule-stage">
+                    <div class="schedule-stage__title">
+                        <h3 class="weekday">Martes</h3>
+                    </div>
+                    <div class="schedule-stage_guide-container">
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Desayuno</p>
+                            <button class="open-recipe" data-target="recipe4">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Smoothie bowl de mango y plátano</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 5 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Almuerzo</p>
+                            <button class="open-recipe" data-target="recipe5">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Tacos de lechuga con carne de res y pico de gallo</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 15 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Cena</p>
+                            <button class="open-recipe" data-target="recipe6">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Pollo al curry con leche de coco</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 30 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Snack</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Palitos de zanahoria</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo inmediatamente</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <hr class="divider" />
+            </div>
+
+            <!-- Miércoles -->
+            <div class="schedule-stage__wrapper">
+                <section class="schedule-stage">
+                    <div class="schedule-stage__title">
+                        <h3 class="weekday">Miércoles</h3>
+                    </div>
+                    <div class="schedule-stage_guide-container">
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Desayuno</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Tostadas integrales con aguacate y tomate</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo inmediatamente</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Almuerzo</p>
+                            <button class="open-recipe" data-target="recipe7">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Buddha bowl con arroz integral, tofu marinado y verduras
+                                        frescas</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 25 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Cena</p>
+                            <button class="open-recipe" data-target="recipe8">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Lasaña vegetal con láminas de berenjena</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 35 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Snack</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Nueces y uvas</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo inmediatamente</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <hr class="divider" />
+            </div>
+
+            <!-- Jueves -->
+            <div class="schedule-stage__wrapper">
+                <section class="schedule-stage">
+                    <div class="schedule-stage__title">
+                        <h3 class="weekday">Jueves</h3>
+                    </div>
+                    <div class="schedule-stage_guide-container">
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Desayuno</p>
+                            <button class="open-recipe" data-target="recipe9">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Parfait de granola con yogur sin lactosa y frutas</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 5 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Almuerzo</p>
+                            <button class="open-recipe" data-target="recipe10">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Ensalada tibia de lentejas con espinacas y zanahoria</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 20 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Cena</p>
+                            <button class="open-recipe" data-target="recipe11">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Filete de pescado al horno con salsa de limón y alcaparras
+                                    </h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 25 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Snack</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Rodajas de pepino con sal y limón</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo inmediatamente</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <hr class="divider" />
+            </div>
+
+            <!-- Viernes -->
+            <div class="schedule-stage__wrapper">
+                <section class="schedule-stage">
+                    <div class="schedule-stage__title">
+                        <h3 class="weekday">Viernes</h3>
+                    </div>
+                    <div class="schedule-stage_guide-container">
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Desayuno</p>
+                            <button class="open-recipe" data-target="recipe12">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Batido verde de espinaca, manzana y jengibre</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 5 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Almuerzo</p>
+                            <button class="open-recipe" data-target="recipe13">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Wrap de pavo y vegetales en tortilla sin lactosa</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 15 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Cena</p>
+                            <button class="open-recipe" data-target="recipe14">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Crema de calabaza y jengibre</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 30 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Snack</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Mandarina fresca</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo inmediatamente</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <hr class="divider" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Recetas -->
+    <div class="pagina-3">
+        <p id="darkscreen"></p>
+        <div id="recipes">
+            <!-- Recetas Lunes -->
+            <div class="recipecontainer" id="recipe1">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Chia pudding con leche de coco y frutas</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/ray-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 5 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasChiaPudding.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>3 cucharadas de semillas de chía</strong></li>
+                        <li><strong>1 taza de leche de coco</strong></li>
+                        <li><strong>1 cucharadita de esencia de vainilla</strong></li>
+                        <li><strong>Frutas frescas (fresas, kiwi, mango)</strong></li>
+                    </ul>
+                    <p>Mezcla las semillas de chía con la leche de coco y la vainilla en un tazón. Deja reposar durante
+                        5 minutos para que las semillas se expandan. Agrega las frutas picadas encima y disfruta de un
+                        desayuno refrescante y nutritivo. Consejo: si prefieres una textura más cremosa, mezcla todo en
+                        la licuadora y refrigera unos minutos.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe2">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Ensalada de quinoa con garbanzos y verduras asadas</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 20 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasEnsaladaQuinoa.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 taza de quinoa cocida</strong></li>
+                        <li><strong>1 taza de garbanzos cocidos</strong></li>
+                        <li><strong>Verduras asadas (pimiento, calabacín, berenjena)</strong></li>
+                        <li><strong>Hojas de espinaca</strong></li>
+                        <li><strong>Aceite de oliva y limón</strong></li>
+                    </ul>
+                    <p>Corta las verduras en trozos y ásalas con un poco de aceite de oliva y sal hasta que estén
+                        tiernas. En un tazón, mezcla la quinoa con los garbanzos, las verduras asadas y las hojas de
+                        espinaca. Aliña con jugo de limón, aceite de oliva, sal y pimienta al gusto. Un plato fresco y
+                        lleno de texturas.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe3">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Sopa fría de pepino y menta</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 10 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasSopaPepinoMenta.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>2 pepinos</strong></li>
+                        <li><strong>Un puñado de hojas de menta fresca</strong></li>
+                        <li><strong>1 diente de ajo pequeño</strong></li>
+                        <li><strong>Jugo de 1 limón</strong></li>
+                        <li><strong>Aceite de oliva</strong></li>
+                    </ul>
+                    <p>Licúa los pepinos pelados y picados junto con la menta, el ajo y el jugo de limón. Añade un
+                        chorrito de aceite de oliva y sal al gusto. Si la consistencia es muy espesa, puedes agregar un
+                        poco de agua fría o hielo. Sirve frío y disfruta de este refrescante entrante.</p>
+                </div>
+            </div>
+
+            <!-- Recetas Martes -->
+            <div class="recipecontainer" id="recipe4">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Smoothie bowl de mango y plátano</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/ray-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 5 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasSmoothieAcai.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>2 mangos maduros</strong></li>
+                        <li><strong>1 plátano congelado</strong></li>
+                        <li><strong>1/2 taza de agua o leche de almendra</strong></li>
+                        <li><strong>Frutas frescas para decorar</strong></li>
+                    </ul>
+                    <p>Pela y corta dos mangos maduros, retirando toda la pulpa. Colócala en la licuadora y procesa hasta obtener un puré suave y cremoso; si lo deseas, puedes añadir unas gotas de jugo de limón para realzar el sabor.</p>
+                    <p>Una vez listo el puré de mango, agrega un plátano congelado y 1/2 taza de leche de almendra, y licúa todo junto hasta lograr una consistencia cremosa. Vierte la mezcla en un bowl y decora con frutas frescas al gusto. Esta opción sin lactosa es naturalmente dulce, rica en vitaminas y perfecta para empezar el día con energía tropical.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe5">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Tacos de lechuga con carne de res y pico de gallo</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 15 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasTacosLechuga.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>200g de carne de res magra</strong></li>
+                        <li><strong>Hojas de lechuga fresca</strong></li>
+                        <li><strong>Pico de gallo (tomate, cebolla, cilantro, limón)</strong></li>
+                        <li><strong>Aceite de oliva</strong></li>
+                    </ul>
+                    <p>Saltea la carne de res en tiras con un poco de aceite y sazona con sal y pimienta. Mientras
+                        tanto, prepara el pico de gallo picando tomate, cebolla y cilantro, y mezcla con jugo de limón.
+                        Sirve la carne en hojas de lechuga y agrega el pico de gallo encima para disfrutar de unos tacos
+                        ligeros y llenos de sabor.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe6">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Pollo al curry con leche de coco</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 30 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasPolloCurry.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>250g de pechuga de pollo</strong></li>
+                        <li><strong>1 lata de leche de coco</strong></li>
+                        <li><strong>1 cucharada de pasta de curry</strong></li>
+                        <li><strong>Verduras al gusto (pimiento, cebolla, brócoli)</strong></li>
+                    </ul>
+                    <p>Corta el pollo en cubos y saltéalo en una sartén con un poco de aceite hasta que esté dorado.
+                        Agrega las verduras picadas y la pasta de curry, mezclando bien para que se integren los
+                        sabores. Vierte la leche de coco, reduce el fuego y deja cocinar por unos 20-25 minutos hasta
+                        que el pollo esté tierno. Consejo: acompaña con arroz integral para una comida completa.</p>
+                </div>
+            </div>
+
+            <!-- Recetas Miércoles -->
+            <div class="recipecontainer" id="recipe7">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Buddha bowl con arroz integral, tofu marinado y verduras frescas</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 25 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasBuddhaBowl.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 taza de arroz integral cocido</strong></li>
+                        <li><strong>150g de tofu firme</strong></li>
+                        <li><strong>Verduras frescas (zanahoria, pepino, remolacha)</strong></li>
+                        <li><strong>Salsa de soya sin lactosa</strong></li>
+                    </ul>
+                    <p>Marina el tofu en salsa de soya con un poco de jengibre picado durante 10 minutos. Dispón el
+                        arroz en un bowl y añade el tofu junto con las verduras crudas cortadas en juliana. Puedes
+                        agregar un toque de aceite de sésamo y semillas de sésamo tostado para darle un extra de sabor.
+                    </p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe8">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Lasaña vegetal con láminas de berenjena</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 35 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasLasanaBerenjena.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>Berenjena en láminas</strong></li>
+                        <li><strong>Salsa de tomate casera</strong></li>
+                        <li><strong>Verduras variadas (espinaca, champiñones)</strong></li>
+                        <li><strong>Hierbas italianas</strong></li>
+                    </ul>
+                    <p>Asa las láminas de berenjena ligeramente con un poco de aceite para que queden tiernas. Intercala
+                        capas de berenjena, salsa de tomate y verduras salteadas en un molde, espolvoreando hierbas
+                        italianas entre capas. Hornea a 180°C durante 25-30 minutos y disfruta de una lasaña ligera y
+                        llena de sabor.</p>
+                </div>
+            </div>
+
+            <!-- Recetas Jueves -->
+            <div class="recipecontainer" id="recipe9">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Parfait de granola con yogur sin lactosa y frutas</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/ray-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 5 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasParfait.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 taza de yogur sin lactosa</strong></li>
+                        <li><strong>1/2 taza de granola</strong></li>
+                        <li><strong>Frutas frescas (arándanos, plátano, kiwi)</strong></li>
+                    </ul>
+                    <p>En un vaso, coloca una capa de yogur, una capa de granola y una capa de frutas picadas. Repite
+                        las capas hasta llenar el vaso y disfruta de un desayuno rápido, crujiente y saludable.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe10">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Ensalada tibia de lentejas con espinacas y zanahoria</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 20 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasEnsaladaLentejas.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 taza de lentejas cocidas</strong></li>
+                        <li><strong>Hojas de espinaca</strong></li>
+                        <li><strong>Zanahoria rallada</strong></li>
+                        <li><strong>Aceite de oliva y vinagre balsámico</strong></li>
+                    </ul>
+                    <p>En una sartén, saltea brevemente las lentejas con un poco de aceite y agrega las hojas de
+                        espinaca y la zanahoria rallada. Aliña con aceite de oliva, vinagre balsámico, sal y pimienta al
+                        gusto. Sirve tibio para disfrutar de una ensalada reconfortante y nutritiva.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe11">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Filete de pescado al horno con salsa de limón y alcaparras</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 25 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasPescadoHorno.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 filete de pescado blanco</strong></li>
+                        <li><strong>Jugo de 1 limón</strong></li>
+                        <li><strong>Alcaparras</strong></li>
+                        <li><strong>Hierbas frescas (perejil o cilantro)</strong></li>
+                    </ul>
+                    <p>Precalienta el horno a 200°C. Coloca el filete en una bandeja, rocía con jugo de limón y decora
+                        con alcaparras y hierbas. Hornea durante 15-20 minutos o hasta que el pescado esté bien cocido.
+                        Sirve inmediatamente y disfruta de un plato ligero y sabroso.</p>
+                </div>
+            </div>
+
+            <!-- Recetas Viernes -->
+            <div class="recipecontainer" id="recipe12">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Batido verde de espinaca, manzana y jengibre</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/ray-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 5 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasBatidoVerde.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 taza de espinaca fresca</strong></li>
+                        <li><strong>1 manzana verde</strong></li>
+                        <li><strong>Un trozo pequeño de jengibre</strong></li>
+                        <li><strong>1 taza de agua o leche de almendra</strong></li>
+                    </ul>
+                    <p>Coloca todos los ingredientes en la licuadora y procesa hasta obtener un batido homogéneo. Si lo
+                        deseas, añade hielo para una textura más refrescante. Es un desayuno lleno de vitaminas y
+                        perfecto para energizar tu día.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe13">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Wrap de pavo y vegetales en tortilla sin lactosa</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 15 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasWrapPavo.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>2 tortillas sin lactosa</strong></li>
+                        <li><strong>150g de pavo cocido en tiras</strong></li>
+                        <li><strong>Hojas de lechuga, tomate y pimiento</strong></li>
+                        <li><strong>Salsa ligera al gusto</strong></li>
+                    </ul>
+                    <p>Sobre cada tortilla, coloca las hojas de lechuga y distribuye las tiras de pavo junto con las
+                        verduras cortadas. Agrega la salsa y enrolla de forma apretada. Es un almuerzo práctico y lleno
+                        de sabor.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe14">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Crema de calabaza y jengibre</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 30 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasCremaCalabaza.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>500g de calabaza</strong></li>
+                        <li><strong>Un trozo de jengibre</strong></li>
+                        <li><strong>1/2 cebolla</strong></li>
+                        <li><strong>Caldo vegetal</strong></li>
+                    </ul>
+                    <p>Pela y corta la calabaza y el jengibre en cubos pequeños. Sofríe la cebolla picada hasta que esté
+                        transparente, agrega la calabaza y el jengibre y vierte suficiente caldo vegetal para cubrir.
+                        Cocina a fuego medio hasta que la calabaza esté tierna, luego licúa todo hasta obtener una crema
+                        suave. Ajusta la sazón y sirve caliente.</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="/assets/js/dietasscript.js"></script>
+
+        <div class="pagina-2">
+            <div class="article-title" id="variaciones">
+                <h2>Beneficios</h2>
+            </div>
+            <div class="article">
+                <ul>
+                    <li><strong class="underline">Sin lactosa:</strong> Todas las recetas están elaboradas sin lácteos;
+                        lo que ayuda a mejorar problemas de acné, disminuir la frecuencia de alergias respiratorias y reduce la inflamación del tracto digestivo.</li>
+                    <li><strong class="underline">Versátil:</strong> Puedes ajustar las especias y verduras según tu
+                        preferencia.</li>
+                    <li><strong class="underline">Fácil de adaptar:</strong> Si algún ingrediente no está disponible,
+                        sustituye por otro similar sin lactosa.</li>
+                </ul>
+            </div>
+            <div class="article-title" id="lista-de-compras">
+                <h2>Lista de compras</h2>
+            </div>
+            <div class="article">
+                <div>
+                    <input type="checkbox">
+                    <label><strong>Frutas y verduras:</strong> Plátano, fresas, arándanos, kiwi, mango, manzana,
+                        aguacate, tomate, pepino, zanahoria, espinaca, pimiento, berenjena, champiñones, calabaza,
+                        remolacha, lechuga, albahaca.</label>
+                </div>
+                <div>
+                    <input type="checkbox">
+                    <label><strong>Proteínas:</strong> Carne de res, pechuga de pollo, pavo, ternera, pescado blanco,
+                        tofu, garbanzos, lentejas.</label>
+                </div>
+                <div>
+                    <input type="checkbox">
+                    <label><strong>Otros:</strong> Quinoa, arroz integral, pasta integral, avena, semillas de chía, masa
+                        sin lactosa, aceite de oliva, vinagre balsámico, hierbas aromáticas, especias, leche de coco o
+                        leche de almendra, yogur sin lactosa, alcaparras, granola, miel o sirope de agave.</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página-->
+    <footer class="footer row py-5 border-top">
+        <div class="col-lg-4 col-md-6 mb-3">
+            <a href="#" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                <img src="../assets/images/vitaliaLogoFooter.webp" alt="Logo de Vitalia" class="footer-logo">
+            </a>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/profile.php?id=61565298270139" target="_blank" class="social-icon"
+                    aria-label="Facebook de Vitalia">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/vitalia.selfcare/" target="_blank" class="social-icon"
+                    aria-label="Instagram de Vitalia">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="mailto:vitalia.selfcare@gmail.com?subject=Consulta%20-%20Vitalia&body=Me%20comunicaba%20porque..."
+                    target="_blank" class="social-icon" aria-label="E-mail de Vitalia">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="../assets/documentos/política-de-privacidad.pdf" target="_blank" class="footer-link">Políticas
+                    de Privacidad</a>
+                <span class="separator">|</span>
+                <a href="../assets/documentos/términos-y-condiciones.pdf" target="_blank" class="footer-link">Términos y
+                    Condiciones</a>
+            </div>
+            <p class="text-body-secondary rights">&copy; 2024 Vitalia. Todos los derechos resevardos.</p>
+        </div>
+
+        <div class="col"></div>
+
+        <div class="col-lg-2 col-md-6 mb-3 div-space">
+            <h4 class="subtitle">Blog</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Productividad</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Actividad física y
+                        emocional</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Hábitos alimenticios</a>
+                </li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Salud mental y
+                        bienestar</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-3">
+            <h4 class="subtitle">Mi espacio</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="../index.html#lecturas-recomendadas"
+                        class="nav-link p-0 text-body-secondary">Artículos recomendados</a></li>
+                <li class="nav-item mb-2"><a href="../index.html#ejercicios"
+                        class="nav-link p-0 text-body-secondary">Rutinas de ejercicio</a></li>
+                <li class="nav-item mb-2"><a href="../index.html#meditaciones"
+                        class="nav-link p-0 text-body-secondary">Meditaciones</a></li>
+                <li class="nav-item mb-2"><a href="../index.html#alimentaciones"
+                        class="nav-link p-0 text-body-secondary">Planes alimenticios</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-3">
+            <h4 class="subtitle">Acerca de</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="../index.html#que-es-vitalia"
+                        class="nav-link p-0 text-body-secondary">¿Qué es Vitalia?</a></li>
+                <li class="nav-item mb-2"><a href="../index.html#preguntas-frecuentes"
+                        class="nav-link p-0 text-body-secondary">Preguntas frecuentes</a></li>
+                <li class="nav-item mb-2"><a href="../index.html#premium"
+                        class="nav-link p-0 text-body-secondary">Planes de suscripción</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        !function () {
+            var t = window,
+                e = document,
+                a = function () {
+                    var t = e.createElement("script");
+                    t.type = "text/javascript", t.async = !0, t.src = "https://bot.airdroid.com/widget/chatinsight-widget.js", t.onload = function () {
+                        new ChatInsightWidget({ sid: 'DBEaEYro3pM7blsrV5tpn6D4uL6FBMBc', iFrameSid: 'asQotJ41ToI4oveBTqWAlrT0f_8AKYEM' })
+                    };
+                    var a = e.getElementsByTagName("script")[0];
+                    a.parentNode.insertBefore(t, a)
+                };
+            "complete" === document.readyState ? a() : t.attachEvent ? t.attachEvent("onload", a) : t.addEventListener("load", a, !1)
+        }();
+    </script>
+
+    <script src="../assets/js/articlescript.js"></script>
+</body>
+
+</html>
