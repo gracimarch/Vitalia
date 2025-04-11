@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Express: Alimentación Semanal para Personas Vegetarianas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hourglass.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" render></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/dietstyle.css">
+    <link rel="icon" href="../assets/images/vitaliaLogo.webp" type="image/webp">
+
+    <meta name="description" content="Plan Express para personas vegetarianas que disponen de poco tiempo. Recetas rápidas, creativas y saludables, ideales para llevar una alimentación completa sin complicaciones.">
+    <meta name="keywords" content="plan express, vegetariano, vegano, dieta rápida, recetas express, alimentación saludable">
+    <meta name="robots" content="index, follow">
+</head>
+
+<body>
+    <!-- Pantalla de carga -->
+    <div id="loader">
+        <l-hourglass size="40" bg-opacity="0.1" speed="1.75" color="#7134A2"></l-hourglass>
+    </div>
+
+    <!-- Encabezado -->
+    <header class="header">
+        <div class="container" id="nav-header">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="../index.html">
+                    <img src="../assets/images/vitaliaLogoNavBar.webp" alt="Vitalia Logo" class="logo">
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <div class="middle"></div>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item" id="first-nav-item">
+                            <a class="nav-link" href="../blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="miespacio" href="../mi-espacio.html">Mi espacio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Acerca de</a>
+                        </li>
+                    </ul>
+                    <div class="d-none d-lg-flex align-items-center">
+                        <a class="nav-link" href="../index.html#premium">
+                            <img src="../assets/images/coronaIconoNavbar.webp" alt="Premium" class="premium">
+                        </a>
+                    </div>
+                    <div class="d-lg-none">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item" id="last-nav-item">
+                                <a class="nav-link" href="../index.html#premium">Planes de suscripción</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="pagina">
+        <div class="title">
+            <h3>Tipo de alimentación: Vegetariana y Vegana</h3>
+            <h1>Plan Express para Personas Vegetarianas</h1>
+            <div class="reading-time">
+                <i class="bi bi-clock" alt="Ícono de reloj"></i>
+                <p>Duración: 1 semana</p>
+            </div>
+        </div>
+
+        <div id="introduction" class="article">
+            <p>Este plan ha sido diseñado para quienes llevan una vida ajetreada pero desean disfrutar de una dieta completa y saludable basada en alimentos vegetarianos y veganos. Con recetas rápidas y creativas, cada preparación está pensada para que puedas comer bien sin perder tiempo. ¡Disfruta de cada plato y mantén tu energía a tope!</p>
+        </div>
+
+        <div class="image">
+            <img src="../assets/images/imgArticuloComeSaludablePlantas.webp" alt="Imagen del plan vegetariano">
+        </div>
+    </div>
+
+    <!-- Plan de comidas -->
+    <div class="food-plan">
+        <div class="schedule-container">
+            <!-- Lunes -->
+            <div class="schedule-stage__wrapper">
+                <hr class="divider" />
+                <section class="schedule-stage">
+                    <div class="schedule-stage__title">
+                        <h3 class="weekday">Lunes</h3>
+                    </div>
+                    <div class="schedule-stage_guide-container">
+                       
+                        <div class="guide-slot">
+                            <p class="mealtime">Desayuno</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Tostadas integrales con aguacate y tomate</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo inmediatamente</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Almuerzo</p>
+                            <button class="open-recipe" data-target="recipe1">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Buddha bowl de quinoa y vegetales</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 20 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="guide-slot">
+                            <p class="mealtime">Cena</p>
+                            <button class="open-recipe" data-target="recipe2">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Crema de calabaza y jengibre</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 30 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+    
+                        <div class="guide-slot">
+                            <p class="mealtime">Snack</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Plátano con mantequilla de almendras</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 5 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <hr class="divider" />
+            </div>
+
+            <!-- Martes -->
+            <div class="schedule-stage__wrapper">
+                <section class="schedule-stage">
+                    <div class="schedule-stage__title">
+                        <h3 class="weekday">Martes</h3>
+                    </div>
+                    <div class="schedule-stage_guide-container">
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Desayuno</p>
+                            <button class="open-recipe" data-target="recipe3">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Smoothie de espinaca, plátano y kiwi</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 5 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+
+                        <div class="guide-slot">
+                            <p class="mealtime">Almuerzo</p>
+                            <button class="open-recipe" data-target="recipe4">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Tacos con lechuga con garbanzos y maíz</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 15 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Cena: receta necesaria -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Cena</p>
+                            <button class="open-recipe" data-target="recipe5">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Pasta integral con pesto de albahaca y espinacas</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 25 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Snack: listo en 5 minutos, sin receta -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Snack</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Rodajas de pepino con hummus</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 5 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <hr class="divider" />
+            </div>
+
+            <!-- Miércoles -->
+            <div class="schedule-stage__wrapper">
+                <section class="schedule-stage">
+                    <div class="schedule-stage__title">
+                        <h3 class="weekday">Miércoles</h3>
+                    </div>
+                    <div class="schedule-stage_guide-container">
+                        <!-- Desayuno: receta necesaria, 5 minutos (usa ray-icon) -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Desayuno</p>
+                            <button class="open-recipe" data-target="recipe6">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Parfait de yogurt vegano con granola y frutas</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 5 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Almuerzo: receta necesaria -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Almuerzo</p>
+                            <button class="open-recipe" data-target="recipe7">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Ensalada tibia de lentejas y vegetales asados</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 30 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Cena: receta necesaria -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Cena</p>
+                            <button class="open-recipe" data-target="recipe8">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Sopa fría de pepino y menta</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 10 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Snack: listo inmediatamente, sin receta -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Snack</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Palitos de zanahoria</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo inmediatamente</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <hr class="divider" />
+            </div>
+
+            <!-- Jueves -->
+            <div class="schedule-stage__wrapper">
+                <section class="schedule-stage">
+                    <div class="schedule-stage__title">
+                        <h3 class="weekday">Jueves</h3>
+                    </div>
+                    <div class="schedule-stage_guide-container">
+                        <!-- Desayuno: receta necesaria -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Desayuno</p>
+                            <button class="open-recipe" data-target="recipe9">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Batido de remolacha, manzana y jengibre</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 7 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Almuerzo: receta necesaria -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Almuerzo</p>
+                            <button class="open-recipe" data-target="recipe10">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Wrap vegano de hummus y vegetales</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 15 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Cena: receta necesaria -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Cena</p>
+                            <button class="open-recipe" data-target="recipe11">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Curry de garbanzos y espinacas</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 20 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Snack: listo inmediatamente, sin receta -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Snack</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Nueces y pasas</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo inmediatamente</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <hr class="divider" />
+            </div>
+
+            <!-- Viernes -->
+            <div class="schedule-stage__wrapper">
+                <section class="schedule-stage">
+                    <div class="schedule-stage__title">
+                        <h3 class="weekday">Viernes</h3>
+                    </div>
+                    <div class="schedule-stage_guide-container">
+                        <!-- Desayuno: listo inmediatamente, sin receta -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Desayuno</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Leche de almendra con avena y frutos rojos</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo inmediatamente</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Almuerzo: receta necesaria -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Almuerzo</p>
+                            <button class="open-recipe" data-target="recipe12">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Bowl de falafel con tabulé y salsa tahini</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 25 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Cena: receta necesaria -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Cena</p>
+                            <button class="open-recipe" data-target="recipe13">
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Pizza de coliflor con vegetales</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/meal-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo en 35 minutos</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                        <!-- Snack: listo inmediatamente, sin receta -->
+                        <div class="guide-slot">
+                            <p class="mealtime">Snack</p>
+                            <button>
+                                <div class="guide-slot_card">
+                                    <h4 class="mealtitle">Rodajas de manzana con canela</h4>
+                                    <figure class="author-wrapper">
+                                        <picture>
+                                            <img src="/assets/images/ray-icon.webp" alt="" />
+                                        </picture>
+                                        <figcaption>Listo inmediatamente</figcaption>
+                                    </figure>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <hr class="divider" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de recetas -->
+    <div class="pagina-3">
+        <p id="darkscreen"></p>
+        <div id="recipes">
+            <!-- Recetas Lunes -->
+            <div class="recipecontainer" id="recipe1">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Buddha bowl de quinoa y vegetales</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 20 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasBuddhaBowl.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 taza de quinoa cocida</strong></li>
+                        <li><strong>1/2 taza de garbanzos asados</strong></li>
+                        <li><strong>Mix de hojas verdes</strong></li>
+                        <li><strong>Tomate cherry</strong></li>
+                        <li><strong>Aguacate en cubos</strong></li>
+                        <li><strong>Zanahoria rallada</strong></li>
+                    </ul>
+                    <p>En un bowl, mezcla la quinoa con garbanzos asados y hojas verdes. Agrega tomate cherry, aguacate y zanahoria rallada. Adereza con aceite de oliva, limón, sal y pimienta. Consejo express: mezcla todo y disfruta de un plato colorido y nutritivo en tiempo récord.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe2">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Crema de calabaza y jengibre</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 30 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasCremaCalabaza.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>400g de calabaza</strong></li>
+                        <li><strong>1 trozo pequeño de jengibre</strong></li>
+                        <li><strong>1 cebolla pequeña</strong></li>
+                        <li><strong>Caldo de verduras</strong></li>
+                        <li><strong>Crema de coco (opcional)</strong></li>
+                    </ul>
+                    <p>Pela y corta la calabaza y la cebolla en trozos. Sofríe la cebolla con un poco de aceite de oliva, añade la calabaza y el jengibre rallado, y cubre con caldo de verduras. Cocina hasta que la calabaza esté tierna y licúa hasta obtener una crema suave. Si deseas, incorpora crema de coco para un toque extra. Sirve caliente y disfruta de una cena reconfortante.</p>
+                </div>
+            </div>
+
+            <!-- Recetas Martes -->
+            <div class="recipecontainer" id="recipe3">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Smoothie de espinaca, plátano y kiwi</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/ray-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 5 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasSmothieVerde.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 puñado de espinacas</strong></li>
+                        <li><strong>1 plátano</strong></li>
+                        <li><strong>1 kiwi pelado</strong></li>
+                        <li><strong>1 taza de agua o leche vegetal</strong></li>
+                    </ul>
+                    <p>Coloca todos los ingredientes en la licuadora y mezcla hasta obtener una textura homogénea. Sirve de inmediato para un desayuno lleno de energía express.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe4">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Tacos con lechuga con garbanzos y maíz</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 15 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasTacosVeganos.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>Hojas de lechuga</strong></li>
+                        <li><strong>1 taza de garbanzos cocidos</strong></li>
+                        <li><strong>1/2 taza de maíz</strong></li>
+                        <li><strong>Pimiento picado</strong></li>
+                        <li><strong>Cilantro y limón</strong></li>
+                    </ul>
+                    <p>Mezcla los garbanzos con el maíz y el pimiento. Adereza con cilantro, jugo de limón, sal y pimienta. Usa las hojas de lechuga como “tortillas” y disfruta.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe5">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Pasta integral con pesto de albahaca y espinacas</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 25 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasPastaPesto.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>200g de pasta integral</strong></li>
+                        <li><strong>1 manojo de albahaca fresca</strong></li>
+                        <li><strong>1 taza de espinacas</strong></li>
+                        <li><strong>1/4 de taza de nueces o piñones</strong></li>
+                        <li><strong>Aceite de oliva y ajo</strong></li>
+                    </ul>
+                    <p>Cocina la pasta según las indicaciones del paquete. Mientras tanto, licúa la albahaca, espinacas, nueces, ajo y aceite hasta obtener un pesto. Mezcla la pasta con el pesto y sirve caliente. Consejo: añade un poco del agua de cocción para lograr la textura deseada.</p>
+                </div>
+            </div>
+
+            <!-- Recetas Miércoles -->
+            <div class="recipecontainer" id="recipe6">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Parfait de yogurt vegano con granola y frutas</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/ray-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 5 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasParfaitVegano.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 taza de yogurt vegano</strong></li>
+                        <li><strong>1/2 taza de granola</strong></li>
+                        <li><strong>Frutas de temporada</strong></li>
+                    </ul>
+                    <p>Arma un parfait alternando capas de yogurt, granola y trozos de fruta. Repite hasta llenar el vaso y disfruta de un desayuno refrescante.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe7">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Ensalada tibia de lentejas y vegetales asados</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 30 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasEnsaladaLentejas.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 taza de lentejas cocidas</strong></li>
+                        <li><strong>Calabacín y berenjena asados</strong></li>
+                        <li><strong>Pimiento rojo</strong></li>
+                        <li><strong>Mix de hojas verdes</strong></li>
+                        <li><strong>Aceite de oliva y limón</strong></li>
+                    </ul>
+                    <p>Mezcla las lentejas con los vegetales asados y las hojas verdes. Aliña con aceite, jugo de limón, sal y pimienta. Sirve templado para una comida rápida y saludable.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe8">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Sopa fría de pepino y menta</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 10 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasSopaPepino.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 pepino grande</strong></li>
+                        <li><strong>Hojas de menta</strong></li>
+                        <li><strong>Yogurt vegetal o agua fría</strong></li>
+                        <li><strong>Sal y pimienta</strong></li>
+                    </ul>
+                    <p>Corta el pepino en trozos y licúa junto a la menta y el yogurt o agua. Ajusta con sal y pimienta y refrigera unos minutos para potenciar su frescura.</p>
+                </div>
+            </div>
+
+            <!-- Recetas Jueves -->
+            <div class="recipecontainer" id="recipe9">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Batido de remolacha, manzana y jengibre</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 7 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasBatidoRemolacha.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 remolacha cocida</strong></li>
+                        <li><strong>1 manzana</strong></li>
+                        <li><strong>Un trozo de jengibre</strong></li>
+                        <li><strong>1 taza de leche vegetal</strong></li>
+                    </ul>
+                    <p>Corta la remolacha y la manzana en trozos y licúa junto al jengibre con la leche vegetal. Si deseas, añade hielo para un batido aún más refrescante.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe10">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Wrap vegano de hummus y vegetales</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 15 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasWrapVegano.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>Tortilla integral</strong></li>
+                        <li><strong>Hummus casero</strong></li>
+                        <li><strong>Pepino y zanahoria en rodajas</strong></li>
+                        <li><strong>Hojas de espinaca y rúcula</strong></li>
+                    </ul>
+                    <p>Unta la tortilla con hummus, añade los vegetales en rodajas y hojas verdes, y enróllalo. Consejo: si lo deseas, tuesta ligeramente el wrap para un toque crujiente.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe11">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Curry de garbanzos y espinacas</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 20 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasCurryGarbanzos.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>1 taza de garbanzos cocidos</strong></li>
+                        <li><strong>1 taza de espinacas frescas</strong></li>
+                        <li><strong>1 tomate picado</strong></li>
+                        <li><strong>Leche de coco</strong></li>
+                        <li><strong>Especias: curry, cúrcuma y comino</strong></li>
+                    </ul>
+                    <p>En una sartén, saltea el tomate con las especias y añade los garbanzos. Vierte un toque de leche de coco y, cuando hierva, incorpora las espinacas. Cocina hasta que se ablanden y ajusta la sazón. Sirve caliente para una cena rápida y disfruta.</p>
+                </div>
+            </div>
+
+            <!-- Recetas Viernes -->
+            <div class="recipecontainer" id="recipe12">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Bowl de falafel con tabulé y salsa tahini</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 25 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasBowlFalafel.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>Falafel (casero o preelaborado)</strong></li>
+                        <li><strong>Tabulé de bulgur y perejil</strong></li>
+                        <li><strong>Salsa tahini</strong></li>
+                        <li><strong>Vegetales frescos variados</strong></li>
+                    </ul>
+                    <p>Prepara o utiliza falafel ya elaborado y acompáñalo de un tabulé fresco. Añade salsa tahini diluida en un toque de limón. Mezcla y disfruta de un bowl rápido y sabroso.</p>
+                </div>
+            </div>
+
+            <div class="recipecontainer" id="recipe13">
+                <a class="close" href="">X</a>
+                <div class="recipemargin">
+                    <h6 class="rtitle">Pizza de coliflor con vegetales</h6>
+                    <figure class="timealign">
+                        <picture>
+                            <img src="/assets/images/meal-icon.webp" alt="" />
+                        </picture>
+                        <figcaption>Listo en 35 minutos</figcaption>
+                    </figure>
+                    <img class="rimg" src="../assets/images/imgDietasPizzaColiflor.webp" alt="Imagen de la receta">
+                    <ul>
+                        <li><strong>Base de coliflor triturada</strong></li>
+                        <li><strong>Salsa de tomate natural</strong></li>
+                        <li><strong>Vegetales (pimiento, champiñones, aceitunas)</strong></li>
+                        <li><strong>Orégano y albahaca</strong></li>
+                    </ul>
+                    <p>Mezcla coliflor triturada con huevo o sustituto vegano y harina para formar una masa. Hornea la base 10-15 minutos, agrega salsa y vegetales, espolvorea orégano y albahaca, y hornea nuevamente por 15-20 minutos. Disfruta de una pizza ligera.</p>
+                </div>
+            </div>
+        </div>
+
+        <script src="../assets/js/dietasscript.js"></script>
+
+        <div class="pagina-2">
+            <div class="article-title" id="variaciones">
+                <h2>Variaciones</h2>
+            </div>
+            <div class="article">
+                <ul>
+                    <li><strong class="underline">Sin gluten:</strong> Sustituye la tortilla integral por opciones sin gluten y utiliza quinoa certificada.</li>
+                    <li><strong class="underline">Vegano:</strong> Emplea productos 100% vegetales, como leche y yogurt de origen vegetal, y evita derivados animales.</li>
+                    <li><strong class="underline">Bajo en grasa:</strong> Usa aceite de oliva con moderación y opta por técnicas de cocción rápidas como el salteado o vapor.</li>
+                </ul>
+            </div>
+
+            <div class="article-title" id="lista-de-compras">
+                <h2>Lista de compras</h2>
+            </div>
+            <div class="article">
+                <div>
+                    <input type="checkbox">
+                    <label><strong>Frutas y verduras:</strong> Aguacate, tomate, plátano, kiwi, espinacas, pepino, pimiento, zanahoria, calabaza, remolacha, manzana, frutos rojos, coliflor, berenjena, champiñones, aceitunas, limón, menta, perejil.</label>
+                </div>
+                <div>
+                    <input type="checkbox">
+                    <label><strong>Proteínas y legumbres:</strong> Garbanzos, lentejas, falafel, hummus, quinoa.</label>
+                </div>
+                <div>
+                    <input type="checkbox">
+                    <label><strong>Otros:</strong> Pan integral o alternativas sin gluten, bulgur, aceite de oliva, leche vegetal, yogurt vegetal, tahini, especias y hierbas frescas.</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página-->
+    <footer class="footer row py-5 border-top">
+        <div class="col-lg-4 col-md-6 mb-3">
+            <a href="#" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                <img src="../assets/images/vitaliaLogoFooter.webp" alt="Logo de Vitalia" class="footer-logo">
+            </a>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/profile.php?id=61565298270139" target="_blank" class="social-icon" aria-label="Facebook de Vitalia">
+                    <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/vitalia.selfcare/" target="_blank" class="social-icon" aria-label="Instagram de Vitalia">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <a href="mailto:vitalia.selfcare@gmail.com?subject=Consulta%20-%20Vitalia&body=Me%20comunicaba%20porque..." target="_blank" class="social-icon" aria-label="E-mail de Vitalia">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="../assets/documentos/política-de-privacidad.pdf" target="_blank" class="footer-link">Políticas de Privacidad</a>
+                <span class="separator">|</span>
+                <a href="../assets/documentos/términos-y-condiciones.pdf" target="_blank" class="footer-link">Términos y Condiciones</a>
+            </div>
+            <p class="text-body-secondary rights">&copy; 2024 Vitalia. Todos los derechos reservados.</p>
+        </div>
+
+        <div class="col"></div>
+
+        <div class="col-lg-2 col-md-6 mb-3 div-space">
+            <h4 class="subtitle">Blog</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Productividad</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Actividad física y emocional</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Hábitos alimenticios</a></li>
+                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Salud mental y bienestar</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-3">
+            <h4 class="subtitle">Mi espacio</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="../index.html#lecturas-recomendadas" class="nav-link p-0 text-body-secondary">Artículos recomendados</a></li>
+                <li class="nav-item mb-2"><a href="../index.html#ejercicios" class="nav-link p-0 text-body-secondary">Rutinas de ejercicio</a></li>
+                <li class="nav-item mb-2"><a href="../index.html#meditaciones" class="nav-link p-0 text-body-secondary">Meditaciones</a></li>
+                <li class="nav-item mb-2"><a href="../index.html#alimentaciones" class="nav-link p-0 text-body-secondary">Planes alimenticios</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 mb-3">
+            <h4 class="subtitle">Acerca de</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="../index.html#que-es-vitalia" class="nav-link p-0 text-body-secondary">¿Qué es Vitalia?</a></li>
+                <li class="nav-item mb-2"><a href="../index.html#preguntas-frecuentes" class="nav-link p-0 text-body-secondary">Preguntas frecuentes</a></li>
+                <li class="nav-item mb-2"><a href="../index.html#premium" class="nav-link p-0 text-body-secondary">Planes de suscripción</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        !function () {
+            var t = window, e = document, a = function () {
+                var t = e.createElement("script");
+                t.type = "text/javascript", t.async = !0, t.src = "https://bot.airdroid.com/widget/chatinsight-widget.js", t.onload = function () {
+                    new ChatInsightWidget({ sid: 'DBEaEYro3pM7blsrV5tpn6D4uL6FBMBc', iFrameSid: 'asQotJ41ToI4oveBTqWAlrT0f_8AKYEM' })
+                };
+                var a = e.getElementsByTagName("script")[0];
+                a.parentNode.insertBefore(t, a)
+            };
+            "complete" === document.readyState ? a() : t.attachEvent ? t.attachEvent("onload", a) : t.addEventListener("load", a, !1)
+        }();
+    </script>
+
+    <script src="../assets/js/articlescript.js"></script>
+</body>
+
+</html>
