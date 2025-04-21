@@ -877,7 +877,7 @@ body.loaded #loader {
     }
 
     100% {
-        transform: scale(1.2);
+        transform: scale(1.135);
     }
 }
 
@@ -947,6 +947,10 @@ body.loaded #loader {
 
 .image.animate {
     animation-delay: 0.5s;
+}
+
+.no-mostrar {
+    display: none !important;
 }
 
 @keyframes slideInTop {
@@ -1069,8 +1073,17 @@ body.loaded #loader {
     }
 }
 
+#routine-content {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+#routine-content.visible {
+    opacity: 1;
+  }
+
 .video {
-    width: 85%;
+    width: 70%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -1086,6 +1099,11 @@ body.loaded #loader {
     margin: 25px 0;
 }
 
+.text-desc {
+    opacity: .55;
+    font-size: 0.9rem;
+}
+
 #timer-content {
     display: flex !important;
     justify-content: center !important;
@@ -1095,9 +1113,8 @@ body.loaded #loader {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 210px;
+    width: 180px;
     max-width: 100%;
-    padding: 20px;
     box-sizing: border-box;
     transform: translateY(7px) scale(1);
     transition: transform 0.3s ease;
@@ -1105,8 +1122,8 @@ body.loaded #loader {
 
 .countdown-container {
     position: relative;
-    width: 100%;
-    padding-bottom: 100%;
+    width: 90%;
+    padding-bottom: 90%;
 }
 
 .countdown-svg {
@@ -1121,7 +1138,7 @@ body.loaded #loader {
 .countdown-circle {
     fill: none;
     stroke: url(#calm-gradient);
-    stroke-width: 9;
+    stroke-width: 8;
     stroke-linecap: round;
 }
 
@@ -1130,7 +1147,7 @@ body.loaded #loader {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2em;
+    font-size: 1.65em;
 }
 
 @keyframes moveGradient {

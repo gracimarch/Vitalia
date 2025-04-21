@@ -1,70 +1,124 @@
-let countdownInterval;
-let isRunning = false;
-const countdownCircle = document.querySelector(".countdown-circle");
-const countdownText = document.getElementById("countdown");
-const pauseButton = document.getElementById("pauseButton");
-const circumference = 2 * Math.PI * 45;
+// Mostrar contenido de la rutina
 
-function startCountdown() {
-  let timeLeft = 5; // Duración fija del temporizador en segundos
-  let duration = timeLeft;
+document.getElementById('mostrar-btn').addEventListener('click', function () {
+  const elementos = document.querySelectorAll('#routine-content');
 
-  if (!isRunning) {
-    isRunning = true;
+  elementos.forEach(el => {
+    el.classList.remove('no-mostrar');
+    void el.offsetWidth; 
+    el.classList.add('visible'); 
+  });
 
-    // Reset the animation before starting the countdown
-    countdownCircle.style.animation = "none";
-    countdownCircle.getBoundingClientRect(); // Trigger a reflow
-    countdownCircle.style.animation = `moveGradient ${duration}s linear`;
-    countdownCircle.style.strokeDasharray = `${circumference} ${circumference}`;
-
-    updateCountdown(timeLeft, duration);
-
-    countdownInterval = setInterval(() => {
-      timeLeft--;
-      if (timeLeft < 0) {
-        stopCountdown();
-        return;
-      }
-      updateCountdown(timeLeft, duration);
-    }, 1000);
-
-    pauseButton.textContent = "Pausar";
-  }
-}
-
-function stopCountdown() {
-  if (isRunning) {
-    clearInterval(countdownInterval);
-    isRunning = false;
-
-    // Reset the animation state when countdown stops
-    countdownCircle.style.animation = "none"; 
-    countdownCircle.style.strokeDashoffset = circumference;
-
-    pauseButton.textContent = "Reanudar";
-  }
-}
-
-function updateCountdown(timeLeft, duration) {
-  const minutes = Math.floor(timeLeft / 60);
-  const seconds = timeLeft % 60;
-  countdownText.textContent = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-
-  const progress = (duration - timeLeft) / duration;
-  const dashoffset = circumference * (1 - progress);
-  countdownCircle.style.strokeDashoffset = dashoffset;
-}
-
-// Pausar o reanudar el temporizador
-pauseButton.addEventListener("click", function() {
-  if (isRunning) {
-    stopCountdown();
-  } else {
-    startCountdown();
-  }
+  this.style.display = 'none';
 });
 
-// Iniciar el temporizador automáticamente
-startCountdown();
+// routinescript.js
 
+document.addEventListener('DOMContentLoaded', () => {
+  const startBtn = document.getElementById('mostrar-btn');
+  const routineContent = document.getElementById('routine-content');
+  const videoEl = routineContent.querySelector('video');
+  const titleEl = routineContent.querySelector('.exercise-title');
+  const descEl = routineContent.querySelector('.text-desc');
+  const countdownEl = document.getElementById('countdown');
+
+  // 1) Define tu lista de ejercicios (ajusta títulos, src, descripción, tiempos)
+  const exercises = [
+    {
+      title: 'Marcha en el lugar',
+      description: 'Activa tu sistema cardiovascular marchando en el sitio.',
+      videoSrc: 'https://videos.pexels.com/video-files/10042798/10042798-hd_1920_1080_24fps.mp4',
+      duration: 30,  // segundos de ejercicio
+      rest: 15       // segundos de descanso
+    },
+    {
+      title: 'Sentadillas',
+      description: 'Fortalece piernas y glúteos con sentadillas controladas.',
+      videoSrc: 'https://videos.pexels.com/video-files/12345678/sample-squat.mp4',
+      duration: 30,
+      rest: 15
+    },
+    {
+      title: 'Flexiones modificadas',
+      description: 'Trabaja pecho y tríceps apoyando rodillas.',
+      videoSrc: 'https://videos.pexels.com/video-files/23456789/sample-pushup.mp4',
+      duration: 20,
+      rest: 10
+    },
+    // Añade más ejercicios según necesites...
+  ];
+
+  let currentIndex = 0;
+  let isRest = false;
+  let timerInterval = null;
+
+  startBtn.addEventListener('click', () => {
+    // Mostrar la sección de rutina
+    startBtn.style.display = 'none';
+    routineContent.classList.remove('no-mostrar');
+    routineContent.classList.add('visible');
+    // Iniciar la primera actividad
+    runSegment();
+  });
+
+  function runSegment() {
+    clearInterval(timerInterval);
+    const { title, description, videoSrc, duration, rest } = exercises[currentIndex];
+    if (!isRest) {
+      // --- Fase de ejercicio ---
+      titleEl.textContent = title;
+      descEl.textContent = description;
+      videoEl.src = videoSrc;
+      videoEl.play();
+      startTimer(duration, () => {
+        // Al terminar ejercicio, pasar a descanso
+        isRest = true;
+        videoEl.pause();
+        runSegment();
+      });
+    } else {
+      // --- Fase de descanso ---
+      titleEl.textContent = '¡Descanso!';
+      descEl.textContent = `Recupérate durante ${rest} segundos.`;
+      videoEl.pause();
+      startTimer(rest, () => {
+        // Al terminar descanso, siguiente ejercicio
+        isRest = false;
+        currentIndex++;
+        if (currentIndex < exercises.length) {
+          runSegment();
+        } else {
+          finishRoutine();
+        }
+      });
+    }
+  }
+
+  function startTimer(seconds, onComplete) {
+    let timeLeft = seconds;
+    updateCountdown(timeLeft);
+    // Limpia cualquier intervalo previo
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      updateCountdown(timeLeft);
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        onComplete();
+      }
+    }, 1000);
+  }
+
+  function updateCountdown(sec) {
+    const m = Math.floor(sec / 60).toString().padStart(2, '0');
+    const s = (sec % 60).toString().padStart(2, '0');
+    countdownEl.textContent = `${m}:${s}`;
+  }
+
+  function finishRoutine() {
+    titleEl.textContent = '¡Rutina completada!';
+    descEl.textContent = 'Buen trabajo. Tómate un momento para estirar y hidratarte.';
+    countdownEl.textContent = '';
+    videoEl.src = '';
+  }
+});
