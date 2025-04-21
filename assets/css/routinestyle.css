@@ -1076,11 +1076,11 @@ body.loaded #loader {
 #routine-content {
     opacity: 0;
     transition: opacity 0.5s ease;
-  }
-  
+}
+
 #routine-content.visible {
     opacity: 1;
-  }
+}
 
 .video {
     width: 70%;
@@ -1135,11 +1135,74 @@ body.loaded #loader {
     transform: rotate(-90deg);
 }
 
-.countdown-circle {
-    fill: none;
-    stroke: url(#calm-gradient);
-    stroke-width: 8;
-    stroke-linecap: round;
+/*  — Animaciones generales — */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulseScale {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Clases para JS */
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.4s ease-in forwards;
+}
+
+/* Pausa */
+.pause-btn {
+    margin-top: 10px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: .8;
+    transition: opacity .3s;
+}
+
+.pause-btn:hover {
+    opacity: 1;
+}
+
+/* Mensajes de descanso / final */
+.center-message {
+    text-align: center;
+    font-size: 1.2rem;
+    animation: fadeIn 0.7s ease-out forwards;
 }
 
 .countdown-text {
@@ -1375,6 +1438,8 @@ body.loaded #loader {
         height: 280px;
     }
 }
+
+
 
 #ejercicio1 {
     background-image: url('../images/rut1BloqueEjercicios.webp');
