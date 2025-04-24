@@ -1,4 +1,4 @@
-// — Referencias DOM —
+
 const mostrarBtn       = document.getElementById('mostrar-btn');
 const routineContent   = document.getElementById('routine-content');
 const videoEl          = routineContent.querySelector('video');
@@ -8,14 +8,17 @@ const countdownCircle  = document.querySelector('.countdown-circle');
 const countdownText    = document.getElementById('countdown');
 const pauseButton      = document.getElementById('pauseButton');
 
-// — Variables globales para control de temporizador y segmentos —
 let countdownInterval;
 let isRunning          = false;
 let currentIndex       = 0;
 let isRest             = false;
 let segmentDuration    = 0;
 let onSegmentComplete  = null;
+let firstRun           = true;                 
 const circumference    = 2 * Math.PI * 45;
+
+countdownCircle.style.strokeDasharray  = `${circumference}`;
+countdownCircle.style.strokeDashoffset = `${circumference}`;
 
 // — Lista de ejercicios con descripciones detalladas —
 const exercises = [
@@ -40,10 +43,10 @@ const exercises = [
     duration:    20,
     rest:        10
   },
-  // … pueden agregarse más ejercicios …
+  // … más ejercicios …
 ];
 
-// — Evento para iniciar la rutina —
+// — Iniciar rutina al presionar “Comenzar rutina” —
 mostrarBtn.addEventListener('click', () => {
   mostrarBtn.style.display = 'none';
   routineContent.classList.remove('no-mostrar');
@@ -51,19 +54,25 @@ mostrarBtn.addEventListener('click', () => {
   runSegment();
 });
 
-// — Función que alterna entre ejercicio y descanso —
+// — Alterna entre ejercicio y descanso —
 function runSegment() {
   clearInterval(countdownInterval);
 
-  // Animación de salida
-  [videoEl, titleEl, descEl, countdownText].forEach(el => {
-    el.classList.remove('fade-in');
-    el.classList.add('fade-out');
-  });
+  // Solo animamos fade-out para ejecuciones posteriores
+  if (!firstRun) {
+    [videoEl, titleEl, descEl].forEach(el => {
+      el.classList.remove('fade-in');
+      el.classList.add('fade-out');
+    });
+  }
 
   setTimeout(() => {
-    // Fase de ejercicio
+    // Quitamos estados previos
+    routineContent.classList.remove('rest', 'finish');
+    videoEl.classList.remove('fade-out');
+
     if (!isRest && currentIndex < exercises.length) {
+      // --- Fase de ejercicio ---
       const { title, description, videoSrc, duration } = exercises[currentIndex];
       titleEl.textContent = title;
       descEl.textContent  = description;
@@ -78,13 +87,14 @@ function runSegment() {
         runSegment();
       });
 
-    // Fase de descanso
     } else if (isRest) {
+      // --- Fase de descanso ---
       const restTime = exercises[currentIndex].rest;
       titleEl.textContent = 'Descanso';
       descEl.textContent  = `Recupérate durante ${restTime} segundos.`;
 
-      // Ocultar video y centrar mensaje
+      // Mantenemos margen aunque ocultemos el video
+      routineContent.classList.add('rest');
       videoEl.classList.add('fade-out');
       setTimeout(() => {
         videoEl.style.display = 'none';
@@ -101,11 +111,13 @@ function runSegment() {
       });
     }
 
-    // Animación de entrada
-    [videoEl, titleEl, descEl, countdownText].forEach(el => {
-      el.classList.remove('fade-out');
-      el.classList.add('fade-in');
-    });
+    if (!firstRun) {
+      [videoEl, titleEl, descEl].forEach(el => {
+        el.classList.remove('fade-out');
+        el.classList.add('fade-in');
+      });
+    }
+    firstRun = false;
   }, 450);
 }
 
@@ -116,17 +128,19 @@ function startCountdown(seconds, onComplete) {
   let timeLeft      = seconds;
   isRunning         = true;
 
-  // Reinicio de animación SVG
-  countdownCircle.style.animation = 'none';
-  countdownCircle.getBoundingClientRect();
-  countdownCircle.style.animation = `moveGradient ${seconds}s linear`;
-  countdownCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+  // Reinicio manual del círculo
+  countdownCircle.style.strokeDasharray  = `${circumference}`;
+  countdownCircle.style.strokeDashoffset = `${circumference}`;
+
   updateCountdown(timeLeft, seconds);
 
   countdownInterval = setInterval(() => {
     timeLeft--;
-    updateCountdown(timeLeft, seconds);
-    if (timeLeft < 0) {
+    if (timeLeft > 0) {
+      updateCountdown(timeLeft, seconds);
+    } else {
+      // Forzar 00:00 y círculo vacío sin negativo ni giro
+      updateCountdown(0, seconds);
       clearInterval(countdownInterval);
       isRunning = false;
       onSegmentComplete();
@@ -136,13 +150,12 @@ function startCountdown(seconds, onComplete) {
   pauseButton.textContent = 'Pausar';
 }
 
-// — Detiene el temporizador y reinicia el círculo —
+// — Detiene el temporizador sin resetear el círculo —
 function stopCountdown() {
   clearInterval(countdownInterval);
   isRunning = false;
-  countdownCircle.style.animation = 'none';
-  countdownCircle.style.strokeDashoffset = circumference;
   pauseButton.textContent = 'Reanudar';
+  videoEl.pause();
 }
 
 // — Actualiza el texto y el progreso del círculo —
@@ -150,28 +163,28 @@ function updateCountdown(timeLeft, duration) {
   const m = Math.floor(timeLeft / 60).toString().padStart(2, '0');
   const s = (timeLeft % 60).toString().padStart(2, '0');
   countdownText.textContent = `${m}:${s}`;
+
   const progress = (duration - timeLeft) / duration;
   countdownCircle.style.strokeDashoffset = circumference * (1 - progress);
 }
 
-// — Pausar o reanudar tanto el temporizador como el video —
+// — Pausar o reanudar temporizador y video —
 pauseButton.addEventListener('click', () => {
   if (isRunning) {
     stopCountdown();
-    videoEl.pause();
   } else {
-    // Calcula tiempo restante a partir del texto
     const [mm, ss] = countdownText.textContent.split(':').map(Number);
     const timeLeft = mm * 60 + ss;
     startCountdown(timeLeft, onSegmentComplete);
-    videoEl.play();
   }
 });
 
-// — Mensaje final al terminar toda la rutina —
+// — Final de la rutina —
 function finishRoutine() {
+  routineContent.classList.add('finish');
   titleEl.textContent = 'Rutina completada';
   descEl.textContent  = 'Buen trabajo. Estira y toma un vaso de agua.';
-  countdownText.textContent = '';
+  // Ocultar temporizador
+  document.getElementById('timer-content').style.display = 'none';
   videoEl.style.display = 'none';
 }

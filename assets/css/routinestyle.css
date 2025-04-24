@@ -1099,6 +1099,13 @@ body.loaded #loader {
     margin: 25px 0;
 }
 
+.rest .video-container,
+.finish .video-container {
+  visibility: hidden;
+  height: 0;
+  margin: 80px 0;
+}
+
 .text-desc {
     opacity: .55;
     font-size: 0.9rem;
@@ -1134,6 +1141,39 @@ body.loaded #loader {
     height: 100%;
     transform: rotate(-90deg);
 }
+
+.countdown-circle {
+    stroke-dasharray: 282.743;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+    transform: scale(1);
+    transform-origin: center;
+}
+
+#countdown {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.7rem;
+    color: #333;
+    font-weight: bold;
+}
+
+#instrucciones {
+    margin-bottom: 70px;
+}
+
+@keyframes moveGradient {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: 282.743;
+    }
+}
+
 
 /*  — Animaciones generales — */
 @keyframes fadeIn {
@@ -1174,7 +1214,6 @@ body.loaded #loader {
     }
 }
 
-/* Clases para JS */
 .fade-in {
     animation: fadeIn 0.6s ease-out forwards;
 }
