@@ -239,8 +239,13 @@ body.loaded #loader {
     }
 }
 
+@media (min-width: 1000px) {
+    .welcome {
+        background-image: url(../images/imgFondoHeroAncha2.webp);
+    }
+}
 
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
     .welcome {
         background-image: url(../images/imgFondoHeroAncha.webp);
     }
