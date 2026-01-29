@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regístrate en Vitalia | Tu Web de Bienestar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hourglass.js"></script>
     <link href="../assets/css/common.css" rel="stylesheet">
     <script src="../assets/js/main.js" render></script>
@@ -16,17 +19,23 @@
 
     <link rel="icon" href="../assets/images/ui/vitaliaLogo.webp" type="image/webp">
 
-    <meta name="description" content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
-    <meta name="keywords" content="Bienestar, Salud mental, Inteligencia Artificial, Blog, Meditación, Fitness, Nutrición">
+    <meta name="description"
+        content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
+    <meta name="keywords"
+        content="Bienestar, Salud mental, Inteligencia Artificial, Blog, Meditación, Fitness, Nutrición">
 
     <meta property="og:title" content="Vitalia | Tu Web de Bienestar">
-    <meta property="og:description" content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
-    <meta property="og:image" content="https://github.com/gracimarch/Vitalia/blob/main/assets/images/ui/vitaliaPerfil.webp">
+    <meta property="og:description"
+        content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
+    <meta property="og:image"
+        content="https://github.com/gracimarch/Vitalia/blob/main/assets/images/ui/vitaliaPerfil.webp">
     <meta property="og:url" content="https://vitalia-selfcare.vercel.app/">
     <meta name="twitter:title" content="Vitalia | Tu Web de Bienestar">
-    <meta name="twitter:description" content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
-    <meta name="twitter:image" content="https://github.com/gracimarch/Vitalia/blob/main/assets/images/ui/vitaliaPerfil.webp">
-    
+    <meta name="twitter:description"
+        content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
+    <meta name="twitter:image"
+        content="https://github.com/gracimarch/Vitalia/blob/main/assets/images/ui/vitaliaPerfil.webp">
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../assets/js/mainform.js" type="module"></script>
     <script type="module" src="../assets/js/firebaseconect.js"></script>
@@ -41,23 +50,24 @@
     </style>
 
 </head>
+
 <body>
 
     <!-- Pantalla de carga -->
-    <div id="loader">
+    <div id="loader" class="loader-container">
         <l-hourglass size="40" bg-opacity="0.1" speed="1.75" color="#7134A2"></l-hourglass>
     </div>
 
     <div class="pagina">
         <div class="wrapper">
             <div class="formulario">
-        
-                <div id="logo">
+
+                <div id="logo" class="logo-container">
                     <a href="../index.html">
                         <img src="images/vitaliaLogoNavbar.webp" alt="Vitalia Logo">
                     </a>
                 </div>
-        
+
                 <div class="progress-container">
                     <div class="progress">
                         <div class="step active"></div>
@@ -67,43 +77,51 @@
                         <div class="step"></div>
                     </div>
                 </div>
-                
-                <div id="title">
+
+                <div id="title" class="title-container">
                     <h1>Inicia tu transformación hoy mismo</h1>
-                    <p>Regístrate para desbloquear contenido exclusivo y acceder a recomendaciones personalizadas para potenciar tu bienestar</p>
+                    <p>Regístrate para desbloquear contenido exclusivo y acceder a recomendaciones personalizadas para
+                        potenciar tu bienestar</p>
                 </div>
-        
+
                 <div class="form-and-image">
                     <form action="" id="myForm">
                         <section class="section" id="section1">
                             <div class="form-row-width">
                                 <div class="form-holder">
-                                    <input type="email" placeholder="Escribe tu mail" class="form-control" id="email" required>
+                                    <input type="email" placeholder="Escribe tu mail" class="form-control" id="email"
+                                        required>
                                 </div>
                                 <div class="form-holder">
-                                    <input type="password" placeholder="Crea una contraseña" class="form-control" id="password" required>
+                                    <input type="password" placeholder="Crea una contraseña" class="form-control"
+                                        id="password" required>
                                 </div>
                                 <div class="form-holder">
-                                    <input type="password" placeholder="Repite tu contraseña" class="form-control" id="confirmPassword" required>
+                                    <input type="password" placeholder="Repite tu contraseña" class="form-control"
+                                        id="confirmPassword" required>
                                 </div>
-                                <label id="accept-terms">
+                                <label id="accept-terms" class="accept-terms-container">
                                     <input type="checkbox" class="form-check-input" id="terms">
                                     <p>He leído y acepto los
-                                        <a href="../assets/documentos/términos-y-condiciones.pdf" target="_blank">Términos y Condiciones</a> y la
-                                        <a href="../assets/documentos/política-de-privacidad.pdf" target="_blank">Política de Privacidad</a>
+                                        <a href="../assets/documentos/términos-y-condiciones.pdf"
+                                            target="_blank">Términos y Condiciones</a> y la
+                                        <a href="../assets/documentos/política-de-privacidad.pdf"
+                                            target="_blank">Política de Privacidad</a>
                                     </p>
                                 </label>
                             </div>
                         </section>
-    
+
                         <section class="section" id="section2">
                             <div class="form-row-width">
                                 <div class="form-row-name">
                                     <div class="form-holder half-width">
-                                        <input type="text" placeholder="Nombre" class="form-control" id="firstName" required>
+                                        <input type="text" placeholder="Nombre" class="form-control" id="firstName"
+                                            required>
                                     </div>
                                     <div class="form-holder half-width">
-                                        <input type="text" placeholder="Apellido" class="form-control" id="lastName" required>
+                                        <input type="text" placeholder="Apellido" class="form-control" id="lastName"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="form-row-name">
@@ -202,7 +220,8 @@
                                             <option value="Iraq">Iraq</option>
                                             <option value="Irlanda">Irlanda</option>
                                             <option value="Isla de Man">Isla de Man</option>
-                                            <option value="Isla de San Martín (parte francesa)">Isla de San Martín</option>
+                                            <option value="Isla de San Martín (parte francesa)">Isla de San Martín
+                                            </option>
                                             <option value="Islandia">Islandia</option>
                                             <option value="Islas Caimán">Islas Caimán</option>
                                             <option value="Islas Feroe">Islas Feroe</option>
@@ -325,7 +344,8 @@
                                         </select>
                                     </div>
                                     <div class="form-holder active half-width">
-                                        <input type="number" placeholder="Edad" class="form-control" id="age" min="13" max="100" required>
+                                        <input type="number" placeholder="Edad" class="form-control" id="age" min="13"
+                                            max="100" required>
                                     </div>
                                 </div>
                                 <div class="form-holder">
@@ -341,15 +361,16 @@
                                     <div class="choice-container">
                                         <input type="radio" id="no-binario" name="gender" value="No binario" required>
                                         <label for="no-binario">No binario</label>
-                                    </div>                                
+                                    </div>
                                 </div>
                             </div>
                         </section>
-    
+
                         <section class="section" id="section3">
                             <div class="form-row-scroll">
                                 <div class="form-holder">
-                                    <p><b>¿Tienes algún tipo de discapacidad que te impida realizar actividad física?</b></p>
+                                    <p><b>¿Tienes algún tipo de discapacidad que te impida realizar actividad
+                                            física?</b></p>
                                     <div class="choice-container">
                                         <input type="radio" id="discapacidad-si" name="disability" value="Sí" required>
                                         <label for="discapacidad-si">Sí</label>
@@ -359,19 +380,23 @@
                                         <label for="discapacidad-no">No</label>
                                     </div>
                                 </div>
-                    
+
                                 <div class="form-holder">
                                     <p><b>¿Cuál es tu nivel de actividad física actual?</b></p>
                                     <div class="choice-container">
-                                        <input type="radio" id="sedentario" name="physicalActivity" value="Sedentario" required>
+                                        <input type="radio" id="sedentario" name="physicalActivity" value="Sedentario"
+                                            required>
                                         <label for="sedentario">Sedentario (muy poco o nada de ejercicio)</label>
                                     </div>
                                     <div class="choice-container">
-                                        <input type="radio" id="transicion" name="physicalActivity" value="En transición" required>
-                                        <label for="transicion">En transición (busco mejorar mi condición física y aumentar mi nivel de actividad)</label>
+                                        <input type="radio" id="transicion" name="physicalActivity"
+                                            value="En transición" required>
+                                        <label for="transicion">En transición (busco mejorar mi condición física y
+                                            aumentar mi nivel de actividad)</label>
                                     </div>
                                     <div class="choice-container">
-                                        <input type="radio" id="moderado" name="physicalActivity" value="Moderado" required>
+                                        <input type="radio" id="moderado" name="physicalActivity" value="Moderado"
+                                            required>
                                         <label for="moderado">Moderado (ejercicio ocasional)</label>
                                     </div>
                                     <div class="choice-container">
@@ -379,7 +404,7 @@
                                         <label for="activo">Activo (ejercicio regular)</label>
                                     </div>
                                 </div>
-                    
+
                                 <div class="form-holder">
                                     <p><b>¿Cómo describirías tu dieta?</b></p>
                                     <div class="choice-container">
@@ -395,15 +420,18 @@
                                 <div class="form-holder">
                                     <p><b>¿Tienes alguna restricción alimentaria (intolerancias, alergias)?</b></p>
                                     <div class="choice-container">
-                                        <input type="checkbox" id="ninguna" name="restriccion" value="Ninguna restricción" required>
+                                        <input type="checkbox" id="ninguna" name="restriccion"
+                                            value="Ninguna restricción" required>
                                         <label for="ninguna">Ninguna restricción</label>
                                     </div>
                                     <div class="choice-container">
-                                        <input type="checkbox" id="lactosa" name="restriccion" value="Intolerancia a la lactosa" required>
+                                        <input type="checkbox" id="lactosa" name="restriccion"
+                                            value="Intolerancia a la lactosa" required>
                                         <label for="lactosa">Intolerancia a la lactosa</label>
                                     </div>
                                     <div class="choice-container">
-                                        <input type="checkbox" id="celiacia" name="restriccion" value="Celiaquía" required>
+                                        <input type="checkbox" id="celiacia" name="restriccion" value="Celiaquía"
+                                            required>
                                         <label for="celiacia">Celiaquía (intolerancia al gluten)</label>
                                     </div>
                                     <div class="textinput-container">
@@ -411,13 +439,14 @@
                                             <input type="checkbox" id="otros" name="restriccion" value="Otros" required>
                                             <label for="otros">Otros (especificar):</label>
                                         </div>
-                                        <input type="text" class="form-control otro-text" id="otros-especificar" name="otros-especificar">
+                                        <input type="text" class="form-control otro-text" id="otros-especificar"
+                                            name="otros-especificar">
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </section>
-    
+
                         <section class="section" id="section4">
                             <div class="form-row-scroll">
                                 <div class="form-holder">
@@ -443,7 +472,7 @@
                                         <label for="conectar-espiritual">Conectar más con mi lado espiritual</label>
                                     </div>
                                 </div>
-            
+
                                 <div class="form-holder">
                                     <p><b>¿Qué obstáculos enfrentas para mantener una rutina de bienestar?</b></p>
                                     <div class="choice-container">
@@ -469,10 +498,11 @@
                                     <div class="choice-container">
                                         <input type="checkbox" id="persona-mayor" name="obstaculos-bienestar"
                                             value="Soy una persona muy mayor" required>
-                                        <label for="persona-mayor">Las limitaciones propias de mi edad no me permiten hacer todo lo que quisiera</label>
+                                        <label for="persona-mayor">Las limitaciones propias de mi edad no me permiten
+                                            hacer todo lo que quisiera</label>
                                     </div>
                                 </div>
-            
+
                                 <div class="form-holder">
                                     <p><b>¿Cómo es tu calidad del sueño?</b></p>
                                     <div class="choice-container">
@@ -493,26 +523,29 @@
                                 </div>
                             </div>
                         </section>
-    
+
                         <section class="section" id="section5">
                             <div class="form-row-scroll">
                                 <div class="form-holder">
                                     <p><b>¿Sientes estrés y/o ansiedad de forma frecuente?</b></p>
                                     <div class="choice-container">
-                                        <input type="radio" id="estres-bajo" name="estres-ansiedad" value="Bajo" required>
+                                        <input type="radio" id="estres-bajo" name="estres-ansiedad" value="Bajo"
+                                            required>
                                         <label for="estres-bajo">No</label>
                                     </div>
                                     <div class="choice-container">
-                                        <input type="radio" id="estres-alto" name="estres-ansiedad" value="Alto" required>
+                                        <input type="radio" id="estres-alto" name="estres-ansiedad" value="Alto"
+                                            required>
                                         <label for="estres-alto">Sí</label>
                                     </div>
                                 </div>
-            
+
                                 <div class="form-holder">
                                     <p><b>¿Cómo describirías tu rutina diaria?</b></p>
                                     <div class="choice-container">
                                         <input type="radio" id="tiempo-libre" name="rutina-diaria"
-                                            value="Tengo mucho tiempo libre y puedo organizar mi día con flexibilidad" required>
+                                            value="Tengo mucho tiempo libre y puedo organizar mi día con flexibilidad"
+                                            required>
                                         <label for="tiempo-libre">Tengo mucho tiempo libre y puedo organizar mi día con
                                             flexibilidad</label>
                                     </div>
@@ -524,10 +557,11 @@
                                     <div class="choice-container">
                                         <input type="radio" id="persona-ocupada" name="rutina-diaria"
                                             value="Soy una persona ocupada con un horario ajustado" required>
-                                        <label for="persona-ocupada">Soy una persona ocupada con un horario ajustado</label>
+                                        <label for="persona-ocupada">Soy una persona ocupada con un horario
+                                            ajustado</label>
                                     </div>
                                 </div>
-            
+
                                 <div class="form-holder">
                                     <p><b>¿Cómo definirías tu estilo de vida?</b></p>
                                     <div class="choice-container">
@@ -548,27 +582,30 @@
                                     </div>
                                     <div class="choice-container">
                                         <input type="radio" id="persona-ecologica" name="estilo-de-vida"
-                                            value="Soy una persona enfocada en llevar un estilo de vida ecológico" required>
-                                        <label for="persona-ecologica">Soy una persona enfocada en llevar un estilo de vida
+                                            value="Soy una persona enfocada en llevar un estilo de vida ecológico"
+                                            required>
+                                        <label for="persona-ecologica">Soy una persona enfocada en llevar un estilo de
+                                            vida
                                             ecológico</label>
                                     </div>
                                     <div class="choice-container">
                                         <input type="radio" id="persona-trabajadora" name="estilo-de-vida"
                                             value="Soy una persona con una vida laboral intensa" required>
-                                        <label for="persona-trabajadora">Soy una persona con una vida laboral intensa</label>
+                                        <label for="persona-trabajadora">Soy una persona con una vida laboral
+                                            intensa</label>
                                     </div>
                                 </div>
                             </div>
                         </section>
                     </form>
-                
+
                     <div class="img-contain">
                         <img src="images/imgDegradadoVitalia.webp" alt="Imagen de presentación">
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="buttons">
             <button type="button" class="prev-btn">← Atrás</button>
             <button type="button" class="next-btn">Continuar →</button>
@@ -581,7 +618,5 @@
     <!-- Importar Toastify -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
+
 </html>
-
-
-

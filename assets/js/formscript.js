@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const steps = document.querySelectorAll(".step");
     let currentStep = 0;
     let isTransitioning = false;
-    const loader = document.getElementById('loader');
+    const loader = document.querySelector('.loader-container');
     const body = document.body;
     const nextButton = document.querySelector('.next-btn');
     const prevButton = document.querySelector('.prev-btn');

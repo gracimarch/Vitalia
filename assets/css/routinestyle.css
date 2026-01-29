@@ -23,7 +23,7 @@ body {
     margin-top: 140px;
 }
 
-#loader {
+.loader-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -37,7 +37,7 @@ body {
     overflow: hidden;
 }
 
-body.loaded #loader {
+body.loaded .loader-container {
     display: none;
 }
 
@@ -65,7 +65,7 @@ body.loaded #loader {
     transform: translateY(-2%);
 }
 
-#introduction {
+.introduction-container {
     color: #818589;
     font-size: 1rem;
 }
@@ -492,19 +492,19 @@ th:first-child {
     }
 }
 
-#ejercicio1 {
+.bg-ejercicio-1 {
     background-image: url('../images/sections/rut1BloqueEjercicios.webp');
 }
 
-#ejercicio2 {
+.bg-ejercicio-2 {
     background-image: url('../images/sections/rut2BloqueEjercicios.webp');
 }
 
-#ejercicio3 {
+.bg-ejercicio-3 {
     background-image: url('../images/sections/rut3BloqueEjercicios.webp');
 }
 
-#ejercicio4 {
+.bg-ejercicio-4 {
     background-image: url('../images/sections/rut4BloqueEjercicios.webp');
 }
 
@@ -533,7 +533,7 @@ body {
     margin-top: 140px;
 }
 
-#loader {
+.loader-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -547,7 +547,7 @@ body {
     overflow: hidden;
 }
 
-body.loaded #loader {
+body.loaded .loader-container {
     display: none;
 }
 
@@ -671,7 +671,7 @@ body.loaded #loader {
         padding: 10px;
     }
 
-    .navbar-nav .nav-item#first-nav-item {
+    .navbar-nav .nav-item.first-nav-item {
         padding-top: 20px;
     }
 
@@ -687,7 +687,7 @@ body.loaded #loader {
         margin: 5px 0;
     }
 
-    .nav-item#last-nav-item {
+    .nav-item.last-nav-item {
         border-bottom: none;
     }
 }
@@ -720,7 +720,7 @@ body.loaded #loader {
     transform: translateY(-2%);
 }
 
-#introduction {
+.introduction-container {
     color: #818589;
     font-size: 1rem;
 }

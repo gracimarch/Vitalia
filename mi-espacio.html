@@ -51,7 +51,7 @@
 <body>
 
     <!-- Pantalla de carga -->
-    <div id="loader">
+    <div id="loader" class="loader-container">
         <l-hourglass size="40" bg-opacity="0.1" speed="1.75" color="#7134A2"></l-hourglass>
     </div>
 
@@ -71,34 +71,35 @@
         <!-- Artículos que te llevan a las distintas secciones de la página -->
         <section class="articles" id="lecturas-recomendadas">
             <div class="container">
-                <a href="#lecturas" class="block brightness" id="lee">
+                <a href="#lecturas" class="block brightness bg-lee" id="lee">
                     <div class="content">
                         <h2>Lee</h2>
                         <p>Artículos recomendados para ti</p>
                     </div>
                 </a>
-                <a href="#ejercicios" class="block brightness" id="ejercita">
+                <a href="#ejercicios" class="block brightness bg-ejercita" id="ejercita">
                     <div class="content">
                         <h2>Ejercita</h2>
                         <p>Con rutinas personalizadas</p>
                     </div>
                 </a>
-                <a href="#meditaciones" class="block brightness" id="medita">
+                <a href="#meditaciones" class="block brightness bg-medita" id="medita">
                     <div class="content">
                         <h2>Medita</h2>
                         <p>Encuentra la paz</p>
                     </div>
                 </a>
-                <a href="#alimentaciones" class="block brightness" id="alimentate">
+                <a href="#alimentaciones" class="block brightness bg-alimentate" id="alimentate">
                     <div class="content">
                         <h2>Aliméntate</h2>
                         <p>Planes de comida adaptados a ti</p>
                     </div>
                 </a>
-                <div class="info-block brightness" id="reflexion">
+                <div class="info-block brightness bg-reflexion" id="reflexion">
                     <div class="info-content">
                         <p>Reflexión para el día de hoy:</p>
-                        <h3 id="share-text">"Estás exactamente donde necesitas estar en este momento"</h3>
+                        <h3 id="share-text" class="share-text">"Estás exactamente donde necesitas estar en este momento"
+                        </h3>
                         <div class="btn_wrap">
                             <span>
                                 <i class="bi bi-share"></i>
@@ -139,7 +140,7 @@
         <section class="lecturas">
             <div class="container">
                 <a href="lecturas/beneficios-de-incorporar-un-enfoque-integral-en-el-trabajo.html"
-                    class="block brightness" id="productividad">
+                    class="block brightness bg-productividad" id="productividad">
                     <p>Productividad</p>
                     <h3>Beneficios de Incorporar un Enfoque Integral en tu Trabajo</h3>
                     <div class="reading-time">
@@ -147,8 +148,8 @@
                         <p>12 minutos de lectura</p>
                     </div>
                 </a>
-                <a href="lecturas/autocuidado-pequeños-habitos-que-hacen-la-diferencia.html" class="block brightness"
-                    id="salud-mental">
+                <a href="lecturas/autocuidado-pequeños-habitos-que-hacen-la-diferencia.html"
+                    class="block brightness bg-salud-mental" id="salud-mental">
                     <p>Productividad</p>
                     <h3>Autocuidado: Pequeños Hábitos que Hacen la Diferencia</h3>
                     <div class="reading-time">
@@ -156,8 +157,8 @@
                         <p>10 minutos de lectura</p>
                     </div>
                 </a>
-                <a href="lecturas/alimentacion-consciente-que-es-como-practicarla.html" class="block brightness"
-                    id="nutricion">
+                <a href="lecturas/alimentacion-consciente-que-es-como-practicarla.html"
+                    class="block brightness bg-nutricion" id="nutricion">
                     <p>Hábitos alimenticios</p>
                     <h3>Alimentación Consciente: Qué Es y Cómo Practicarla</h3>
                     <div class="reading-time">
@@ -165,8 +166,8 @@
                         <p>9 minutos de lectura</p>
                     </div>
                 </a>
-                <a href="lecturas/como-crear-rutina-nocturna-para-mejor-sueno.html" class="block brightness"
-                    id="bienestar">
+                <a href="lecturas/como-crear-rutina-nocturna-para-mejor-sueno.html"
+                    class="block brightness bg-bienestar" id="bienestar">
                     <p>Salud mental y bienestar</p>
                     <h3>Rutina Nocturna para un Mejor Sueño</h3>
                     <div class="reading-time">
@@ -174,7 +175,7 @@
                         <p>10 minutos de lectura</p>
                     </div>
                 </a>
-                <div class="info-block brightness" id="blog">
+                <div class="info-block brightness bg-blog" id="blog">
                     <div class="info-content">
                         <h3>¿No Encuentras lo que Buscas?</h3>
                         <p>Echa un vistazo a nuestro blog completo para acceder a una variedad de artículos útiles</p>
@@ -201,7 +202,8 @@
         <!-- Ejercicios seleccionados -->
         <section class="ejercicios">
             <div class="container">
-                <a href="rutinas/circuito-ejercicio-moderado.html" class="block brightness" id="ejercicio1">
+                <a href="rutinas/circuito-ejercicio-moderado.html" class="block brightness bg-ejercicio-1"
+                    id="ejercicio1">
                     <p>Nivel Intermedio</p>
                     <div class="heading-time">
                         <h3>Circuito de Energía Simple</h3>
@@ -211,7 +213,7 @@
                         </div>
                     </div>
                 </a>
-                <a href="rutinas/ejercicio-en-15-min.html" class="block brightness" id="ejercicio2">
+                <a href="rutinas/ejercicio-en-15-min.html" class="block brightness bg-ejercicio-2" id="ejercicio2">
                     <p>Nivel Principiante</p>
                     <div class="heading-time">
                         <h3>Ejercicio en 15 Minutos</h3>
@@ -222,7 +224,7 @@
                     </div>
 
                 </a>
-                <a href="rutinas/yoga-para-todos-niveles.html" class="block brightness" id="ejercicio3">
+                <a href="rutinas/yoga-para-todos-niveles.html" class="block brightness bg-ejercicio-3" id="ejercicio3">
                     <p>Todos los Niveles</p>
                     <div class="heading-time">
                         <h3>Yoga Revitilizante</h3>
@@ -233,7 +235,8 @@
                     </div>
 
                 </a>
-                <a href="rutinas/entrenamiento-cuerpo-completo-casa.html" class="block brightness" id="ejercicio4">
+                <a href="rutinas/entrenamiento-cuerpo-completo-casa.html" class="block brightness bg-ejercicio-4"
+                    id="ejercicio4">
                     <p>Nivel Principiante</p>
                     <div class="heading-time">
                         <h3>Entrenamiento Total en Casa</h3>
@@ -263,7 +266,7 @@
         <section class="audio-blocks">
             <div class="container">
                 <div class="audio-block">
-                    <button class="audio-button brightness" id="button1">
+                    <button class="audio-button brightness bg-button-1" id="button1">
                         <img src="assets/images/ui/reproducirIconoMeditaciones.webp" alt="Reproducir audio">
                     </button>
                     <div class="audio-info">
@@ -282,7 +285,7 @@
                     </div>
                 </div>
                 <div class="audio-block">
-                    <button class="audio-button brightness" id="button2">
+                    <button class="audio-button brightness bg-button-2" id="button2">
                         <img src="assets/images/ui/reproducirIconoMeditaciones.webp" alt="Reproducir audio">
                     </button>
                     <div class="audio-info">
@@ -301,7 +304,7 @@
                     </div>
                 </div>
                 <div class="audio-block">
-                    <button class="audio-button brightness" id="button3">
+                    <button class="audio-button brightness bg-button-3" id="button3">
                         <img src="assets/images/ui/reproducirIconoMeditaciones.webp" alt="Reproducir audio">
                     </button>
                     <div class="audio-info">
@@ -320,7 +323,7 @@
                     </div>
                 </div>
                 <div class="audio-block">
-                    <button class="audio-button brightness" id="button4">
+                    <button class="audio-button brightness bg-button-4" id="button4">
                         <img src="assets/images/ui/reproducirIconoMeditaciones.webp" alt="Reproducir audio">
                     </button>
                     <div class="audio-info">
@@ -339,7 +342,7 @@
                     </div>
                 </div>
                 <div class="audio-block">
-                    <button class="audio-button brightness" id="button5">
+                    <button class="audio-button brightness bg-button-5" id="button5">
                         <img src="assets/images/ui/reproducirIconoMeditaciones.webp" alt="Reproducir audio">
                     </button>
                     <div class="audio-info">
@@ -358,7 +361,7 @@
                     </div>
                 </div>
                 <div class="audio-block">
-                    <button class="audio-button brightness" id="button6">
+                    <button class="audio-button brightness bg-button-6" id="button6">
                         <img src="assets/images/ui/reproducirIconoMeditaciones.webp" alt="Reproducir audio">
                     </button>
                     <div class="audio-info">
@@ -393,7 +396,7 @@
         <!-- Planes alimenticios seleccionados -->
         <section class="lecturas">
             <div class="container">
-                <a href="dietas/energia-y-vitalidad.html" class="block brightness" id="dieta1">
+                <a href="dietas/energia-y-vitalidad.html" class="block brightness bg-dieta-1" id="dieta1">
                     <p>Balanceado y rico en nutrientes</p>
                     <h3>Plan Semanal para tener Energía y Vitalidad</h3>
                     <div class="reading-time">
@@ -401,7 +404,7 @@
                         <p>Plan semanal</p>
                     </div>
                 </a>
-                <a href="#" class="block brightness" id="dieta2">
+                <a href="#" class="block brightness bg-dieta-2" id="dieta2">
                     <p>A base de vegetales</p>
                     <h3>Plan para un Día de Renovación y Desintoxicación</h3>
                     <div class="reading-time">
@@ -409,7 +412,7 @@
                         <p>Plan diario</p>
                     </div>
                 </a>
-                <a href="#" class="block brightness" id="dieta3">
+                <a href="#" class="block brightness bg-dieta-3" id="dieta3">
                     <p>Ricos en fibra y probióticos</p>
                     <h3>Plan para una Semana Enfocada en Mejorar la Salud Digestiva</h3>
                     <div class="reading-time">
@@ -417,7 +420,7 @@
                         <p>Plan semanal</p>
                     </div>
                 </a>
-                <a href="#" class="block brightness" id="dieta4">
+                <a href="#" class="block brightness bg-dieta-4" id="dieta4">
                     <p>Integrales y antiestresantes</p>
                     <h3>Plan para Días de Estrés y Ansiedad</h3>
                     <div class="reading-time">
@@ -472,4 +475,3 @@
 </body>
 
 </html>
-

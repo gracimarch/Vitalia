@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     let lastScrollPosition = 0;
     const header = document.querySelector('.header');
-    const loader = document.getElementById('loader');
+    const loader = document.querySelector('.loader-container');
     const body = document.body;
 
     // No permitir que el usuario scrollee mientras esté la pantalla de carga

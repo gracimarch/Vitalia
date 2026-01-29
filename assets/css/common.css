@@ -246,7 +246,7 @@ html {
 /* =========================================
    4. LOADER
    ========================================= */
-#loader {
+.loader-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -260,7 +260,7 @@ html {
     overflow: hidden;
 }
 
-body.loaded #loader {
+body.loaded .loader-container {
     display: none;
 }
 
