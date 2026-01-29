@@ -78,24 +78,28 @@ body.loaded #loader {
 .pagina {
     max-width: 1200px;
     margin: 0 auto;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 40px 20px;
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
-    margin: 15px;
-    padding: 20px 0 20px 20px;
+    margin: 0;
+    padding: 30px;
     border-radius: 20px;
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
     background-color: #fffbf7;
+    width: 100%;
 }
 
 .formulario {
-    padding: 15px 0 15px 25px;
+    padding: 0;
+    width: 100%;
 }
 
 #logo img {
@@ -131,7 +135,8 @@ body.loaded #loader {
 }
 
 #title {
-    width: 530px;
+    width: 100%;
+    max-width: 530px;
 }
 
 #title h1 {
@@ -150,7 +155,8 @@ body.loaded #loader {
     display: flex;
     justify-content: space-between;
     gap: 30px;
-    /* Ensure visual separation */
+    flex-wrap: wrap;
+    /* Allow wrapping */
 }
 
 /* Image container takes its needed space up to max-width */
@@ -201,8 +207,8 @@ body.loaded #loader {
 .form-row-width {
     display: flex;
     flex-direction: column;
-    max-width: 100%;
-    width: 530px;
+    width: 100%;
+    max-width: 530px;
     height: 290px;
 }
 
@@ -513,26 +519,38 @@ input.otro-text {
         width: 100%;
     }
 
+    #title {
+        text-align: center;
+        margin: 0 auto;
+    }
+
     #title h1 {
         font-size: 22px;
     }
 
     #title p {
         font-size: 14px;
+        text-align: center;
     }
 
     .buttons {
-        flex-direction: column-reverse;
-        gap: 10px;
-        margin: 15px 0;
+        flex-direction: row;
+        /* Keep side-by-side */
+        gap: 15px;
+        margin: 20px 0 10px 0;
     }
 
     .prev-btn,
     .next-btn,
     .send-btn {
-        width: 100%;
+        width: auto;
+        /* Let them size naturally or flex */
+        flex: 1;
+        /* Equal width */
         margin: 0;
-        text-align: center;
+        padding: 12px 20px;
+        /* Reduces size slightly */
+        font-size: 15px;
     }
 
     .next-btn {
@@ -542,6 +560,64 @@ input.otro-text {
     .pagina {
         height: auto;
         min-height: 100vh;
-        padding: 20px 0;
+        padding: 0;
+        max-width: 100%;
     }
+
+    .wrapper {
+        margin: 0;
+        padding: 20px 15px;
+        border-radius: 0;
+        box-shadow: none;
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-row-scroll {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible;
+        flex: 1;
+        /* Push buttons to bottom if content is short, or flow if long */
+    }
+
+    /* Fixed alignment for radio buttons overlap issue */
+    .form-row-width {
+        height: auto;
+    }
+
+    .buttons {
+        margin-top: auto;
+        /* Push to bottom if space permits */
+        padding-top: 20px;
+        background-color: #fffbf7;
+        /* Ensure visual continuity */
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
+        padding-bottom: 20px;
+    }
+}
+
+
+/* Toastify Custom Styles */
+.toastify {
+    font-family: var(--font-primary);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 12px 20px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.toast-error {
+    background: linear-gradient(135deg, #ef476f, var(--purple)) !important;
+    color: var(--white);
+}
+
+.toast-success {
+    background: linear-gradient(135deg, var(--teal), var(--purple-light)) !important;
+    color: var(--white);
 }
