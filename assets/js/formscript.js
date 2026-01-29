@@ -38,8 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
             gravity: "top", // `top` or `bottom`
             position: "center", // `left`, `center` or `right`
             stopOnFocus: true, // Prevents dismissing of toast on hover
+            className: type === "error" ? "toast-error" : "toast-success", // Use custom classes
             style: {
-                background: type === "error" ? "linear-gradient(to right, #ff5f6d, #ffc371)" : "linear-gradient(to right, #00b09b, #96c93d)",
+                background: "transparent", // Let CSS handle it via className
+                boxShadow: "none",
             },
         }).showToast();
     }
@@ -110,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return false;
         }
         if (!age.value || age.value < 13 || age.value > 120) {
-            showToast("Por favor, ingresa una edad válida (13-120).");
+            showToast("Por favor, ingresa una edad válida.");
             age.focus();
             return false;
         }
