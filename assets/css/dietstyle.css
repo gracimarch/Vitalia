@@ -37,7 +37,7 @@ body {
     margin-top: 140px;
 }
 
-#loader {
+.loader-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -51,7 +51,7 @@ body {
     overflow: hidden;
 }
 
-body.loaded #loader {
+body.loaded .loader-container {
     display: none;
 }
 
@@ -81,7 +81,7 @@ body.loaded #loader {
 
 @media (min-width: 1100px) {}
 
-#introduction {
+.introduction-container {
     color: #818589;
     font-size: 1rem !important;
     margin-bottom: 20px;

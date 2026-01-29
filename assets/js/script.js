@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentAudioButton = null;
     let lastScrollPosition = 0;
     const header = document.querySelector('.header');
-    const loader = document.getElementById('loader');
+    const loader = document.querySelector('.loader-container');
     const body = document.body;
 
     // No permitir que el usuario scrollee mientras esté la pantalla de carga
@@ -39,13 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function () {
             const audio = this.nextElementSibling.querySelector('audio');
             const playPauseBtnImg = this.querySelector('img');
-        
+
             // Detener el audio actual si es diferente al nuevo
             if (currentAudio && currentAudio !== audio) {
                 currentAudio.pause();
                 currentAudioButton.querySelector('img').src = 'assets/images/ui/reproducirIconoMeditaciones.webp';
             }
-        
+
             // Reproducir o pausar el audio
             if (audio.paused) {
                 audio.play();
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentAudio = null;
                 currentAudioButton = null;
             }
-        
+
             // Restablecer el botón cuando el audio termine
             audio.addEventListener('ended', function () {
                 playPauseBtnImg.src = 'assets/images/ui/reproducirIconoMeditaciones.webp';
@@ -95,20 +95,20 @@ document.addEventListener('DOMContentLoaded', function () {
         const progressBar = player.querySelector('.progress-bar');
         const currentTimeDisplay = player.querySelector('.current-time');
         const durationDisplay = player.querySelector('.duration-time');
-    
+
         if (audio && progressBar && currentTimeDisplay) {
             // Actualiza la barra de progreso durante la reproducción
             audio.addEventListener('timeupdate', function () {
                 updateProgressBar(audio, progressBar, currentTimeDisplay);
             });
-    
+
             // Muestra la duración total del audio cuando se carga la metadata
             audio.addEventListener('loadedmetadata', function () {
                 if (durationDisplay) {
                     durationDisplay.textContent = formatTime(audio.duration);
                 }
             });
-    
+
             // Permite hacer clic en la barra de progreso para cambiar el tiempo de reproducción
             progressBar.parentElement.addEventListener('click', function (e) {
                 const rect = this.getBoundingClientRect();
@@ -116,12 +116,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 const width = rect.width;
                 const percentage = offsetX / width;
                 const newTime = percentage * audio.duration;
-    
+
                 audio.currentTime = newTime;
                 updateProgressBar(audio, progressBar, currentTimeDisplay);
             });
         }
-    });    
+    });
 
     // Animación de desplazamiento suave del header
     window.addEventListener('scroll', function () {
@@ -172,21 +172,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Función para compartir en LinkedIn
-    document.getElementById('shareLinkedIn').addEventListener('click', function() {
+    document.getElementById('shareLinkedIn').addEventListener('click', function () {
         const currentPhrase = getDisplayedPhrase();
         const url = `https://www.linkedin.com/shareArticle?mini=true&url=https://vitalia-selfcare.vercel.app/&title=${encodeURIComponent(currentPhrase + "Frase del día de Vitalia, únete en https://vitalia-selfcare.vercel.app/ 🧘‍♀️🌷")}`;
         window.open(url, '_blank');
     });
 
     // Función para compartir en Twitter
-    document.getElementById('shareTwitter').addEventListener('click', function() {
+    document.getElementById('shareTwitter').addEventListener('click', function () {
         const currentPhrase = getDisplayedPhrase();
         const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(currentPhrase + ". Frase del día de Vitalia, únete en https://vitalia-selfcare.vercel.app/ 🧘‍♀️🌷")}`;
         window.open(url, '_blank');
     });
 
     // Función para compartir en WhatsApp
-    document.getElementById('shareWhatsApp').addEventListener('click', function() {
+    document.getElementById('shareWhatsApp').addEventListener('click', function () {
         const currentPhrase = getDisplayedPhrase();
         const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(currentPhrase + ". Frase del día de Vitalia, únete en https://vitalia-selfcare.vercel.app/ 🧘‍♀️🌷")}`;
         window.open(url, '_blank');

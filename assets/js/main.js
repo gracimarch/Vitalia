@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // =========================================
     // 2. LOADER & SCROLL HANDLING
     // =========================================
-    const loader = document.getElementById('loader');
+    const loader = document.querySelector('.loader-container');
     const body = document.body;
     const header = document.querySelector('.header');
     let lastScrollPosition = 0;

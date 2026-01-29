@@ -19,7 +19,7 @@ body {
     margin-top: 100px;
 }
 
-#loader {
+.loader-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -33,7 +33,7 @@ body {
     overflow: hidden;
 }
 
-body.loaded #loader {
+body.loaded .loader-container {
     display: none;
 }
 
@@ -278,19 +278,19 @@ body.loaded #loader {
     text-decoration: none;
 }
 
-#productiv {
+.bg-productiv {
     background-image: url('../images/sections/productividadBloqueCateogrias.webp');
 }
 
-#ejercita {
+.bg-ejercita {
     background-image: url('../images/sections/actfisicaBloqueCategorias.webp');
 }
 
-#alimentate {
+.bg-alimentate {
     background-image: url('../images/sections/dietasBloqueCategorias.webp');
 }
 
-#salud {
+.bg-salud {
     background-image: url('../images/sections/saludmentalBloqueCategorias.webp');
 }
 
@@ -532,68 +532,68 @@ body.loaded #loader {
     }
 }
 
-#productividad1 {
+.bg-productividad-1 {
     background-image: url('../images/sections/art1BloqueLecturas.webp');
 }
 
-#productividad2 {
+.bg-productividad-2 {
     background-image: url('../images/sections/art2BloqueLecturas.webp');
 }
 
-#productividad3 {
+.bg-productividad-3 {
     background-image: url('../images/articles/art1-fondo.webp');
 }
 
-#productividad4 {
+.bg-productividad-4 {
     background-image: url('../images/articles/art2-fondo.webp');
 }
 
-#salud-mental1 {
+.bg-salud-mental-1 {
     background-image: url('../images/sections/art3BloqueLecturas.webp');
 }
 
-#salud-mental2 {
+.bg-salud-mental-2 {
     background-image: url('../images/sections/art4BloqueLecturas.webp');
 }
 
-#salud-mental3 {
+.bg-salud-mental-3 {
     background-image: url('../images/articles/art3-fondo.webp');
 }
 
-#salud-mental4 {
+.bg-salud-mental-4 {
     background-image: url('../images/articles/art4-fondo.webp');
 }
 
 @media (max-width: 991px) {
-    #productividad1 {
+    .bg-productividad-1 {
         background-image: url('../images/sections/art1BloqueLecturasResponsive.webp');
     }
 
-    #productividad2 {
+    .bg-productividad-2 {
         background-image: url('../images/sections/art2BloqueLecturasResponsive.webp');
     }
 
-    #salud-mental1 {
+    .bg-salud-mental-1 {
         background-image: url('../images/sections/art3BloqueLecturasResponsive.webp');
     }
 
-    #salud-mental2 {
+    .bg-salud-mental-2 {
         background-image: url('../images/sections/art4BloqueLecturasResponsive.webp');
     }
 
-    #productividad3 {
+    .bg-productividad-3 {
         background-image: url('../images/articles/art1-fondo-responsive.webp');
     }
 
-    #productividad4 {
+    .bg-productividad-4 {
         background-image: url('../images/articles/art2-fondo-responsive.webp');
     }
 
-    #salud-mental3 {
+    .bg-salud-mental-3 {
         background-image: url('../images/articles/art3-fondo-responsive.webp');
     }
 
-    #salud-mental4 {
+    .bg-salud-mental-4 {
         background-image: url('../images/articles/art4-fondo-responsive.webp');
     }
 }
@@ -678,68 +678,68 @@ body.loaded #loader {
     }
 }
 
-#ejercicio1 {
+.bg-ejercicio-1 {
     background-image: url('../images/sections/rut1BloqueEjercicios.webp');
 }
 
-#ejercicio2 {
+.bg-ejercicio-2 {
     background-image: url('../images/sections/rut2BloqueEjercicios.webp');
 }
 
-#ejercicio3 {
+.bg-ejercicio-3 {
     background-image: url('../images/sections/rut3BloqueEjercicios.webp');
 }
 
-#ejercicio4 {
+.bg-ejercicio-4 {
     background-image: url('../images/sections/rut4BloqueEjercicios.webp');
 }
 
-#dieta1 {
+.bg-dieta-1 {
     background-image: url('../images/sections/plan1BloqueDietas.webp');
 }
 
-#dieta2 {
+.bg-dieta-2 {
     background-image: url('../images/sections/plan2BloqueDietas.webp');
 }
 
-#dieta3 {
+.bg-dieta-3 {
     background-image: url('../images/sections/plan3BloqueDietas.webp');
 }
 
-#dieta4 {
+.bg-dieta-4 {
     background-image: url('../images/sections/plan4BloqueDietas.webp');
 }
 
-#dieta5 {
+.bg-dieta-5 {
     background-image: url('../images/sections/plan5BloqueDietas.webp');
 }
 
-#dieta6 {
+.bg-dieta-6 {
     background-image: url('../images/sections/plan6BloqueDietas.webp');
 }
 
 @media (max-width: 991px) {
-    #dieta1 {
+    .bg-dieta-1 {
         background-image: url('../images/sections/plan1BloqueDietasResponsive.webp');
     }
 
-    #dieta2 {
+    .bg-dieta-2 {
         background-image: url('../images/sections/plan2BloqueDietasResponsive.webp');
     }
 
-    #dieta3 {
+    .bg-dieta-3 {
         background-image: url('../images/sections/plan3BloqueDietasResponsive.webp');
     }
 
-    #dieta4 {
+    .bg-dieta-4 {
         background-image: url('../images/sections/plan4BloqueDietasResponsive.webp');
     }
 
-    #dieta5 {
+    .bg-dieta-5 {
         background-image: url('../images/sections/plan5BloqueDietasResponsive.webp');
     }
 
-    #dieta6 {
+    .bg-dieta-6 {
         background-image: url('../images/sections/plan6BloqueDietasResponsive.webp');
     }
 }
