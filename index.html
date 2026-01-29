@@ -11,8 +11,8 @@
         rel="stylesheet">
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hourglass.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" render></script>
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <script src="assets/js/main.js" render></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
@@ -104,9 +104,9 @@
             <div class="d-flex justify-content-center align-items-center h-100">
                 <div class="text-white">
                     <h1 class="words-wrapper" class="mb-3">Vitalia, el cambio que <br> <span class="words">
-                        <span class="current">necesitas</span>
-                        <span class="next">buscas</span>
-                        <span>mereces</span></span> en tu vida</h1>
+                            <span class="current">necesitas</span>
+                            <span class="next">buscas</span>
+                            <span>mereces</span></span> en tu vida</h1>
                     <h4 class="mb-3">Planes de bienestar personalizados para cuidar tu salud</h4>
                     <a href="formulario/form.html" class="btn">
                         <i class="bi bi-box-arrow-up-right" alt="Ícono de link externo"></i>
@@ -117,37 +117,14 @@
         </div>
     </div>
 
-    <script>
-        const wrapper = document.querySelector(".words");
-        const words = wrapper.querySelectorAll("span");
-        const currentWord = wrapper.querySelector("span.current");
-        const wordsWidths = Array.from(words).map((word) => word.offsetWidth);
-        const maxWordsWidth = Math.max(...wordsWidths);
-        const CURRENT_CLASS = "current";
-        const NEXT_CLASS = "next";
-        wrapper.style.setProperty("--width", `${currentWord.offsetWidth}px`);
-        wrapper.style.setProperty("--width-mobile", `${maxWordsWidth}px`);
-        setInterval(() => {
-            const currentWord = wrapper.querySelector("span.current");
-            const nextWord = wrapper.querySelector("span.next");
-            const nextNextWord = nextWord.nextElementSibling
-                ? nextWord.nextElementSibling
-                : wrapper.firstElementChild;
-            currentWord.classList.remove(CURRENT_CLASS);
-            nextWord.classList.remove(NEXT_CLASS);
-            nextWord.classList.add(CURRENT_CLASS);
-            nextNextWord.classList.add(NEXT_CLASS);
-            wrapper.style.setProperty("--color", nextWord.dataset.color);
-            wrapper.style.setProperty("--color-bg", nextWord.dataset.bgColor);
-            wrapper.style.setProperty("--width", `${nextWord.offsetWidth}px`);
-        }, 1500);
-    </script>
+    <!-- Inline script moved to assets/js/landingscript.js -->
 
     <!-- Features -->
     <section class="reading" id="que-es-vitalia">
         <div class="reading-section">
             <p class="reading-subtext">Acerca de nuestra iniciativa</p>
-            <h2 class="reading-heading wobble">Descubre lo que <span class="dif-txt">Vitalia </span> tiene para ofrecer</h2>
+            <h2 class="reading-heading wobble">Descubre lo que <span class="dif-txt">Vitalia </span> tiene para ofrecer
+            </h2>
         </div>
     </section>
 
@@ -205,7 +182,8 @@
     <section class="reading" id="preguntas-frecuentes">
         <div class="reading-section">
             <p class="reading-subtext">Preguntas frecuentes</p>
-            <h2 class="reading-heading wobble">¿Tienes alguna duda? Nosotros <span class="dif-txt">te respondemos</span></h2>
+            <h2 class="reading-heading wobble">¿Tienes alguna duda? Nosotros <span class="dif-txt">te respondemos</span>
+            </h2>
         </div>
     </section>
     <div class="wrapper-faq">
@@ -267,13 +245,13 @@
 
     </div>
 
-    <script src="assets/js/function.js""></script>
+    <script src="assets/js/faq.js"></script>
 
     <!-- Premium -->
     <section class="reading" id="premium">
         <div class="reading-section">
             <p class="reading-subtext">Planes de suscripción</p>
-            <h2 class="reading-heading" class="wobble">Lleva tu experiencia al <span class="dif-txt">siguiente nivel</span></h2>
+            <h2 class="reading-heading wobble">Lleva tu experiencia al <span class="dif-txt">siguiente nivel</span></h2>
         </div>
     </section>
     <section>
@@ -345,7 +323,8 @@
                                 <i class="fa fa-check mr-2 text-primary"></i>✔ Análisis de bienestar para equipos
                             </li>
                             <li class="mb-3">
-                                <i class="fa fa-check mr-2 text-primary"></i>✔ Sesiones de coaching virtuales individuales
+                                <i class="fa fa-check mr-2 text-primary"></i>✔ Sesiones de coaching virtuales
+                                individuales
                             </li>
                             <li class="mb-3">
                                 <i class="fa fa-check mr-2 text-primary"></i>✔ Acceso ilimitado a recursos exclusivos
@@ -429,16 +408,19 @@
         <div class="col-lg-2 col-md-6 mb-3">
             <h3 class="subtittle">Acerca de</h3>
             <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="index.html#que-es-vitalia" class="nav-link p-0 text-body-secondary">¿Qué es Vitalia?</a></li>
-                <li class="nav-item mb-2"><a href="index.html#preguntas-frecuentes" class="nav-link p-0 text-body-secondary">Preguntas frecuentes</a>
+                <li class="nav-item mb-2"><a href="index.html#que-es-vitalia"
+                        class="nav-link p-0 text-body-secondary">¿Qué es Vitalia?</a></li>
+                <li class="nav-item mb-2"><a href="index.html#preguntas-frecuentes"
+                        class="nav-link p-0 text-body-secondary">Preguntas frecuentes</a>
                 </li>
-                <li class="nav-item mb-2"><a href="index.html#premium" class="nav-link p-0 text-body-secondary">Planes de suscripción</a></li>
+                <li class="nav-item mb-2"><a href="index.html#premium" class="nav-link p-0 text-body-secondary">Planes
+                        de suscripción</a></li>
             </ul>
         </div>
     </footer>
 
     <script>
-        !function(){var t=window,e=document,a=function(){var t=e.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://bot.airdroid.com/widget/chatinsight-widget.js",t.onload=function(){new ChatInsightWidget({sid:'DBEaEYro3pM7blsrV5tpn6D4uL6FBMBc', iFrameSid:'asQotJ41ToI4oveBTqWAlrT0f_8AKYEM'})};var a=e.getElementsByTagName("script")[0];a.parentNode.insertBefore(t,a)};"complete"===document.readyState?a():t.attachEvent?t.attachEvent("onload",a):t.addEventListener("load",a,!1)}();
+        !function () { var t = window, e = document, a = function () { var t = e.createElement("script"); t.type = "text/javascript", t.async = !0, t.src = "https://bot.airdroid.com/widget/chatinsight-widget.js", t.onload = function () { new ChatInsightWidget({ sid: 'DBEaEYro3pM7blsrV5tpn6D4uL6FBMBc', iFrameSid: 'asQotJ41ToI4oveBTqWAlrT0f_8AKYEM' }) }; var a = e.getElementsByTagName("script")[0]; a.parentNode.insertBefore(t, a) }; "complete" === document.readyState ? a() : t.attachEvent ? t.attachEvent("onload", a) : t.addEventListener("load", a, !1) }();
     </script>
 
     <script src="assets/js/landingscript.js"></script>
