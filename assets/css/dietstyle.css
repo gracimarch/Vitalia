@@ -1,3 +1,5 @@
+@import url('variables.css');
+
 *,
 *:before,
 *:after {
@@ -12,8 +14,8 @@ html {
 }
 
 body {
-    font-family: 'Poppins', Calibri, sans-serif;
-    background-color: #fffcf4;
+    font-family: var(--font-primary);
+    background-color: var(--bg-main);
     margin: 0;
     padding: 0;
 }
@@ -21,11 +23,12 @@ body {
 :root {
     --padding: 4rem;
     --border: hsl(0, 0%, 80%);
-    --background: #fffcf4;
+    /* Removed redundant --background */
 }
 
 .pagina,
-.pagina-2, .pagina-3 {
+.pagina-2,
+.pagina-3 {
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -221,9 +224,7 @@ body.loaded #loader {
 }
 
 
-@media (min-width: 1100px) {
-
-}
+@media (min-width: 1100px) {}
 
 #introduction {
     color: #818589;
@@ -295,7 +296,7 @@ button {
     padding-right: 2rem;
     height: 100%;
     padding-left: var(--padding);
-    background: linear-gradient(to right, var(--background) 50%, hsla(0, 0%, 0%, 0));
+    background: linear-gradient(to right, var(--bg-main) 50%, hsla(0, 0%, 0%, 0));
 
     &>h3 {
         font-weight: 800;
@@ -318,7 +319,7 @@ button {
 }
 
 .guide-slot_card {
-    background: var(--background);
+    background: var(--bg-main);
     border: 1px solid var(--border);
     border-radius: 0.8rem;
     margin-bottom: 1rem;
@@ -404,7 +405,7 @@ figcaption {
     width: 65%;
     max-height: 75vh;
     height: auto;
-    background-color: var(--background);
+    background-color: var(--bg-main);
     border-radius: 20px;
 }
 
@@ -484,7 +485,8 @@ figcaption {
     margin-left: 15px;
 }
 
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
     margin-right: 6px;
 }
 
