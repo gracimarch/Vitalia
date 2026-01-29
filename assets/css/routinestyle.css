@@ -424,7 +424,7 @@ th:first-child {
 .footer {
     margin: 150px auto 0 auto;
     padding: 80px;
-    background-image: url(../images/degradadoFondoFooter.webp);
+    background-image: url(../images/backgrounds/degradadoFondoFooter.webp);
     background-size: cover;
     background-position: center;
     border-radius: 50px 50px 0 0;
@@ -638,19 +638,19 @@ th:first-child {
 }
 
 #ejercicio1 {
-    background-image: url('../images/rut1BloqueEjercicios.webp');
+    background-image: url('../images/sections/rut1BloqueEjercicios.webp');
 }
 
 #ejercicio2 {
-    background-image: url('../images/rut2BloqueEjercicios.webp');
+    background-image: url('../images/sections/rut2BloqueEjercicios.webp');
 }
 
 #ejercicio3 {
-    background-image: url('../images/rut3BloqueEjercicios.webp');
+    background-image: url('../images/sections/rut3BloqueEjercicios.webp');
 }
 
 #ejercicio4 {
-    background-image: url('../images/rut4BloqueEjercicios.webp');
+    background-image: url('../images/sections/rut4BloqueEjercicios.webp');
 }
 
 * {
@@ -1263,7 +1263,7 @@ body.loaded #loader {
 .footer {
     margin: 150px auto 0 auto;
     padding: 80px;
-    background-image: url(../images/degradadoFondoFooter.webp);
+    background-image: url(../images/backgrounds/degradadoFondoFooter.webp);
     background-size: cover;
     background-position: center;
     border-radius: 50px 50px 0 0;
@@ -1479,17 +1479,17 @@ body.loaded #loader {
 
 
 #ejercicio1 {
-    background-image: url('../images/rut1BloqueEjercicios.webp');
+    background-image: url('../images/sections/rut1BloqueEjercicios.webp');
 }
 
 #ejercicio2 {
-    background-image: url('../images/rut2BloqueEjercicios.webp');
+    background-image: url('../images/sections/rut2BloqueEjercicios.webp');
 }
 
 #ejercicio3 {
-    background-image: url('../images/rut3BloqueEjercicios.webp');
+    background-image: url('../images/sections/rut3BloqueEjercicios.webp');
 }
 
 #ejercicio4 {
-    background-image: url('../images/rut4BloqueEjercicios.webp');
+    background-image: url('../images/sections/rut4BloqueEjercicios.webp');
 }

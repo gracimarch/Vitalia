@@ -667,7 +667,7 @@ input[type="checkbox"], input[type="radio"] {
 .footer {
     margin: 150px auto 0 auto;
     padding: 80px;
-    background-image: url(../images/degradadoFondoFooter.webp);
+    background-image: url(../images/backgrounds/degradadoFondoFooter.webp);
     background-size: cover;
     background-position: center;
     border-radius: 50px 50px 0 0;
