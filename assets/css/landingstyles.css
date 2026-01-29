@@ -225,7 +225,7 @@ body.loaded #loader {
 }
 
 .welcome {
-    background-image: url(../images/imgFondoHero.webp);
+    background-image: url(../images/backgrounds/imgFondoHero.webp);
     height: 570px;
     max-width: 1150px;
     margin: 0 auto;
@@ -235,19 +235,19 @@ body.loaded #loader {
 
 @media (max-width: 760px) {
     .welcome {
-        background-image: url(../images/imgFondoHeroCelular.webp);
+        background-image: url(../images/backgrounds/imgFondoHeroCelular.webp);
     }
 }
 
 @media (min-width: 1000px) {
     .welcome {
-        background-image: url(../images/imgFondoHeroAncha2.webp);
+        background-image: url(../images/backgrounds/imgFondoHeroAncha2.webp);
     }
 }
 
 @media (min-width: 1200px) {
     .welcome {
-        background-image: url(../images/imgFondoHeroAncha.webp);
+        background-image: url(../images/backgrounds/imgFondoHeroAncha.webp);
     }
 }
 
@@ -702,7 +702,7 @@ body.loaded #loader {
 .footer {
     margin: 15px auto 0 auto;
     padding: 80px;
-    background-image: url(../images/degradadoFondoFooter.webp);
+    background-image: url(../images/backgrounds/degradadoFondoFooter.webp);
     background-size: cover;
     background-position: center;
     border-radius: 50px 50px 0 0;

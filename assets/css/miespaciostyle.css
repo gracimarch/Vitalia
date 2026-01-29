@@ -368,19 +368,19 @@ body.loaded #loader {
 }
 
 #lee {
-    background-image: url('../images/leeBloqueAtajos.webp');
+    background-image: url('../images/sections/leeBloqueAtajos.webp');
 }
 
 #ejercita {
-    background-image: url('../images/ejercitaBloqueAtajos.webp');
+    background-image: url('../images/sections/ejercitaBloqueAtajos.webp');
 }
 
 #medita {
-    background-image: url('../images/meditaBloqueAtajos.webp');
+    background-image: url('../images/sections/meditaBloqueAtajos.webp');
 }
 
 #alimentate {
-    background-image: url('../images/alimentateBloqueAtajos.webp');
+    background-image: url('../images/sections/alimentateBloqueAtajos.webp');
 }
 
 .content {
@@ -459,20 +459,20 @@ body.loaded #loader {
 }
 
 #reflexion {
-    background-image: url('../images/plan6BloqueInfo.webp');
+    background-image: url('../images/sections/plan6BloqueInfo.webp');
 }
 
 #blog {
-    background-image: url('../images/atajoBloqueLecturas.webp');
+    background-image: url('../images/sections/atajoBloqueLecturas.webp');
 }
 
 @media (max-width: 991px) {
     #reflexion {
-        background-image: url('../images/plan6BloqueInfoResponsive.webp');
+        background-image: url('../images/sections/plan6BloqueInfoResponsive.webp');
     }
     
     #blog {
-        background-image: url('../images/atajoBloqueLecturasResponsive.webp');
+        background-image: url('../images/sections/atajoBloqueLecturasResponsive.webp');
     }
 }
 
@@ -718,36 +718,36 @@ body.loaded #loader {
 }
 
 #productividad {
-    background-image: url('../images/art1BloqueLecturas.webp');
+    background-image: url('../images/sections/art1BloqueLecturas.webp');
 }
 
 #salud-mental {
-    background-image: url('../images/art2BloqueLecturas.webp');
+    background-image: url('../images/sections/art2BloqueLecturas.webp');
 }
 
 #nutricion {
-    background-image: url('../images/art3BloqueLecturas.webp');
+    background-image: url('../images/sections/art3BloqueLecturas.webp');
 }
 
 #bienestar {
-    background-image: url('../images/art4BloqueLecturas.webp');
+    background-image: url('../images/sections/art4BloqueLecturas.webp');
 }
 
 @media (max-width: 991px) {
     #productividad {
-        background-image: url('../images/art1BloqueLecturasResponsive.webp');
+        background-image: url('../images/sections/art1BloqueLecturasResponsive.webp');
     }
     
     #salud-mental {
-        background-image: url('../images/art2BloqueLecturasResponsive.webp');
+        background-image: url('../images/sections/art2BloqueLecturasResponsive.webp');
     }
     
     #nutricion {
-        background-image: url('../images/art3BloqueLecturasResponsive.webp');
+        background-image: url('../images/sections/art3BloqueLecturasResponsive.webp');
     }
     
     #bienestar {
-        background-image: url('../images/art4BloqueLecturasResponsive.webp');
+        background-image: url('../images/sections/art4BloqueLecturasResponsive.webp');
     }
 }
 
@@ -784,32 +784,32 @@ body.loaded #loader {
 }
 
 #button1 {
-    background: url('../images/fondo1BloqueMeditaciones.webp') no-repeat center center;
+    background: url('../images/sections/fondo1BloqueMeditaciones.webp') no-repeat center center;
     background-size: cover;
 }
 
 #button2 {
-    background: url('../images/fondo2BloqueMeditaciones.webp') no-repeat center center;
+    background: url('../images/sections/fondo2BloqueMeditaciones.webp') no-repeat center center;
     background-size: cover;
 }
 
 #button3 {
-    background: url('../images/fondo3BloqueMeditaciones.webp') no-repeat center center;
+    background: url('../images/sections/fondo3BloqueMeditaciones.webp') no-repeat center center;
     background-size: cover;
 }
 
 #button4 {
-    background: url('../images/fondo4BloqueMeditaciones.webp') no-repeat center center;
+    background: url('../images/sections/fondo4BloqueMeditaciones.webp') no-repeat center center;
     background-size: cover;
 }
 
 #button5 {
-    background: url('../images/fondo5BloqueMeditaciones.webp') no-repeat center center;
+    background: url('../images/sections/fondo5BloqueMeditaciones.webp') no-repeat center center;
     background-size: cover;
 }
 
 #button6 {
-    background: url('../images/fondo6BloqueMeditaciones.webp') no-repeat center center;
+    background: url('../images/sections/fondo6BloqueMeditaciones.webp') no-repeat center center;
     background-size: cover;
 }
 
@@ -978,75 +978,75 @@ body.loaded #loader {
 }
 
 #ejercicio1 {
-    background-image: url('../images/rut1BloqueEjercicios.webp');
+    background-image: url('../images/sections/rut1BloqueEjercicios.webp');
 }
 
 #ejercicio2 {
-    background-image: url('../images/rut2BloqueEjercicios.webp');
+    background-image: url('../images/sections/rut2BloqueEjercicios.webp');
 }
 
 #ejercicio3 {
-    background-image: url('../images/rut3BloqueEjercicios.webp');
+    background-image: url('../images/sections/rut3BloqueEjercicios.webp');
 }
 
 #ejercicio4 {
-    background-image: url('../images/rut4BloqueEjercicios.webp');
+    background-image: url('../images/sections/rut4BloqueEjercicios.webp');
 }
 
 #dieta1 {
-    background-image: url('../images/plan1BloqueDietas.webp');
+    background-image: url('../images/sections/plan1BloqueDietas.webp');
 }
 
 #dieta2 {
-    background-image: url('../images/plan2BloqueDietas.webp');
+    background-image: url('../images/sections/plan2BloqueDietas.webp');
 }
 
 #dieta3 {
-    background-image: url('../images/plan3BloqueDietas.webp');
+    background-image: url('../images/sections/plan3BloqueDietas.webp');
 }
 
 #dieta4 {
-    background-image: url('../images/plan4BloqueDietas.webp');
+    background-image: url('../images/sections/plan4BloqueDietas.webp');
 }
 
 #dieta5 {
-    background-image: url('../images/plan5BloqueDietas.webp');
+    background-image: url('../images/sections/plan5BloqueDietas.webp');
 }
 
 #dieta6 {
-    background-image: url('../images/plan6BloqueDietas.webp');
+    background-image: url('../images/sections/plan6BloqueDietas.webp');
 }
 
 @media (max-width: 991px) {
     #dieta1 {
-        background-image: url('../images/plan1BloqueDietasResponsive.webp');
+        background-image: url('../images/sections/plan1BloqueDietasResponsive.webp');
     }
     
     #dieta2 {
-        background-image: url('../images/plan2BloqueDietasResponsive.webp');
+        background-image: url('../images/sections/plan2BloqueDietasResponsive.webp');
     }
     
     #dieta3 {
-        background-image: url('../images/plan3BloqueDietasResponsive.webp');
+        background-image: url('../images/sections/plan3BloqueDietasResponsive.webp');
     }
     
     #dieta4 {
-        background-image: url('../images/plan4BloqueDietasResponsive.webp');
+        background-image: url('../images/sections/plan4BloqueDietasResponsive.webp');
     }
     
     #dieta5 {
-        background-image: url('../images/plan5BloqueDietasResponsive.webp');
+        background-image: url('../images/sections/plan5BloqueDietasResponsive.webp');
     }
     
     #dieta6 {
-        background-image: url('../images/plan6BloqueDietasResponsive.webp');
+        background-image: url('../images/sections/plan6BloqueDietasResponsive.webp');
     }
 }
 
 .footer {
     margin: 15px auto 0 auto;
     padding: 80px;
-    background-image: url(../images/degradadoFondoFooter.webp);
+    background-image: url(../images/backgrounds/degradadoFondoFooter.webp);
     background-size: cover;
     background-position: center;
     border-radius: 50px 50px 0 0;
