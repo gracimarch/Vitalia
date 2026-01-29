@@ -1,3 +1,5 @@
+@import url('variables.css');
+
 * {
     box-sizing: border-box;
 }
@@ -7,8 +9,8 @@ html {
 }
 
 body {
-    font-family: 'Poppins', Calibri, sans-serif;
-    background-color: #fffcf4;
+    font-family: var(--font-primary);
+    background-color: var(--bg-main);
     margin: 0;
     padding: 0;
 }
@@ -190,17 +192,25 @@ body.loaded #loader {
     width: 28px;
     height: 18px;
     vertical-align:
-    middle;content:"";
+        middle;
+    content: "";
     background: no-repeat center center;
     background-size: 100% 100%;
 }
 
-.articles .block, .lecturas .block, .reading .reading-section, .welcome .welcome-section, .thanks .thanks-section, .audio-blocks .audio-block {
+.articles .block,
+.lecturas .block,
+.reading .reading-section,
+.welcome .welcome-section,
+.thanks .thanks-section,
+.audio-blocks .audio-block {
     opacity: 0;
     transform: translateY(-10%);
 }
 
-.articles .info-block, .lecturas .info-block, .ejercicios .block {
+.articles .info-block,
+.lecturas .info-block,
+.ejercicios .block {
     opacity: 0;
     transform: translateY(-5%);
 }
@@ -209,7 +219,9 @@ body.loaded #loader {
     animation: slideInTop 0.5s ease-out forwards;
 }
 
-.reading .reading-section, .welcome .welcome-section, .thanks .thanks-section,
+.reading .reading-section,
+.welcome .welcome-section,
+.thanks .thanks-section,
 .articles .block.animate:nth-child(1),
 .lecturas .block.animate:nth-child(1),
 .lecturas .block.animate:nth-child(2),
@@ -266,16 +278,22 @@ body.loaded #loader {
     filter: brightness(1.02);
 }
 
-.welcome, .reading, .thanks {
+.welcome,
+.reading,
+.thanks {
     padding: 40px 0;
 }
 
-.welcome-section, .reading-section, .thanks-section {
+.welcome-section,
+.reading-section,
+.thanks-section {
     text-align: center;
     padding: 20px;
 }
 
-.welcome-content, .reading-content, .thanks-content{
+.welcome-content,
+.reading-content,
+.thanks-content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -286,8 +304,10 @@ body.loaded #loader {
     display: inline-block;
     background-image: linear-gradient(45deg, #ff97a1, #f1ba7b, #d4d474, #77b084, #548be4, #c084fc, #e6438c);
     color: transparent;
-    -webkit-background-clip: text; /* Edge, Chrome */
-    background-clip: text; /* Safari, FF */
+    -webkit-background-clip: text;
+    /* Edge, Chrome */
+    background-clip: text;
+    /* Safari, FF */
     animation: gradientAnimation 8s linear infinite;
     animation-direction: alternate;
     background-size: 300% 100%;
@@ -295,8 +315,13 @@ body.loaded #loader {
 }
 
 @keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 .reading-icon {
@@ -304,13 +329,15 @@ body.loaded #loader {
     height: 24px;
 }
 
-.welcome-heading, .reading-heading {
+.welcome-heading,
+.reading-heading {
     font-size: 32px;
     margin: 0;
     color: #1f1f1f;
 }
 
-.welcome-subtext, .reading-subtext {
+.welcome-subtext,
+.reading-subtext {
     color: #707070;
     font-size: 19.2px;
     margin: 10px 0 0;
@@ -336,6 +363,7 @@ body.loaded #loader {
     .thanks-subtext {
         font-size: 16px;
     }
+
     .thanks-heading {
         font-size: 24px;
     }
@@ -395,7 +423,8 @@ body.loaded #loader {
     font-size: 23px;
 }
 
-.content p, .info-content p {
+.content p,
+.info-content p {
     font-size: 14.4px;
     margin: 5px 0 0;
 }
@@ -410,11 +439,13 @@ body.loaded #loader {
         flex: 1 1 calc(50% - 15px);
     }
 
-    .content h2, #share-text {
+    .content h2,
+    #share-text {
         font-size: 20px;
     }
-    
-    .content p, .info-content p {
+
+    .content p,
+    .info-content p {
         font-size: 12.8px;
         margin: 5px 0 0;
     }
@@ -470,7 +501,7 @@ body.loaded #loader {
     #reflexion {
         background-image: url('../images/sections/plan6BloqueInfoResponsive.webp');
     }
-    
+
     #blog {
         background-image: url('../images/sections/atajoBloqueLecturasResponsive.webp');
     }
@@ -536,7 +567,7 @@ body.loaded #loader {
     margin: 15px auto;
 }
 
-.btn_wrap i  {
+.btn_wrap i {
     font-size: 16px;
     margin-right: 5px;
     vertical-align: middle;
@@ -591,7 +622,7 @@ body.loaded #loader {
 
 .dr {
     position: absolute;
-    bottom: 16px; 
+    bottom: 16px;
     right: 16px;
     width: 100px;
 }
@@ -633,7 +664,10 @@ body.loaded #loader {
     }
 }
 
-.articles, .lecturas, .audio-blocks, .ejercicios {
+.articles,
+.lecturas,
+.audio-blocks,
+.ejercicios {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -705,7 +739,10 @@ body.loaded #loader {
         width: 15px;
     }
 
-    .articles, .lecturas, .audio-blocks, .ejercicios {
+    .articles,
+    .lecturas,
+    .audio-blocks,
+    .ejercicios {
         padding: 10px;
     }
 }
@@ -737,15 +774,15 @@ body.loaded #loader {
     #productividad {
         background-image: url('../images/sections/art1BloqueLecturasResponsive.webp');
     }
-    
+
     #salud-mental {
         background-image: url('../images/sections/art2BloqueLecturasResponsive.webp');
     }
-    
+
     #nutricion {
         background-image: url('../images/sections/art3BloqueLecturasResponsive.webp');
     }
-    
+
     #bienestar {
         background-image: url('../images/sections/art4BloqueLecturasResponsive.webp');
     }
@@ -875,7 +912,8 @@ body.loaded #loader {
     border-radius: 3px;
 }
 
-.current-time, .duration-time {
+.current-time,
+.duration-time {
     color: #777;
 }
 
@@ -937,8 +975,8 @@ body.loaded #loader {
 
 .ejercicios .reading-time {
     display: flex;
-    align-items: center; 
-    gap: 5px; 
+    align-items: center;
+    gap: 5px;
 }
 
 .ejercicios .reading-time img {
@@ -1021,23 +1059,23 @@ body.loaded #loader {
     #dieta1 {
         background-image: url('../images/sections/plan1BloqueDietasResponsive.webp');
     }
-    
+
     #dieta2 {
         background-image: url('../images/sections/plan2BloqueDietasResponsive.webp');
     }
-    
+
     #dieta3 {
         background-image: url('../images/sections/plan3BloqueDietasResponsive.webp');
     }
-    
+
     #dieta4 {
         background-image: url('../images/sections/plan4BloqueDietasResponsive.webp');
     }
-    
+
     #dieta5 {
         background-image: url('../images/sections/plan5BloqueDietasResponsive.webp');
     }
-    
+
     #dieta6 {
         background-image: url('../images/sections/plan6BloqueDietasResponsive.webp');
     }
@@ -1079,7 +1117,8 @@ body.loaded #loader {
     transition: all 0.3s ease;
 }
 
-.social-icon:hover i, .footer-link:hover {
+.social-icon:hover i,
+.footer-link:hover {
     color: #c9fff3;
 }
 

@@ -1,3 +1,5 @@
+@import url('variables.css');
+
 * {
     box-sizing: border-box;
 }
@@ -7,8 +9,8 @@ html {
 }
 
 body {
-    font-family: 'Poppins', Calibri, sans-serif;
-    background-color: #fffcf4;
+    font-family: var(--font-primary);
+    background-color: var(--bg-main);
     margin: 0;
     padding: 0;
 }
@@ -190,7 +192,8 @@ body.loaded #loader {
     width: 28px;
     height: 18px;
     vertical-align:
-    middle;content:"";
+        middle;
+    content: "";
     background: no-repeat center center;
     background-size: 100% 100%;
 }
@@ -200,12 +203,19 @@ body.loaded #loader {
     transform: translateY(-1.2%);
 }
 
-.articles .block, .lecturas .block, .reading .reading-section, .welcome .welcome-section, .thanks .thanks-section, .audio-blocks .audio-block {
+.articles .block,
+.lecturas .block,
+.reading .reading-section,
+.welcome .welcome-section,
+.thanks .thanks-section,
+.audio-blocks .audio-block {
     opacity: 0;
     transform: translateY(-10%);
 }
 
-.articles .info-block, .lecturas .info-block, .ejercicios .block {
+.articles .info-block,
+.lecturas .info-block,
+.ejercicios .block {
     opacity: 0;
     transform: translateY(-5%);
 }
@@ -214,7 +224,10 @@ body.loaded #loader {
     animation: slideInTop 0.5s ease-out forwards;
 }
 
-.welcome, .reading .reading-section, .welcome .welcome-section, .thanks .thanks-section,
+.welcome,
+.reading .reading-section,
+.welcome .welcome-section,
+.thanks .thanks-section,
 .articles .block.animate:nth-child(1),
 .lecturas .block.animate:nth-child(1),
 .lecturas .block.animate:nth-child(2),
@@ -304,21 +317,25 @@ body.loaded #loader {
     .thanks-subtext {
         font-size: 16px;
     }
+
     .thanks-heading {
         font-size: 24px;
     }
 }
 
-.reading, .thanks {
+.reading,
+.thanks {
     padding: 40px 0;
 }
 
-.reading-section, .thanks-section {
+.reading-section,
+.thanks-section {
     text-align: center;
     padding: 20px;
 }
 
-.reading-content, .thanks-content{
+.reading-content,
+.thanks-content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -343,7 +360,8 @@ body.loaded #loader {
     }
 }
 
-.reading-content, .thanks-content{
+.reading-content,
+.thanks-content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -442,7 +460,8 @@ body.loaded #loader {
     font-size: 20px;
 }
 
-.content p, .info-content p {
+.content p,
+.info-content p {
     font-size: 14.4px;
     margin: 5px 0 0;
 }
@@ -457,11 +476,13 @@ body.loaded #loader {
         flex: 1 1 calc(50% - 15px);
     }
 
-    .content h3, #share-text {
+    .content h3,
+    #share-text {
         font-size: 18px;
     }
-    
-    .content p, .info-content p {
+
+    .content p,
+    .info-content p {
         font-size: 12.8px;
         margin: 5px 0 0;
     }
@@ -575,7 +596,10 @@ body.loaded #loader {
     }
 }
 
-.articles, .lecturas, .audio-blocks, .ejercicios {
+.articles,
+.lecturas,
+.audio-blocks,
+.ejercicios {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -647,7 +671,10 @@ body.loaded #loader {
         width: 15px;
     }
 
-    .articles, .lecturas, .audio-blocks, .ejercicios {
+    .articles,
+    .lecturas,
+    .audio-blocks,
+    .ejercicios {
         padding: 10px;
     }
 }
@@ -695,15 +722,15 @@ body.loaded #loader {
     #productividad1 {
         background-image: url('../images/sections/art1BloqueLecturasResponsive.webp');
     }
-    
+
     #productividad2 {
         background-image: url('../images/sections/art2BloqueLecturasResponsive.webp');
     }
-    
+
     #salud-mental1 {
         background-image: url('../images/sections/art3BloqueLecturasResponsive.webp');
     }
-    
+
     #salud-mental2 {
         background-image: url('../images/sections/art4BloqueLecturasResponsive.webp');
     }
@@ -711,7 +738,7 @@ body.loaded #loader {
     #productividad3 {
         background-image: url('../images/articles/art1-fondo-responsive.webp');
     }
-    
+
     #productividad4 {
         background-image: url('../images/articles/art2-fondo-responsive.webp');
     }
@@ -719,7 +746,7 @@ body.loaded #loader {
     #salud-mental3 {
         background-image: url('../images/articles/art3-fondo-responsive.webp');
     }
-    
+
     #salud-mental4 {
         background-image: url('../images/articles/art4-fondo-responsive.webp');
     }
@@ -765,8 +792,8 @@ body.loaded #loader {
 
 .ejercicios .reading-time {
     display: flex;
-    align-items: center; 
-    gap: 5px; 
+    align-items: center;
+    gap: 5px;
 }
 
 .ejercicios .reading-time img {
@@ -849,23 +876,23 @@ body.loaded #loader {
     #dieta1 {
         background-image: url('../images/sections/plan1BloqueDietasResponsive.webp');
     }
-    
+
     #dieta2 {
         background-image: url('../images/sections/plan2BloqueDietasResponsive.webp');
     }
-    
+
     #dieta3 {
         background-image: url('../images/sections/plan3BloqueDietasResponsive.webp');
     }
-    
+
     #dieta4 {
         background-image: url('../images/sections/plan4BloqueDietasResponsive.webp');
     }
-    
+
     #dieta5 {
         background-image: url('../images/sections/plan5BloqueDietasResponsive.webp');
     }
-    
+
     #dieta6 {
         background-image: url('../images/sections/plan6BloqueDietasResponsive.webp');
     }
@@ -907,7 +934,8 @@ body.loaded #loader {
     transition: all 0.3s ease;
 }
 
-.social-icon:hover i, .footer-link:hover {
+.social-icon:hover i,
+.footer-link:hover {
     color: #c9fff3;
 }
 

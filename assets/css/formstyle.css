@@ -1,6 +1,4 @@
-:root {
-    --purple: #9D43D9;
-}  
+@import url('variables.css');
 
 * {
     box-sizing: border-box;
@@ -11,8 +9,8 @@ html {
 }
 
 body {
-    font-family: 'Poppins', Calibri, sans-serif;
-    background-color: #f5f5f5;
+    font-family: var(--font-primary);
+    background-color: var(--bg-color);
     margin: 0;
     padding: 0;
     background-image: url(../../formulario/images/background.webp);
@@ -61,6 +59,7 @@ body.loaded #loader {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -70,6 +69,7 @@ body.loaded #loader {
     from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
@@ -117,6 +117,8 @@ body.loaded #loader {
 
 .step {
     width: 15px;
+    height: 15px;
+    /* Added missing height */
     background-color: #ddd;
     border-radius: 20px;
     transition: all 0.3s ease;
@@ -135,25 +137,29 @@ body.loaded #loader {
 #title h1 {
     font-size: 26px;
     font-weight: bold;
-    color: #333;
+    color: var(--text-color);
 }
 
 #title p {
     margin: 20px 0;
     font-size: 16px;
-    color: #707070;
+    color: var(--text-muted);
 }
 
 .form-and-image {
     display: flex;
     justify-content: space-between;
+    gap: 30px;
+    /* Ensure visual separation */
 }
 
+/* Image container takes its needed space up to max-width */
 .img-contain {
     position: relative;
     display: flex;
     align-items: center;
-    flex: 1;
+    flex: 0 0 320px;
+    /* Don't grow, don't shrink, fixed basis */
     max-width: 320px;
     height: 100%;
     margin-top: 34px;
@@ -172,17 +178,17 @@ body.loaded #loader {
     display: flex;
     align-items: center;
     font-size: 12px;
-    color: #333;
+    color: var(--text-color);
 }
 
-#accept-terms input[type="checkbox"]{
+#accept-terms input[type="checkbox"] {
     margin: 10px 10px 10px 0;
     padding: 8px;
 }
 
 #accept-terms p {
     margin: 0;
-    color: #707070;
+    color: var(--text-muted);
     font-size: 14px;
 }
 
@@ -209,9 +215,12 @@ body.loaded #loader {
     margin-bottom: 5px;
 }
 
-.form-holder p, .form-holder label, .form-holder input, .form-holder select {
+.form-holder p,
+.form-holder label,
+.form-holder input,
+.form-holder select {
     font-size: 15px;
-    color: #333;
+    color: var(--text-color);
 }
 
 .form-control {
@@ -223,14 +232,19 @@ body.loaded #loader {
     font-size: 15px;
 }
 
+/* Scroll container fills remaining space */
 .form-row-scroll {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
     overflow-x: hidden;
     padding-right: 20px;
-    width: 40vw;
-    max-width: 900px;
+    flex: 1;
+    /* Grow to fill available space */
+    width: auto;
+    /* Remove fixed vw width */
+    max-width: none;
+    /* Remove arbitrary limit */
     height: 290px;
 }
 
@@ -244,7 +258,8 @@ body.loaded #loader {
 }
 
 .form-row-scroll::-webkit-scrollbar-thumb {
-    background: #a5a29e;;
+    background: #a5a29e;
+    ;
     border-radius: 25px;
     border: 1px solid #e8e3df;
 }
@@ -270,7 +285,8 @@ input {
     background-color: #f3f1ee;
 }
 
-.choice-container, .textinput-container {
+.choice-container,
+.textinput-container {
     display: flex;
     align-items: center;
 }
@@ -291,7 +307,8 @@ input {
     }
 }
 
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
     margin-right: 6px;
 }
 
@@ -319,9 +336,13 @@ input.otro-text {
     display: block;
 }
 
-.prev-btn, .next-btn, .send-btn {
-    background-color: #fff;
-    color: #333;
+.prev-btn,
+.next-btn,
+.send-btn {
+    font-family: inherit;
+    /* Inherit font from body */
+    background-color: var(--white);
+    color: var(--text-color);
     padding: 15px 50px;
     border-radius: 20px;
     cursor: pointer;
@@ -333,12 +354,15 @@ input.otro-text {
     border: none;
 }
 
-.prev-btn:hover, .next-btn:hover, .send-btn:hover {
+.prev-btn:hover,
+.next-btn:hover,
+.send-btn:hover {
     background-color: var(--purple);
-    color: #fff;
+    color: var(--white);
 }
 
-.next-btn {
+.next-btn,
+.send-btn {
     margin-left: auto;
 }
 
@@ -353,21 +377,14 @@ input.otro-text {
     opacity: 0;
 }
 
-.send-btn.hidden {
-    display: none;
-    opacity: 0;
-}
-
-.next-btn.hidden {
-    display: none;
-    opacity: 0;
-}
+/* Removed conflicting .hidden rules that prevented animations */
 
 @keyframes slideInFromRight {
     from {
         transform: translateX(30px);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -379,6 +396,7 @@ input.otro-text {
         transform: translateX(0);
         opacity: 1;
     }
+
     to {
         transform: translateX(30px);
         opacity: 0;
@@ -390,6 +408,7 @@ input.otro-text {
         transform: translateX(0);
         opacity: 1;
     }
+
     to {
         transform: translateX(-30px);
         opacity: 0;
@@ -401,6 +420,7 @@ input.otro-text {
         transform: translateX(-30px);
         opacity: 0;
     }
+
     to {
         transform: translateX(0);
         opacity: 1;
@@ -445,156 +465,83 @@ input.otro-text {
     display: none;
 }
 
-@media (min-width: 2000px) {
-    .form-row-scroll {
-        max-width: 800px;
-    }
+/* Responsive Layout using Flexbox and max-widths */
+
+/* Responsive Layout using Flexbox and max-widths */
+
+@media (min-width: 901px) {
+    /* No specific override needed for width as we use flex:1 now */
+    /* Ensure form content inside doesn't stretch weirdly if needed, or leave it fluid */
 }
 
-@media (max-width: 1999px) {
-    .form-row-scroll {
-        max-width: 800px;
-        width: 50vw;
+@media (max-width: 900px) {
+    .form-and-image {
+        flex-direction: column;
     }
-}
 
-@media (max-width: 1600px) {
-    .form-row-scroll {
-        width: 60vw;
-    }
-}
-
-@media (max-width: 1335px) {
-    .form-row-scroll {
-        max-width: auto;
-        width: 100vw;
-    }
-}
-
-@media (max-width: 1195px) {
-    .form-row-scroll {
-        max-width: 780px;
-        width: 68vw;
-    }
-}
-
-@media (max-width: 1180px) {
-    .form-row-scroll {
-        max-width: 750px;
-        width: 68vw;
-    }
-}
-
-@media (max-width: 1150px) {
-    .form-row-scroll {
-        max-width: 730px;
-        width: 66vw;
-    }
-}
-
-@media (max-width: 1130px) {
-    .form-row-scroll {
-        max-width: 700px;
-        width: 62vw;
-    }
-}
-
-@media (max-width: 1040px) {
-    .form-row-scroll {
-        width: 58vw;
-    }
-}
-
-@media (max-width: 950px) {
     .img-contain {
         display: none;
     }
 
+    .form-row-width {
+        width: 100%;
+    }
+
     .form-row-scroll {
-        max-width: 830px;
-        width: 88vw;
-    }
-}
-
-@media (max-width: 840px) {
-    .form-row-scroll {
-        max-width: 820px;
-        width: 86vw;
+        width: 100%;
+        height: auto;
+        min-height: 290px;
     }
 
-    body {
-        background-image: url(../../formulario/images/img-bg-responsive1.webp);
-        background-size: 100vw 100%;
-    }
-}
-
-@media (max-width: 700px) {
     .wrapper {
+        margin: 10px;
         padding: 20px;
     }
-    
+
     .formulario {
-        padding: 15px;
-    }
-
-    .form-holder p, .form-holder label, .form-holder input, .form-holder select {
-        font-size: 13px;
-    }
-
-    #title h1 {
-        font-size: 24px;
-    }
-    
-    #title p, .prev-btn, .next-btn, .send-btn {
-        font-size: 14px;
-    }
-
-    .prev-btn, .next-btn, .send-btn {
-        padding: 15px 30px;
-    }
-
-    #accept-terms p, #accept-terms a {
-        font-size: 12px;
-    }
-
-    .form-row-width, #title {
-        width: 100%;
+        padding: 0;
     }
 }
 
 @media (max-width: 600px) {
-    .form-row-scroll {
-        max-width: 710px;
-        width: 84vw;
+    .form-row-name {
+        flex-direction: column;
+        gap: 15px;
     }
-}
 
-@media (max-width: 550px) {
-    .form-row-scroll {
-        width: 82vw;
+    .half-width {
+        width: 100%;
     }
-}
 
-@media (max-width: 480px) {
-    .form-row-scroll {
-        width: 80vw;
+    #title h1 {
+        font-size: 22px;
     }
-}
 
-@media (max-width: 420px) {
-    .form-row-scroll {
-        width: 78vw;
+    #title p {
+        font-size: 14px;
     }
-}
 
-@media (max-width: 380px) {
-    .form-row-scroll {
-        width: 76vw;
+    .buttons {
+        flex-direction: column-reverse;
+        gap: 10px;
+        margin: 15px 0;
     }
-}
 
-@media (max-width: 350px) {
-    .form-row-scroll {
-        width: 74vw;
+    .prev-btn,
+    .next-btn,
+    .send-btn {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .next-btn {
+        margin-left: 0;
+    }
+
+    .pagina {
+        height: auto;
+        min-height: 100vh;
+        padding: 20px 0;
     }
 }
