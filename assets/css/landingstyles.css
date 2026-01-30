@@ -13,9 +13,14 @@
     height: 570px;
     max-width: 1150px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 120px !important;
     background-size: 105%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
 
 @media (max-width: 760px) {
     .welcome {
@@ -231,7 +236,8 @@
 }
 
 .dif-txt {
-    color: #9d60cf;
+    color: var(--purple-light);
+
     font-family: var(--font-secondary) !important;
     font-style: italic;
     font-size: 41px;
@@ -266,7 +272,8 @@
 .service-26 h4,
 .service-26 h5,
 .service-26 h6 {
-    color: #333;
+    color: var(--text-color);
+
 }
 
 .service-26 .font-weight-medium {
@@ -279,8 +286,10 @@
 
 .service-26 .badge-info {
     background: none;
-    border: 1px solid #9d60cf;
-    color: #9d60cf;
+    border: 1px solid var(--purple-light);
+
+    color: var(--purple-light);
+
     font-family: 'Poppins', Calibri, sans-serif;
     font-weight: 500;
 }
@@ -290,7 +299,8 @@
 }
 
 .feature-text {
-    color: #707070;
+    color: var(--text-muted);
+
 }
 
 .img-fluid {
@@ -341,8 +351,10 @@
 }
 
 .container-faq {
-    background-color: #fffcf4;
-    color: #333;
+    background-color: var(--bg-main);
+
+    color: var(--text-color);
+
     border-radius: 12px;
     border: 1px solid #ccc;
     margin: 10px 0;
@@ -353,7 +365,8 @@
 .question {
     font-size: 1rem;
     font-weight: 600;
-    color: #7f3eb4;
+    color: var(--purple-hover);
+
     padding: 16px 20px;
     position: relative;
     cursor: pointer;
@@ -365,7 +378,8 @@
 .question::after {
     content: "\002B";
     font-size: 1.5rem;
-    color: #333;
+    color: var(--text-color);
+
     transition: transform 0.3s ease;
 }
 
@@ -425,8 +439,10 @@
 
 .pricing-txt {
     background: none;
-    border: 1px solid #9d60cf;
-    color: #9d60cf;
+    border: 1px solid var(--purple-light);
+
+    color: var(--purple-light);
+
     font-family: 'Poppins', Calibri, sans-serif;
     padding: 2px;
 }
@@ -441,7 +457,8 @@
 
 .pricing-sec {
     border: 1.5px solid rgba(200, 200, 200, 0.5);
-    background-color: #fffcf4;
+    background-color: var(--bg-main);
+
 }
 
 .btn-pricing {
@@ -454,7 +471,8 @@
 
 .gradient-txt {
     display: inline-block;
-    background-image: linear-gradient(45deg, #7dd191, #54afe4, #9d60cf, #9d60cf);
+    background-image: linear-gradient(45deg, #7dd191, #54afe4, var(--purple-light), var(--purple-light));
+
     color: transparent;
     -webkit-background-clip: text;
     /* Edge, Chrome */
@@ -467,7 +485,8 @@
 
 .gradient-bg {
     display: inline-block;
-    background-image: linear-gradient(45deg, #7dd191, #54afe4, #9d60cf, #9d60cf);
+    background-image: linear-gradient(45deg, #7dd191, #54afe4, var(--purple-light), var(--purple-light));
+
     animation: gradientAnimation 4s linear infinite;
     animation-direction: alternate;
     background-size: 300% 100%;
