@@ -34,18 +34,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
-    // Animación de desplazamiento suave del header
-    window.addEventListener('scroll', function () {
-        const currentScrollPosition = window.pageYOffset;
+    // STICKY HEADER LOGIC
+    // We need to wait for the header to be injected by load-components.js
+    const headerObserver = new MutationObserver((mutations, obs) => {
+        const header = document.querySelector('.header');
+        if (header) {
+            // Initial check in case we reload scrolled down
+            checkHeaderVisibility();
 
-        if (currentScrollPosition > lastScrollPosition) {
-            header.classList.add('hidden');
-        } else {
-            header.classList.remove('hidden');
+            // Add scroll listener
+            window.addEventListener('scroll', checkHeaderVisibility);
+
+            function checkHeaderVisibility() {
+                const triggerHeight = window.innerHeight - 50; // Buffer
+                if (window.scrollY < triggerHeight) {
+                    header.classList.add('transparent-mode');
+                } else {
+                    header.classList.remove('transparent-mode');
+                }
+            }
+
+            obs.disconnect(); // Stop observing once we found and attached
         }
-
-        lastScrollPosition = currentScrollPosition;
     });
+
+    // Start observing the placeholder
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    if (headerPlaceholder) {
+        headerObserver.observe(headerPlaceholder, { childList: true, subtree: true });
+    } else {
+        // Fallback if placeholder doesn't exist (unlikely)
+        const header = document.querySelector('.header');
+        if (header) {
+            // Check immediately
+            if (window.scrollY < window.innerHeight - 50) {
+                header.classList.add('transparent-mode');
+            }
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY < window.innerHeight - 50) {
+                    header.classList.add('transparent-mode');
+                } else {
+                    header.classList.remove('transparent-mode');
+                }
+            });
+        }
+    }
 
     // Añadir 'no-scroll' a la web mientras el loader está visible
     body.classList.add('no-scroll');
