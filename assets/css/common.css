@@ -552,13 +552,27 @@ body.loaded .loader-container {
    6. FOOTER
    ========================================= */
 .footer {
-    margin: 15px auto 0 auto;
-    padding: 80px;
-    background-image: url(../images/backgrounds/degradadoFondoFooter.webp);
-    background-size: cover;
-    background-position: center;
-    border-radius: 50px 50px 0 0;
+    margin-top: 80px;
+    padding: 60px 0 0;
+    /* Vertical padding only */
+    background: linear-gradient(135deg, #2b1c40 0%, #4a2c7a 100%);
+    border-radius: 20px 20px 0 0;
     width: 100%;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle pattern overlay if desired, or just clean gradient */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(157, 67, 217, 0.1), transparent 60%);
+    pointer-events: none;
 }
 
 .div-space {
@@ -566,84 +580,121 @@ body.loaded .loader-container {
 }
 
 .footer-logo {
-    margin: 5px 0;
-    margin-left: -5px;
-    width: 146px;
-    height: 35px;
-    align-self: center;
-    filter: brightness(100);
+    margin-bottom: 5px;
+    width: 160px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    /* Ensure white logo */
 }
 
 .footer-socials {
     display: flex;
     gap: 15px;
-    margin: 12px 0;
+    margin: 20px 0;
     align-items: center;
 }
 
-.social-icon i {
-    font-size: 24px;
-    color: #fffcf4;
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
     transition: all 0.3s ease;
-}
-
-.social-icon:hover i,
-.footer-link:hover {
-    color: #c9fff3;
-}
-
-.rights {
-    margin: 15px 0;
-}
-
-.footer-link {
-    text-decoration: underline;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    color: #fffcf4;
-}
-
-.footer .nav-link {
-    color: #fff;
     text-decoration: none;
-    position: relative;
-    transition: all 0.3s ease;
 }
 
-.footer .nav-link::after {
+.social-icon i {
+    font-size: 20px;
+    color: var(--white);
+    transition: transform 0.3s ease;
+    line-height: 1;
+    /* Fix vertical centering */
+    display: flex;
+    /* Helps with some icon sets */
+}
+
+.social-icon:hover {
+    background-color: var(--teal);
+    transform: translateY(-3px);
+}
+
+.social-icon:hover i {
+    color: #fff;
+}
+
+.footer-heading {
+    color: var(--teal-light);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-heading::after {
     content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background-color: #c9fff3;
     position: absolute;
     left: 0;
-    transition: width 0.3s ease-in;
+    bottom: -8px;
+    width: 30px;
+    height: 2px;
+    background-color: var(--teal);
 }
 
-.footer .nav-link:hover::after {
-    width: 100%;
+.footer-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.footer .nav-link:hover {
-    color: #c9fff3;
+.footer-nav-item {
+    margin-bottom: 12px;
 }
 
-.separator {
-    margin: 0 10px;
-    color: #fffcf4;
+.footer-nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.text-body-secondary {
-    color: #ffffff !important;
+.footer-nav-link:hover {
+    color: var(--teal-light) !important;
+    transform: translateX(5px);
 }
 
-.subtittle {
-    color: #fff !important;
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-legal-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-legal-link {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal-link:hover {
+    color: var(--white);
     text-decoration: underline;
-    font-weight: 700;
-    margin: 15px 0 !important;
-    font-size: 20px;
 }
 
 @media (max-width: 1200px) {
