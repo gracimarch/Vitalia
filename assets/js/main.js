@@ -1,31 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // =========================================
-    // 1. NAVBAR TOGGLE
+    // 1. NAVBAR TOGGLE - Handled in load-components.js
     // =========================================
-    const togglers = document.querySelectorAll('.navbar-toggler');
-
-    togglers.forEach(toggler => {
-        toggler.addEventListener('click', function () {
-            const targetId = this.getAttribute('data-bs-target');
-            const target = document.querySelector(targetId);
-
-            if (target) {
-                target.classList.toggle('show');
-
-                // Toggle aria-expanded for accessibility
-                const isExpanded = target.classList.contains('show');
-                this.setAttribute('aria-expanded', isExpanded);
-
-                // Visual toggle for the icon
-                if (isExpanded) {
-                    this.classList.remove('collapsed');
-                } else {
-                    this.classList.add('collapsed');
-                }
-            }
-        });
-    });
 
     // =========================================
     // 2. LOADER & SCROLL HANDLING

@@ -67,9 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
             // Highlight Active Link
             highlightActiveLink(rootPath);
 
-            // Re-initialize Bootstrap logic if needed (e.g. collapse)
-            // Bootstrap 5 usually works with data attributes automatically, 
-            // but if it scans DOM on load, we might need to manually init or ensure script runs after.
+            // initialize Navbar Toggle
+            initializeNavbarToggle();
         })
         .catch(err => console.error("Error loading header:", err));
 
@@ -137,4 +136,30 @@ function highlightActiveLink(rootPath) {
             }
         });
     }
+}
+
+function initializeNavbarToggle() {
+    const togglers = document.querySelectorAll('.navbar-toggler');
+
+    togglers.forEach(toggler => {
+        toggler.addEventListener('click', function () {
+            const targetId = this.getAttribute('data-bs-target');
+            const target = document.querySelector(targetId);
+
+            if (target) {
+                target.classList.toggle('show');
+
+                // Toggle aria-expanded for accessibility
+                const isExpanded = target.classList.contains('show');
+                this.setAttribute('aria-expanded', isExpanded);
+
+                // Visual toggle for the icon
+                if (isExpanded) {
+                    this.classList.remove('collapsed');
+                } else {
+                    this.classList.add('collapsed');
+                }
+            }
+        });
+    });
 }
