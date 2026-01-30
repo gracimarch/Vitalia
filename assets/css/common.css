@@ -273,8 +273,7 @@ body.loaded .loader-container {
    5. HEADER & NAVBAR
    ========================================= */
 .header {
-    background-color: rgba(255, 252, 244, 0.85);
-    /* Semi-transparent */
+    background-color: rgb(254, 251, 243, 0.85);
     backdrop-filter: blur(10px);
     /* Glass effect */
     -webkit-backdrop-filter: blur(10px);
@@ -288,7 +287,7 @@ body.loaded .loader-container {
     right: 0;
     z-index: 1000;
     transition: transform 0.3s ease;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
     /* Subtle separator */
 }
 
