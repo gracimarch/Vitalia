@@ -49,8 +49,6 @@ body.loaded .loader-container {
     height: 100%;
 }
 
-
-
 .js-active .article {
     opacity: 0;
     transform: translateY(-1.5%);
@@ -135,7 +133,7 @@ body.loaded .loader-container {
 }
 
 .image {
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -163,23 +161,22 @@ body.loaded .loader-container {
 
 .article {
     font-family: 'Zilla Slab', Times New Roman, serif;
-    font-size: 18px;
-    margin: 20px 0;
     font-size: 20px;
+    margin: 40px 0;
     text-align: justify;
+    line-height: 1.5;
 }
 
 .article-title h2 {
     text-align: center;
     font-weight: 600;
-    padding: 50px 0 10px 0;
+    margin: 50px 0;
 }
 
 .underline {
     text-decoration-line: underline;
     text-decoration-color: var(--teal);
-
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 1.9px;
     text-decoration-style: wavy;
 }
 
@@ -244,7 +241,7 @@ th:first-child {
 
 @media (max-width: 1200px) {
     .article {
-        margin: 0 20px;
+        margin: 40px 20px;
     }
 
     .image {
