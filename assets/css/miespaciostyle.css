@@ -10,7 +10,7 @@ html {
 
 body {
     font-family: var(--font-primary);
-    background-color: var(--bg-main);
+    background-color: var(--bg-cream);
     margin: 0;
     padding: 0;
 }
