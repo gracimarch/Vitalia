@@ -75,24 +75,6 @@
 }
 
 
-/* @media (max-width: 760px) {
-    .welcome {
-        background-image: url(../images/backgrounds/imgFondoHeroCelular.webp);
-    }
-} */
-
-/* @media (min-width: 1000px) {
-    .welcome {
-        background-image: url(../images/backgrounds/imgFondoHeroAncha2.webp);
-    }
-} */
-
-/* @media (min-width: 1200px) {
-    .welcome {
-        background-image: url(../images/backgrounds/imgFondoHeroAncha.webp);
-    }
-} */
-
 .btn {
     display: inline-flex;
     align-items: center;
