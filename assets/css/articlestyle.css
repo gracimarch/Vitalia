@@ -51,19 +51,19 @@ body.loaded .loader-container {
 
 
 
-.article {
+.js-active .article {
     opacity: 0;
     transform: translateY(-1.5%);
 }
 
-.title,
-.article-title {
+.js-active .title,
+.js-active .article-title {
     opacity: 0;
     transform: translateY(-4%);
 }
 
-.image,
-.responsive-table {
+.js-active .image,
+.js-active .responsive-table {
     opacity: 0;
     transform: translateY(-2%);
 }
