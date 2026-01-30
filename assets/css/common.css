@@ -559,7 +559,7 @@ body.loaded .loader-container {
     margin-top: 80px;
     padding: 60px 0 20px;
     /* Vertical padding with bottom spacing */
-    background: linear-gradient(135deg, var(--purple-dark) 0%, var(--cyan-hover) 100%);
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--purple-dark) 100%);
     border-radius: 20px 20px 0 0;
     width: 100%;
     color: var(--white);
