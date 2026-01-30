@@ -487,3 +487,91 @@
 
 
 /* End of landing specific styles */
+
+/* Background Decorations */
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+.decoration-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.decoration-star {
+    position: absolute;
+    color: var(--purple-light);
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+    /* Behind text but visible */
+    animation: pulse-sparkle 3s infinite ease-in-out;
+}
+
+.decoration-star svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.blur-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.4;
+    z-index: -1;
+    background: radial-gradient(circle, var(--purple-light) 0%, rgba(157, 96, 207, 0) 70%);
+}
+
+@keyframes pulse-sparkle {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+/* Specific Positions */
+
+/* FAQ Section Decor */
+.glow-faq {
+    width: 500px;
+    height: 500px;
+    right: -15%;
+    top: 45%;
+    /* Approximate position for FAQ */
+}
+
+.star-faq {
+    left: 5%;
+    top: 48%;
+    /* Near FAQ Title */
+}
+
+/* Pricing Section Decor */
+.glow-pricing {
+    width: 600px;
+    height: 600px;
+    left: -15%;
+    top: 75%;
+    /* Approximate position for Pricing */
+}
+
+.star-pricing {
+    right: 8%;
+    top: 78%;
+    /* Near Pricing cards */
+}
