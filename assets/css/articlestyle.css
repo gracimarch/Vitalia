@@ -13,6 +13,7 @@ body {
     background-color: var(--bg-main);
     margin: 0;
     padding: 0;
+    color: var(--text-color);
 }
 
 .pagina,
@@ -106,13 +107,15 @@ body.loaded .loader-container {
 }
 
 .title h3 {
-    color: #868686;
+    color: var(--text-subtitle);
     font-size: 18px;
+    margin: 15px 0;
 }
 
 .title h1 {
     font-size: 26px;
     font-weight: 600;
+    margin-top: 15px;
     margin-bottom: 10px;
 }
 
