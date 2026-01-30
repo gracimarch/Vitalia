@@ -18,11 +18,12 @@ body {
     background-color: var(--bg-main);
     margin: 0;
     padding: 0;
+    color: var(--text-color);
 }
 
 :root {
     --padding: 4rem;
-    --border: hsl(0, 0%, 80%);
+    --border: var(--border-color);
     /* Removed redundant --background */
 }
 
@@ -43,7 +44,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fffcf4;
+    background-color: var(--bg-main);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,8 +60,6 @@ body.loaded .loader-container {
     overflow: hidden;
     height: 100%;
 }
-
-
 
 .article {
     opacity: 0;
@@ -78,13 +77,8 @@ body.loaded .loader-container {
     transform: translateY(-2%);
 }
 
-
-@media (min-width: 1100px) {}
-
 .introduction-container {
-    color: #818589;
-    font-size: 1rem !important;
-    margin-bottom: 20px;
+    color: var(--text-light-grey);
 }
 
 button {
@@ -93,7 +87,7 @@ button {
 
 .mealtime {
     font-size: 1.1rem;
-    color: #717171;
+    color: var(--text-muted);
     margin-left: 5px;
 }
 
@@ -110,7 +104,7 @@ button {
     padding: var(--padding);
 
     a {
-        color: #ffffff;
+        color: var(--white);
     }
 }
 
@@ -143,6 +137,8 @@ button {
     left: 0;
     border: none;
     border-bottom: 1px solid var(--border);
+    opacity: 0.5;
+    /* Lighter divider */
 }
 
 .schedule-stage__title {
@@ -151,10 +147,14 @@ button {
     padding-right: 2rem;
     height: 100%;
     padding-left: var(--padding);
-    background: linear-gradient(to right, var(--bg-main) 50%, hsla(0, 0%, 0%, 0));
+    background: var(--bg-main);
+    /* Solid background, no gradient */
+    z-index: 10;
+    /* Ensure it stays on top */
 
     &>h3 {
         font-weight: 800;
+        color: var(--text-color);
     }
 }
 
@@ -166,7 +166,7 @@ button {
 }
 
 .guide-slot {
-    color: hsl(0, 0%, 50%);
+    color: var(--text-muted);
 
     &>p {
         margin-bottom: 0.8rem;
@@ -175,20 +175,29 @@ button {
 
 .guide-slot_card {
     background: var(--bg-main);
-    border: 1px solid var(--border);
-    border-radius: 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Very subtle border */
+    border-radius: 1rem;
     margin-bottom: 1rem;
-    padding: 1.3rem 1.6rem .2rem 1.6rem;
+    padding: 1.5rem;
     cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    /* Soft shadow */
+    transition: all 0.3s ease;
+    height: 100%;
 
     &:hover {
-        border-color: #8861cb;
+        transform: translateY(-5px);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        border-color: var(--purple-light);
     }
 
     &>.mealtitle {
-        margin-right: 5rem;
-        font-size: 1.1rem;
-        color: #333;
+        margin-right: 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-color);
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -217,17 +226,17 @@ figcaption {
     font-size: 0.9rem;
 }
 
-#darkscreen {
+.darkscreen {
     width: 100%;
     height: 100%;
     z-index: 99;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: hsla(0, 0%, 0%, 25%);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
-#recipes {
+.recipes {
     width: 100%;
     height: 100%;
     display: flex;
@@ -235,7 +244,7 @@ figcaption {
     justify-content: center;
 }
 
-#darkscreen,
+.darkscreen,
 .recipecontainer {
     display: none;
 }
@@ -266,7 +275,7 @@ figcaption {
 
 .recipecontainer a {
     text-decoration: none;
-    color: #717171;
+    color: var(--text-muted);
     font-size: 1.2rem;
     position: absolute;
     top: 7px;
@@ -332,8 +341,10 @@ figcaption {
 .recipemargin p,
 .recipemargin ul {
     margin-top: 10px;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-family: 'Zilla Slab';
+    text-align: justify;
+    line-height: 1.5;
 }
 
 .recipemargin ul {
@@ -379,13 +390,15 @@ input[type="radio"] {
 }
 
 .title h3 {
-    color: #868686;
+    color: var(--text-subtitle);
     font-size: 18px;
+    margin: 15px 0;
 }
 
 .title h1 {
     font-size: 26px;
     font-weight: 600;
+    margin-top: 15px;
     margin-bottom: 10px;
 }
 
@@ -406,7 +419,7 @@ input[type="radio"] {
 }
 
 .image {
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -420,22 +433,22 @@ input[type="radio"] {
 }
 
 .item-indice {
-    color: #2bc4bc;
+    color: var(--teal);
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3 ease;
 }
 
 .item-indice:hover {
-    color: #20b3ab;
+    color: var(--teal-hover);
 }
 
 .article {
     font-family: 'Zilla Slab', Times New Roman, serif;
-    font-size: 18px;
-    margin: 20px 0;
     font-size: 20px;
+    margin: 40px 0;
     text-align: justify;
+    line-height: 1.5;
 }
 
 .article-title h2 {
@@ -446,8 +459,8 @@ input[type="radio"] {
 
 .underline {
     text-decoration-line: underline;
-    text-decoration-color: #2bc4bc;
-    text-decoration-thickness: 2px;
+    text-decoration-color: var(--teal);
+    text-decoration-thickness: 1.9px;
     text-decoration-style: wavy;
 }
 
@@ -462,7 +475,7 @@ input[type="radio"] {
 
 @media (max-width: 1200px) {
     .article {
-        margin: 0 20px;
+        margin: 40px 20px;
     }
 }
 
@@ -546,7 +559,7 @@ input[type="radio"] {
     flex-direction: column;
     justify-content: center;
     padding: 20px;
-    color: #fff;
+    color: var(--white);
     text-decoration: none;
     transition: all 0.3s ease;
 }

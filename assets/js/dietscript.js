@@ -10,7 +10,7 @@ function closeRecipe(event) {
         recetaContenedor.style.display = 'none';
     }
 
-    const darkscreen = document.getElementById('darkscreen');
+    const darkscreen = document.querySelector('.darkscreen');
     if (darkscreen) {
         darkscreen.style.display = 'none';
     }
@@ -24,11 +24,11 @@ for (let i = 0; i < botonesCerrar.length; i++) {
 const botonesAbrir = document.querySelectorAll('.open-recipe');
 
 function openRecipe(event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
-    const recetaId = event.currentTarget.getAttribute('data-target'); 
+    const recetaId = event.currentTarget.getAttribute('data-target');
 
-    const darkscreen = document.getElementById('darkscreen');
+    const darkscreen = document.querySelector('.darkscreen');
     if (darkscreen) {
         darkscreen.style.display = 'flex';
         darkscreen.style.position = 'fixed';
