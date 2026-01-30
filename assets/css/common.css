@@ -557,8 +557,8 @@ body.loaded .loader-container {
    ========================================= */
 .footer {
     margin-top: 80px;
-    padding: 60px 0 0;
-    /* Vertical padding only */
+    padding: 60px 0 20px;
+    /* Vertical padding with bottom spacing */
     background: linear-gradient(135deg, #2b1c40 0%, #4a2c7a 100%);
     border-radius: 20px 20px 0 0;
     width: 100%;
@@ -675,7 +675,6 @@ body.loaded .loader-container {
 
 .footer-bottom {
     margin-top: 60px;
-    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-wrap: wrap;
@@ -683,6 +682,8 @@ body.loaded .loader-container {
     align-items: center;
     font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 .footer-legal-links {
