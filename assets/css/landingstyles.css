@@ -299,82 +299,7 @@
     }
 }
 
-.pypersonalizado {
-    align-items: center;
-}
 
-.service-26 h1,
-.service-26 h2,
-.service-26 h3,
-.service-26 h4,
-.service-26 h5,
-.service-26 h6 {
-    color: var(--text-color);
-
-}
-
-.service-26 .font-weight-medium {
-    font-weight: 500;
-}
-
-.service-26 .badge {
-    line-height: 14px;
-}
-
-.service-26 .badge-info {
-    background: none;
-    border: 1px solid var(--purple-light);
-
-    color: var(--purple-light);
-
-    font-family: 'Poppins', Calibri, sans-serif;
-    font-weight: 500;
-}
-
-.service-26 .wrap-service-26 .max-box {
-    max-width: 580px;
-}
-
-.feature-text {
-    color: var(--text-muted);
-
-}
-
-.img-fluid {
-    width: auto;
-    height: 300px;
-}
-
-@media (max-width: 992px) {
-    .img-fluid {
-        display: none;
-    }
-
-    .colpersonalizado {
-        width: max-content !important;
-    }
-
-    .py-5 {
-        padding: 0 30px;
-    }
-}
-
-.col-md-5 {
-    width: 380px;
-}
-
-.mt-4 {
-    padding-bottom: 25px;
-}
-
-.mt-3 {
-    font-family: 'Zilla Slab', Times New Roman, serif;
-}
-
-.colpersonalizado {
-    width: 450px;
-    margin-right: 0;
-}
 
 /* FAQs */
 /* FAQs */
@@ -438,6 +363,20 @@
 }
 
 /* Responsive adjustments */
+/* Custom FAQ Header behavior */
+.faq-header {
+    /* Inherits center from reading-section by default (mobile) */
+}
+
+@media (min-width: 768px) {
+    .faq-header {
+        text-align: left !important;
+        padding: 0 !important;
+        position: sticky;
+        top: 100px;
+    }
+}
+
 @media screen and (max-width: 790px) {
     .wrapper-faq {
         width: 90%;
