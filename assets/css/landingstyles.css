@@ -362,12 +362,6 @@
     line-height: 1.6;
 }
 
-/* Responsive adjustments */
-/* Custom FAQ Header behavior */
-.faq-header {
-    /* Inherits center from reading-section by default (mobile) */
-}
-
 @media (min-width: 768px) {
     .faq-header {
         text-align: left !important;
