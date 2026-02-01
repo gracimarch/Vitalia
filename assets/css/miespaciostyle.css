@@ -5,6 +5,8 @@
     margin: 0;
     font-family: 'Poppins', sans-serif;
     display: inline-block;
+    text-align: center;
+    /* Added centering */
 }
 
 .section-title-container {
@@ -15,6 +17,8 @@
     gap: 1rem;
     margin-bottom: 0;
     flex-wrap: wrap;
+    text-align: center;
+    /* Ensure contents inherit center */
 }
 
 .section-icon {
@@ -637,9 +641,25 @@
     text-align: center;
     color: #999;
     /* Lighter Grey */
-    max-width: 700px;
     margin: 0 auto;
     font-size: 1.1rem;
     line-height: 1.6;
     font-family: 'Poppins', sans-serif;
+}
+
+/* Extracted from HTML inline styles */
+.icon-arrow {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#greeting-root {
+    font-size: 1rem;
+    padding-top: 8rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#magic-bento-root {
+    margin-bottom: 4rem;
 }
