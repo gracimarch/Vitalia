@@ -307,12 +307,6 @@ body.loaded .loader-container {
     transform: translateY(-100%);
 }
 
-.header .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -426,10 +420,13 @@ body.loaded .loader-container {
 
 }
 
-.nav-link#bold {
+.nav-link.bold-active {
     color: var(--text-color);
-
     font-weight: 600;
+}
+
+.nav-link.bold-active:hover {
+    color: var(--purple-light);
 }
 
 /* Premium Icon */

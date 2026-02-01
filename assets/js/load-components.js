@@ -111,8 +111,6 @@ function highlightActiveLink(rootPath) {
             // Also add 'bold' id style if that's what the user uses for active state?
             // Looking at CSS, #bold is used for "Acerca de" specifically, not generic active.
             // But usually active state makes font bold.
-            link.style.fontWeight = "700";
-            link.style.color = "#333";
         }
     });
 
@@ -122,7 +120,7 @@ function highlightActiveLink(rootPath) {
 
     if (pageName === "mi-espacio.html") {
         const miEspacioLink = document.querySelector('a[href*="mi-espacio.html"]');
-        if (miEspacioLink) miEspacioLink.id = "bold";
+        if (miEspacioLink) miEspacioLink.classList.add("bold-active");
     }
 
     if (pageName === "index.html" || pageName === "") {
@@ -132,7 +130,7 @@ function highlightActiveLink(rootPath) {
         const links = document.querySelectorAll('a[href*="index.html"]');
         links.forEach(l => {
             if (l.textContent.includes("Acerca de")) {
-                l.id = "bold";
+                l.classList.add("bold-active");
             }
         });
     }
