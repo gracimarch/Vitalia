@@ -483,6 +483,7 @@ const useMobileDetection = () => {
 };
 
 const MagicBento = ({
+    cards = cardData,
     textAutoHide = true,
     enableStars = true,
     enableSpotlight = true,
@@ -512,7 +513,7 @@ const MagicBento = ({
             )}
 
             <BentoCardGrid gridRef={gridRef}>
-                {cardData.map((card, index) => {
+                {cards.map((card, index) => {
                     const effectiveGlowColor = card.glowColor || glowColor;
                     const baseClassName = `magic-bento-card ${textAutoHide ? 'magic-bento-card--text-autohide' : ''} ${enableBorderGlow ? 'magic-bento-card--border-glow' : ''}`;
                     const cardProps = {
@@ -521,9 +522,37 @@ const MagicBento = ({
                             backgroundColor: card.color,
                             '--glow-color': effectiveGlowColor,
                             // Since bg is white, set text color to dark
-                            color: '#333'
-                        }
+                            color: '#333',
+                            // Add custom styles from card data
+                            ...card.style
+                        },
+                        onClick: card.onClick
                     };
+
+                    if (card.customRender) {
+                        if (enableStars) {
+                            return (
+                                <ParticleCard
+                                    key={index}
+                                    {...cardProps}
+                                    disableAnimations={shouldDisableAnimations}
+                                    particleCount={particleCount}
+                                    glowColor={effectiveGlowColor}
+                                    enableTilt={enableTilt}
+                                    clickEffect={card.clickEffect !== undefined ? card.clickEffect : clickEffect}
+                                    enableMagnetism={enableMagnetism}
+                                    className={`${baseClassName} ${card.className || ''}`}
+                                >
+                                    {card.customRender()}
+                                </ParticleCard>
+                            );
+                        }
+                        return (
+                            <div key={index} {...cardProps} className={`${baseClassName} ${card.className || ''}`}>
+                                {card.customRender()}
+                            </div>
+                        );
+                    }
 
                     if (enableStars) {
                         return (
@@ -562,28 +591,35 @@ const MagicBento = ({
 
 
 // --- App / Usage with Title ---
-const AppBento = () => {
+const AppBento = ({ showTitle = true }) => {
+    // Use window.vitaliaBentoData if available, otherwise default to cardData
+    const dataToUse = window.vitaliaBentoData || cardData;
+    const isMobile = useMobileDetection();
+
     return (
         <div className="container py-5" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div className="reading-section text-center p-0 mb-5" style={{ textAlign: 'center' }}>
-                <p className="reading-subtext">
-                    ¿Qué ofrece Vitalia?
-                </p>
+            {showTitle && (
+                <div className="reading-section text-center p-0 mb-5" style={{ textAlign: 'center' }}>
+                    <p className="reading-subtext">
+                        ¿Qué ofrece Vitalia?
+                    </p>
 
-                {/* Animated Gradient Title */}
-                <div style={{ display: 'inline-block' }}>
-                    <GradientText
-                        colors={['#E1947F', '#9d60cf', '#80CACD']}
-                        animationSpeed={6}
-                    >
-                        <h2 className="reading-heading" style={{ margin: 0, fontWeight: 500 }}>
-                            Nuestras funcionalidades
-                        </h2>
-                    </GradientText>
+                    {/* Animated Gradient Title */}
+                    <div style={{ display: 'inline-block' }}>
+                        <GradientText
+                            colors={['#E1947F', '#9d60cf', '#80CACD']}
+                            animationSpeed={6}
+                        >
+                            <h2 className="reading-heading" style={{ margin: 0, fontWeight: 500 }}>
+                                Nuestras funcionalidades
+                            </h2>
+                        </GradientText>
+                    </div>
                 </div>
-            </div>
+            )}
 
             <MagicBento
+                cards={dataToUse}
                 textAutoHide={true}
                 enableStars={true}
                 enableSpotlight={true}
@@ -600,12 +636,15 @@ const AppBento = () => {
     );
 };
 
+// Expose MagicBento for custom usage if needed
+window.MagicBento = MagicBento;
 
 // Mount the app
 const rootElement = document.getElementById('magic-bento-root');
 if (rootElement) {
+    const showTitle = rootElement.getAttribute('data-hide-title') !== 'true';
     const root = ReactDOM.createRoot(rootElement);
-    root.render(<AppBento />);
+    root.render(<AppBento showTitle={showTitle} />);
 }
 
 // Expose components for FAQ usage
