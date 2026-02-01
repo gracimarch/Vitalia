@@ -34,4 +34,13 @@
     /* Fonts */
     --font-primary: 'Poppins', Calibri, sans-serif;
     --font-secondary: 'Zilla Slab', Times New Roman, serif;
+
+    /* Magic Bento Variables */
+    --hue: 27;
+    --sat: 69%;
+    --purple-primary: rgba(132, 0, 255, 1);
+    --purple-glow: rgba(132, 0, 255, 0.2);
+    --purple-border: rgba(132, 0, 255, 0.8);
+    --background-dark: #060010;
+    color-scheme: light dark;
 }
