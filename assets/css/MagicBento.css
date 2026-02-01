@@ -3,8 +3,8 @@
 .card-grid {
     display: grid;
     gap: 0.5em;
-    padding: 0.75em;
-    max-width: 54em;
+    padding: 0;
+    width: 100%;
     font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
 }
 
@@ -98,10 +98,10 @@
 @media (max-width: 599px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
-        width: 95%;
+        width: 100%;
         /* Slightly wider for 2 cols */
         margin: 0 auto;
-        padding: 0.5em;
+        padding: 0;
         gap: 0.5em;
     }
 
@@ -233,8 +233,6 @@
     z-index: -1;
 }
 
-
-
 /* Global spotlight styles */
 .global-spotlight {
     mix-blend-mode: screen;
@@ -279,7 +277,7 @@
 
 .bento-big-title {
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     line-height: 1.2;
     margin-bottom: 0.5rem;
 }
@@ -314,7 +312,7 @@
         /* Stack cards vertically */
         width: 100%;
         margin: 0 auto;
-        padding: 0.5em;
+        padding: 0;
         gap: 1rem;
         /* More gap for vertical stack */
     }

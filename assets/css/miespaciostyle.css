@@ -338,11 +338,14 @@
     .blog-info-card {
         flex-direction: column;
         text-align: center;
+        justify-content: center;
     }
 
     .blog-info-text {
         padding-right: 0;
         margin-bottom: 1rem;
+        min-width: auto;
+        width: 100%;
     }
 }
 

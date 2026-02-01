@@ -65,7 +65,7 @@ const ChecklistComponent = () => {
         <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
             <div className="magic-bento-card__header mb-3" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
                 <div className="magic-bento-card__label" style={{ color: '#777' }}>Tu plan recomendado para hoy</div>
-                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'rgb(132, 0, 255)' }}></div>
+                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'rgb(132, 0, 255)', flexShrink: 0 }}></div>
             </div>
 
             <h4 style={{ marginBottom: '1rem', fontWeight: 600, fontSize: '1.2rem' }}>Pequeñas acciones para tu bienestar</h4>
@@ -270,13 +270,11 @@ window.vitaliaBentoData = [
             <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div className="magic-bento-card__header">
                     <div className="magic-bento-card__label" style={{ color: '#777' }}>Reflexión del día</div>
-                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'rgb(128, 202, 205)' }}></div>
+                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'rgb(128, 202, 205)', flexShrink: 0 }}></div>
                 </div>
                 <h2 className="bento-reflection-text">
                     "{getDailyReflection()}"
                 </h2>
-                {/* Empty div to balance spacing if needed, or remove */}
-                <div></div>
             </div>
         )
     },
