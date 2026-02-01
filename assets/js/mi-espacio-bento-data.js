@@ -272,17 +272,7 @@ window.vitaliaBentoData = [
                     <div className="magic-bento-card__label" style={{ color: '#777' }}>Reflexión del día</div>
                     <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'rgb(128, 202, 205)' }}></div>
                 </div>
-                <h2 style={{
-                    fontWeight: 400,
-                    fontSize: '21px',
-                    margin: '0 0 0.25em',
-                    color: '#333',
-                    // Styles to ensure visibility without auto-hide
-                    overflow: 'visible',
-                    display: 'block',
-                    lineClamp: 'unset',
-                    WebkitLineClamp: 'unset'
-                }}>
+                <h2 className="bento-reflection-text">
                     "{getDailyReflection()}"
                 </h2>
                 {/* Empty div to balance spacing if needed, or remove */}
@@ -304,9 +294,9 @@ window.vitaliaBentoData = [
                         <i className="bi bi-arrow-up-right" style={{ fontSize: '1.2rem', color: '#333' }}></i>
                     </div>
                     <div>
-                        <h5 style={{ fontWeight: 500, color: '#777', marginBottom: '0.2rem', fontSize: '0.85rem' }}>{recommendation.plan}</h5>
-                        <h3 style={{ fontWeight: 600, margin: 0, color: '#333', fontSize: '1.1rem', lineHeight: '1.2' }}>{recommendation.title}</h3>
-                        <span className="badge mt-2" style={{ background: 'rgba(157, 96, 207, 0.1)', color: '#9d60cf', fontSize: '0.8rem', padding: '0.5em 0.8em', borderRadius: '50px', fontWeight: '500' }}>{recommendation.type}</span>
+                        <h5 className="bento-card-subtitle">{recommendation.plan}</h5>
+                        <h3 className="bento-card-title">{recommendation.title}</h3>
+                        <span className="bento-badge" style={{ background: 'rgba(157, 96, 207, 0.1)', color: '#9d60cf' }}>{recommendation.type}</span>
                     </div>
                 </div>
             );
@@ -344,8 +334,8 @@ window.vitaliaBentoData = [
                 </div>
                 <div className="d-flex flex-row align-items-end justify-content-between">
                     <div>
-                        <h2 style={{ fontWeight: 700, fontSize: '1.8rem', lineHeight: 1.2, marginBottom: '0.5rem' }}>Beneficios de Incorporar un Enfoque Integral en tu Trabajo</h2>
-                        <p style={{ color: '#666', margin: 0, fontSize: '0.9rem' }}><i className="bi bi-clock me-1"></i> 12 min de lectura</p>
+                        <h2 className="bento-big-title">Beneficios de Incorporar un Enfoque Integral en tu Trabajo</h2>
+                        <p className="bento-text-muted"><i className="bi bi-clock me-1"></i> 12 min de lectura</p>
                     </div>
                 </div>
             </div>
@@ -363,8 +353,8 @@ window.vitaliaBentoData = [
                     <i className="bi bi-arrow-down-right" style={{ fontSize: '1.2rem', color: '#333' }}></i>
                 </div>
                 <div>
-                    <h3 style={{ fontWeight: 700, margin: 0, color: '#333', fontSize: '1.4rem', lineHeight: '1.2' }}>Meditaciones</h3>
-                    <p style={{ color: '#666', margin: '0.5rem 0 0', fontSize: '0.9rem', lineHeight: '1.3' }}>Encuentra tu centro con sesiones personalizadas.</p>
+                    <h3 className="bento-heading">Meditaciones</h3>
+                    <p className="bento-text-muted" style={{ margin: '0.5rem 0 0', lineHeight: '1.3' }}>Encuentra tu centro con sesiones personalizadas.</p>
                 </div>
             </div>
         ),
@@ -385,9 +375,9 @@ window.vitaliaBentoData = [
                     <i className="bi bi-arrow-up-right" style={{ fontSize: '1.2rem', color: '#333' }}></i>
                 </div>
                 <div>
-                    <h5 style={{ fontWeight: 500, color: '#777', marginBottom: '0.2rem', fontSize: '0.85rem' }}>Nivel Principiante</h5>
-                    <h3 style={{ fontWeight: 600, margin: 0, color: '#333', fontSize: '1.1rem', lineHeight: '1.2' }}>Ejercicio en 15 Minutos</h3>
-                    <span className="badge mt-2" style={{ background: 'rgba(128, 202, 205, 0.1)', color: '#4d9ea1', fontSize: '0.8rem', padding: '0.5em 0.8em', borderRadius: '50px', fontWeight: '500' }}>15 Minutos</span>
+                    <h5 className="bento-card-subtitle">Nivel Principiante</h5>
+                    <h3 className="bento-card-title">Ejercicio en 15 Minutos</h3>
+                    <span className="bento-badge mt-2" style={{ background: 'rgba(128, 202, 205, 0.1)', color: '#4d9ea1' }}>15 Minutos</span>
                 </div>
             </div>
         ),

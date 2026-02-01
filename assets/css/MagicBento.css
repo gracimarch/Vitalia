@@ -247,3 +247,117 @@
     position: relative;
     /* user-select: none; ALLOW TEXT SELECTION */
 }
+
+/* =========================================
+   RESPONSIVE TEXT UTILITIES (Refactored)
+   ========================================= */
+
+.bento-reflection-text {
+    font-size: 21px;
+    font-weight: 400;
+    color: #333;
+    margin: 0 0 0.25em;
+    line-height: 1.3;
+    overflow: visible;
+    display: block;
+}
+
+.bento-card-title {
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+.bento-card-subtitle {
+    font-weight: 500;
+    color: #777;
+    margin-bottom: 0.2rem;
+    font-size: 0.85rem;
+}
+
+.bento-big-title {
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.bento-text-muted {
+    color: #666;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.bento-badge {
+    font-size: 0.8rem;
+    padding: 0.5em 0.8em;
+    border-radius: 50px;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+.bento-heading {
+    font-weight: 700;
+    margin: 0;
+    color: #333;
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 599px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        /* Stack cards vertically */
+        width: 100%;
+        margin: 0 auto;
+        padding: 0.5em;
+        gap: 1rem;
+        /* More gap for vertical stack */
+    }
+
+    .magic-bento-card {
+        width: 100%;
+        min-height: auto;
+        /* Let content define height */
+        aspect-ratio: auto;
+        /* Disable fixed aspect ratio */
+        padding: 1.25rem;
+        /* Always on glow for mobile */
+        --glow-intensity: 1 !important;
+        --glow-x: 50%;
+        --glow-y: 50%;
+        --glow-radius: 500px !important;
+    }
+
+    /* Reset Spans for mobile stack */
+    .magic-bento-card:nth-child(3),
+    .magic-bento-card:nth-child(4) {
+        grid-column: auto;
+    }
+
+    .bento-reflection-text {
+        font-size: 18px;
+        /* Can be slightly larger now that we have full width */
+        line-height: 1.4;
+    }
+
+    .bento-card-title {
+        font-size: 1.1rem;
+    }
+
+    .bento-heading {
+        font-size: 1.3rem;
+    }
+
+    .bento-big-title {
+        font-size: 1.5rem;
+    }
+
+    .bento-text-muted {
+        font-size: 0.9rem;
+    }
+}
