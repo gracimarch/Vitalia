@@ -1,0 +1,645 @@
+.section-title {
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+}
+
+.section-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+}
+
+.section-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--text-dark, #333);
+    opacity: 0.7;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+/* Override existing margins if needed */
+/* Articles Grid Styles */
+.articles-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.routines-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 600px) {
+    .routines-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .routines-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.article-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    aspect-ratio: auto;
+    min-height: 160px;
+    padding: 1.25em;
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    color: #fff;
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(100, 50, 200, 0.3);
+}
+
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.article-category {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.article-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin: 0 0 0.5rem 0;
+}
+
+.article-meta {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.article-meta i {
+    margin-right: 0.5rem;
+}
+
+.article-card i {
+    color: #fff !important;
+}
+
+/* Liquid Gradient Variations using Vitalia Palette - SOFTER VERSION */
+/* Base Purple softened: #af7add to #c8a2e8 */
+
+/* 1. Purple Base + Orange & Cyan */
+.article-card:nth-child(1) {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.45) 0%, transparent 55%),
+        /* Softer Orange */
+        radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 55%),
+        /* Softer Cyan */
+        linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%);
+    /* Soft Purple */
+}
+
+/* 2. Purple Base + Cream & Cyan */
+.article-card:nth-child(2) {
+    background:
+        radial-gradient(circle at 50% 50%, rgba(128, 202, 205, 0.25) 0%, transparent 65%),
+        /* Softer Cyan */
+        radial-gradient(circle at 100% 100%, rgba(253, 251, 247, 0.4) 0%, transparent 45%),
+        /* Cream */
+        linear-gradient(45deg, #a675d1 0%, #bfa0e0 100%);
+    /* Soft Purple */
+}
+
+/* 3. Purple Base + Orange & Cream */
+.article-card:nth-child(3) {
+    background:
+        radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%),
+        /* Cream */
+        radial-gradient(circle at 100% 50%, rgba(225, 148, 127, 0.35) 0%, transparent 55%),
+        /* Softer Orange */
+        linear-gradient(180deg, #bfa0e0 0%, #a170d0 100%);
+    /* Soft Purple */
+}
+
+/* 4. Purple Base + Orange & Cyan Mix */
+.article-card:nth-child(4) {
+    background:
+        radial-gradient(circle at 80% 20%, rgba(128, 202, 205, 0.35) 0%, transparent 50%),
+        /* Softer Cyan */
+        radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%),
+        /* Softer Orange */
+        linear-gradient(120deg, #a675d1 0%, #bfa0e0 100%);
+    /* Soft Purple */
+}
+
+/* Food Card Styles - Same structure, Orange Dominant */
+.food-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    aspect-ratio: auto;
+    min-height: 160px;
+    padding: 1.25em;
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    color: #fff;
+}
+
+.food-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(244, 162, 97, 0.3);
+    /* Orange shadow */
+}
+
+.food-card i {
+    color: #fff !important;
+}
+
+/* Food Card Gradients - Orange Dominant (#f4a261, #e76f51) */
+/* 1. Orange Base + Purple & Cyan */
+.food-card:nth-child(1) {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%),
+        /* Purple */
+        radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 50%),
+        /* Cyan */
+        linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+    /* Orange */
+}
+
+/* 2. Orange Base + Cream & Purple */
+.food-card:nth-child(2) {
+    background:
+        radial-gradient(circle at 50% 50%, rgba(253, 251, 247, 0.3) 0%, transparent 60%),
+        /* Cream */
+        radial-gradient(circle at 100% 100%, rgba(157, 96, 207, 0.3) 0%, transparent 45%),
+        /* Purple */
+        linear-gradient(45deg, #e9c46a 0%, #f4a261 100%);
+    /* Orange/Gold */
+}
+
+/* 3. Orange Base + Cyan & Cream */
+.food-card:nth-child(3) {
+    background:
+        radial-gradient(circle at 0% 0%, rgba(128, 202, 205, 0.35) 0%, transparent 45%),
+        /* Cyan */
+        radial-gradient(circle at 100% 50%, rgba(253, 251, 247, 0.3) 0%, transparent 55%),
+        /* Cream */
+        linear-gradient(180deg, #f4a261 0%, #e76f51 100%);
+    /* Orange */
+}
+
+/* 4. Orange Base + Purple Mix */
+.food-card:nth-child(4) {
+    background:
+        radial-gradient(circle at 80% 20%, rgba(157, 96, 207, 0.35) 0%, transparent 50%),
+        /* Purple */
+        radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%),
+        /* Orange Soft */
+        linear-gradient(120deg, #e76f51 0%, #f4a261 100%);
+    /* Strong Orange */
+}
+
+.food-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1.5px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.9));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.food-card:hover::after {
+    opacity: 1;
+}
+
+/* Blog Info Card Styles */
+.blog-info-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 2rem 2rem 3rem 2rem;
+    text-align: left;
+    margin-top: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-info-text {
+    flex: 1;
+    min-width: 280px;
+    position: relative;
+    z-index: 2;
+}
+
+.blog-info-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.blog-info-card p {
+    color: #666;
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.blog-info-card .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #9d60cf;
+    /* Vitalia Purple */
+    color: white;
+    border-radius: 50px;
+    padding: 0.8em 2.5em;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(157, 96, 207, 0.3);
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+}
+
+.blog-info-card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(157, 96, 207, 0.4);
+    background: #8e44c2;
+}
+
+@media (max-width: 768px) {
+    .blog-info-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .blog-info-text {
+        padding-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/* White Gradient Border Glow on Hover */
+.article-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1.5px;
+    /* Border thickness */
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.9));
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.article-card:hover::after {
+    opacity: 1;
+}
+
+.blog-info-card .btn i {
+    margin-right: 0.5rem;
+}
+
+/* Routine Card Styles - Taller & Cyan Dominant */
+.routine-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    aspect-ratio: auto;
+    min-height: 250px;
+    /* Taller than articles */
+    padding: 1.5em;
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    color: #fff;
+}
+
+.routine-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(128, 202, 205, 0.3);
+    /* Cyan shadow */
+}
+
+.routine-card i {
+    color: #fff !important;
+}
+
+/* Routine Card Gradients - Cyan Dominant (#80cacd) */
+/* 1. Cyan Base + Purple & Cream */
+.routine-card:nth-child(1) {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%),
+        /* Purple */
+        radial-gradient(circle at 0% 100%, rgba(253, 251, 247, 0.3) 0%, transparent 50%),
+        /* Cream */
+        linear-gradient(135deg, #80cacd 0%, #5fb3b6 100%);
+    /* Cyan */
+}
+
+/* 2. Cyan Base + Purple & Orange */
+.routine-card:nth-child(2) {
+    background:
+        radial-gradient(circle at 50% 50%, rgba(157, 96, 207, 0.25) 0%, transparent 60%),
+        /* Purple */
+        radial-gradient(circle at 100% 100%, rgba(225, 148, 127, 0.3) 0%, transparent 45%),
+        /* Orange */
+        linear-gradient(45deg, #6ec0c3 0%, #80cacd 100%);
+    /* Cyan */
+}
+
+/* 3. Cyan Base + Cream & Purple */
+.routine-card:nth-child(3) {
+    background:
+        radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%),
+        /* Cream */
+        radial-gradient(circle at 100% 50%, rgba(157, 96, 207, 0.3) 0%, transparent 55%),
+        /* Purple */
+        linear-gradient(180deg, #80cacd 0%, #5fb3b6 100%);
+    /* Cyan */
+}
+
+/* 4. Cyan Base + Purple Mix */
+.routine-card:nth-child(4) {
+    background:
+        radial-gradient(circle at 80% 20%, rgba(157, 96, 207, 0.35) 0%, transparent 50%),
+        /* Purple */
+        radial-gradient(circle at 20% 80%, rgba(253, 251, 247, 0.3) 0%, transparent 50%),
+        /* Cream */
+        linear-gradient(120deg, #74c7ca 0%, #80cacd 100%);
+    /* Cyan */
+}
+
+/* Routine Card Border Glow */
+.routine-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1.5px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.9));
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.routine-card:hover::after {
+    opacity: 1;
+}
+
+/* Meditations Grid & Cards */
+.meditations-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 600px) {
+    .meditations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .meditations-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.meditation-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.meditation-btn {
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    font-size: 2.2rem;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.meditation-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.meditation-btn i {
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Meditation Gradients - Equal Balance of Cyan, Purple, Orange */
+.meditation-btn {
+    background: linear-gradient(135deg, #80cacd 0%, #9d60cf 50%, #f4a261 100%);
+}
+
+/* Variation for visual interest - rotated */
+.meditation-card:nth-child(even) .meditation-btn {
+    background: linear-gradient(315deg, #80cacd 0%, #9d60cf 50%, #f4a261 100%);
+}
+
+
+.meditation-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.25rem;
+}
+
+.meditation-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.meditation-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+    margin: 0 0 0.75rem 0;
+}
+
+.meditation-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.current-time {
+    font-size: 0.8rem;
+    color: #999;
+    font-variant-numeric: tabular-nums;
+    width: 35px;
+}
+
+.progress-container {
+    flex-grow: 1;
+    height: 4px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    /* Optional: if we implement seeking */
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #000;
+    border-radius: 4px;
+    transition: width 0.1s linear;
+}
+
+/* Utility for increased section spacing */
+.section-gap-top {
+    padding-top: 5rem !important;
+}
+
+/*
+.bg-productividad {
+    border-left: 4px solid #F4A261;
+}
+
+.bg-salud-mental {
+    border-left: 4px solid #2A9D8F;
+}
+
+.bg-nutricion {
+    border-left: 4px solid #E9C46A;
+}
+
+.bg-bienestar {
+    border-left: 4px solid #264653;
+}
+
+.bg-blog {
+    border-left: 4px solid #E76F51;
+}
+*/
+
+/* Thanks Section Styles */
+.thanks-section {
+    padding: 2rem 0 4rem 0;
+    text-align: center;
+}
+
+.thanks-heading {
+    text-align: center;
+    color: #888;
+    /* Grey */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.thanks-subtext {
+    text-align: center;
+    color: #999;
+    /* Lighter Grey */
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+}

@@ -58,388 +58,446 @@
     <!-- Encabezado -->
     <div id="header-placeholder"></div>
 
+    <!-- React & GSAP & Framer Motion Dependencies -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+
+    <!-- GradientText Styling -->
+    <link rel="stylesheet" href="assets/css/GradientText.css">
+    <link rel="stylesheet" href="assets/css/MagicBento.css">
+
+    <!-- GradientText Component -->
+    <script type="text/babel" src="assets/js/GradientText.js"></script>
+
+    <!-- Greeting Script -->
+    <script src="assets/js/blog-particles.js"></script>
+    <script type="text/babel" src="assets/js/mi-espacio-greeting.js"></script>
+    <!-- Custom Bento Data -->
+    <script type="text/babel" src="assets/js/mi-espacio-bento-data.js"></script>
+    <script type="text/babel" src="assets/js/MagicBento.js"></script>
+
     <div class="pagina" id="welcome">
 
-        <!-- Mensaje de bienvenida -->
-        <section class="welcome">
-            <div class="welcome-section">
-                <h1 class="welcome-heading">¡Te damos la bienvenida a <span class="welcome-name">Vitalia</span>!</h1>
-                <p class="welcome-subtext">Comienza tu camino al bienestar, hoy mismo.</p>
-            </div>
-        </section>
+        <!-- Dynamic Greeting Root -->
+        <div id="greeting-root" class="container"
+            style="font-size: 1rem; padding-top: 8rem; margin-bottom: 0; text-align: center;">
+        </div>
 
-        <!-- Artículos que te llevan a las distintas secciones de la página -->
-        <section class="articles" id="lecturas-recomendadas">
-            <div class="container">
-                <a href="#lecturas" class="block brightness bg-lee" id="lee">
-                    <div class="content">
-                        <h2>Lee</h2>
-                        <p>Artículos recomendados para ti</p>
-                    </div>
-                </a>
-                <a href="#ejercicios" class="block brightness bg-ejercita" id="ejercita">
-                    <div class="content">
-                        <h2>Ejercita</h2>
-                        <p>Con rutinas personalizadas</p>
-                    </div>
-                </a>
-                <a href="#meditaciones" class="block brightness bg-medita" id="medita">
-                    <div class="content">
-                        <h2>Medita</h2>
-                        <p>Encuentra la paz</p>
-                    </div>
-                </a>
-                <a href="#alimentaciones" class="block brightness bg-alimentate" id="alimentate">
-                    <div class="content">
-                        <h2>Aliméntate</h2>
-                        <p>Planes de comida adaptados a ti</p>
-                    </div>
-                </a>
-                <div class="info-block brightness bg-reflexion" id="reflexion">
-                    <div class="info-content">
-                        <p>Reflexión para el día de hoy:</p>
-                        <h3 id="share-text" class="share-text">"Estás exactamente donde necesitas estar en este momento"
-                        </h3>
-                        <div class="btn_wrap">
-                            <span>
-                                <i class="bi bi-share"></i>
-                                Compartir
-                            </span>
-                            <div class="container">
-                                <a href="javascript:void(0);" id="shareWhatsApp"
-                                    aria-label="Ícono de WhatsApp, compartir frase">
-                                    <i class="bi bi-whatsapp"></i>
-                                </a>
-                                <a href="javascript:void(0);" id="shareTwitter"
-                                    aria-label="Ícono de Twitter, compartir frase">
-                                    <i class="bi bi-twitter"></i>
-                                </a>
-                                <a href="javascript:void(0);" id="shareLinkedIn"
-                                    aria-label="Ícono de LinkedIn, compartir frase">
-                                    <i class="bi bi-linkedin"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Magic Bento Root -->
+        <div id="magic-bento-root" data-hide-title="true" style="margin-bottom: 4rem;"></div>
 
         <!-- Lecturas -->
         <section class="reading" id="lecturas">
             <div class="reading-section">
-                <div class="reading-content">
-                    <img src="assets/images/ui/lecturaIconoTitulo.webp" alt="Ícono de lectura" class="reading-icon">
-                    <h2 class="reading-heading">Lecturas que transforman</h2>
+                <div class="section-title-container">
+                    <img src="assets/images/ui/lecturaIconoTitulo.webp" alt="Ícono de lectura" class="section-icon">
+                    <h2 class="section-title">Lecturas que transforman</h2>
                 </div>
-                <p class="reading-subtext">Artículos seleccionados de nuestro blog para tu crecimiento</p>
+                <p class="section-subtitle">Artículos seleccionados de nuestro blog para tu crecimiento</p>
             </div>
         </section>
 
         <!-- Lecturas seleccionadas -->
+        <!-- Lecturas seleccionadas -->
         <section class="lecturas">
             <div class="container">
-                <a href="lectura.html?slug=enfoque-integral-trabajo" class="block brightness bg-productividad"
-                    id="productividad">
-                    <p>Productividad</p>
-                    <h3>Beneficios de Incorporar un Enfoque Integral en tu Trabajo</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>12 minutos de lectura</p>
-                    </div>
-                </a>
-                <a href="lectura.html?slug=autocuidado-habitos" class="block brightness bg-salud-mental"
-                    id="salud-mental">
-                    <p>Productividad</p>
-                    <h3>Autocuidado: Pequeños Hábitos que Hacen la Diferencia</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>10 minutos de lectura</p>
-                    </div>
-                </a>
-                <a href="lectura.html?slug=alimentacion-consciente" class="block brightness bg-nutricion"
-                    id="nutricion">
-                    <p>Hábitos alimenticios</p>
-                    <h3>Alimentación Consciente: Qué Es y Cómo Practicarla</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>9 minutos de lectura</p>
-                    </div>
-                </a>
-                <a href="lectura.html?slug=rutina-nocturna" class="block brightness bg-bienestar" id="bienestar">
-                    <p>Salud mental y bienestar</p>
-                    <h3>Rutina Nocturna para un Mejor Sueño</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>10 minutos de lectura</p>
-                    </div>
-                </a>
-                <div class="info-block brightness bg-blog" id="blog">
-                    <div class="info-content">
+                <div class="articles-grid">
+                    <!-- Article 1 -->
+                    <a href="lectura.html?slug=enfoque-integral-trabajo" class="article-card">
+                        <div class="article-header">
+                            <span class="article-category">Productividad</span>
+                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
+                        </div>
+                        <div>
+                            <h3 class="article-title">Beneficios de Incorporar un Enfoque Integral en tu Trabajo</h3>
+                            <div class="article-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>12 min de lectura</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Article 2 -->
+                    <a href="lectura.html?slug=autocuidado-habitos" class="article-card">
+                        <div class="article-header">
+                            <span class="article-category">Productividad</span>
+                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
+                        </div>
+                        <div>
+                            <h3 class="article-title">Autocuidado: Pequeños Hábitos que Hacen la Diferencia</h3>
+                            <div class="article-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>10 min de lectura</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Article 3 -->
+                    <a href="lectura.html?slug=alimentacion-consciente" class="article-card">
+                        <div class="article-header">
+                            <span class="article-category">Hábitos alimenticios</span>
+                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
+                        </div>
+                        <div>
+                            <h3 class="article-title">Alimentación Consciente: Qué Es y Cómo Practicarla</h3>
+                            <div class="article-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>9 min de lectura</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Article 4 -->
+                    <a href="lectura.html?slug=rutina-nocturna" class="article-card">
+                        <div class="article-header">
+                            <span class="article-category">Salud mental y bienestar</span>
+                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
+                        </div>
+                        <div>
+                            <h3 class="article-title">Rutina Nocturna para un Mejor Sueño</h3>
+                            <div class="article-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>10 min de lectura</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Blog Link -->
+                <div class="blog-info-card" id="blog">
+                    <div class="blog-info-text">
                         <h3>¿No Encuentras lo que Buscas?</h3>
                         <p>Echa un vistazo a nuestro blog completo para acceder a una variedad de artículos útiles</p>
-                        <a href="blog.html" class="btn">
-                            <i class="bi bi-box-arrow-up-right" alt="Ícono de link externo"></i>
-                            Ir al blog
-                        </a>
                     </div>
+                    <a href="blog.html" class="btn" target="_blank">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        Ir al blog
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Ejercicios -->
-        <section class="reading" id="ejercicios">
+        <section class="reading section-gap-top" id="ejercicios">
             <div class="reading-section">
-                <div class="reading-content">
-                    <img src="assets/images/ui/pesaIconoTitulo.webp" alt="Ícono de lectura" class="reading-icon">
-                    <h2 class="reading-heading">Rutina de Ejercicio Ideal</h2>
+                <div class="section-title-container">
+                    <img src="assets/images/ui/pesaIconoTitulo.webp" alt="Ícono de lectura" class="section-icon">
+                    <h2 class="section-title">Rutina de Ejercicio Ideal</h2>
                 </div>
-                <p class="reading-subtext">Planes de entrenamiento hechos para ti</p>
+                <p class="section-subtitle">Planes de entrenamiento hechos para ti</p>
             </div>
         </section>
 
         <!-- Ejercicios seleccionados -->
         <section class="ejercicios">
             <div class="container">
-                <a href="rutinas/circuito-ejercicio-moderado.html" class="block brightness bg-ejercicio-1"
-                    id="ejercicio1">
-                    <p>Nivel Intermedio</p>
-                    <div class="heading-time">
-                        <h3>Circuito de Energía Simple</h3>
-                        <div class="reading-time">
-                            <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                            <p>30 minutos</p>
+                <div class="routines-grid">
+                    <!-- Routine 1 -->
+                    <a href="rutinas/circuito-ejercicio-moderado.html" class="routine-card">
+                        <div class="article-header">
+                            <span class="article-category">Nivel Intermedio</span>
+                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
                         </div>
-                    </div>
-                </a>
-                <a href="rutinas/ejercicio-en-15-min.html" class="block brightness bg-ejercicio-2" id="ejercicio2">
-                    <p>Nivel Principiante</p>
-                    <div class="heading-time">
-                        <h3>Ejercicio en 15 Minutos</h3>
-                        <div class="reading-time">
-                            <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                            <p>15 minutos</p>
+                        <div>
+                            <h3 class="article-title">Circuito de Energía Simple</h3>
+                            <div class="article-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>30 minutos</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
-                </a>
-                <a href="rutinas/yoga-para-todos-niveles.html" class="block brightness bg-ejercicio-3" id="ejercicio3">
-                    <p>Todos los Niveles</p>
-                    <div class="heading-time">
-                        <h3>Yoga Revitilizante</h3>
-                        <div class="reading-time">
-                            <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                            <p>25 minutos</p>
+                    <!-- Routine 2 -->
+                    <a href="rutinas/ejercicio-en-15-min.html" class="routine-card">
+                        <div class="article-header">
+                            <span class="article-category">Nivel Principiante</span>
+                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
                         </div>
-                    </div>
-
-                </a>
-                <a href="rutinas/entrenamiento-cuerpo-completo-casa.html" class="block brightness bg-ejercicio-4"
-                    id="ejercicio4">
-                    <p>Nivel Principiante</p>
-                    <div class="heading-time">
-                        <h3>Entrenamiento Total en Casa</h3>
-                        <div class="reading-time">
-                            <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                            <p>35 minutos</p>
+                        <div>
+                            <h3 class="article-title">Ejercicio en 15 Minutos</h3>
+                            <div class="article-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>15 minutos</span>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
-                </a>
+                    <!-- Routine 3 -->
+                    <a href="rutinas/yoga-para-todos-niveles.html" class="routine-card">
+                        <div class="article-header">
+                            <span class="article-category">Todos los Niveles</span>
+                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
+                        </div>
+                        <div>
+                            <h3 class="article-title">Yoga Revitilizante</h3>
+                            <div class="article-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>25 minutos</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Routine 4 -->
+                    <a href="rutinas/entrenamiento-cuerpo-completo-casa.html" class="routine-card">
+                        <div class="article-header">
+                            <span class="article-category">Nivel Principiante</span>
+                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
+                        </div>
+                        <div>
+                            <h3 class="article-title">Entrenamiento Total en Casa</h3>
+                            <div class="article-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>35 minutos</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- Meditaciones -->
-        <section class="reading" id="meditaciones">
+        <section class="reading section-gap-top" id="meditaciones">
             <div class="reading-section">
-                <div class="reading-content">
+                <div class="section-title-container">
                     <img src="assets/images/mindfulness/meditarIconoTitulo.webp" alt="Ícono de lectura"
-                        class="reading-icon">
-                    <h2 class="reading-heading">Meditaciones para tu Bienestar diario</h2>
+                        class="section-icon">
+                    <h2 class="section-title">Meditaciones para tu Bienestar diario</h2>
                 </div>
-                <p class="reading-subtext">Encuentra tu centro con sesiones personalizadas</p>
+                <p class="section-subtitle">Encuentra tu centro con sesiones personalizadas</p>
             </div>
         </section>
 
         <!-- Meditaciones seleccionadas -->
-        <section class="audio-blocks">
+        <!-- Meditaciones seleccionadas -->
+        <section class="meditations-section">
             <div class="container">
-                <div class="audio-block">
-                    <button class="audio-button brightness bg-button-1" id="button1">
-                        <img src="assets/images/ui/reproducirIconoMeditaciones.webp" alt="Reproducir audio">
-                    </button>
-                    <div class="audio-info">
-                        <p class="duration">
-                            <i class="bi bi-clock" alt="Ícono de Reloj"></i>
-                            7 minutos
-                        </p>
-                        <h3 class="title">Libera la tensión</h3>
-                        <div class="custom-audio-player">
-                            <span class="current-time">00:00</span>
-                            <div class="progress-container">
-                                <div class="progress-bar"></div>
+                <div class="meditations-grid">
+                    <!-- Audio 1 -->
+                    <div class="meditation-card">
+                        <button class="meditation-btn">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                        <audio src="assets/audios/meditacionSoltarTension_plan6y7.mp3"></audio>
+                        <div class="meditation-info">
+                            <div class="meditation-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>7 minutos</span>
                             </div>
-                            <audio id="audio1" src="assets/audios/meditacionSoltarTension_plan6y7.mp3"></audio>
+                            <h3 class="meditation-title">Libera la tensión</h3>
+                            <div class="meditation-controls">
+                                <span class="current-time">0:00</span>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="audio-block">
-                    <button class="audio-button brightness bg-button-2" id="button2">
-                        <img src="assets/images/ui/reproducirIconoMeditaciones.webp" alt="Reproducir audio">
-                    </button>
-                    <div class="audio-info">
-                        <p class="duration">
-                            <i class="bi bi-clock" alt="Ícono de Reloj"></i>
-                            9 minutos
-                        </p>
-                        <h3 class="title">Empieza el día positivamente</h3>
-                        <div class="custom-audio-player">
-                            <span class="current-time">00:00</span>
-                            <div class="progress-container">
-                                <div class="progress-bar"></div>
+
+                    <!-- Audio 2 -->
+                    <div class="meditation-card">
+                        <button class="meditation-btn">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                        <audio src="assets/audios/empezarPositivamente_plan6y7.mp3"></audio>
+                        <div class="meditation-info">
+                            <div class="meditation-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>9 minutos</span>
                             </div>
-                            <audio id="audio1" src="assets/audios/empezarPositivamente_plan6y7.mp3"></audio>
+                            <h3 class="meditation-title">Empieza el día positivamente</h3>
+                            <div class="meditation-controls">
+                                <span class="current-time">0:00</span>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="audio-block">
-                    <button class="audio-button brightness bg-button-3" id="button3">
-                        <img src="assets/images/ui/reproducirIconoMeditaciones.webp" alt="Reproducir audio">
-                    </button>
-                    <div class="audio-info">
-                        <p class="duration">
-                            <i class="bi bi-clock" alt="Ícono de Reloj"></i>
-                            9 minutos
-                        </p>
-                        <h3 class="title">Siéntete seguro y en paz</h3>
-                        <div class="custom-audio-player">
-                            <span class="current-time">00:00</span>
-                            <div class="progress-container">
-                                <div class="progress-bar"></div>
+
+                    <!-- Audio 3 -->
+                    <div class="meditation-card">
+                        <button class="meditation-btn">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                        <audio src="assets/audios/sienteSeguroyPaz_plan4y6y7.mp3"></audio>
+                        <div class="meditation-info">
+                            <div class="meditation-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>9 minutos</span>
                             </div>
-                            <audio id="audio1" src="assets/audios/sienteSeguroyPaz_plan4y6y7.mp3"></audio>
+                            <h3 class="meditation-title">Siéntete seguro y en paz</h3>
+                            <div class="meditation-controls">
+                                <span class="current-time">0:00</span>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="audio-block">
-                    <button class="audio-button brightness bg-button-4" id="button4">
-                        <img src="assets/images/ui/reproducirIconoMeditaciones.webp" alt="Reproducir audio">
-                    </button>
-                    <div class="audio-info">
-                        <p class="duration">
-                            <i class="bi bi-clock" alt="Ícono de Reloj"></i>
-                            1 minuto
-                        </p>
-                        <h3 class="title">Relajación en 1 minuto</h3>
-                        <div class="custom-audio-player">
-                            <span class="current-time">00:00</span>
-                            <div class="progress-container">
-                                <div class="progress-bar"></div>
+
+                    <!-- Audio 4 -->
+                    <div class="meditation-card">
+                        <button class="meditation-btn">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                        <audio src="assets/audios/Relajación_1minuto_plan2y6.mp3"></audio>
+                        <div class="meditation-info">
+                            <div class="meditation-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>1 minuto</span>
                             </div>
-                            <audio id="audio1" src="assets/audios/Relajación_1minuto_plan2y6.mp3"></audio>
+                            <h3 class="meditation-title">Relajación en 1 minuto</h3>
+                            <div class="meditation-controls">
+                                <span class="current-time">0:00</span>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="audio-block">
-                    <button class="audio-button brightness bg-button-5" id="button5">
-                        <img src="assets/images/ui/reproducirIconoMeditaciones.webp" alt="Reproducir audio">
-                    </button>
-                    <div class="audio-info">
-                        <p class="duration">
-                            <i class="bi bi-clock" alt="Ícono de Reloj"></i>
-                            5 minutos
-                        </p>
-                        <h3 class="title">Meditación matutina</h3>
-                        <div class="custom-audio-player">
-                            <span class="current-time">00:00</span>
-                            <div class="progress-container">
-                                <div class="progress-bar"></div>
+
+                    <!-- Audio 5 -->
+                    <div class="meditation-card">
+                        <button class="meditation-btn">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                        <audio src="assets/audios/meditacionMatutina_plan1y9y6.mp3"></audio>
+                        <div class="meditation-info">
+                            <div class="meditation-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>5 minutos</span>
                             </div>
-                            <audio id="audio1" src="assets/audios/meditacionMatutina_plan1y9y6.mp3"></audio>
+                            <h3 class="meditation-title">Meditación matutina</h3>
+                            <div class="meditation-controls">
+                                <span class="current-time">0:00</span>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="audio-block">
-                    <button class="audio-button brightness bg-button-6" id="button6">
-                        <img src="assets/images/ui/reproducirIconoMeditaciones.webp" alt="Reproducir audio">
-                    </button>
-                    <div class="audio-info">
-                        <p class="duration">
-                            <i class="bi bi-clock" alt="Ícono de Reloj"></i>
-                            12 minutos
-                        </p>
-                        <h3 class="title">Relajación corta para un buen sueño</h3>
-                        <div class="custom-audio-player">
-                            <span class="current-time">00:00</span>
-                            <div class="progress-container">
-                                <div class="progress-bar"></div>
+
+                    <!-- Audio 6 -->
+                    <div class="meditation-card">
+                        <button class="meditation-btn">
+                            <i class="bi bi-play-fill"></i>
+                        </button>
+                        <audio src="assets/audios/Relajación_1minuto_plan2y6.mp3"></audio>
+                        <div class="meditation-info">
+                            <div class="meditation-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>2 minutos</span>
                             </div>
-                            <audio id="audio1" src="assets/audios/relajacionCortaDormir_plan2y6y8y9.mp3"></audio>
+                            <h3 class="meditation-title">Relajación corta para un buen sueño</h3>
+                            <div class="meditation-controls">
+                                <span class="current-time">0:00</span>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Planes alimenticios -->
-        <section class="reading" id="alimentaciones">
-            <div class="reading-section">
-                <div class="reading-content">
-                    <img src="assets/images/food/planIconoTitulo.webp" alt="Ícono de lectura" class="reading-icon">
-                    <h2 class="reading-heading">Planes Alimenticios Adaptados a Ti</h2>
-                </div>
-                <p class="reading-subtext">Recetas y dietas para una vida saludable</p>
-            </div>
-        </section>
+    </div>
+    </div>
+    </div>
+    </section>
 
-        <!-- Planes alimenticios seleccionados -->
-        <section class="lecturas">
-            <div class="container">
-                <a href="dietas/energia-y-vitalidad.html" class="block brightness bg-dieta-1" id="dieta1">
-                    <p>Balanceado y rico en nutrientes</p>
-                    <h3>Plan Semanal para tener Energía y Vitalidad</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>Plan semanal</p>
-                    </div>
-                </a>
-                <a href="#" class="block brightness bg-dieta-2" id="dieta2">
-                    <p>A base de vegetales</p>
-                    <h3>Plan para un Día de Renovación y Desintoxicación</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>Plan diario</p>
-                    </div>
-                </a>
-                <a href="#" class="block brightness bg-dieta-3" id="dieta3">
-                    <p>Ricos en fibra y probióticos</p>
-                    <h3>Plan para una Semana Enfocada en Mejorar la Salud Digestiva</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>Plan semanal</p>
-                    </div>
-                </a>
-                <a href="#" class="block brightness bg-dieta-4" id="dieta4">
-                    <p>Integrales y antiestresantes</p>
-                    <h3>Plan para Días de Estrés y Ansiedad</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>Plan diario</p>
-                    </div>
-                </a>
+    <!-- Planes alimenticios -->
+    <!-- Planes alimenticios -->
+    <section class="reading section-gap-top" id="alimentaciones">
+        <div class="reading-section">
+            <div class="section-title-container">
+                <img src="assets/images/food/planIconoTitulo.webp" alt="Ícono de lectura" class="section-icon">
+                <h2 class="section-title">Planes Alimenticios Adaptados a Ti</h2>
             </div>
-        </section>
+            <p class="section-subtitle">Recetas y dietas para una vida saludable</p>
+        </div>
+    </section>
 
-        <!-- Agradecimiento -->
-        <section class="thanks">
-            <div class="thanks-section">
-                <div class="thanks-content">
-                    <h2 class="thanks-heading">¡Gracias por Elegirnos!</h2>
-                </div>
-                <p class="thanks-subtext">Recuerda que actualizamos nuestra página todas las semanas con nuevo contenido
-                    para tu bienestar. Vuelve pronto y no te pierdas lo que tenemos para ti.</p>
+    <!-- Planes alimenticios seleccionados -->
+    <section class="lecturas">
+        <div class="container">
+            <div class="articles-grid">
+                <!-- Plan 1 -->
+                <a href="dietas/energia-y-vitalidad.html" class="food-card">
+                    <div class="article-header">
+                        <span class="article-category">Balanceado y Rico</span>
+                        <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
+                    </div>
+                    <div>
+                        <h3 class="article-title">Plan Energía y Vitalidad</h3>
+                        <div class="article-meta">
+                            <i class="bi bi-clock"></i>
+                            <span>Plan Semanal</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Plan 2 -->
+                <a href="#" class="food-card">
+                    <div class="article-header">
+                        <span class="article-category">Detox Vegetal</span>
+                        <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
+                    </div>
+                    <div>
+                        <h3 class="article-title">Renovación y Desintoxicación</h3>
+                        <div class="article-meta">
+                            <i class="bi bi-clock"></i>
+                            <span>Plan Diario</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Plan 3 -->
+                <a href="#" class="food-card">
+                    <div class="article-header">
+                        <span class="article-category">Salud Digestiva</span>
+                        <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
+                    </div>
+                    <div>
+                        <h3 class="article-title">Mejora tu Digestión</h3>
+                        <div class="article-meta">
+                            <i class="bi bi-clock"></i>
+                            <span>Plan Semanal</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Plan 4 -->
+                <a href="#" class="food-card">
+                    <div class="article-header">
+                        <span class="article-category">Antiestrés</span>
+                        <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
+                    </div>
+                    <div>
+                        <h3 class="article-title">Plan Anti-Estrés y Ansiedad</h3>
+                        <div class="article-meta">
+                            <i class="bi bi-clock"></i>
+                            <span>Plan Diario</span>
+                        </div>
+                    </div>
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Agradecimiento -->
+    <section class="thanks">
+        <div class="thanks-section">
+            <div class="thanks-content">
+                <h2 class="thanks-heading">¡Gracias por Elegirnos!</h2>
+            </div>
+            <p class="thanks-subtext">Recuerda que actualizamos nuestra página todas las semanas con nuevo contenido
+                para tu bienestar. Vuelve pronto y no te pierdas lo que tenemos para ti.</p>
+        </div>
+    </section>
 
     </div>
 
@@ -451,25 +509,10 @@
         !function () { var t = window, e = document, a = function () { var t = e.createElement("script"); t.type = "text/javascript", t.async = !0, t.src = "https://bot.airdroid.com/widget/chatinsight-widget.js", t.onload = function () { new ChatInsightWidget({ sid: 'DBEaEYro3pM7blsrV5tpn6D4uL6FBMBc', iFrameSid: 'asQotJ41ToI4oveBTqWAlrT0f_8AKYEM' }) }; var a = e.getElementsByTagName("script")[0]; a.parentNode.insertBefore(t, a) }; "complete" === document.readyState ? a() : t.attachEvent ? t.attachEvent("onload", a) : t.addEventListener("load", a, !1) }();
     </script>
 
+    <script src="assets/js/meditation-player.js"></script>
     <script src="assets/js/script.js"></script>
 
-    <!-- Personalizar el mensaje según la zona horaria -->
-    <script>
-        const currentHour = new Date().getHours();
-        let subtext = '';
 
-        if (currentHour >= 6 && currentHour < 12) {
-            subtext = 'Inicia tu día con una sonrisa y un momento para ti. ';
-        } else if (currentHour >= 13 && currentHour < 21) {
-            subtext = 'Es un buen momento para recargar energías y cuidar de ti.';
-        } else if (currentHour >= 21 && currentHour < 24) {
-            subtext = 'Relájate y disfruta de tu bienestar.';
-        } else {
-            subtext = 'Dedica este momento a recargar energías y conectar contigo.';
-        }
-
-        document.querySelector('.welcome-subtext').textContent = subtext;
-    </script>
 
     <!-- Vercel Speed Insights -->
     <script>
