@@ -147,6 +147,14 @@
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* Stack large cards on tablet ONLY on Mi Espacio page */
+    .mi-espacio-page .magic-bento-card:nth-child(3),
+    .mi-espacio-page .magic-bento-card:nth-child(4) {
+        grid-column: span 2;
+        aspect-ratio: auto;
+        min-height: 350px;
+    }
 }
 
 @media (min-width: 1024px) {
