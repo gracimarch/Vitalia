@@ -43,25 +43,25 @@ document.addEventListener('DOMContentLoaded', function () {
             // Detener el audio actual si es diferente al nuevo
             if (currentAudio && currentAudio !== audio) {
                 currentAudio.pause();
-                currentAudioButton.querySelector('img').src = 'assets/images/ui/reproducirIconoMeditaciones.webp';
+                currentAudioButton.querySelector('img').src = '/assets/images/ui/reproducirIconoMeditaciones.webp';
             }
 
             // Reproducir o pausar el audio
             if (audio.paused) {
                 audio.play();
-                playPauseBtnImg.src = 'assets/images/ui/pausarIconoMeditaciones.webp';
+                playPauseBtnImg.src = '/assets/images/ui/pausarIconoMeditaciones.webp';
                 currentAudio = audio;
                 currentAudioButton = button;
             } else {
                 audio.pause();
-                playPauseBtnImg.src = 'assets/images/ui/reproducirIconoMeditaciones.webp';
+                playPauseBtnImg.src = '/assets/images/ui/reproducirIconoMeditaciones.webp';
                 currentAudio = null;
                 currentAudioButton = null;
             }
 
             // Restablecer el botón cuando el audio termine
             audio.addEventListener('ended', function () {
-                playPauseBtnImg.src = 'assets/images/ui/reproducirIconoMeditaciones.webp';
+                playPauseBtnImg.src = '/assets/images/ui/reproducirIconoMeditaciones.webp';
                 currentAudio = null;
                 currentAudioButton = null;
             });
