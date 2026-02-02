@@ -48,26 +48,27 @@ function highlightActiveLink() {
     // Normalize path to ignore trailing slash if any, for comparison
     // e.g. /lecturas/slug vs /blog.html
 
-    const pageName = currentPath.split("/").pop() || "index.html";
+    const pageName = currentPath.split("/").pop() || "index";
 
+    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
     navLinks.forEach(link => {
         const href = link.getAttribute("href");
         if (!href) return;
 
         // Clean path for comparison
-        const cleanPath = currentPath.replace(/\/$/, "");
-        const cleanHref = href.replace(/\/$/, "");
+        const cleanPath = currentPath.replace(/\/$/, "").replace(".html", "");
+        const cleanHref = href.replace(/\/$/, "").replace(".html", "");
 
         if (cleanHref === cleanPath || (cleanHref !== "" && cleanHref !== "/" && cleanPath.startsWith(cleanHref))) {
             link.classList.add("active");
-        } else if (cleanHref === "/" && (cleanPath === "" || cleanPath === "/" || cleanPath === "/index.html")) {
+        } else if (cleanHref === "/" && (cleanPath === "" || cleanPath === "/" || cleanPath === "/index")) {
             link.classList.add("active");
         }
     });
 
     // Special handling for Mi Espacio
-    if (pageName === "mi-espacio.html") {
-        const miEspacioLink = document.querySelector('a[href*="mi-espacio.html"]');
+    if (pageName === "mi-espacio") {
+        const miEspacioLink = document.querySelector('a[href*="mi-espacio"]');
         if (miEspacioLink) miEspacioLink.classList.add("bold-active");
     }
 
