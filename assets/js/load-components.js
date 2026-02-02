@@ -161,3 +161,89 @@ function initializeNavbarToggle() {
         });
     });
 }
+
+// ==========================================
+// Smart Navigation for Local Compatibility
+// ==========================================
+// This allows "Clean URLs" (e.g., /lecturas/slug) to work locally
+// by falling back to query params (e.g., /lectura.html?slug=slug)
+// if the clean URL returns a 404 (common in Live Server/local files).
+
+// ==========================================
+// Smart Navigation for Local Compatibility
+// ==========================================
+function setupSmartNavigation() {
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        // Matches: lecturas/..., dietas/..., rutinas/... (optional leading slash)
+        const isCleanUrl = /^\/?(lecturas|dietas|rutinas)\//.test(href);
+
+        if (isCleanUrl) {
+            const hostname = window.location.hostname;
+            const isLocal = hostname === 'localhost' ||
+                hostname === '127.0.0.1' ||
+                window.location.protocol === 'file:';
+
+            if (isLocal) {
+                // ALWAYS prevent default immediately on local to control navigation
+                e.preventDefault();
+                e.stopImmediatePropagation();
+
+                const navigate = async () => {
+                    let shouldUseFallback = false;
+
+                    // If simple file protocol, always fallback
+                    if (window.location.protocol === 'file:') {
+                        shouldUseFallback = true;
+                    } else {
+                        // Check if the clean URL is supported (e.g. Vercel Dev)
+                        try {
+                            const response = await fetch(href, { method: 'HEAD' });
+                            if (response.ok) {
+                                window.location.href = href;
+                                return;
+                            } else {
+                                shouldUseFallback = true;
+                            }
+                        } catch (err) {
+                            shouldUseFallback = true;
+                        }
+                    }
+
+                    if (shouldUseFallback) {
+                        // Convert to fallback URL: file.html?slug=slug
+                        let cleanPath = href.startsWith('/') ? href.substring(1) : href;
+                        const parts = cleanPath.split('/');
+                        const folder = parts[0];
+                        const slug = parts[1];
+
+                        const map = {
+                            'lecturas': 'lectura.html',
+                            'dietas': 'dieta.html',
+                            'rutinas': 'rutina.html'
+                        };
+
+                        const file = map[folder];
+                        if (file && slug) {
+                            console.log(`[SmartNav] Redirecting to fallback: ${file}?slug=${slug}`);
+                            window.location.href = `${file}?slug=${slug}`;
+                        } else {
+                            // Can't map, try original
+                            window.location.href = href;
+                        }
+                    }
+                };
+
+                navigate();
+            }
+        }
+    });
+}
+
+// Initialize Smart Nav
+setupSmartNavigation();

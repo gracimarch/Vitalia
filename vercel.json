@@ -1,0 +1,16 @@
+{
+    "rewrites": [
+        {
+            "source": "/lecturas/:slug",
+            "destination": "/lectura.html"
+        },
+        {
+            "source": "/dietas/:slug",
+            "destination": "/dieta.html"
+        },
+        {
+            "source": "/rutinas/:slug",
+            "destination": "/rutina.html"
+        }
+    ]
+}

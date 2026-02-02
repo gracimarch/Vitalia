@@ -7,21 +7,60 @@
     'use strict';
 
     // Get slug from URL parameter
+    let isVisualFix = false;
+
+    // Get slug from URL parameter or path
     function getSlugFromURL() {
+        // First try to get slug from path: /lecturas/slug
+        const path = window.location.pathname;
+        if (path.includes('/lecturas/')) {
+            const parts = path.split('/lecturas/');
+            if (parts.length > 1 && parts[1]) {
+                return parts[1].replace('.html', '').replace('/', '');
+            }
+        }
+
+        // Fallback to query param
         const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get('slug');
+        const slug = urlParams.get('slug');
+
+        // Visual Fix: If on localhost and using query param, mask it with clean URL
+        if (slug && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+            window.history.replaceState({}, '', `/lecturas/${slug}`);
+            isVisualFix = true;
+        }
+
+        return slug;
     }
 
     // Fetch lecturas data
     async function fetchLecturas() {
         try {
-            const response = await fetch('data/lecturas.json');
+            // If visual fix is active, we are effectively in /lecturas/ folder visually,
+            // so we need to go up one level to find data folder.
+            const url = isVisualFix ? '../data/lecturas.json' : 'data/lecturas.json';
+            const response = await fetch(url);
             if (!response.ok) {
                 throw new Error('No se pudo cargar el archivo de datos');
             }
             return await response.json();
         } catch (error) {
             console.error('Error cargando lecturas:', error);
+            // Show error in UI
+            const titleContainer = document.getElementById('page-title');
+            if (titleContainer) titleContainer.textContent = 'Error';
+
+            const articleContent = document.getElementById('article-content');
+            if (articleContent) {
+                articleContent.innerHTML = `
+                    <div style="text-align: center; padding: 50px;">
+                        <h2>Error</h2>
+                        <h1>Lectura no encontrada</h1>
+                        <p>Lo sentimos, la lectura que buscas no existe o ha sido movida.</p>
+                        <a href="blog.html" style="text-decoration: underline; color: #7134A2;">Volver al blog</a>
+                    </div>
+                `;
+            }
             return null;
         }
     }
@@ -31,31 +70,37 @@
         return lecturas.find(l => l.slug === slug);
     }
 
-    // Update page title and meta tags
-    function updateMetaTags(lectura) {
+    // Render article content
+    function renderArticle(lectura) {
+        // Helper for image paths
+        const getPath = (path) => isVisualFix ? `../${path}` : path;
+
+        // Meta tags
+        document.title = lectura.title + " | Vitalia";
+        document.querySelector('meta[name="description"]').setAttribute("content", lectura.description);
+        document.querySelector('meta[name="keywords"]').setAttribute("content", lectura.keywords);
         document.getElementById('page-title').textContent = lectura.title;
-        document.getElementById('meta-description').setAttribute('content', lectura.description);
-        document.getElementById('meta-keywords').setAttribute('content', lectura.keywords);
-    }
 
-    // Update article header
-    function updateArticleHeader(lectura) {
-        document.getElementById('article-category').textContent = lectura.category;
-        document.getElementById('article-title').textContent = lectura.title;
-        document.getElementById('reading-time-text').textContent = lectura.readingTime;
-    }
+        // Title Section
+        const articleCategory = document.getElementById('article-category');
+        if (articleCategory) articleCategory.textContent = lectura.category;
 
-    // Update introduction
-    function updateIntroduction(lectura) {
-        const introDiv = document.getElementById('introduction');
-        introDiv.innerHTML = lectura.introduction;
-    }
+        const articleTitle = document.getElementById('article-title');
+        if (articleTitle) articleTitle.textContent = lectura.title;
 
-    // Update article image
-    function updateImage(lectura) {
-        const img = document.getElementById('article-image');
-        img.src = lectura.image;
-        img.alt = `Imagen de ${lectura.title}`;
+        const readingTime = document.getElementById('reading-time-text');
+        if (readingTime) readingTime.textContent = lectura.readingTime;
+
+        // Introduction
+        const introduction = document.getElementById('introduction');
+        if (introduction) introduction.innerHTML = lectura.introduction;
+
+        // Image
+        const articleImage = document.getElementById('article-image');
+        if (articleImage) {
+            articleImage.src = getPath(lectura.image);
+            articleImage.alt = `Imagen de ${lectura.title}`;
+        }
     }
 
     // Generate table of contents
