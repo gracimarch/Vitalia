@@ -26,18 +26,38 @@ countdownCircle.style.strokeDashoffset = `${circumference}`;
 let exercises = [];
 
 // — Función para cargar rutina desde JSON —
+let isVisualFix = false;
+
+// — Función para cargar rutina desde JSON —
 async function loadRoutine() {
   try {
     const path = window.location.pathname;
-    let slug = path.split('/').pop().replace('.html', '');
+    let slug = '';
+
+    // Check for clean URL: /rutinas/slug
+    if (path.includes('/rutinas/')) {
+      const parts = path.split('/rutinas/');
+      if (parts.length > 1 && parts[1]) {
+        slug = parts[1].replace('.html', '').replace('/', '');
+      }
+    }
+    // Fallback to filename
+    else {
+      slug = path.split('/').pop().replace('.html', '');
+    }
 
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('slug')) {
       slug = urlParams.get('slug');
+      // Visual Fix for Localhost
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        window.history.replaceState({}, '', `/rutinas/${slug}`);
+        isVisualFix = true;
+      }
     }
 
     // Ajustar ruta si estamos en local o producción
-    const jsonPath = 'data/rutinas.json';
+    const jsonPath = isVisualFix ? '../data/rutinas.json' : 'data/rutinas.json';
 
     const response = await fetch(jsonPath);
     if (!response.ok) throw new Error('No se pudo cargar rutinas.json');
@@ -62,6 +82,8 @@ async function loadRoutine() {
 }
 
 function renderRoutineStaticContent(routine) {
+  const getPath = (path) => isVisualFix ? `../${path}` : path;
+
   // Título y meta
   document.title = routine.title;
   const titleContainer = document.querySelector('.title');
@@ -83,7 +105,7 @@ function renderRoutineStaticContent(routine) {
   // Imagen principal
   const imageContainer = document.querySelector('.image');
   if (imageContainer) {
-    imageContainer.innerHTML = `<img src="${routine.image}" alt="${routine.title}">`;
+    imageContainer.innerHTML = `<img src="${getPath(routine.image)}" alt="${routine.title}">`;
   }
 
   // Preparación

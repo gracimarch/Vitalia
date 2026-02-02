@@ -6,19 +6,40 @@
 (function () {
     'use strict';
 
+    let isVisualFix = false;
+
     function getSlugFromPath() {
+        const path = window.location.pathname;
+
+        // Handle clean URLs: /dietas/slug
+        if (path.includes('/dietas/')) {
+            const parts = path.split('/dietas/');
+            if (parts.length > 1 && parts[1]) {
+                return parts[1].replace('.html', '').replace('/', '');
+            }
+        }
+
+        // Handle query params
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('slug')) {
-            return urlParams.get('slug');
+            const slug = urlParams.get('slug');
+            // Visual Fix: If on localhost and using query param, mask it with clean URL
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                window.history.replaceState({}, '', `/dietas/${slug}`);
+                isVisualFix = true;
+            }
+            return slug;
         }
-        const path = window.location.pathname;
+
+        // Fallback for direct HTML file access
         const filename = path.split('/').pop();
         return filename.replace('.html', '');
     }
 
     async function fetchDietas() {
         try {
-            const response = await fetch('data/dietas.json');
+            const url = isVisualFix ? '../data/dietas.json' : 'data/dietas.json';
+            const response = await fetch(url);
             if (!response.ok) {
                 throw new Error('No se pudo cargar el archivo de datos');
             }
@@ -34,6 +55,8 @@
     }
 
     function renderDiet(dieta) {
+        const getPath = (path) => isVisualFix ? `../${path}` : path;
+
         // Title Section
         document.title = dieta.title;
         const titleContainer = document.querySelector('.title');
@@ -58,7 +81,7 @@
         const imageContainer = document.querySelector('.image');
         if (imageContainer) {
             imageContainer.innerHTML = `
-                <img src="${dieta.image}" alt="Imagen representativa para ${dieta.title}">
+                <img src="${getPath(dieta.image)}" alt="Imagen representativa para ${dieta.title}">
             `;
         }
 

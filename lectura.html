@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Cargando...</title>
+    <script>
+        // Only use base href if we are in a clean URL path (e.g. /lecturas/slug)
+        // This prevents breaking styles in local file/fallback mode
+        if (window.location.pathname.match(/\/(lecturas|dietas|rutinas)\//)) {
+            document.write('<base href="/">');
+        }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap"
