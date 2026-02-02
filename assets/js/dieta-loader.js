@@ -1,12 +1,10 @@
 /**
  * Dieta Loader - Dynamic Content System
- * Loads diet content from JSON based on filename
+ * Loads diet content from JSON based on URL slug
  */
 
 (function () {
     'use strict';
-
-    let isVisualFix = false;
 
     function getSlugFromPath() {
         const path = window.location.pathname;
@@ -18,27 +16,13 @@
                 return parts[1].replace('.html', '').replace('/', '');
             }
         }
-
-        // Handle query params
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('slug')) {
-            const slug = urlParams.get('slug');
-            // Visual Fix: If on localhost and using query param, mask it with clean URL
-            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                window.history.replaceState({}, '', `/dietas/${slug}`);
-                isVisualFix = true;
-            }
-            return slug;
-        }
-
-        // Fallback for direct HTML file access
-        const filename = path.split('/').pop();
-        return filename.replace('.html', '');
+        return null;
     }
 
     async function fetchDietas() {
         try {
-            const url = isVisualFix ? '../data/dietas.json' : 'data/dietas.json';
+            // Absolute path
+            const url = '/data/dietas.json';
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error('No se pudo cargar el archivo de datos');
@@ -55,7 +39,10 @@
     }
 
     function renderDiet(dieta) {
-        const getPath = (path) => isVisualFix ? `../${path}` : path;
+        const getPath = (path) => {
+            if (path.startsWith('http')) return path;
+            return path.startsWith('/') ? path : '/' + path;
+        };
 
         // Title Section
         document.title = dieta.title;
@@ -87,7 +74,7 @@
 
         // Schedule (Food Plan)
         const scheduleContainer = document.querySelector('.schedule-container');
-        if (scheduleContainer) {
+        if (scheduleContainer && dieta.schedule) {
             scheduleContainer.innerHTML = ''; // Clear existing
             dieta.schedule.forEach(stage => {
                 const wrapper = document.createElement('div');
@@ -152,6 +139,12 @@
             recipesContainer.innerHTML = '';
             dieta.recipes.forEach(recipe => {
                 const ingredientsList = recipe.ingredients.map(ing => `<li><strong>${ing}</strong></li>`).join('');
+
+                // Ensure image path is correct (absolute)
+                const recipeImage = getPath(recipe.image);
+                // Also ensure the hardcoded icon is absolute
+                const iconPath = "/assets/images/ui/meal-icon.webp";
+
                 const recipeHtml = `
                     <div class="recipecontainer" id="${recipe.id}">
                         <a class="close" href="#">X</a>
@@ -159,11 +152,11 @@
                             <h6 class="rtitle">${recipe.title}</h6>
                             <figure class="timealign">
                                 <picture>
-                                    <img src="assets/images/ui/meal-icon.webp" alt="" />
+                                    <img src="${iconPath}" alt="" />
                                 </picture>
                                 <figcaption>${recipe.time}</figcaption>
                             </figure>
-                            <img class="rimg" src="${recipe.image}" alt="Imagen de la receta">
+                            <img class="rimg" src="${recipeImage}" alt="Imagen de la receta">
                             <ul>${ingredientsList}</ul>
                             ${recipe.instructions}
                         </div>
@@ -240,6 +233,12 @@
     // Main initialization
     async function init() {
         const slug = getSlugFromPath();
+        if (!slug) {
+            // If no slug, maybe redirect or show error? For now just log
+            console.log("No valid slug found in path");
+            return;
+        }
+
         const data = await fetchDietas();
 
         if (!data || !data.dietas) return;

@@ -19,14 +19,13 @@ let onSegmentComplete = null;
 let firstRun = true;
 const circumference = 2 * Math.PI * 45;
 
-countdownCircle.style.strokeDasharray = `${circumference}`;
-countdownCircle.style.strokeDashoffset = `${circumference}`;
+if (countdownCircle) {
+  countdownCircle.style.strokeDasharray = `${circumference}`;
+  countdownCircle.style.strokeDashoffset = `${circumference}`;
+}
 
 // — Lista de ejercicios con descripciones detalladas —
 let exercises = [];
-
-// — Función para cargar rutina desde JSON —
-let isVisualFix = false;
 
 // — Función para cargar rutina desde JSON —
 async function loadRoutine() {
@@ -41,23 +40,14 @@ async function loadRoutine() {
         slug = parts[1].replace('.html', '').replace('/', '');
       }
     }
-    // Fallback to filename
-    else {
-      slug = path.split('/').pop().replace('.html', '');
+
+    if (!slug) {
+      console.log("No routine slug found.");
+      return;
     }
 
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('slug')) {
-      slug = urlParams.get('slug');
-      // Visual Fix for Localhost
-      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        window.history.replaceState({}, '', `/rutinas/${slug}`);
-        isVisualFix = true;
-      }
-    }
-
-    // Ajustar ruta si estamos en local o producción
-    const jsonPath = isVisualFix ? '../data/rutinas.json' : 'data/rutinas.json';
+    // Absolute path
+    const jsonPath = '/data/rutinas.json';
 
     const response = await fetch(jsonPath);
     if (!response.ok) throw new Error('No se pudo cargar rutinas.json');
@@ -82,7 +72,10 @@ async function loadRoutine() {
 }
 
 function renderRoutineStaticContent(routine) {
-  const getPath = (path) => isVisualFix ? `../${path}` : path;
+  const getPath = (path) => {
+    if (path.startsWith('http')) return path;
+    return path.startsWith('/') ? path : '/' + path;
+  };
 
   // Título y meta
   document.title = routine.title;
@@ -113,18 +106,11 @@ function renderRoutineStaticContent(routine) {
   if (instructions) instructions.innerHTML = routine.preparation;
 
   // Conclusión
-  const conclusion = document.querySelector('.article:last-of-type');
-  // Esto es un poco frágil, mejor buscar por ID si existiera o insertar dinámicamente
-  // En el HTML original hay un div sin ID al final.
-  // Vamos a asumir que el contenedor de conclusión ya existe o lo creamos.
-  // En el HTML original: <div class="article">...conclusión...</div> antes del footer.
-  // Buscaremos el último .article que NO sea instructions
   const articles = document.querySelectorAll('.article');
-  const lastArticle = articles[articles.length - 1];
+  const lastArticle = articles[articles.length - 1]; // Assuming it's the last one as per original script logic
   if (lastArticle && lastArticle.id !== 'instrucciones' && lastArticle.id !== 'introduction') {
     lastArticle.innerHTML = routine.conclusion;
   }
-
 
   // Disparar evento para animaciones
   document.dispatchEvent(new Event('article-content-loaded'));
@@ -132,12 +118,17 @@ function renderRoutineStaticContent(routine) {
 
 
 // — Iniciar rutina al presionar “Comenzar rutina” —
-mostrarBtn.addEventListener('click', () => {
-  mostrarBtn.style.display = 'none';
-  routineContent.classList.remove('no-mostrar');
-  routineContent.classList.add('visible');
-  runSegment();
-});
+if (mostrarBtn) {
+  mostrarBtn.addEventListener('click', () => {
+    mostrarBtn.style.display = 'none';
+
+    if (routineContent) {
+      routineContent.classList.remove('no-mostrar');
+      routineContent.classList.add('visible');
+    }
+    runSegment();
+  });
+}
 
 // — Alterna entre ejercicio y descanso —
 function runSegment() {
@@ -146,44 +137,50 @@ function runSegment() {
   // Solo animamos fade-out para ejecuciones posteriores
   if (!firstRun) {
     [videoEl, titleEl, descEl].forEach(el => {
-      el.classList.remove('fade-in');
-      el.classList.add('fade-out');
+      if (el) {
+        el.classList.remove('fade-in');
+        el.classList.add('fade-out');
+      }
     });
   }
 
   setTimeout(() => {
     // Quitamos estados previos
-    routineContent.classList.remove('rest', 'finish');
-    videoEl.classList.remove('fade-out');
+    if (routineContent) routineContent.classList.remove('rest', 'finish');
+    if (videoEl) videoEl.classList.remove('fade-out');
 
     if (!isRest && currentIndex < exercises.length) {
       // --- Fase de ejercicio ---
       const { title, description, videoSrc, duration } = exercises[currentIndex];
-      titleEl.textContent = title;
-      descEl.textContent = description;
-      videoEl.src = videoSrc;
-      videoEl.loop = true;
-      videoEl.style.display = 'block';
-      videoEl.play();
+      if (titleEl) titleEl.textContent = title;
+      if (descEl) descEl.textContent = description;
+      if (videoEl) {
+        videoEl.src = videoSrc;
+        videoEl.loop = true;
+        videoEl.style.display = 'block';
+        videoEl.play();
+      }
 
       startCountdown(duration, duration, () => {
         isRest = true;
-        videoEl.pause();
+        if (videoEl) videoEl.pause();
         runSegment();
       });
 
     } else if (isRest) {
       // --- Fase de descanso ---
       const restTime = exercises[currentIndex].rest;
-      titleEl.textContent = 'Descanso';
-      descEl.textContent = `Recupérate durante ${restTime} segundos.`;
+      if (titleEl) titleEl.textContent = 'Descanso';
+      if (descEl) descEl.textContent = `Recupérate durante ${restTime} segundos.`;
 
       // Mantenemos margen aunque ocultemos el video
-      routineContent.classList.add('rest');
-      videoEl.classList.add('fade-out');
-      setTimeout(() => {
-        videoEl.style.display = 'none';
-      }, 400);
+      if (routineContent) routineContent.classList.add('rest');
+      if (videoEl) {
+        videoEl.classList.add('fade-out');
+        setTimeout(() => {
+          videoEl.style.display = 'none';
+        }, 400);
+      }
 
       startCountdown(restTime, restTime, () => {
         isRest = false;
@@ -198,8 +195,10 @@ function runSegment() {
 
     if (!firstRun) {
       [videoEl, titleEl, descEl].forEach(el => {
-        el.classList.remove('fade-out');
-        el.classList.add('fade-in');
+        if (el) {
+          el.classList.remove('fade-out');
+          el.classList.add('fade-in');
+        }
       });
     }
     firstRun = false;
@@ -214,11 +213,11 @@ function startCountdown(seconds, totalSeconds, onComplete) {
   isRunning = true;
 
   // Reinicio manual del círculo
-  countdownCircle.style.strokeDasharray = `${circumference}`;
+  if (countdownCircle) countdownCircle.style.strokeDasharray = `${circumference}`;
 
   updateVisuals();
 
-  pauseButton.textContent = 'Pausar';
+  if (pauseButton) pauseButton.textContent = 'Pausar';
   startTimerLoop();
 }
 
@@ -251,8 +250,8 @@ function tick() {
 function stopCountdown() {
   cancelAnimationFrame(animationFrameId);
   isRunning = false;
-  pauseButton.textContent = 'Reanudar';
-  videoEl.pause();
+  if (pauseButton) pauseButton.textContent = 'Reanudar';
+  if (videoEl) videoEl.pause();
 }
 
 // — Actualiza el texto y el progreso del círculo —
@@ -261,36 +260,39 @@ function updateVisuals() {
   const totalSecondsCeil = Math.ceil(remainingTimeMs / 1000);
   const m = Math.floor(totalSecondsCeil / 60).toString().padStart(2, '0');
   const s = (totalSecondsCeil % 60).toString().padStart(2, '0');
-  countdownText.textContent = `${m}:${s}`;
+  if (countdownText) countdownText.textContent = `${m}:${s}`;
 
   // Círculo (Progreso fluido)
   const progress = Math.max(0, remainingTimeMs / totalDurationMs);
-  countdownCircle.style.strokeDashoffset = circumference * (1 - progress);
+  if (countdownCircle) countdownCircle.style.strokeDashoffset = circumference * (1 - progress);
 }
 
 // — Pausar o reanudar temporizador y video —
-pauseButton.addEventListener('click', () => {
-  if (isRunning) {
-    stopCountdown();
-  } else {
-    // Reanudar
-    isRunning = true;
-    pauseButton.textContent = 'Pausar';
-    if (!isRest) {
-      videoEl.play();
+if (pauseButton) {
+  pauseButton.addEventListener('click', () => {
+    if (isRunning) {
+      stopCountdown();
+    } else {
+      // Reanudar
+      isRunning = true;
+      pauseButton.textContent = 'Pausar';
+      if (!isRest && videoEl) {
+        videoEl.play();
+      }
+      startTimerLoop();
     }
-    startTimerLoop();
-  }
-});
+  });
+}
 
 // — Final de la rutina —
 function finishRoutine() {
-  routineContent.classList.add('finish');
-  titleEl.textContent = 'Rutina completada';
-  descEl.textContent = 'Buen trabajo. Estira y toma un vaso de agua.';
+  if (routineContent) routineContent.classList.add('finish');
+  if (titleEl) titleEl.textContent = 'Rutina completada';
+  if (descEl) descEl.textContent = 'Buen trabajo. Estira y toma un vaso de agua.';
   // Ocultar temporizador
-  document.getElementById('timer-content').style.display = 'none';
-  videoEl.style.display = 'none';
+  const timerContent = document.getElementById('timer-content');
+  if (timerContent) timerContent.style.display = 'none';
+  if (videoEl) videoEl.style.display = 'none';
 }
 
 // Iniciar carga

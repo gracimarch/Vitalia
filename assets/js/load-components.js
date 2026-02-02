@@ -5,67 +5,24 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // CHECK: Block file:// protocol which breaks fetch
-    if (window.location.protocol === 'file:') {
-        console.warn("Fetch API does not support file:// protocol. Header and Footer will not load.");
-        const headerPlaceholder = document.getElementById("header-placeholder");
-        if (headerPlaceholder) {
-            headerPlaceholder.innerHTML = '<div style="background:#ffcccc; color:red; padding:20px; text-align:center; border:2px solid red;"><strong>Error:</strong> No se pueden cargar los componentes (Header/Footer) abriendo el archivo directamente. <br>Por favor, usa un servidor local (ej: VS Code Live Server).</div>';
-        }
-        return;
-    }
-
-    // Robustly find the script element that is this file
-    const scripts = document.getElementsByTagName("script");
-    let currentScript = null;
-
-    for (let i = 0; i < scripts.length; i++) {
-        const src = scripts[i].getAttribute("src");
-        if (src && src.includes("load-components.js")) {
-            currentScript = scripts[i];
-            break;
-        }
-    }
-
-    if (!currentScript) {
-        console.error("Could not locate load-components.js script tag. Defaulting to root path.");
-    }
-
-    // Determine root path by looking at how this script was included
-    // e.g., src="../assets/js/load-components.js" -> root is "../"
-    // e.g., src="assets/js/load-components.js" -> root is "./" or ""
-    let scriptSrc = currentScript ? currentScript.getAttribute("src") : "assets/js/load-components.js";
-    let rootPath = "./";
-
-    if (scriptSrc) {
-        // If script is in assets/js/, we can deduce the root
-        // If src contains "../", we count how many to determine depth
-        const match = scriptSrc.match(/^(\.\.\/)+/);
-        if (match) {
-            rootPath = match[0];
-        } else if (scriptSrc.startsWith("assets/")) {
-            rootPath = "./";
-        }
-    }
-
-    // Safety check: if we are in a subfolder but the script was somehow loaded absolutely,
-    // we might need manual override. But assuming standard relative linking:
-    // subdirectory/file.html -> <script src="../assets/js/load-components.js"> -> rootPath = "../"
-    // index.html -> <script src="assets/js/load-components.js"> -> rootPath = "./"
-
-    const componentsPath = rootPath + "assets/components/";
+    const componentsPath = "/assets/components/";
 
     // Load Header
     fetch(componentsPath + "header.html")
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) throw new Error("Header not found");
+            return response.text();
+        })
         .then(data => {
-            // Replace {{ROOT}} with calculated rootPath
-            // Use regex global replace
-            const headerHTML = data.replace(/{{ROOT}}/g, rootPath);
-            document.getElementById("header-placeholder").innerHTML = headerHTML;
+            // Replace {{ROOT}} with empty string or / as we use absolute paths now
+            // But let's check if the templates use {{ROOT}}
+            // If templates have <a href="{{ROOT}}index.html">, we should replace it with "/"
+            const headerHTML = data.replace(/{{ROOT}}/g, "/");
+            const headerPlaceholder = document.getElementById("header-placeholder");
+            if (headerPlaceholder) headerPlaceholder.innerHTML = headerHTML;
 
             // Highlight Active Link
-            highlightActiveLink(rootPath);
+            highlightActiveLink();
 
             // initialize Navbar Toggle
             initializeNavbarToggle();
@@ -74,59 +31,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Load Footer
     fetch(componentsPath + "footer.html")
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) throw new Error("Footer not found");
+            return response.text();
+        })
         .then(data => {
-            const footerHTML = data.replace(/{{ROOT}}/g, rootPath);
-            document.getElementById("footer-placeholder").innerHTML = footerHTML;
+            const footerHTML = data.replace(/{{ROOT}}/g, "/");
+            const footerPlaceholder = document.getElementById("footer-placeholder");
+            if (footerPlaceholder) footerPlaceholder.innerHTML = footerHTML;
         })
         .catch(err => console.error("Error loading footer:", err));
 });
 
-function highlightActiveLink(rootPath) {
+function highlightActiveLink() {
     const currentPath = window.location.pathname;
+    // Normalize path to ignore trailing slash if any, for comparison
+    // e.g. /lecturas/slug vs /blog.html
+
     const pageName = currentPath.split("/").pop() || "index.html";
-
-    // Map generic page names to nav IDs if needed, or just match hrefs
-    // Simple logic: Find link that ends with the current page name
-
-    // Special case for root index
-    if (pageName === "index.html" || pageName === "") {
-        // Mark "Acerca de" as active if we are on index
-        // Or specific logic if user wants. Current site has explicit IDs.
-        // Let's look for href matching pageName
-    }
 
     const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
     navLinks.forEach(link => {
         const href = link.getAttribute("href");
         if (!href) return;
 
-        // Clean href of {{ROOT}} or actual root path for comparison
-        // But since we just injected it, it has the real path.
+        // Check if href matches current path logic
+        // If href is absolute /blog.html
 
-        // Check if href ends with page name
-        // Example: href="../blog.html", pageName="blog.html" -> Match
-        if (href.endsWith(pageName)) {
+        // Simple logic: if href ends with the current page name (and isn't just /)
+        if (href === currentPath || (href !== "/" && currentPath.endsWith(href))) {
             link.classList.add("active");
-            // Also add 'bold' id style if that's what the user uses for active state?
-            // Looking at CSS, #bold is used for "Acerca de" specifically, not generic active.
-            // But usually active state makes font bold.
+        } else if (href === "/" && (currentPath === "/" || currentPath === "/index.html")) {
+            link.classList.add("active");
         }
     });
 
-    // Special handling for Mi Espacio which has specific styling requirements?
-    // User had id="bold" on "Mi espacio" in the mi-espacio.html static file.
-    // We can replicate this by checking page name.
-
+    // Special handling for Mi Espacio
     if (pageName === "mi-espacio.html") {
         const miEspacioLink = document.querySelector('a[href*="mi-espacio.html"]');
         if (miEspacioLink) miEspacioLink.classList.add("bold-active");
     }
 
     if (pageName === "index.html" || pageName === "") {
-        const aboutLink = document.querySelector('a[href*="index.html"]:not(.navbar-brand)');
-        // "Acerca de" points to index.html usually
-        // Actually, user had id="bold" on "Acerca de" in index.html.
         const links = document.querySelectorAll('a[href*="index.html"]');
         links.forEach(l => {
             if (l.textContent.includes("Acerca de")) {
@@ -163,97 +109,9 @@ function initializeNavbarToggle() {
 }
 
 // ==========================================
-// Smart Navigation for Local Compatibility
-// ==========================================
-// This allows "Clean URLs" (e.g., /lecturas/slug) to work locally
-// by falling back to query params (e.g., /lectura.html?slug=slug)
-// if the clean URL returns a 404 (common in Live Server/local files).
-
-// ==========================================
-// Smart Navigation for Local Compatibility
-// ==========================================
-function setupSmartNavigation() {
-    document.addEventListener('click', (e) => {
-        const link = e.target.closest('a');
-        if (!link) return;
-
-        const href = link.getAttribute('href');
-        if (!href) return;
-
-        // Matches: lecturas/..., dietas/..., rutinas/... (optional leading slash)
-        const isCleanUrl = /^\/?(lecturas|dietas|rutinas)\//.test(href);
-
-        if (isCleanUrl) {
-            const hostname = window.location.hostname;
-            const isLocal = hostname === 'localhost' ||
-                hostname === '127.0.0.1' ||
-                window.location.protocol === 'file:';
-
-            if (isLocal) {
-                // ALWAYS prevent default immediately on local to control navigation
-                e.preventDefault();
-                e.stopImmediatePropagation();
-
-                const navigate = async () => {
-                    let shouldUseFallback = false;
-
-                    // If simple file protocol, always fallback
-                    if (window.location.protocol === 'file:') {
-                        shouldUseFallback = true;
-                    } else {
-                        // Check if the clean URL is supported (e.g. Vercel Dev)
-                        try {
-                            const response = await fetch(href, { method: 'HEAD' });
-                            if (response.ok) {
-                                window.location.href = href;
-                                return;
-                            } else {
-                                shouldUseFallback = true;
-                            }
-                        } catch (err) {
-                            shouldUseFallback = true;
-                        }
-                    }
-
-                    if (shouldUseFallback) {
-                        // Convert to fallback URL: file.html?slug=slug
-                        let cleanPath = href.startsWith('/') ? href.substring(1) : href;
-                        const parts = cleanPath.split('/');
-                        const folder = parts[0];
-                        const slug = parts[1];
-
-                        const map = {
-                            'lecturas': 'lectura.html',
-                            'dietas': 'dieta.html',
-                            'rutinas': 'rutina.html'
-                        };
-
-                        const file = map[folder];
-                        if (file && slug) {
-                            console.log(`[SmartNav] Redirecting to fallback: ${file}?slug=${slug}`);
-                            window.location.href = `${file}?slug=${slug}`;
-                        } else {
-                            // Can't map, try original
-                            window.location.href = href;
-                        }
-                    }
-                };
-
-                navigate();
-            }
-        }
-    });
-}
-
-// Initialize Smart Nav
-setupSmartNavigation();
-
-// ==========================================
 // Vercel Analytics Initialization
 // ==========================================
-// Uses dynamic import to load from CDN without requiring type="module" in HTML
 (function initAnalytics() {
-    // We use a specific version to ensure stability
     import('https://esm.sh/@vercel/analytics@1.1.1')
         .then(module => {
             if (module && typeof module.inject === 'function') {
@@ -262,7 +120,6 @@ setupSmartNavigation();
             }
         })
         .catch(err => {
-            // It's expected to fail if offline or blocked, so we just warn
             console.debug('[Analytics] Could not load analytics:', err);
         });
 })();
