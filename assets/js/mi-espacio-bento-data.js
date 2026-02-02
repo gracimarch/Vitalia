@@ -239,16 +239,16 @@ const getDailyReflection = () => {
 };
 
 const foodRecommendations = [
-    { title: "Smoothie verde", type: "Desayuno", plan: "Energía y Vitalidad", url: "dietas/dieta.html?slug=energia-y-vitalidad" },
-    { title: "Ensalada con pollo a la plancha", type: "Almuerzo", plan: "Energía y Vitalidad", url: "dietas/dieta.html?slug=energia-y-vitalidad" },
-    { title: "Arroz integral con vegetales", type: "Cena", plan: "Energía y Vitalidad", url: "dietas/dieta.html?slug=energia-y-vitalidad" },
-    { title: "Batido de leche con fresas", type: "Desayuno", plan: "Energía y Vitalidad", url: "dietas/dieta.html?slug=energia-y-vitalidad" },
-    { title: "Salmón a la plancha", type: "Almuerzo", plan: "Energía y Vitalidad", url: "dietas/dieta.html?slug=energia-y-vitalidad" },
-    { title: "Buddha bowl de quinoa", type: "Almuerzo", plan: "Express Vegetariana", url: "dietas/dieta.html?slug=express-vegetariana" },
-    { title: "Crema de calabaza y jengibre", type: "Cena", plan: "Express Vegetariana", url: "dietas/dieta.html?slug=express-vegetariana" },
-    { title: "Tostadas con aguacate", type: "Desayuno", plan: "Express Vegetariana", url: "dietas/dieta.html?slug=express-vegetariana" },
-    { title: "Tacos de lechuga y garbanzos", type: "Almuerzo", plan: "Express Vegetariana", url: "dietas/dieta.html?slug=express-vegetariana" },
-    { title: "Pasta integral con pesto", type: "Cena", plan: "Express Vegetariana", url: "dietas/dieta.html?slug=express-vegetariana" }
+    { title: "Smoothie verde", type: "Desayuno", plan: "Energía y Vitalidad", url: "dieta.html?slug=energia-y-vitalidad" },
+    { title: "Ensalada con pollo a la plancha", type: "Almuerzo", plan: "Energía y Vitalidad", url: "dieta.html?slug=energia-y-vitalidad" },
+    { title: "Arroz integral con vegetales", type: "Cena", plan: "Energía y Vitalidad", url: "dieta.html?slug=energia-y-vitalidad" },
+    { title: "Batido de leche con fresas", type: "Desayuno", plan: "Energía y Vitalidad", url: "dieta.html?slug=energia-y-vitalidad" },
+    { title: "Salmón a la plancha", type: "Almuerzo", plan: "Energía y Vitalidad", url: "dieta.html?slug=energia-y-vitalidad" },
+    { title: "Buddha bowl de quinoa", type: "Almuerzo", plan: "Express Vegetariana", url: "dieta.html?slug=express-vegetariana" },
+    { title: "Crema de calabaza y jengibre", type: "Cena", plan: "Express Vegetariana", url: "dieta.html?slug=express-vegetariana" },
+    { title: "Tostadas con aguacate", type: "Desayuno", plan: "Express Vegetariana", url: "dieta.html?slug=express-vegetariana" },
+    { title: "Tacos de lechuga y garbanzos", type: "Almuerzo", plan: "Express Vegetariana", url: "dieta.html?slug=express-vegetariana" },
+    { title: "Pasta integral con pesto", type: "Cena", plan: "Express Vegetariana", url: "dieta.html?slug=express-vegetariana" }
 ];
 
 const getDailyFoodRecommendation = () => {
@@ -379,6 +379,6 @@ window.vitaliaBentoData = [
                 </div>
             </div>
         ),
-        onClick: () => window.location.href = 'rutinas/rutina.html?slug=ejercicio-en-15-min'
+        onClick: () => window.location.href = 'rutina.html?slug=ejercicio-en-15-min'
     }
 ];

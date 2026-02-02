@@ -18,7 +18,7 @@
 
     async function fetchDietas() {
         try {
-            const response = await fetch('../data/dietas.json');
+            const response = await fetch('data/dietas.json');
             if (!response.ok) {
                 throw new Error('No se pudo cargar el archivo de datos');
             }
@@ -136,7 +136,7 @@
                             <h6 class="rtitle">${recipe.title}</h6>
                             <figure class="timealign">
                                 <picture>
-                                    <img src="../assets/images/ui/meal-icon.webp" alt="" />
+                                    <img src="assets/images/ui/meal-icon.webp" alt="" />
                                 </picture>
                                 <figcaption>${recipe.time}</figcaption>
                             </figure>
