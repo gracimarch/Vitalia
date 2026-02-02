@@ -340,17 +340,17 @@ th:first-child {
 }
 
 .bg-ejercicio-1 {
-    background-image: url('../images/sections/rut1BloqueEjercicios.webp');
+    background-image: url('/assets/images/sections/rut1BloqueEjercicios.webp');
 }
 
 .bg-ejercicio-2 {
-    background-image: url('../images/sections/rut2BloqueEjercicios.webp');
+    background-image: url('/assets/images/sections/rut2BloqueEjercicios.webp');
 }
 
 .bg-ejercicio-3 {
-    background-image: url('../images/sections/rut3BloqueEjercicios.webp');
+    background-image: url('/assets/images/sections/rut3BloqueEjercicios.webp');
 }
 
 .bg-ejercicio-4 {
-    background-image: url('../images/sections/rut4BloqueEjercicios.webp');
+    background-image: url('/assets/images/sections/rut4BloqueEjercicios.webp');
 }
