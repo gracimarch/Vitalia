@@ -95,7 +95,7 @@
                                         <h4 class="mealtitle">${card.title}</h4>
                                         <figure class="author-wrapper">
                                             <picture>
-                                                <img src="${card.icon}" alt="" />
+                                                <img src="${getPath(card.icon)}" alt="" />
                                             </picture>
                                             <figcaption>${card.time}</figcaption>
                                         </figure>
