@@ -28,7 +28,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/formulario/form.html</loc>
+  <loc>https://vitalia-selfcare.vercel.app/form.html</loc>
   <lastmod>2024-11-12T00:31:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -43,47 +43,82 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/beneficios-de-incorporar-un-enfoque-integral-en-el-trabajo.html</loc>
+  <loc>https://vitalia-selfcare.vercel.app/lectura.html?slug=pausas-activas</loc>
   <lastmod>2024-11-12T00:31:18+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/autocuidado-peque%C3%B1os-habitos-que-hacen-la-diferencia.html</loc>
+  <loc>https://vitalia-selfcare.vercel.app/lectura.html?slug=enfoque-integral-trabajo</loc>
   <lastmod>2024-11-12T00:31:18+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/pausas-activas-que-son-y-beneficios-para-tu-productividad.html</loc>
+  <loc>https://vitalia-selfcare.vercel.app/lectura.html?slug=autocuidado-habitos</loc>
   <lastmod>2024-11-12T00:31:18+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/como-llevar-un-estilo-de-vida-mas-sostenible.html</loc>
+  <loc>https://vitalia-selfcare.vercel.app/lectura.html?slug=siestas-cortas</loc>
   <lastmod>2024-11-12T00:31:19+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/energia-y-vitalidad.html</loc>
+  <loc>https://vitalia-selfcare.vercel.app/lectura.html?slug=tecnicas-estres</loc>
   <lastmod>2024-11-12T00:31:19+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/beneficios-siestas-cortas-como-tomarlas-correctamente.html</loc>
+  <loc>https://vitalia-selfcare.vercel.app/lectura.html?slug=alimentacion-consciente</loc>
   <lastmod>2024-11-12T00:31:19+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/como-crear-rutina-nocturna-para-mejor-sueno.html</loc>
+  <loc>https://vitalia-selfcare.vercel.app/lectura.html?slug=actividad-fisica-facil</loc>
   <lastmod>2024-11-12T00:31:19+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/relajacion-y-bienestar-salud-mental-en-personas-con-movilidad-reducida.html</loc>
+  <loc>https://vitalia-selfcare.vercel.app/lectura.html?slug=vida-sostenible</loc>
   <lastmod>2024-11-12T00:31:19+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/alimentacion-consciente-que-es-como-practicarla.html</loc>
+  <loc>https://vitalia-selfcare.vercel.app/lectura.html?slug=dieta-plantas</loc>
+  <lastmod>2024-11-12T00:31:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/lectura.html?slug=rutina-nocturna</loc>
+  <lastmod>2024-11-12T00:31:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/lectura.html?slug=tecnica-15-minutos</loc>
+  <lastmod>2024-11-12T00:31:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/lectura.html?slug=mente-activa</loc>
+  <lastmod>2024-11-12T00:31:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/dieta.html?slug=aliviar-la-ansiedad-en-dias-estresantes</loc>
+  <lastmod>2024-11-12T00:31:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/dieta.html?slug=dias-ocupados</loc>
+  <lastmod>2024-11-12T00:31:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/dieta.html?slug=energia-y-vitalidad</loc>
+  <lastmod>2024-11-12T00:31:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/rutina.html?slug=ejercicio-en-15-min</loc>
   <lastmod>2024-11-12T00:31:19+00:00</lastmod>
   <priority>0.64</priority>
 </url>

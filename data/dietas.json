@@ -5,7 +5,7 @@
             "title": "Dieta para calmar la ansiedad en días estresantes",
             "type": "Tipo de Alimentación: Antiestrés y equilibrada",
             "duration": "1 día",
-            "image": "../assets/images/articles/imgArticuloSaludMentalDiscapacidad.webp",
+            "image": "assets/images/articles/imgArticuloSaludMentalDiscapacidad.webp",
             "introduction": "<p>¿Se acerca un evento importante, un examen o simplemente vives un día lleno de estrés? Este plan está diseñado para <strong class=\"underline\">ayudarte a calmar la ansiedad</strong> a través de alimentos nutritivos que promueven el equilibrio emocional, la concentración y el bienestar general. Cada opción ha sido seleccionada cuidadosamente para brindarte una experiencia alimentaria reconfortante y práctica.</p>",
             "schedule": [
                 {
@@ -17,7 +17,7 @@
                                 {
                                     "title": "Tostadas integrales con aguacate y huevo pochado",
                                     "time": "Listo en 10 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe1"
                                 }
                             ]
@@ -28,7 +28,7 @@
                                 {
                                     "title": "Yogurt con frutillas y miel",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -43,7 +43,7 @@
                                 {
                                     "title": "Ensalada de quinoa con pollo y espinacas",
                                     "time": "Listo en 20 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe2"
                                 }
                             ]
@@ -54,7 +54,7 @@
                                 {
                                     "title": "Wrap de vegetales con hummus",
                                     "time": "Listo en 15 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe3"
                                 }
                             ]
@@ -70,7 +70,7 @@
                                 {
                                     "title": "Batido de plátano",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "icon": "assets/images/ui/ray-icon.webp",
                                     "recipeId": "recipe4"
                                 }
                             ]
@@ -81,7 +81,7 @@
                                 {
                                     "title": "Mix de frutos secos y pasas",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -96,7 +96,7 @@
                                 {
                                     "title": "Sopa de verduras reconfortante",
                                     "time": "Listo en 25 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe5"
                                 }
                             ]
@@ -107,7 +107,7 @@
                                 {
                                     "title": "Ensalada tibia de salmón y aguacate",
                                     "time": "Listo en 15 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe6"
                                 }
                             ]
@@ -120,7 +120,7 @@
                     "id": "recipe1",
                     "title": "Tostadas integrales con aguacate y huevo pochado",
                     "time": "Listo en 10 minutos",
-                    "image": "../assets/images/imgTostadasAguacateHuevo.webp",
+                    "image": "assets/images/imgTostadasAguacateHuevo.webp",
                     "ingredients": [
                         "2 rebanadas de pan integral",
                         "1 aguacate maduro",
@@ -133,7 +133,7 @@
                     "id": "recipe2",
                     "title": "Ensalada de quinoa con pollo y espinacas",
                     "time": "Listo en 20 minutos",
-                    "image": "../assets/images/imgEnsaladaQuinoaPollo.webp",
+                    "image": "assets/images/imgEnsaladaQuinoaPollo.webp",
                     "ingredients": [
                         "1 taza de quinoa cocida",
                         "150g de pechuga de pollo a la plancha, en tiras",
@@ -147,7 +147,7 @@
                     "id": "recipe3",
                     "title": "Wrap de vegetales con hummus",
                     "time": "Listo en 15 minutos",
-                    "image": "../assets/images/imgWrapVegetalesHummus.webp",
+                    "image": "assets/images/imgWrapVegetalesHummus.webp",
                     "ingredients": [
                         "1 tortilla integral",
                         "2 cucharadas de hummus",
@@ -161,7 +161,7 @@
                     "id": "recipe4",
                     "title": "Batido de plátano",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/imgSmoothiePlatanoEspinaca.webp",
+                    "image": "assets/images/imgSmoothiePlatanoEspinaca.webp",
                     "ingredients": [
                         "1 plátano",
                         "1 taza de leche (vegetal o común)",
@@ -174,7 +174,7 @@
                     "id": "recipe5",
                     "title": "Sopa de verduras reconfortante",
                     "time": "Listo en 25 minutos",
-                    "image": "../assets/images/imgSopaVerduras.webp",
+                    "image": "assets/images/imgSopaVerduras.webp",
                     "ingredients": [
                         "1 zanahoria picada",
                         "1/2 cebolla picada",
@@ -189,7 +189,7 @@
                     "id": "recipe6",
                     "title": "Ensalada tibia de salmón y aguacate",
                     "time": "Listo en 15 minutos",
-                    "image": "../assets/images/imgEnsaladaSalmonAguacate.webp",
+                    "image": "assets/images/imgEnsaladaSalmonAguacate.webp",
                     "ingredients": [
                         "1 filete de salmón a la plancha, desmenuzado",
                         "1/2 aguacate en cubos",
@@ -225,7 +225,7 @@
             "title": "Dieta Saludable para Días Ocupados",
             "type": "Tipo de Alimentación: Opciones rápidas y nutritivas",
             "duration": "1 día",
-            "image": "../assets/images/articles/imgArticuloAlimentacionConsciente.webp",
+            "image": "assets/images/articles/imgArticuloAlimentacionConsciente.webp",
             "introduction": "<p>Este plan diario está diseñado <strong class=\"underline\">para aquellas personas con agendas apretadas</strong> que desean mantener una alimentación equilibrada y saludable sin invertir mucho tiempo. Con opciones variadas en cada comida, podrás escoger la que mejor se adapte a tus gustos y necesidades, garantizando <strong class=\"underline\">energía y nutrición </strong>a lo largo del día.</p>",
             "schedule": [
                 {
@@ -237,7 +237,7 @@
                                 {
                                     "title": "Avena Express con Frutas",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "icon": "assets/images/ui/ray-icon.webp",
                                     "recipeId": "recipe1"
                                 }
                             ]
@@ -248,7 +248,7 @@
                                 {
                                     "title": "Batido Verde Refrescante",
                                     "time": "Listo en 7 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe2"
                                 }
                             ]
@@ -264,7 +264,7 @@
                                 {
                                     "title": "Wrap de Pavo y Vegetales",
                                     "time": "Listo en 15 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe3"
                                 }
                             ]
@@ -275,7 +275,7 @@
                                 {
                                     "title": "Ensalada de Quinoa y Pollo",
                                     "time": "Listo en 20 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe4"
                                 }
                             ]
@@ -291,7 +291,7 @@
                                 {
                                     "title": "Yogurt con Granola y Miel",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         },
@@ -301,7 +301,7 @@
                                 {
                                     "title": "Barra de Frutas Casera",
                                     "time": "Listo en 10 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe6"
                                 }
                             ]
@@ -317,7 +317,7 @@
                                 {
                                     "title": "Salmón a la Plancha con Verduras",
                                     "time": "Listo en 25 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe7"
                                 }
                             ]
@@ -328,7 +328,7 @@
                                 {
                                     "title": "Tacos de Lechuga con Tofu",
                                     "time": "Listo en 20 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe8"
                                 }
                             ]
@@ -341,7 +341,7 @@
                     "id": "recipe1",
                     "title": "Avena Express con Frutas",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/imgDietasAvenaFrutas.webp",
+                    "image": "assets/images/imgDietasAvenaFrutas.webp",
                     "ingredients": [
                         "1/2 taza de avena",
                         "1 taza de leche",
@@ -355,7 +355,7 @@
                     "id": "recipe2",
                     "title": "Batido Verde Refrescante",
                     "time": "Listo en 7 minutos",
-                    "image": "../assets/images/food/imgDietasSmothieVerde.webp",
+                    "image": "assets/images/food/imgDietasSmothieVerde.webp",
                     "ingredients": [
                         "1 taza de espinaca fresca",
                         "1/2 pepino",
@@ -368,7 +368,7 @@
                     "id": "recipe3",
                     "title": "Wrap de Pavo y Vegetales",
                     "time": "Listo en 15 minutos",
-                    "image": "../assets/images/food/imgDietasWrapPavo.webp",
+                    "image": "assets/images/food/imgDietasWrapPavo.webp",
                     "ingredients": [
                         "1 tortilla integral",
                         "3 lonchas de pavo",
@@ -382,7 +382,7 @@
                     "id": "recipe4",
                     "title": "Ensalada de Quinoa y Pollo",
                     "time": "Listo en 20 minutos",
-                    "image": "../assets/images/imgEnsaladaQuinoaPollo.webp",
+                    "image": "assets/images/imgEnsaladaQuinoaPollo.webp",
                     "ingredients": [
                         "1 taza de quinoa cocida",
                         "100g de pechuga de pollo a la plancha",
@@ -396,7 +396,7 @@
                     "id": "recipe6",
                     "title": "Barra de Frutas Casera",
                     "time": "Listo en 10 minutos",
-                    "image": "../assets/images/imgBarraFrutas.webp",
+                    "image": "assets/images/imgBarraFrutas.webp",
                     "ingredients": [
                         "1 plátano machacado",
                         "1/2 taza de copos de avena",
@@ -409,7 +409,7 @@
                     "id": "recipe7",
                     "title": "Salmón a la Plancha con Verduras",
                     "time": "Listo en 25 minutos",
-                    "image": "../assets/images/imgDietasSalmonBrocoliZanahorias.webp",
+                    "image": "assets/images/imgDietasSalmonBrocoliZanahorias.webp",
                     "ingredients": [
                         "1 filete de salmón",
                         "Brocoli y zanahorias al vapor",
@@ -422,7 +422,7 @@
                     "id": "recipe8",
                     "title": "Tacos de Lechuga con Tofu",
                     "time": "Listo en 20 minutos",
-                    "image": "../assets/images/imgTacosTofu.webp",
+                    "image": "assets/images/imgTacosTofu.webp",
                     "ingredients": [
                         "150g de tofu firme",
                         "Hojas de lechuga",
@@ -457,7 +457,7 @@
             "title": "Plan Energía y Vitalidad",
             "type": "Tipo de Alimentación: Balanceada y rica en nutrientes",
             "duration": "1 semana",
-            "image": "../assets/images/food/imgDietasEnergiaVitalidad.webp",
+            "image": "assets/images/food/imgDietasEnergiaVitalidad.webp",
             "introduction": "<p>Este plan está diseñado para personas que buscan mantener <strong class=\"underline\">altos niveles de energía</strong> a lo largo de la semana. La dieta se basa en alimentos integrales, <strong class=\"underline\">fáciles de digerir, ricos en fibra, y con propiedades antioxidantes</strong>, evitando el consumo excesivo de calorías que puedan sobrecargar al sistema digestivo.</p>",
             "schedule": [
                 {
@@ -469,7 +469,7 @@
                                 {
                                     "title": "Smoothie verde",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe1"
                                 }
                             ]
@@ -480,7 +480,7 @@
                                 {
                                     "title": "Ensalada con pollo a la plancha",
                                     "time": "Listo en 20 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe2"
                                 }
                             ]
@@ -491,7 +491,7 @@
                                 {
                                     "title": "Arroz integral con vegetales y pechuga de pollo",
                                     "time": "Listo en 40 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe3"
                                 }
                             ]
@@ -502,7 +502,7 @@
                                 {
                                     "title": "Manzana con almendras",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -517,13 +517,13 @@
                                 {
                                     "title": "Batido de leche con fresas y avena",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe4"
                                 },
                                 {
                                     "title": "Pan con queso",
                                     "time": "Listo en 1 minuto",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         },
@@ -533,7 +533,7 @@
                                 {
                                     "title": "Salmón a la plancha con arroz y brócoli",
                                     "time": "Listo en 25 min",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe5"
                                 }
                             ]
@@ -544,7 +544,7 @@
                                 {
                                     "title": "Revuelto de huevos con cebolla y espinacas",
                                     "time": "Listo en 10 min",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe6"
                                 }
                             ]
@@ -555,7 +555,7 @@
                                 {
                                     "title": "Yogurt con plátano",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -570,7 +570,7 @@
                                 {
                                     "title": "Avena con frutas y yogurt",
                                     "time": "Listo en 10 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe7"
                                 }
                             ]
@@ -581,7 +581,7 @@
                                 {
                                     "title": "Arroz integral con tofu y vegetales",
                                     "time": "Listo en 25 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe8"
                                 }
                             ]
@@ -592,7 +592,7 @@
                                 {
                                     "title": "Ensalada de garbanzos con vegetales frescos",
                                     "time": "Listo en 15 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe9"
                                 }
                             ]
@@ -603,7 +603,7 @@
                                 {
                                     "title": "Pera con queso fresco",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -618,7 +618,7 @@
                                 {
                                     "title": "Batido de leche con mango y avena",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe10"
                                 }
                             ]
@@ -629,7 +629,7 @@
                                 {
                                     "title": "Ensalada templada de salmón con espárragos",
                                     "time": "Listo en 20 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe11"
                                 }
                             ]
@@ -640,7 +640,7 @@
                                 {
                                     "title": "Sopa ligera de lentejas y verduras",
                                     "time": "Listo en 30 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe12"
                                 }
                             ]
@@ -651,7 +651,7 @@
                                 {
                                     "title": "Palitos de zanahoria",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -666,7 +666,7 @@
                                 {
                                     "title": "Smoothie de mango y pera",
                                     "time": "Listo en 7 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe13"
                                 }
                             ]
@@ -677,7 +677,7 @@
                                 {
                                     "title": "Wrap de pollo y vegetales",
                                     "time": "Listo en 15 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe14"
                                 }
                             ]
@@ -688,7 +688,7 @@
                                 {
                                     "title": "Ensalada de atún con vegetales frescos",
                                     "time": "Listo en 10 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe15"
                                 }
                             ]
@@ -699,7 +699,7 @@
                                 {
                                     "title": "Torta en taza saludable de chocolate",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "icon": "assets/images/ui/ray-icon.webp",
                                     "recipeId": "recipe16"
                                 }
                             ]
@@ -712,7 +712,7 @@
                     "id": "recipe1",
                     "title": "Smoothie verde",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/food/imgDietasSmothieVerde.webp",
+                    "image": "assets/images/food/imgDietasSmothieVerde.webp",
                     "ingredients": [
                         "1 plátano",
                         "1 manzana",
@@ -726,7 +726,7 @@
                     "id": "recipe2",
                     "title": "Ensalada con pollo a la plancha",
                     "time": "Listo en 20 minutos",
-                    "image": "../assets/images/food/imgDietasEnsaladaPollo.webp",
+                    "image": "assets/images/food/imgDietasEnsaladaPollo.webp",
                     "ingredients": [
                         "150g de pechuga de pollo",
                         "Lechuga",
@@ -742,7 +742,7 @@
                     "id": "recipe3",
                     "title": "Arroz integral con vegetales y pechuga de pollo",
                     "time": "Listo en 45 minutos",
-                    "image": "../assets/images/imgDietasArrozPollo.jpeg",
+                    "image": "assets/images/imgDietasArrozPollo.jpeg",
                     "ingredients": [
                         "1 taza de arroz integral (o común)",
                         "150g de pechuga de pollo",
@@ -757,7 +757,7 @@
                     "id": "recipe4",
                     "title": "Batido de leche con fresas y avena",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/food/imgDietasBatidoFresa.webp",
+                    "image": "assets/images/food/imgDietasBatidoFresa.webp",
                     "ingredients": [
                         "1 taza de leche",
                         "5 fresas",
@@ -771,7 +771,7 @@
                     "id": "recipe5",
                     "title": "Salmón a la plancha con arroz y brócoli",
                     "time": "Listo en 20 minutos",
-                    "image": "../assets/images/food/imgDietasSalmonBrocoli.webp",
+                    "image": "assets/images/food/imgDietasSalmonBrocoli.webp",
                     "ingredients": [
                         "1 filete de salmón",
                         "1 taza de arroz cocido integral (o común)",
@@ -784,7 +784,7 @@
                     "id": "recipe6",
                     "title": "Revuelto de huevos con cebolla y espinacas",
                     "time": "Listo en 10 minutos",
-                    "image": "../assets/images/food/imgDietasArrozEspinaca.webp",
+                    "image": "assets/images/food/imgDietasArrozEspinaca.webp",
                     "ingredients": [
                         "2 huevos",
                         "1/4 de cebolla picada",
@@ -797,7 +797,7 @@
                     "id": "recipe7",
                     "title": "Avena con frutas y yogurt",
                     "time": "Listo en 10 minutos",
-                    "image": "../assets/images/imgDietasAvenaFrutasYogurt.webp",
+                    "image": "assets/images/imgDietasAvenaFrutasYogurt.webp",
                     "ingredients": [
                         "1/2 taza de avena",
                         "1 taza de leche",
@@ -811,7 +811,7 @@
                     "id": "recipe8",
                     "title": "Arroz integral con tofu y vegetales",
                     "time": "Listo en 25 minutos",
-                    "image": "../assets/images/imgDietasArrozTofuVegetales.webp",
+                    "image": "assets/images/imgDietasArrozTofuVegetales.webp",
                     "ingredients": [
                         "1 taza de arroz integral",
                         "150g de tofu",
@@ -826,7 +826,7 @@
                     "id": "recipe9",
                     "title": "Ensalada de garbanzos con vegetales frescos",
                     "time": "Listo en 15 minutos",
-                    "image": "../assets/images/imgDietasEnsaladaGarbanzos.webp",
+                    "image": "assets/images/imgDietasEnsaladaGarbanzos.webp",
                     "ingredients": [
                         "1 taza de garbanzos cocidos",
                         "1/2 taza de espinacas",
@@ -840,7 +840,7 @@
                     "id": "recipe10",
                     "title": "Batido de leche con mango y avena",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/imgDietasBatidoMangoAvena.webp",
+                    "image": "assets/images/imgDietasBatidoMangoAvena.webp",
                     "ingredients": [
                         "1 taza de leche",
                         "1/2 taza de avena",
@@ -853,7 +853,7 @@
                     "id": "recipe11",
                     "title": "Ensalada templada de salmón con espárragos",
                     "time": "Listo en 20 minutos",
-                    "image": "../assets/images/imgDietasEnsaladaSalmonEspárragos.webp",
+                    "image": "assets/images/imgDietasEnsaladaSalmonEspárragos.webp",
                     "ingredients": [
                         "1 filete de salmón",
                         "1 taza de espárragos",
@@ -867,7 +867,7 @@
                     "id": "recipe12",
                     "title": "Sopa ligera de lentejas y verduras",
                     "time": "Listo en 30 minutos",
-                    "image": "../assets/images/imgDietasSopaLentejasVerduras.webp",
+                    "image": "assets/images/imgDietasSopaLentejasVerduras.webp",
                     "ingredients": [
                         "1 taza de lentejas",
                         "1 zanahoria picada",
@@ -882,7 +882,7 @@
                     "id": "recipe13",
                     "title": "Smoothie de mango y pera",
                     "time": "Listo en 7 minutos",
-                    "image": "../assets/images/imgDietasSmoothieMangoPera.webp",
+                    "image": "assets/images/imgDietasSmoothieMangoPera.webp",
                     "ingredients": [
                         "1 mango",
                         "1 pera",
@@ -895,7 +895,7 @@
                     "id": "recipe14",
                     "title": "Wrap de pollo y vegetales",
                     "time": "Listo en 15 minutos",
-                    "image": "../assets/images/imgDietasWrapPolloVegetales.webp",
+                    "image": "assets/images/imgDietasWrapPolloVegetales.webp",
                     "ingredients": [
                         "1 pechuga de pollo",
                         "Hojas de lechuga",
@@ -910,7 +910,7 @@
                     "id": "recipe15",
                     "title": "Ensalada de atún con vegetales frescos",
                     "time": "Listo en 10 minutos",
-                    "image": "../assets/images/ui/meal-icon.webp",
+                    "image": "assets/images/ui/meal-icon.webp",
                     "ingredients": [
                         "1 lata de atún",
                         "Hojas de lechuga",
@@ -924,7 +924,7 @@
                     "id": "recipe16",
                     "title": "Torta en taza saludable de chocolate",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/comidan.webp",
+                    "image": "assets/images/comidan.webp",
                     "ingredients": [
                         "1 huevo",
                         "3 cucharaditas de azúcar",
@@ -961,7 +961,7 @@
             "title": "Plan Express para Personas Vegetarianas",
             "type": "Tipo de alimentación: Vegetariana y Vegana",
             "duration": "1 semana",
-            "image": "../assets/images/articles/imgArticuloComeSaludablePlantas.webp",
+            "image": "assets/images/articles/imgArticuloComeSaludablePlantas.webp",
             "introduction": "<p>Este plan ha sido diseñado para quienes llevan una vida ajetreada pero desean disfrutar de una dieta completa y saludable basada en alimentos vegetarianos y veganos. Con recetas rápidas y creativas, cada preparación está pensada para que puedas comer bien sin perder tiempo. ¡Disfruta de cada plato y mantén tu energía a tope!</p>",
             "schedule": [
                 {
@@ -973,7 +973,7 @@
                                 {
                                     "title": "Tostadas integrales con aguacate y tomate",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         },
@@ -983,7 +983,7 @@
                                 {
                                     "title": "Buddha bowl de quinoa y vegetales",
                                     "time": "Listo en 20 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe1"
                                 }
                             ]
@@ -994,7 +994,7 @@
                                 {
                                     "title": "Crema de calabaza y jengibre",
                                     "time": "Listo en 30 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe2"
                                 }
                             ]
@@ -1005,7 +1005,7 @@
                                 {
                                     "title": "Plátano con mantequilla de almendras",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -1020,7 +1020,7 @@
                                 {
                                     "title": "Smoothie de espinaca, plátano y kiwi",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "icon": "assets/images/ui/ray-icon.webp",
                                     "recipeId": "recipe3"
                                 }
                             ]
@@ -1031,7 +1031,7 @@
                                 {
                                     "title": "Tacos con lechuga con garbanzos y maíz",
                                     "time": "Listo en 15 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe4"
                                 }
                             ]
@@ -1042,7 +1042,7 @@
                                 {
                                     "title": "Pasta integral con pesto de albahaca y espinacas",
                                     "time": "Listo en 25 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe5"
                                 }
                             ]
@@ -1053,7 +1053,7 @@
                                 {
                                     "title": "Rodajas de pepino con hummus",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -1068,7 +1068,7 @@
                                 {
                                     "title": "Parfait de yogurt vegano con granola y frutas",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "icon": "assets/images/ui/ray-icon.webp",
                                     "recipeId": "recipe6"
                                 }
                             ]
@@ -1079,7 +1079,7 @@
                                 {
                                     "title": "Ensalada tibia de lentejas y vegetales asados",
                                     "time": "Listo en 30 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe7"
                                 }
                             ]
@@ -1090,7 +1090,7 @@
                                 {
                                     "title": "Sopa fría de pepino y menta",
                                     "time": "Listo en 10 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe8"
                                 }
                             ]
@@ -1101,7 +1101,7 @@
                                 {
                                     "title": "Palitos de zanahoria",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -1116,7 +1116,7 @@
                                 {
                                     "title": "Batido de remolacha, manzana y jengibre",
                                     "time": "Listo en 7 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe9"
                                 }
                             ]
@@ -1127,7 +1127,7 @@
                                 {
                                     "title": "Wrap vegano de hummus y vegetales",
                                     "time": "Listo en 15 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe10"
                                 }
                             ]
@@ -1138,7 +1138,7 @@
                                 {
                                     "title": "Curry de garbanzos y espinacas",
                                     "time": "Listo en 20 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe11"
                                 }
                             ]
@@ -1149,7 +1149,7 @@
                                 {
                                     "title": "Nueces y pasas",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -1164,7 +1164,7 @@
                                 {
                                     "title": "Leche de almendra con avena y frutos rojos",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         },
@@ -1174,7 +1174,7 @@
                                 {
                                     "title": "Bowl de falafel con tabulé y salsa tahini",
                                     "time": "Listo en 25 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe12"
                                 }
                             ]
@@ -1185,7 +1185,7 @@
                                 {
                                     "title": "Pizza de coliflor con vegetales",
                                     "time": "Listo en 35 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe13"
                                 }
                             ]
@@ -1196,7 +1196,7 @@
                                 {
                                     "title": "Rodajas de manzana con canela",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -1208,7 +1208,7 @@
                     "id": "recipe1",
                     "title": "Buddha bowl de quinoa y vegetales",
                     "time": "Listo en 20 minutos",
-                    "image": "../assets/images/imgDietasBuddhaBowl.webp",
+                    "image": "assets/images/imgDietasBuddhaBowl.webp",
                     "ingredients": [
                         "1 taza de quinoa cocida",
                         "1/2 taza de garbanzos asados",
@@ -1223,7 +1223,7 @@
                     "id": "recipe2",
                     "title": "Crema de calabaza y jengibre",
                     "time": "Listo en 30 minutos",
-                    "image": "../assets/images/imgDietasCremaCalabaza.webp",
+                    "image": "assets/images/imgDietasCremaCalabaza.webp",
                     "ingredients": [
                         "400g de calabaza",
                         "1 trozo pequeño de jengibre",
@@ -1237,7 +1237,7 @@
                     "id": "recipe3",
                     "title": "Smoothie de espinaca, plátano y kiwi",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/food/imgDietasSmothieVerde.webp",
+                    "image": "assets/images/food/imgDietasSmothieVerde.webp",
                     "ingredients": [
                         "1 puñado de espinacas",
                         "1 plátano",
@@ -1250,7 +1250,7 @@
                     "id": "recipe4",
                     "title": "Tacos con lechuga con garbanzos y maíz",
                     "time": "Listo en 15 minutos",
-                    "image": "../assets/images/imgDietasTacosVeganos.webp",
+                    "image": "assets/images/imgDietasTacosVeganos.webp",
                     "ingredients": [
                         "Hojas de lechuga",
                         "1 taza de garbanzos cocidos",
@@ -1264,7 +1264,7 @@
                     "id": "recipe5",
                     "title": "Pasta integral con pesto de albahaca y espinacas",
                     "time": "Listo en 25 minutos",
-                    "image": "../assets/images/imgDietasPastaPesto.webp",
+                    "image": "assets/images/imgDietasPastaPesto.webp",
                     "ingredients": [
                         "200g de pasta integral",
                         "1 manojo de albahaca fresca",
@@ -1278,7 +1278,7 @@
                     "id": "recipe6",
                     "title": "Parfait de yogurt vegano con granola y frutas",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/imgDietasParfaitVegano.webp",
+                    "image": "assets/images/imgDietasParfaitVegano.webp",
                     "ingredients": [
                         "1 taza de yogurt vegano",
                         "1/2 taza de granola",
@@ -1290,7 +1290,7 @@
                     "id": "recipe7",
                     "title": "Ensalada tibia de lentejas y vegetales asados",
                     "time": "Listo en 30 minutos",
-                    "image": "../assets/images/imgDietasEnsaladaLentejas.webp",
+                    "image": "assets/images/imgDietasEnsaladaLentejas.webp",
                     "ingredients": [
                         "1 taza de lentejas cocidas",
                         "Calabacín y berenjena asados",
@@ -1304,7 +1304,7 @@
                     "id": "recipe8",
                     "title": "Sopa fría de pepino y menta",
                     "time": "Listo en 10 minutos",
-                    "image": "../assets/images/imgDietasSopaPepino.webp",
+                    "image": "assets/images/imgDietasSopaPepino.webp",
                     "ingredients": [
                         "1 pepino grande",
                         "Hojas de menta",
@@ -1317,7 +1317,7 @@
                     "id": "recipe9",
                     "title": "Batido de remolacha, manzana y jengibre",
                     "time": "Listo en 7 minutos",
-                    "image": "../assets/images/imgDietasBatidoRemolacha.webp",
+                    "image": "assets/images/imgDietasBatidoRemolacha.webp",
                     "ingredients": [
                         "1 remolacha cocida",
                         "1 manzana",
@@ -1330,7 +1330,7 @@
                     "id": "recipe10",
                     "title": "Wrap vegano de hummus y vegetales",
                     "time": "Listo en 15 minutos",
-                    "image": "../assets/images/imgDietasWrapVegano.webp",
+                    "image": "assets/images/imgDietasWrapVegano.webp",
                     "ingredients": [
                         "Tortilla integral",
                         "Hummus casero",
@@ -1343,7 +1343,7 @@
                     "id": "recipe11",
                     "title": "Curry de garbanzos y espinacas",
                     "time": "Listo en 20 minutos",
-                    "image": "../assets/images/imgDietasCurryGarbanzos.webp",
+                    "image": "assets/images/imgDietasCurryGarbanzos.webp",
                     "ingredients": [
                         "1 taza de garbanzos cocidos",
                         "1 taza de espinacas frescas",
@@ -1357,7 +1357,7 @@
                     "id": "recipe12",
                     "title": "Bowl de falafel con tabulé y salsa tahini",
                     "time": "Listo en 25 minutos",
-                    "image": "../assets/images/imgDietasBowlFalafel.webp",
+                    "image": "assets/images/imgDietasBowlFalafel.webp",
                     "ingredients": [
                         "Falafel (casero o preelaborado)",
                         "Tabulé de bulgur y perejil",
@@ -1370,7 +1370,7 @@
                     "id": "recipe13",
                     "title": "Pizza de coliflor con vegetales",
                     "time": "Listo en 35 minutos",
-                    "image": "../assets/images/imgDietasPizzaColiflor.webp",
+                    "image": "assets/images/imgDietasPizzaColiflor.webp",
                     "ingredients": [
                         "Base de coliflor triturada",
                         "Salsa de tomate natural",
@@ -1405,7 +1405,7 @@
             "title": "Fin de semana sin lácteos",
             "type": "Tipo de Alimentación: Sin lácteos, ligero y natural",
             "duration": "1 fin de semana",
-            "image": "../assets/images/food/imgDietasFinSemanaSinLactosa.webp",
+            "image": "assets/images/food/imgDietasFinSemanaSinLactosa.webp",
             "introduction": "<p>Este plan está pensado para quienes buscan cuidar su digestión, reducir la inflamación o simplemente explorar una alimentación más ligera y natural. Es ideal para personas con intolerancia a la lactosa o quienes quieren probar una alternativa saludable <strong class=\"underline\">sin renunciar al sabor ni a la variedad</strong>. Es perfecto para un reset digestivo, una pausa consciente o simplemente para sentirte bien comiendo rico y sin lácteos.</p>",
             "schedule": [
                 {
@@ -1417,7 +1417,7 @@
                                 {
                                     "title": "Porridge de avena con leche de almendra y frutas",
                                     "time": "Listo en 10 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe15"
                                 }
                             ]
@@ -1428,7 +1428,7 @@
                                 {
                                     "title": "Ensalada mediterránea de garbanzos y vegetales",
                                     "time": "Listo en 20 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe16"
                                 }
                             ]
@@ -1439,7 +1439,7 @@
                                 {
                                     "title": "Estofado de ternera con verduras",
                                     "time": "Listo en 40 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe17"
                                 }
                             ]
@@ -1450,7 +1450,7 @@
                                 {
                                     "title": "Rodaja de piña fresca",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -1465,7 +1465,7 @@
                                 {
                                     "title": "Smoothie bowl de frutas tropicales",
                                     "time": "Listo en 7 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe18"
                                 }
                             ]
@@ -1476,7 +1476,7 @@
                                 {
                                     "title": "Quiche sin lactosa de espinacas y champiñones",
                                     "time": "Listo en 30 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe19"
                                 }
                             ]
@@ -1487,7 +1487,7 @@
                                 {
                                     "title": "Sopa minestrone sin queso",
                                     "time": "Listo en 35 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe20"
                                 }
                             ]
@@ -1498,7 +1498,7 @@
                                 {
                                     "title": "Mix de frutos secos",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -1510,7 +1510,7 @@
                     "id": "recipe15",
                     "title": "Porridge de avena con leche de almendra y frutas",
                     "time": "Listo en 10 minutos",
-                    "image": "../assets/images/imgDietasPorridge.webp",
+                    "image": "assets/images/imgDietasPorridge.webp",
                     "ingredients": [
                         "1/2 taza de avena",
                         "1 taza de leche de almendra",
@@ -1523,7 +1523,7 @@
                     "id": "recipe16",
                     "title": "Ensalada mediterránea de garbanzos y vegetales",
                     "time": "Listo en 20 minutos",
-                    "image": "../assets/images/imgDietasEnsaladaMediterranea.webp",
+                    "image": "assets/images/imgDietasEnsaladaMediterranea.webp",
                     "ingredients": [
                         "1 taza de garbanzos cocidos",
                         "Tomate, pepino y pimiento en cubos",
@@ -1537,7 +1537,7 @@
                     "id": "recipe17",
                     "title": "Estofado de ternera con verduras",
                     "time": "Listo en 40 minutos",
-                    "image": "../assets/images/imgDietasEstofadoTernera.webp",
+                    "image": "assets/images/imgDietasEstofadoTernera.webp",
                     "ingredients": [
                         "300g de ternera en cubos",
                         "Patata, zanahoria y apio",
@@ -1550,7 +1550,7 @@
                     "id": "recipe18",
                     "title": "Smoothie bowl de frutas tropicales",
                     "time": "Listo en 7 minutos",
-                    "image": "../assets/images/imgDietasSmoothieTropical.webp",
+                    "image": "assets/images/imgDietasSmoothieTropical.webp",
                     "ingredients": [
                         "1 taza de frutas tropicales congeladas",
                         "1/2 taza de leche de coco",
@@ -1563,7 +1563,7 @@
                     "id": "recipe19",
                     "title": "Quiche sin lactosa de espinacas y champiñones",
                     "time": "Listo en 30 minutos",
-                    "image": "../assets/images/imgDietasQuicheSinLactosa.webp",
+                    "image": "assets/images/imgDietasQuicheSinLactosa.webp",
                     "ingredients": [
                         "Masa sin lactosa (pre-hecha o casera)",
                         "150g de espinacas",
@@ -1576,7 +1576,7 @@
                     "id": "recipe20",
                     "title": "Sopa minestrone sin queso",
                     "time": "Listo en 35 minutos",
-                    "image": "../assets/images/imgDietasMinestrone.webp",
+                    "image": "assets/images/imgDietasMinestrone.webp",
                     "ingredients": [
                         "Verduras variadas (zanahoria, apio, tomate, calabacín)",
                         "Pasta pequeña integral",
@@ -1598,7 +1598,7 @@
             "title": "Plan alimenticio semanal para personas con intolerancia a la lactosa",
             "type": "Tipo de Alimentación: Sin lactosa, completa y saludable",
             "duration": "1 semana",
-            "image": "../assets/images/food/imgDietasSinLactosa.webp",
+            "image": "assets/images/food/imgDietasSinLactosa.webp",
             "introduction": "<p>¿Evitas los lácteos? Este plan fue creado especialmente para ti: una propuesta nutritiva y equilibrada, pensada para quienes deben eliminar la lactosa de su dieta sin perder variedad. Descubrirás que comer bien sin lácteos no solo es posible, ¡también es delicioso!</p>",
             "schedule": [
                 {
@@ -1610,7 +1610,7 @@
                                 {
                                     "title": "Chia pudding con leche de coco y frutas",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "icon": "assets/images/ui/ray-icon.webp",
                                     "recipeId": "recipe1"
                                 }
                             ]
@@ -1621,7 +1621,7 @@
                                 {
                                     "title": "Ensalada de quinoa con garbanzos y verduras asadas",
                                     "time": "Listo en 20 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe2"
                                 }
                             ]
@@ -1632,7 +1632,7 @@
                                 {
                                     "title": "Sopa fría de pepino y menta",
                                     "time": "Listo en 10 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe3"
                                 }
                             ]
@@ -1643,7 +1643,7 @@
                                 {
                                     "title": "Rodajas de manzana con mantequilla de almendra",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -1658,7 +1658,7 @@
                                 {
                                     "title": "Smoothie bowl de mango y plátano",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "icon": "assets/images/ui/ray-icon.webp",
                                     "recipeId": "recipe4"
                                 }
                             ]
@@ -1669,7 +1669,7 @@
                                 {
                                     "title": "Tacos de lechuga con carne de res y pico de gallo",
                                     "time": "Listo en 15 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe5"
                                 }
                             ]
@@ -1680,7 +1680,7 @@
                                 {
                                     "title": "Pollo al curry con leche de coco",
                                     "time": "Listo en 30 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe6"
                                 }
                             ]
@@ -1691,7 +1691,7 @@
                                 {
                                     "title": "Palitos de zanahoria",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -1706,7 +1706,7 @@
                                 {
                                     "title": "Tostadas integrales con aguacate y tomate",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         },
@@ -1716,7 +1716,7 @@
                                 {
                                     "title": "Buddha bowl con arroz integral, tofu marinado y verduras frescas",
                                     "time": "Listo en 25 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe7"
                                 }
                             ]
@@ -1727,7 +1727,7 @@
                                 {
                                     "title": "Lasaña vegetal con láminas de berenjena",
                                     "time": "Listo en 35 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe8"
                                 }
                             ]
@@ -1738,7 +1738,7 @@
                                 {
                                     "title": "Nueces y uvas",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -1753,7 +1753,7 @@
                                 {
                                     "title": "Parfait de granola con yogur sin lactosa y frutas",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "icon": "assets/images/ui/ray-icon.webp",
                                     "recipeId": "recipe9"
                                 }
                             ]
@@ -1764,7 +1764,7 @@
                                 {
                                     "title": "Ensalada tibia de lentejas con espinacas y zanahoria",
                                     "time": "Listo en 20 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe10"
                                 }
                             ]
@@ -1775,7 +1775,7 @@
                                 {
                                     "title": "Filete de pescado al horno con salsa de limón y alcaparras",
                                     "time": "Listo en 25 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe11"
                                 }
                             ]
@@ -1786,7 +1786,7 @@
                                 {
                                     "title": "Rodajas de pepino con sal y limón",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -1801,7 +1801,7 @@
                                 {
                                     "title": "Batido verde de espinaca, manzana y jengibre",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "icon": "assets/images/ui/ray-icon.webp",
                                     "recipeId": "recipe12"
                                 }
                             ]
@@ -1812,7 +1812,7 @@
                                 {
                                     "title": "Wrap de pavo y vegetales en tortilla sin lactosa",
                                     "time": "Listo en 15 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe13"
                                 }
                             ]
@@ -1823,7 +1823,7 @@
                                 {
                                     "title": "Crema de calabaza y jengibre",
                                     "time": "Listo en 30 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe14"
                                 }
                             ]
@@ -1834,7 +1834,7 @@
                                 {
                                     "title": "Mandarina fresca",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         }
@@ -1846,7 +1846,7 @@
                     "id": "recipe1",
                     "title": "Chia pudding con leche de coco y frutas",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/imgDietasChiaPudding.webp",
+                    "image": "assets/images/imgDietasChiaPudding.webp",
                     "ingredients": [
                         "3 cucharadas de semillas de chía",
                         "1 taza de leche de coco",
@@ -1859,7 +1859,7 @@
                     "id": "recipe2",
                     "title": "Ensalada de quinoa con garbanzos y verduras asadas",
                     "time": "Listo en 20 minutos",
-                    "image": "../assets/images/imgDietasEnsaladaQuinoa.webp",
+                    "image": "assets/images/imgDietasEnsaladaQuinoa.webp",
                     "ingredients": [
                         "1 taza de quinoa cocida",
                         "1 taza de garbanzos cocidos",
@@ -1873,7 +1873,7 @@
                     "id": "recipe3",
                     "title": "Sopa fría de pepino y menta",
                     "time": "Listo en 10 minutos",
-                    "image": "../assets/images/imgDietasSopaPepinoMenta.webp",
+                    "image": "assets/images/imgDietasSopaPepinoMenta.webp",
                     "ingredients": [
                         "2 pepinos",
                         "Un puñado de hojas de menta fresca",
@@ -1887,7 +1887,7 @@
                     "id": "recipe4",
                     "title": "Smoothie bowl de mango y plátano",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/imgDietasSmoothieAcai.webp",
+                    "image": "assets/images/imgDietasSmoothieAcai.webp",
                     "ingredients": [
                         "2 mangos maduros",
                         "1 plátano congelado",
@@ -1900,7 +1900,7 @@
                     "id": "recipe5",
                     "title": "Tacos de lechuga con carne de res y pico de gallo",
                     "time": "Listo en 15 minutos",
-                    "image": "../assets/images/imgDietasTacosLechuga.webp",
+                    "image": "assets/images/imgDietasTacosLechuga.webp",
                     "ingredients": [
                         "200g de carne de res magra",
                         "Hojas de lechuga fresca",
@@ -1913,7 +1913,7 @@
                     "id": "recipe6",
                     "title": "Pollo al curry con leche de coco",
                     "time": "Listo en 30 minutos",
-                    "image": "../assets/images/imgDietasPolloCurry.webp",
+                    "image": "assets/images/imgDietasPolloCurry.webp",
                     "ingredients": [
                         "250g de pechuga de pollo",
                         "1 lata de leche de coco",
@@ -1926,7 +1926,7 @@
                     "id": "recipe7",
                     "title": "Buddha bowl con arroz integral, tofu marinado y verduras frescas",
                     "time": "Listo en 25 minutos",
-                    "image": "../assets/images/imgDietasBuddhaBowl.webp",
+                    "image": "assets/images/imgDietasBuddhaBowl.webp",
                     "ingredients": [
                         "1 taza de arroz integral cocido",
                         "150g de tofu firme",
@@ -1939,7 +1939,7 @@
                     "id": "recipe8",
                     "title": "Lasaña vegetal con láminas de berenjena",
                     "time": "Listo en 35 minutos",
-                    "image": "../assets/images/imgDietasLasanaBerenjena.webp",
+                    "image": "assets/images/imgDietasLasanaBerenjena.webp",
                     "ingredients": [
                         "Berenjena en láminas",
                         "Salsa de tomate casera",
@@ -1952,7 +1952,7 @@
                     "id": "recipe9",
                     "title": "Parfait de granola con yogur sin lactosa y frutas",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/imgDietasParfait.webp",
+                    "image": "assets/images/imgDietasParfait.webp",
                     "ingredients": [
                         "1 taza de yogur sin lactosa",
                         "1/2 taza de granola",
@@ -1964,7 +1964,7 @@
                     "id": "recipe10",
                     "title": "Ensalada tibia de lentejas con espinacas y zanahoria",
                     "time": "Listo en 20 minutos",
-                    "image": "../assets/images/imgDietasEnsaladaLentejas.webp",
+                    "image": "assets/images/imgDietasEnsaladaLentejas.webp",
                     "ingredients": [
                         "1 taza de lentejas cocidas",
                         "Hojas de espinaca",
@@ -1977,7 +1977,7 @@
                     "id": "recipe11",
                     "title": "Filete de pescado al horno con salsa de limón y alcaparras",
                     "time": "Listo en 25 minutos",
-                    "image": "../assets/images/imgDietasPescadoHorno.webp",
+                    "image": "assets/images/imgDietasPescadoHorno.webp",
                     "ingredients": [
                         "1 filete de pescado blanco",
                         "Jugo de 1 limón",
@@ -1990,7 +1990,7 @@
                     "id": "recipe12",
                     "title": "Batido verde de espinaca, manzana y jengibre",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/imgDietasBatidoVerde.webp",
+                    "image": "assets/images/imgDietasBatidoVerde.webp",
                     "ingredients": [
                         "1 taza de espinaca fresca",
                         "1 manzana verde",
@@ -2003,7 +2003,7 @@
                     "id": "recipe13",
                     "title": "Wrap de pavo y vegetales en tortilla sin lactosa",
                     "time": "Listo en 15 minutos",
-                    "image": "../assets/images/food/imgDietasWrapPavo.webp",
+                    "image": "assets/images/food/imgDietasWrapPavo.webp",
                     "ingredients": [
                         "2 tortillas sin lactosa",
                         "150g de pavo cocido en tiras",
@@ -2016,7 +2016,7 @@
                     "id": "recipe14",
                     "title": "Crema de calabaza y jengibre",
                     "time": "Listo en 30 minutos",
-                    "image": "../assets/images/imgDietasCremaCalabaza.webp",
+                    "image": "assets/images/imgDietasCremaCalabaza.webp",
                     "ingredients": [
                         "500g de calabaza",
                         "Un trozo de jengibre",
@@ -2051,7 +2051,7 @@
             "title": "Plan alimenticio diario para tener un sueño reparador",
             "type": "Tipo de Alimentación: Relajante y nutritiva",
             "duration": "1 día",
-            "image": "../assets/images/articles/imgArticuloSiestasCortasBeneficios.webp",
+            "image": "assets/images/articles/imgArticuloSiestasCortasBeneficios.webp",
             "introduction": "<p>Este plan diario está diseñado para ayudarte a disfrutar de un sueño reparador a través de alimentos que favorecen la producción de serotonina y melatonina. Incluye opciones ricas en triptófano, magnesio y carbohidratos complejos, combinadas para estimular la relajación y la buena digestión, claves para descansar mejor.</p>",
             "schedule": [
                 {
@@ -2063,13 +2063,13 @@
                                 {
                                     "title": "Opción 1: Batido de plátano y avena con leche caliente",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "icon": "assets/images/ui/ray-icon.webp",
                                     "recipeId": "recipe1"
                                 },
                                 {
                                     "title": "Opción 2: Yogurt con frutas y miel",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 }
                             ]
                         },
@@ -2079,13 +2079,13 @@
                                 {
                                     "title": "Opción 1: Ensalada de pavo con quinoa y espinacas",
                                     "time": "Listo en 15 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe2"
                                 },
                                 {
                                     "title": "Opción 2: Wrap de pollo, aguacate y hojas verdes",
                                     "time": "Listo en 10 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe3"
                                 }
                             ]
@@ -2096,12 +2096,12 @@
                                 {
                                     "title": "Opción 1: Nueces y cerezas deshidratadas",
                                     "time": "Listo inmediatamente",
-                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                    "icon": "assets/images/ui/ray-icon.webp"
                                 },
                                 {
                                     "title": "Opción 2: Barrita de avena y almendras casera",
                                     "time": "Listo en 5 minutos",
-                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "icon": "assets/images/ui/ray-icon.webp",
                                     "recipeId": "recipe4"
                                 }
                             ]
@@ -2112,13 +2112,13 @@
                                 {
                                     "title": "Opción 1: Filete de salmón con ensalada de aguacate y espinacas",
                                     "time": "Listo en 20 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe5"
                                 },
                                 {
                                     "title": "Opción 2: Arroz integral con pavo y verduras asadas",
                                     "time": "Listo en 25 minutos",
-                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "icon": "assets/images/ui/meal-icon.webp",
                                     "recipeId": "recipe6"
                                 }
                             ]
@@ -2131,7 +2131,7 @@
                     "id": "recipe1",
                     "title": "Batido de plátano y avena con leche caliente",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/imgBatidoPlatanoAvena.webp",
+                    "image": "assets/images/imgBatidoPlatanoAvena.webp",
                     "ingredients": [
                         "1 plátano maduro",
                         "1/2 taza de avena",
@@ -2144,7 +2144,7 @@
                     "id": "recipe2",
                     "title": "Ensalada de pavo con quinoa y espinacas",
                     "time": "Listo en 15 minutos",
-                    "image": "../assets/images/imgEnsaladaPavoQuinoa.webp",
+                    "image": "assets/images/imgEnsaladaPavoQuinoa.webp",
                     "ingredients": [
                         "150 g de pechuga de pavo a la plancha",
                         "1/2 taza de quinoa cocida",
@@ -2158,7 +2158,7 @@
                     "id": "recipe3",
                     "title": "Wrap de pollo, aguacate y hojas verdes",
                     "time": "Listo en 10 minutos",
-                    "image": "../assets/images/imgWrapPolloAguacate.webp",
+                    "image": "assets/images/imgWrapPolloAguacate.webp",
                     "ingredients": [
                         "1 pechuga de pollo a la plancha",
                         "1 tortilla integral",
@@ -2172,7 +2172,7 @@
                     "id": "recipe4",
                     "title": "Barrita de avena y almendras casera",
                     "time": "Listo en 5 minutos",
-                    "image": "../assets/images/imgBarritaAvenaAlmendras.webp",
+                    "image": "assets/images/imgBarritaAvenaAlmendras.webp",
                     "ingredients": [
                         "1/2 taza de avena",
                         "2 cucharadas de almendras picadas",
@@ -2185,7 +2185,7 @@
                     "id": "recipe5",
                     "title": "Filete de salmón con ensalada de aguacate y espinacas",
                     "time": "Listo en 20 minutos",
-                    "image": "../assets/images/imgSalmónAguacate.webp",
+                    "image": "assets/images/imgSalmónAguacate.webp",
                     "ingredients": [
                         "1 filete de salmón",
                         "1/2 aguacate en cubos",
@@ -2199,7 +2199,7 @@
                     "id": "recipe6",
                     "title": "Arroz integral con pavo y verduras asadas",
                     "time": "Listo en 25 minutos",
-                    "image": "../assets/images/imgArrozPavoVerduras.webp",
+                    "image": "assets/images/imgArrozPavoVerduras.webp",
                     "ingredients": [
                         "1 taza de arroz integral",
                         "150 g de pavo a la plancha",
