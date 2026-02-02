@@ -7,14 +7,8 @@
     'use strict';
 
     function getSlugFromPath() {
-        const path = window.location.pathname;
-
-        // Handle clean URLs: /dietas/slug
-        if (path.includes('/dietas/')) {
-            const parts = path.split('/dietas/');
-            if (parts.length > 1 && parts[1]) {
-                return parts[1].replace('.html', '').replace('/', '');
-            }
+        if (window.VitaliaRouter) {
+            return window.VitaliaRouter.getSlug();
         }
         return null;
     }

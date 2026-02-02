@@ -30,20 +30,9 @@ let exercises = [];
 // — Función para cargar rutina desde JSON —
 async function loadRoutine() {
   try {
-    const path = window.location.pathname;
     let slug = '';
-
-    // Check for clean URL: /rutinas/slug
-    if (path.includes('/rutinas/')) {
-      const parts = path.split('/rutinas/');
-      if (parts.length > 1 && parts[1]) {
-        slug = parts[1].replace('.html', '').replace('/', '');
-      }
-    }
-
-    if (!slug) {
-      console.log("No routine slug found.");
-      return;
+    if (window.VitaliaRouter) {
+      slug = window.VitaliaRouter.getSlug();
     }
 
     // Absolute path

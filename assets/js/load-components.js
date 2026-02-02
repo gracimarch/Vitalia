@@ -50,18 +50,17 @@ function highlightActiveLink() {
 
     const pageName = currentPath.split("/").pop() || "index.html";
 
-    const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
     navLinks.forEach(link => {
         const href = link.getAttribute("href");
         if (!href) return;
 
-        // Check if href matches current path logic
-        // If href is absolute /blog.html
+        // Clean path for comparison
+        const cleanPath = currentPath.replace(/\/$/, "");
+        const cleanHref = href.replace(/\/$/, "");
 
-        // Simple logic: if href ends with the current page name (and isn't just /)
-        if (href === currentPath || (href !== "/" && currentPath.endsWith(href))) {
+        if (cleanHref === cleanPath || (cleanHref !== "" && cleanHref !== "/" && cleanPath.startsWith(cleanHref))) {
             link.classList.add("active");
-        } else if (href === "/" && (currentPath === "/" || currentPath === "/index.html")) {
+        } else if (cleanHref === "/" && (cleanPath === "" || cleanPath === "/" || cleanPath === "/index.html")) {
             link.classList.add("active");
         }
     });

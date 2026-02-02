@@ -8,15 +8,10 @@
 
     // Get slug from URL path
     function getSlugFromURL() {
-        // Strict slug extraction from path: /lecturas/slug
-        const path = window.location.pathname;
-        if (path.includes('/lecturas/')) {
-            const parts = path.split('/lecturas/');
-            if (parts.length > 1 && parts[1]) {
-                return parts[1].replace('.html', '').replace('/', '');
-            }
+        if (window.VitaliaRouter) {
+            return window.VitaliaRouter.getSlug();
         }
-        return null; // No fallback
+        return null;
     }
 
     // Fetch lecturas data
