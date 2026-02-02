@@ -668,3 +668,33 @@ body {
     z-index: 3;
     /* text-shadow removed */
 }
+
+/* =========================================
+   PERFORMANCE OPTIMIZATION (CLS Fixes)
+   ========================================= */
+/* Reserve space for dynamic React components to prevent layout shifts */
+
+#magic-bento-root {
+    min-height: 800px;
+    /* Estimate for bento grid */
+    contain: content;
+    /* Improves rendering performance */
+}
+
+#faq-list-root {
+    min-height: 400px;
+    contain: content;
+}
+
+#pricing-list-root {
+    min-height: 500px;
+    contain: content;
+}
+
+/* Adjust for mobile where height might be different */
+@media (max-width: 768px) {
+    #magic-bento-root {
+        min-height: 1200px;
+        /* Stacks vertically on mobile */
+    }
+}

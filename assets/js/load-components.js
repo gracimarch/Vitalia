@@ -247,3 +247,22 @@ function setupSmartNavigation() {
 
 // Initialize Smart Nav
 setupSmartNavigation();
+
+// ==========================================
+// Vercel Analytics Initialization
+// ==========================================
+// Uses dynamic import to load from CDN without requiring type="module" in HTML
+(function initAnalytics() {
+    // We use a specific version to ensure stability
+    import('https://esm.sh/@vercel/analytics@1.1.1')
+        .then(module => {
+            if (module && typeof module.inject === 'function') {
+                module.inject();
+                console.log('[Analytics] Vercel Analytics initialized');
+            }
+        })
+        .catch(err => {
+            // It's expected to fail if offline or blocked, so we just warn
+            console.debug('[Analytics] Could not load analytics:', err);
+        });
+})();
