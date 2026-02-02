@@ -123,18 +123,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Animación de desplazamiento suave del header
-    window.addEventListener('scroll', function () {
-        const currentScrollPosition = window.pageYOffset;
-
-        if (currentScrollPosition > lastScrollPosition) {
-            header.classList.add('hidden');
-        } else {
-            header.classList.remove('hidden');
-        }
-
-        lastScrollPosition = currentScrollPosition;
-    });
+    /*
+        // Animación de desplazamiento suave del header
+        window.addEventListener('scroll', function () {
+            const currentScrollPosition = window.pageYOffset;
+    
+            if (currentScrollPosition > lastScrollPosition) {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+    
+            lastScrollPosition = currentScrollPosition;
+        });
+        */
 
     // Añadir 'no-scroll' a la web mientras el loader está visible
     body.classList.add('no-scroll');
