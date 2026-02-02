@@ -11,13 +11,123 @@
         rel="stylesheet">
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hourglass.js"></script>
-    <link href="/assets/css/core/common.css" rel="stylesheet">
-    <script src="/assets/js/core/main.js" render></script>
+    <link rel="stylesheet" href="/assets/css/core/common.css">
+    <link rel="stylesheet" href="/assets/css/core/variables.css">
+    <link rel="stylesheet" href="/assets/css/pages/miespaciostyle.css">
+
+    <style>
+        /* Emergency Critical Styles */
+        .articles-grid,
+        .routines-grid,
+        .meditations-grid {
+            display: grid !important;
+            gap: 1.5rem !important;
+            margin-bottom: 3rem !important;
+        }
+
+        @media (min-width: 768px) {
+            .articles-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .routines-grid {
+                grid-template-columns: repeat(4, 1fr) !important;
+            }
+
+            .meditations-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        }
+
+        .article-card,
+        .food-card,
+        .routine-card {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            min-height: 180px !important;
+            padding: 1.5rem !important;
+            border-radius: 20px !important;
+            text-decoration: none !important;
+            color: #fff !important;
+            transition: all 0.3s ease !important;
+            background: linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%) !important;
+        }
+
+        .article-title,
+        .meditation-title {
+            color: #fff !important;
+            font-weight: 700 !important;
+            margin-bottom: 0.5rem !important;
+        }
+
+        .article-category {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-size: 0.85rem !important;
+            text-transform: uppercase !important;
+        }
+
+        /* Specific Gradients - Restored */
+        .article-card:nth-child(1) {
+            background: radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.45) 0%, transparent 55%), radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 55%), linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%) !important;
+        }
+
+        .article-card:nth-child(2) {
+            background: radial-gradient(circle at 50% 50%, rgba(128, 202, 205, 0.25) 0%, transparent 65%), radial-gradient(circle at 100% 100%, rgba(253, 251, 247, 0.4) 0%, transparent 45%), linear-gradient(45deg, #a675d1 0%, #bfa0e0 100%) !important;
+        }
+
+        .article-card:nth-child(3) {
+            background: radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%), radial-gradient(circle at 100% 50%, rgba(225, 148, 127, 0.35) 0%, transparent 55%), linear-gradient(180deg, #bfa0e0 0%, #a170d0 100%) !important;
+        }
+
+        .article-card:nth-child(4) {
+            background: radial-gradient(circle at 80% 20%, rgba(128, 202, 205, 0.35) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%), linear-gradient(120deg, #a675d1 0%, #bfa0e0 100%) !important;
+        }
+
+        .food-card:nth-child(1) {
+            background: radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%), radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 50%), linear-gradient(135deg, #f4a261 0%, #e76f51 100%) !important;
+        }
+
+        .food-card:nth-child(2) {
+            background: radial-gradient(circle at 50% 50%, rgba(253, 251, 247, 0.3) 0%, transparent 60%), radial-gradient(circle at 100% 100%, rgba(157, 96, 207, 0.3) 0%, transparent 45%), linear-gradient(45deg, #e9c46a 0%, #f4a261 100%) !important;
+        }
+
+        .food-card:nth-child(3) {
+            background: radial-gradient(circle at 0% 0%, rgba(128, 202, 205, 0.35) 0%, transparent 45%), radial-gradient(circle at 100% 50%, rgba(253, 251, 247, 0.3) 0%, transparent 55%), linear-gradient(180deg, #f4a261 0%, #e76f51 100%) !important;
+        }
+
+        .food-card:nth-child(4) {
+            background: radial-gradient(circle at 80% 20%, rgba(157, 96, 207, 0.35) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%), linear-gradient(120deg, #e76f51 0%, #f4a261 100%) !important;
+        }
+
+        .routine-card:nth-child(1) {
+            background: radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%), radial-gradient(circle at 0% 100%, rgba(253, 251, 247, 0.3) 0%, transparent 50%), linear-gradient(135deg, #80cacd 0%, #5fb3b6 100%) !important;
+        }
+
+        .routine-card:nth-child(2) {
+            background: radial-gradient(circle at 50% 50%, rgba(157, 96, 207, 0.25) 0%, transparent 60%), radial-gradient(circle at 100% 100%, rgba(225, 148, 127, 0.3) 0%, transparent 45%), linear-gradient(45deg, #6ec0c3 0%, #80cacd 100%) !important;
+        }
+
+        .routine-card:nth-child(3) {
+            background: radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%), radial-gradient(circle at 100% 50%, rgba(157, 96, 207, 0.3) 0%, transparent 55%), linear-gradient(180deg, #80cacd 0%, #5fb3b6 100%) !important;
+        }
+
+        .routine-card:nth-child(4) {
+            background: radial-gradient(circle at 80% 20%, rgba(157, 96, 207, 0.35) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(253, 251, 247, 0.3) 0%, transparent 50%), linear-gradient(120deg, #74c7ca 0%, #80cacd 100%) !important;
+        }
+
+        .meditation-btn {
+            background: linear-gradient(135deg, #80cacd 0%, #9d60cf 50%, #f4a261 100%) !important;
+        }
+
+        .meditation-card:nth-child(even) .meditation-btn {
+            background: linear-gradient(315deg, #80cacd 0%, #9d60cf 50%, #f4a261 100%) !important;
+        }
+    </style>
+
+    <script src="/assets/js/core/main.js"></script>
     <script src="/assets/js/core/router.js"></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-    <link rel="stylesheet" href="/assets/css/miespaciostyle.css">
 
     <link rel="icon" href="/assets/images/ui/vitaliaLogo.webp" type="image/webp">
 
@@ -403,100 +513,95 @@
             </div>
         </section>
 
-    </div>
-    </div>
-    </div>
-    </section>
-
-    <!-- Planes alimenticios -->
-    <!-- Planes alimenticios -->
-    <section class="reading section-gap-top" id="alimentaciones">
-        <div class="reading-section">
-            <div class="section-title-container">
-                <img src="/assets/images/ui/planIconoTitulo.webp" alt="Ícono de lectura" class="section-icon">
-                <h2 class="section-title">Planes Alimenticios Adaptados a Ti</h2>
+        <!-- Planes alimenticios -->
+        <!-- Planes alimenticios -->
+        <section class="reading section-gap-top" id="alimentaciones">
+            <div class="reading-section">
+                <div class="section-title-container">
+                    <img src="/assets/images/ui/planIconoTitulo.webp" alt="Ícono de lectura" class="section-icon">
+                    <h2 class="section-title">Planes Alimenticios Adaptados a Ti</h2>
+                </div>
+                <p class="section-subtitle">Recetas y dietas para una vida saludable</p>
             </div>
-            <p class="section-subtitle">Recetas y dietas para una vida saludable</p>
-        </div>
-    </section>
+        </section>
 
-    <!-- Planes alimenticios seleccionados -->
-    <section class="lecturas">
-        <div class="container">
-            <div class="articles-grid">
-                <!-- Plan 1 -->
-                <a href="/dietas/energia-y-vitalidad" class="food-card">
-                    <div class="article-header">
-                        <span class="article-category">Balanceado y Rico</span>
-                        <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
-                    </div>
-                    <div>
-                        <h3 class="article-title">Plan Energía y Vitalidad</h3>
-                        <div class="article-meta">
-                            <i class="bi bi-clock"></i>
-                            <span>Plan Semanal</span>
+        <!-- Planes alimenticios seleccionados -->
+        <section class="lecturas">
+            <div class="container">
+                <div class="articles-grid">
+                    <!-- Plan 1 -->
+                    <a href="/dietas/energia-y-vitalidad" class="food-card">
+                        <div class="article-header">
+                            <span class="article-category">Balanceado y Rico</span>
+                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
                         </div>
-                    </div>
-                </a>
+                        <div>
+                            <h3 class="article-title">Plan Energía y Vitalidad</h3>
+                            <div class="article-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>Plan Semanal</span>
+                            </div>
+                        </div>
+                    </a>
 
-                <!-- Plan 2 -->
-                <a href="#" class="food-card">
-                    <div class="article-header">
-                        <span class="article-category">Detox Vegetal</span>
-                        <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
-                    </div>
-                    <div>
-                        <h3 class="article-title">Renovación y Desintoxicación</h3>
-                        <div class="article-meta">
-                            <i class="bi bi-clock"></i>
-                            <span>Plan Diario</span>
+                    <!-- Plan 2 -->
+                    <a href="#" class="food-card">
+                        <div class="article-header">
+                            <span class="article-category">Detox Vegetal</span>
+                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
                         </div>
-                    </div>
-                </a>
+                        <div>
+                            <h3 class="article-title">Renovación y Desintoxicación</h3>
+                            <div class="article-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>Plan Diario</span>
+                            </div>
+                        </div>
+                    </a>
 
-                <!-- Plan 3 -->
-                <a href="#" class="food-card">
-                    <div class="article-header">
-                        <span class="article-category">Salud Digestiva</span>
-                        <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
-                    </div>
-                    <div>
-                        <h3 class="article-title">Mejora tu Digestión</h3>
-                        <div class="article-meta">
-                            <i class="bi bi-clock"></i>
-                            <span>Plan Semanal</span>
+                    <!-- Plan 3 -->
+                    <a href="#" class="food-card">
+                        <div class="article-header">
+                            <span class="article-category">Salud Digestiva</span>
+                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
                         </div>
-                    </div>
-                </a>
+                        <div>
+                            <h3 class="article-title">Mejora tu Digestión</h3>
+                            <div class="article-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>Plan Semanal</span>
+                            </div>
+                        </div>
+                    </a>
 
-                <!-- Plan 4 -->
-                <a href="#" class="food-card">
-                    <div class="article-header">
-                        <span class="article-category">Antiestrés</span>
-                        <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
-                    </div>
-                    <div>
-                        <h3 class="article-title">Plan Anti-Estrés y Ansiedad</h3>
-                        <div class="article-meta">
-                            <i class="bi bi-clock"></i>
-                            <span>Plan Diario</span>
+                    <!-- Plan 4 -->
+                    <a href="#" class="food-card">
+                        <div class="article-header">
+                            <span class="article-category">Antiestrés</span>
+                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
                         </div>
-                    </div>
-                </a>
+                        <div>
+                            <h3 class="article-title">Plan Anti-Estrés y Ansiedad</h3>
+                            <div class="article-meta">
+                                <i class="bi bi-clock"></i>
+                                <span>Plan Diario</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Agradecimiento -->
-    <section class="thanks">
-        <div class="thanks-section">
-            <div class="thanks-content">
-                <h2 class="thanks-heading">¡Gracias por Elegirnos!</h2>
+        <!-- Agradecimiento -->
+        <section class="thanks">
+            <div class="thanks-section">
+                <div class="thanks-content">
+                    <h2 class="thanks-heading">¡Gracias por Elegirnos!</h2>
+                </div>
+                <p class="thanks-subtext">Recuerda que actualizamos nuestra página todas las semanas con nuevo contenido
+                    para tu bienestar. Vuelve pronto y no te pierdas lo que tenemos para ti.</p>
             </div>
-            <p class="thanks-subtext">Recuerda que actualizamos nuestra página todas las semanas con nuevo contenido
-                para tu bienestar. Vuelve pronto y no te pierdas lo que tenemos para ti.</p>
-        </div>
-    </section>
+        </section>
 
     </div>
 
