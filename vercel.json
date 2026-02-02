@@ -1,16 +1,28 @@
 {
     "rewrites": [
         {
+            "source": "/blog",
+            "destination": "/pages/blog.html"
+        },
+        {
+            "source": "/mi-espacio",
+            "destination": "/pages/mi-espacio.html"
+        },
+        {
+            "source": "/plan",
+            "destination": "/pages/form.html"
+        },
+        {
             "source": "/lecturas/:slug",
-            "destination": "/lectura.html"
+            "destination": "/pages/lectura.html"
         },
         {
             "source": "/dietas/:slug",
-            "destination": "/dieta.html"
+            "destination": "/pages/dieta.html"
         },
         {
             "source": "/rutinas/:slug",
-            "destination": "/rutina.html"
+            "destination": "/pages/rutina.html"
         }
     ]
 }

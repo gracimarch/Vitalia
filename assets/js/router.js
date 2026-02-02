@@ -10,9 +10,12 @@ window.VitaliaRouter = (function () {
 
     // Config: Mapping of prefixes to templates
     const ROUTE_MAP = {
-        'lecturas': '/lectura.html',
-        'dietas': '/dieta.html',
-        'rutinas': '/rutina.html'
+        'lecturas': '/pages/lectura.html',
+        'dietas': '/pages/dieta.html',
+        'rutinas': '/pages/rutina.html',
+        'blog': '/pages/blog.html',
+        'mi-espacio': '/pages/mi-espacio.html',
+        'plan': '/pages/form.html'
     };
 
     /**
