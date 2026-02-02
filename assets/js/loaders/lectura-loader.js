@@ -18,7 +18,7 @@
     async function fetchLecturas() {
         try {
             // Always use absolute path for data
-            const url = '/data/lecturas.json';
+            const url = '/assets/data/lecturas.json';
 
             const response = await fetch(url);
             if (!response.ok) {

@@ -16,7 +16,7 @@
     async function fetchDietas() {
         try {
             // Absolute path
-            const url = '/data/dietas.json';
+            const url = '/assets/data/dietas.json';
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error('No se pudo cargar el archivo de datos');

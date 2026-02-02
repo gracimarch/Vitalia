@@ -1,3 +1,7 @@
+@import url('variables.css');
+
+@import url('variables.css');
+
 /* Reset & Loader handled in common.css */
 
 .pagina,
@@ -10,27 +14,26 @@
     margin-top: 140px;
 }
 
-
-
-.article {
+.js-active .article {
     opacity: 0;
     transform: translateY(-1.5%);
 }
 
-.title,
-.article-title {
+.js-active .title,
+.js-active .article-title {
     opacity: 0;
     transform: translateY(-4%);
 }
 
-.image,
-.responsive-table {
+.js-active .image,
+.js-active .responsive-table {
     opacity: 0;
     transform: translateY(-2%);
 }
 
 .introduction-container {
     color: var(--text-light-grey);
+
     font-size: 1rem;
 }
 
@@ -103,7 +106,7 @@
 
 .image img {
     width: 100%;
-    height: 200px !important;
+    height: 300px !important;
     object-fit: cover;
     border-radius: 20px;
     display: block;
@@ -112,13 +115,15 @@
 
 .item-indice {
     color: var(--teal);
+
     font-weight: 500;
-    text-decoration: none;
+    text-decoration: underline;
     transition: all 0.3 ease;
 }
 
 .item-indice:hover {
     color: var(--teal-hover);
+
 }
 
 .article {
@@ -132,15 +137,14 @@
 .article-title h2 {
     text-align: center;
     font-weight: 600;
-    padding: 50px 0 10px 0;
+    margin: 50px 0;
 }
 
 .underline {
     text-decoration-line: underline;
     text-decoration-color: var(--teal);
-    text-decoration-thickness: 3px;
-    text-decoration-style: solid;
-    text-underline-offset: 4px;
+    text-decoration-thickness: 1.9px;
+    text-decoration-style: wavy;
 }
 
 .container-table {
@@ -152,13 +156,14 @@
 .responsive-table {
     max-width: 1400px;
     overflow-x: auto;
-    border: 0.05px solid #ddd;
+    border: 0.05px solid var(--border-color);
+
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    border: 1px solid var(--border-color);
+    border: 1px solid #ddd;
 }
 
 th,
@@ -166,6 +171,7 @@ td {
     padding: 10px;
     text-align: left;
     border: 1px solid var(--border-color);
+
     min-width: 150px;
 }
 
@@ -175,7 +181,8 @@ td {
 }
 
 th {
-    background-color: #eefffe;
+    background-color: var(--bg-table-header);
+
     font-family: 'Poppins', Calibri, sans-serif;
     font-size: 16px;
 }
@@ -185,6 +192,7 @@ th:first-child {
     position: sticky;
     left: 0;
     background-color: var(--bg-table-header);
+
     z-index: 6;
     font-family: 'Poppins', Calibri, sans-serif;
 }
@@ -236,13 +244,13 @@ th:first-child {
     th {
         position: sticky;
         left: 0;
-        background-color: #eefffe;
+        background-color: var(--bg-table-header);
+
         z-index: 1;
         font-family: 'Poppins', Calibri, sans-serif;
         font-size: 15px;
     }
 }
-
 
 
 .ejercicios {
@@ -332,240 +340,17 @@ th:first-child {
 }
 
 .bg-ejercicio-1 {
-    background-image: url('../images/sections/rut1BloqueEjercicios.webp');
+    background-image: url('/assets/images/sections/rut1BloqueEjercicios.webp');
 }
 
 .bg-ejercicio-2 {
-    background-image: url('../images/sections/rut2BloqueEjercicios.webp');
+    background-image: url('/assets/images/sections/rut2BloqueEjercicios.webp');
 }
 
 .bg-ejercicio-3 {
-    background-image: url('../images/sections/rut3BloqueEjercicios.webp');
+    background-image: url('/assets/images/sections/rut3BloqueEjercicios.webp');
 }
 
 .bg-ejercicio-4 {
-    background-image: url('../images/sections/rut4BloqueEjercicios.webp');
-}
-
-
-
-.routine-content {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.routine-content.visible {
-    opacity: 1;
-}
-
-.video {
-    width: 70%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-.video video {
-    width: 100%;
-    height: 300px !important;
-    object-fit: cover;
-    border-radius: 20px;
-    display: block;
-    margin: 25px 0;
-}
-
-.rest .video-container,
-.finish .video-container {
-    visibility: hidden;
-    height: 0;
-    margin: 80px 0;
-}
-
-.text-desc {
-    opacity: .55;
-    font-size: 0.9rem;
-}
-
-.timer-content {
-    display: flex !important;
-    justify-content: center !important;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 180px;
-    max-width: 100%;
-    box-sizing: border-box;
-    transform: translateY(7px) scale(1);
-    transition: transform 0.3s ease;
-}
-
-.countdown-container {
-    position: relative;
-    width: 90%;
-    padding-bottom: 90%;
-}
-
-.countdown-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: rotate(-90deg);
-}
-
-.countdown-circle {
-    stroke-dasharray: 282.743;
-    stroke-dashoffset: 0;
-
-    transform: scale(1);
-    transform-origin: center;
-}
-
-.countdown-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.7rem;
-    color: var(--text-color);
-    font-weight: bold;
-}
-
-
-@keyframes pulse {
-    0% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1.135);
-    }
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    background-color: var(--purple);
-    color: var(--white);
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 25px 0;
-    text-decoration: none;
-    transition: all 0.6s ease;
-    font-family: 'Zilla Slab', Times New Roman, serif;
-    animation: pulse 0.9s infinite alternate;
-    cursor: pointer;
-}
-
-.btn i {
-    font-size: 16px;
-    margin-right: 8px;
-    vertical-align: middle;
-}
-
-.btn:hover {
-    background-color: var(--purple);
-    transform: scale(1.05);
-    color: var(--white);
-}
-
-@media (max-width: 768px) {
-    .btn {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .btn {
-        padding: 7px 14px;
-    }
-
-    .btn .btn-icon {
-        width: 16px;
-        margin-right: 6px;
-    }
-}
-
-.instructions {
-    margin-bottom: 50px;
-}
-
-.no-mostrar {
-    display: none !important;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-}
-
-.fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-}
-
-.fade-out {
-    animation: fadeOut 0.4s ease-in forwards;
-}
-
-/* Pausa */
-.pause-btn {
-    margin-top: 15px;
-    background-color: var(--bg-cream);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 8px 24px;
-    font-size: 1rem;
-    font-weight: 500;
-    font-family: 'Poppins', Calibri, sans-serif;
-    color: var(--text-color);
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-}
-
-.pause-btn:hover {
-    background-color: var(--bg-cream);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: var(--purple);
-    border-color: var(--purple-light);
-}
-
-/* Mensajes de descanso / final */
-.center-message {
-    text-align: center;
-    font-size: 1.2rem;
-    animation: fadeIn 0.7s ease-out forwards;
+    background-image: url('/assets/images/sections/rut4BloqueEjercicios.webp');
 }
