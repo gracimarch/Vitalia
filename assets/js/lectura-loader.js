@@ -6,12 +6,9 @@
 (function () {
     'use strict';
 
-    // Get slug from URL parameter
-    let isVisualFix = false;
-
-    // Get slug from URL parameter or path
+    // Get slug from URL path
     function getSlugFromURL() {
-        // First try to get slug from path: /lecturas/slug
+        // Strict slug extraction from path: /lecturas/slug
         const path = window.location.pathname;
         if (path.includes('/lecturas/')) {
             const parts = path.split('/lecturas/');
@@ -19,26 +16,15 @@
                 return parts[1].replace('.html', '').replace('/', '');
             }
         }
-
-        // Fallback to query param
-        const urlParams = new URLSearchParams(window.location.search);
-        const slug = urlParams.get('slug');
-
-        // Visual Fix: If on localhost and using query param, mask it with clean URL
-        if (slug && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
-            window.history.replaceState({}, '', `/lecturas/${slug}`);
-            isVisualFix = true;
-        }
-
-        return slug;
+        return null; // No fallback
     }
 
     // Fetch lecturas data
     async function fetchLecturas() {
         try {
-            // If visual fix is active, we are effectively in /lecturas/ folder visually,
-            // so we need to go up one level to find data folder.
-            const url = isVisualFix ? '../data/lecturas.json' : 'data/lecturas.json';
+            // Always use absolute path for data
+            const url = '/data/lecturas.json';
+
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error('No se pudo cargar el archivo de datos');
@@ -46,21 +32,7 @@
             return await response.json();
         } catch (error) {
             console.error('Error cargando lecturas:', error);
-            // Show error in UI
-            const titleContainer = document.getElementById('page-title');
-            if (titleContainer) titleContainer.textContent = 'Error';
-
-            const articleContent = document.getElementById('article-content');
-            if (articleContent) {
-                articleContent.innerHTML = `
-                    <div style="text-align: center; padding: 50px;">
-                        <h2>Error</h2>
-                        <h1>Lectura no encontrada</h1>
-                        <p>Lo sentimos, la lectura que buscas no existe o ha sido movida.</p>
-                        <a href="blog.html" style="text-decoration: underline; color: #7134A2;">Volver al blog</a>
-                    </div>
-                `;
-            }
+            showErrorUI();
             return null;
         }
     }
@@ -72,14 +44,22 @@
 
     // Render article content
     function renderArticle(lectura) {
-        // Helper for image paths
-        const getPath = (path) => isVisualFix ? `../${path}` : path;
+        // Helper for image paths - ensure absolute
+        const getPath = (path) => {
+            if (path.startsWith('http')) return path;
+            return path.startsWith('/') ? path : '/' + path;
+        };
 
         // Meta tags
         document.title = lectura.title + " | Vitalia";
-        document.querySelector('meta[name="description"]').setAttribute("content", lectura.description);
-        document.querySelector('meta[name="keywords"]').setAttribute("content", lectura.keywords);
-        document.getElementById('page-title').textContent = lectura.title;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute("content", lectura.description);
+
+        const metaKeys = document.querySelector('meta[name="keywords"]');
+        if (metaKeys) metaKeys.setAttribute("content", lectura.keywords);
+
+        const pageTitle = document.getElementById('page-title');
+        if (pageTitle) pageTitle.textContent = lectura.title;
 
         // Title Section
         const articleCategory = document.getElementById('article-category');
@@ -100,69 +80,110 @@
         if (articleImage) {
             articleImage.src = getPath(lectura.image);
             articleImage.alt = `Imagen de ${lectura.title}`;
+            articleImage.style.display = 'block';
         }
     }
 
     // Generate table of contents
     function generateTableOfContents(lectura) {
         const tocList = document.getElementById('table-of-contents');
+        if (!tocList) return;
+
         tocList.innerHTML = '';
 
-        lectura.tableOfContents.forEach(item => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.className = 'item-indice';
-            a.href = `#${item.id}`;
-            a.textContent = item.title;
-            li.appendChild(a);
-            tocList.appendChild(li);
-        });
+        if (lectura.tableOfContents) {
+            lectura.tableOfContents.forEach(item => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.className = 'item-indice';
+                a.href = `#${item.id}`;
+                a.textContent = item.title;
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        }
     }
 
     // Generate article sections
     function generateArticleContent(lectura) {
         const contentDiv = document.getElementById('article-content');
+        if (!contentDiv) return;
+
         contentDiv.innerHTML = '';
 
-        lectura.sections.forEach(section => {
-            // Create section title
-            const titleDiv = document.createElement('div');
-            titleDiv.className = 'article-title';
-            titleDiv.id = section.id;
-            const h2 = document.createElement('h2');
-            h2.textContent = section.title;
-            titleDiv.appendChild(h2);
-            contentDiv.appendChild(titleDiv);
+        if (lectura.sections) {
+            lectura.sections.forEach(section => {
+                // Create section title
+                const titleDiv = document.createElement('div');
+                titleDiv.className = 'article-title';
+                titleDiv.id = section.id;
+                const h2 = document.createElement('h2');
+                h2.textContent = section.title;
+                titleDiv.appendChild(h2);
+                contentDiv.appendChild(titleDiv);
 
-            // Create section content
-            const articleDiv = document.createElement('div');
-            articleDiv.className = 'article';
-            articleDiv.innerHTML = section.content;
-            contentDiv.appendChild(articleDiv);
-        });
+                // Create section content
+                const articleDiv = document.createElement('div');
+                articleDiv.className = 'article';
+                articleDiv.innerHTML = section.content;
+                contentDiv.appendChild(articleDiv);
+            });
+        }
+    }
+
+    // Show Error UI
+    function showErrorUI() {
+        const titleContainer = document.getElementById('page-title');
+        if (titleContainer) titleContainer.textContent = 'Error';
+
+        const articleContent = document.getElementById('article-content');
+        if (articleContent) {
+            articleContent.innerHTML = `
+                <div style="text-align: center; padding: 50px;">
+                    <h2>Error</h2>
+                    <h1>Lectura no encontrada</h1>
+                    <p>Lo sentimos, la lectura que buscas no existe o ha sido movida.</p>
+                    <a href="/blog.html" style="text-decoration: underline; color: #7134A2;">Volver al blog</a>
+                </div>
+            `;
+        }
     }
 
     // Show 404 error
     function show404Error() {
-        document.getElementById('article-category').textContent = 'Error';
-        document.getElementById('article-title').textContent = 'Lectura no encontrada';
-        document.getElementById('reading-time-text').textContent = '';
+        const artCat = document.getElementById('article-category');
+        if (artCat) artCat.textContent = 'Error';
+
+        const artTitle = document.getElementById('article-title');
+        if (artTitle) artTitle.textContent = 'Lectura no encontrada';
+
+        const readTime = document.getElementById('reading-time-text');
+        if (readTime) readTime.textContent = '';
 
         const introDiv = document.getElementById('introduction');
-        introDiv.innerHTML = `
-            <p>Lo sentimos, la lectura que buscas no existe o ha sido movida.</p>
-            <p><a href="blog.html" style="color: var(--purple-light); text-decoration: underline;">Volver al blog</a></p>
-        `;
+        if (introDiv) {
+            introDiv.innerHTML = `
+                <p>Lo sentimos, la lectura que buscas no existe o ha sido movida.</p>
+                <p><a href="/blog.html" style="color: var(--purple-light); text-decoration: underline;">Volver al blog</a></p>
+            `;
+        }
 
-        document.getElementById('article-image').style.display = 'none';
-        document.getElementById('table-of-contents').innerHTML = '';
-        document.getElementById('article-content').innerHTML = '';
-        document.getElementById('page-title').textContent = 'Lectura no encontrada - Vitalia';
+        const artImg = document.getElementById('article-image');
+        if (artImg) artImg.style.display = 'none';
+
+        const toc = document.getElementById('table-of-contents');
+        if (toc) toc.innerHTML = '';
+
+        const content = document.getElementById('article-content');
+        if (content) content.innerHTML = '';
+
+        const pageTitle = document.getElementById('page-title');
+        if (pageTitle) pageTitle.textContent = 'Lectura no encontrada - Vitalia';
 
         // Ensure visibility
         document.querySelectorAll('.title, .article, .introduction-container').forEach(el => {
             el.classList.add('animate');
-            el.style.opacity = '1'; // Force opacity just in case
+            el.style.opacity = '1';
         });
     }
 
@@ -190,10 +211,7 @@
         }
 
         // Populate page with lectura data
-        updateMetaTags(lectura);
-        updateArticleHeader(lectura);
-        updateIntroduction(lectura);
-        updateImage(lectura);
+        renderArticle(lectura);
         generateTableOfContents(lectura);
         generateArticleContent(lectura);
 
