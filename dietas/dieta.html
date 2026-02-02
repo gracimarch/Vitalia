@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargando dieta...</title>
+    <meta name="description"
+        content="Plan para mantener altos niveles de energía y vitalidad con una dieta de alimentos integrales, ricos en nutrientes y antioxidantes.">
+    <meta name="keywords"
+        content="energía, vitalidad, dieta saludable, alimentos integrales, nutrientes, antioxidantes, salud general">
+    <link rel="icon" href="../assets/images/ui/favicon-vitalia.png" type="image/png">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/lectura.css">
+    <link rel="stylesheet" href="../assets/css/dietstyle.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- React & DOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="header-root"></div>
+
+    <div class="pagina-1">
+        <div class="header">
+            <a href="../index.html" class="back-link">
+                <i class="bi bi-arrow-left-short"></i> Volver al inicio
+            </a>
+        </div>
+
+        <div class="title">
+            <!-- Loaded dynamically -->
+        </div>
+
+        <div class="article" id="introduction">
+            <!-- Loaded dynamically -->
+        </div>
+
+        <figure class="image">
+            <!-- Loaded dynamically -->
+        </figure>
+
+        <div class="schedule-container">
+            <!-- Loaded dynamically -->
+        </div>
+    </div>
+
+    <div class="pagina-3">
+        <p class="darkscreen"></p>
+        <div class="recipes">
+            <!-- Loaded dynamically -->
+        </div>
+    </div>
+
+    <div class="pagina-2">
+        <div class="article-title" id="variaciones">
+            <h2>Variaciones</h2>
+        </div>
+        <div class="article">
+            <ul><!-- Loaded dynamically --></ul>
+        </div>
+
+        <div class="article-title" id="lista-de-compras">
+            <h2>Lista de compras</h2>
+        </div>
+        <div class="article">
+            <!-- Loaded dynamically -->
+        </div>
+    </div>
+
+    <!-- Pie de página-->
+    <div id="footer-placeholder"></div>
+    <script src="../assets/js/load-components.js"></script>
+
+    <script src="../assets/js/dieta-loader.js"></script>
+    <script src="../assets/js/articlescript.js"></script>
+
+    <script>
+        !function () {
+            var t = window, e = document, a = function () {
+                var t = e.createElement("script");
+                t.type = "text/javascript", t.async = !0, t.src = "https://bot.airdroid.com/widget/chatinsight-widget.js", t.onload = function () {
+                    new ChatInsightWidget({
+                        sid: 'DBEaEYro3pM7blsrV5tpn6D4uL6FBMBc',
+                        iFrameSid: 'asQotJ41ToI4oveBTqWAlrT0f_8AKYEM'
+                    })
+                };
+                var a = e.getElementsByTagName("script")[0];
+                a.parentNode.insertBefore(t, a)
+            };
+            "complete" === document.readyState ? a() : t.attachEvent ? t.attachEvent("onload", a) : t.addEventListener("load", a, !1)
+        }();
+    </script>
+
+</body>
+
+</html>

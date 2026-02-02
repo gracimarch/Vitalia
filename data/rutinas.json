@@ -1,0 +1,37 @@
+{
+    "rutinas": [
+        {
+            "slug": "ejercicio-en-15-min",
+            "title": "Ejercicio en 15 Minutos: Rutina rápida y completa para días ocupados",
+            "level": "Nivel Principiante",
+            "duration": "15 minutos de duración",
+            "introduction": "<p>Con esta rutina corta activarás tu sistema cardiovascular, fortalecerás los músculos principales y mejorarás tu flexibilidad. Procura realizar los ejercicios a tu propio ritmo, recuerda que puedes pausar el temporizador siempre que necesites. ¡Te recomendamos <strong class=\"underline\">repetir esta rutina tres veces a la semana</strong> para notar mejoras en tu resistencia y energía!</p>",
+            "image": "../assets/images/fitness/imgRutinasMatPesas.webp",
+            "preparation": "<p>Antes de comenzar, asegúrate de usar ropa cómoda y calzado adecuado. Necesitarás un poco de espacio en el suelo y, si tienes, una colchoneta para los ejercicios en el suelo. Mantén una botella de agua cerca para hidratarte antes y después de la rutina. Esta rutina se enfoca en activar diferentes grupos musculculares con movimientos simples y efectivos. Cuando sientas que es momento de empezar a ejercitarte, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "conclusion": "<p>Con esta rutina completaste un excelente trabajo. Has activado tu cuerpo, fortalecido los músculos clave y, lo más importante, te has acercado a tus objetivos. Si te resulta útil, puedes realizar esta rutina de 2 a 3 veces por semana para obtener mejores resultados.</p><p>Ahora, tómate un momento para hidratarte y realizar algunos estiramientos suaves. <strong class=\"underline\">Escuchar a tu cuerpo es fundamental</strong>, así que no dudes en tomarte el tiempo necesario para recuperarte antes de continuar con tus actividades diarias. ¡Buen trabajo!</p>",
+            "exercises": [
+                {
+                    "title": "Marcha en el lugar",
+                    "description": "Párate con espalda recta, mirada al frente y eleva las rodillas a la altura de la cadera, moviendo los brazos al compás.",
+                    "videoSrc": "https://videos.pexels.com/video-files/10042798/10042798-hd_1920_1080_24fps.mp4",
+                    "duration": 30,
+                    "rest": 15
+                },
+                {
+                    "title": "Sentadillas",
+                    "description": "Coloca los pies al ancho de hombros, flexiona rodillas y caderas como si te sentaras, mantén la espalda recta y empuja con los talones.",
+                    "videoSrc": "https://videos.pexels.com/video-files/12345678/sample-squat.mp4",
+                    "duration": 30,
+                    "rest": 15
+                },
+                {
+                    "title": "Flexiones modificadas",
+                    "description": "Manos al ancho de hombros y rodillas apoyadas, baja el pecho manteniendo los codos cerca del cuerpo y vuelve a subir sin bloquear los codos.",
+                    "videoSrc": "https://videos.pexels.com/video-files/23456789/sample-pushup.mp4",
+                    "duration": 20,
+                    "rest": 10
+                }
+            ]
+        }
+    ]
+}
