@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Redirigiendo... | Vitalia</title>
+    <script>
+        (function () {
+            const path = window.location.pathname;
+            const parts = path.split('/').filter(p => p !== '');
+
+            const ROUTE_MAP = {
+                'lecturas': '/lectura.html',
+                'dietas': '/dieta.html',
+                'rutinas': '/rutina.html'
+            };
+
+            if (parts.length >= 2) {
+                const prefix = parts[0];
+                const template = ROUTE_MAP[prefix];
+
+                if (template) {
+                    // Save the intended path to restore it in the template
+                    sessionStorage.setItem('vitalia_redirected_path', path);
+                    // Redirect to the template
+                    window.location.replace(template);
+                    return;
+                }
+            }
+
+            // If it's not a dynamic route, just go home or show a simple error
+            console.error('Página no encontrada:', path);
+            window.location.replace('/index.html');
+        })();
+    </script>
+</head>
+
+<body>
+    <p>Redirigiendo...</p>
+</body>
+
+</html>
