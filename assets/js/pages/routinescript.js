@@ -36,7 +36,7 @@ async function loadRoutine() {
     }
 
     // Absolute path
-    const jsonPath = '/data/rutinas.json';
+    const jsonPath = '/assets/data/rutinas.json';
 
     const response = await fetch(jsonPath);
     if (!response.ok) throw new Error('No se pudo cargar rutinas.json');

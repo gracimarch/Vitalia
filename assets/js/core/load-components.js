@@ -5,7 +5,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const componentsPath = "/assets/components/";
+    const componentsPath = "/assets/partials/";
 
     // Load Header
     fetch(componentsPath + "header.html")
