@@ -1,0 +1,2233 @@
+{
+    "dietas": [
+        {
+            "slug": "aliviar-la-ansiedad-en-dias-estresantes",
+            "title": "Dieta para calmar la ansiedad en días estresantes",
+            "type": "Tipo de Alimentación: Antiestrés y equilibrada",
+            "duration": "1 día",
+            "image": "../assets/images/articles/imgArticuloSaludMentalDiscapacidad.webp",
+            "introduction": "<p>¿Se acerca un evento importante, un examen o simplemente vives un día lleno de estrés? Este plan está diseñado para <strong class=\"underline\">ayudarte a calmar la ansiedad</strong> a través de alimentos nutritivos que promueven el equilibrio emocional, la concentración y el bienestar general. Cada opción ha sido seleccionada cuidadosamente para brindarte una experiencia alimentaria reconfortante y práctica.</p>",
+            "schedule": [
+                {
+                    "name": "Desayuno",
+                    "options": [
+                        {
+                            "label": "Opción 1",
+                            "cards": [
+                                {
+                                    "title": "Tostadas integrales con aguacate y huevo pochado",
+                                    "time": "Listo en 10 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe1"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Opción 2",
+                            "cards": [
+                                {
+                                    "title": "Yogurt con frutillas y miel",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Almuerzo",
+                    "options": [
+                        {
+                            "label": "Opción 1",
+                            "cards": [
+                                {
+                                    "title": "Ensalada de quinoa con pollo y espinacas",
+                                    "time": "Listo en 20 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe2"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Opción 2",
+                            "cards": [
+                                {
+                                    "title": "Wrap de vegetales con hummus",
+                                    "time": "Listo en 15 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe3"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Snack",
+                    "options": [
+                        {
+                            "label": "Opción 1",
+                            "cards": [
+                                {
+                                    "title": "Batido de plátano",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "recipeId": "recipe4"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Opción 2",
+                            "cards": [
+                                {
+                                    "title": "Mix de frutos secos y pasas",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cena",
+                    "options": [
+                        {
+                            "label": "Opción 1",
+                            "cards": [
+                                {
+                                    "title": "Sopa de verduras reconfortante",
+                                    "time": "Listo en 25 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe5"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Opción 2",
+                            "cards": [
+                                {
+                                    "title": "Ensalada tibia de salmón y aguacate",
+                                    "time": "Listo en 15 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe6"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "recipes": [
+                {
+                    "id": "recipe1",
+                    "title": "Tostadas integrales con aguacate y huevo pochado",
+                    "time": "Listo en 10 minutos",
+                    "image": "../assets/images/imgTostadasAguacateHuevo.webp",
+                    "ingredients": [
+                        "2 rebanadas de pan integral",
+                        "1 aguacate maduro",
+                        "1 huevo",
+                        "Sal, pimienta y unas gotas de limón"
+                    ],
+                    "instructions": "<p>Tuesta el pan integral hasta que esté dorado. Mientras, aplasta el aguacate y mézclalo con sal, pimienta y unas gotas de limón. Cocina el huevo pochado en agua hirviendo con un chorrito de vinagre, y colócalo sobre las tostadas. ¡Disfruta de un desayuno energético y saludable!</p>"
+                },
+                {
+                    "id": "recipe2",
+                    "title": "Ensalada de quinoa con pollo y espinacas",
+                    "time": "Listo en 20 minutos",
+                    "image": "../assets/images/imgEnsaladaQuinoaPollo.webp",
+                    "ingredients": [
+                        "1 taza de quinoa cocida",
+                        "150g de pechuga de pollo a la plancha, en tiras",
+                        "1 taza de espinacas frescas",
+                        "1/2 pimiento rojo en tiras",
+                        "Jugo de limón, aceite de oliva, sal y pimienta"
+                    ],
+                    "instructions": "<p>En un tazón, mezcla la quinoa con las espinacas, el pollo en tiras y el pimiento. Aliña con jugo de limón, aceite de oliva, sal y pimienta. Remueve suavemente y disfruta de una comida fresca y equilibrada.</p>"
+                },
+                {
+                    "id": "recipe3",
+                    "title": "Wrap de vegetales con hummus",
+                    "time": "Listo en 15 minutos",
+                    "image": "../assets/images/imgWrapVegetalesHummus.webp",
+                    "ingredients": [
+                        "1 tortilla integral",
+                        "2 cucharadas de hummus",
+                        "1/2 pepino en rodajas finas",
+                        "1 zanahoria rallada",
+                        "Hojas de lechuga"
+                    ],
+                    "instructions": "<p>Unta el hummus en la tortilla integral y agrega las rodajas de pepino, la zanahoria rallada y hojas de lechuga. Enrolla firmemente y corta a la mitad para disfrutar de un almuerzo ligero y refrescante.</p>"
+                },
+                {
+                    "id": "recipe4",
+                    "title": "Batido de plátano",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/imgSmoothiePlatanoEspinaca.webp",
+                    "ingredients": [
+                        "1 plátano",
+                        "1 taza de leche (vegetal o común)",
+                        "1 cucharadita de miel",
+                        "Hielo al gusto"
+                    ],
+                    "instructions": "<p>Coloca el plátano, la leche y la miel en la licuadora junto con algunos cubitos de hielo. Licúa hasta obtener una mezcla homogénea y disfruta.</p>"
+                },
+                {
+                    "id": "recipe5",
+                    "title": "Sopa de verduras reconfortante",
+                    "time": "Listo en 25 minutos",
+                    "image": "../assets/images/imgSopaVerduras.webp",
+                    "ingredients": [
+                        "1 zanahoria picada",
+                        "1/2 cebolla picada",
+                        "1/2 taza de calabacín en cubos",
+                        "1 tomate picado",
+                        "2 tazas de caldo de verduras",
+                        "Aceite de oliva, sal y pimienta"
+                    ],
+                    "instructions": "<p>En una olla, saltea la cebolla en un poco de aceite hasta que se vuelva transparente. Agrega la zanahoria, el calabacín y el tomate, y deja que se cocinen unos minutos. Incorpora el caldo de verduras y cocina a fuego medio hasta que las verduras estén tiernas. Sazona al gusto y sirve caliente para reconfortar el cuerpo y la mente.</p>"
+                },
+                {
+                    "id": "recipe6",
+                    "title": "Ensalada tibia de salmón y aguacate",
+                    "time": "Listo en 15 minutos",
+                    "image": "../assets/images/imgEnsaladaSalmonAguacate.webp",
+                    "ingredients": [
+                        "1 filete de salmón a la plancha, desmenuzado",
+                        "1/2 aguacate en cubos",
+                        "Hojas de espinaca o rúcula",
+                        "1/4 de cebolla morada en rodajas finas",
+                        "Jugo de limón, aceite de oliva, sal y pimienta"
+                    ],
+                    "instructions": "<p>En un tazón grande, coloca las hojas de espinaca o rúcula y añade la cebolla en rodajas y el aguacate. Incorpora el salmón desmenuzado y mezcla suavemente. Aliña con jugo de limón, un chorrito de aceite de oliva, sal y pimienta para obtener un plato reconfortante y lleno de sabor.</p>"
+                }
+            ],
+            "variations": [
+                {
+                    "type": "Sin gluten",
+                    "description": "Sustituye el pan y la tortilla integral por sus versiones sin gluten."
+                },
+                {
+                    "type": "Vegetariano",
+                    "description": "Omite el pollo o el salmón y añade tofu o garbanzos a las recetas."
+                },
+                {
+                    "type": "Sin lácteos",
+                    "description": "Utiliza leche y yogurt de origen vegetal en lugar de los lácteos tradicionales."
+                }
+            ],
+            "shoppingList": {
+                "Frutas y verduras": "Aguacate, plátano, espinacas, zanahoria, cebolla, tomate, pepino, pimiento, calabacín, frutillas.",
+                "Proteínas": "Pechuga de pollo, filete de salmón, tofu, garbanzos.",
+                "Otros": "Pan y tortillas integrales o sin gluten, quinoa, hummus, yogurt, miel, avena, aceite de oliva, caldo de verduras, frutos secos, pasas."
+            }
+        },
+        {
+            "slug": "dias-ocupados",
+            "title": "Dieta Saludable para Días Ocupados",
+            "type": "Tipo de Alimentación: Opciones rápidas y nutritivas",
+            "duration": "1 día",
+            "image": "../assets/images/articles/imgArticuloAlimentacionConsciente.webp",
+            "introduction": "<p>Este plan diario está diseñado <strong class=\"underline\">para aquellas personas con agendas apretadas</strong> que desean mantener una alimentación equilibrada y saludable sin invertir mucho tiempo. Con opciones variadas en cada comida, podrás escoger la que mejor se adapte a tus gustos y necesidades, garantizando <strong class=\"underline\">energía y nutrición </strong>a lo largo del día.</p>",
+            "schedule": [
+                {
+                    "name": "Desayuno",
+                    "options": [
+                        {
+                            "label": "Opción 1",
+                            "cards": [
+                                {
+                                    "title": "Avena Express con Frutas",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "recipeId": "recipe1"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Opción 2",
+                            "cards": [
+                                {
+                                    "title": "Batido Verde Refrescante",
+                                    "time": "Listo en 7 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Almuerzo",
+                    "options": [
+                        {
+                            "label": "Opción 1",
+                            "cards": [
+                                {
+                                    "title": "Wrap de Pavo y Vegetales",
+                                    "time": "Listo en 15 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe3"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Opción 2",
+                            "cards": [
+                                {
+                                    "title": "Ensalada de Quinoa y Pollo",
+                                    "time": "Listo en 20 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe4"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Snack",
+                    "options": [
+                        {
+                            "label": "Opción 1",
+                            "cards": [
+                                {
+                                    "title": "Yogurt con Granola y Miel",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Opción 2",
+                            "cards": [
+                                {
+                                    "title": "Barra de Frutas Casera",
+                                    "time": "Listo en 10 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe6"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cena",
+                    "options": [
+                        {
+                            "label": "Opción 1",
+                            "cards": [
+                                {
+                                    "title": "Salmón a la Plancha con Verduras",
+                                    "time": "Listo en 25 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe7"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Opción 2",
+                            "cards": [
+                                {
+                                    "title": "Tacos de Lechuga con Tofu",
+                                    "time": "Listo en 20 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe8"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "recipes": [
+                {
+                    "id": "recipe1",
+                    "title": "Avena Express con Frutas",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/imgDietasAvenaFrutas.webp",
+                    "ingredients": [
+                        "1/2 taza de avena",
+                        "1 taza de leche",
+                        "1/2 manzana picada",
+                        "1/2 plátano en rodajas",
+                        "Canela al gusto"
+                    ],
+                    "instructions": "<p>Mezcla la avena con la leche y caliéntala en el microondas durante 2 minutos. Incorpora la fruta picada y espolvorea canela. ¡Disfruta de un desayuno rápido y nutritivo!</p>"
+                },
+                {
+                    "id": "recipe2",
+                    "title": "Batido Verde Refrescante",
+                    "time": "Listo en 7 minutos",
+                    "image": "../assets/images/food/imgDietasSmothieVerde.webp",
+                    "ingredients": [
+                        "1 taza de espinaca fresca",
+                        "1/2 pepino",
+                        "1 manzana verde",
+                        "1 taza de agua de coco"
+                    ],
+                    "instructions": "<p>Licúa la espinaca, pepino, manzana y agua de coco hasta obtener una mezcla homogénea. Sirve frío con el agua de coco para empezar el día con energía. Si no cuentas con agua de coco, la puedes reemplazar por agua con un chorrito de limón.</p>"
+                },
+                {
+                    "id": "recipe3",
+                    "title": "Wrap de Pavo y Vegetales",
+                    "time": "Listo en 15 minutos",
+                    "image": "../assets/images/food/imgDietasWrapPavo.webp",
+                    "ingredients": [
+                        "1 tortilla integral",
+                        "3 lonchas de pavo",
+                        "Hojas de lechuga",
+                        "Rodajas de tomate",
+                        "Mostaza o yogurt light"
+                    ],
+                    "instructions": "<p>Comienza calentando ligeramente una tortilla integral en una sartén sin aceite para que sea más flexible. Luego, colócala sobre una superficie y añade en el centro las lonchas de pavo, unas hojas de lechuga y rodajas de tomate fresco. Agrega un toque de mostaza o yogurt light por encima para darle sabor, y luego enrolla la tortilla con firmeza. Finalmente, corta el wrap por la mitad en diagonal y ya estará listo para disfrutar.</p>"
+                },
+                {
+                    "id": "recipe4",
+                    "title": "Ensalada de Quinoa y Pollo",
+                    "time": "Listo en 20 minutos",
+                    "image": "../assets/images/imgEnsaladaQuinoaPollo.webp",
+                    "ingredients": [
+                        "1 taza de quinoa cocida",
+                        "100g de pechuga de pollo a la plancha",
+                        "Hojas de espinaca",
+                        "Tomate cherry",
+                        "Aceite de oliva y limón"
+                    ],
+                    "instructions": "<p>Mezcla la quinoa previamente cocida con trozos de pollo a la plancha, hojas frescas de espinaca y tomates cortados en cubos, creando una base colorida y nutritiva. Aliña la ensalada con un chorrito de aceite de oliva virgen extra, jugo de limón recién exprimido, una pizca de sal y pimienta al gusto, para realzar los sabores y obtener un almuerzo completo, ligero y lleno de energía.</p>"
+                },
+                {
+                    "id": "recipe6",
+                    "title": "Barra de Frutas Casera",
+                    "time": "Listo en 10 minutos",
+                    "image": "../assets/images/imgBarraFrutas.webp",
+                    "ingredients": [
+                        "1 plátano machacado",
+                        "1/2 taza de copos de avena",
+                        "Frutas deshidratadas",
+                        "Miel y canela"
+                    ],
+                    "instructions": "<p>Mezcla todos los ingredientes en un bol hasta obtener una masa homogénea y compacta, lo suficientemente firme como para extenderla fácilmente sobre una bandeja. Una vez extendida en una capa uniforme, refrigérala durante unos 10 minutos para que tome consistencia. Luego, con un cuchillo afilado, corta la masa en forma de barras del tamaño que prefieras, y estarán listas</p>"
+                },
+                {
+                    "id": "recipe7",
+                    "title": "Salmón a la Plancha con Verduras",
+                    "time": "Listo en 25 minutos",
+                    "image": "../assets/images/imgDietasSalmonBrocoliZanahorias.webp",
+                    "ingredients": [
+                        "1 filete de salmón",
+                        "Brocoli y zanahorias al vapor",
+                        "Jugo de limón",
+                        "Aceite de oliva"
+                    ],
+                    "instructions": "<p>Sazona el salmón con sal, pimienta y jugo de limón. Cocínalo a la plancha con un poco de aceite de oliva y acompáñalo con verduras al vapor para una cena ligera y rica en omega-3.</p>"
+                },
+                {
+                    "id": "recipe8",
+                    "title": "Tacos de Lechuga con Tofu",
+                    "time": "Listo en 20 minutos",
+                    "image": "../assets/images/imgTacosTofu.webp",
+                    "ingredients": [
+                        "150g de tofu firme",
+                        "Hojas de lechuga",
+                        "Rodajas de pepino y zanahoria",
+                        "Salsa de soja y jengibre"
+                    ],
+                    "instructions": "<p>Corta el tofu en tiras y saltéalo con un toque de salsa de soja y jengibre. Distribuye sobre hojas de lechuga junto con pepino y zanahoria para disfrutar de unos tacos frescos y ligeros.</p>"
+                }
+            ],
+            "variations": [
+                {
+                    "type": "Sin gluten",
+                    "description": "Sustituye las tortillas o panes tradicionales por versiones sin gluten."
+                },
+                {
+                    "type": "Vegetariano",
+                    "description": "Cambia el pollo o pavo por tofu, legumbres o tempeh, y utiliza alternativas vegetales."
+                },
+                {
+                    "type": "Sin lácteos",
+                    "description": "Emplea leche de almendra, avena o coco, y yogures sin lácteos."
+                }
+            ],
+            "shoppingList": {
+                "Frutas y verduras": "Plátano, manzana, espinacas, pepino, zanahoria, brócoli, lechuga, tomate, limón.",
+                "Proteínas": "Pechuga de pollo, pavo, salmón, tofu, huevos.",
+                "Otros": "Avena, quinoa, granola, copos de avena, miel, aceite de oliva, yogurt, tortillas integrales."
+            }
+        },
+        {
+            "slug": "energia-y-vitalidad",
+            "title": "Plan Energía y Vitalidad",
+            "type": "Tipo de Alimentación: Balanceada y rica en nutrientes",
+            "duration": "1 semana",
+            "image": "../assets/images/food/imgDietasEnergiaVitalidad.webp",
+            "introduction": "<p>Este plan está diseñado para personas que buscan mantener <strong class=\"underline\">altos niveles de energía</strong> a lo largo de la semana. La dieta se basa en alimentos integrales, <strong class=\"underline\">fáciles de digerir, ricos en fibra, y con propiedades antioxidantes</strong>, evitando el consumo excesivo de calorías que puedan sobrecargar al sistema digestivo.</p>",
+            "schedule": [
+                {
+                    "name": "Lunes",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Smoothie verde",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe1"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Ensalada con pollo a la plancha",
+                                    "time": "Listo en 20 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe2"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Arroz integral con vegetales y pechuga de pollo",
+                                    "time": "Listo en 40 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe3"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Manzana con almendras",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Martes",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Batido de leche con fresas y avena",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe4"
+                                },
+                                {
+                                    "title": "Pan con queso",
+                                    "time": "Listo en 1 minuto",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Salmón a la plancha con arroz y brócoli",
+                                    "time": "Listo en 25 min",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe5"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Revuelto de huevos con cebolla y espinacas",
+                                    "time": "Listo en 10 min",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe6"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Yogurt con plátano",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Miércoles",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Avena con frutas y yogurt",
+                                    "time": "Listo en 10 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe7"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Arroz integral con tofu y vegetales",
+                                    "time": "Listo en 25 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe8"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Ensalada de garbanzos con vegetales frescos",
+                                    "time": "Listo en 15 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe9"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Pera con queso fresco",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Jueves",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Batido de leche con mango y avena",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe10"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Ensalada templada de salmón con espárragos",
+                                    "time": "Listo en 20 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe11"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Sopa ligera de lentejas y verduras",
+                                    "time": "Listo en 30 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe12"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Palitos de zanahoria",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Viernes",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Smoothie de mango y pera",
+                                    "time": "Listo en 7 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe13"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Wrap de pollo y vegetales",
+                                    "time": "Listo en 15 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe14"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Ensalada de atún con vegetales frescos",
+                                    "time": "Listo en 10 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe15"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Torta en taza saludable de chocolate",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "recipeId": "recipe16"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "recipes": [
+                {
+                    "id": "recipe1",
+                    "title": "Smoothie verde",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/food/imgDietasSmothieVerde.webp",
+                    "ingredients": [
+                        "1 plátano",
+                        "1 manzana",
+                        "1 puñado de hojas de espinaca",
+                        "1/2 taza de avena",
+                        "1 taza de leche"
+                    ],
+                    "instructions": "<p>Pela y corta la fruta, luego coloca la espinaca, el plátano, la manzana, la avena y la leche en la licuadora, y procesa hasta obtener una mezcla suave y homogénea, puedes agregar hielos. ¡Listo para disfrutar!</p>"
+                },
+                {
+                    "id": "recipe2",
+                    "title": "Ensalada con pollo a la plancha",
+                    "time": "Listo en 20 minutos",
+                    "image": "../assets/images/food/imgDietasEnsaladaPollo.webp",
+                    "ingredients": [
+                        "150g de pechuga de pollo",
+                        "Lechuga",
+                        "Tomates cherry",
+                        "Espinaca",
+                        "1 zanahoria rallada",
+                        "Aceite de oliva",
+                        "Jugo de limón (opcional)"
+                    ],
+                    "instructions": "<p>Comienza cocinando los 150g de pechuga de pollo a la plancha con un poco de sal y pimienta a gusto. Mientras se cocina el pollo, lava y corta las hojas de lechuga y espinaca, y ralla una zanahoria. En un tazón grande, mezcla las verduras y agrega el pollo ya cocido y cortado en tiras o cubos. Aliña con un chorrito de aceite de oliva y unas gotas de limón, ¡revuelve bien y disfruta!</p>"
+                },
+                {
+                    "id": "recipe3",
+                    "title": "Arroz integral con vegetales y pechuga de pollo",
+                    "time": "Listo en 45 minutos",
+                    "image": "../assets/images/imgDietasArrozPollo.jpeg",
+                    "ingredients": [
+                        "1 taza de arroz integral (o común)",
+                        "150g de pechuga de pollo",
+                        "1 taza de brocoli",
+                        "1 calabacín",
+                        "Aceite de oliva",
+                        "1 diente de ajo picado (opcional)"
+                    ],
+                    "instructions": "<p>Primero, cocina 1 taza de arroz integral en 2 tazas de agua con una pizca de sal, dejándolo hervir a fuego medio-alto hasta que absorba el agua (aproximadamente 30-35 minutos). Mientras se cocina el arroz, sazona 150 g de pechuga de pollo con sal y pimienta, y cocínala en una sartén con 1 cucharadita de aceite de oliva a fuego medio hasta que esté dorada y completamente cocida, luego córtala en tiras o cubos. En la misma sartén, sofríe 1 diente de ajo picado (opcional), luego añade 1 taza de brócoli y 1 calabacín picado, cocinándolos hasta que estén tiernos. Finalmente, mezcla el arroz cocido con los vegetales y el pollo.</p>"
+                },
+                {
+                    "id": "recipe4",
+                    "title": "Batido de leche con fresas y avena",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/food/imgDietasBatidoFresa.webp",
+                    "ingredients": [
+                        "1 taza de leche",
+                        "5 fresas",
+                        "3 cucharadas de avena",
+                        "1 cucharadita de miel (opcional)",
+                        "Hielo al gusto"
+                    ],
+                    "instructions": "<p>Comienza por licuar los ingredientes hasta obtener una mezcla homogénea, luego, agrega un puñado de hielos y una cucharadita de miel (opcional). Sirve en un vaso y ¡a disfrutar!.</p>"
+                },
+                {
+                    "id": "recipe5",
+                    "title": "Salmón a la plancha con arroz y brócoli",
+                    "time": "Listo en 20 minutos",
+                    "image": "../assets/images/food/imgDietasSalmonBrocoli.webp",
+                    "ingredients": [
+                        "1 filete de salmón",
+                        "1 taza de arroz cocido integral (o común)",
+                        "1/2 taza de brócoli",
+                        "Aceite de oliva"
+                    ],
+                    "instructions": "<p>Comienza cocinando el salmón a la plancha con un chorrito de aceite de oliva, sal y pimienta a gusto. Mientras el salmón se cocina, hierve el brócoli picado. Finalmente, sirve todo junto con el arroz y disfruta.</p>"
+                },
+                {
+                    "id": "recipe6",
+                    "title": "Revuelto de huevos con cebolla y espinacas",
+                    "time": "Listo en 10 minutos",
+                    "image": "../assets/images/food/imgDietasArrozEspinaca.webp",
+                    "ingredients": [
+                        "2 huevos",
+                        "1/4 de cebolla picada",
+                        "1/2 taza de espinacas",
+                        "Aceite de oliva"
+                    ],
+                    "instructions": "<p>Calienta una sartén a fuego medio y agrega una cucharadita de aceite de oliva. Añade la cebolla picada y fríela durante 2-3 minutos. Luego, incorpora las espinacas, removiendo constantemente hasta que se reduzcan y ablanden. Mientras tanto, bate los huevos en un tazón. Vierte los huevos batidos en la sartén y cocina a fuego medio-bajo, revolviendo suavemente con una espátula hasta que los huevos estén cocidos. Sirve y disfruta.</p>"
+                },
+                {
+                    "id": "recipe7",
+                    "title": "Avena con frutas y yogurt",
+                    "time": "Listo en 10 minutos",
+                    "image": "../assets/images/imgDietasAvenaFrutasYogurt.webp",
+                    "ingredients": [
+                        "1/2 taza de avena",
+                        "1 taza de leche",
+                        "1/2 taza de yogurt natural",
+                        "1 plátano en rodajas",
+                        "1 manzana picada"
+                    ],
+                    "instructions": "<p>Mezcla la avena con la leche y deja reposar por 5 minutos. Agrega el yogurt y las frutas, mezcla suavemente y disfruta de un desayuno nutritivo y energético.</p>"
+                },
+                {
+                    "id": "recipe8",
+                    "title": "Arroz integral con tofu y vegetales",
+                    "time": "Listo en 25 minutos",
+                    "image": "../assets/images/imgDietasArrozTofuVegetales.webp",
+                    "ingredients": [
+                        "1 taza de arroz integral",
+                        "150g de tofu",
+                        "1 taza de brócoli",
+                        "1 calabacín picado",
+                        "1/4 de cebolla picada",
+                        "Aceite de oliva"
+                    ],
+                    "instructions": "<p>Cocina el arroz hasta que esté tierno. En una sartén, saltea la cebolla, el tofu en cubos, brócoli y calabacín con un poco de aceite de oliva. Mezcla el arroz con los vegetales y el tofu, ajusta la sazón y sirve caliente.</p>"
+                },
+                {
+                    "id": "recipe9",
+                    "title": "Ensalada de garbanzos con vegetales frescos",
+                    "time": "Listo en 15 minutos",
+                    "image": "../assets/images/imgDietasEnsaladaGarbanzos.webp",
+                    "ingredients": [
+                        "1 taza de garbanzos cocidos",
+                        "1/2 taza de espinacas",
+                        "1 tomate picado",
+                        "1/2 pepino en rodajas",
+                        "Aceite de oliva"
+                    ],
+                    "instructions": "<p>En un tazón, mezcla los garbanzos con las espinacas, tomate y pepino. Aliña con aceite de oliva y sal al gusto, y sirve como una cena ligera y refrescante.</p>"
+                },
+                {
+                    "id": "recipe10",
+                    "title": "Batido de leche con mango y avena",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/imgDietasBatidoMangoAvena.webp",
+                    "ingredients": [
+                        "1 taza de leche",
+                        "1/2 taza de avena",
+                        "1 mango picado",
+                        "1/2 taza de yogurt (opcional)"
+                    ],
+                    "instructions": "<p>Licúa todos los ingredientes hasta obtener una mezcla homogénea. Sirve inmediatamente para disfrutar de un desayuno refrescante y nutritivo.</p>"
+                },
+                {
+                    "id": "recipe11",
+                    "title": "Ensalada templada de salmón con espárragos",
+                    "time": "Listo en 20 minutos",
+                    "image": "../assets/images/imgDietasEnsaladaSalmonEspárragos.webp",
+                    "ingredients": [
+                        "1 filete de salmón",
+                        "1 taza de espárragos",
+                        "1/2 taza de lechuga",
+                        "1 tomate picado",
+                        "Aceite de oliva"
+                    ],
+                    "instructions": "<p>Cocina el salmón a la plancha y córtalo en trozos. En un tazón, mezcla la lechuga, el tomate y los espárragos ligeramente salteados. Agrega el salmón y aliña con aceite de oliva y sal al gusto.</p>"
+                },
+                {
+                    "id": "recipe12",
+                    "title": "Sopa ligera de lentejas y verduras",
+                    "time": "Listo en 30 minutos",
+                    "image": "../assets/images/imgDietasSopaLentejasVerduras.webp",
+                    "ingredients": [
+                        "1 taza de lentejas",
+                        "1 zanahoria picada",
+                        "1/2 cebolla picada",
+                        "1 tomate picado",
+                        "1/2 taza de repollo en tiras",
+                        "Aceite de oliva"
+                    ],
+                    "instructions": "<p>En una olla, saltea la cebolla con aceite de oliva, añade la zanahoria, el tomate y el repollo. Agrega las lentejas y agua suficiente, cocina hasta que estén tiernas y ajusta la sazón antes de servir.</p>"
+                },
+                {
+                    "id": "recipe13",
+                    "title": "Smoothie de mango y pera",
+                    "time": "Listo en 7 minutos",
+                    "image": "../assets/images/imgDietasSmoothieMangoPera.webp",
+                    "ingredients": [
+                        "1 mango",
+                        "1 pera",
+                        "1 taza de leche",
+                        "1/2 taza de hielo"
+                    ],
+                    "instructions": "<p>Licúa el mango y la pera con la leche y el hielo hasta obtener una mezcla suave y refrescante. Sirve de inmediato para disfrutar de sus vitaminas.</p>"
+                },
+                {
+                    "id": "recipe14",
+                    "title": "Wrap de pollo y vegetales",
+                    "time": "Listo en 15 minutos",
+                    "image": "../assets/images/imgDietasWrapPolloVegetales.webp",
+                    "ingredients": [
+                        "1 pechuga de pollo",
+                        "Hojas de lechuga",
+                        "1 tomate en rodajas",
+                        "1/4 de cebolla en rodajas",
+                        "Pan integral",
+                        "Aceite de oliva"
+                    ],
+                    "instructions": "<p>Cocina la pechuga de pollo a la plancha y córtala en tiras. Sobre el pan integral coloca hojas de lechuga, rodajas de tomate y cebolla, agrega el pollo y un chorrito de aceite de oliva. Enrolla y disfruta.</p>"
+                },
+                {
+                    "id": "recipe15",
+                    "title": "Ensalada de atún con vegetales frescos",
+                    "time": "Listo en 10 minutos",
+                    "image": "../assets/images/ui/meal-icon.webp",
+                    "ingredients": [
+                        "1 lata de atún",
+                        "Hojas de lechuga",
+                        "1 tomate picado",
+                        "1/2 pepino en rodajas",
+                        "Aceite de oliva"
+                    ],
+                    "instructions": "<p>Mezcla el atún con la lechuga, el tomate y el pepino. Aliña con aceite de oliva y una pizca de sal, y sirve esta ensalada fresca y ligera.</p>"
+                },
+                {
+                    "id": "recipe16",
+                    "title": "Torta en taza saludable de chocolate",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/comidan.webp",
+                    "ingredients": [
+                        "1 huevo",
+                        "3 cucharaditas de azúcar",
+                        "1/2 taza de avena",
+                        "2 cucharaditas de cacao en polvo",
+                        "1 pizca de sal",
+                        "Almendras al gusto"
+                    ],
+                    "instructions": "<p>Para comenzar, integra la avena, el cacao y el azúcar. En un recipiente pequeño bate el huevo e incorpóralo en la taza, asegúrate de mezclar hasta tener una mezcla homogénea. Finalmente, agrega una pizca de sal y lleva al microondas durante 2 minutos (el tiempo de coción puede variar dependiendo de tu microondas).</p><p>¡Y listo! Puedes decorar con almendras arriba y añadir escencia de vainilla o canela a la mezcla si deseas.</p>"
+                }
+            ],
+            "variations": [
+                {
+                    "type": "Sin gluten",
+                    "description": "Utiliza pan y tortillas sin gluten en lugar de las versiones tradicionales."
+                },
+                {
+                    "type": "Vegetariano",
+                    "description": "Sustituye las proteínas animales por fuentes vegetales como tofu, tempeh, legumbres y frutos secos."
+                },
+                {
+                    "type": "Sin lácteos",
+                    "description": "Utiliza leche de almendras o avena y elige yogur sin lácteos."
+                }
+            ],
+            "shoppingList": {
+                "Frutas y verduras": "Plátano, fresas, manzana, pera, mango, tomate, pepino, espinacas, lechuga, zanahoria, brócoli, calabacín, cebolla, espárragos, pepino, repollo.",
+                "Proteínas": "Pechuga de pollo, salmón, atún, tofu, garbanzos, lentejas, huevos.",
+                "Otros": "Avena, arroz, pan, almendras, aceite de oliva, leche, yogurt, queso, cacao."
+            }
+        },
+        {
+            "slug": "express-vegetariana",
+            "title": "Plan Express para Personas Vegetarianas",
+            "type": "Tipo de alimentación: Vegetariana y Vegana",
+            "duration": "1 semana",
+            "image": "../assets/images/articles/imgArticuloComeSaludablePlantas.webp",
+            "introduction": "<p>Este plan ha sido diseñado para quienes llevan una vida ajetreada pero desean disfrutar de una dieta completa y saludable basada en alimentos vegetarianos y veganos. Con recetas rápidas y creativas, cada preparación está pensada para que puedas comer bien sin perder tiempo. ¡Disfruta de cada plato y mantén tu energía a tope!</p>",
+            "schedule": [
+                {
+                    "name": "Lunes",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Tostadas integrales con aguacate y tomate",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Buddha bowl de quinoa y vegetales",
+                                    "time": "Listo en 20 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe1"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Crema de calabaza y jengibre",
+                                    "time": "Listo en 30 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe2"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Plátano con mantequilla de almendras",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Martes",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Smoothie de espinaca, plátano y kiwi",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "recipeId": "recipe3"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Tacos con lechuga con garbanzos y maíz",
+                                    "time": "Listo en 15 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe4"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Pasta integral con pesto de albahaca y espinacas",
+                                    "time": "Listo en 25 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe5"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Rodajas de pepino con hummus",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Miércoles",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Parfait de yogurt vegano con granola y frutas",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "recipeId": "recipe6"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Ensalada tibia de lentejas y vegetales asados",
+                                    "time": "Listo en 30 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe7"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Sopa fría de pepino y menta",
+                                    "time": "Listo en 10 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe8"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Palitos de zanahoria",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Jueves",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Batido de remolacha, manzana y jengibre",
+                                    "time": "Listo en 7 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe9"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Wrap vegano de hummus y vegetales",
+                                    "time": "Listo en 15 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe10"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Curry de garbanzos y espinacas",
+                                    "time": "Listo en 20 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe11"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Nueces y pasas",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Viernes",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Leche de almendra con avena y frutos rojos",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Bowl de falafel con tabulé y salsa tahini",
+                                    "time": "Listo en 25 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe12"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Pizza de coliflor con vegetales",
+                                    "time": "Listo en 35 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe13"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Rodajas de manzana con canela",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "recipes": [
+                {
+                    "id": "recipe1",
+                    "title": "Buddha bowl de quinoa y vegetales",
+                    "time": "Listo en 20 minutos",
+                    "image": "../assets/images/imgDietasBuddhaBowl.webp",
+                    "ingredients": [
+                        "1 taza de quinoa cocida",
+                        "1/2 taza de garbanzos asados",
+                        "Mix de hojas verdes",
+                        "Tomate cherry",
+                        "Aguacate en cubos",
+                        "Zanahoria rallada"
+                    ],
+                    "instructions": "<p>En un bowl, mezcla la quinoa con garbanzos asados y hojas verdes. Agrega tomate cherry, aguacate y zanahoria rallada. Adereza con aceite de oliva, limón, sal y pimienta. Consejo express: mezcla todo y disfruta de un plato colorido y nutritivo en tiempo récord.</p>"
+                },
+                {
+                    "id": "recipe2",
+                    "title": "Crema de calabaza y jengibre",
+                    "time": "Listo en 30 minutos",
+                    "image": "../assets/images/imgDietasCremaCalabaza.webp",
+                    "ingredients": [
+                        "400g de calabaza",
+                        "1 trozo pequeño de jengibre",
+                        "1 cebolla pequeña",
+                        "Caldo de verduras",
+                        "Crema de coco (opcional)"
+                    ],
+                    "instructions": "<p>Pela y corta la calabaza y la cebolla en trozos. Sofríe la cebolla con un poco de aceite de oliva, añade la calabaza y el jengibre rallado, y cubre con caldo de verduras. Cocina hasta que la calabaza esté tierna y licúa hasta obtener una crema suave. Si deseas, incorpora crema de coco para un toque extra. Sirve caliente y disfruta de una cena reconfortante.</p>"
+                },
+                {
+                    "id": "recipe3",
+                    "title": "Smoothie de espinaca, plátano y kiwi",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/food/imgDietasSmothieVerde.webp",
+                    "ingredients": [
+                        "1 puñado de espinacas",
+                        "1 plátano",
+                        "1 kiwi pelado",
+                        "1 taza de agua o leche vegetal"
+                    ],
+                    "instructions": "<p>Coloca todos los ingredientes en la licuadora y mezcla hasta obtener una textura homogénea. Sirve de inmediato para un desayuno lleno de energía express.</p>"
+                },
+                {
+                    "id": "recipe4",
+                    "title": "Tacos con lechuga con garbanzos y maíz",
+                    "time": "Listo en 15 minutos",
+                    "image": "../assets/images/imgDietasTacosVeganos.webp",
+                    "ingredients": [
+                        "Hojas de lechuga",
+                        "1 taza de garbanzos cocidos",
+                        "1/2 taza de maíz",
+                        "Pimiento picado",
+                        "Cilantro y limón"
+                    ],
+                    "instructions": "<p>Mezcla los garbanzos con el maíz y el pimiento. Adereza con cilantro, jugo de limón, sal y pimienta. Usa las hojas de lechuga como “tortillas” y disfruta.</p>"
+                },
+                {
+                    "id": "recipe5",
+                    "title": "Pasta integral con pesto de albahaca y espinacas",
+                    "time": "Listo en 25 minutos",
+                    "image": "../assets/images/imgDietasPastaPesto.webp",
+                    "ingredients": [
+                        "200g de pasta integral",
+                        "1 manojo de albahaca fresca",
+                        "1 taza de espinacas",
+                        "1/4 de taza de nueces o piñones",
+                        "Aceite de oliva y ajo"
+                    ],
+                    "instructions": "<p>Cocina la pasta según las indicaciones del paquete. Mientras tanto, licúa la albahaca, espinacas, nueces, ajo y aceite hasta obtener un pesto. Mezcla la pasta con el pesto y sirve caliente. Consejo: añade un poco del agua de cocción para lograr la textura deseada.</p>"
+                },
+                {
+                    "id": "recipe6",
+                    "title": "Parfait de yogurt vegano con granola y frutas",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/imgDietasParfaitVegano.webp",
+                    "ingredients": [
+                        "1 taza de yogurt vegano",
+                        "1/2 taza de granola",
+                        "Frutas de temporada"
+                    ],
+                    "instructions": "<p>Arma un parfait alternando capas de yogurt, granola y trozos de fruta. Repite hasta llenar el vaso y disfruta de un desayuno refrescante.</p>"
+                },
+                {
+                    "id": "recipe7",
+                    "title": "Ensalada tibia de lentejas y vegetales asados",
+                    "time": "Listo en 30 minutos",
+                    "image": "../assets/images/imgDietasEnsaladaLentejas.webp",
+                    "ingredients": [
+                        "1 taza de lentejas cocidas",
+                        "Calabacín y berenjena asados",
+                        "Pimiento rojo",
+                        "Mix de hojas verdes",
+                        "Aceite de oliva y limón"
+                    ],
+                    "instructions": "<p>Mezcla las lentejas con los vegetales asados y las hojas verdes. Aliña con aceite, jugo de limón, sal y pimienta. Sirve templado para una comida rápida y saludable.</p>"
+                },
+                {
+                    "id": "recipe8",
+                    "title": "Sopa fría de pepino y menta",
+                    "time": "Listo en 10 minutos",
+                    "image": "../assets/images/imgDietasSopaPepino.webp",
+                    "ingredients": [
+                        "1 pepino grande",
+                        "Hojas de menta",
+                        "Yogurt vegetal o agua fría",
+                        "Sal y pimienta"
+                    ],
+                    "instructions": "<p>Corta el pepino en trozos y licúa junto a la menta y el yogurt o agua. Ajusta con sal y pimienta y refrigera unos minutos para potenciar su frescura.</p>"
+                },
+                {
+                    "id": "recipe9",
+                    "title": "Batido de remolacha, manzana y jengibre",
+                    "time": "Listo en 7 minutos",
+                    "image": "../assets/images/imgDietasBatidoRemolacha.webp",
+                    "ingredients": [
+                        "1 remolacha cocida",
+                        "1 manzana",
+                        "Un trozo de jengibre",
+                        "1 taza de leche vegetal"
+                    ],
+                    "instructions": "<p>Corta la remolacha y la manzana en trozos y licúa junto al jengibre con la leche vegetal. Si deseas, añade hielo para un batido aún más refrescante.</p>"
+                },
+                {
+                    "id": "recipe10",
+                    "title": "Wrap vegano de hummus y vegetales",
+                    "time": "Listo en 15 minutos",
+                    "image": "../assets/images/imgDietasWrapVegano.webp",
+                    "ingredients": [
+                        "Tortilla integral",
+                        "Hummus casero",
+                        "Pepino y zanahoria en rodajas",
+                        "Hojas de espinaca y rúcula"
+                    ],
+                    "instructions": "<p>Unta la tortilla con hummus, añade los vegetales en rodajas y hojas verdes, y enróllalo. Consejo: si lo deseas, tuesta ligeramente el wrap para un toque crujiente.</p>"
+                },
+                {
+                    "id": "recipe11",
+                    "title": "Curry de garbanzos y espinacas",
+                    "time": "Listo en 20 minutos",
+                    "image": "../assets/images/imgDietasCurryGarbanzos.webp",
+                    "ingredients": [
+                        "1 taza de garbanzos cocidos",
+                        "1 taza de espinacas frescas",
+                        "1 tomate picado",
+                        "Leche de coco",
+                        "Especias: curry, cúrcuma y comino"
+                    ],
+                    "instructions": "<p>En una sartén, saltea el tomate con las especias y añade los garbanzos. Vierte un toque de leche de coco y, cuando hierva, incorpora las espinacas. Cocina hasta que se ablanden y ajusta la sazón. Sirve caliente para una cena rápida y disfruta.</p>"
+                },
+                {
+                    "id": "recipe12",
+                    "title": "Bowl de falafel con tabulé y salsa tahini",
+                    "time": "Listo en 25 minutos",
+                    "image": "../assets/images/imgDietasBowlFalafel.webp",
+                    "ingredients": [
+                        "Falafel (casero o preelaborado)",
+                        "Tabulé de bulgur y perejil",
+                        "Salsa tahini",
+                        "Vegetales frescos variados"
+                    ],
+                    "instructions": "<p>Prepara o utiliza falafel ya elaborado y acompáñalo de un tabulé fresco. Añade salsa tahini diluida en un toque de limón. Mezcla y disfruta de un bowl rápido y sabroso.</p>"
+                },
+                {
+                    "id": "recipe13",
+                    "title": "Pizza de coliflor con vegetales",
+                    "time": "Listo en 35 minutos",
+                    "image": "../assets/images/imgDietasPizzaColiflor.webp",
+                    "ingredients": [
+                        "Base de coliflor triturada",
+                        "Salsa de tomate natural",
+                        "Vegetales (pimiento, champiñones, aceitunas)",
+                        "Orégano y albahaca"
+                    ],
+                    "instructions": "<p>Mezcla coliflor triturada con huevo o sustituto vegano y harina para formar una masa. Hornea la base 10-15 minutos, agrega salsa y vegetales, espolvorea orégano y albahaca, y hornea nuevamente por 15-20 minutos. Disfruta de una pizza ligera.</p>"
+                }
+            ],
+            "variations": [
+                {
+                    "type": "Sin gluten",
+                    "description": "Sustituye la tortilla integral por opciones sin gluten y utiliza quinoa certificada."
+                },
+                {
+                    "type": "Vegano",
+                    "description": "Emplea productos 100% vegetales, como leche y yogurt de origen vegetal, y evita derivados animales."
+                },
+                {
+                    "type": "Bajo en grasa",
+                    "description": "Usa aceite de oliva con moderación y opta por técnicas de cocción rápidas como el salteado o vapor."
+                }
+            ],
+            "shoppingList": {
+                "Frutas y verduras": "Aguacate, tomate, plátano, kiwi, espinacas, pepino, pimiento, zanahoria, calabaza, remolacha, manzana, frutos rojos, coliflor, berenjena, champiñones, aceitunas, limón, menta, perejil.",
+                "Proteínas y legumbres": "Garbanzos, lentejas, falafel, hummus, quinoa.",
+                "Otros": "Pan integral o alternativas sin gluten, bulgur, aceite de oliva, leche vegetal, yogurt vegetal, tahini, especias y hierbas frescas."
+            }
+        },
+        {
+            "slug": "fin-de-semana-sin-lacteos",
+            "title": "Fin de semana sin lácteos",
+            "type": "Tipo de Alimentación: Sin lácteos, ligero y natural",
+            "duration": "1 fin de semana",
+            "image": "../assets/images/food/imgDietasFinSemanaSinLactosa.webp",
+            "introduction": "<p>Este plan está pensado para quienes buscan cuidar su digestión, reducir la inflamación o simplemente explorar una alimentación más ligera y natural. Es ideal para personas con intolerancia a la lactosa o quienes quieren probar una alternativa saludable <strong class=\"underline\">sin renunciar al sabor ni a la variedad</strong>. Es perfecto para un reset digestivo, una pausa consciente o simplemente para sentirte bien comiendo rico y sin lácteos.</p>",
+            "schedule": [
+                {
+                    "name": "Sábado",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Porridge de avena con leche de almendra y frutas",
+                                    "time": "Listo en 10 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe15"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Ensalada mediterránea de garbanzos y vegetales",
+                                    "time": "Listo en 20 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe16"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Estofado de ternera con verduras",
+                                    "time": "Listo en 40 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe17"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Rodaja de piña fresca",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Domingo",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Smoothie bowl de frutas tropicales",
+                                    "time": "Listo en 7 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe18"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Quiche sin lactosa de espinacas y champiñones",
+                                    "time": "Listo en 30 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe19"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Sopa minestrone sin queso",
+                                    "time": "Listo en 35 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe20"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Mix de frutos secos",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "recipes": [
+                {
+                    "id": "recipe15",
+                    "title": "Porridge de avena con leche de almendra y frutas",
+                    "time": "Listo en 10 minutos",
+                    "image": "../assets/images/imgDietasPorridge.webp",
+                    "ingredients": [
+                        "1/2 taza de avena",
+                        "1 taza de leche de almendra",
+                        "Frutas variadas (banano, fresas, arándanos)",
+                        "Miel o sirope de agave (opcional)"
+                    ],
+                    "instructions": "<p>Cocina la avena con la leche de almendra a fuego medio, removiendo ocasionalmente, hasta que adquiera la consistencia deseada. Sirve en un tazón y añade las frutas encima. Este desayuno reconfortante es ideal para empezar el fin de semana con energía.</p>"
+                },
+                {
+                    "id": "recipe16",
+                    "title": "Ensalada mediterránea de garbanzos y vegetales",
+                    "time": "Listo en 20 minutos",
+                    "image": "../assets/images/imgDietasEnsaladaMediterranea.webp",
+                    "ingredients": [
+                        "1 taza de garbanzos cocidos",
+                        "Tomate, pepino y pimiento en cubos",
+                        "Aceitunas negras",
+                        "Hojas de albahaca",
+                        "Aceite de oliva y vinagre"
+                    ],
+                    "instructions": "<p>En un tazón, combina los garbanzos con los vegetales cortados en cubos. Añade aceitunas y hojas de albahaca, y aliña con aceite de oliva y vinagre al gusto para obtener una ensalada fresca y vibrante.</p>"
+                },
+                {
+                    "id": "recipe17",
+                    "title": "Estofado de ternera con verduras",
+                    "time": "Listo en 40 minutos",
+                    "image": "../assets/images/imgDietasEstofadoTernera.webp",
+                    "ingredients": [
+                        "300g de ternera en cubos",
+                        "Patata, zanahoria y apio",
+                        "Caldo de carne",
+                        "Hierbas aromáticas"
+                    ],
+                    "instructions": "<p>Dora la ternera en cubos en una olla con un poco de aceite. Incorpora las verduras cortadas y cúbrelo todo con caldo de carne. Añade hierbas aromáticas y cocina a fuego lento durante 35-40 minutos hasta lograr un estofado tierno y sabroso.</p>"
+                },
+                {
+                    "id": "recipe18",
+                    "title": "Smoothie bowl de frutas tropicales",
+                    "time": "Listo en 7 minutos",
+                    "image": "../assets/images/imgDietasSmoothieTropical.webp",
+                    "ingredients": [
+                        "1 taza de frutas tropicales congeladas",
+                        "1/2 taza de leche de coco",
+                        "1 cucharadita de miel",
+                        "Fruta fresca para decorar"
+                    ],
+                    "instructions": "<p>Licúa las frutas congeladas con la leche de coco y la miel hasta obtener una mezcla cremosa. Sirve en un bowl y decora con trozos de fruta fresca para un desayuno lleno de sabor y vitalidad.</p>"
+                },
+                {
+                    "id": "recipe19",
+                    "title": "Quiche sin lactosa de espinacas y champiñones",
+                    "time": "Listo en 30 minutos",
+                    "image": "../assets/images/imgDietasQuicheSinLactosa.webp",
+                    "ingredients": [
+                        "Masa sin lactosa (pre-hecha o casera)",
+                        "150g de espinacas",
+                        "100g de champiñones laminados",
+                        "Huevos y especias"
+                    ],
+                    "instructions": "<p>Extiende la masa en un molde y reserva. Saltea las espinacas y los champiñones con un toque de aceite y sal. Bate los huevos, mezcla con las verduras, sazona y vierte sobre la masa. Hornea a 180°C durante 25-30 minutos hasta que el relleno se cuaje. Un almuerzo dominical perfecto.</p>"
+                },
+                {
+                    "id": "recipe20",
+                    "title": "Sopa minestrone sin queso",
+                    "time": "Listo en 35 minutos",
+                    "image": "../assets/images/imgDietasMinestrone.webp",
+                    "ingredients": [
+                        "Verduras variadas (zanahoria, apio, tomate, calabacín)",
+                        "Pasta pequeña integral",
+                        "Caldo vegetal",
+                        "Hierbas frescas"
+                    ],
+                    "instructions": "<p>Saltea las verduras picadas hasta que se ablanden y añade el caldo vegetal. Incorpora la pasta y cocina hasta que esté al dente. Finaliza con hierbas frescas y sirve caliente. Una sopa reconfortante para cerrar el fin de semana.</p>"
+                }
+            ],
+            "variations": [],
+            "shoppingList": {
+                "Frutas y verduras": "Banano, fresas, arándanos, kiwi, mango, manzana, aguacate, tomate, pepino, zanahoria, espinaca, pimiento, berenjena, champiñones, calabaza, lechuga, albahaca.",
+                "Proteínas": "Ternera, pavo, pescado blanco, tofu, garbanzos, lentejas.",
+                "Otros": "Quinoa, arroz integral, pasta integral, avena, semillas de chía, masa sin lactosa, aceite de oliva, leche de almendra, granola, miel."
+            }
+        },
+        {
+            "slug": "sin-lacteos",
+            "title": "Plan alimenticio semanal para personas con intolerancia a la lactosa",
+            "type": "Tipo de Alimentación: Sin lactosa, completa y saludable",
+            "duration": "1 semana",
+            "image": "../assets/images/food/imgDietasSinLactosa.webp",
+            "introduction": "<p>¿Evitas los lácteos? Este plan fue creado especialmente para ti: una propuesta nutritiva y equilibrada, pensada para quienes deben eliminar la lactosa de su dieta sin perder variedad. Descubrirás que comer bien sin lácteos no solo es posible, ¡también es delicioso!</p>",
+            "schedule": [
+                {
+                    "name": "Lunes",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Chia pudding con leche de coco y frutas",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "recipeId": "recipe1"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Ensalada de quinoa con garbanzos y verduras asadas",
+                                    "time": "Listo en 20 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe2"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Sopa fría de pepino y menta",
+                                    "time": "Listo en 10 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe3"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Rodajas de manzana con mantequilla de almendra",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Martes",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Smoothie bowl de mango y plátano",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "recipeId": "recipe4"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Tacos de lechuga con carne de res y pico de gallo",
+                                    "time": "Listo en 15 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe5"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Pollo al curry con leche de coco",
+                                    "time": "Listo en 30 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe6"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Palitos de zanahoria",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Miércoles",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Tostadas integrales con aguacate y tomate",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Buddha bowl con arroz integral, tofu marinado y verduras frescas",
+                                    "time": "Listo en 25 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe7"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Lasaña vegetal con láminas de berenjena",
+                                    "time": "Listo en 35 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe8"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Nueces y uvas",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Jueves",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Parfait de granola con yogur sin lactosa y frutas",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "recipeId": "recipe9"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Ensalada tibia de lentejas con espinacas y zanahoria",
+                                    "time": "Listo en 20 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe10"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Filete de pescado al horno con salsa de limón y alcaparras",
+                                    "time": "Listo en 25 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe11"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Rodajas de pepino con sal y limón",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Viernes",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Batido verde de espinaca, manzana y jengibre",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "recipeId": "recipe12"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Wrap de pavo y vegetales en tortilla sin lactosa",
+                                    "time": "Listo en 15 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe13"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Crema de calabaza y jengibre",
+                                    "time": "Listo en 30 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe14"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Mandarina fresca",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "recipes": [
+                {
+                    "id": "recipe1",
+                    "title": "Chia pudding con leche de coco y frutas",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/imgDietasChiaPudding.webp",
+                    "ingredients": [
+                        "3 cucharadas de semillas de chía",
+                        "1 taza de leche de coco",
+                        "1 cucharadita de esencia de vainilla",
+                        "Frutas frescas (fresas, kiwi, mango)"
+                    ],
+                    "instructions": "<p>Mezcla las semillas de chía con la leche de coco y la vainilla en un tazón. Deja reposar durante 5 minutos para que las semillas se expandan. Agrega las frutas picadas encima y disfruta de un desayuno refrescante y nutritivo. Consejo: si prefieres una textura más cremosa, mezcla todo en la licuadora y refrigera unos minutos.</p>"
+                },
+                {
+                    "id": "recipe2",
+                    "title": "Ensalada de quinoa con garbanzos y verduras asadas",
+                    "time": "Listo en 20 minutos",
+                    "image": "../assets/images/imgDietasEnsaladaQuinoa.webp",
+                    "ingredients": [
+                        "1 taza de quinoa cocida",
+                        "1 taza de garbanzos cocidos",
+                        "Verduras asadas (pimiento, calabacín, berenjena)",
+                        "Hojas de espinaca",
+                        "Aceite de oliva y limón"
+                    ],
+                    "instructions": "<p>Corta las verduras en trozos y ásalas con un poco de aceite de oliva y sal hasta que estén tiernas. En un tazón, mezcla la quinoa con los garbanzos, las verduras asadas y las hojas de espinaca. Aliña con jugo de limón, aceite de oliva, sal y pimienta al gusto. Un plato fresco y lleno de texturas.</p>"
+                },
+                {
+                    "id": "recipe3",
+                    "title": "Sopa fría de pepino y menta",
+                    "time": "Listo en 10 minutos",
+                    "image": "../assets/images/imgDietasSopaPepinoMenta.webp",
+                    "ingredients": [
+                        "2 pepinos",
+                        "Un puñado de hojas de menta fresca",
+                        "1 diente de ajo pequeño",
+                        "Jugo de 1 limón",
+                        "Aceite de oliva"
+                    ],
+                    "instructions": "<p>Licúa los pepinos pelados y picados junto con la menta, el ajo y el jugo de limón. Añade un chorrito de aceite de oliva y sal al gusto. Si la consistencia es muy espesa, puedes agregar un poco de agua fría o hielo. Sirve frío y disfruta de este refrescante entrante.</p>"
+                },
+                {
+                    "id": "recipe4",
+                    "title": "Smoothie bowl de mango y plátano",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/imgDietasSmoothieAcai.webp",
+                    "ingredients": [
+                        "2 mangos maduros",
+                        "1 plátano congelado",
+                        "1/2 taza de agua o leche de almendra",
+                        "Frutas frescas para decorar"
+                    ],
+                    "instructions": "<p>Pela y corta dos mangos maduros, retirando toda la pulpa. Colócala en la licuadora y procesa hasta obtener un puré suave y cremoso; si lo deseas, puedes añadir unas gotas de jugo de limón para realzar el sabor.</p><p>Una vez listo el puré de mango, agrega un plátano congelado y 1/2 taza de leche de almendra, y licúa todo junto hasta lograr una consistencia cremosa. Vierte la mezcla en un bowl y decora con frutas frescas al gusto. Esta opción sin lactosa es naturalmente dulce, rica en vitaminas y perfecta para empezar el día con energía tropical.</p>"
+                },
+                {
+                    "id": "recipe5",
+                    "title": "Tacos de lechuga con carne de res y pico de gallo",
+                    "time": "Listo en 15 minutos",
+                    "image": "../assets/images/imgDietasTacosLechuga.webp",
+                    "ingredients": [
+                        "200g de carne de res magra",
+                        "Hojas de lechuga fresca",
+                        "Pico de gallo (tomate, cebolla, cilantro, limón)",
+                        "Aceite de oliva"
+                    ],
+                    "instructions": "<p>Saltea la carne de res en tiras con un poco de aceite y sazona con sal y pimienta. Mientras tanto, prepara el pico de gallo picando tomate, cebolla y cilantro, y mezcla con jugo de limón. Sirve la carne en hojas de lechuga y agrega el pico de gallo encima para disfrutar de unos tacos ligeros y llenos de sabor.</p>"
+                },
+                {
+                    "id": "recipe6",
+                    "title": "Pollo al curry con leche de coco",
+                    "time": "Listo en 30 minutos",
+                    "image": "../assets/images/imgDietasPolloCurry.webp",
+                    "ingredients": [
+                        "250g de pechuga de pollo",
+                        "1 lata de leche de coco",
+                        "1 cucharada de pasta de curry",
+                        "Verduras al gusto (pimiento, cebolla, brócoli)"
+                    ],
+                    "instructions": "<p>Corta el pollo en cubos y saltéalo en una sartén con un poco de aceite hasta que esté dorado. Agrega las verduras picadas y la pasta de curry, mezclando bien para que se integren los sabores. Vierte la leche de coco, reduce el fuego y deja cocinar por unos 20-25 minutos hasta que el pollo esté tierno. Consejo: acompaña con arroz integral para una comida completa.</p>"
+                },
+                {
+                    "id": "recipe7",
+                    "title": "Buddha bowl con arroz integral, tofu marinado y verduras frescas",
+                    "time": "Listo en 25 minutos",
+                    "image": "../assets/images/imgDietasBuddhaBowl.webp",
+                    "ingredients": [
+                        "1 taza de arroz integral cocido",
+                        "150g de tofu firme",
+                        "Verduras frescas (zanahoria, pepino, remolacha)",
+                        "Salsa de soya sin lactosa"
+                    ],
+                    "instructions": "<p>Marina el tofu en salsa de soya con un poco de jengibre picado durante 10 minutos. Dispón el arroz en un bowl y añade el tofu junto con las verduras crudas cortadas en juliana. Puedes agregar un toque de aceite de sésamo y semillas de sésamo tostado para darle un extra de sabor.</p>"
+                },
+                {
+                    "id": "recipe8",
+                    "title": "Lasaña vegetal con láminas de berenjena",
+                    "time": "Listo en 35 minutos",
+                    "image": "../assets/images/imgDietasLasanaBerenjena.webp",
+                    "ingredients": [
+                        "Berenjena en láminas",
+                        "Salsa de tomate casera",
+                        "Verduras variadas (espinaca, champiñones)",
+                        "Hierbas italianas"
+                    ],
+                    "instructions": "<p>Asa las láminas de berenjena ligeramente con un poco de aceite para que queden tiernas. Intercala capas de berenjena, salsa de tomate y verduras salteadas en un molde, espolvoreando hierbas italianas entre capas. Hornea a 180°C durante 25-30 minutos y disfruta de una lasaña ligera y llena de sabor.</p>"
+                },
+                {
+                    "id": "recipe9",
+                    "title": "Parfait de granola con yogur sin lactosa y frutas",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/imgDietasParfait.webp",
+                    "ingredients": [
+                        "1 taza de yogur sin lactosa",
+                        "1/2 taza de granola",
+                        "Frutas frescas (arándanos, plátano, kiwi)"
+                    ],
+                    "instructions": "<p>En un vaso, coloca una capa de yogur, una capa de granola y una capa de frutas picadas. Repite las capas hasta llenar el vaso y disfruta de un desayuno rápido, crujiente y saludable.</p>"
+                },
+                {
+                    "id": "recipe10",
+                    "title": "Ensalada tibia de lentejas con espinacas y zanahoria",
+                    "time": "Listo en 20 minutos",
+                    "image": "../assets/images/imgDietasEnsaladaLentejas.webp",
+                    "ingredients": [
+                        "1 taza de lentejas cocidas",
+                        "Hojas de espinaca",
+                        "Zanahoria rallada",
+                        "Aceite de oliva y vinagre balsámico"
+                    ],
+                    "instructions": "<p>En una sartén, saltea brevemente las lentejas con un poco de aceite y agrega las hojas de espinaca y la zanahoria rallada. Aliña con aceite de oliva, vinagre balsámico, sal y pimienta al gusto. Sirve tibio para disfrutar de una ensalada reconfortante y nutritiva.</p>"
+                },
+                {
+                    "id": "recipe11",
+                    "title": "Filete de pescado al horno con salsa de limón y alcaparras",
+                    "time": "Listo en 25 minutos",
+                    "image": "../assets/images/imgDietasPescadoHorno.webp",
+                    "ingredients": [
+                        "1 filete de pescado blanco",
+                        "Jugo de 1 limón",
+                        "Alcaparras",
+                        "Hierbas frescas (perejil o cilantro)"
+                    ],
+                    "instructions": "<p>Precalienta el horno a 200°C. Coloca el filete en una bandeja, rocía con jugo de limón y decora con alcaparras y hierbas. Hornea durante 15-20 minutos o hasta que el pescado esté bien cocido. Sirve inmediatamente y disfruta de un plato ligero y sabroso.</p>"
+                },
+                {
+                    "id": "recipe12",
+                    "title": "Batido verde de espinaca, manzana y jengibre",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/imgDietasBatidoVerde.webp",
+                    "ingredients": [
+                        "1 taza de espinaca fresca",
+                        "1 manzana verde",
+                        "Un trozo pequeño de jengibre",
+                        "1 taza de agua o leche de almendra"
+                    ],
+                    "instructions": "<p>Coloca todos los ingredientes en la licuadora y procesa hasta obtener un batido homogéneo. Si lo deseas, añade hielo para una textura más refrescante. Es un desayuno lleno de vitaminas y perfecto para energizar tu día.</p>"
+                },
+                {
+                    "id": "recipe13",
+                    "title": "Wrap de pavo y vegetales en tortilla sin lactosa",
+                    "time": "Listo en 15 minutos",
+                    "image": "../assets/images/food/imgDietasWrapPavo.webp",
+                    "ingredients": [
+                        "2 tortillas sin lactosa",
+                        "150g de pavo cocido en tiras",
+                        "Hojas de lechuga, tomate y pimiento",
+                        "Salsa ligera al gusto"
+                    ],
+                    "instructions": "<p>Sobre cada tortilla, coloca las hojas de lechuga y distribuye las tiras de pavo junto con las verduras cortadas. Agrega la salsa y enrolla de forma apretada. Es un almuerzo práctico y lleno de sabor.</p>"
+                },
+                {
+                    "id": "recipe14",
+                    "title": "Crema de calabaza y jengibre",
+                    "time": "Listo en 30 minutos",
+                    "image": "../assets/images/imgDietasCremaCalabaza.webp",
+                    "ingredients": [
+                        "500g de calabaza",
+                        "Un trozo de jengibre",
+                        "1/2 cebolla",
+                        "Caldo vegetal"
+                    ],
+                    "instructions": "<p>Pela y corta la calabaza y el jengibre en cubos pequeños. Sofríe la cebolla picada hasta que esté transparente, agrega la calabaza y el jengibre y vierte suficiente caldo vegetal para cubrir. Cocina a fuego medio hasta que la calabaza esté tierna, luego licúa todo hasta obtener una crema suave. Ajusta la sazón y sirve caliente.</p>"
+                }
+            ],
+            "variations": [
+                {
+                    "type": "Sin lactosa",
+                    "description": "Todas las recetas están elaboradas sin lácteos; lo que ayuda a mejorar problemas de acné, disminuir la frecuencia de alergias respiratorias y reduce la inflamación del tracto digestivo."
+                },
+                {
+                    "type": "Versátil",
+                    "description": "Puedes ajustar las especias y verduras según tu preferencia."
+                },
+                {
+                    "type": "Fácil de adaptar",
+                    "description": "Si algún ingrediente no está disponible, sustituye por otro similar sin lactosa."
+                }
+            ],
+            "shoppingList": {
+                "Frutas y verduras": "Plátano, fresas, arándanos, kiwi, mango, manzana, aguacate, tomate, pepino, zanahoria, espinaca, pimiento, berenjena, champiñones, calabaza, remolacha, lechuga, albahaca.",
+                "Proteínas": "Carne de res, pechuga de pollo, pavo, ternera, pescado blanco, tofu, garbanzos, lentejas.",
+                "Otros": "Quinoa, arroz integral, pasta integral, avena, semillas de chía, masa sin lactosa, aceite de oliva, vinagre balsámico, hierbas aromáticas, especias, leche de coco o leche de almendra, yogur sin lactosa, alcaparras, granola, miel o sirope de agave."
+            }
+        },
+        {
+            "slug": "sueno-reparador",
+            "title": "Plan alimenticio diario para tener un sueño reparador",
+            "type": "Tipo de Alimentación: Relajante y nutritiva",
+            "duration": "1 día",
+            "image": "../assets/images/articles/imgArticuloSiestasCortasBeneficios.webp",
+            "introduction": "<p>Este plan diario está diseñado para ayudarte a disfrutar de un sueño reparador a través de alimentos que favorecen la producción de serotonina y melatonina. Incluye opciones ricas en triptófano, magnesio y carbohidratos complejos, combinadas para estimular la relajación y la buena digestión, claves para descansar mejor.</p>",
+            "schedule": [
+                {
+                    "name": "Plan Diario",
+                    "options": [
+                        {
+                            "label": "Desayuno",
+                            "cards": [
+                                {
+                                    "title": "Opción 1: Batido de plátano y avena con leche caliente",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "recipeId": "recipe1"
+                                },
+                                {
+                                    "title": "Opción 2: Yogurt con frutas y miel",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Almuerzo",
+                            "cards": [
+                                {
+                                    "title": "Opción 1: Ensalada de pavo con quinoa y espinacas",
+                                    "time": "Listo en 15 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe2"
+                                },
+                                {
+                                    "title": "Opción 2: Wrap de pollo, aguacate y hojas verdes",
+                                    "time": "Listo en 10 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe3"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Snack",
+                            "cards": [
+                                {
+                                    "title": "Opción 1: Nueces y cerezas deshidratadas",
+                                    "time": "Listo inmediatamente",
+                                    "icon": "../assets/images/ui/ray-icon.webp"
+                                },
+                                {
+                                    "title": "Opción 2: Barrita de avena y almendras casera",
+                                    "time": "Listo en 5 minutos",
+                                    "icon": "../assets/images/ui/ray-icon.webp",
+                                    "recipeId": "recipe4"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Cena",
+                            "cards": [
+                                {
+                                    "title": "Opción 1: Filete de salmón con ensalada de aguacate y espinacas",
+                                    "time": "Listo en 20 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe5"
+                                },
+                                {
+                                    "title": "Opción 2: Arroz integral con pavo y verduras asadas",
+                                    "time": "Listo en 25 minutos",
+                                    "icon": "../assets/images/ui/meal-icon.webp",
+                                    "recipeId": "recipe6"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "recipes": [
+                {
+                    "id": "recipe1",
+                    "title": "Batido de plátano y avena con leche caliente",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/imgBatidoPlatanoAvena.webp",
+                    "ingredients": [
+                        "1 plátano maduro",
+                        "1/2 taza de avena",
+                        "1 taza de leche caliente",
+                        "1 cucharadita de miel (opcional)"
+                    ],
+                    "instructions": "<p>Coloca el plátano, la avena y la leche caliente en la licuadora. Licúa hasta obtener una mezcla homogénea. Si deseas un toque extra de dulzura, añade miel y mezcla nuevamente. Sirve de inmediato y disfruta de un desayuno reconfortante para iniciar el día con energía y calma.</p>"
+                },
+                {
+                    "id": "recipe2",
+                    "title": "Ensalada de pavo con quinoa y espinacas",
+                    "time": "Listo en 15 minutos",
+                    "image": "../assets/images/imgEnsaladaPavoQuinoa.webp",
+                    "ingredients": [
+                        "150 g de pechuga de pavo a la plancha",
+                        "1/2 taza de quinoa cocida",
+                        "1 taza de espinacas frescas",
+                        "Tomate cherry al gusto",
+                        "Aceite de oliva y limón"
+                    ],
+                    "instructions": "<p>En un bol, mezcla la quinoa con las espinacas y los tomates cherry. Agrega el pavo cortado en tiras. Aliña con aceite de oliva y unas gotas de limón. Consejo: mezcla suavemente para mantener la frescura de las hojas verdes y disfruta de un almuerzo ligero y nutritivo.</p>"
+                },
+                {
+                    "id": "recipe3",
+                    "title": "Wrap de pollo, aguacate y hojas verdes",
+                    "time": "Listo en 10 minutos",
+                    "image": "../assets/images/imgWrapPolloAguacate.webp",
+                    "ingredients": [
+                        "1 pechuga de pollo a la plancha",
+                        "1 tortilla integral",
+                        "1/2 aguacate en rodajas",
+                        "Hojas de lechuga y espinaca",
+                        "Salsa de yogur (opcional)"
+                    ],
+                    "instructions": "<p>Calienta ligeramente la tortilla integral y coloca sobre ella la pechuga de pollo cortada en tiras. Agrega las rodajas de aguacate y las hojas verdes. Si deseas, incorpora una cucharada de salsa de yogur para dar frescura. Enrolla y disfruta de un almuerzo práctico y sabroso.</p>"
+                },
+                {
+                    "id": "recipe4",
+                    "title": "Barrita de avena y almendras casera",
+                    "time": "Listo en 5 minutos",
+                    "image": "../assets/images/imgBarritaAvenaAlmendras.webp",
+                    "ingredients": [
+                        "1/2 taza de avena",
+                        "2 cucharadas de almendras picadas",
+                        "1 cucharada de miel",
+                        "Frutas secas al gusto"
+                    ],
+                    "instructions": "<p>Mezcla la avena con las almendras, la miel y las frutas secas. Extiende la mezcla en una superficie plana y presiona con firmeza hasta formar una masa compacta. Corta en barras y refrigera unos minutos para que se asienten. Estas barritas son ideales para un snack energético y natural.</p>"
+                },
+                {
+                    "id": "recipe5",
+                    "title": "Filete de salmón con ensalada de aguacate y espinacas",
+                    "time": "Listo en 20 minutos",
+                    "image": "../assets/images/imgSalmónAguacate.webp",
+                    "ingredients": [
+                        "1 filete de salmón",
+                        "1/2 aguacate en cubos",
+                        "1 taza de espinacas frescas",
+                        "Tomate cherry y limón",
+                        "Aceite de oliva"
+                    ],
+                    "instructions": "<p>Sazona el filete de salmón con sal y pimienta y cocínalo a la plancha con un poco de aceite de oliva. Mientras, en un bol, mezcla las espinacas con el aguacate y los tomates cherry. Agrega el salmón troceado, rocía con jugo de limón y un chorrito de aceite. Consejo: sirve inmediatamente para aprovechar los nutrientes frescos.</p>"
+                },
+                {
+                    "id": "recipe6",
+                    "title": "Arroz integral con pavo y verduras asadas",
+                    "time": "Listo en 25 minutos",
+                    "image": "../assets/images/imgArrozPavoVerduras.webp",
+                    "ingredients": [
+                        "1 taza de arroz integral",
+                        "150 g de pavo a la plancha",
+                        "Verduras variadas (zanahoria, brócoli y pimiento)",
+                        "Aceite de oliva y especias"
+                    ],
+                    "instructions": "<p>Cocina el arroz integral según las instrucciones del paquete. En una sartén, saltea las verduras cortadas en trozos junto con el pavo desmenuzado. Mezcla todo y sazona al gusto. Consejo: utiliza hierbas frescas para realzar el sabor y mantener la ligereza de la preparación.</p>"
+                }
+            ],
+            "variations": [
+                {
+                    "type": "Sin gluten",
+                    "description": "Utiliza pan y tortillas sin gluten o reemplaza la quinoa por arroz integral."
+                },
+                {
+                    "type": "Vegetariano",
+                    "description": "Sustituye las proteínas animales por tofu, tempeh o legumbres, y utiliza aguacate o frutos secos para complementar."
+                },
+                {
+                    "type": "Sin lácteos",
+                    "description": "Emplea leches vegetales y yogur sin lácteos en lugar de sus versiones tradicionales."
+                }
+            ],
+            "shoppingList": {
+                "Frutas y verduras": "Plátanos, aguacate, espinacas, tomate cherry, frutas variadas, limón.",
+                "Proteínas": "Pavo, pollo, salmón, yogur (o sustituto vegetal), huevos.",
+                "Otros": "Avena, quinoa, arroz integral, almendras, nueces, miel, aceite de oliva."
+            }
+        }
+    ]
+}

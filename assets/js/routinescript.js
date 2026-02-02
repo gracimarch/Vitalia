@@ -23,30 +23,91 @@ countdownCircle.style.strokeDasharray = `${circumference}`;
 countdownCircle.style.strokeDashoffset = `${circumference}`;
 
 // — Lista de ejercicios con descripciones detalladas —
-const exercises = [
-  {
-    title: 'Marcha en el lugar',
-    description: 'Párate con espalda recta, mirada al frente y eleva las rodillas a la altura de la cadera, moviendo los brazos al compás.',
-    videoSrc: 'https://videos.pexels.com/video-files/10042798/10042798-hd_1920_1080_24fps.mp4',
-    duration: 30,
-    rest: 15
-  },
-  {
-    title: 'Sentadillas',
-    description: 'Coloca los pies al ancho de hombros, flexiona rodillas y caderas como si te sentaras, mantén la espalda recta y empuja con los talones.',
-    videoSrc: 'https://videos.pexels.com/video-files/12345678/sample-squat.mp4',
-    duration: 30,
-    rest: 15
-  },
-  {
-    title: 'Flexiones modificadas',
-    description: 'Manos al ancho de hombros y rodillas apoyadas, baja el pecho manteniendo los codos cerca del cuerpo y vuelve a subir sin bloquear los codos.',
-    videoSrc: 'https://videos.pexels.com/video-files/23456789/sample-pushup.mp4',
-    duration: 20,
-    rest: 10
-  },
-  // … más ejercicios …
-];
+let exercises = [];
+
+// — Función para cargar rutina desde JSON —
+async function loadRoutine() {
+  try {
+    const path = window.location.pathname;
+    let slug = path.split('/').pop().replace('.html', '');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('slug')) {
+      slug = urlParams.get('slug');
+    }
+
+    // Ajustar ruta si estamos en local o producción
+    const jsonPath = '../data/rutinas.json';
+
+    const response = await fetch(jsonPath);
+    if (!response.ok) throw new Error('No se pudo cargar rutinas.json');
+
+    const data = await response.json();
+    const routine = data.rutinas.find(r => r.slug === slug);
+
+    if (!routine) {
+      console.error('Rutina no encontrada:', slug);
+      return;
+    }
+
+    // Renderizar contenido estático de la rutina
+    renderRoutineStaticContent(routine);
+
+    // Asignar ejercicios
+    exercises = routine.exercises;
+
+  } catch (error) {
+    console.error('Error cargando rutina:', error);
+  }
+}
+
+function renderRoutineStaticContent(routine) {
+  // Título y meta
+  document.title = routine.title;
+  const titleContainer = document.querySelector('.title');
+  if (titleContainer) {
+    titleContainer.innerHTML = `
+            <h3>${routine.level}</h3>
+            <h1>${routine.title}</h1>
+            <div class="reading-time">
+                <i class="bi bi-clock" alt="Ícono de reloj"></i>
+                <p>${routine.duration}</p>
+            </div>
+        `;
+  }
+
+  // Intro
+  const intro = document.getElementById('introduction');
+  if (intro) intro.innerHTML = routine.introduction;
+
+  // Imagen principal
+  const imageContainer = document.querySelector('.image');
+  if (imageContainer) {
+    imageContainer.innerHTML = `<img src="${routine.image}" alt="${routine.title}">`;
+  }
+
+  // Preparación
+  const instructions = document.getElementById('instrucciones');
+  if (instructions) instructions.innerHTML = routine.preparation;
+
+  // Conclusión
+  const conclusion = document.querySelector('.article:last-of-type');
+  // Esto es un poco frágil, mejor buscar por ID si existiera o insertar dinámicamente
+  // En el HTML original hay un div sin ID al final.
+  // Vamos a asumir que el contenedor de conclusión ya existe o lo creamos.
+  // En el HTML original: <div class="article">...conclusión...</div> antes del footer.
+  // Buscaremos el último .article que NO sea instructions
+  const articles = document.querySelectorAll('.article');
+  const lastArticle = articles[articles.length - 1];
+  if (lastArticle && lastArticle.id !== 'instrucciones' && lastArticle.id !== 'introduction') {
+    lastArticle.innerHTML = routine.conclusion;
+  }
+
+
+  // Disparar evento para animaciones
+  document.dispatchEvent(new Event('article-content-loaded'));
+}
+
 
 // — Iniciar rutina al presionar “Comenzar rutina” —
 mostrarBtn.addEventListener('click', () => {
@@ -208,4 +269,11 @@ function finishRoutine() {
   // Ocultar temporizador
   document.getElementById('timer-content').style.display = 'none';
   videoEl.style.display = 'none';
+}
+
+// Iniciar carga
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadRoutine);
+} else {
+  loadRoutine();
 }
