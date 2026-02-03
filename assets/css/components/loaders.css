@@ -1,0 +1,83 @@
+/* Loader-specific styles to remove inline JS styles from dieta-loader.js and lectura-loader.js */
+
+/* Dieta Loader */
+.recipe-modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-modal-backdrop.is-visible {
+    display: flex;
+}
+
+.recipe-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.recipe-modal.is-visible {
+    display: flex;
+}
+
+/* Lectura Loader */
+.error-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.error-link {
+    text-decoration: underline;
+    color: #7134A2;
+}
+
+.error-link-purple {
+    color: var(--purple-light);
+    text-decoration: underline;
+}
+
+.hidden-image {
+    display: none;
+}
+
+.visible-image {
+    display: block;
+}
+
+/* Landing Script */
+.header.transparent-mode {
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    border-bottom: none !important;
+}
+
+.body-no-scroll {
+    overflow: hidden !important;
+}
+
+/* Common Loader Utils */
+.fade-in-entry {
+    opacity: 1 !important;
+    transition: opacity 0.5s ease-in;
+}
+
+.loader-container.hidden {
+    display: none !important;
+}
+
+.body-no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+}

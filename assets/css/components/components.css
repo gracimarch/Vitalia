@@ -1,0 +1,139 @@
+/* Component-specific styles to remove inline JS styles */
+
+/* FAQ List Component */
+.faq-item-container {
+    margin-bottom: 25px;
+    overflow: visible;
+}
+
+.magic-bento-card.faq-card {
+    aspect-ratio: unset;
+    min-height: unset;
+    height: auto;
+    background-color: #FFFFFF;
+    color: #333;
+    overflow: visible;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transform-style: preserve-3d;
+    --glow-x: 50%;
+    --glow-y: 50%;
+    --glow-intensity: 0;
+    --glow-radius: 300px;
+}
+
+.faq-question {
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    z-index: 2;
+    position: relative;
+    font-weight: 600;
+}
+
+.faq-answer-container {
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    max-height: 0;
+    opacity: 0;
+}
+
+.faq-answer-container.is-open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.faq-answer {
+    color: #000;
+    padding: 0 25px 25px 25px;
+    line-height: 1.6;
+}
+
+/* Pricing Component */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+.magic-bento-card.pricing-card {
+    aspect-ratio: unset;
+    min-height: 340px;
+    height: 100%;
+    background-color: #FFFFFF;
+    color: #000;
+    overflow: hidden;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    --glow-x: 50%;
+    --glow-y: 50%;
+    --glow-intensity: 0;
+    --glow-radius: 300px;
+}
+
+.pricing-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.pricing-price-box {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+
+.pricing-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.pricing-period {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 5px;
+}
+
+.pricing-desc {
+    font-size: 0.85rem;
+    color: #444;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.pricing-feature-item {
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-size: 0.85rem;
+}
+
+.pricing-check {
+    margin-right: 8px;
+    font-size: 0.9rem;
+}
+
+.magic-bento-card .pricing-button {
+    margin-top: 1.5rem;
+    width: 100%;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.9rem !important;
+    /* Force override if needed */
+    padding: 10px 16px;
+}
