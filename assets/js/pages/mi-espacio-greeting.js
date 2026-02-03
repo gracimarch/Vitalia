@@ -25,26 +25,10 @@ const GreetingComponent = () => {
         return () => clearInterval(interval);
     }, []);
 
-    const subtitleStyle = {
-        fontSize: '1.25rem', // Similar to h4 or large paragraph
-        fontWeight: '300',
-        color: 'var(--text-muted)', // Using CSS variable if available, or fallback
-        marginTop: '0.5rem',
-        marginBottom: '0',
-        fontFamily: "'Poppins', sans-serif"
-    };
-
     return (
         <div className="greeting-container">
-            <GradientText
-                colors={['#E1947F', '#9d60cf', '#80CACD']}
-                animationSpeed={8}
-                showBorder={false}
-                className="welcome-heading"
-            >
-                <span style={{ fontSize: '2.5rem', fontWeight: '600' }}>{greeting}</span>
-            </GradientText>
-            <p style={subtitleStyle}>Disfruta de tu contenido seleccionado para hoy</p>
+            <h1 className="welcome-heading">{greeting}</h1>
+            <p className="greeting-subtitle">Disfruta de tu contenido seleccionado para hoy</p>
         </div>
     );
 };
