@@ -1,0 +1,579 @@
+@import url('../core/variables.css');
+
+/* =========================================
+   1. LAYOUT & SECTIONS
+   ========================================= */
+
+body {
+    background-color: var(--bg-cream, #fefbf3);
+    color: var(--text-color, #333);
+}
+
+.pagina {
+    padding-top: 80px;
+    /* Header space */
+    padding-bottom: 60px;
+}
+
+/* Headings */
+.reading-section {
+    text-align: center;
+    padding: 2rem 1rem 0;
+    /* Reduced from 4rem top to match Mi Espacio flow */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reading-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0;
+    /* Matched section-title-container */
+    flex-wrap: wrap;
+    /* Added for responsiveness like Mi Espacio */
+}
+
+.reading-icon {
+    width: 28px;
+    /* Reduced to match Mi Espacio */
+    height: 28px;
+    object-fit: contain;
+}
+
+.reading-heading {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    /* Ensures fallback */
+    font-weight: 600;
+    /* Matched from .section-title */
+    font-size: 1.8rem;
+    /* Matched from .section-title */
+    color: #000;
+    /* Matched from .section-title */
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+}
+
+.reading-subtext {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 1.25rem;
+    /* Matched from .section-subtitle */
+    color: var(--text-dark, #333);
+    /* Matched */
+    font-weight: 300;
+    opacity: 0.7;
+    /* Matched */
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* =========================================
+   2. CATEGORY NAV BLOCKS (Top Section)
+   ========================================= */
+
+/* =========================================
+   2. CATEGORY NAV BLOCKS (Top Section)
+   ========================================= */
+
+.articles {
+    padding: 2rem 0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.category-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 220px;
+    /* Increased height for icon + text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.card-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1)) brightness(0) invert(1);
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-card p {
+    font-size: 0.95rem;
+    margin: 0;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Base Block Style for standard cards (kept for compatibility if needed) */
+.block {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Category Backgrounds */
+.bg-productiv {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.45) 0%, transparent 55%),
+        radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 55%),
+        linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%);
+}
+
+.bg-ejercita {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(253, 251, 247, 0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #80cacd 0%, #5fb3b6 100%);
+}
+
+.bg-alimentate {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 50%),
+        linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+}
+
+.bg-salud {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.3) 0%, transparent 55%),
+        radial-gradient(circle at 0% 100%, rgba(225, 148, 127, 0.3) 0%, transparent 55%),
+        linear-gradient(135deg, #2A9D8F 0%, #264653 100%);
+}
+
+
+/* =========================================
+   3. CONTENT GRIDS (Cards)
+   ========================================= */
+
+.lecturas,
+.ejercicios {
+    padding: 1rem 0 4rem;
+}
+
+.lecturas .container,
+.ejercicios .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Shared Card Styles */
+.lecturas .block,
+.ejercicios .block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem;
+    min-height: 240px;
+    text-align: left;
+}
+
+.lecturas .block p,
+.ejercicios .block p {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.lecturas .block h3,
+.ejercicios .block h3 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin-bottom: auto;
+    /* Push content apart */
+    text-shadow: none;
+}
+
+.reading-time {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+.reading-time i {
+    font-size: 1rem;
+}
+
+.reading-time p {
+    margin: 0;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+
+
+/* =========================================
+   4. INDIVIDUAL CARD GRADIENTS (Liquid Style)
+   ========================================= */
+
+/* Productividad (Purples - Matches Article Cards) */
+.bg-productividad-1 {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.45) 0%, transparent 55%),
+        radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 55%),
+        linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%);
+}
+
+.bg-productividad-2 {
+    background:
+        radial-gradient(circle at 50% 50%, rgba(128, 202, 205, 0.25) 0%, transparent 65%),
+        radial-gradient(circle at 100% 100%, rgba(253, 251, 247, 0.4) 0%, transparent 45%),
+        linear-gradient(45deg, #a675d1 0%, #bfa0e0 100%);
+}
+
+.bg-productividad-3 {
+    background:
+        radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%),
+        radial-gradient(circle at 100% 50%, rgba(225, 148, 127, 0.35) 0%, transparent 55%),
+        linear-gradient(180deg, #bfa0e0 0%, #a170d0 100%);
+}
+
+.bg-productividad-4 {
+    background:
+        radial-gradient(circle at 80% 20%, rgba(128, 202, 205, 0.35) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%),
+        linear-gradient(120deg, #a675d1 0%, #bfa0e0 100%);
+}
+
+
+/* Ejercicio (Cyans/Teals - Matches Routine Cards) */
+.bg-ejercicio-1 {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(253, 251, 247, 0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #80cacd 0%, #5fb3b6 100%);
+}
+
+.bg-ejercicio-2 {
+    background:
+        radial-gradient(circle at 50% 50%, rgba(157, 96, 207, 0.25) 0%, transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(225, 148, 127, 0.3) 0%, transparent 45%),
+        linear-gradient(45deg, #6ec0c3 0%, #80cacd 100%);
+}
+
+.bg-ejercicio-3 {
+    background:
+        radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%),
+        radial-gradient(circle at 100% 50%, rgba(157, 96, 207, 0.3) 0%, transparent 55%),
+        linear-gradient(180deg, #80cacd 0%, #5fb3b6 100%);
+}
+
+.bg-ejercicio-4 {
+    background:
+        radial-gradient(circle at 80% 20%, rgba(157, 96, 207, 0.35) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(253, 251, 247, 0.3) 0%, transparent 50%),
+        linear-gradient(120deg, #74c7ca 0%, #80cacd 100%);
+}
+
+
+/* Dieta (Oranges - Matches Food Cards) */
+.bg-dieta-1 {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 50%),
+        linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+}
+
+.bg-dieta-2 {
+    background:
+        radial-gradient(circle at 50% 50%, rgba(253, 251, 247, 0.3) 0%, transparent 60%),
+        radial-gradient(circle at 100% 100%, rgba(157, 96, 207, 0.3) 0%, transparent 45%),
+        linear-gradient(45deg, #e9c46a 0%, #f4a261 100%);
+}
+
+.bg-dieta-3 {
+    background:
+        radial-gradient(circle at 0% 0%, rgba(128, 202, 205, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 100% 50%, rgba(253, 251, 247, 0.3) 0%, transparent 55%),
+        linear-gradient(180deg, #f4a261 0%, #e76f51 100%);
+}
+
+.bg-dieta-4 {
+    background:
+        radial-gradient(circle at 80% 20%, rgba(157, 96, 207, 0.35) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%),
+        linear-gradient(120deg, #e76f51 0%, #f4a261 100%);
+}
+
+.bg-dieta-5 {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.2) 0%, transparent 50%),
+        linear-gradient(135deg, #e76f51 0%, #d65d42 100%);
+}
+
+.bg-dieta-6 {
+    background:
+        radial-gradient(circle at 50% 50%, rgba(253, 251, 247, 0.2) 0%, transparent 60%),
+        linear-gradient(135deg, #d65d42 0%, #c44b33 100%);
+}
+
+
+/* Salud Mental (Blues/Greens - Adapted Liquid Style) */
+.bg-salud-mental-1 {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.3) 0%, transparent 55%),
+        radial-gradient(circle at 0% 100%, rgba(225, 148, 127, 0.3) 0%, transparent 55%),
+        linear-gradient(135deg, #2A9D8F 0%, #264653 100%);
+}
+
+.bg-salud-mental-2 {
+    background:
+        radial-gradient(circle at 50% 50%, rgba(128, 202, 205, 0.3) 0%, transparent 65%),
+        linear-gradient(135deg, #264653 0%, #2A9D8F 100%);
+}
+
+.bg-salud-mental-3 {
+    background:
+        radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 100% 50%, rgba(157, 96, 207, 0.3) 0%, transparent 55%),
+        linear-gradient(135deg, #457b9d 0%, #1d3557 100%);
+}
+
+.bg-salud-mental-4 {
+    background:
+        radial-gradient(circle at 80% 20%, rgba(225, 148, 127, 0.25) 0%, transparent 50%),
+        linear-gradient(120deg, #1d3557 0%, #457b9d 100%);
+}
+
+
+/* =========================================
+   5. SHINE EFFECT (Brightness)
+   ========================================= */
+
+/* =========================================
+   5. HOVER EFFECT (Glow Border like Mi Espacio)
+   ========================================= */
+
+/* The brightness class is now just a container for the effect */
+.brightness {
+    position: relative;
+    /* overflow: hidden;  <-- Optional: keep hidden if we want to clip inner content, but specific glow is inside border */
+    overflow: hidden;
+}
+
+/* White Gradient Border Glow on Hover */
+.brightness::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1.5px;
+    /* Border thickness */
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.9));
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.brightness:hover::after {
+    opacity: 1;
+}
+
+/* Enhanced Shadow on Hover (overriding default .block hover) */
+.block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    /* Keep neutral for generic blocks, or specific if needed */
+}
+
+/* Specific colored shadows for categories if desired (optional polish) */
+.bg-productiv:hover,
+.bg-productividad-1:hover,
+.bg-productividad-2:hover,
+.bg-productividad-3:hover,
+.bg-productividad-4:hover {
+    box-shadow: 0 10px 25px rgba(157, 96, 207, 0.3);
+}
+
+.bg-ejercita:hover,
+.bg-ejercicio-1:hover,
+.bg-ejercicio-2:hover,
+.bg-ejercicio-3:hover,
+.bg-ejercicio-4:hover {
+    box-shadow: 0 10px 25px rgba(128, 202, 205, 0.3);
+}
+
+.bg-alimentate:hover,
+.bg-dieta-1:hover,
+.bg-dieta-2:hover,
+.bg-dieta-3:hover,
+.bg-dieta-4:hover,
+.bg-dieta-5:hover,
+.bg-dieta-6:hover {
+    box-shadow: 0 10px 25px rgba(244, 162, 97, 0.3);
+}
+
+.bg-salud:hover,
+.bg-salud-mental-1:hover,
+.bg-salud-mental-2:hover,
+.bg-salud-mental-3:hover,
+.bg-salud-mental-4:hover {
+    box-shadow: 0 10px 25px rgba(38, 70, 83, 0.3);
+}
+
+/* =========================================
+   6. THANKS SECTION
+   ========================================= */
+
+.thanks {
+    background-color: transparent;
+    padding: 3rem 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.thanks-section {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.thanks-heading {
+    font-family: var(--font-secondary, 'Zilla Slab', serif);
+    color: var(--purple-light);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.thanks-subtext {
+    color: var(--text-muted);
+}
+
+/* Load More Button */
+/* Load More Button Generic */
+.load-more-btn {
+    display: block;
+    margin: 2rem auto 0;
+    padding: 0.8rem 2.5rem;
+    background-color: transparent;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #ccc;
+    /* Fallback */
+    color: #555;
+    /* Fallback */
+}
+
+/* Specific Button Colors */
+.btn-productividad {
+    border-color: var(--purple-soft);
+    color: var(--purple-soft);
+}
+
+.btn-productividad:hover {
+    background-color: var(--purple-soft);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(162, 155, 254, 0.4);
+}
+
+.btn-ejercicio {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+.btn-ejercicio:hover {
+    background-color: var(--cyan);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(128, 202, 205, 0.4);
+}
+
+.btn-dieta {
+    border-color: var(--orange-soft);
+    color: var(--orange-soft);
+}
+
+.btn-dieta:hover {
+    background-color: var(--orange-soft);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(244, 162, 97, 0.4);
+}
+
+.btn-salud-mental {
+    border-color: var(--teal-dark);
+    color: var(--teal-dark);
+}
+
+.btn-salud-mental:hover {
+    background-color: var(--teal-dark);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(38, 70, 83, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    /* Removed incorrect 2rem font-size override */
+    .lecturas .container,
+    .ejercicios .container {
+        grid-template-columns: 1fr;
+    }
+}

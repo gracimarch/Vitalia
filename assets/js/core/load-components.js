@@ -55,9 +55,9 @@ function highlightActiveLink() {
         const href = link.getAttribute("href");
         if (!href) return;
 
-        // Clean path for comparison
-        const cleanPath = currentPath.replace(/\/$/, "").replace(".html", "");
-        const cleanHref = href.replace(/\/$/, "").replace(".html", "");
+        // Clean path for comparison, also removing /pages/ to match clean URLs
+        const cleanPath = currentPath.replace(/\/$/, "").replace(".html", "").replace("/pages", "");
+        const cleanHref = href.replace(/\/$/, "").replace(".html", "").replace("/pages", "");
 
         if (cleanHref === cleanPath || (cleanHref !== "" && cleanHref !== "/" && cleanPath.startsWith(cleanHref))) {
             link.classList.add("active");
@@ -72,11 +72,18 @@ function highlightActiveLink() {
         if (miEspacioLink) miEspacioLink.classList.add("bold-active");
     }
 
-    if (pageName === "index.html" || pageName === "") {
-        const links = document.querySelectorAll('a[href*="index.html"]');
-        links.forEach(l => {
-            if (l.textContent.includes("Acerca de")) {
-                l.classList.add("bold-active");
+    const isHomePage = pageName === "index.html" || pageName === "index" || pageName === "";
+
+    if (isHomePage) {
+        // Special handling for "Acerca de" which links to "/"
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+        navLinks.forEach(link => {
+            const href = link.getAttribute("href");
+            // Check if link points to root or index
+            if (href === "/" || href === "./" || href === "index.html" || (href && href.endsWith("/index.html"))) {
+                if (link.textContent.trim() === "Acerca de") {
+                    link.classList.add("bold-active");
+                }
             }
         });
     }

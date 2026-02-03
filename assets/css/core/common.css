@@ -420,11 +420,13 @@ body.loaded .loader-container {
 
 }
 
+.nav-link.active,
 .nav-link.bold-active {
     color: var(--text-color);
     font-weight: 600;
 }
 
+.nav-link.active:hover,
 .nav-link.bold-active:hover {
     color: var(--purple-light);
 }
