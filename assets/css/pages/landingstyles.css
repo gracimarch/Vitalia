@@ -8,35 +8,34 @@
 /* Transparent State (for Hero Section) */
 .header.transparent-mode {
     background-color: rgba(255, 255, 255, 0.05) !important;
-    /* Slight tint for glass effect */
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
     box-shadow: none !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
-/* Base Desktop Transparent Styles */
 .header.transparent-mode .nav-link {
-    color: rgba(255, 255, 255, 0.9) !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
 }
 
 .header.transparent-mode .nav-link:hover {
-    color: var(--cyan) !important;
+    color: #ffffff !important;
+    opacity: 1;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    transform: translateY(-1px);
 }
 
-.header.transparent-mode .navbar-brand .logo {
-    filter: brightness(0) invert(1);
-    /* Make logo white */
+.header.transparent-mode .navbar-svg-icon .toggler-line {
+    stroke: #ffffff !important;
+    /* White menu icon */
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
+.header.transparent-mode .navbar-brand .logo,
 .header.transparent-mode .premium {
-    filter: brightness(0) invert(1);
-    /* Make premium icon white */
-}
-
-/* Ensure toggler (hamburger) is visible in dark mode if generic one is used */
-.header.transparent-mode .toggler-line {
-    stroke: white !important;
+    filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 /* Navbar Styles handled in common.css */
@@ -595,18 +594,16 @@ body {
 .hero-composition {
     position: relative;
     overflow: hidden;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    width: 100%;
 }
 
 .hero-bg {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    min-width: 100vw;
+    min-width: 100%;
     min-height: 100vh;
     object-fit: cover;
     object-position: center center;

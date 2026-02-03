@@ -15,10 +15,14 @@ body {
     font-family: var(--font-primary);
     background-color: var(--bg-cream);
     color: var(--text-color);
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
 }
 
 /* =========================================
@@ -435,13 +439,14 @@ body.loaded .loader-container {
     color: #666;
     font-weight: 500;
     font-size: 16px;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
     display: block;
 }
 
 .nav-link:hover {
     color: var(--purple-light);
-
+    transform: translateY(-2px);
+    text-shadow: 0 4px 10px rgba(157, 96, 207, 0.15);
 }
 
 .nav-link.active,
