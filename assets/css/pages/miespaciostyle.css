@@ -5,8 +5,13 @@
     margin: 0;
     font-family: 'Poppins', sans-serif;
     display: inline-block;
-    text-align: center;
     /* Added centering */
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        padding: 0 20px;
+    }
 }
 
 .section-title-container {
@@ -18,7 +23,8 @@
     margin-bottom: 0;
     flex-wrap: wrap;
     text-align: center;
-    /* Ensure contents inherit center */
+    padding: 0 1rem;
+    /* Added safe padding */
 }
 
 .section-icon {
@@ -36,6 +42,8 @@
     margin-bottom: 2rem;
     font-family: 'Poppins', sans-serif;
     text-align: center;
+    padding: 0 1.5rem;
+    /* Added safe padding */
 }
 
 /* Override existing margins if needed */
@@ -277,7 +285,7 @@
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 20px;
-    padding: 2rem 2rem 3rem 2rem;
+    padding: 2.5rem 2rem;
     text-align: left;
     margin-top: 2rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
@@ -302,6 +310,8 @@
     font-weight: 700;
     color: #333;
     margin-bottom: 0.5rem;
+    margin-top: 0;
+    /* Removed default margin */
 }
 
 .blog-info-card p {
@@ -314,24 +324,25 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #9d60cf;
-    /* Vitalia Purple */
-    color: white;
+    background: transparent;
+    border: 2px solid var(--purple-light);
+    color: var(--purple-light);
     border-radius: 50px;
-    padding: 0.8em 2.5em;
+    padding: 0.8rem 2.5rem;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(157, 96, 207, 0.3);
     white-space: nowrap;
     position: relative;
     z-index: 2;
+    font-family: var(--font-primary);
 }
 
 .blog-info-card .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(157, 96, 207, 0.4);
-    background: #8e44c2;
+    background: var(--purple-light);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(174, 125, 215, 0.4);
 }
 
 @media (max-width: 768px) {
@@ -625,29 +636,35 @@
 */
 
 /* Thanks Section Styles */
+/* Thanks Section Styles */
+.thanks {
+    background-color: transparent;
+    padding: 3rem 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
 .thanks-section {
-    padding: 2rem 0 4rem 0;
     text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .thanks-heading {
-    text-align: center;
-    color: #888;
-    /* Grey */
+    font-family: var(--font-secondary, 'Zilla Slab', serif);
+    color: var(--purple-light);
     font-size: 2rem;
     margin-bottom: 1rem;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
 }
 
 .thanks-subtext {
-    text-align: center;
-    color: #999;
-    /* Lighter Grey */
-    margin: 0 auto;
+    color: var(--text-muted);
     font-size: 1.1rem;
+    /* Kept font size from original but applied variable color */
     line-height: 1.6;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--fonts-primary);
+    /* Fallback or variable */
+    text-align: center;
 }
 
 /* Extracted from HTML inline styles */
@@ -661,6 +678,8 @@
     padding-top: 8rem;
     margin-bottom: 0;
     text-align: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 #magic-bento-root {
