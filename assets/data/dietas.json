@@ -5,7 +5,7 @@
             "title": "Dieta para calmar la ansiedad en días estresantes",
             "type": "Tipo de Alimentación: Antiestrés y equilibrada",
             "duration": "1 día",
-            "image": "assets/images/articles/imgArticuloSaludMentalDiscapacidad.webp",
+            "image": "assets/images/articles/img-articulo-salud-mental-discapacidad.webp",
             "introduction": "<p>¿Se acerca un evento importante, un examen o simplemente vives un día lleno de estrés? Este plan está diseñado para <strong class=\"underline\">ayudarte a calmar la ansiedad</strong> a través de alimentos nutritivos que promueven el equilibrio emocional, la concentración y el bienestar general. Cada opción ha sido seleccionada cuidadosamente para brindarte una experiencia alimentaria reconfortante y práctica.</p>",
             "schedule": [
                 {
@@ -225,7 +225,7 @@
             "title": "Dieta Saludable para Días Ocupados",
             "type": "Tipo de Alimentación: Opciones rápidas y nutritivas",
             "duration": "1 día",
-            "image": "assets/images/articles/imgArticuloAlimentacionConsciente.webp",
+            "image": "assets/images/articles/img-articulo-alimentacion-consciente.webp",
             "introduction": "<p>Este plan diario está diseñado <strong class=\"underline\">para aquellas personas con agendas apretadas</strong> que desean mantener una alimentación equilibrada y saludable sin invertir mucho tiempo. Con opciones variadas en cada comida, podrás escoger la que mejor se adapte a tus gustos y necesidades, garantizando <strong class=\"underline\">energía y nutrición </strong>a lo largo del día.</p>",
             "schedule": [
                 {
@@ -355,7 +355,7 @@
                     "id": "recipe2",
                     "title": "Batido Verde Refrescante",
                     "time": "Listo en 7 minutos",
-                    "image": "assets/images/food/imgDietasSmothieVerde.webp",
+                    "image": "assets/images/food/img-dietas-smothie-verde.webp",
                     "ingredients": [
                         "1 taza de espinaca fresca",
                         "1/2 pepino",
@@ -368,7 +368,7 @@
                     "id": "recipe3",
                     "title": "Wrap de Pavo y Vegetales",
                     "time": "Listo en 15 minutos",
-                    "image": "assets/images/food/imgDietasWrapPavo.webp",
+                    "image": "assets/images/food/img-dietas-wrap-pavo.webp",
                     "ingredients": [
                         "1 tortilla integral",
                         "3 lonchas de pavo",
@@ -457,7 +457,7 @@
             "title": "Plan Energía y Vitalidad",
             "type": "Tipo de Alimentación: Balanceada y rica en nutrientes",
             "duration": "1 semana",
-            "image": "assets/images/food/imgDietasEnergiaVitalidad.webp",
+            "image": "assets/images/food/img-dietas-energia-vitalidad.webp",
             "introduction": "<p>Este plan está diseñado para personas que buscan mantener <strong class=\"underline\">altos niveles de energía</strong> a lo largo de la semana. La dieta se basa en alimentos integrales, <strong class=\"underline\">fáciles de digerir, ricos en fibra, y con propiedades antioxidantes</strong>, evitando el consumo excesivo de calorías que puedan sobrecargar al sistema digestivo.</p>",
             "schedule": [
                 {
@@ -712,7 +712,7 @@
                     "id": "recipe1",
                     "title": "Smoothie verde",
                     "time": "Listo en 5 minutos",
-                    "image": "assets/images/food/imgDietasSmothieVerde.webp",
+                    "image": "assets/images/food/img-dietas-smothie-verde.webp",
                     "ingredients": [
                         "1 plátano",
                         "1 manzana",
@@ -726,7 +726,7 @@
                     "id": "recipe2",
                     "title": "Ensalada con pollo a la plancha",
                     "time": "Listo en 20 minutos",
-                    "image": "assets/images/food/imgDietasEnsaladaPollo.webp",
+                    "image": "assets/images/food/img-dietas-ensalada-pollo.webp",
                     "ingredients": [
                         "150g de pechuga de pollo",
                         "Lechuga",
@@ -757,7 +757,7 @@
                     "id": "recipe4",
                     "title": "Batido de leche con fresas y avena",
                     "time": "Listo en 5 minutos",
-                    "image": "assets/images/food/imgDietasBatidoFresa.webp",
+                    "image": "assets/images/food/img-dietas-batido-fresa.webp",
                     "ingredients": [
                         "1 taza de leche",
                         "5 fresas",
@@ -771,7 +771,7 @@
                     "id": "recipe5",
                     "title": "Salmón a la plancha con arroz y brócoli",
                     "time": "Listo en 20 minutos",
-                    "image": "assets/images/food/imgDietasSalmonBrocoli.webp",
+                    "image": "assets/images/food/img-dietas-salmon-brocoli.webp",
                     "ingredients": [
                         "1 filete de salmón",
                         "1 taza de arroz cocido integral (o común)",
@@ -784,7 +784,7 @@
                     "id": "recipe6",
                     "title": "Revuelto de huevos con cebolla y espinacas",
                     "time": "Listo en 10 minutos",
-                    "image": "assets/images/food/imgDietasArrozEspinaca.webp",
+                    "image": "assets/images/food/img-dietas-arroz-espinaca.webp",
                     "ingredients": [
                         "2 huevos",
                         "1/4 de cebolla picada",
@@ -961,7 +961,7 @@
             "title": "Plan Express para Personas Vegetarianas",
             "type": "Tipo de alimentación: Vegetariana y Vegana",
             "duration": "1 semana",
-            "image": "assets/images/articles/imgArticuloComeSaludablePlantas.webp",
+            "image": "assets/images/articles/img-articulo-come-saludable-plantas.webp",
             "introduction": "<p>Este plan ha sido diseñado para quienes llevan una vida ajetreada pero desean disfrutar de una dieta completa y saludable basada en alimentos vegetarianos y veganos. Con recetas rápidas y creativas, cada preparación está pensada para que puedas comer bien sin perder tiempo. ¡Disfruta de cada plato y mantén tu energía a tope!</p>",
             "schedule": [
                 {
@@ -1237,7 +1237,7 @@
                     "id": "recipe3",
                     "title": "Smoothie de espinaca, plátano y kiwi",
                     "time": "Listo en 5 minutos",
-                    "image": "assets/images/food/imgDietasSmothieVerde.webp",
+                    "image": "assets/images/food/img-dietas-smothie-verde.webp",
                     "ingredients": [
                         "1 puñado de espinacas",
                         "1 plátano",
@@ -1405,7 +1405,7 @@
             "title": "Fin de semana sin lácteos",
             "type": "Tipo de Alimentación: Sin lácteos, ligero y natural",
             "duration": "1 fin de semana",
-            "image": "assets/images/food/imgDietasFinSemanaSinLactosa.webp",
+            "image": "assets/images/food/img-dietas-fin-semana-sin-lactosa.webp",
             "introduction": "<p>Este plan está pensado para quienes buscan cuidar su digestión, reducir la inflamación o simplemente explorar una alimentación más ligera y natural. Es ideal para personas con intolerancia a la lactosa o quienes quieren probar una alternativa saludable <strong class=\"underline\">sin renunciar al sabor ni a la variedad</strong>. Es perfecto para un reset digestivo, una pausa consciente o simplemente para sentirte bien comiendo rico y sin lácteos.</p>",
             "schedule": [
                 {
@@ -1598,7 +1598,7 @@
             "title": "Plan alimenticio semanal para personas con intolerancia a la lactosa",
             "type": "Tipo de Alimentación: Sin lactosa, completa y saludable",
             "duration": "1 semana",
-            "image": "assets/images/food/imgDietasSinLactosa.webp",
+            "image": "assets/images/food/img-dietas-sin-lactosa.webp",
             "introduction": "<p>¿Evitas los lácteos? Este plan fue creado especialmente para ti: una propuesta nutritiva y equilibrada, pensada para quienes deben eliminar la lactosa de su dieta sin perder variedad. Descubrirás que comer bien sin lácteos no solo es posible, ¡también es delicioso!</p>",
             "schedule": [
                 {
@@ -2003,7 +2003,7 @@
                     "id": "recipe13",
                     "title": "Wrap de pavo y vegetales en tortilla sin lactosa",
                     "time": "Listo en 15 minutos",
-                    "image": "assets/images/food/imgDietasWrapPavo.webp",
+                    "image": "assets/images/food/img-dietas-wrap-pavo.webp",
                     "ingredients": [
                         "2 tortillas sin lactosa",
                         "150g de pavo cocido en tiras",
@@ -2051,7 +2051,7 @@
             "title": "Plan alimenticio diario para tener un sueño reparador",
             "type": "Tipo de Alimentación: Relajante y nutritiva",
             "duration": "1 día",
-            "image": "assets/images/articles/imgArticuloSiestasCortasBeneficios.webp",
+            "image": "assets/images/articles/img-articulo-siestas-cortas-beneficios.webp",
             "introduction": "<p>Este plan diario está diseñado para ayudarte a disfrutar de un sueño reparador a través de alimentos que favorecen la producción de serotonina y melatonina. Incluye opciones ricas en triptófano, magnesio y carbohidratos complejos, combinadas para estimular la relajación y la buena digestión, claves para descansar mejor.</p>",
             "schedule": [
                 {
