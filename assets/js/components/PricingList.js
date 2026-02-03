@@ -140,7 +140,7 @@ const PricingCard = ({ plan }) => {
 
 const PricingList = () => {
     return (
-        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 15px' }}>
+        <div className="container">
             <div style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
