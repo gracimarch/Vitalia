@@ -546,14 +546,43 @@
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Meditation Gradients - Equal Balance of Cyan, Purple, Orange */
+/* Meditation Gradients - Cycling Cyan, Purple, Orange with Radial Effects */
 .meditation-btn {
-    background: linear-gradient(135deg, #80cacd 0%, #9d60cf 50%, #f4a261 100%);
+    /* Base background if gradients fail or for transition */
+    background: #80cacd;
 }
 
-/* Variation for visual interest - rotated */
-.meditation-card:nth-child(even) .meditation-btn {
-    background: linear-gradient(315deg, #80cacd 0%, #9d60cf 50%, #f4a261 100%);
+/* 1. Cyan Dominant */
+.meditation-card:nth-child(3n+1) .meditation-btn {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.5) 0%, transparent 50%),
+        /* Purple */
+        radial-gradient(circle at 0% 100%, rgba(253, 251, 247, 0.4) 0%, transparent 50%),
+        /* Cream */
+        linear-gradient(135deg, #80cacd 0%, #5fb3b6 100%);
+    /* Cyan Base */
+}
+
+/* 2. Purple Dominant */
+.meditation-card:nth-child(3n+2) .meditation-btn {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.5) 0%, transparent 55%),
+        /* Orange */
+        radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.4) 0%, transparent 55%),
+        /* Cyan */
+        linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%);
+    /* Purple Base */
+}
+
+/* 3. Orange Dominant */
+.meditation-card:nth-child(3n+3) .meditation-btn {
+    background:
+        radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.5) 0%, transparent 50%),
+        /* Purple */
+        radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.4) 0%, transparent 50%),
+        /* Cyan */
+        linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+    /* Orange Base */
 }
 
 
