@@ -1,3 +1,8 @@
+// Redirect www to non-www to avoid SSL issues on Vercel
+if (window.location.hostname.startsWith("www.")) {
+    window.location.replace(window.location.href.replace("www.", ""));
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 
     // =========================================

@@ -9,20 +9,19 @@
         {
             id: 'faq-title-root',
             text: '¿Tienes alguna duda? Nosotros te respondemos',
-            className: 'reading-heading wobble',
-            style: { fontSize: '32px', display: 'block' }
+            className: 'reading-heading wobble landing-dynamic-title',
         },
         {
             id: 'premium-title-root',
             text: 'Lleva tu experiencia al siguiente nivel',
-            className: 'reading-heading wobble',
-            style: { fontSize: '32px', display: 'block' }
+            className: 'reading-heading wobble landing-dynamic-title',
         }
     ];
 
     titles.forEach(config => {
         const rootEl = document.getElementById(config.id);
         if (rootEl && GradientText) {
+            const createRoot = ReactDOM.createRoot;
             const root = createRoot(rootEl);
 
             // We can wrap the text in GradientText
@@ -36,7 +35,7 @@
                     showBorder={false}
                     className={config.className}
                 >
-                    <span style={{ fontSize: 'inherit', fontFamily: 'inherit' }}>{config.text}</span>
+                    <span>{config.text}</span>
                 </GradientText>
             );
         }
