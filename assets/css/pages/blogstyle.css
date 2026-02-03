@@ -278,19 +278,22 @@ body {
     align-items: center;
     gap: 0.5rem;
     margin-top: 1.5rem;
-    font-size: 0.85rem;
-    opacity: 0.85;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 1;
+    /* Reset opacity as color handles it */
 }
 
 .reading-time i {
     font-size: 1rem;
 }
 
-.reading-time p {
+.reading-time span {
     margin: 0;
-    text-transform: none;
-    letter-spacing: 0;
-    font-weight: 400;
+    /* Inheritance handles the rest */
 }
 
 
