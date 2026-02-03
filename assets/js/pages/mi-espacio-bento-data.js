@@ -95,24 +95,28 @@ const ChecklistComponent = () => {
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            marginRight: '1rem',
-                            width: '22px',
-                            height: '22px',
-                            minWidth: '22px',
+                            marginRight: '0.8rem',
+                            width: '24px',
+                            height: '24px',
+                            minWidth: '24px',
                             borderRadius: '50%',
                             border: item.checked ? 'none' : '2px solid #ddd',
-                            background: item.checked ? '#8400ff' : 'transparent',
+                            background: item.checked ? '#9d60cf' : 'transparent',
                             transition: 'all 0.2s ease'
                         }}>
-                            {item.checked && <i className="bi bi-check text-white" style={{ fontSize: '1.1rem', color: '#fff' }}></i>}
+                            {item.checked && <i className="bi bi-check text-white" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', color: '#fff', lineHeight: 1 }}></i>}
                         </div>
 
                         {/* Text */}
                         <span style={{
-                            textDecoration: item.checked ? 'line-through' : 'none',
+                            backgroundImage: 'linear-gradient(#999, #999)',
+                            backgroundPosition: '0 55%',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: item.checked ? '100% 1px' : '0% 1px',
                             color: item.checked ? '#999' : '#333',
                             fontSize: '0.95rem',
-                            transition: 'color 0.2s'
+                            transition: 'all 0.3s ease',
+                            textDecoration: 'none'
                         }}>
                             {item.text}
                         </span>
@@ -307,7 +311,7 @@ window.vitaliaBentoData = [
     // 3. Large (Index 3 - Span 2) - Checklist
     {
         color: '#FFFFFF',
-        glowColor: '132, 0, 255',
+        glowColor: '157, 96, 207', // --purple
         clickEffect: false,
         customRender: () => <ChecklistComponent />
     },

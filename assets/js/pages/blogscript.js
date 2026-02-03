@@ -41,31 +41,63 @@ function initSection(containerId, items, stylePrefix) {
 
     let renderedCount = 0;
 
+    const collapse = () => {
+        container.innerHTML = '';
+        renderedCount = 0;
+        renderBatch();
+
+        // Scroll back to container with some offset for header
+        const headerOffset = 100;
+        const elementPosition = container.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    };
+
     const renderBatch = () => {
         const batch = items.slice(renderedCount, renderedCount + BATCH_SIZE);
-        if (batch.length === 0) return;
 
-        batch.forEach((item, index) => {
-            const globalIndex = renderedCount + index;
-            const card = createCard(item, stylePrefix, globalIndex);
-            container.appendChild(card);
-        });
+        // Append items
+        if (batch.length > 0) {
+            batch.forEach((item, index) => {
+                const globalIndex = renderedCount + index;
+                const card = createCard(item, stylePrefix, globalIndex);
+                container.appendChild(card);
+            });
+            renderedCount += batch.length;
+        }
 
-        renderedCount += batch.length;
-
-        // Manage Load More Button
+        // Manage Button
         let btn = container.parentNode.querySelector('.load-more-btn');
+
+        // Check if we still have items to load
         if (renderedCount < items.length) {
             if (!btn) {
                 btn = document.createElement('button');
                 btn.className = `load-more-btn btn-${stylePrefix}`;
-                btn.textContent = 'Ver más';
-                btn.onclick = renderBatch;
                 // Insert after the container
                 container.parentNode.insertBefore(btn, container.nextSibling);
             }
+            btn.textContent = 'Ver más';
+            btn.onclick = renderBatch;
         } else {
-            if (btn) btn.remove();
+            // All items loaded
+            if (items.length > BATCH_SIZE) {
+                // If we have more items than the initial batch, show "See Less"
+                if (!btn) {
+                    btn = document.createElement('button');
+                    btn.className = `load-more-btn btn-${stylePrefix}`;
+                    container.parentNode.insertBefore(btn, container.nextSibling);
+                }
+                btn.textContent = 'Ver menos';
+                btn.onclick = collapse;
+            } else {
+                // If total items <= BATCH_SIZE, no button needed
+                if (btn) btn.remove();
+            }
         }
     };
 
