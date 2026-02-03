@@ -41,6 +41,17 @@ document.addEventListener("DOMContentLoaded", function () {
             if (footerPlaceholder) footerPlaceholder.innerHTML = footerHTML;
         })
         .catch(err => console.error("Error loading footer:", err));
+
+    // Load Chatbot
+    // Load Chatbot (only if not on home page)
+    const currentPath = window.location.pathname;
+    const isHomePage = currentPath === "/" || currentPath.endsWith("/index.html");
+
+    if (!isHomePage) {
+        const chatbotScript = document.createElement("script");
+        chatbotScript.src = "/assets/js/core/chatbot.js";
+        document.body.appendChild(chatbotScript);
+    }
 });
 
 function highlightActiveLink() {
