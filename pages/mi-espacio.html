@@ -30,9 +30,7 @@
                 grid-template-columns: repeat(2, 1fr) !important;
             }
 
-            .routines-grid {
-                grid-template-columns: repeat(4, 1fr) !important;
-            }
+            /* Removed forced 4-column routines-grid to allow 2-column fallback from CSS */
 
             .meditations-grid {
                 grid-template-columns: repeat(3, 1fr) !important;
@@ -54,8 +52,7 @@
             background: linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%) !important;
         }
 
-        .article-title,
-        .meditation-title {
+        .article-title {
             color: #fff !important;
             font-weight: 700 !important;
             margin-bottom: 0.5rem !important;
