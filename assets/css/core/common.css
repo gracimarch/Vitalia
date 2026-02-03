@@ -341,8 +341,6 @@ body.loaded .loader-container {
     align-items: center;
     width: 100%;
     position: relative;
-    padding: 0 15px;
-    /* Side padding */
 }
 
 /* --- Brand (Left) --- */
