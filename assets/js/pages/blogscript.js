@@ -103,8 +103,8 @@ function createCard(item, stylePrefix, index) {
         <div class="heading-time">
             <h3>${item.title}</h3>
             <div class="reading-time">
-                <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                <p>${timeText}</p>
+                <i class="bi bi-clock"></i>
+                <span>${timeText}</span>
             </div>
         </div>
     `;
