@@ -15,6 +15,12 @@
     --black: #1a1a1a;
     --soft-orange: #E1947F;
 
+    /* Blog Section Colors */
+    --purple-soft: #b38ddc;
+    /* Warmer violet (less blue) */
+    --orange-soft: #f4a261;
+    --teal-dark: #264653;
+
     /* Text */
     --text-color: #333333;
     --text-muted: #707070;

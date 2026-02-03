@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="/assets/css/blogstyle.css">
+    <link rel="stylesheet" href="/assets/css/pages/blogstyle.css">
 
     <link rel="icon" href="/assets/images/ui/vitaliaLogo.webp" type="image/webp">
 
@@ -87,25 +87,41 @@
 
         <!-- Artículos que te llevan a las distintas secciones de la página -->
         <section class="articles" id="lecturas-recomendadas">
-            <div class="container">
-                <a href="#productividad" class="block brightness bg-productiv" id="productiv">
-                    <div class="content">
+            <div class="container category-grid">
+                <a href="#productividad" class="category-card brightness bg-productiv" id="productiv">
+                    <div class="card-icon">
+                        <img src="/assets/images/ui/lecturaIconoTitulo.webp" alt="Ícono Productividad">
+                    </div>
+                    <div class="card-content">
                         <h3>Productividad</h3>
+                        <p>Optimiza tu tiempo y energía</p>
                     </div>
                 </a>
-                <a href="#ejercicios" class="block brightness bg-ejercita" id="ejercita">
-                    <div class="content">
-                        <h3>Actividad Física y Movilidad</h3>
+                <a href="#ejercicios" class="category-card brightness bg-ejercita" id="ejercita">
+                    <div class="card-icon">
+                        <img src="/assets/images/ui/pesaIconoTitulo.webp" alt="Ícono Ejercicio">
+                    </div>
+                    <div class="card-content">
+                        <h3>Ejercicio</h3>
+                        <p>Movimiento y vitalidad</p>
                     </div>
                 </a>
-                <a href="#alimentaciones" class="block brightness bg-alimentate" id="alimentate">
-                    <div class="content">
-                        <h3>Hábitos Alimenticios</h3>
+                <a href="#alimentaciones" class="category-card brightness bg-alimentate" id="alimentate">
+                    <div class="card-icon">
+                        <img src="/assets/images/ui/planIconoTitulo.webp" alt="Ícono Alimentación">
+                    </div>
+                    <div class="card-content">
+                        <h3>Alimentación</h3>
+                        <p>Nutrición consciente</p>
                     </div>
                 </a>
-                <a href="#salud-mental" class="block brightness bg-salud" id="salud">
-                    <div class="content">
-                        <h3>Salud Mental y Bienestar</h3>
+                <a href="#salud-mental" class="category-card brightness bg-salud" id="salud">
+                    <div class="card-icon">
+                        <img src="/assets/images/ui/meditarIconoTitulo.webp" alt="Ícono Salud Mental">
+                    </div>
+                    <div class="card-content">
+                        <h3>Salud Mental</h3>
+                        <p>Equilibrio y bienestar</p>
                     </div>
                 </a>
             </div>
@@ -124,40 +140,8 @@
 
         <!-- Lecturas seleccionadas -->
         <section class="lecturas">
-            <div class="container">
-                <a href="/lecturas/enfoque-integral-trabajo" class="block brightness bg-productividad-1"
-                    id="productividad1">
-                    <p>Productividad</p>
-                    <h3>Beneficios de Incorporar un Enfoque Integral en tu Trabajo</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>12 minutos de lectura</p>
-                    </div>
-                </a>
-                <a href="/lecturas/autocuidado-habitos" class="block brightness bg-productividad-2" id="productividad2">
-                    <p>Productividad</p>
-                    <h3>Autocuidado: Pequeños Hábitos que Hacen la Diferencia</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>10 minutos de lectura</p>
-                    </div>
-                </a>
-                <a href="/lecturas/pausas-activas" class="block brightness bg-productividad-3" id="productividad3">
-                    <p>Productividad</p>
-                    <h3>Pausas Activas: Qué Son y Sus Beneficios para tu Productividad</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>12 minutos de lectura</p>
-                    </div>
-                </a>
-                <a href="/lecturas/vida-sostenible" class="block brightness bg-productividad-4" id="productividad4">
-                    <p>Productividad</p>
-                    <h3>Cómo llevar un estilo de vida más sostenible</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>10 minutos de lectura</p>
-                    </div>
-                </a>
+            <div class="container" id="productividad-list">
+                <!-- Content injected by blogscript.js -->
             </div>
         </section>
 
@@ -174,51 +158,8 @@
 
         <!-- Ejercicios seleccionados -->
         <section class="ejercicios">
-            <div class="container">
-                <a href="/rutinas/circuito-ejercicio-moderado" class="block brightness bg-ejercicio-1" id="ejercicio1">
-                    <p>Nivel Intermedio</p>
-                    <div class="heading-time">
-                        <h3>Circuito de Energía Simple</h3>
-                        <div class="reading-time">
-                            <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                            <p>30 minutos</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="/rutinas/ejercicio-en-15-min" class="block brightness bg-ejercicio-2" id="ejercicio2">
-                    <p>Nivel Principiante</p>
-                    <div class="heading-time">
-                        <h3>Ejercicio en 15 Minutos</h3>
-                        <div class="reading-time">
-                            <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                            <p>15 minutos</p>
-                        </div>
-                    </div>
-
-                </a>
-                <a href="/rutinas/yoga-para-todos-niveles" class="block brightness bg-ejercicio-3" id="ejercicio3">
-                    <p>Todos los Niveles</p>
-                    <div class="heading-time">
-                        <h3>Yoga Revitilizante</h3>
-                        <div class="reading-time">
-                            <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                            <p>25 minutos</p>
-                        </div>
-                    </div>
-
-                </a>
-                <a href="/rutinas/entrenamiento-cuerpo-completo-casa" class="block brightness bg-ejercicio-4"
-                    id="ejercicio4">
-                    <p>Nivel Principiante</p>
-                    <div class="heading-time">
-                        <h3>Entrenamiento Total en Casa</h3>
-                        <div class="reading-time">
-                            <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                            <p>35 minutos</p>
-                        </div>
-                    </div>
-
-                </a>
+            <div class="container" id="ejercicios-list">
+                <!-- Content injected by blogscript.js -->
             </div>
         </section>
 
@@ -235,55 +176,8 @@
 
         <!-- Planes alimenticios seleccionados -->
         <section class="lecturas">
-            <div class="container">
-                <a href="/dietas/energia-y-vitalidad" class="block brightness bg-dieta-1" id="dieta1">
-                    <p>Balanceado y rico en nutrientes</p>
-                    <h3>Plan Semanal para tener Energía y Vitalidad</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>Plan semanal</p>
-                    </div>
-                </a>
-                <a href="#" class="block brightness bg-dieta-2" id="dieta2">
-                    <p>A base de vegetales</p>
-                    <h3>Plan para un Día de Renovación y Desintoxicación</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>Plan diario</p>
-                    </div>
-                </a>
-                <a href="#" class="block brightness bg-dieta-3" id="dieta3">
-                    <p>Ricos en fibra y probióticos</p>
-                    <h3>Plan para una Semana Enfocada en Mejorar la Salud Digestiva</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>Plan semanal</p>
-                    </div>
-                </a>
-                <a href="#" class="block brightness bg-dieta-4" id="dieta4">
-                    <p>Integrales y antiestresantes</p>
-                    <h3>Plan para Días de Estrés y Ansiedad</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>Plan diario</p>
-                    </div>
-                </a>
-                <a href="#" class="block brightness bg-dieta-5" id="dieta5">
-                    <p>Sabrosos y bajos en calorías</p>
-                    <h3>Plan para Disfrutar de Comidas Ricas pero Saludables</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>Plan diario</p>
-                    </div>
-                </a>
-                <a href="#" class="block brightness bg-dieta-6" id="dieta6">
-                    <p>Ricos en vitaminas y minerales</p>
-                    <h3>Plan de Inmunidad y Fuerza para Semanas Ocupadas</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>Plan semanal</p>
-                    </div>
-                </a>
+            <div class="container" id="alimentacion-list">
+                <!-- Content injected by blogscript.js -->
             </div>
         </section>
 
@@ -300,39 +194,8 @@
 
         <!-- Lecturas seleccionadas -->
         <section class="lecturas">
-            <div class="container">
-                <a href="/lecturas/siestas-cortas" class="block brightness bg-salud-mental-1" id="salud-mental1">
-                    <p>Salud mental y bienestar</p>
-                    <h3>Beneficios de las Siestas y Cómo Tomarlas Correctamente</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>10 minutos de lectura</p>
-                    </div>
-                </a>
-                <a href="/lecturas/rutina-nocturna" class="block brightness bg-salud-mental-2" id="salud-mental2">
-                    <p>Salud mental y bienestar</p>
-                    <h3>Cómo Crear una Rutina Nocturna para un Mejor Sueño</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>10 minutos de lectura</p>
-                    </div>
-                </a>
-                <a href="/lecturas/tecnicas-estres" class="block brightness bg-salud-mental-4" id="salud-mental4">
-                    <p>Salud mental y bienestar</p>
-                    <h3>Técnicas de Relajación para Reducir el Estrés Diario</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>8 minutos de lectura</p>
-                    </div>
-                </a>
-                <a href="/lecturas/relajacion-movilidad" class="block brightness bg-salud-mental-3" id="salud-mental3">
-                    <p>Salud mental y bienestar</p>
-                    <h3>Relajación y Bienestar: Salud Mental en Personas con Movilidad Reducida</h3>
-                    <div class="reading-time">
-                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                        <p>7 minutos de lectura</p>
-                    </div>
-                </a>
+            <div class="container" id="salud-mental-list">
+                <!-- Content injected by blogscript.js -->
             </div>
         </section>
 
