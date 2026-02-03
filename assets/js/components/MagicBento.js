@@ -207,8 +207,11 @@ const ParticleCard = ({
                 gsap.to(element, {
                     rotateX: 0,
                     rotateY: 0,
-                    duration: 0.3,
-                    ease: 'power2.out'
+                    duration: tiltDuration,
+                    ease: 'power2.out',
+                    onComplete: () => {
+                        gsap.set(element, { clearProps: "rotateX,rotateY,transformPerspective,transform" });
+                    }
                 });
             }
 
@@ -315,7 +318,7 @@ const ParticleCard = ({
             element.removeEventListener('click', handleClick);
             clearAllParticles();
         };
-    }, [animateParticles, clearAllParticles, disableAnimations, enableTilt, enableMagnetism, clickEffect, glowColor]);
+    }, [animateParticles, clearAllParticles, disableAnimations, enableTilt, enableMagnetism, clickEffect, glowColor, tiltMaxAngle, tiltDuration]);
 
     return (
         <div
@@ -523,6 +526,7 @@ const MagicBento = ({
                             '--glow-color': effectiveGlowColor,
                             // Since bg is white, set text color to dark
                             color: '#333',
+                            cursor: card.onClick ? 'pointer' : 'default',
                             // Add custom styles from card data
                             ...card.style
                         },
