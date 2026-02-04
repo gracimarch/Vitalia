@@ -13,16 +13,10 @@ body {
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
-    background-image: url(../../formulario/images/background.webp);
-    background-size: auto 100vh;
-    background-repeat: no-repeat;
+    /* Background removed for animated liquid background */
+    position: relative;
 }
 
-@media (max-height: 745px) {
-    body {
-        background-size: auto 100%;
-    }
-}
 
 .loader-container {
     position: fixed;
@@ -93,11 +87,72 @@ body.loaded .loader-container {
     margin: 0;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
-    background-color: var(--bg-wrapper);
+
+    /* Magic Bento Styles */
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    /* Lighter border for white bg */
+    box-shadow: none;
+    transition: all 0.3s ease;
 
     width: 100%;
+    position: relative;
+    /* For Pseudo-element positioning */
+    overflow: hidden;
+    /* Contain particles */
+
+    /* Glow Variables */
+    --glow-x: 50%;
+    --glow-y: 50%;
+    --glow-intensity: 0;
+    --glow-radius: 200px;
+    --glow-color: 132, 0, 255;
+    /* Purple default */
 }
+
+/* Hover Effect */
+.wrapper:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.wrapper:hover::after {
+    padding: 4px;
+    /* Thicker border on hover */
+}
+
+/* Border Glow Effect */
+.wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    /* Thin border glow */
+    background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+            rgba(var(--glow-color), calc(var(--glow-intensity) * 0.4)) 0%,
+            rgba(157, 96, 207, calc(var(--glow-intensity) * 0.3)) 25%,
+            rgba(128, 202, 205, calc(var(--glow-intensity) * 0.2)) 50%,
+            transparent 80%);
+    border-radius: inherit;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease, padding 0.3s ease;
+    z-index: 10;
+}
+
+/* Particle Styles */
+.particle {
+    pointer-events: none;
+}
+
 
 .formulario {
     padding: 0;
@@ -140,7 +195,6 @@ body.loaded .loader-container {
 
 .title-container {
     width: 100%;
-    max-width: 530px;
 }
 
 .title-container h1 {
@@ -157,32 +211,13 @@ body.loaded .loader-container {
 
 .form-and-image {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
     /* Allow wrapping */
 }
 
-/* Image container takes its needed space up to max-width */
-.img-contain {
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex: 0 0 320px;
-    /* Don't grow, don't shrink, fixed basis */
-    max-width: 320px;
-    height: 100%;
-    margin-top: 34px;
-}
 
-.img-contain img {
-    position: absolute;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-}
 
 .accept-terms-container {
     display: flex;
@@ -212,8 +247,6 @@ body.loaded .loader-container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 530px;
-    height: 290px;
 }
 
 .form-holder {
@@ -254,9 +287,9 @@ body.loaded .loader-container {
     /* Grow to fill available space */
     width: auto;
     /* Remove fixed vw width */
-    max-width: none;
     /* Remove arbitrary limit */
-    height: 290px;
+    height: auto;
+    min-height: 290px;
 }
 
 .form-row-scroll::-webkit-scrollbar {
@@ -491,9 +524,7 @@ input.otro-text {
         flex-direction: column;
     }
 
-    .img-contain {
-        display: none;
-    }
+
 
     .form-row-width {
         width: 100%;
@@ -627,4 +658,310 @@ input.otro-text {
 .toast-success {
     background: linear-gradient(135deg, var(--teal), var(--purple-light)) !important;
     color: var(--white);
+}
+
+/* --- Variables (ensure these match core/variables.css if not already imported) --- */
+:root {
+    --purple: #B571DE;
+    --purple-hover: #734697;
+    --purple-light: #ae7dd7;
+    --white: #fafafa;
+    --text-color: #333333;
+    --text-muted: #707070;
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Zilla Slab', serif;
+}
+
+/* --- Typography --- */
+body {
+    font-family: var(--font-primary);
+    color: var(--text-color);
+}
+
+h1 {
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+p,
+label,
+input,
+button {
+    font-family: var(--font-primary);
+}
+
+/* --- Progress Bar --- */
+.step {
+    background-color: #e0e0e0;
+    /* Inactive */
+}
+
+.step.active {
+    background-color: var(--purple);
+}
+
+.step.finish {
+    background-color: var(--purple-light);
+}
+
+/* --- Inputs --- */
+.form-control {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    border-color: var(--purple);
+    box-shadow: 0 0 0 4px rgba(181, 113, 222, 0.1);
+    outline: none;
+}
+
+/* Checkboxes & Radios */
+.choice-container input[type="radio"],
+.choice-container input[type="checkbox"] {
+    accent-color: var(--purple);
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.choice-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.choice-container:hover {
+    background-color: rgba(181, 113, 222, 0.05);
+}
+
+/* --- Buttons --- */
+.buttons button {
+    border-radius: 50px;
+    /* Pill shape */
+    padding: 12px 30px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.prev-btn {
+    background: transparent;
+    border: 2px solid var(--purple) !important;
+    color: var(--purple);
+}
+
+.prev-btn:hover {
+    background: rgba(181, 113, 222, 0.1);
+    transform: translateX(-3px);
+}
+
+.next-btn,
+.send-btn {
+    background: var(--purple);
+    color: white;
+    box-shadow: 0 4px 15px rgba(181, 113, 222, 0.3);
+}
+
+.next-btn:hover,
+.send-btn:hover {
+    background: var(--purple-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(181, 113, 222, 0.4);
+}
+
+/* --- Title Container --- */
+.title-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.title-container p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* --- Split Layout Refinements --- */
+body {
+    background-color: #f0f2f5;
+    /* Light grey BG for the page to make card pop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.pagina {
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    /* Split Layout */
+    width: 100%;
+    max-width: 1100px;
+    min-height: 600px;
+    padding: 0;
+    /* Remove inner padding */
+    overflow: hidden;
+    /* Important for rounding corners */
+}
+
+/* Left Panel - Visuals */
+.form-left-panel {
+    width: 40%;
+    /* Reduced to give more space to form */
+    position: relative;
+    background-color: var(--purple);
+    /* Fallback */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Logo in Left Panel */
+.form-left-panel .logo-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 10;
+    margin: 0;
+}
+
+.form-left-panel .logo-container img {
+    filter: brightness(0) invert(1);
+    /* Make logo white */
+}
+
+
+#liquid-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-flower {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.flower-left {
+    bottom: -250px;
+    left: -250px;
+    width: 350px;
+    /* Slightly larger to compensate for cutoff */
+    height: auto;
+}
+
+.flower-right {
+    top: -250px;
+    right: -250px;
+    width: 350px;
+    height: auto;
+}
+
+.hero-bg,
+.form-left-content {
+    /* Hide old bg usage if present */
+    display: none;
+}
+
+
+/* Right Panel - Form */
+.form-right-panel {
+    width: 60%;
+    /* Increased width */
+    padding: 40px;
+    /* Reduced padding for more internal space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center content vertically, but keep elements together */
+    background-color: #ffffff;
+    z-index: 10;
+}
+
+/* Adjustments for nested form elements */
+.formulario {
+    width: 100%;
+    /* margin-bottom removed to keep buttons close */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-container {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.title-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.title-container p {
+    margin-bottom: 2rem;
+}
+
+.form-and-image {
+    flex-direction: column;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .wrapper {
+        flex-direction: column;
+        max-width: 500px;
+    }
+
+    .form-left-panel {
+        width: 100%;
+        height: 200px;
+        /* Header banner style */
+    }
+
+    .form-right-panel {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .flower-left,
+    .flower-right {
+        width: 150px;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 2rem;
 }

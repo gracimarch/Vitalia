@@ -21,9 +21,21 @@ document.addEventListener('DOMContentLoaded', () => {
     scene.add(meshGroup);
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // optimize for performance
+
+    // Initial size update
+    const updateSize = () => {
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+
+        renderer.setSize(width, height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+    };
+
     container.appendChild(renderer.domElement);
+    updateSize(); // Call once immediately
 
     // Plane Geometry covering the screen
     // We make it slightly larger to ensure coverage during distortion
@@ -233,17 +245,12 @@ document.addEventListener('DOMContentLoaded', () => {
     tick();
 
     // Resize
-    window.addEventListener('resize', () => {
-        // Update sizes
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-
-        // Update camera
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-
-        // Update renderer
-        renderer.setSize(width, height);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    // Use ResizeObserver for container resizing
+    const resizeObserver = new ResizeObserver(() => {
+        updateSize();
     });
+    resizeObserver.observe(container);
+
+    // Also listen to window resize as backup
+    window.addEventListener('resize', updateSize);
 });
