@@ -140,4 +140,16 @@ function initializeNavbarToggle() {
         .catch(err => {
             console.debug('[Analytics] Could not load analytics:', err);
         });
+
+    // Speed Insights Initialization
+    import('https://esm.sh/@vercel/speed-insights@1.0.10')
+        .then(module => {
+            if (module && typeof module.injectSpeedInsights === 'function') {
+                module.injectSpeedInsights();
+                console.log('[SpeedInsights] Vercel Speed Insights initialized');
+            }
+        })
+        .catch(err => {
+            console.debug('[SpeedInsights] Could not load speed insights:', err);
+        });
 })();
