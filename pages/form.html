@@ -12,7 +12,7 @@
 
 
     <link href="/assets/css/core/common.css" rel="stylesheet">
-    <script src="/assets/js/core/main.js" render></script>
+    <script src="/assets/js/core/main.js" defer></script>
     <script src="/assets/js/core/router.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/css/vendor/toastify.css">
 
@@ -43,16 +43,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="/assets/js/pages/mainform.js" type="module"></script>
     <script type="module" src="/assets/js/auth/firebase.js"></script>
-
-    <!-- Créditos:
-        - Bootstrap: https://getbootstrap.com/
-        - LDRS: https://uiball.com/ldrs/
-    -->
-
-    <style>
-
-    </style>
-
 </head>
 
 <body>
@@ -62,9 +52,7 @@
         <img src="/assets/favicons/vitalia-favicon.svg" alt="Cargando..." class="loader-logo">
     </div>
 
-    <!-- Background moved to inner panel -->
-
-    <div class="page-container">
+    <main class="page-container">
         <div class="wrapper">
             <div class="form-left-panel">
                 <div id="logo" class="logo-container">
@@ -636,9 +624,9 @@
                     </div>
                 </div>
             </div>
-        </div> <!-- End right panel -->
-    </div> <!-- End wrapper -->
-    </div>
+        </div>
+        </div>
+    </main>
 
     <script src="/assets/js/pages/formscript.js"></script>
 
@@ -652,7 +640,6 @@
 
     <!-- Importar Toastify -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
 
 </body>
 
