@@ -9,7 +9,7 @@
             "destination": "/pages/mi-espacio.html"
         },
         {
-            "source": "/plan",
+            "source": "/formulario",
             "destination": "/pages/form.html"
         },
         {
