@@ -303,12 +303,14 @@ body.loaded .loader-container {
    5. HEADER & NAVBAR
    ========================================= */
 #header-placeholder {
-    min-height: 80px; /* Approximate height of header */
+    min-height: 80px;
+    /* Approximate height of header */
     display: block;
 }
 
 #footer-placeholder {
-    min-height: 400px; /* Approximate height of footer */
+    min-height: 400px;
+    /* Approximate height of footer */
     display: block;
 }
 
@@ -751,5 +753,39 @@ body.loaded .loader-container {
 @media (max-width: 900px) {
     .footer {
         padding: 40px 20px;
+    }
+}
+
+/* =========================================
+   7. STANDARDIZED PAGE CONTAINER
+   ========================================= */
+.page-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 60px 0.75rem 0;
+}
+
+@media (min-width: 576px) {
+    .page-container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .page-container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .page-container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .page-container {
+        max-width: 1140px;
     }
 }

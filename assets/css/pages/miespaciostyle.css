@@ -644,7 +644,8 @@
 
 /* Utility for increased section spacing */
 .section-gap-top {
-    padding-top: 5rem !important;
+    margin-top: 5rem !important;
+    padding-top: 0 !important;
 }
 
 /*
@@ -673,9 +674,9 @@
 /* Thanks Section Styles */
 .thanks {
     background-color: transparent;
-    padding: 3rem 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding: 1rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .thanks-section {
@@ -709,7 +710,6 @@
 
 #greeting-root {
     font-size: 1rem;
-    padding-top: 8rem;
     margin-bottom: 0;
     text-align: center;
     padding-left: 1.5rem;
