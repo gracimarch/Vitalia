@@ -4,118 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vitalia | Tu Web de Bienestar</title>
+    <title>Vitalia | Mi Espacio</title>
     <link rel="canonical" href="https://vitalia-selfcare.vercel.app/mi-espacio">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-
     <link rel="stylesheet" href="/assets/css/core/common.css">
     <link rel="stylesheet" href="/assets/css/core/variables.css">
     <link rel="stylesheet" href="/assets/css/pages/miespaciostyle.css">
 
-    <style>
-        /* Emergency Critical Styles */
-        .articles-grid,
-        .routines-grid,
-        .meditations-grid {
-            display: grid !important;
-            gap: 1.5rem !important;
-            margin-bottom: 3rem !important;
-        }
-
-        @media (min-width: 768px) {
-            .articles-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-            }
-
-            /* Removed forced 4-column routines-grid to allow 2-column fallback from CSS */
-
-            .meditations-grid {
-                grid-template-columns: repeat(3, 1fr) !important;
-            }
-        }
-
-        .article-card,
-        .food-card,
-        .routine-card {
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            min-height: 180px !important;
-            padding: 1.5rem !important;
-            border-radius: 20px !important;
-            text-decoration: none !important;
-            color: #fff !important;
-            transition: all 0.3s ease !important;
-            background: linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%) !important;
-        }
-
-        .article-title {
-            color: #fff !important;
-            font-weight: 700 !important;
-            margin-bottom: 0.5rem !important;
-        }
-
-        .article-category {
-            color: rgba(255, 255, 255, 0.9) !important;
-            font-size: 0.85rem !important;
-            text-transform: uppercase !important;
-        }
-
-        /* Specific Gradients - Restored */
-        .article-card:nth-child(1) {
-            background: radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.45) 0%, transparent 55%), radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 55%), linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%) !important;
-        }
-
-        .article-card:nth-child(2) {
-            background: radial-gradient(circle at 50% 50%, rgba(128, 202, 205, 0.25) 0%, transparent 65%), radial-gradient(circle at 100% 100%, rgba(253, 251, 247, 0.4) 0%, transparent 45%), linear-gradient(45deg, #a675d1 0%, #bfa0e0 100%) !important;
-        }
-
-        .article-card:nth-child(3) {
-            background: radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%), radial-gradient(circle at 100% 50%, rgba(225, 148, 127, 0.35) 0%, transparent 55%), linear-gradient(180deg, #bfa0e0 0%, #a170d0 100%) !important;
-        }
-
-        .article-card:nth-child(4) {
-            background: radial-gradient(circle at 80% 20%, rgba(128, 202, 205, 0.35) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%), linear-gradient(120deg, #a675d1 0%, #bfa0e0 100%) !important;
-        }
-
-        .food-card:nth-child(1) {
-            background: radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%), radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 50%), linear-gradient(135deg, #f4a261 0%, #e76f51 100%) !important;
-        }
-
-        .food-card:nth-child(2) {
-            background: radial-gradient(circle at 50% 50%, rgba(253, 251, 247, 0.3) 0%, transparent 60%), radial-gradient(circle at 100% 100%, rgba(157, 96, 207, 0.3) 0%, transparent 45%), linear-gradient(45deg, #e9c46a 0%, #f4a261 100%) !important;
-        }
-
-        .food-card:nth-child(3) {
-            background: radial-gradient(circle at 0% 0%, rgba(128, 202, 205, 0.35) 0%, transparent 45%), radial-gradient(circle at 100% 50%, rgba(253, 251, 247, 0.3) 0%, transparent 55%), linear-gradient(180deg, #f4a261 0%, #e76f51 100%) !important;
-        }
-
-        .food-card:nth-child(4) {
-            background: radial-gradient(circle at 80% 20%, rgba(157, 96, 207, 0.35) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%), linear-gradient(120deg, #e76f51 0%, #f4a261 100%) !important;
-        }
-
-        .routine-card:nth-child(1) {
-            background: radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%), radial-gradient(circle at 0% 100%, rgba(253, 251, 247, 0.3) 0%, transparent 50%), linear-gradient(135deg, #80cacd 0%, #5fb3b6 100%) !important;
-        }
-
-        .routine-card:nth-child(2) {
-            background: radial-gradient(circle at 50% 50%, rgba(157, 96, 207, 0.25) 0%, transparent 60%), radial-gradient(circle at 100% 100%, rgba(225, 148, 127, 0.3) 0%, transparent 45%), linear-gradient(45deg, #6ec0c3 0%, #80cacd 100%) !important;
-        }
-
-        .routine-card:nth-child(3) {
-            background: radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%), radial-gradient(circle at 100% 50%, rgba(157, 96, 207, 0.3) 0%, transparent 55%), linear-gradient(180deg, #80cacd 0%, #5fb3b6 100%) !important;
-        }
-
-        .routine-card:nth-child(4) {
-            background: radial-gradient(circle at 80% 20%, rgba(157, 96, 207, 0.35) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(253, 251, 247, 0.3) 0%, transparent 50%), linear-gradient(120deg, #74c7ca 0%, #80cacd 100%) !important;
-        }
-    </style>
-
-    <script src="/assets/js/core/main.js"></script>
+    <script src="/assets/js/core/main.js" defer></script>
     <script src="/assets/js/core/router.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
@@ -124,31 +24,21 @@
     <link rel="apple-touch-icon" href="/assets/favicons/vitalia-favicon.png">
 
     <meta name="description"
-        content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
+        content="Tu espacio personal en Vitalia. Accede a lecturas recomendadas, ejercicios personalizados y seguimiento de bienestar.">
     <meta name="keywords"
-        content="Bienestar, Salud mental, Inteligencia Artificial, Blog, Meditación, Fitness, Nutrición">
+        content="Vitalia mi espacio, dashboard bienestar, seguimiento salud, ejercicios personalizados, lecturas salud">
 
-    <meta property="og:title" content="Vitalia | Tu Web de Bienestar">
+    <meta property="og:title" content="Vitalia | Mi Espacio">
     <meta property="og:description"
-        content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
+        content="Tu espacio personal en Vitalia. Accede a lecturas recomendadas, ejercicios personalizados y seguimiento de bienestar.">
     <meta property="og:image"
         content="https://github.com/gracimarch/Vitalia/blob/main/assets/images/ui/vitalia-perfil.webp">
     <meta property="og:url" content="https://vitalia-selfcare.vercel.app/">
-    <meta name="twitter:title" content="Vitalia | Tu Web de Bienestar">
+    <meta name="twitter:title" content="Vitalia | Mi Espacio">
     <meta name="twitter:description"
-        content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
+        content="Tu espacio personal en Vitalia. Accede a lecturas recomendadas, ejercicios personalizados y seguimiento de bienestar.">
     <meta name="twitter:image"
         content="https://github.com/gracimarch/Vitalia/blob/main/assets/images/ui/vitalia-perfil.webp">
-
-    <!-- 
-    Créditos:
-        - Bootstrap: https://getbootstrap.com/
-        - Bootstrap Icons: https://icons.getbootstrap.com/
-        - Icons8: https://icons8.com/
-        - LDRS: https://uiball.com/ldrs/
-        - Yancy Min (botón compartir): https://dribbble.com/YancyMin
-    -->
-
 </head>
 
 <body class="mi-espacio-page">
@@ -158,7 +48,6 @@
         <img src="/assets/favicons/vitalia-favicon.svg" alt="Cargando..." class="loader-logo">
     </div>
 
-    <!-- Encabezado -->
     <div id="header-placeholder"></div>
 
     <!-- React & GSAP & Framer Motion Dependencies -->
@@ -182,7 +71,7 @@
     <script type="text/babel" src="/assets/js/pages/mi-espacio-bento-data.js"></script>
     <script type="text/babel" src="/assets/js/components/MagicBento.js"></script>
 
-    <div class="page-container" id="welcome">
+    <main class="page-container" id="welcome">
 
         <!-- Dynamic Greeting Root -->
         <div id="greeting-root" class="container">
@@ -203,10 +92,10 @@
         </section>
 
         <!-- Lecturas seleccionadas -->
-        <!-- Lecturas seleccionadas -->
         <section class="lecturas">
             <div class="container">
                 <div class="articles-grid">
+
                     <!-- Article 1 -->
                     <a href="/lecturas/enfoque-integral-trabajo" class="article-card">
                         <div class="article-header">
@@ -372,7 +261,6 @@
         </section>
 
         <!-- Meditaciones seleccionadas -->
-        <!-- Meditaciones seleccionadas -->
         <section class="meditations-section">
             <div class="container">
                 <div class="meditations-grid">
@@ -506,7 +394,6 @@
         </section>
 
         <!-- Planes alimenticios -->
-        <!-- Planes alimenticios -->
         <section class="reading section-gap-top" id="alimentaciones">
             <div class="reading-section">
                 <div class="section-title-container">
@@ -595,12 +482,11 @@
             </div>
         </section>
 
-    </div>
+    </main>
 
     <!-- Pie de página-->
     <div id="footer-placeholder"></div>
     <script src="/assets/js/core/load-components.js"></script>
-
     <script src="/assets/js/components/meditation-player.js"></script>
     <script src="/assets/js/core/script.js"></script>
 </body>

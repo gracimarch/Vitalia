@@ -746,3 +746,100 @@
 #magic-bento-root {
     margin-bottom: 4rem;
 }
+
+/* Emergency Critical Styles Moved from HTML */
+.articles-grid,
+.routines-grid,
+.meditations-grid {
+    display: grid !important;
+    gap: 1.5rem !important;
+    margin-bottom: 3rem !important;
+}
+
+@media (min-width: 768px) {
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Removed forced 4-column routines-grid to allow 2-column fallback from CSS */
+
+    .meditations-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+.article-card,
+.food-card,
+.routine-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    min-height: 180px !important;
+    padding: 1.5rem !important;
+    border-radius: 20px !important;
+    text-decoration: none !important;
+    color: #fff !important;
+    transition: all 0.3s ease !important;
+    background: linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%) !important;
+}
+
+.article-title {
+    color: #fff !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.article-category {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase !important;
+}
+
+/* Specific Gradients - Restored */
+.article-card:nth-child(1) {
+    background: radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.45) 0%, transparent 55%), radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 55%), linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%) !important;
+}
+
+.article-card:nth-child(2) {
+    background: radial-gradient(circle at 50% 50%, rgba(128, 202, 205, 0.25) 0%, transparent 65%), radial-gradient(circle at 100% 100%, rgba(253, 251, 247, 0.4) 0%, transparent 45%), linear-gradient(45deg, #a675d1 0%, #bfa0e0 100%) !important;
+}
+
+.article-card:nth-child(3) {
+    background: radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%), radial-gradient(circle at 100% 50%, rgba(225, 148, 127, 0.35) 0%, transparent 55%), linear-gradient(180deg, #bfa0e0 0%, #a170d0 100%) !important;
+}
+
+.article-card:nth-child(4) {
+    background: radial-gradient(circle at 80% 20%, rgba(128, 202, 205, 0.35) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%), linear-gradient(120deg, #a675d1 0%, #bfa0e0 100%) !important;
+}
+
+.food-card:nth-child(1) {
+    background: radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%), radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 50%), linear-gradient(135deg, #f4a261 0%, #e76f51 100%) !important;
+}
+
+.food-card:nth-child(2) {
+    background: radial-gradient(circle at 50% 50%, rgba(253, 251, 247, 0.3) 0%, transparent 60%), radial-gradient(circle at 100% 100%, rgba(157, 96, 207, 0.3) 0%, transparent 45%), linear-gradient(45deg, #e9c46a 0%, #f4a261 100%) !important;
+}
+
+.food-card:nth-child(3) {
+    background: radial-gradient(circle at 0% 0%, rgba(128, 202, 205, 0.35) 0%, transparent 45%), radial-gradient(circle at 100% 50%, rgba(253, 251, 247, 0.3) 0%, transparent 55%), linear-gradient(180deg, #f4a261 0%, #e76f51 100%) !important;
+}
+
+.food-card:nth-child(4) {
+    background: radial-gradient(circle at 80% 20%, rgba(157, 96, 207, 0.35) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%), linear-gradient(120deg, #e76f51 0%, #f4a261 100%) !important;
+}
+
+.routine-card:nth-child(1) {
+    background: radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%), radial-gradient(circle at 0% 100%, rgba(253, 251, 247, 0.3) 0%, transparent 50%), linear-gradient(135deg, #80cacd 0%, #5fb3b6 100%) !important;
+}
+
+.routine-card:nth-child(2) {
+    background: radial-gradient(circle at 50% 50%, rgba(157, 96, 207, 0.25) 0%, transparent 60%), radial-gradient(circle at 100% 100%, rgba(225, 148, 127, 0.3) 0%, transparent 45%), linear-gradient(45deg, #6ec0c3 0%, #80cacd 100%) !important;
+}
+
+.routine-card:nth-child(3) {
+    background: radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%), radial-gradient(circle at 100% 50%, rgba(157, 96, 207, 0.3) 0%, transparent 55%), linear-gradient(180deg, #80cacd 0%, #5fb3b6 100%) !important;
+}
+
+.routine-card:nth-child(4) {
+    background: radial-gradient(circle at 80% 20%, rgba(157, 96, 207, 0.35) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(253, 251, 247, 0.3) 0%, transparent 50%), linear-gradient(120deg, #74c7ca 0%, #80cacd 100%) !important;
+}
