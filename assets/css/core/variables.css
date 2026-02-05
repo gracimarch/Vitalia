@@ -1,51 +1,54 @@
 :root {
-    /* Colors */
+    /* ===== COLORS ===== */
+    /* Primary Purgle */
     --purple: #B571DE;
     --purple-hover: #734697;
     --purple-light: #ae7dd7;
     --purple-dark: #693a87;
+    --purple-soft: #b38ddc;
 
+    /* Cyan & Teal */
     --cyan: #80CACD;
     --cyan-hover: #68a5a7;
     --teal: #2bc4bc;
     --teal-hover: #20b3ab;
     --teal-light: #c9fff3;
-
-    --white: #fafafa;
-    --black: #1a1a1a;
-    --soft-orange: #E1947F;
-
-    /* Blog Section Colors */
-    --purple-soft: #b38ddc;
-    --orange-soft: #f4a261;
     --teal-dark: #264653;
 
-    /* Text */
+    /* Accents */
+    --soft-orange: #E1947F;
+    --orange-soft: #f4a261;
+
+    /* Neutrals */
+    --white: #fafafa;
+    --black: #1a1a1a;
+    --border-color: #dddddd;
+
+    /* ===== TEXT ===== */
     --text-color: #333333;
     --text-muted: #707070;
     --text-light-grey: #818589;
     --text-subtitle: #868686;
 
-    /* Backgrounds */
+    /* ===== BACKGROUNDS ===== */
     --bg-color: #f5f5f5;
     --bg-main: #fffcf4;
     --bg-wrapper: #fffbf7;
     --bg-table-header: #eefffe;
     --bg-cream: #fefbf3;
 
-    /* Decoration */
-    --border-color: #dddddd;
-
-    /* Fonts */
+    /* ===== TYPOGRAPHY ===== */
     --font-primary: 'Poppins', Calibri, sans-serif;
     --font-secondary: 'Zilla Slab', Times New Roman, serif;
 
-    /* Magic Bento Variables */
+    /* ===== MAGIC BENTO (Dynamic Grid) ===== */
     --hue: 27;
     --sat: 69%;
     --purple-primary: rgba(132, 0, 255, 1);
     --purple-glow: rgba(132, 0, 255, 0.2);
     --purple-border: rgba(132, 0, 255, 0.8);
     --background-dark: #060010;
+
+    /* Scheme */
     color-scheme: light dark;
 }

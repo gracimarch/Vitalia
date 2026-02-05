@@ -1,45 +1,6 @@
 /* Reset & Loader handled in common.css */
 
-.pagina,
-.pagina-2 {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 0.75rem;
-    padding-left: 0.75rem;
-}
-
-@media (min-width: 576px) {
-
-    .pagina,
-    .pagina-2 {
-        max-width: 540px;
-    }
-}
-
-@media (min-width: 768px) {
-
-    .pagina,
-    .pagina-2 {
-        max-width: 720px;
-    }
-}
-
-@media (min-width: 992px) {
-
-    .pagina,
-    .pagina-2 {
-        max-width: 960px;
-    }
-}
-
-@media (min-width: 1200px) {
-
-    .pagina,
-    .pagina-2 {
-        max-width: 1140px;
-    }
-}
+/* Page container managed in common.css via .pagina class */
 
 
 
@@ -278,107 +239,7 @@ th:first-child {
 
 
 
-.ejercicios {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.ejercicios .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.ejercicios .block {
-    flex: 1 1 calc(25% - 15px);
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    height: 380px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    color: #fff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.ejercicios .block .heading-time {
-    margin-top: auto;
-}
-
-.ejercicios .block p {
-    font-size: 18px;
-    margin: 3px 0;
-}
-
-.ejercicios .heading-time h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 10px 0;
-}
-
-.ejercicios .reading-time {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.ejercicios .reading-time img {
-    width: 18px;
-    margin-right: 5px;
-}
-
-.ejercicios .reading-time p {
-    font-size: 14px;
-    margin: 0;
-}
-
-@media (max-width: 1200px) {
-    .ejercicios .block {
-        flex: 1 1 calc(50% - 15px);
-        height: 300px;
-    }
-
-    .ejercicios .block .heading-time h3 {
-        font-size: 18px;
-    }
-
-    .ejercicios .block p {
-        font-size: 14px;
-    }
-
-    .ejercicios .reading-time img {
-        width: 17px;
-    }
-}
-
-@media (max-width: 468px) {
-    .ejercicios .block {
-        flex: 1 1 calc(100% - 15px);
-        height: 280px;
-    }
-}
-
-.bg-ejercicio-1 {
-    background-image: url('/assets/images/sections/rut1BloqueEjercicios.webp');
-}
-
-.bg-ejercicio-2 {
-    background-image: url('/assets/images/sections/rut2BloqueEjercicios.webp');
-}
-
-.bg-ejercicio-3 {
-    background-image: url('/assets/images/sections/rut3BloqueEjercicios.webp');
-}
-
-.bg-ejercicio-4 {
-    background-image: url('/assets/images/sections/rut4BloqueEjercicios.webp');
-}
+/* Exercise grid handled in components.css */
 
 
 
@@ -400,12 +261,12 @@ th:first-child {
 }
 
 .video video {
+    display: block;
     width: 100%;
     height: 300px !important;
-    object-fit: cover;
-    border-radius: 20px;
-    display: block;
     margin: 25px 0;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
 .rest .video-container,
@@ -481,21 +342,28 @@ th:first-child {
 }
 
 .btn {
+    /* Layout */
     display: inline-flex;
     align-items: center;
-    background-color: var(--purple);
-    color: var(--white);
+
+    /* Box Model */
+    margin: 25px 0;
+    padding: 10px 20px;
     border: none;
     border-radius: 20px;
-    padding: 10px 20px;
+
+    /* Visual */
+    background-color: var(--purple);
+    color: var(--white);
+    font-family: 'Zilla Slab', Times New Roman, serif;
     font-size: 20px;
     font-weight: 600;
-    margin: 25px 0;
     text-decoration: none;
-    transition: all 0.6s ease;
-    font-family: 'Zilla Slab', Times New Roman, serif;
-    animation: pulse 0.9s infinite alternate;
     cursor: pointer;
+
+    /* Animation */
+    transition: all 0.6s ease;
+    animation: pulse 0.9s infinite alternate;
 }
 
 .btn i {

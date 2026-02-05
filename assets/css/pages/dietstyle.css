@@ -29,51 +29,7 @@ body {
     /* Removed redundant --background */
 }
 
-.pagina,
-.pagina-2,
-.pagina-3 {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: 0.75rem;
-    padding-left: 0.75rem;
-}
-
-@media (min-width: 576px) {
-
-    .pagina,
-    .pagina-2,
-    .pagina-3 {
-        max-width: 540px;
-    }
-}
-
-@media (min-width: 768px) {
-
-    .pagina,
-    .pagina-2,
-    .pagina-3 {
-        max-width: 720px;
-    }
-}
-
-@media (min-width: 992px) {
-
-    .pagina,
-    .pagina-2,
-    .pagina-3 {
-        max-width: 960px;
-    }
-}
-
-@media (min-width: 1200px) {
-
-    .pagina,
-    .pagina-2,
-    .pagina-3 {
-        max-width: 1140px;
-    }
-}
+/* Page container managed in common.css via .pagina class */
 
 
 
@@ -141,10 +97,11 @@ button {
 
 .section-container {
     padding: var(--padding);
+}
 
-    a {
-        color: var(--white);
-    }
+.section-container a {
+    color: var(--white);
+    text-decoration: none;
 }
 
 .schedule-container-wrapper {
@@ -579,89 +536,4 @@ input[type="radio"] {
     }
 }
 
-
-.ejercicios {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.ejercicios .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.ejercicios .block {
-    flex: 1 1 calc(25% - 15px);
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    height: 380px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    color: var(--white);
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.ejercicios .block .heading-time {
-    margin-top: auto;
-}
-
-.ejercicios .block p {
-    font-size: 18px;
-    margin: 3px 0;
-}
-
-.ejercicios .heading-time h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin: 10px 0;
-}
-
-.ejercicios .reading-time {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.ejercicios .reading-time img {
-    width: 18px;
-    margin-right: 5px;
-}
-
-.ejercicios .reading-time p {
-    font-size: 14px;
-    margin: 0;
-}
-
-@media (max-width: 1200px) {
-    .ejercicios .block {
-        flex: 1 1 calc(50% - 15px);
-        height: 300px;
-    }
-
-    .ejercicios .block .heading-time h3 {
-        font-size: 18px;
-    }
-
-    .ejercicios .block p {
-        font-size: 14px;
-    }
-
-    .ejercicios .reading-time img {
-        width: 17px;
-    }
-}
-
-@media (max-width: 468px) {
-    .ejercicios .block {
-        flex: 1 1 calc(100% - 15px);
-        height: 280px;
-    }
-}
+/* Exercise grid moved to components.css */

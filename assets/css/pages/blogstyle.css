@@ -4,20 +4,22 @@
    1. LAYOUT & SECTIONS
    ========================================= */
 
+/* =========================================
+   1. LAYOUT & SECTIONS
+   ========================================= */
+
 body {
     background-color: var(--bg-cream, #fefbf3);
     color: var(--text-color, #333);
 }
 
-
-
 /* Headings */
 .reading-section {
-    text-align: center;
-    padding: 0 1rem 0;
-    /* Reduced from 4rem top to match Mi Espacio flow */
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 1rem 0;
+    /* Reduced top padding */
+    text-align: center;
 }
 
 /* Add spacing to subsequent section titles */
@@ -27,48 +29,38 @@ section+.reading {
 
 .reading-content {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
     margin-bottom: 0;
-    /* Matched section-title-container */
-    flex-wrap: wrap;
-    /* Added for responsiveness like Mi Espacio */
 }
 
 .reading-icon {
     width: 28px;
-    /* Reduced to match Mi Espacio */
     height: 28px;
     object-fit: contain;
 }
 
 .reading-heading {
-    font-family: var(--font-primary, 'Poppins', sans-serif);
-    /* Ensures fallback */
-    font-weight: 600;
-    /* Matched from .section-title */
-    font-size: 1.8rem;
-    /* Matched from .section-title */
-    color: #000;
-    /* Matched from .section-title */
-    margin: 0;
     display: inline-block;
+    margin: 0;
+    color: var(--black, #000);
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 1.8rem;
+    font-weight: 600;
     text-align: center;
 }
 
 .reading-subtext {
-    font-family: var(--font-primary, 'Poppins', sans-serif);
-    font-size: 1.25rem;
-    /* Matched from .section-subtitle */
-    color: var(--text-dark, #333);
-    /* Matched */
-    font-weight: 300;
-    opacity: 0.7;
-    /* Matched */
     margin-top: 0.5rem;
     margin-bottom: 2rem;
+    color: var(--text-dark, #333);
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 1.25rem;
+    font-weight: 300;
     text-align: center;
+    opacity: 0.7;
 }
 
 /* =========================================
@@ -128,20 +120,22 @@ section+.reading {
 }
 
 .category-card {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    min-height: 220px;
-    /* Increased height for icon + text */
+    /* Layout */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    color: white;
-    text-align: center;
+    position: relative;
+    min-height: 220px;
+
+    /* Visual */
     padding: 2rem;
+    border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    color: var(--white);
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -251,19 +245,19 @@ section+.reading {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 2rem;
     min-height: 240px;
+    padding: 2rem;
     text-align: left;
 }
 
 .lecturas .block p,
 .ejercicios .block p {
+    margin-bottom: 0.5rem;
     font-size: 0.85rem;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0.9;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
 }
 
 .lecturas .block h3,
@@ -523,23 +517,23 @@ section+.reading {
    ========================================= */
 
 .thanks {
-    background-color: transparent;
     padding: 1rem 1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    background-color: transparent;
 }
 
 .thanks-section {
-    text-align: center;
     max-width: 900px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .thanks-heading {
-    font-family: var(--font-secondary, 'Zilla Slab', serif);
-    color: var(--purple-light);
-    font-size: 2rem;
     margin-bottom: 1rem;
+    color: var(--purple-light);
+    font-family: var(--font-secondary, 'Zilla Slab', serif);
+    font-size: 2rem;
 }
 
 .thanks-subtext {

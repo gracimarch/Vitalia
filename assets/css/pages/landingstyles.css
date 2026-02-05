@@ -1,6 +1,8 @@
 @import url('variables.css');
 
-/* Dual-State Header Logic */
+/* =========================================
+   1. DUAL-STATE HEADER LOGIC
+   ========================================= */
 .header {
     transition: background-color 0.3s ease, padding 0.3s ease, transform 0.3s ease;
 }
@@ -21,15 +23,14 @@
 }
 
 .header.transparent-mode .nav-link:hover {
-    color: #ffffff !important;
+    color: var(--white) !important;
     opacity: 1;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
     transform: translateY(-1px);
 }
 
 .header.transparent-mode .navbar-svg-icon .toggler-line {
-    stroke: #ffffff !important;
-    /* White menu icon */
+    stroke: var(--white) !important;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
@@ -38,100 +39,98 @@
     filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
-/* Navbar Styles handled in common.css */
-
-/* Hero Section */
-
+/* =========================================
+   2. HERO SECTION
+   ========================================= */
 .herosection-container {
     padding: 10vh;
 }
 
 .welcome {
-    /* background-image: url(../images/backgrounds/imgFondoHero.webp); */
-    position: relative;
-    /* Ensure container matches parent */
-    overflow: hidden;
-    /* keep canvas inside rounded corners */
-    height: 100vh;
-    width: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
+    /* Layout */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
 }
 
 #liquid-container {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
     width: 100%;
     height: 100%;
-    z-index: 1;
     border-radius: inherit;
-    /* Match parent rounded corners */
 }
 
-
+/* Hero Button */
 .btn {
+    /* Layout */
     display: inline-flex;
     align-items: center;
-    background-color: transparent;
+
+    /* Box Model */
     margin-top: 30px;
-    color: var(--purple-light);
+    padding: 0.8rem 2.5rem;
     border: 2px solid var(--purple-light);
     border-radius: 50px;
-    padding: 0.8rem 2.5rem;
-    /* Matches blog size */
-    font-size: 1.1rem;
-    /* Adjusted size */
-    font-weight: 600;
-    /* Heavier font like blog */
-    text-decoration: none;
-    transition: all 0.3s ease;
+
+    /* Visual */
+    background-color: transparent;
+    color: var(--purple-light);
+
+    /* Typography */
     font-family: var(--font-primary);
-    /* Changed to Poppins like blog buttons */
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    /* Interaction */
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn i {
-    font-size: 1rem;
     margin-right: 8px;
+    font-size: 1rem;
     vertical-align: middle;
 }
 
 .btn:hover {
-    background-color: var(--purple-light);
-    color: #fff;
     transform: translateY(-2px);
+    background-color: var(--purple-light);
+    color: var(--white);
     box-shadow: 0 4px 12px rgba(138, 79, 248, 0.2);
 }
 
-/* Specific adjustment for Hero Section (Dark Background) */
+/* Hero Content Button Specifics */
 .hero-content .btn {
-    border-color: #fff;
-    color: #fff;
+    border-color: var(--white);
+    color: var(--white);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
 }
 
 .hero-content .btn:hover {
-    background-color: #fff;
+    background-color: var(--white);
     color: var(--purple-light);
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-    /* White glow */
 }
 
 @media (max-width: 768px) {
     .btn {
-        font-size: 16px;
         padding: 8px 16px;
+        font-size: 16px;
     }
 
     .text-white {
         padding: 0 20px;
-        /* Prevent text touching edges on mobile */
     }
 }
 
@@ -147,23 +146,32 @@
 }
 
 /* Renamed from .text-white to .text-main for light background */
-.text-white h1 {
+/* =========================================
+   3. HERO TYPOGRAPHY
+   ========================================= */
+/* Hero Headings */
+.text-main h1 {
     font-family: var(--font-primary);
     font-weight: 700;
-    font-size: 60px;
+    font-size: 80px;
+    /* Increased from 60px */
+    letter-spacing: -1px;
+    line-height: 1.1;
+    text-align: center;
 }
 
-.text-white h1 span {
+.text-main h1 span {
     font-family: var(--font-secondary);
-    font-style: italic;
     font-weight: 600;
-    font-size: 69px;
+    font-style: italic;
+    font-size: 90px;
+    /* Increased from 69px */
 }
 
-.text-white h4 {
+.text-main h4 {
     margin-top: 30px;
-    font-size: 23px;
     font-weight: 300;
+    font-size: 23px;
 }
 
 /* Rotating text animation */
@@ -173,7 +181,8 @@
     position: relative;
     vertical-align: middle;
     width: var(--width);
-    height: 60px;
+    height: 90px;
+    /* Matched to font-size */
     padding: 0 10px;
     box-sizing: content-box;
     transition: all 0.8s;
@@ -181,38 +190,47 @@
 
 .words-wrapper .words span {
     position: absolute;
-    top: -19px;
+    top: 50%;
     left: 50%;
     opacity: 0;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -150%);
+    /* Start above */
     transition: transform 0.7s, opacity 0.25s 0.25s;
+    line-height: 1;
+    margin-top: -6px;
+    /* Fine tune vertical center */
 }
 
 .words-wrapper .words span.current {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -50%);
+    /* Center */
 }
 
 .words-wrapper .words span.next {
-    transform: translate(-50%, 100%);
-
+    transform: translate(-50%, 50%);
+    /* Enter from below */
 }
 
 @media (max-width: 1200px) {
-    .text-white h1 {
-        font-size: 54px;
+    .text-main h1 {
+        font-size: 65px;
     }
 
-    .text-white h1 span {
-        font-size: 62px;
+    .text-main h1 span {
+        font-size: 75px;
     }
 
-    .text-white h4 {
+    .text-main h4 {
         font-size: 21px;
     }
 
-    .words-wrapper .words span {
-        top: -12px;
+    .words-wrapper .words {
+        height: 75px;
+    }
+
+    .words-wrapper .words span.current {
+        transform: translate(-50%, -50%);
     }
 
     .welcome {
@@ -221,88 +239,93 @@
 }
 
 @media (max-width: 1024px) {
-    .text-white h1 {
-        font-size: 48px;
-    }
-
-    .text-white h1 span {
+    .text-main h1 {
         font-size: 55px;
     }
 
-    .text-white h4 {
+    .text-main h1 span {
+        font-size: 65px;
+    }
+
+    .text-main h4 {
         font-size: 19px;
     }
 
-    .words-wrapper .words span {
-        top: -8px;
+    .words-wrapper .words {
+        height: 65px;
+    }
+
+    .words-wrapper .words span.current {
+        transform: translate(-50%, -50%);
     }
 }
 
 @media (max-width: 768px) {
-    .text-white h1 {
-        font-size: 40px;
+    .text-main h1 {
+        font-size: 45px;
     }
 
-    .text-white h1 span {
-        font-size: 46px;
+    .text-main h1 span {
+        font-size: 55px;
     }
 
-    .text-white h4 {
+    .text-main h4 {
         font-size: 18px;
     }
 
-    .words-wrapper .words span {
-        top: -1px;
+    .words-wrapper .words {
+        height: 55px;
     }
 }
 
 @media (max-width: 480px) {
-    .text-white h1 {
-        font-size: 32px;
+    .text-main h1 {
+        font-size: 36px;
     }
 
-    .text-white h1 span {
-        font-size: 39px;
+    .text-main h1 span {
+        font-size: 44px;
     }
 
-    .text-white h4 {
+    .text-main h4 {
         font-size: 16px;
     }
 
-    .words-wrapper .words span {
-        top: 3.5px;
+    .words-wrapper .words {
+        height: 44px;
     }
 }
 
 /* Features */
 
+/* =========================================
+   4. FEATURES & SECTIONS
+   ========================================= */
 .reading {
-    padding: 0 0;
-    padding-top: 10px;
+    padding: 10px 0 0;
 }
 
 .reading-section {
-    text-align: center;
     padding: 20px;
+    text-align: center;
 }
 
 .reading-heading {
-    font-size: 32px;
     margin: 0;
+    font-size: 32px;
 }
 
 .reading-subtext {
+    margin: 10px 0;
     color: var(--text-muted);
     font-size: 19.2px;
-    margin: 10px 0;
 }
 
 .dif-txt {
     color: var(--purple-light);
-
     font-family: var(--font-secondary) !important;
-    font-style: italic;
     font-size: 41px;
+    font-style: italic;
 }
 
 @media (max-width: 1200px) {
@@ -329,46 +352,56 @@
 /* FAQs */
 /* FAQs */
 
+/* =========================================
+   5. FAQ SECTION
+   ========================================= */
 .wrapper-faq {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px auto;
     width: 60%;
+    margin: 50px auto;
 }
 
 .container-faq {
+    /* Visual */
     background-color: var(--bg-main);
-
     color: var(--text-color);
-
-    border-radius: 12px;
     border: 1px solid #ccc;
-    margin: 10px 0;
+    border-radius: 12px;
+
+    /* Layout */
     width: 100%;
+    margin: 10px 0;
     overflow: hidden;
 }
 
 .question {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--purple-hover);
-
-    padding: 16px 20px;
-    position: relative;
-    cursor: pointer;
+    /* Layout */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+
+    /* Box Model */
+    padding: 16px 20px;
+
+    /* Visual */
+    color: var(--purple-hover);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 .question::after {
     content: "";
+    flex-shrink: 0;
     display: block;
     width: 32px;
     height: 32px;
     border-radius: 50%;
 
+    /* Icon */
     background-color: var(--purple-light);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='12' y1='5' x2='12' y2='19'%3E%3C/line%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
     background-position: center;
@@ -377,7 +410,6 @@
 
     box-shadow: 0 4px 10px rgba(157, 96, 207, 0.3);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    flex-shrink: 0;
 }
 
 .question.active::after {
@@ -394,8 +426,8 @@
 
 .container-faq .answer {
     padding: 0 20px 20px;
-    font-size: 0.9rem;
     color: #666;
+    font-size: 0.9rem;
     line-height: 1.6;
 }
 
@@ -420,6 +452,19 @@
 
 /* Pricing section */
 
+/* =========================================
+   6. PRICING SECTION
+   ========================================= */
+.pricing-sec {
+    background-color: var(--bg-main);
+    border: 1.5px solid rgba(200, 200, 200, 0.5);
+}
+
+.pricing-sec h2 {
+    padding-top: 10px;
+}
+
+/* Utilities for Pricing */
 .rounded-lg {
     border-radius: 1rem !important;
 }
@@ -433,70 +478,29 @@
 }
 
 .btn-warning {
-    color: #fff;
+    color: var(--white);
 }
 
 .btn-warning:hover {
-    color: #fff;
+    color: var(--white);
 }
 
-.col-lg-4 {
-    margin: 10px 0 !important;
-}
-
-.pricing-txt {
-    background: none;
-    border: 1px solid var(--purple-light);
-
-    color: var(--purple-light);
-
-    font-family: 'Poppins', Calibri, sans-serif;
-    padding: 2px;
-}
-
-.price-txt {
-    margin-top: 20px
-}
-
-.pricing-sec h2 {
-    padding-top: 10px;
-}
-
-.pricing-sec {
-    border: 1.5px solid rgba(200, 200, 200, 0.5);
-    background-color: var(--bg-main);
-
-}
-
-.btn-pricing {
-    font-size: 16px;
-}
-
-.btn-pricing:hover {
-    color: #fff;
-}
-
+/* Gradients */
 .gradient-txt {
     display: inline-block;
     background-image: linear-gradient(45deg, #7dd191, #54afe4, var(--purple-light), var(--purple-light));
-
+    background-size: 300% 100%;
     color: transparent;
     -webkit-background-clip: text;
-    /* Edge, Chrome */
     background-clip: text;
-    /* Safari, FF */
-    animation: gradientAnimation 4s linear infinite;
-    animation-direction: alternate;
-    background-size: 300% 100%;
+    animation: gradientAnimation 4s linear infinite alternate;
 }
 
 .gradient-bg {
     display: inline-block;
     background-image: linear-gradient(45deg, #7dd191, #54afe4, var(--purple-light), var(--purple-light));
-
-    animation: gradientAnimation 4s linear infinite;
-    animation-direction: alternate;
     background-size: 300% 100%;
+    animation: gradientAnimation 4s linear infinite alternate;
 }
 
 @keyframes gradientAnimation {
@@ -520,24 +524,26 @@ body {
     overflow-x: hidden;
 }
 
+/* =========================================
+   7. BACKGROUND DECORATIONS
+   ========================================= */
 .decoration-container {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    pointer-events: none;
     z-index: -1;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .decoration-star {
     position: absolute;
-    color: var(--purple-light);
+    z-index: 1;
     width: 40px;
     height: 40px;
-    z-index: 1;
-    /* Behind text but visible */
+    color: var(--purple-light);
     animation: pulse-sparkle 3s infinite ease-in-out;
 }
 
@@ -549,57 +555,52 @@ body {
 
 .blur-glow {
     position: absolute;
+    z-index: -1;
     border-radius: 50%;
+    background: radial-gradient(circle, var(--purple-light) 0%, rgba(157, 96, 207, 0) 70%);
     filter: blur(90px);
     opacity: 0.4;
-    z-index: -1;
-    background: radial-gradient(circle, var(--purple-light) 0%, rgba(157, 96, 207, 0) 70%);
 }
 
 @keyframes pulse-sparkle {
 
     0%,
     100% {
-        transform: scale(1);
         opacity: 0.8;
+        transform: scale(1);
     }
 
     50% {
-        transform: scale(1.15);
         opacity: 1;
+        transform: scale(1.15);
     }
 }
 
 /* Specific Positions */
-
 /* FAQ Section Decor */
 .glow-faq {
+    top: 45%;
+    right: -15%;
     width: 500px;
     height: 500px;
-    right: -15%;
-    top: 45%;
-    /* Approximate position for FAQ */
 }
 
 .star-faq {
-    left: 5%;
     top: 48%;
-    /* Near FAQ Title */
+    left: 5%;
 }
 
 /* Pricing Section Decor */
 .glow-pricing {
+    top: 75%;
+    left: -15%;
     width: 600px;
     height: 600px;
-    left: -15%;
-    top: 75%;
-    /* Approximate position for Pricing */
 }
 
 .star-pricing {
-    right: 8%;
     top: 78%;
-    /* Near Pricing cards */
+    right: 8%;
 }
 
 /* Hero Composition Styles */

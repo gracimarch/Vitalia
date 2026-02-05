@@ -88,15 +88,24 @@ document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.querySelector(".words");
     if (wrapper) {
         const words = wrapper.querySelectorAll("span");
-        const currentWord = wrapper.querySelector("span.current");
-        const wordsWidths = Array.from(words).map((word) => word.offsetWidth);
-        const maxWordsWidth = Math.max(...wordsWidths);
         const CURRENT_CLASS = "current";
         const NEXT_CLASS = "next";
 
-        // FIX CLS: Set fixed width based on max content
-        wrapper.style.setProperty("--width", `${maxWordsWidth}px`);
-        wrapper.style.setProperty("--width-mobile", `${maxWordsWidth}px`);
+        function setWidths() {
+            const wordsWidths = Array.from(words).map((word) => word.offsetWidth);
+            const maxWordsWidth = Math.max(...wordsWidths);
+            wrapper.style.setProperty("--width", `${maxWordsWidth}px`);
+            wrapper.style.setProperty("--width-mobile", `${maxWordsWidth}px`);
+        }
+
+        // Recalculate on load to ensure fonts are ready
+        window.addEventListener('load', setWidths);
+
+        // Recalculate on resize to adapt to responsive font changes
+        window.addEventListener('resize', setWidths);
+
+        // Also run immediately just in case
+        setWidths();
 
         setInterval(() => {
             const currentWord = wrapper.querySelector("span.current");
@@ -110,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
             nextNextWord.classList.add(NEXT_CLASS);
             wrapper.style.setProperty("--color", nextWord.dataset.color);
             wrapper.style.setProperty("--color-bg", nextWord.dataset.bgColor);
-            // wrapper.style.setProperty("--width", `${nextWord.offsetWidth}px`); // REMOVED TO PREVENT CLS
         }, 1500);
     }
 
