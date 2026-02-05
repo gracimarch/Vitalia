@@ -3,59 +3,85 @@
 /* =========================================
    1. RESET & BASE (Bootstrap Replacement)
    ========================================= */
+/* =========================================
+   1. RESET & BASE
+   ========================================= */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-primary);
-    background-color: var(--bg-cream);
-    color: var(--text-color);
+html {
     overflow-x: hidden;
-    /* Prevent horizontal scroll */
+    scroll-behavior: smooth;
 }
 
-html {
-    scroll-behavior: smooth;
+body {
+    /* Layout */
     overflow-x: hidden;
-    /* Prevent horizontal scroll */
+    margin: 0;
+    padding: 0;
+
+    /* Visual */
+    background-color: var(--bg-cream);
+    color: var(--text-color);
+
+    /* Typography */
+    font-family: var(--font-primary);
 }
 
 /* =========================================
    2. GRID SYSTEM & LAYOUT
    ========================================= */
-.container {
+/* Standard Container & Legacy Classes */
+.container,
+.pagina,
+.pagina-2,
+.pagina-3 {
     width: 100%;
-    padding-right: var(--bs-gutter-x, 0.75rem);
-    padding-left: var(--bs-gutter-x, 0.75rem);
     margin-right: auto;
     margin-left: auto;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
 }
 
 @media (min-width: 576px) {
-    .container {
+
+    .container,
+    .pagina,
+    .pagina-2,
+    .pagina-3 {
         max-width: 540px;
     }
 }
 
 @media (min-width: 768px) {
-    .container {
+
+    .container,
+    .pagina,
+    .pagina-2,
+    .pagina-3 {
         max-width: 720px;
     }
 }
 
 @media (min-width: 992px) {
-    .container {
+
+    .container,
+    .pagina,
+    .pagina-2,
+    .pagina-3 {
         max-width: 960px;
     }
 }
 
 @media (min-width: 1200px) {
-    .container {
+
+    .container,
+    .pagina,
+    .pagina-2,
+    .pagina-3 {
         max-width: 1140px;
     }
 }
@@ -158,11 +184,11 @@ html {
 }
 
 .text-white {
-    color: white !important;
+    color: var(--white) !important;
 }
 
 .text-muted {
-    color: #6c757d !important;
+    color: var(--text-muted) !important;
 }
 
 .text-decoration-none {
@@ -251,18 +277,23 @@ html {
 /* =========================================
    4. LOADER
    ========================================= */
+/* =========================================
+   4. LOADER
+   ========================================= */
 .loader-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-cream, #fefbf3);
-    /* Soft Cream Background */
+    /* Layout */
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 9999;
+    width: 100%;
+    height: 100%;
+
+    /* Visual */
+    background-color: var(--bg-cream, #fefbf3);
     transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
 }
 
@@ -303,34 +334,37 @@ body.loaded .loader-container {
    5. HEADER & NAVBAR
    ========================================= */
 #header-placeholder {
-    min-height: 80px;
-    /* Approximate height of header */
     display: block;
+    min-height: 80px;
+    /* Approx header height */
 }
 
 #footer-placeholder {
-    min-height: 400px;
-    /* Approximate height of footer */
     display: block;
+    min-height: 400px;
+    /* Approx footer height */
 }
 
 .header {
-    background-color: rgb(254, 251, 243, 0.85);
-    backdrop-filter: blur(10px);
-    /* Glass effect */
-    -webkit-backdrop-filter: blur(10px);
-    padding: 15px 20px;
-    /* Mobile first padding */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    /* Premium shadow */
+    /* Layout */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    transition: transform 0.3s ease;
+
+    /* Box Model */
+    padding: 15px 20px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-    /* Subtle separator */
+
+    /* Visual */
+    background-color: rgb(254, 251, 243, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+    /* Animation */
+    transition: transform 0.3s ease;
 }
 
 /* ... */
@@ -396,12 +430,10 @@ body.loaded .loader-container {
 
 .toggler-line {
     fill: none;
-    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: var(--text-color) !important;
     stroke-width: 5.5;
     stroke-linecap: round;
-    stroke: var(--text-color) !important;
-
-    /* Ensure visibility */
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
 }
 
 /* Rotation */
@@ -445,18 +477,18 @@ body.loaded .loader-container {
 }
 
 .nav-link {
-    text-decoration: none;
-    color: #666;
-    font-weight: 500;
-    font-size: 16px;
-    transition: all 0.3s ease;
     display: block;
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .nav-link:hover {
     color: var(--purple-light);
-    transform: translateY(-2px);
     text-shadow: 0 4px 10px rgba(157, 96, 207, 0.15);
+    transform: translateY(-2px);
 }
 
 .nav-link.active,
@@ -595,15 +627,19 @@ body.loaded .loader-container {
    6. FOOTER
    ========================================= */
 .footer {
+    /* Layout */
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    /* Box Model */
     margin-top: 80px;
     padding: 60px 0 20px;
-    /* Vertical padding with bottom spacing */
-    background: radial-gradient(120% 100% at 50% 0%, var(--soft-orange) 0%, var(--purple-light) 40%, var(--cyan) 100%);
     border-radius: 20px 20px 0 0;
-    width: 100%;
+
+    /* Visual */
+    background: radial-gradient(120% 100% at 50% 0%, var(--soft-orange) 0%, var(--purple-light) 40%, var(--cyan) 100%);
     color: var(--white);
-    position: relative;
-    overflow: hidden;
 }
 
 /* Subtle pattern overlay if desired, or just clean gradient */
