@@ -93,8 +93,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const maxWordsWidth = Math.max(...wordsWidths);
         const CURRENT_CLASS = "current";
         const NEXT_CLASS = "next";
-        wrapper.style.setProperty("--width", `${currentWord.offsetWidth}px`);
+
+        // FIX CLS: Set fixed width based on max content
+        wrapper.style.setProperty("--width", `${maxWordsWidth}px`);
         wrapper.style.setProperty("--width-mobile", `${maxWordsWidth}px`);
+
         setInterval(() => {
             const currentWord = wrapper.querySelector("span.current");
             const nextWord = wrapper.querySelector("span.next");
@@ -107,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
             nextNextWord.classList.add(NEXT_CLASS);
             wrapper.style.setProperty("--color", nextWord.dataset.color);
             wrapper.style.setProperty("--color-bg", nextWord.dataset.bgColor);
-            wrapper.style.setProperty("--width", `${nextWord.offsetWidth}px`);
+            // wrapper.style.setProperty("--width", `${nextWord.offsetWidth}px`); // REMOVED TO PREVENT CLS
         }, 1500);
     }
 

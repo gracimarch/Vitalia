@@ -302,6 +302,16 @@ body.loaded .loader-container {
 /* =========================================
    5. HEADER & NAVBAR
    ========================================= */
+#header-placeholder {
+    min-height: 80px; /* Approximate height of header */
+    display: block;
+}
+
+#footer-placeholder {
+    min-height: 400px; /* Approximate height of footer */
+    display: block;
+}
+
 .header {
     background-color: rgb(254, 251, 243, 0.85);
     backdrop-filter: blur(10px);

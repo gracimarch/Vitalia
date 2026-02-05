@@ -733,3 +733,9 @@ body {
         /* Stacks vertically on mobile */
     }
 }
+
+/* FIX: Header Visibility on Landing Page */
+/* Since header is overlay (fixed), placeholder should not push content down */
+#header-placeholder {
+    min-height: 0 !important;
+}
