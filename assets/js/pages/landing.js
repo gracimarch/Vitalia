@@ -6,33 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const loader = document.querySelector('.loader-container');
     const body = document.body;
 
-    // No permitir que el usuario scrollee mientras esté la pantalla de carga
-    window.addEventListener('load', function () {
-        loader.style.display = 'none';
-        body.classList.remove('no-scroll');
-    });
-
-    // Mantener 'no-scroll' hasta que esté completamente cargada
-    window.addEventListener('load', function () {
-        body.classList.remove('no-scroll');
-
-        // Animación de los blocks
-        const blocks = document.querySelectorAll('.articles .block, .articles .info-block, .lecturas .block, .lecturas .info-block, .reading .reading-section, .welcome .welcome-section, .ejercicios .block, .thanks .thanks-section, .audio-blocks .audio-block');
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-        blocks.forEach(block => {
-            observer.observe(block);
-        });
-
-    });
+    // Loader & Scroll handled in main.js
+    // Animations handled in scroll-animations.js
 
     // STICKY HEADER LOGIC
     // We need to wait for the header to be injected by load-components.js
@@ -81,8 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Añadir 'no-scroll' a la web mientras el loader está visible
-    body.classList.add('no-scroll');
+    // 'no-scroll' handled in main.js
 
     // Rotating Text Animation
     const wrapper = document.querySelector(".words");
