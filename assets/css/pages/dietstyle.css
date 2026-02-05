@@ -26,12 +26,7 @@ body {
 :root {
     --padding: 4rem;
     --border: var(--border-color);
-    /* Removed redundant --background */
 }
-
-/* Page container managed in common.css via .pagina class */
-
-
 
 .loader-container {
     position: fixed;
@@ -151,9 +146,7 @@ button {
     height: 100%;
     padding-left: var(--padding);
     background: var(--bg-main);
-    /* Solid background, no gradient */
     z-index: 10;
-    /* Ensure it stays on top */
 
     &>h3 {
         font-weight: 800;
@@ -535,5 +528,3 @@ input[type="radio"] {
         font-size: 1.2rem;
     }
 }
-
-/* Exercise grid moved to components.css */

@@ -1,12 +1,8 @@
 @import url('variables.css');
 
-@import url('variables.css');
-
-/* Reset & Loader handled in common.css */
-
-/* Page container managed in common.css via .pagina class */
-
-
+/* =========================================
+   1. ANIMATION CLASSES
+   ========================================= */
 
 .js-active .article {
     opacity: 0;
@@ -27,7 +23,6 @@
 
 .introduction-container {
     color: var(--text-light-grey);
-
     font-size: 1rem;
 }
 
@@ -245,6 +240,3 @@ th:first-child {
         font-size: 15px;
     }
 }
-
-
-/* Exercise grid handled in components.css */

@@ -7,7 +7,6 @@
     transition: background-color 0.3s ease, padding 0.3s ease, transform 0.3s ease;
 }
 
-/* Transparent State (for Hero Section) */
 .header.transparent-mode {
     background-color: rgba(255, 255, 255, 0.05) !important;
     backdrop-filter: blur(10px) !important;
@@ -47,7 +46,6 @@
 }
 
 .welcome {
-    /* Layout */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,29 +68,23 @@
     border-radius: inherit;
 }
 
-/* Hero Button */
 .btn {
-    /* Layout */
     display: inline-flex;
     align-items: center;
 
-    /* Box Model */
     margin-top: 30px;
     padding: 0.8rem 2.5rem;
     border: 2px solid var(--purple-light);
     border-radius: 50px;
 
-    /* Visual */
     background-color: transparent;
     color: var(--purple-light);
 
-    /* Typography */
     font-family: var(--font-primary);
     font-size: 1.1rem;
     font-weight: 600;
     text-decoration: none;
 
-    /* Interaction */
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -110,7 +102,6 @@
     box-shadow: 0 4px 12px rgba(138, 79, 248, 0.2);
 }
 
-/* Hero Content Button Specifics */
 .hero-content .btn {
     border-color: var(--white);
     color: var(--white);
@@ -145,7 +136,6 @@
     }
 }
 
-/* Renamed from .text-white to .text-main for light background */
 /* =========================================
    3. HERO TYPOGRAPHY
    ========================================= */
@@ -154,7 +144,6 @@
     font-family: var(--font-primary);
     font-weight: 700;
     font-size: 80px;
-    /* Increased from 60px */
     letter-spacing: -1px;
     line-height: 1.1;
     text-align: center;
@@ -165,7 +154,6 @@
     font-weight: 600;
     font-style: italic;
     font-size: 90px;
-    /* Increased from 69px */
 }
 
 .text-main h4 {
@@ -174,15 +162,12 @@
     font-size: 23px;
 }
 
-/* Rotating text animation */
-
 .words-wrapper .words {
     display: inline-block;
     position: relative;
     vertical-align: middle;
     width: var(--width);
     height: 90px;
-    /* Matched to font-size */
     padding: 0 10px;
     box-sizing: content-box;
     transition: all 0.8s;
@@ -194,22 +179,18 @@
     left: 50%;
     opacity: 0;
     transform: translate(-50%, -150%);
-    /* Start above */
     transition: transform 0.7s, opacity 0.25s 0.25s;
     line-height: 1;
     margin-top: -6px;
-    /* Fine tune vertical center */
 }
 
 .words-wrapper .words span.current {
     opacity: 1;
     transform: translate(-50%, -50%);
-    /* Center */
 }
 
 .words-wrapper .words span.next {
     transform: translate(-50%, 50%);
-    /* Enter from below */
 }
 
 @media (max-width: 1200px) {
@@ -296,8 +277,6 @@
     }
 }
 
-/* Features */
-
 /* =========================================
    4. FEATURES & SECTIONS
    ========================================= */
@@ -346,11 +325,6 @@
         font-size: 15px;
     }
 }
-
-
-
-/* FAQs */
-/* FAQs */
 
 /* =========================================
    5. FAQ SECTION
@@ -450,8 +424,6 @@
     }
 }
 
-/* Pricing section */
-
 /* =========================================
    6. PRICING SECTION
    ========================================= */
@@ -464,7 +436,6 @@
     padding-top: 10px;
 }
 
-/* Utilities for Pricing */
 .rounded-lg {
     border-radius: 1rem !important;
 }
@@ -485,7 +456,6 @@
     color: var(--white);
 }
 
-/* Gradients */
 .gradient-txt {
     display: inline-block;
     background-image: linear-gradient(45deg, #7dd191, #54afe4, var(--purple-light), var(--purple-light));
@@ -513,12 +483,6 @@
     }
 }
 
-/* Footer */
-
-
-/* End of landing specific styles */
-
-/* Background Decorations */
 body {
     position: relative;
     overflow-x: hidden;
@@ -576,8 +540,6 @@ body {
     }
 }
 
-/* Specific Positions */
-/* FAQ Section Decor */
 .glow-faq {
     top: 45%;
     right: -15%;
@@ -590,7 +552,6 @@ body {
     left: 5%;
 }
 
-/* Pricing Section Decor */
 .glow-pricing {
     top: 75%;
     left: -15%;
@@ -603,7 +564,6 @@ body {
     right: 8%;
 }
 
-/* Hero Composition Styles */
 .hero-composition {
     position: relative;
     overflow: hidden;
@@ -635,7 +595,6 @@ body {
 .flower-left {
     left: 0;
     height: 100vh;
-    /* Base scale */
 }
 
 .flower-right {
@@ -643,7 +602,6 @@ body {
     height: 100vh;
 }
 
-/* Desktop: Loosely framing */
 @media (min-width: 1025px) {
     .flower-left {
         left: 0%;
@@ -656,7 +614,6 @@ body {
     }
 }
 
-/* Tablet: Move closer toward center */
 @media (max-width: 1024px) {
     .flower-left {
         left: -1%;
@@ -669,11 +626,9 @@ body {
     }
 }
 
-/* Mobile: Cluster inward, compress horizontally */
 @media (max-width: 768px) {
     .hero-flower {
         opacity: 0.9;
-        /* Ensure text readability */
     }
 
     .flower-left {
@@ -687,7 +642,6 @@ body {
     }
 }
 
-/* FIX: Force hamburger menu items to be black on mobile/tablet (max-width 991px), overriding transparent mode */
 @media (max-width: 991px) {
     .header.transparent-mode .nav-link {
         color: black !important;
@@ -698,23 +652,18 @@ body {
     }
 }
 
-/* Ensure content is readable and on top */
 .hero-content {
     position: relative;
     z-index: 3;
-    /* text-shadow removed */
 }
 
 /* =========================================
    PERFORMANCE OPTIMIZATION (CLS Fixes)
    ========================================= */
-/* Reserve space for dynamic React components to prevent layout shifts */
 
 #magic-bento-root {
     min-height: 800px;
-    /* Estimate for bento grid */
     contain: content;
-    /* Improves rendering performance */
 }
 
 #faq-list-root {
@@ -727,16 +676,12 @@ body {
     contain: content;
 }
 
-/* Adjust for mobile where height might be different */
 @media (max-width: 768px) {
     #magic-bento-root {
         min-height: 1200px;
-        /* Stacks vertically on mobile */
     }
 }
 
-/* FIX: Header Visibility on Landing Page */
-/* Since header is overlay (fixed), placeholder should not push content down */
 #header-placeholder {
     min-height: 0 !important;
 }
