@@ -4,10 +4,6 @@
    1. LAYOUT & SECTIONS
    ========================================= */
 
-/* =========================================
-   1. LAYOUT & SECTIONS
-   ========================================= */
-
 body {
     background-color: var(--bg-cream, #fefbf3);
     color: var(--text-color, #333);
@@ -18,11 +14,9 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 1rem 0;
-    /* Reduced top padding */
     text-align: center;
 }
 
-/* Add spacing to subsequent section titles */
 section+.reading {
     margin-top: 5rem;
 }
@@ -67,15 +61,10 @@ section+.reading {
    2. CATEGORY NAV BLOCKS (Top Section)
    ========================================= */
 
-/* =========================================
-   2. CATEGORY NAV BLOCKS (Top Section)
-   ========================================= */
-
 .articles {
     padding: 2rem 0;
 }
 
-/* Navigation Tabs Container */
 .nav-tabs-container {
     display: flex;
     justify-content: center;
@@ -92,7 +81,6 @@ section+.reading {
     text-align: center;
     font-weight: 600;
 
-    /* Gradient Text Style from Landing */
     display: inline-block;
     background-image: linear-gradient(45deg, #7dd191, #54afe4, var(--purple-light), var(--purple-light));
     color: transparent;
@@ -120,7 +108,6 @@ section+.reading {
 }
 
 .category-card {
-    /* Layout */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,7 +115,6 @@ section+.reading {
     position: relative;
     min-height: 220px;
 
-    /* Visual */
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
@@ -181,7 +167,6 @@ section+.reading {
     font-weight: 300;
 }
 
-/* Base Block Style for standard cards (kept for compatibility if needed) */
 .block {
     position: relative;
     border-radius: 20px;
@@ -220,7 +205,6 @@ section+.reading {
         radial-gradient(circle at 0% 100%, rgba(225, 148, 127, 0.3) 0%, transparent 55%),
         linear-gradient(135deg, #2A9D8F 0%, #264653 100%);
 }
-
 
 /* =========================================
    3. CONTENT GRIDS (Cards)
@@ -265,7 +249,6 @@ section+.reading {
     font-size: 1.4rem;
     line-height: 1.3;
     margin-bottom: auto;
-    /* Push content apart */
     text-shadow: none;
 }
 
@@ -280,7 +263,6 @@ section+.reading {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     opacity: 1;
-    /* Reset opacity as color handles it */
 }
 
 .reading-time i {
@@ -289,7 +271,6 @@ section+.reading {
 
 .reading-time span {
     margin: 0;
-    /* Inheritance handles the rest */
 }
 
 
@@ -297,7 +278,6 @@ section+.reading {
    4. INDIVIDUAL CARD GRADIENTS (Liquid Style)
    ========================================= */
 
-/* Productividad (Purples - Matches Article Cards) */
 .bg-productividad-1 {
     background:
         radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.45) 0%, transparent 55%),
@@ -427,29 +407,20 @@ section+.reading {
         linear-gradient(120deg, #1d3557 0%, #457b9d 100%);
 }
 
-
-/* =========================================
-   5. SHINE EFFECT (Brightness)
-   ========================================= */
-
 /* =========================================
    5. HOVER EFFECT (Glow Border like Mi Espacio)
    ========================================= */
 
-/* The brightness class is now just a container for the effect */
 .brightness {
     position: relative;
-    /* overflow: hidden;  <-- Optional: keep hidden if we want to clip inner content, but specific glow is inside border */
     overflow: hidden;
 }
 
-/* White Gradient Border Glow on Hover */
 .brightness::after {
     content: '';
     position: absolute;
     inset: 0;
     padding: 1.5px;
-    /* Border thickness */
     border-radius: 20px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.9));
     -webkit-mask:
@@ -470,14 +441,11 @@ section+.reading {
     opacity: 1;
 }
 
-/* Enhanced Shadow on Hover (overriding default .block hover) */
 .block:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    /* Keep neutral for generic blocks, or specific if needed */
 }
 
-/* Specific colored shadows for categories if desired (optional polish) */
 .bg-productiv:hover,
 .bg-productividad-1:hover,
 .bg-productividad-2:hover,
@@ -540,8 +508,6 @@ section+.reading {
     color: var(--text-muted);
 }
 
-/* Load More Button */
-/* Load More Button Generic */
 .load-more-btn {
     display: block;
     margin: 2rem auto 0;
@@ -554,12 +520,9 @@ section+.reading {
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid #ccc;
-    /* Fallback */
     color: #555;
-    /* Fallback */
 }
 
-/* Specific Button Colors */
 .btn-productividad {
     border-color: var(--purple-soft);
     color: var(--purple-soft);
@@ -567,7 +530,7 @@ section+.reading {
 
 .btn-productividad:hover {
     background-color: var(--purple-soft);
-    color: #fff;
+    color: var(--white);
     box-shadow: 0 4px 12px rgba(162, 155, 254, 0.4);
 }
 
@@ -604,10 +567,8 @@ section+.reading {
     box-shadow: 0 4px 12px rgba(38, 70, 83, 0.4);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
 
-    /* Removed incorrect 2rem font-size override */
     .lecturas .container,
     .ejercicios .container {
         grid-template-columns: 1fr;

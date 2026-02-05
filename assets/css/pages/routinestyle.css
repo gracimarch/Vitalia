@@ -1,10 +1,4 @@
-/* Reset & Loader handled in common.css */
-
-/* Page container managed in common.css via .pagina class */
-
-
-
-
+@import url('variables.css');
 
 .article {
     opacity: 0;
@@ -236,12 +230,6 @@ th:first-child {
         font-size: 15px;
     }
 }
-
-
-
-/* Exercise grid handled in components.css */
-
-
 
 .routine-content {
     opacity: 0;
