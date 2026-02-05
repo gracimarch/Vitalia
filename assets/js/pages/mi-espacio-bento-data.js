@@ -108,18 +108,22 @@ const ChecklistComponent = () => {
                         </div>
 
                         {/* Text */}
-                        <span style={{
-                            backgroundImage: 'linear-gradient(#999, #999)',
-                            backgroundPosition: '0 55%',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: item.checked ? '100% 1px' : '0% 1px',
-                            color: item.checked ? '#999' : '#333',
-                            fontSize: '0.95rem',
-                            transition: 'all 0.3s ease',
-                            textDecoration: 'none'
-                        }}>
-                            {item.text}
-                        </span>
+                        <div style={{ flex: 1 }}>
+                            <span style={{
+                                backgroundImage: 'linear-gradient(#999, #999)',
+                                backgroundPosition: '0 50%',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: item.checked ? '100% 1px' : '0% 1px',
+                                color: item.checked ? '#999' : '#333',
+                                fontSize: '0.95rem',
+                                transition: 'all 0.3s ease',
+                                textDecoration: 'none',
+                                boxDecorationBreak: 'clone',
+                                WebkitBoxDecorationBreak: 'clone'
+                            }}>
+                                {item.text}
+                            </span>
+                        </div>
                     </div>
                 ))}
             </div>

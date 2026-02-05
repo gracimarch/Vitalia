@@ -9,19 +9,20 @@ body {
     color: var(--text-color, #333);
 }
 
-.pagina {
-    padding-top: 80px;
-    /* Header space */
-    padding-bottom: 60px;
-}
+
 
 /* Headings */
 .reading-section {
     text-align: center;
-    padding: 2rem 1rem 0;
+    padding: 0 1rem 0;
     /* Reduced from 4rem top to match Mi Espacio flow */
     max-width: 800px;
     margin: 0 auto;
+}
+
+/* Add spacing to subsequent section titles */
+section+.reading {
+    margin-top: 5rem;
 }
 
 .reading-content {
@@ -95,6 +96,7 @@ body {
     font-family: var(--font-secondary);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    margin-top: 0;
     text-align: center;
     font-weight: 600;
 
@@ -522,9 +524,9 @@ body {
 
 .thanks {
     background-color: transparent;
-    padding: 3rem 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding: 1rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .thanks-section {

@@ -45,9 +45,7 @@
     }
 }
 
-.pagina {
-    margin-top: 140px;
-}
+
 
 .js-active .article {
     opacity: 0;
@@ -272,7 +270,7 @@ th:first-child {
 
     .article-title h2 {
         font-size: 22px;
-        margin: 0 15px;
+        margin: 30px 15px;
     }
 
     td:first-child,
