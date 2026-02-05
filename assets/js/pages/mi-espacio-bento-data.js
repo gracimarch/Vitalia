@@ -1,5 +1,5 @@
 // Custom Data for Mi Espacio Bento Box
-// Must be loaded before MagicBento.js
+// Must be loaded before magic-bento.js
 const morningActivities = [
     "Tomar un vaso de agua al despertar",
     "Realizar 5 minutos de estiramientos",

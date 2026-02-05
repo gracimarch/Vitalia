@@ -212,10 +212,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // --- SCREEN LOADER ---
-    window.addEventListener('load', function () {
-        loader.style.display = 'none';
-        body.classList.remove('no-scroll');
-    });
+    // Handled by main.js globally
+    // window.addEventListener('load', function () {
+    //    loader.style.display = 'none';
+    //    body.classList.remove('no-scroll');
+    // });
 
     // --- NAVIGATION LOGIC ---
 
@@ -408,11 +409,11 @@ document.addEventListener("DOMContentLoaded", function () {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             if (validateSection(sections.length - 1)) {
-                // Proceed with submission (e.g., Firebase logic in mainform.js)
-                // We dispatch a custom event or let mainform.js handle the actual data
-                // For now, assume mainform.js listens to submit or we just alert success
+                // Proceed with submission (e.g., Firebase logic in main-form.js)
+                // We dispatch a custom event or let main-form.js handle the actual data
+                // For now, assume main-form.js listens to submit or we just alert success
                 console.log("Form valid, submitting...");
-                // Note: The submit logic likely resides in mainform.js using the same ID.
+                // Note: The submit logic likely resides in main-form.js using the same ID.
                 // We just ensure validation passes here.
 
                 // If mainform.js is handling the submission, it will also trigger.
