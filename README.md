@@ -12,9 +12,9 @@ Descubre una plataforma diseñada para ofrecerte un plan de bienestar totalmente
 
 ## 👥 Únete a Nosotros
 
-Comienza tu viaje hacia un bienestar integral con una plataforma que se adapta a ti en nuestro sitio web. ¡Es el momento de transformar tu vida!
+Comienza tu viaje hacia un bienestar integral con una plataforma que se adapta a ti en [nuestro sitio web](https://vitalia-selfcare.vercel.app/). ¡Es el momento de transformar tu vida!
 
 ## 📬 Contacto
 
 - [E-mail](vitalia.selfcare@gmail.com)
-- [Instagram](https://www.instagram.com/vitalia.selfcare/)
+- [Instagram](https://www.instagram.com/vitalia.web/)
