@@ -94,79 +94,11 @@
         <!-- Lecturas seleccionadas -->
         <section class="lecturas">
             <div class="container">
-                <div class="articles-grid">
-
-                    <!-- Article 1 -->
-                    <a href="/lecturas/enfoque-integral-trabajo" class="article-card">
-                        <div class="article-header">
-                            <span class="article-category">Productividad</span>
-                            <i class="bi bi-arrow-up-right icon-arrow"></i>
-                        </div>
-                        <div>
-                            <h3 class="article-title">Beneficios de Incorporar un Enfoque Integral en tu Trabajo</h3>
-                            <div class="article-meta">
-                                <i class="bi bi-clock"></i>
-                                <span>12 min de lectura</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Article 2 -->
-                    <a href="/lecturas/autocuidado-habitos" class="article-card">
-                        <div class="article-header">
-                            <span class="article-category">Productividad</span>
-                            <i class="bi bi-arrow-up-right icon-arrow"></i>
-                        </div>
-                        <div>
-                            <h3 class="article-title">Autocuidado: Pequeños Hábitos que Hacen la Diferencia</h3>
-                            <div class="article-meta">
-                                <i class="bi bi-clock"></i>
-                                <span>10 min de lectura</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Article 3 -->
-                    <a href="/lecturas/alimentacion-consciente" class="article-card">
-                        <div class="article-header">
-                            <span class="article-category">Hábitos alimenticios</span>
-                            <i class="bi bi-arrow-up-right icon-arrow"></i>
-                        </div>
-                        <div>
-                            <h3 class="article-title">Alimentación Consciente: Qué Es y Cómo Practicarla</h3>
-                            <div class="article-meta">
-                                <i class="bi bi-clock"></i>
-                                <span>9 min de lectura</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- Article 4 -->
-                    <a href="/lecturas/rutina-nocturna" class="article-card">
-                        <div class="article-header">
-                            <span class="article-category">Salud mental y bienestar</span>
-                            <i class="bi bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"></i>
-                        </div>
-                        <div>
-                            <h3 class="article-title">Rutina Nocturna para un Mejor Sueño</h3>
-                            <div class="article-meta">
-                                <i class="bi bi-clock"></i>
-                                <span>10 min de lectura</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Blog Link -->
-                <div class="blog-info-card" id="blog">
-                    <div class="blog-info-text">
-                        <h3>¿No Encuentras lo que Buscas?</h3>
-                        <p>Echa un vistazo a nuestro blog completo para acceder a una variedad de artículos útiles</p>
+                <div class="articles-grid" id="dynamic-readings-list">
+                    <!-- Dynamic readings will be injected here -->
+                    <div class="d-flex justify-content-center align-items-center w-100 py-5">
+                        <p class="text-muted">Cargando lecturas recomendadas...</p>
                     </div>
-                    <a href="/blog" class="btn" target="_blank">
-                        <i class="bi bi-box-arrow-up-right"></i>
-                        Ir al blog
-                    </a>
                 </div>
             </div>
         </section>
@@ -271,16 +203,13 @@
                         </button>
                         <audio src="/assets/audios/meditaciones/meditacionSoltarTension_plan6y7.mp3"></audio>
                         <div class="meditation-info">
-                            <div class="meditation-meta">
-                                <i class="bi bi-clock"></i>
-                                <span>7 minutos</span>
-                            </div>
                             <h3 class="meditation-title">Libera la tensión</h3>
                             <div class="meditation-controls">
                                 <span class="current-time">0:00</span>
                                 <div class="progress-container">
                                     <div class="progress-bar"></div>
                                 </div>
+                                <span class="total-time">0:00</span>
                             </div>
                         </div>
                     </div>
@@ -292,16 +221,13 @@
                         </button>
                         <audio src="/assets/audios/meditaciones/empezarPositivamente_plan6y7.mp3"></audio>
                         <div class="meditation-info">
-                            <div class="meditation-meta">
-                                <i class="bi bi-clock"></i>
-                                <span>9 minutos</span>
-                            </div>
                             <h3 class="meditation-title">Empieza el día positivamente</h3>
                             <div class="meditation-controls">
                                 <span class="current-time">0:00</span>
                                 <div class="progress-container">
                                     <div class="progress-bar"></div>
                                 </div>
+                                <span class="total-time">0:00</span>
                             </div>
                         </div>
                     </div>
@@ -313,16 +239,13 @@
                         </button>
                         <audio src="/assets/audios/meditaciones/sienteSeguroyPaz_plan4y6y7.mp3"></audio>
                         <div class="meditation-info">
-                            <div class="meditation-meta">
-                                <i class="bi bi-clock"></i>
-                                <span>9 minutos</span>
-                            </div>
                             <h3 class="meditation-title">Siéntete seguro y en paz</h3>
                             <div class="meditation-controls">
                                 <span class="current-time">0:00</span>
                                 <div class="progress-container">
                                     <div class="progress-bar"></div>
                                 </div>
+                                <span class="total-time">0:00</span>
                             </div>
                         </div>
                     </div>
@@ -334,16 +257,13 @@
                         </button>
                         <audio src="/assets/audios/meditaciones/Relajación_1minuto_plan2y6.mp3"></audio>
                         <div class="meditation-info">
-                            <div class="meditation-meta">
-                                <i class="bi bi-clock"></i>
-                                <span>1 minuto</span>
-                            </div>
                             <h3 class="meditation-title">Relajación en 1 minuto</h3>
                             <div class="meditation-controls">
                                 <span class="current-time">0:00</span>
                                 <div class="progress-container">
                                     <div class="progress-bar"></div>
                                 </div>
+                                <span class="total-time">0:00</span>
                             </div>
                         </div>
                     </div>
@@ -355,16 +275,13 @@
                         </button>
                         <audio src="/assets/audios/meditaciones/meditacionMatutina_plan1y9y6.mp3"></audio>
                         <div class="meditation-info">
-                            <div class="meditation-meta">
-                                <i class="bi bi-clock"></i>
-                                <span>5 minutos</span>
-                            </div>
                             <h3 class="meditation-title">Meditación matutina</h3>
                             <div class="meditation-controls">
                                 <span class="current-time">0:00</span>
                                 <div class="progress-container">
                                     <div class="progress-bar"></div>
                                 </div>
+                                <span class="total-time">0:00</span>
                             </div>
                         </div>
                     </div>
@@ -376,20 +293,18 @@
                         </button>
                         <audio src="/assets/audios/meditaciones/relajacionCortaDormir_plan2y6y8y9.mp3"></audio>
                         <div class="meditation-info">
-                            <div class="meditation-meta">
-                                <i class="bi bi-clock"></i>
-                                <span>2 minutos</span>
-                            </div>
                             <h3 class="meditation-title">Relajación corta para un buen sueño</h3>
                             <div class="meditation-controls">
                                 <span class="current-time">0:00</span>
                                 <div class="progress-container">
                                     <div class="progress-bar"></div>
                                 </div>
+                                <span class="total-time">0:00</span>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 
@@ -493,6 +408,7 @@
     <script src="/assets/js/effects/scroll-animations.js"></script>
     <script src="/assets/js/pages/mi-espacio-greeting.js"></script>
     <script src="/assets/js/pages/mi-espacio-bento-data.js"></script>
+    <script src="/assets/js/components/dynamic-readings.js"></script>
 </body>
 
 </html>

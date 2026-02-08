@@ -117,10 +117,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const audio = card.querySelector('audio');
         // Progress bar inside .meditation-controls -> .progress-container -> .progress-bar
         const progressBar = card.querySelector('.progress-bar');
+        const progressContainer = card.querySelector('.progress-container');
         const currentTimeDisplay = card.querySelector('.current-time');
+        const totalTimeDisplay = card.querySelector('.total-time'); // Select Total Time
         const icon = btn ? btn.querySelector('i') : null;
 
         if (!audio || !btn) return;
+
+        // Load Metadata to set Total Duration
+        audio.addEventListener('loadedmetadata', () => {
+            if (totalTimeDisplay) {
+                totalTimeDisplay.textContent = formatTime(audio.duration);
+            }
+        });
 
         // Toggle Play/Pause
         btn.addEventListener('click', () => {
@@ -163,6 +172,55 @@ document.addEventListener('DOMContentLoaded', function () {
         audio.addEventListener('timeupdate', () => {
             updateProgressBar(audio, progressBar, currentTimeDisplay);
         });
+
+        // Seek & Scrubbing Functionality for Meditations
+        if (progressContainer) {
+            let isDragging = false;
+
+            const handleScrub = (e) => {
+                const rect = progressContainer.getBoundingClientRect();
+                const offsetX = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+                const width = rect.width;
+                const percentage = Math.max(0, Math.min(1, offsetX / width));
+                const newTime = percentage * audio.duration;
+
+                if (isFinite(newTime)) {
+                    audio.currentTime = newTime;
+                    updateProgressBar(audio, progressBar, currentTimeDisplay);
+                }
+            };
+
+            progressContainer.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                handleScrub(e);
+            });
+
+            // Touch support
+            progressContainer.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                handleScrub(e);
+            }, { passive: true });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    handleScrub(e);
+                }
+            });
+
+            document.addEventListener('touchmove', (e) => {
+                if (isDragging) {
+                    handleScrub(e);
+                }
+            }, { passive: false });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            document.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+        }
 
         // Reset on End
         audio.addEventListener('ended', () => {
