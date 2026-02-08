@@ -20,7 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Remove loader when window is fully loaded
     window.addEventListener('load', function () {
         if (loader) {
-            loader.style.display = 'none';
+            loader.classList.add('loader-hidden');
+            loader.addEventListener('transitionend', function () {
+                loader.style.display = 'none';
+            }, { once: true });
         }
         body.classList.remove('no-scroll');
     });

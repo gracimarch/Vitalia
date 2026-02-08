@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vitalia | Tu Web de Bienestar</title>
     <link rel="canonical" href="https://vitalia-selfcare.vercel.app/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap"
@@ -100,10 +102,14 @@
     <!-- Scripts -->
     <script type="text/babel" src="/assets/js/components/gradient-text.js"></script>
     <script type="text/babel" src="/assets/js/components/magic-bento.js"></script>
-    <script type="text/babel" src="/assets/js/utils/mount-titles.js"></script>
+    <!-- <script type="text/babel" src="/assets/js/utils/mount-titles.js"></script> -->
 
     <!-- Magic Bento Section -->
-    <div id="magic-bento-root" class="mb-5"></div>
+    <div id="magic-bento-root" class="mb-5">
+        <div class="d-flex justify-content-center align-items-center h-100 table-responsive">
+            <p class="text-muted">Cargando funcionalidades...</p>
+        </div>
+    </div>
 
     <!-- FAQs -->
     <section id="preguntas-frecuentes" class="reading">
@@ -113,17 +119,21 @@
                 <div class="col-lg-5 col-md-5 mb-4 mb-md-0">
                     <div class="reading-section faq-header">
                         <p class="reading-subtext">Preguntas frecuentes</p>
-                        <div id="faq-title-root">
-                            <!-- GradientText will mount here -->
-                            <h2 class="reading-heading wobble">¿Tienes alguna duda? Nosotros <span class="dif-txt">te
-                                    respondemos</span></h2>
+                        <div>
+                            <!-- Placeholder removed for CLS optimization -->
+                            <h2 class="reading-heading wobble gradient-txt-vitalia">¿Tienes alguna duda? Nosotros te
+                                respondemos</h2>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Column: Questions -->
                 <div class="col-lg-7 col-md-7">
-                    <div id="faq-list-root"></div>
+                    <div id="faq-list-root">
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <p class="text-muted">Cargando preguntas...</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,16 +147,20 @@
         <div class="container py-5">
             <div class="reading-section">
                 <p class="reading-subtext">Planes de suscripción</p>
-                <div id="premium-title-root">
-                    <h2 class="reading-heading wobble">Lleva tu experiencia al <span class="dif-txt">siguiente
-                            nivel</span>
+                <div>
+                    <h2 class="reading-heading wobble gradient-txt-vitalia">Lleva tu experiencia al siguiente
+                        nivel
                     </h2>
                 </div>
             </div>
         </div>
     </section>
     <section>
-        <div id="pricing-list-root" class="pb-5"></div>
+        <div id="pricing-list-root" class="pb-5">
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <p class="text-muted">Cargando planes...</p>
+            </div>
+        </div>
     </section>
 
     <!-- Pricing Script -->
