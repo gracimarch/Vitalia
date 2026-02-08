@@ -289,6 +289,8 @@
     gap: 1.5rem;
     position: relative;
 
+    grid-column: 1 / -1;
+
     margin-top: 2rem;
     padding: 2.5rem 2rem;
 
@@ -612,26 +614,34 @@
     width: 100%;
 }
 
-.current-time {
+.current-time,
+.total-time {
     font-size: 0.8rem;
     color: #999;
     font-variant-numeric: tabular-nums;
-    width: 35px;
+    min-width: 35px;
+    text-align: center;
 }
 
 .progress-container {
     flex-grow: 1;
-    height: 4px;
+    height: 6px;
     background: #eee;
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
+    position: relative;
+    transition: height 0.2s ease;
+}
+
+.progress-container:hover {
+    height: 8px;
 }
 
 .progress-bar {
     height: 100%;
     width: 0%;
-    background: #000;
+    background: var(--black, #2c2c2c);
     border-radius: 4px;
     transition: width 0.1s linear;
 }
