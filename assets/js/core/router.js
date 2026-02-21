@@ -15,7 +15,7 @@ window.VitaliaRouter = (function () {
         'rutinas': '/pages/rutina.html',
         'blog': '/pages/blog.html',
         'mi-espacio': '/pages/mi-espacio.html',
-        'plan': '/pages/form.html'
+        'formulario': '/pages/form.html'
     };
 
     /**

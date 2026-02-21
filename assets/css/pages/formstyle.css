@@ -1,5 +1,3 @@
-@import url('variables.css');
-
 * {
     box-sizing: border-box;
 }
@@ -13,10 +11,8 @@ body {
     background-color: var(--bg-color);
     margin: 0;
     padding: 0;
-    /* Background removed for animated liquid background */
     position: relative;
 }
-
 
 .loader-container {
     position: fixed;
@@ -25,7 +21,6 @@ body {
     width: 100%;
     height: 100%;
     background-color: var(--bg-main);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,35 +66,35 @@ body.loaded .loader-container {
 }
 
 .page-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 100vh;
-    height: auto;
+    padding: 40px;
+    /* This is the "margin" that limits the form */
+    height: 100vh;
+    width: 100%;
+    max-width: none !important;
+    /* Override the 720px cap from common.css grid system */
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    padding: 40px 20px;
+    align-items: center;
+    background-color: #f0f2f5;
+    transition: padding 0.3s ease;
 }
 
 .wrapper {
     display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 30px;
-    border-radius: 20px;
-
-    /* Magic Bento Styles */
+    flex-direction: row;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    max-height: 850px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    /* Lighter border for white bg */
-    box-shadow: none;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
-
-    width: 100%;
-    position: relative;
-    /* For Pseudo-element positioning */
-    overflow: hidden;
-    /* Contain particles */
+    border-radius: 20px;
+    margin: auto;
 
     /* Glow Variables */
     --glow-x: 50%;
@@ -107,7 +102,6 @@ body.loaded .loader-container {
     --glow-intensity: 0;
     --glow-radius: 200px;
     --glow-color: 132, 0, 255;
-    /* Purple default */
 }
 
 /* Hover Effect */
@@ -118,7 +112,6 @@ body.loaded .loader-container {
 
 .wrapper:hover::after {
     padding: 4px;
-    /* Thicker border on hover */
 }
 
 /* Border Glow Effect */
@@ -127,7 +120,6 @@ body.loaded .loader-container {
     position: absolute;
     inset: 0;
     padding: 2px;
-    /* Thin border glow */
     background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
             rgba(var(--glow-color), calc(var(--glow-intensity) * 0.4)) 0%,
             rgba(157, 96, 207, calc(var(--glow-intensity) * 0.3)) 25%,
@@ -148,15 +140,73 @@ body.loaded .loader-container {
     z-index: 10;
 }
 
-/* Particle Styles */
-.particle {
-    pointer-events: none;
+/* Layout Panels */
+.form-left-panel {
+    width: 40%;
+    position: relative;
+    background-color: var(--purple);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
 }
 
+.form-left-panel .logo-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 10;
+    margin: 0;
+}
+
+.form-left-panel .logo-container img {
+    filter: brightness(0) invert(1) !important;
+}
+
+.form-right-panel {
+    width: 60%;
+    padding: 30px 30px 30px 40px;
+    /* Right padding reduced to create room for scrollbar */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    z-index: 10;
+    height: 100%;
+    overflow: hidden;
+    /* Clip the panel itself */
+}
+
+.hero-flower {
+    position: absolute;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.flower-left {
+    bottom: -250px;
+    left: -250px;
+    width: 350px;
+    height: auto;
+}
+
+.flower-right {
+    top: -250px;
+    right: -250px;
+    width: 350px;
+    height: auto;
+}
 
 .formulario {
     padding: 0;
     width: 100%;
+    height: 100%;
+    /* Fill the panel */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Required for children to scroll */
 }
 
 .logo-container img {
@@ -173,16 +223,12 @@ body.loaded .loader-container {
 .progress {
     display: flex;
     gap: 10px;
-    background-color: var(--bg-wrapper);
-
 }
 
 .step {
     width: 15px;
     height: 15px;
-    /* Added missing height */
     background-color: var(--border-color);
-
     border-radius: 20px;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -195,29 +241,40 @@ body.loaded .loader-container {
 
 .title-container {
     width: 100%;
+    text-align: left;
 }
 
 .title-container h1 {
     font-size: 26px;
     font-weight: bold;
     color: var(--text-color);
+    margin-bottom: 10px;
 }
 
 .title-container p {
-    margin: 20px 0;
+    margin: 10px 0 20px 0;
     font-size: 16px;
     color: var(--text-muted);
 }
 
 .form-and-image {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    /* Allow wrapping */
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
 }
 
-
+.form-and-image>form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
 
 .accept-terms-container {
     display: flex;
@@ -227,20 +284,19 @@ body.loaded .loader-container {
 }
 
 .accept-terms-container input[type="checkbox"] {
-    margin: 10px 10px 10px 0;
-    padding: 8px;
+    margin: 0 10px 0 0;
 }
 
 .accept-terms-container p {
     margin: 0;
     color: var(--text-muted);
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .accept-terms-container a {
     color: var(--purple);
     text-decoration: underline;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .form-row-width {
@@ -274,42 +330,54 @@ body.loaded .loader-container {
 
     background-color: #f3f1ee;
     font-size: 15px;
+    font-family: inherit;
 }
 
 /* Scroll container fills remaining space */
 .form-row-scroll {
     display: flex;
     flex-direction: column;
+    padding-left: 10px;
+    /* Space between content and scrollbar */
+    flex: 1;
+    min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    padding-right: 20px;
-    flex: 1;
-    /* Grow to fill available space */
-    width: auto;
-    /* Remove fixed vw width */
-    /* Remove arbitrary limit */
-    height: auto;
-    min-height: 290px;
 }
 
-.form-row-scroll::-webkit-scrollbar {
+.form-row-width {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+.form-row-scroll::-webkit-scrollbar,
+.form-row-width::-webkit-scrollbar {
     width: 8px;
 }
 
-.form-row-scroll::-webkit-scrollbar-track {
+.form-row-scroll::-webkit-scrollbar-track,
+.form-row-width::-webkit-scrollbar-track {
     background: #e8e3df;
     border-radius: 25px;
 }
 
-.form-row-scroll::-webkit-scrollbar-thumb {
+.form-row-scroll::-webkit-scrollbar-thumb,
+.form-row-width::-webkit-scrollbar-thumb {
     background: #a5a29e;
-    ;
     border-radius: 25px;
     border: 1px solid #e8e3df;
 }
 
 @supports not selector(::-webkit-scrollbar) {
-    .form-row-scroll {
+
+    .form-row-scroll,
+    .form-row-width {
         scrollbar-color: #a5a29e #e8e3df;
     }
 }
@@ -319,6 +387,11 @@ body.loaded .loader-container {
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-row-name .form-holder {
+    margin-bottom: 0;
 }
 
 .half-width {
@@ -339,6 +412,10 @@ input {
     margin-bottom: 8px;
 }
 
+.textinput-container .choice-container {
+    margin-bottom: 0;
+}
+
 @media (max-width: 430px) {
     .textinput-container {
         flex-direction: column;
@@ -346,14 +423,65 @@ input {
     }
 
     input.otro-text {
-        margin-left: 0 !important;
-        width: 100%;
+        margin-left: 40px !important;
+        width: calc(100% - 36px);
+        margin-bottom: 20px;
     }
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-    margin-right: 6px;
+    appearance: none;
+    -webkit-appearance: none;
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    flex-shrink: 0;
+    border: 2px solid var(--border-color);
+    background-color: var(--white);
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+}
+
+input[type="checkbox"] {
+    border-radius: 4px;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+    background-color: var(--purple);
+    border-color: var(--purple);
+}
+
+/* Custom checkmark for checkbox */
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 5.5px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid var(--white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Custom inner circle for radio button */
+input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--white);
+    transform: translate(-50%, -50%);
 }
 
 label {
@@ -364,13 +492,22 @@ label {
 
 input.otro-text {
     width: auto;
-    padding: 3px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-
-    background-color: #f3f1ee;
+    padding: 2px 5px;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    background-color: transparent;
+    border-radius: 0;
     font-size: 15px;
     margin-left: 5px;
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+input.otro-text:focus {
+    border-bottom-color: var(--purple);
+    box-shadow: none;
+    background-color: transparent;
 }
 
 .section {
@@ -378,14 +515,20 @@ input.otro-text {
 }
 
 .section.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Grow to fill .formulario */
+    min-height: 0;
+    /* Allow shrinking, required for child scroll */
+    overflow: visible;
+    /* DO NOT clip — let the child scrollbar render */
 }
 
 .prev-btn,
 .next-btn,
 .send-btn {
     font-family: inherit;
-    /* Inherit font from body */
     background-color: var(--white);
     color: var(--text-color);
     padding: 15px 50px;
@@ -414,15 +557,13 @@ input.otro-text {
 .buttons {
     display: flex;
     justify-content: space-between;
-    margin: 15px;
+    margin: 15px 0 0 0;
 }
 
 .prev-btn {
     display: none;
     opacity: 0;
 }
-
-/* Removed conflicting .hidden rules that prevented animations */
 
 @keyframes slideInFromRight {
     from {
@@ -510,134 +651,6 @@ input.otro-text {
     display: none;
 }
 
-/* Responsive Layout using Flexbox and max-widths */
-
-/* Responsive Layout using Flexbox and max-widths */
-
-@media (min-width: 901px) {
-    /* No specific override needed for width as we use flex:1 now */
-    /* Ensure form content inside doesn't stretch weirdly if needed, or leave it fluid */
-}
-
-@media (max-width: 900px) {
-    .form-and-image {
-        flex-direction: column;
-    }
-
-
-
-    .form-row-width {
-        width: 100%;
-    }
-
-    .form-row-scroll {
-        width: 100%;
-        height: auto;
-        min-height: 290px;
-    }
-
-    .wrapper {
-        margin: 10px;
-        padding: 20px;
-    }
-
-    .formulario {
-        padding: 0;
-    }
-}
-
-@media (max-width: 600px) {
-    .form-row-name {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .half-width {
-        width: 100%;
-    }
-
-    #title {
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    #title h1 {
-        font-size: 22px;
-    }
-
-    #title p {
-        font-size: 14px;
-        text-align: center;
-    }
-
-    .buttons {
-        flex-direction: row;
-        /* Keep side-by-side */
-        gap: 15px;
-        margin: 20px 0 10px 0;
-    }
-
-    .prev-btn,
-    .next-btn,
-    .send-btn {
-        width: auto;
-        /* Let them size naturally or flex */
-        flex: 1;
-        /* Equal width */
-        margin: 0;
-        padding: 12px 20px;
-        /* Reduces size slightly */
-        font-size: 15px;
-    }
-
-    .next-btn {
-        margin-left: 0;
-    }
-
-    .pagina {
-        height: auto;
-        min-height: 100vh;
-        padding: 0;
-        max-width: 100%;
-    }
-
-    .wrapper {
-        margin: 0;
-        padding: 20px 15px;
-        border-radius: 0;
-        box-shadow: none;
-        width: 100%;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .form-row-scroll {
-        height: auto !important;
-        max-height: none !important;
-        overflow: visible;
-        flex: 1;
-        /* Push buttons to bottom if content is short, or flow if long */
-    }
-
-    /* Fixed alignment for radio buttons overlap issue */
-    .form-row-width {
-        height: auto;
-    }
-
-    .buttons {
-        margin-top: auto;
-        /* Push to bottom if space permits */
-        padding-top: 20px;
-        background-color: var(--bg-wrapper);
-
-        /* Ensure visual continuity */
-        position: sticky;
-        bottom: 0;
-        z-index: 10;
-        padding-bottom: 20px;
-    }
-}
 
 
 /* Toastify Custom Styles */
@@ -651,25 +664,13 @@ input.otro-text {
 }
 
 .toast-error {
-    background: linear-gradient(135deg, #ef476f, var(--purple)) !important;
+    background: linear-gradient(135deg, var(--purple-hover), var(--purple)) !important;
     color: var(--white);
 }
 
 .toast-success {
     background: linear-gradient(135deg, var(--teal), var(--purple-light)) !important;
     color: var(--white);
-}
-
-/* --- Variables (ensure these match core/variables.css if not already imported) --- */
-:root {
-    --purple: #B571DE;
-    --purple-hover: #734697;
-    --purple-light: #ae7dd7;
-    --white: #fafafa;
-    --text-color: #333333;
-    --text-muted: #707070;
-    --font-primary: 'Poppins', sans-serif;
-    --font-secondary: 'Zilla Slab', serif;
 }
 
 /* --- Typography --- */
@@ -694,7 +695,6 @@ button {
 /* --- Progress Bar --- */
 .step {
     background-color: #e0e0e0;
-    /* Inactive */
 }
 
 .step.active {
@@ -747,7 +747,6 @@ button {
 /* --- Buttons --- */
 .buttons button {
     border-radius: 50px;
-    /* Pill shape */
     padding: 12px 30px;
     font-weight: 500;
     border: none;
@@ -773,7 +772,7 @@ button {
 .next-btn,
 .send-btn {
     background: var(--purple);
-    color: white;
+    color: var(--white);
     box-shadow: 0 4px 15px rgba(181, 113, 222, 0.3);
 }
 
@@ -796,172 +795,125 @@ button {
 }
 
 /* --- Split Layout Refinements --- */
-body {
-    background-color: #f0f2f5;
-    /* Light grey BG for the page to make card pop */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.pagina {
-    padding: 20px;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.wrapper {
-    display: flex;
-    flex-direction: row;
-    /* Split Layout */
-    width: 100%;
-    max-width: 1100px;
-    min-height: 600px;
-    padding: 0;
-    /* Remove inner padding */
-    overflow: hidden;
-    /* Important for rounding corners */
-}
-
-/* Left Panel - Visuals */
-.form-left-panel {
-    width: 40%;
-    /* Reduced to give more space to form */
-    position: relative;
-    background-color: var(--purple);
-    /* Fallback */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-}
-
-/* Logo in Left Panel */
-.form-left-panel .logo-container {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    z-index: 10;
-    margin: 0;
-}
-
-.form-left-panel .logo-container img {
-    filter: brightness(0) invert(1);
-    /* Make logo white */
-}
-
-
-#liquid-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.hero-flower {
-    position: absolute;
-    z-index: 2;
-    opacity: 0.8;
-}
-
-.flower-left {
-    bottom: -250px;
-    left: -250px;
-    width: 350px;
-    /* Slightly larger to compensate for cutoff */
-    height: auto;
-}
-
-.flower-right {
-    top: -250px;
-    right: -250px;
-    width: 350px;
-    height: auto;
-}
-
-.hero-bg,
-.form-left-content {
-    /* Hide old bg usage if present */
-    display: none;
-}
-
-
-/* Right Panel - Form */
-.form-right-panel {
-    width: 60%;
-    /* Increased width */
-    padding: 40px;
-    /* Reduced padding for more internal space */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Center content vertically, but keep elements together */
-    background-color: #ffffff;
-    z-index: 10;
-}
-
-/* Adjustments for nested form elements */
-.formulario {
-    width: 100%;
-    /* margin-bottom removed to keep buttons close */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.logo-container {
-    margin-bottom: 2rem;
-    text-align: left;
-}
-
-.title-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.1;
-}
-
-.title-container p {
-    margin-bottom: 2rem;
-}
-
-.form-and-image {
-    flex-direction: column;
-}
-
-/* Responsive */
+/* Responsive Layouts - MOVED TO END TO ENSURE OVERRIDE */
 @media (max-width: 900px) {
+    .page-container {
+        padding: 20px;
+        /* Smaller "margin" on tablets */
+    }
+
     .wrapper {
+        height: auto;
+        max-height: none;
         flex-direction: column;
-        max-width: 500px;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: none;
     }
 
     .form-left-panel {
         width: 100%;
-        height: 200px;
-        /* Header banner style */
+        height: 250px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Stacked flower adjustments */
+    .form-left-panel .flower-left {
+        bottom: -100px;
+        left: -100px;
+        width: 250px;
+    }
+
+    .form-left-panel .flower-right {
+        top: -100px;
+        right: -100px;
+        width: 250px;
     }
 
     .form-right-panel {
         width: 100%;
-        padding: 30px;
+        padding: 30px 20px;
     }
 
-    .flower-left,
-    .flower-right {
-        width: 150px;
+    .form-row-width {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .form-row-scroll {
+        width: 100%;
+        height: auto;
+        min-height: 290px;
+        padding-right: 0;
+    }
+
+    .formulario {
+        padding: 0;
     }
 }
 
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 2rem;
+@media (max-width: 600px) {
+    .form-row-name {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .half-width {
+        width: 100%;
+    }
+
+    .title-container {
+        text-align: center;
+    }
+
+    .title-container h1 {
+        font-size: 28px;
+    }
+
+    .title-container p {
+        font-size: 15px;
+    }
+
+    .page-container {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .wrapper {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .form-right-panel {
+        padding: 20px 15px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        gap: 15px;
+        margin-top: auto;
+        padding-top: 20px;
+        background-color: var(--white);
+        position: sticky;
+        bottom: 0;
+        z-index: 10;
+        padding-bottom: 20px;
+    }
+
+    .prev-btn,
+    .next-btn,
+    .send-btn {
+        width: auto;
+        flex: 1;
+        margin: 0;
+        padding: 12px 10px;
+        font-size: 14px;
+    }
 }
