@@ -272,6 +272,14 @@ body {
     list-style: none;
 }
 
+.section-icon,
+.reading-icon {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
 /* =========================================
    4. LOADER
    ========================================= */
@@ -306,6 +314,10 @@ body {
     animation: breathe 2s infinite ease-in-out;
     filter: drop-shadow(0 0 10px rgba(157, 96, 207, 0.3));
     /* Soft Purple Glow */
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 @keyframes breathe {
