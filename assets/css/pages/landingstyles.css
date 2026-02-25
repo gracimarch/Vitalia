@@ -636,26 +636,33 @@ body {
 @media (max-width: 768px) {
     .hero-flower {
         opacity: 0.9;
+        height: auto;
     }
 
     .flower-left {
         left: -10%;
-        height: 90vh;
+        width: 60vw;
+        max-width: 300px;
+        bottom: 0;
+        top: auto;
     }
 
     .flower-right {
-        right: -20%;
-        height: 90vh;
+        right: -10%;
+        width: 60vw;
+        max-width: 300px;
+        bottom: 0;
+        top: auto;
     }
 }
 
 @media (max-width: 991px) {
     .header.transparent-mode .nav-link {
-        color: black !important;
+        color: var(--black) !important;
     }
 
     .header.transparent-mode .nav-link:hover {
-        color: black !important;
+        color: var(--black) !important;
     }
 }
 
