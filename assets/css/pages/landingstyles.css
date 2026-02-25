@@ -507,6 +507,8 @@ body {
     height: 100%;
     overflow: hidden;
     pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .decoration-star {
@@ -589,6 +591,10 @@ body {
     object-position: center center;
     z-index: 0;
     transform: scale(1.15);
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 .hero-flower {
@@ -596,6 +602,9 @@ body {
     top: 20%;
     z-index: 2;
     pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
     width: auto;
 }
 

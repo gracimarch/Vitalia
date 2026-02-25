@@ -183,7 +183,16 @@ body.loaded .loader-container {
     top: 20%;
     z-index: 2;
     pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
     opacity: 0.8;
+}
+
+#liquid-container canvas {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .form-left-panel .flower-left {
