@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSize(); // Call once immediately
 
     // Plane Geometry covering the screen
-    // We make it slightly larger to ensure coverage during distortion
-    const geometry = new THREE.PlaneGeometry(3, 3, 128, 128); // Increased resolution for smoother blobs
+    // We make it significantly larger (10x10) to ensure horizontal coverage on extreme aspect ratios (like mobile form top banners)
+    const geometry = new THREE.PlaneGeometry(10, 10, 128, 128); // Increased resolution for smoother blobs
 
     // Apply scale to the mesh group for "transform-scale" effect
     meshGroup.scale.set(1.5, 1.5, 1.5); // Increase scale
