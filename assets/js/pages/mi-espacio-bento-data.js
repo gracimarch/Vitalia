@@ -405,12 +405,12 @@ window.vitaliaBentoData = [
         label: 'Rutina Recomendada',
         glowColor: '128, 202, 205', // --cyan
         customRender: () => (
-            <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <div className="magic-bento-card__header">
                     <div className="magic-bento-card__label" style={{ color: '#777' }}>Rutina Recomendada</div>
                     <i className="bi bi-arrow-up-right" style={{ fontSize: '1.2rem', color: '#333' }}></i>
                 </div>
-                <div>
+                <div style={{ marginTop: 'auto' }}>
                     <h5 className="bento-card-subtitle">Nivel Principiante</h5>
                     <h3 className="bento-card-title">Ejercicio en 15 Minutos</h3>
                     <span className="bento-badge mt-2" style={{ background: 'rgba(128, 202, 205, 0.1)', color: '#4d9ea1' }}>15 Minutos</span>
