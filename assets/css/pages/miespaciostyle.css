@@ -630,19 +630,51 @@
     cursor: pointer;
     position: relative;
     transition: height 0.2s ease;
+    --hover-pos: 0%;
 }
 
 .progress-container:hover {
     height: 8px;
 }
 
+.progress-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--hover-pos);
+    background: #d4d4d4;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.progress-container:hover::before {
+    opacity: 1;
+}
+
 .progress-bar {
+    position: relative;
+    z-index: 2;
     height: 100%;
     width: 0%;
     background: var(--black, #2c2c2c);
     border-radius: 4px;
-    transition: width 0.1s linear;
+    transition: width 0.1s linear, background 0.2s ease;
 }
+
+.progress-container:active .progress-bar,
+.progress-container.dragging .progress-bar {
+    transition: background 0.2s ease;
+    /* Remove width transition when dragging */
+}
+
+/*.progress-container:hover .progress-bar,
+.progress-container:active .progress-bar {
+    background: var(--purple, #9d60cf);
+}*/
 
 .section-gap-top {
     margin-top: 5rem !important;
