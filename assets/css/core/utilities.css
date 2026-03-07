@@ -1,0 +1,139 @@
+/* =========================================
+   UTILITIES
+   ========================================= */
+
+/* Display */
+.d-none {
+    display: none !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+/* Flexbox */
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.align-items-end {
+    align-items: flex-end !important;
+}
+
+.align-self-center {
+    align-self: center !important;
+}
+
+/* Text & Color */
+.text-center {
+    text-align: center !important;
+}
+
+.text-white {
+    color: var(--white) !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
+/* Spacing (Margin & Padding) */
+.m-0 {
+    margin: 0 !important;
+}
+
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem !important;
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+
+.my-5 {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.p-5 {
+    padding: 3rem !important;
+}
+
+.py-1 {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+}
+
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.px-3 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+.pt-3 {
+    padding-top: 1rem !important;
+}
+
+/* Misc */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.rounded-pill {
+    border-radius: 50rem !important;
+}
+
+.rounded-3 {
+    border-radius: 0.3rem !important;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.section-icon,
+.reading-icon {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}

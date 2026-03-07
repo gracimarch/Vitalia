@@ -51,256 +51,8 @@ body {
     font-family: var(--font-primary);
 }
 
-/* =========================================
-   2. GRID SYSTEM & LAYOUT
-   ========================================= */
-/* Standard Container & Legacy Classes */
-.container,
-.pagina,
-.pagina-2,
-.pagina-3 {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: var(--bs-gutter-x, 0.75rem);
-    padding-left: var(--bs-gutter-x, 0.75rem);
-}
-
-@media (min-width: 576px) {
-
-    .container,
-    .pagina,
-    .pagina-2,
-    .pagina-3 {
-        max-width: 540px;
-    }
-}
-
-@media (min-width: 768px) {
-
-    .container,
-    .pagina,
-    .pagina-2,
-    .pagina-3 {
-        max-width: 720px;
-    }
-}
-
-@media (min-width: 992px) {
-
-    .container,
-    .pagina,
-    .pagina-2,
-    .pagina-3 {
-        max-width: 960px;
-    }
-}
-
-@media (min-width: 1200px) {
-
-    .container,
-    .pagina,
-    .pagina-2,
-    .pagina-3 {
-        max-width: 1140px;
-    }
-}
-
-.row {
-    --bs-gutter-x: 1.5rem;
-    --bs-gutter-y: 0;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(var(--bs-gutter-y) * -1);
-    margin-right: calc(var(--bs-gutter-x) * -.5);
-    margin-left: calc(var(--bs-gutter-x) * -.5);
-}
-
-.row>* {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-    padding-right: calc(var(--bs-gutter-x) * .5);
-    padding-left: calc(var(--bs-gutter-x) * .5);
-    margin-top: var(--bs-gutter-y);
-}
-
-.col {
-    flex: 1 0 0%;
-}
-
-.col-12 {
-    flex: 0 0 auto;
-    width: 100%;
-}
-
-.col-6 {
-    flex: 0 0 auto;
-    width: 50%;
-}
-
-@media (min-width: 768px) {
-    .col-md-5 {
-        flex: 0 0 auto;
-        width: 41.666667%;
-    }
-
-    .col-md-6 {
-        flex: 0 0 auto;
-        width: 50%;
-    }
-
-    .col-md-7 {
-        flex: 0 0 auto;
-        width: 58.333333%;
-    }
-}
-
-@media (min-width: 992px) {
-    .col-lg-2 {
-        flex: 0 0 auto;
-        width: 16.666667%;
-    }
-
-    .col-lg-4 {
-        flex: 0 0 auto;
-        width: 33.333333%;
-    }
-}
-
-/* =========================================
-   3. UTILITIES
-   ========================================= */
-.d-none {
-    display: none !important;
-}
-
-.d-flex {
-    display: flex !important;
-}
-
-.d-block {
-    display: block !important;
-}
-
-.justify-content-center {
-    justify-content: center !important;
-}
-
-.align-items-center {
-    align-items: center !important;
-}
-
-.align-items-end {
-    align-items: flex-end !important;
-}
-
-.align-self-center {
-    align-self: center !important;
-}
-
-.text-center {
-    text-align: center !important;
-}
-
-.text-white {
-    color: var(--white) !important;
-}
-
-.text-muted {
-    color: var(--text-muted) !important;
-}
-
-.text-decoration-none {
-    text-decoration: none !important;
-}
-
-.m-0 {
-    margin: 0 !important;
-}
-
-.mt-3 {
-    margin-top: 1rem !important;
-}
-
-.mt-4 {
-    margin-top: 1.5rem !important;
-}
-
-.mb-2 {
-    margin-bottom: 0.5rem !important;
-}
-
-.mb-3 {
-    margin-bottom: 1rem !important;
-}
-
-.mb-5 {
-    margin-bottom: 3rem !important;
-}
-
-.my-5 {
-    margin-top: 3rem !important;
-    margin-bottom: 3rem !important;
-}
-
-.mx-auto {
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
-
-.p-0 {
-    padding: 0 !important;
-}
-
-.p-5 {
-    padding: 3rem !important;
-}
-
-.py-1 {
-    padding-top: 0.25rem !important;
-    padding-bottom: 0.25rem !important;
-}
-
-.py-5 {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-}
-
-.px-3 {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-}
-
-.pt-3 {
-    padding-top: 1rem !important;
-}
-
-.img-fluid {
-    max-width: 100%;
-    height: auto;
-}
-
-.rounded-pill {
-    border-radius: 50rem !important;
-}
-
-.rounded-3 {
-    border-radius: 0.3rem !important;
-}
-
-.list-unstyled {
-    padding-left: 0;
-    list-style: none;
-}
-
-.section-icon,
-.reading-icon {
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
-}
+/* Container and Grids extracted to layout.css */
+/* Utilities extracted to utilities.css */
 
 /* =========================================
    4. LOADER
@@ -606,64 +358,185 @@ body.loaded .loader-container {
 /* --- MOBILE STYLES (max-width 991px) --- */
 @media (max-width: 991px) {
     .navbar-collapse {
-        display: flex;
-        /* Always flex to allow transition */
-        position: absolute;
-        top: 100%;
-        /* Below header */
+        position: fixed;
+        top: 0;
         left: 0;
-        right: 0;
-        background-color: var(--bg-main);
-
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        padding: 20px;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        z-index: 999;
+        display: flex !important;
         flex-direction: column;
-        align-items: stretch;
-        /* Full width items */
-        border-radius: 0 0 20px 20px;
-        border-top: 1px solid rgba(0, 0, 0, 0.03);
+        justify-content: center;
+        align-items: center;
+
+        /* Solid cream background */
+        background: var(--bg-cream) !important;
 
         /* Animation State: Hidden */
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-20px);
-        transition: all 0.3s ease-in-out;
         pointer-events: none;
-        /* Prevent clicks when hidden */
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            visibility 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .navbar-collapse.show {
-        /* Animation State: Visible */
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
         pointer-events: auto;
+    }
+
+    /* Stagger animation for nav items */
+    .navbar-collapse .nav-item {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .navbar-collapse.show .nav-item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(1) {
+        transition-delay: 0.08s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(2) {
+        transition-delay: 0.16s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(3) {
+        transition-delay: 0.24s;
     }
 
     .navbar-nav {
         flex-direction: column;
-        gap: 15px;
-        /* Vertical gap */
+        gap: 8px;
         margin-left: 0 !important;
-        /* Force reset */
-        width: 100%;
-        /* Ensure full width for centering */
+        width: auto;
+        align-items: center;
     }
 
-    .nav-link {
-        font-size: 18px;
-        /* Larger text */
-        padding: 10px 0;
+    .navbar-collapse a.nav-link,
+    .navbar-collapse .nav-link {
+        font-size: 22px;
+        font-weight: 500;
+        padding: 14px 24px;
         text-align: center;
-        /* Centered mobile items */
+        color: var(--text-color) !important;
+        -webkit-text-fill-color: var(--text-color);
+        position: relative;
+        letter-spacing: 0.5px;
     }
 
+    .navbar-collapse .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        transform: translateX(-50%) scaleX(1);
+        width: 40px;
+        height: 2px;
+        background: rgba(181, 113, 222, 0.4);
+        /* soft purple underline */
+        border-radius: 2px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s;
+        transform-origin: center;
+    }
+
+    .navbar-collapse .nav-link:hover::after {
+        transform: translateX(-50%) scaleX(1.2);
+        background: var(--purple);
+    }
+
+    .navbar-collapse a.nav-link:hover,
+    .navbar-collapse .nav-link:hover {
+        color: var(--purple) !important;
+        -webkit-text-fill-color: var(--purple);
+        text-shadow: none;
+        transform: none;
+    }
+
+    .navbar-collapse a.nav-link.active,
+    .navbar-collapse a.nav-link.bold-active,
+    .navbar-collapse .nav-link.active,
+    .navbar-collapse .nav-link.bold-active {
+        color: var(--purple) !important;
+        -webkit-text-fill-color: var(--purple);
+        font-weight: 700;
+    }
+
+    .navbar-collapse .nav-link.active::after,
+    .navbar-collapse .nav-link.bold-active::after {
+        transform: translateX(-50%) scaleX(1.2);
+        background: var(--purple);
+    }
+
+    /* --- "Planes de suscripción" pill --- */
     .d-lg-none {
-        display: block !important;
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 1px solid #f0f0f0;
+        display: flex !important;
+        justify-content: center;
+        margin-top: 32px;
+        padding-top: 0;
+        border-top: none;
         text-align: center;
+    }
+
+    .d-lg-none .navbar-nav {
+        gap: 0;
+    }
+
+    .d-lg-none .nav-item {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    .navbar-collapse.show .d-lg-none .nav-item {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.32s;
+    }
+
+    .navbar-collapse .last-nav-item a.nav-link,
+    .last-nav-item .nav-link {
+        font-size: 22px;
+        font-weight: 500;
+        padding: 12px 32px;
+        border-radius: 50px;
+        background: transparent;
+        color: var(--purple) !important;
+        -webkit-text-fill-color: var(--purple) !important;
+        border: 2px solid var(--purple);
+        box-shadow: none;
+        transition: all 0.3s ease;
+        letter-spacing: 0.3px;
+        margin-top: 10px;
+    }
+
+    .last-nav-item .nav-link::after {
+        display: none !important;
+    }
+
+    .navbar-collapse .last-nav-item a.nav-link:hover,
+    .last-nav-item .nav-link:hover {
+        background: var(--purple);
+        color: var(--white) !important;
+        -webkit-text-fill-color: var(--white) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 15px rgba(181, 113, 222, 0.3);
+    }
+
+    /* Keep toggler above the overlay */
+    .navbar-toggler {
+        z-index: 1001;
+        position: relative;
+    }
+
+    .header {
+        z-index: 1001;
     }
 }
 
