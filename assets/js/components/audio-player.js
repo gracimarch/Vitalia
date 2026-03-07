@@ -190,35 +190,79 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             };
 
+            const handleScrubVisual = (e) => {
+                const rect = progressContainer.getBoundingClientRect();
+                const offsetX = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+                const width = rect.width;
+                const percentage = Math.max(0, Math.min(1, offsetX / width));
+
+                // Solo actualizar la barra visualmente, no el audio
+                progressBar.style.width = (percentage * 100) + '%';
+                if (currentTimeDisplay) {
+                    currentTimeDisplay.textContent = formatTime(percentage * audio.duration);
+                }
+            };
+
+            // Hover Position Update (for gray bar)
+            progressContainer.addEventListener('mousemove', (e) => {
+                // Ignore if we are dragging, because dragging has its own visual feedback 
+                // but updating the variable is harmless since --hover-pos will just match the bar
+                const rect = progressContainer.getBoundingClientRect();
+                const offsetX = e.clientX - rect.left;
+                const width = rect.width;
+                const percentage = Math.max(0, Math.min(1, offsetX / width));
+                progressContainer.style.setProperty('--hover-pos', (percentage * 100) + '%');
+            });
+
+            progressContainer.addEventListener('mouseleave', () => {
+                progressContainer.style.setProperty('--hover-pos', '0%');
+            });
+
             progressContainer.addEventListener('mousedown', (e) => {
                 isDragging = true;
-                handleScrub(e);
+                progressContainer.classList.add('dragging');
+                handleScrubVisual(e);
             });
 
             // Touch support
             progressContainer.addEventListener('touchstart', (e) => {
                 isDragging = true;
-                handleScrub(e);
+                progressContainer.classList.add('dragging');
+                handleScrubVisual(e);
             }, { passive: true });
 
             document.addEventListener('mousemove', (e) => {
                 if (isDragging) {
-                    handleScrub(e);
+                    handleScrubVisual(e);
                 }
             });
 
             document.addEventListener('touchmove', (e) => {
                 if (isDragging) {
-                    handleScrub(e);
+                    handleScrubVisual(e);
                 }
             }, { passive: false });
 
-            document.addEventListener('mouseup', () => {
-                isDragging = false;
+            document.addEventListener('mouseup', (e) => {
+                if (isDragging) {
+                    isDragging = false;
+                    progressContainer.classList.remove('dragging');
+                    handleScrub(e);
+                }
             });
 
-            document.addEventListener('touchend', () => {
-                isDragging = false;
+            document.addEventListener('touchend', (e) => {
+                if (isDragging) {
+                    isDragging = false;
+                    progressContainer.classList.remove('dragging');
+                    // For touch events we need the last known touch position if touchend doesn't have it
+                    // But handleScrub handles this mostly. To be safe, we could just read the visual percentage back
+                    const currentPercent = parseFloat(progressBar.style.width) / 100;
+                    if (isFinite(currentPercent)) {
+                        audio.currentTime = currentPercent * audio.duration;
+                        updateProgressBar(audio, progressBar, currentTimeDisplay);
+                    }
+                }
             });
         }
 

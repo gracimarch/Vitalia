@@ -268,6 +268,30 @@ const getDailyFoodRecommendation = () => {
     return foodRecommendations[dayOfYear % foodRecommendations.length];
 };
 
+const readingRecommendations = [
+    { title: "Pausas Activas: Qué Son y Sus Beneficios", url: "/lecturas/pausas-activas", time: "12 min de lectura" },
+    { title: "Beneficios de Incorporar un Enfoque Integral en el Trabajo", url: "/lecturas/enfoque-integral-trabajo", time: "12 min de lectura" },
+    { title: "Autocuidado: pequeños hábitos que hacen la diferencia", url: "/lecturas/autocuidado-habitos", time: "10 min de lectura" },
+    { title: "Beneficios de las Siestas y Cómo Tomarlas", url: "/lecturas/siestas-cortas", time: "10 min de lectura" },
+    { title: "Técnicas de Manejo del Estrés: Estrategias Efectivas", url: "/lecturas/tecnicas-estres", time: "10 min de lectura" },
+    { title: "Alimentación Consciente: Qué es y Cómo Practicarla", url: "/lecturas/alimentacion-consciente", time: "9 min de lectura" },
+    { title: "Actividad Física Diaria con Movilidad Reducida", url: "/lecturas/actividad-fisica-facil", time: "8 min de lectura" },
+    { title: "Cómo llevar un estilo de vida más sostenible", url: "/lecturas/vida-sostenible", time: "10 min de lectura" },
+    { title: "Cómo Incorporar una Dieta a Base de Plantas", url: "/lecturas/dieta-plantas", time: "10 min de lectura" },
+    { title: "Cómo Crear una Rutina Nocturna para un Mejor Sueño", url: "/lecturas/rutina-nocturna", time: "10 min de lectura" },
+    { title: "La técnica de los 15 minutos: cómo aprender cualquier cosa", url: "/lecturas/tecnica-15-minutos", time: "12 min de lectura" },
+    { title: "Mantén tu Mente Activa: Ejercicios Cognitivos", url: "/lecturas/mente-activa", time: "12 min de lectura" }
+];
+
+const getDailyReadingRecommendation = () => {
+    const today = new Date();
+    const startOfYear = new Date(today.getFullYear(), 0, 0);
+    const diff = today - startOfYear;
+    const oneDay = 1000 * 60 * 60 * 24;
+    const dayOfYear = Math.floor(diff / oneDay);
+    return readingRecommendations[dayOfYear % readingRecommendations.length];
+};
+
 window.vitaliaBentoData = [
     // 1. Small (Top Left) - Reflection
     {
@@ -331,21 +355,27 @@ window.vitaliaBentoData = [
             #FDFBF7`,
             backgroundSize: 'cover'
         },
-        onClick: () => window.location.href = '/lecturas/enfoque-integral-trabajo',
-        customRender: () => (
-            <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div className="magic-bento-card__header">
-                    <div className="magic-bento-card__label" style={{ color: '#777' }}>Recurso recomendado</div>
-                    <i className="bi bi-arrow-up-right" style={{ fontSize: '1.2rem', color: '#333' }}></i>
-                </div>
-                <div className="d-flex flex-row align-items-end justify-content-between">
-                    <div>
-                        <h2 className="bento-big-title">Beneficios de Incorporar un Enfoque Integral en tu Trabajo</h2>
-                        <p className="bento-text-muted"><i className="bi bi-clock me-1"></i> 12 min de lectura</p>
+        onClick: () => {
+            const recommendation = getDailyReadingRecommendation();
+            window.location.href = recommendation.url;
+        },
+        customRender: () => {
+            const recommendation = getDailyReadingRecommendation();
+            return (
+                <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                    <div className="magic-bento-card__header">
+                        <div className="magic-bento-card__label" style={{ color: '#777' }}>Recurso recomendado</div>
+                        <i className="bi bi-arrow-up-right" style={{ fontSize: '1.2rem', color: '#333' }}></i>
+                    </div>
+                    <div className="d-flex flex-row align-items-end justify-content-between">
+                        <div>
+                            <h2 className="bento-big-title">{recommendation.title}</h2>
+                            <p className="bento-text-muted"><i className="bi bi-clock me-1"></i> {recommendation.time}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        )
+            );
+        }
     },
     // 5. Small (Bottom Right 1) - Meditations Quick Access
     {
