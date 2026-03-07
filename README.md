@@ -6,7 +6,7 @@
   <p>
     <a href="https://vitalia-selfcare.vercel.app/"><strong>Explora la plataforma »</strong></a>
   </p>
-  
+  <br />
   <img src="assets/images/ui/og-vitalia.jpg" alt="Vitalia Platform Preview" width="800" style="border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);" />
   <br />
 </div>
