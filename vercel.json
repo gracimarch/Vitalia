@@ -24,5 +24,52 @@
             "source": "/rutinas/:slug",
             "destination": "/pages/rutina.html"
         }
+    ],
+    "headers": [
+        {
+            "source": "/assets/images/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/assets/css/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=2592000, stale-while-revalidate=86400"
+                }
+            ]
+        },
+        {
+            "source": "/assets/js/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=2592000, stale-while-revalidate=86400"
+                }
+            ]
+        },
+        {
+            "source": "/assets/audios/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/assets/favicons/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        }
     ]
 }

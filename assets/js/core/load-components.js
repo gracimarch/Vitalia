@@ -134,7 +134,6 @@ function initializeNavbarToggle() {
         .then(module => {
             if (module && typeof module.inject === 'function') {
                 module.inject();
-                console.log('[Analytics] Vercel Analytics initialized');
             }
         })
         .catch(err => {
@@ -146,7 +145,6 @@ function initializeNavbarToggle() {
         .then(module => {
             if (module && typeof module.injectSpeedInsights === 'function') {
                 module.injectSpeedInsights();
-                console.log('[SpeedInsights] Vercel Speed Insights initialized');
             }
         })
         .catch(err => {

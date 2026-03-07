@@ -29,7 +29,6 @@ window.VitaliaRouter = (function () {
                 // Restore the clean URL in the address bar
                 window.history.replaceState(null, '', redirectedPath);
                 sessionStorage.removeItem('vitalia_redirected_path');
-                console.log('[Router] Local path restored:', redirectedPath);
             }
         }
         updateCanonical();
@@ -69,7 +68,6 @@ window.VitaliaRouter = (function () {
             // Ensure trailing slash consistency? User asked for "window.location.origin + window.location.pathname"
 
             canonicalLink.href = window.location.origin + window.location.pathname;
-            console.log('[Router] Canonical updated to:', canonicalLink.href);
         }
     }
 

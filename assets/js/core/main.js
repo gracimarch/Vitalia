@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const body = document.body;
     const header = document.querySelector('.header');
     let lastScrollPosition = 0;
+    let ticking = false;
 
     // Remove loader when window is fully loaded
     window.addEventListener('load', function () {
@@ -33,18 +34,32 @@ document.addEventListener('DOMContentLoaded', function () {
         body.classList.add('no-scroll');
     }
 
-    // Sticky Header Scroll Effect
+    // Sticky Header Scroll Effect (throttled with rAF)
     if (header) {
         window.addEventListener('scroll', function () {
-            const currentScrollPosition = window.pageYOffset;
+            if (!ticking) {
+                window.requestAnimationFrame(function () {
+                    const currentScrollPosition = window.pageYOffset;
 
-            if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 50) {
-                header.classList.add('hidden');
-            } else {
-                header.classList.remove('hidden');
+                    if (currentScrollPosition > lastScrollPosition && currentScrollPosition > 50) {
+                        header.classList.add('hidden');
+                    } else {
+                        header.classList.remove('hidden');
+                    }
+
+                    lastScrollPosition = currentScrollPosition;
+                    ticking = false;
+                });
+                ticking = true;
             }
-
-            lastScrollPosition = currentScrollPosition;
         });
+    }
+
+    // =========================================
+    // 3. DYNAMIC FOOTER YEAR
+    // =========================================
+    const footerYear = document.getElementById('footer-year');
+    if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
     }
 });
