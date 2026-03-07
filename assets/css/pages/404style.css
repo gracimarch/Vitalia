@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fffcf4;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container-404 {
+    text-align: center;
+    padding: 2rem;
+    max-width: 560px;
+    position: relative;
+    z-index: 2;
+}
+
+.error-code {
+    font-size: clamp(6rem, 20vw, 10rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #B571DE 0%, #80CACD 50%, #E1947F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.error-title {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.error-message {
+    font-size: 1rem;
+    color: #707070;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.btn-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #B571DE, #9d60cf);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(181, 113, 222, 0.3);
+}
+
+.btn-home:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(181, 113, 222, 0.5);
+}
+
+.btn-home svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+}
+
+.decoration {
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.decoration-1 {
+    width: 300px;
+    height: 300px;
+    background: #B571DE;
+    top: -80px;
+    right: -80px;
+}
+
+.decoration-2 {
+    width: 200px;
+    height: 200px;
+    background: #80CACD;
+    bottom: -60px;
+    left: -60px;
+}
+
+.decoration-3 {
+    width: 150px;
+    height: 150px;
+    background: #E1947F;
+    top: 40%;
+    left: -40px;
+}
+
+.logo-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.logo-link img {
+    height: 36px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.logo-link:hover img {
+    opacity: 1;
+}
