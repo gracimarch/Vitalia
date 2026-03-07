@@ -35,6 +35,11 @@ async function loadRoutine() {
       slug = window.VitaliaRouter.getSlug();
     }
 
+    if (!slug) {
+      window.location.replace('/404.html');
+      return;
+    }
+
     // Absolute path
     const jsonPath = '/assets/data/rutinas.json';
 
@@ -45,7 +50,7 @@ async function loadRoutine() {
     const routine = data.rutinas.find(r => r.slug === slug);
 
     if (!routine) {
-      console.error('Rutina no encontrada:', slug);
+      window.location.replace('/404.html');
       return;
     }
 
@@ -55,8 +60,31 @@ async function loadRoutine() {
     // Asignar ejercicios
     exercises = routine.exercises;
 
+    // Inject Schema JSON-LD
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "ExercisePlan",
+      "name": routine.title,
+      "description": routine.introduction ? routine.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : routine.title,
+      "image": routine.image ? (routine.image.startsWith('http') ? routine.image : 'https://vitalia-selfcare.vercel.app' + (routine.image.startsWith('/') ? '' : '/') + routine.image) : '',
+      "url": 'https://vitalia-selfcare.vercel.app/rutinas/' + routine.slug,
+      "provider": {
+        "@type": "Organization",
+        "name": "Vitalia",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://vitalia-selfcare.vercel.app/assets/images/ui/vitalia-logo.svg"
+        }
+      }
+    };
+    const scriptTag = document.createElement('script');
+    scriptTag.type = 'application/ld+json';
+    scriptTag.textContent = JSON.stringify(schema);
+    document.head.appendChild(scriptTag);
+
   } catch (error) {
     console.error('Error cargando rutina:', error);
+    window.location.replace('/404.html');
   }
 }
 
@@ -67,7 +95,41 @@ function renderRoutineStaticContent(routine) {
   };
 
   // Título y meta
-  document.title = routine.title;
+  document.title = routine.title + ' | Vitalia';
+
+  // Dynamic SEO meta tags
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.setAttribute('content', routine.introduction ? routine.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : routine.title);
+
+  const canonicalUrl = 'https://vitalia-selfcare.vercel.app/rutinas/' + routine.slug;
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.setAttribute('href', canonicalUrl);
+
+  const ogImage = routine.image ? (routine.image.startsWith('http') ? routine.image : 'https://vitalia-selfcare.vercel.app' + (routine.image.startsWith('/') ? '' : '/') + routine.image) : 'https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg';
+  const description = routine.introduction ? routine.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : routine.title;
+
+  const seoTags = {
+    'meta[property="og:title"]': routine.title + ' | Vitalia',
+    'meta[property="og:description"]': description,
+    'meta[property="og:url"]': canonicalUrl,
+    'meta[property="og:image"]': ogImage,
+    'meta[property="og:type"]': 'article',
+    'meta[name="twitter:card"]': 'summary_large_image',
+    'meta[name="twitter:title"]': routine.title + ' | Vitalia',
+    'meta[name="twitter:description"]': description,
+    'meta[name="twitter:image"]': ogImage
+  };
+
+  Object.entries(seoTags).forEach(([selector, content]) => {
+    let el = document.querySelector(selector);
+    if (!el) {
+      el = document.createElement('meta');
+      const match = selector.match(/\[(\w+)="([^"]+)"\]/);
+      if (match) el.setAttribute(match[1], match[2]);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('content', content);
+  });
   const titleContainer = document.querySelector('.title');
   if (titleContainer) {
     titleContainer.innerHTML = `

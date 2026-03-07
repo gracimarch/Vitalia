@@ -39,7 +39,41 @@
         };
 
         // Title Section
-        document.title = dieta.title;
+        document.title = dieta.title + ' | Vitalia';
+
+        // Dynamic SEO meta tags
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', dieta.introduction ? dieta.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : dieta.title);
+
+        const canonicalUrl = 'https://vitalia-selfcare.vercel.app/dietas/' + dieta.slug;
+        const canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.setAttribute('href', canonicalUrl);
+
+        const ogImage = dieta.image ? (dieta.image.startsWith('http') ? dieta.image : 'https://vitalia-selfcare.vercel.app' + (dieta.image.startsWith('/') ? '' : '/') + dieta.image) : 'https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg';
+        const description = dieta.introduction ? dieta.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : dieta.title;
+
+        const seoTags = {
+            'meta[property="og:title"]': dieta.title + ' | Vitalia',
+            'meta[property="og:description"]': description,
+            'meta[property="og:url"]': canonicalUrl,
+            'meta[property="og:image"]': ogImage,
+            'meta[property="og:type"]': 'article',
+            'meta[name="twitter:card"]': 'summary_large_image',
+            'meta[name="twitter:title"]': dieta.title + ' | Vitalia',
+            'meta[name="twitter:description"]': description,
+            'meta[name="twitter:image"]': ogImage
+        };
+
+        Object.entries(seoTags).forEach(([selector, content]) => {
+            let el = document.querySelector(selector);
+            if (!el) {
+                el = document.createElement('meta');
+                const match = selector.match(/\[(\w+)="([^"]+)"\]/);
+                if (match) el.setAttribute(match[1], match[2]);
+                document.head.appendChild(el);
+            }
+            el.setAttribute('content', content);
+        });
         const titleContainer = document.querySelector('.title');
         if (titleContainer) {
             titleContainer.innerHTML = `
@@ -228,22 +262,50 @@
     async function init() {
         const slug = getSlugFromPath();
         if (!slug) {
-            // If no slug, maybe redirect or show error? For now just log
-            console.log("No valid slug found in path");
+            window.location.replace('/404.html');
             return;
         }
 
         const data = await fetchDietas();
 
-        if (!data || !data.dietas) return;
+        if (!data || !data.dietas) {
+            window.location.replace('/404.html');
+            return;
+        }
 
         const dieta = findDietaBySlug(data.dietas, slug);
         if (!dieta) {
-            console.error('Dieta no encontrada');
+            window.location.replace('/404.html');
             return;
         }
 
         renderDiet(dieta);
+
+        // Inject Schema JSON-LD (Recipe type for diets)
+        const schema = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": dieta.title,
+            "description": dieta.introduction ? dieta.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : dieta.title,
+            "image": dieta.image ? (dieta.image.startsWith('http') ? dieta.image : 'https://vitalia-selfcare.vercel.app' + (dieta.image.startsWith('/') ? '' : '/') + dieta.image) : '',
+            "url": 'https://vitalia-selfcare.vercel.app/dietas/' + dieta.slug,
+            "publisher": {
+                "@type": "Organization",
+                "name": "Vitalia",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://vitalia-selfcare.vercel.app/assets/images/ui/vitalia-logo.svg"
+                }
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": 'https://vitalia-selfcare.vercel.app/dietas/' + dieta.slug
+            }
+        };
+        const scriptTag = document.createElement('script');
+        scriptTag.type = 'application/ld+json';
+        scriptTag.textContent = JSON.stringify(schema);
+        document.head.appendChild(scriptTag);
 
         // Dispatch event for animations
         document.dispatchEvent(new Event('article-content-loaded'));

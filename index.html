@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#B571DE">
     <title>Vitalia | Tu Web de Bienestar</title>
     <link rel="canonical" href="https://vitalia-selfcare.vercel.app/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,14 +35,12 @@
     <meta property="og:title" content="Vitalia | Tu Web de Bienestar">
     <meta property="og:description"
         content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
-    <meta property="og:image"
-        content="https://github.com/gracimarch/Vitalia/blob/main/assets/images/ui/vitalia-perfil.webp">
+    <meta property="og:image" content="https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg">
     <meta property="og:url" content="https://vitalia-selfcare.vercel.app/">
     <meta name="twitter:title" content="Vitalia | Tu Web de Bienestar">
     <meta name="twitter:description"
         content="Tu espacio de bienestar físico y mental impulsado por Inteligencia Artificial. Te ayudamos a transformar tu calidad de vida de forma efectiva y personalizada.">
-    <meta name="twitter:image"
-        content="https://github.com/gracimarch/Vitalia/blob/main/assets/images/ui/vitalia-perfil.webp">
+    <meta name="twitter:image" content="https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg">
 
 
 
@@ -90,11 +89,11 @@
     </div>
 
     <!-- React & GSAP & Framer Motion Dependencies -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js" defer></script>
 
     <!-- GradientText Styling -->
     <link rel="stylesheet" href="/assets/css/components/GradientText.css">
@@ -188,7 +187,7 @@
     <script src="/assets/js/pages/landing.js"></script>
 
     <!-- Liquid Background -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
     <script src="/assets/js/effects/liquid-background.js"></script>
 </body>
 
