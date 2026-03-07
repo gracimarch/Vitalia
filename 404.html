@@ -3,47 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Redirigiendo... | Vitalia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#B571DE">
+    <title>Página no encontrada | Vitalia</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="/assets/favicons/vitalia-favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="/assets/favicons/vitalia-favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="/assets/favicons/vitalia-favicon.png">
-    <script>
-        (function () {
-            const path = window.location.pathname;
-            const parts = path.split('/').filter(p => p !== '');
-
-            const ROUTE_MAP = {
-                'lecturas': '/pages/lectura.html',
-                'dietas': '/pages/dieta.html',
-                'rutinas': '/pages/rutina.html',
-                'blog': '/pages/blog.html',
-                'mi-espacio': '/pages/mi-espacio.html',
-                'formulario': '/pages/form.html'
-            };
-
-            if (parts.length >= 1) {
-                const prefix = parts[0];
-                const template = ROUTE_MAP[prefix];
-
-                if (template) {
-                    // Save the intended path to restore it in the template
-                    sessionStorage.setItem('vitalia_redirected_path', path);
-                    // Redirect to the template
-                    window.location.replace(template);
-                    return;
-                }
-            }
-
-            // If it's not a dynamic route, just go home or show a simple error
-            console.error('Página no encontrada:', path);
-            window.location.replace('/index.html');
-        })();
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/pages/404style.css">
 </head>
 
 <body>
-    <p>Redirigiendo...</p>
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+    <div class="decoration decoration-3"></div>
+
+    <div class="container-404" id="error-container" style="display: none;">
+        <a href="/" class="logo-link">
+            <img src="/assets/images/ui/vitalia-logo.svg" alt="Vitalia Logo">
+        </a>
+        <div class="error-code">404</div>
+        <h1 class="error-title">Oops, esta página no existe</h1>
+        <p class="error-message">
+            La página que buscas fue movida, eliminada o quizás nunca existió.
+            No te preocupes, te llevamos de vuelta.
+        </p>
+        <a href="/" class="btn-home">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            Volver al inicio
+        </a>
+    </div>
+
+    <script src="/assets/js/pages/404-router.js"></script>
 </body>
 
 </html>
