@@ -1,7 +1,4 @@
 <div align="center">
-  <img src="assets/images/ui/og-vitalia.jpg" alt="Vitalia Platform Preview" width="800" style="border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);" />
-
-  <br />
   
   <h1>Vitalia | Tu Plataforma Integral de Bienestar Impulsada por IA</h1>
   <h3>Transformando tu calidad de vida de forma efectiva y completamente personalizada.</h3>
@@ -10,6 +7,7 @@
     <a href="https://vitalia-selfcare.vercel.app/"><strong>Explora la plataforma »</strong></a>
   </p>
   
+  <img src="assets/images/ui/og-vitalia.jpg" alt="Vitalia Platform Preview" width="800" style="border-radius: 12px; box-shadow: 0px 4px 10px rgba(0,0,0,0.1);" />
   <br />
 </div>
 
