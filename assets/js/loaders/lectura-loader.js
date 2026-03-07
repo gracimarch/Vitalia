@@ -53,6 +53,37 @@
         const metaKeys = document.querySelector('meta[name="keywords"]');
         if (metaKeys) metaKeys.setAttribute("content", lectura.keywords);
 
+        // Dynamic canonical URL
+        const canonicalUrl = 'https://vitalia-selfcare.vercel.app/lecturas/' + lectura.slug;
+        const canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) canonical.setAttribute('href', canonicalUrl);
+
+        // Dynamic OG / Twitter tags
+        const ogImage = lectura.image ? (lectura.image.startsWith('http') ? lectura.image : 'https://vitalia-selfcare.vercel.app' + (lectura.image.startsWith('/') ? '' : '/') + lectura.image) : 'https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg';
+
+        const seoTags = {
+            'meta[property="og:title"]': lectura.title + ' | Vitalia',
+            'meta[property="og:description"]': lectura.description,
+            'meta[property="og:url"]': canonicalUrl,
+            'meta[property="og:image"]': ogImage,
+            'meta[property="og:type"]': 'article',
+            'meta[name="twitter:card"]': 'summary_large_image',
+            'meta[name="twitter:title"]': lectura.title + ' | Vitalia',
+            'meta[name="twitter:description"]': lectura.description,
+            'meta[name="twitter:image"]': ogImage
+        };
+
+        Object.entries(seoTags).forEach(([selector, content]) => {
+            let el = document.querySelector(selector);
+            if (!el) {
+                el = document.createElement('meta');
+                const match = selector.match(/\[(\w+)="([^"]+)"\]/);
+                if (match) el.setAttribute(match[1], match[2]);
+                document.head.appendChild(el);
+            }
+            el.setAttribute('content', content);
+        });
+
         const pageTitle = document.getElementById('page-title');
         if (pageTitle) pageTitle.textContent = lectura.title;
 
@@ -187,21 +218,21 @@
         const slug = getSlugFromURL();
 
         if (!slug) {
-            show404Error();
+            window.location.replace('/404.html');
             return;
         }
 
         const data = await fetchLecturas();
 
         if (!data || !data.lecturas) {
-            show404Error();
+            window.location.replace('/404.html');
             return;
         }
 
         const lectura = findLecturaBySlug(data.lecturas, slug);
 
         if (!lectura) {
-            show404Error();
+            window.location.replace('/404.html');
             return;
         }
 
@@ -209,6 +240,32 @@
         renderArticle(lectura);
         generateTableOfContents(lectura);
         generateArticleContent(lectura);
+
+        // Inject Schema JSON-LD
+        const schema = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": lectura.title,
+            "description": lectura.description,
+            "image": lectura.image ? (lectura.image.startsWith('http') ? lectura.image : 'https://vitalia-selfcare.vercel.app' + (lectura.image.startsWith('/') ? '' : '/') + lectura.image) : '',
+            "url": 'https://vitalia-selfcare.vercel.app/lecturas/' + lectura.slug,
+            "publisher": {
+                "@type": "Organization",
+                "name": "Vitalia",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://vitalia-selfcare.vercel.app/assets/images/ui/vitalia-logo.svg"
+                }
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": 'https://vitalia-selfcare.vercel.app/lecturas/' + lectura.slug
+            }
+        };
+        const scriptTag = document.createElement('script');
+        scriptTag.type = 'application/ld+json';
+        scriptTag.textContent = JSON.stringify(schema);
+        document.head.appendChild(scriptTag);
 
         // Dispatch event to trigger animations
         document.dispatchEvent(new Event('article-content-loaded'));
