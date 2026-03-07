@@ -1,6 +1,6 @@
 <div align="center">
   <img src="assets/favicons/vitalia-favicon.svg" alt="Vitalia Logo" width="120" height="120" />
-  <h1>🧘‍♀️🌻 Vitalia</h1>
+  <h1>Vitalia</h1>
   <h3>Tu Plataforma Integral de Bienestar Impulsada por IA</h3>
 
   <p>
