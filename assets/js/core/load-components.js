@@ -38,7 +38,15 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             const footerHTML = data.replace(/{{ROOT}}/g, "/");
             const footerPlaceholder = document.getElementById("footer-placeholder");
-            if (footerPlaceholder) footerPlaceholder.innerHTML = footerHTML;
+            if (footerPlaceholder) {
+                footerPlaceholder.innerHTML = footerHTML;
+
+                // Set dynamic copyright year
+                const footerYear = document.getElementById('footer-year');
+                if (footerYear) {
+                    footerYear.textContent = new Date().getFullYear();
+                }
+            }
         })
         .catch(err => console.error("Error loading footer:", err));
 
@@ -115,6 +123,9 @@ function initializeNavbarToggle() {
                 const isExpanded = target.classList.contains('show');
                 this.setAttribute('aria-expanded', isExpanded);
 
+                // Lock/unlock body scroll for fullscreen overlay
+                document.body.classList.toggle('no-scroll', isExpanded);
+
                 // Visual toggle for the icon
                 if (isExpanded) {
                     this.classList.remove('collapsed');
@@ -124,6 +135,25 @@ function initializeNavbarToggle() {
             }
         });
     });
+
+    // Close menu when a nav link is clicked (mobile)
+    const navCollapse = document.getElementById('navbarNav');
+    if (navCollapse) {
+        navCollapse.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function () {
+                if (navCollapse.classList.contains('show')) {
+                    navCollapse.classList.remove('show');
+                    document.body.classList.remove('no-scroll');
+
+                    const toggler = document.querySelector('.navbar-toggler');
+                    if (toggler) {
+                        toggler.classList.add('collapsed');
+                        toggler.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        });
+    }
 }
 
 // ==========================================
