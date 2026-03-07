@@ -13,11 +13,10 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    aspect-ratio: 4/3;
-    min-height: 200px;
+    min-height: 220px;
     width: 100%;
     max-width: 100%;
-    padding: 1.25em;
+    padding: 1.15em;
     border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.08);
     /* Lighter border for white bg */
@@ -160,6 +159,7 @@
 @media (min-width: 1024px) {
     .card-grid {
         grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(220px, auto);
     }
 
     .magic-bento-card:nth-child(3) {
@@ -272,7 +272,7 @@
     font-weight: 600;
     margin: 0;
     color: #333;
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.2;
 }
 
@@ -301,7 +301,7 @@
     padding: 0.5em 0.8em;
     border-radius: 50px;
     font-weight: 500;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
     display: inline-block;
 }
 
