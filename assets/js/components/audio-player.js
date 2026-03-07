@@ -46,26 +46,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentAudio.pause();
                 if (currentAudioButton) {
                     const prevImg = currentAudioButton.querySelector('img');
-                    if (prevImg) prevImg.src = '/assets/images/ui/reproducir-icono-meditaciones.webp';
+                    if (prevImg) prevImg.src = '/assets/images/ui/icono-reproducir.webp';
                 }
             }
 
             // Toggle Play/Pause
             if (audio.paused) {
                 audio.play();
-                if (playPauseBtnImg) playPauseBtnImg.src = '/assets/images/ui/pausar-icono-meditaciones.webp';
+                if (playPauseBtnImg) playPauseBtnImg.src = '/assets/images/ui/icono-pausar.webp';
                 currentAudio = audio;
                 currentAudioButton = button;
             } else {
                 audio.pause();
-                if (playPauseBtnImg) playPauseBtnImg.src = '/assets/images/ui/reproducir-icono-meditaciones.webp';
+                if (playPauseBtnImg) playPauseBtnImg.src = '/assets/images/ui/icono-reproducir.webp';
                 currentAudio = null;
                 currentAudioButton = null;
             }
 
             // Reset when audio ends
             audio.addEventListener('ended', function () {
-                if (playPauseBtnImg) playPauseBtnImg.src = '/assets/images/ui/reproducir-icono-meditaciones.webp';
+                if (playPauseBtnImg) playPauseBtnImg.src = '/assets/images/ui/icono-reproducir.webp';
                 currentAudio = null;
                 currentAudioButton = null;
             }, { once: true });
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Reset standard button if exists
                     if (currentAudioButton) {
                         const prevImg = currentAudioButton.querySelector('img');
-                        if (prevImg) prevImg.src = '/assets/images/ui/reproducir-icono-meditaciones.webp';
+                        if (prevImg) prevImg.src = '/assets/images/ui/icono-reproducir.webp';
                     }
                     // Reset other meditation cards
                     meditationCards.forEach(c => {

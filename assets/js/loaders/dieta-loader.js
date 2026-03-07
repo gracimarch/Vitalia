@@ -171,7 +171,7 @@
                 // Ensure image path is correct (absolute)
                 const recipeImage = getPath(recipe.image);
                 // Also ensure the hardcoded icon is absolute
-                const iconPath = "/assets/images/ui/meal-icon.webp";
+                const iconPath = "/assets/images/ui/icono-comida.webp";
 
                 const recipeHtml = `
                     <div class="recipecontainer" id="${recipe.id}">
