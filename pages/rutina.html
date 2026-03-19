@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#B571DE">
     <title>Vitalia | Rutina</title>
     <link rel="canonical">
@@ -14,108 +14,186 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/core/variables.css">
-    <link rel="stylesheet" href="/assets/css/core/layout.css">
-    <link rel="stylesheet" href="/assets/css/core/utilities.css">
-    <link rel="stylesheet" href="/assets/css/pages/shared-content-layout.css">
-    <link href="/assets/css/core/common.css" rel="stylesheet">
-    <script src="/assets/js/core/main.js" defer></script>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
     <link rel="stylesheet" href="/assets/css/pages/routinestyle.css">
 
     <link rel="icon" href="/assets/favicons/vitalia-favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="/assets/favicons/vitalia-favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="/assets/favicons/vitalia-favicon.png">
 
-    <meta name="description" content="Rutina de ejercicios.">
-    <meta name="keywords" content="rutina, ejercicio, fitness, salud">
+    <meta name="description" content="Rutina de ejercicios guiada.">
+    <meta name="keywords" content="rutina, ejercicio, fitness, salud, vitalia">
     <meta name="robots" content="index, follow">
 
     <script src="/assets/js/core/router.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </head>
 
-<body>
+<body class="routine-body">
 
-    <!-- Pantalla de carga -->
-    <div id="loader" class="loader-container">
-        <img src="/assets/favicons/vitalia-favicon.svg" alt="" aria-hidden="true" class="loader-logo">
-    </div>
-
-    <!-- Encabezado -->
-    <div id="header-placeholder"></div>
-
-    <!-- Contenido -->
-    <main class="page-container">
-
-        <div class="title">
-            <!-- Loaded dynamically -->
-        </div>
-
-        <div id="introduction" class="article introduction-container">
-            <!-- Loaded dynamically -->
-        </div>
-
-        <div class="image">
-            <!-- Loaded dynamically -->
-        </div>
-
-        <div class="article-title" id="preparacion">
-            <h2>Preparación</h2>
-        </div>
-
-        <div class="article instructions" id="instrucciones">
-            <!-- Loaded dynamically -->
-        </div>
-
-        <div class="d-flex justify-content-center">
-            <a class="btn" id="mostrar-btn">
-                <i class="bi bi-play-circle" alt="Ícono de comenzar"></i>
-                Comenzar rutina
-            </a>
-        </div>
-
-        <div id="routine-content" class="routine-content no-mostrar">
-            <div class="video animate">
-                <video src=""></video>
-                <h3 class="exercise-title"></h3>
-                <p class="text-desc animate"></p>
+    <!-- ============================================ -->
+    <!-- SCREEN 1: OVERVIEW (Exercise List)           -->
+    <!-- ============================================ -->
+    <section id="screen-overview" class="screen screen--overview active">
+        <div class="overview-hero" id="overview-hero">
+            <div class="overview-hero__overlay"></div>
+            <button class="overview-back-btn" id="btn-back" aria-label="Volver">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <div class="overview-hero__content">
+                <h1 class="overview-title" id="overview-title"></h1>
+                <div class="overview-badges" id="overview-badges"></div>
             </div>
-            <div id="timer-content" class="timer-content">
-                <div class="main-container" id="mainContainer">
-                    <div class="countdown-container">
-                        <svg class="countdown-svg" viewBox="0 0 100 100">
-                            <defs>
-                                <linearGradient id="calm-gradient" x1="0%" y1="0%" x2="70%" y2="70%">
-                                    <stop offset="0%" style="stop-color:#9D43D9" />
-                                    <stop offset="100%" style="stop-color:#D16EE4" />
-                                </linearGradient>
-                            </defs>
-                            <circle class="countdown-circle" cx="50" cy="50" r="45" stroke="url(#calm-gradient)"
-                                stroke-width="8" fill="none" stroke-linecap="round"></circle>
-                        </svg>
-                        <div class="countdown-text" id="countdown">00:00</div>
-                    </div>
-                    <button id="pauseButton" class="pause-btn">⏸</button>
+        </div>
+
+        <div class="overview-body">
+            <div class="overview-description" id="overview-description"></div>
+            
+            <button class="overview-start-btn" id="btn-start-routine">
+                <i class="bi bi-play-fill"></i>
+                Comenzar rutina
+            </button>
+
+            <div class="overview-exercise-list" id="overview-exercise-list">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SCREEN 2: WARMUP                             -->
+    <!-- ============================================ -->
+    <section id="screen-warmup" class="screen screen--warmup">
+        <button class="screen-close-btn" id="btn-close-warmup" aria-label="Cerrar">
+            <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="warmup-content">
+            <p class="warmup-question">¿PREPARADO?</p>
+            <div class="hourglass-timer" id="warmup-hourglass">
+                <div class="hourglass-fill" id="warmup-fill"></div>
+                <span class="hourglass-number" id="warmup-timer">00:30</span>
+            </div>
+            <p class="warmup-detail" id="warmup-detail"></p>
+            <button class="warmup-skip-btn" id="btn-skip-warmup">Saltar calentamiento <i class="bi bi-chevron-double-right"></i></button>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SCREEN 3: EXERCISE EXECUTION (CORE)          -->
+    <!-- ============================================ -->
+    <section id="screen-exercise" class="screen screen--exercise">
+        <video class="exercise-video-bg" id="exercise-video" playsinline muted loop></video>
+        <div class="exercise-overlay"></div>
+
+        <!-- Top bar -->
+        <div class="exercise-top-bar">
+            <button class="screen-close-btn" id="btn-close-exercise" aria-label="Cerrar">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <h2 class="exercise-name" id="exercise-name"></h2>
+        </div>
+
+        <!-- Center info -->
+        <div class="exercise-center">
+            <p class="exercise-desc" id="exercise-desc"></p>
+        </div>
+
+        <!-- Controls -->
+        <div class="exercise-controls">
+            <button class="control-btn" id="btn-prev" aria-label="Anterior">
+                <i class="bi bi-skip-start-fill"></i>
+            </button>
+            <button class="control-btn control-btn--main" id="btn-pause" aria-label="Pausar">
+                <i class="bi bi-pause-fill" id="pause-icon"></i>
+            </button>
+            <button class="control-btn" id="btn-next" aria-label="Siguiente">
+                <i class="bi bi-skip-end-fill"></i>
+            </button>
+        </div>
+
+        <!-- Timer + Progress -->
+        <div class="exercise-timer-area">
+            <span class="exercise-timer" id="exercise-timer">00:30</span>
+            <div class="exercise-progress-track">
+                <div class="exercise-progress-bar" id="exercise-progress-bar"></div>
+            </div>
+        </div>
+
+        <!-- Next Up Card -->
+        <div class="next-up-card" id="next-up-card">
+            <div class="next-up-info">
+                <span class="next-up-label">Siguiente</span>
+                <span class="next-up-title" id="next-up-title"></span>
+            </div>
+            <button class="next-up-skip" id="btn-skip-to-next" aria-label="Saltar al siguiente">
+                <i class="bi bi-skip-forward-fill"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SCREEN 4: REST                               -->
+    <!-- ============================================ -->
+    <section id="screen-rest" class="screen screen--rest">
+        <button class="screen-close-btn" id="btn-close-rest" aria-label="Cerrar">
+            <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="rest-content">
+            <p class="rest-label">Descanso</p>
+            <div class="hourglass-timer" id="rest-hourglass">
+                <div class="hourglass-fill" id="rest-fill"></div>
+                <span class="hourglass-number" id="rest-timer">00:15</span>
+            </div>
+            <p class="rest-motivation" id="rest-motivation">¡Vas muy bien! Respira profundo.</p>
+        </div>
+
+        <div class="rest-next-up" id="rest-next-up">
+            <span class="rest-next-label">Siguiente ejercicio</span>
+            <span class="rest-next-title" id="rest-next-title"></span>
+        </div>
+
+        <button class="rest-skip-btn" id="btn-skip-rest">Saltar descanso <i class="bi bi-chevron-double-right"></i></button>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SCREEN 5: FINISH                             -->
+    <!-- ============================================ -->
+    <section id="screen-finish" class="screen screen--finish">
+        <div class="finish-content">
+            <div class="finish-icon">
+                <lord-icon
+                    src="https://cdn.lordicon.com/namwvlmv.json"
+                    trigger="loop"
+                    delay="300"
+                    colors="primary:#B571DE,secondary:#E1947F"
+                    style="width:140px;height:140px">
+                </lord-icon>
+            </div>
+            <h1 class="finish-title">¡Rutina completada!</h1>
+            <p class="finish-subtitle" id="finish-subtitle">Excelente trabajo. Has dado lo mejor de ti hoy.</p>
+
+            <div class="finish-stats" id="finish-stats">
+                <div class="finish-stat">
+                    <span class="finish-stat-value" id="stat-exercises">0</span>
+                    <span class="finish-stat-label">Ejercicios</span>
+                </div>
+                <div class="finish-stat">
+                    <span class="finish-stat-value" id="stat-duration">0</span>
+                    <span class="finish-stat-label">Minutos</span>
                 </div>
             </div>
+
+            <button class="finish-btn" id="btn-finish-back">
+                <i class="bi bi-arrow-left"></i>
+                Volver a Mi Espacio
+            </button>
         </div>
+    </section>
 
-        <div class="article-title">
-            <h2>Conclusión</h2>
-        </div>
-
-        <div class="article">
-            <!-- Loaded dynamically -->
-        </div>
-    </main>
-
-    <!-- Pie de página-->
-    <div id="footer-placeholder"></div>
-
-    <script src="/assets/js/core/load-components.js"></script>
+    <script src="/assets/js/core/router.js"></script>
+    <script src="/assets/js/utils/voice-service.js"></script>
     <script src="/assets/js/pages/routine.js"></script>
-    <script src="/assets/js/pages/article.js"></script>
 </body>
 
 </html>

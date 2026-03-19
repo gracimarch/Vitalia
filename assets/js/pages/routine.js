@@ -1,354 +1,540 @@
+/**
+ * Routine Controller — State Machine
+ * Screens: overview → warmup → exercise ↔ rest → finish
+ */
 
-const mostrarBtn = document.getElementById('mostrar-btn');
-const routineContent = document.getElementById('routine-content');
-const videoEl = routineContent.querySelector('video');
-const titleEl = routineContent.querySelector('.exercise-title');
-const descEl = routineContent.querySelector('.text-desc');
-const countdownCircle = document.querySelector('.countdown-circle');
-const countdownText = document.getElementById('countdown');
-const pauseButton = document.getElementById('pauseButton');
-
-let animationFrameId;
-let isRunning = false;
+// ─── State ───
+let routineData = null;
+let exercises = [];
 let currentIndex = 0;
-let isRest = false;
+let isRunning = false;
+let isPaused = false;
 let remainingTimeMs = 0;
 let totalDurationMs = 0;
 let endTime = 0;
+let animationFrameId = null;
 let onSegmentComplete = null;
-let firstRun = true;
-const circumference = 2 * Math.PI * 45;
+let lastAnnouncedSecond = -1;
+let routineStartTime = 0;
 
-if (countdownCircle) {
-  countdownCircle.style.strokeDasharray = `${circumference}`;
-  countdownCircle.style.strokeDashoffset = `${circumference}`;
+// ─── DOM References (lazy, set after load) ───
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => document.querySelectorAll(sel);
+
+// ─── Motivational phrases ───
+const REST_PHRASES = [
+  '¡Vas muy bien! Respira profundo.',
+  'Excelente trabajo. Recupera el aliento.',
+  '¡Sigue así! Ya falta menos.',
+  'Tómate un momento. Lo estás haciendo genial.',
+  'Respira… inhala… exhala…',
+  '¡Increíble esfuerzo! Prepárate para lo que sigue.',
+];
+
+const EXERCISE_INTROS = [
+  'Vamos con:', 'Ahora:', 'Siguiente ejercicio:', 'Continuamos con:', '¡Vamos!',
+];
+
+// ─── Warmup messages by routine type ───
+function getWarmupDetail(slug) {
+  if (slug.includes('yoga')) return 'Cierra los ojos, respira profundo tres veces y permite que tu cuerpo se relaje.';
+  if (slug.includes('hiit') || slug.includes('cardio')) return 'Activa tu core, haz algunas rotaciones de cadera y prepárate para darlo todo.';
+  if (slug.includes('fuerza') || slug.includes('cuerpo-completo')) return 'Haz rotaciones de hombros y muñecas. Activa tu cuerpo con un trote suave en el lugar.';
+  if (slug.includes('espalda') || slug.includes('postura')) return 'Estira los brazos y haz unas suaves rotaciones de cuello para liberar tensión.';
+  return 'Respira profundo, prepara tu espacio y concéntrate en tu cuerpo.';
 }
 
-// — Lista de ejercicios con descripciones detalladas —
-let exercises = [];
+// ─── Screen Manager ───
+function showScreen(id) {
+  $$('.screen').forEach(s => s.classList.remove('active'));
+  const screen = $(id);
+  if (screen) {
+    screen.classList.add('active');
+    // Re-trigger animation
+    screen.style.animation = 'none';
+    screen.offsetHeight; // force reflow
+    screen.style.animation = '';
+  }
+}
 
-// — Función para cargar rutina desde JSON —
+// ─── Format time ───
+function formatTime(ms) {
+  const totalSec = Math.max(0, Math.ceil(ms / 1000));
+  const m = Math.floor(totalSec / 60).toString().padStart(2, '0');
+  const s = (totalSec % 60).toString().padStart(2, '0');
+  return `${m}:${s}`;
+}
+
+function formatDuration(seconds) {
+  if (seconds < 60) return `0:${seconds.toString().padStart(2, '0')}`;
+  const m = Math.floor(seconds / 60);
+  const s = seconds % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+// ─── Load Routine ───
 async function loadRoutine() {
   try {
     let slug = '';
-    if (window.VitaliaRouter) {
-      slug = window.VitaliaRouter.getSlug();
-    }
+    if (window.VitaliaRouter) slug = window.VitaliaRouter.getSlug();
+    if (!slug) { window.location.replace('/404.html'); return; }
 
-    if (!slug) {
-      window.location.replace('/404.html');
-      return;
-    }
+    // Fetch both files in parallel
+    const [rutRes, ejRes] = await Promise.all([
+      fetch('/assets/data/rutinas.json'),
+      fetch('/assets/data/ejercicios.json')
+    ]);
+    if (!rutRes.ok) throw new Error('No se pudo cargar rutinas.json');
+    if (!ejRes.ok) throw new Error('No se pudo cargar ejercicios.json');
 
-    // Absolute path
-    const jsonPath = '/assets/data/rutinas.json';
+    const rutData = await rutRes.json();
+    const ejData = await ejRes.json();
 
-    const response = await fetch(jsonPath);
-    if (!response.ok) throw new Error('No se pudo cargar rutinas.json');
+    routineData = rutData.rutinas.find(r => r.slug === slug);
+    if (!routineData) { window.location.replace('/404.html'); return; }
 
-    const data = await response.json();
-    const routine = data.rutinas.find(r => r.slug === slug);
+    // Build exercise catalog: id → exercise object
+    const catalog = {};
+    ejData.exercises.forEach(e => catalog[e.id] = e);
 
-    if (!routine) {
-      window.location.replace('/404.html');
-      return;
-    }
+    // Merge: resolve title/description/videoSrc from catalog, with routine-level overrides
+    exercises = routineData.exercises.map(ex => ({
+      title: ex.title || catalog[ex.exerciseId]?.name || 'Ejercicio',
+      description: ex.description || catalog[ex.exerciseId]?.desc || '',
+      videoSrc: ex.videoSrc || catalog[ex.exerciseId]?.media?.url || '',
+      duration: ex.duration,
+      rest: ex.rest
+    }));
 
-    // Renderizar contenido estático de la rutina
-    renderRoutineStaticContent(routine);
+    document.title = routineData.title + ' | Vitalia';
 
-    // Asignar ejercicios
-    exercises = routine.exercises;
-
-    // Inject Schema JSON-LD
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "ExercisePlan",
-      "name": routine.title,
-      "description": routine.introduction ? routine.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : routine.title,
-      "image": routine.image ? (routine.image.startsWith('http') ? routine.image : 'https://vitalia-selfcare.vercel.app' + (routine.image.startsWith('/') ? '' : '/') + routine.image) : '',
-      "url": 'https://vitalia-selfcare.vercel.app/rutinas/' + routine.slug,
-      "provider": {
-        "@type": "Organization",
-        "name": "Vitalia",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://vitalia-selfcare.vercel.app/assets/images/ui/vitalia-logo.svg"
-        }
-      }
-    };
-    const scriptTag = document.createElement('script');
-    scriptTag.type = 'application/ld+json';
-    scriptTag.textContent = JSON.stringify(schema);
-    document.head.appendChild(scriptTag);
-
-  } catch (error) {
-    console.error('Error cargando rutina:', error);
+    renderOverview();
+    injectSEO();
+  } catch (e) {
+    console.error('Error cargando rutina:', e);
     window.location.replace('/404.html');
   }
 }
 
-function renderRoutineStaticContent(routine) {
-  const getPath = (path) => {
-    if (path.startsWith('http')) return path;
-    return path.startsWith('/') ? path : '/' + path;
-  };
+// ─── Render Overview Screen ───
+function renderOverview() {
+  const getPath = (p) => p.startsWith('http') ? p : (p.startsWith('/') ? p : '/' + p);
 
-  // Título y meta
-  document.title = routine.title + ' | Vitalia';
-
-  // Dynamic SEO meta tags
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.setAttribute('content', routine.introduction ? routine.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : routine.title);
-
-  const canonicalUrl = 'https://vitalia-selfcare.vercel.app/rutinas/' + routine.slug;
-  const canonical = document.querySelector('link[rel="canonical"]');
-  if (canonical) canonical.setAttribute('href', canonicalUrl);
-
-  const ogImage = routine.image ? (routine.image.startsWith('http') ? routine.image : 'https://vitalia-selfcare.vercel.app' + (routine.image.startsWith('/') ? '' : '/') + routine.image) : 'https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg';
-  const description = routine.introduction ? routine.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : routine.title;
-
-  const seoTags = {
-    'meta[property="og:title"]': routine.title + ' | Vitalia',
-    'meta[property="og:description"]': description,
-    'meta[property="og:url"]': canonicalUrl,
-    'meta[property="og:image"]': ogImage,
-    'meta[property="og:type"]': 'article',
-    'meta[name="twitter:card"]': 'summary_large_image',
-    'meta[name="twitter:title"]': routine.title + ' | Vitalia',
-    'meta[name="twitter:description"]': description,
-    'meta[name="twitter:image"]': ogImage
-  };
-
-  Object.entries(seoTags).forEach(([selector, content]) => {
-    let el = document.querySelector(selector);
-    if (!el) {
-      el = document.createElement('meta');
-      const match = selector.match(/\[(\w+)="([^"]+)"\]/);
-      if (match) el.setAttribute(match[1], match[2]);
-      document.head.appendChild(el);
-    }
-    el.setAttribute('content', content);
-  });
-  const titleContainer = document.querySelector('.title');
-  if (titleContainer) {
-    titleContainer.innerHTML = `
-            <h3>${routine.level}</h3>
-            <h1>${routine.title}</h1>
-            <div class="reading-time">
-                <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                <p>${routine.duration}</p>
-            </div>
-        `;
+  // Hero background
+  const hero = $('#overview-hero');
+  if (hero && routineData.image) {
+    hero.style.backgroundImage = `url('${getPath(routineData.image)}')`;
   }
 
-  // Intro
-  const intro = document.getElementById('introduction');
-  if (intro) intro.innerHTML = routine.introduction;
+  // Title
+  const titleEl = $('#overview-title');
+  if (titleEl) titleEl.textContent = routineData.title;
 
-  // Imagen principal
-  const imageContainer = document.querySelector('.image');
-  if (imageContainer) {
-    imageContainer.innerHTML = `<img src="${getPath(routine.image)}" alt="${routine.title}">`;
+  // Description
+  const descEl = $('#overview-description');
+  if (descEl && routineData.introduction) {
+      descEl.innerHTML = routineData.introduction;
   }
 
-  // Preparación
-  const instructions = document.getElementById('instrucciones');
-  if (instructions) instructions.innerHTML = routine.preparation;
-
-  // Conclusión
-  const articles = document.querySelectorAll('.article');
-  const lastArticle = articles[articles.length - 1]; // Assuming it's the last one as per original script logic
-  if (lastArticle && lastArticle.id !== 'instrucciones' && lastArticle.id !== 'introduction') {
-    lastArticle.innerHTML = routine.conclusion;
+  // Badges
+  const badges = $('#overview-badges');
+  if (badges) {
+    const totalSeconds = exercises.reduce((sum, ex) => sum + ex.duration + ex.rest, 0);
+    const totalMin = Math.ceil(totalSeconds / 60);
+    badges.innerHTML = `
+      <span class="overview-badge"><i class="bi bi-clock"></i> ${totalMin} min</span>
+      <span class="overview-badge"><i class="bi bi-bar-chart"></i> ${routineData.level}</span>
+      <span class="overview-badge"><i class="bi bi-lightning"></i> ${exercises.length} ejercicios</span>
+    `;
   }
 
-  // Disparar evento para animaciones
-  document.dispatchEvent(new Event('article-content-loaded'));
-}
-
-
-// — Iniciar rutina al presionar “Comenzar rutina” —
-if (mostrarBtn) {
-  mostrarBtn.addEventListener('click', () => {
-    mostrarBtn.style.display = 'none';
-
-    if (routineContent) {
-      routineContent.classList.remove('no-mostrar');
-      routineContent.classList.add('visible');
-    }
-    runSegment();
-  });
-}
-
-// — Alterna entre ejercicio y descanso —
-function runSegment() {
-  if (animationFrameId) cancelAnimationFrame(animationFrameId);
-
-  // Solo animamos fade-out para ejecuciones posteriores
-  if (!firstRun) {
-    [videoEl, titleEl, descEl].forEach(el => {
-      if (el) {
-        el.classList.remove('fade-in');
-        el.classList.add('fade-out');
-      }
+  // Exercise list
+  const list = $('#overview-exercise-list');
+  if (list) {
+    let html = '<span class="overview-group-label">Ejercicios</span>';
+    exercises.forEach((ex, i) => {
+      // Exercise item
+      html += `
+        <div class="overview-exercise-item">
+          <div class="overview-exercise-thumb"><i class="bi bi-play-circle"></i></div>
+          <div class="overview-exercise-info">
+            <div class="overview-exercise-name">${ex.title}</div>
+            <div class="overview-exercise-duration">${formatDuration(ex.duration)}</div>
+          </div>
+        </div>
+      `;
     });
+    list.innerHTML = html;
   }
-
-  setTimeout(() => {
-    // Quitamos estados previos
-    if (routineContent) routineContent.classList.remove('rest', 'finish');
-    if (videoEl) videoEl.classList.remove('fade-out');
-
-    if (!isRest && currentIndex < exercises.length) {
-      // --- Fase de ejercicio ---
-      const { title, description, videoSrc, duration } = exercises[currentIndex];
-      if (titleEl) titleEl.textContent = title;
-      if (descEl) descEl.textContent = description;
-      if (videoEl) {
-        videoEl.src = videoSrc;
-        videoEl.loop = true;
-        videoEl.style.display = 'block';
-        videoEl.play();
-      }
-
-      startCountdown(duration, duration, () => {
-        isRest = true;
-        if (videoEl) videoEl.pause();
-        runSegment();
-      });
-
-    } else if (isRest) {
-      // --- Fase de descanso ---
-      const restTime = exercises[currentIndex].rest;
-      if (titleEl) titleEl.textContent = 'Descanso';
-      if (descEl) descEl.textContent = `Recupérate durante ${restTime} segundos.`;
-
-      // Mantenemos margen aunque ocultemos el video
-      if (routineContent) routineContent.classList.add('rest');
-      if (videoEl) {
-        videoEl.classList.add('fade-out');
-        setTimeout(() => {
-          videoEl.style.display = 'none';
-        }, 400);
-      }
-
-      startCountdown(restTime, restTime, () => {
-        isRest = false;
-        currentIndex++;
-        if (currentIndex < exercises.length) {
-          runSegment();
-        } else {
-          finishRoutine();
-        }
-      });
-    }
-
-    if (!firstRun) {
-      [videoEl, titleEl, descEl].forEach(el => {
-        if (el) {
-          el.classList.remove('fade-out');
-          el.classList.add('fade-in');
-        }
-      });
-    }
-    firstRun = false;
-  }, 600);
 }
 
-// — Inicia el temporizador circular y guarda el callback —
-function startCountdown(seconds, totalSeconds, onComplete) {
+// ─── SEO ───
+function injectSEO() {
+  const desc = routineData.introduction ? routineData.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : routineData.title;
+  const ogImage = routineData.image ? (routineData.image.startsWith('http') ? routineData.image : 'https://vitalia-selfcare.vercel.app/' + routineData.image) : '';
+
+  const setMeta = (sel, attr, val) => {
+    let el = document.querySelector(sel);
+    if (!el) { el = document.createElement('meta'); const m = sel.match(/\[(\w+)="([^"]+)"\]/); if (m) el.setAttribute(m[1], m[2]); document.head.appendChild(el); }
+    el.setAttribute(attr || 'content', val);
+  };
+
+  setMeta('meta[name="description"]', 'content', desc);
+  setMeta('meta[property="og:title"]', 'content', routineData.title + ' | Vitalia');
+  setMeta('meta[property="og:description"]', 'content', desc);
+  setMeta('meta[property="og:image"]', 'content', ogImage);
+
+  // JSON-LD
+  const schema = { "@context": "https://schema.org", "@type": "ExercisePlan", "name": routineData.title, "description": desc, "image": ogImage, "url": 'https://vitalia-selfcare.vercel.app/rutinas/' + routineData.slug };
+  const tag = document.createElement('script');
+  tag.type = 'application/ld+json';
+  tag.textContent = JSON.stringify(schema);
+  document.head.appendChild(tag);
+}
+
+// ─── Start Warmup ───
+function startWarmup() {
+  showScreen('#screen-warmup');
+  routineStartTime = Date.now();
+
+  const detail = $('#warmup-detail');
+  if (detail) detail.textContent = getWarmupDetail(routineData.slug);
+
+  if (typeof VoiceService !== 'undefined') {
+    VoiceService.speak('¿Preparado? ' + getWarmupDetail(routineData.slug));
+  }
+
+  // 30 second warmup
+  startCountdown(30, 30, () => {
+    currentIndex = 0;
+    startExercise(0);
+  }, 'warmup');
+}
+
+// ─── Start Exercise ───
+function startExercise(index) {
+  currentIndex = index;
+  if (index >= exercises.length) { finishRoutine(); return; }
+
+  const ex = exercises[index];
+  showScreen('#screen-exercise');
+
+  // Video
+  const video = $('#exercise-video');
+  if (video) {
+    video.src = ex.videoSrc;
+    video.loop = true;
+    video.muted = true;
+    video.play().catch(() => {});
+  }
+
+  // Info
+  const nameEl = $('#exercise-name');
+  const descEl = $('#exercise-desc');
+  if (nameEl) nameEl.textContent = ex.title;
+  if (descEl) descEl.textContent = ex.description;
+
+  // Show description briefly
+  const center = $('.exercise-center');
+  if (center) {
+    center.classList.add('show-desc');
+    setTimeout(() => center.classList.remove('show-desc'), 8000); // Expanded from 4000 to 8000
+  }
+
+  // Next up
+  const nextCard = $('#next-up-card');
+  const nextTitle = $('#next-up-title');
+  if (index + 1 < exercises.length) {
+    if (nextCard) nextCard.classList.remove('hidden');
+    if (nextTitle) nextTitle.textContent = exercises[index + 1].title;
+  } else {
+    if (nextCard) nextCard.classList.add('hidden');
+  }
+
+  // Update pause icon
+  updatePauseIcon(false);
+
+  // TTS
+  if (typeof VoiceService !== 'undefined') {
+    const intro = EXERCISE_INTROS[index % EXERCISE_INTROS.length];
+    const prefix = index === 0 ? 'Empezamos la rutina. ' : '';
+    VoiceService.speak(`${prefix}${intro} ${ex.title}. ${ex.description}`);
+  }
+
+  // Timer
+  startCountdown(ex.duration, ex.duration, () => {
+    if (ex.rest > 0) {
+      startRest(index);
+    } else {
+      startExercise(index + 1);
+    }
+  }, 'exercise');
+}
+
+// ─── Start Rest ───
+function startRest(index) {
+  const ex = exercises[index];
+  showScreen('#screen-rest');
+
+  // Timer text
+  const timerEl = $('#rest-timer');
+  if (timerEl) timerEl.textContent = formatTime(ex.rest * 1000);
+
+  // Motivation
+  const motEl = $('#rest-motivation');
+  if (motEl) motEl.textContent = REST_PHRASES[Math.floor(Math.random() * REST_PHRASES.length)];
+
+  // Next up
+  const nextTitle = $('#rest-next-title');
+  const nextUp = $('#rest-next-up');
+  if (index + 1 < exercises.length) {
+    if (nextTitle) nextTitle.textContent = exercises[index + 1].title;
+    if (nextUp) nextUp.style.display = '';
+  } else {
+    if (nextUp) nextUp.style.display = 'none';
+  }
+
+  // TTS
+  if (typeof VoiceService !== 'undefined') {
+    let msg = `Descanso. ${ex.rest} segundos.`;
+    if (index + 1 < exercises.length) {
+      msg += ` Prepárate para: ${exercises[index + 1].title}.`;
+    }
+    VoiceService.speak(msg);
+  }
+
+  // Timer
+  startCountdown(ex.rest, ex.rest, () => {
+    startExercise(index + 1);
+  }, 'rest');
+}
+
+// ─── Finish ───
+function finishRoutine() {
+  showScreen('#screen-finish');
+
+  const totalSec = exercises.reduce((s, e) => s + e.duration + e.rest, 0);
+  const statEx = $('#stat-exercises');
+  const statDur = $('#stat-duration');
+  if (statEx) statEx.textContent = exercises.length;
+  if (statDur) statDur.textContent = Math.ceil(totalSec / 60);
+
+  if (typeof VoiceService !== 'undefined') {
+    VoiceService.speak('¡Rutina completada! Excelente trabajo. Tómate un momento para hidratarte y relajarte.');
+  }
+}
+
+// ─── Timer Engine ───
+function startCountdown(seconds, totalSeconds, onComplete, context) {
+  cancelTimer();
   totalDurationMs = totalSeconds * 1000;
   remainingTimeMs = seconds * 1000;
+  lastAnnouncedSecond = -1;
   onSegmentComplete = onComplete;
   isRunning = true;
+  isPaused = false;
 
-  // Reinicio manual del círculo
-  if (countdownCircle) countdownCircle.style.strokeDasharray = `${circumference}`;
-
-  updateVisuals();
-
-  if (pauseButton) pauseButton.textContent = 'Pausar';
-  startTimerLoop();
+  updateTimerUI(context);
+  endTime = performance.now() + remainingTimeMs;
+  tick(context);
 }
 
-function startTimerLoop() {
-  const now = performance.now();
-  endTime = now + remainingTimeMs;
-
-  tick();
-}
-
-function tick() {
+function tick(context) {
   if (!isRunning) return;
 
   const now = performance.now();
   remainingTimeMs = endTime - now;
 
+  // 3-2-1 countdown voice
+  const sec = Math.ceil(remainingTimeMs / 1000);
+  if (sec <= 3 && sec > 0 && sec !== lastAnnouncedSecond) {
+    if (typeof VoiceService !== 'undefined') VoiceService.speak(sec.toString(), true);
+    lastAnnouncedSecond = sec;
+  }
+
   if (remainingTimeMs <= 0) {
     remainingTimeMs = 0;
-    updateVisuals();
+    updateTimerUI(context);
     isRunning = false;
-    cancelAnimationFrame(animationFrameId);
     if (onSegmentComplete) onSegmentComplete();
   } else {
-    updateVisuals();
-    animationFrameId = requestAnimationFrame(tick);
+    updateTimerUI(context);
+    animationFrameId = requestAnimationFrame(() => tick(context));
   }
 }
 
-// — Detiene el temporizador sin resetear el círculo —
-function stopCountdown() {
+function updateTimerUI(context) {
+  const progress = Math.max(0, remainingTimeMs / totalDurationMs);
+
+  if (context === 'exercise') {
+    const timerEl = $('#exercise-timer');
+    const barEl = $('#exercise-progress-bar');
+    if (timerEl) timerEl.textContent = formatTime(remainingTimeMs);
+    if (barEl) barEl.style.width = (progress * 100) + '%';
+  } else if (context === 'rest') {
+    const timerEl = $('#rest-timer');
+    const barEl = $('#rest-fill');
+    if (timerEl) timerEl.textContent = formatTime(remainingTimeMs);
+    if (barEl) barEl.style.height = (progress * 100) + '%';
+  } else if (context === 'warmup') {
+    const timerEl = $('#warmup-timer');
+    const barEl = $('#warmup-fill');
+    if (timerEl) timerEl.textContent = formatTime(remainingTimeMs);
+    if (barEl) barEl.style.height = (progress * 100) + '%';
+  }
+}
+
+function cancelTimer() {
+  if (animationFrameId) cancelAnimationFrame(animationFrameId);
+  isRunning = false;
+  isPaused = false;
+}
+
+function pauseTimer() {
+  if (!isRunning) return;
   cancelAnimationFrame(animationFrameId);
   isRunning = false;
-  if (pauseButton) pauseButton.textContent = 'Reanudar';
-  if (videoEl) videoEl.pause();
+  isPaused = true;
+
+  const video = $('#exercise-video');
+  if (video) video.pause();
+
+  if (typeof VoiceService !== 'undefined') VoiceService.pause();
 }
 
-// — Actualiza el texto y el progreso del círculo —
-function updateVisuals() {
-  // Texto (techos para evitar que 0.9s se vea como 0s)
-  const totalSecondsCeil = Math.ceil(remainingTimeMs / 1000);
-  const m = Math.floor(totalSecondsCeil / 60).toString().padStart(2, '0');
-  const s = (totalSecondsCeil % 60).toString().padStart(2, '0');
-  if (countdownText) countdownText.textContent = `${m}:${s}`;
+function resumeTimer(context) {
+  if (!isPaused) return;
+  isRunning = true;
+  isPaused = false;
+  endTime = performance.now() + remainingTimeMs;
 
-  // Círculo (Progreso fluido)
-  const progress = Math.max(0, remainingTimeMs / totalDurationMs);
-  if (countdownCircle) countdownCircle.style.strokeDashoffset = circumference * (1 - progress);
+  const video = $('#exercise-video');
+  if (video && context === 'exercise') video.play().catch(() => {});
+
+  if (typeof VoiceService !== 'undefined') VoiceService.resume();
+
+  tick(context);
 }
 
-// — Pausar o reanudar temporizador y video —
-if (pauseButton) {
-  pauseButton.addEventListener('click', () => {
+function updatePauseIcon(paused) {
+  const icon = $('#pause-icon');
+  if (!icon) return;
+  if (paused) {
+    icon.className = 'bi bi-play-fill';
+  } else {
+    icon.className = 'bi bi-pause-fill';
+  }
+}
+
+// ─── Event Bindings ───
+function bindEvents() {
+  // Overview → Start
+  const btnStart = $('#btn-start-routine');
+  if (btnStart) btnStart.addEventListener('click', () => startWarmup());
+
+  // Back buttons
+  const btnBack = $('#btn-back');
+  if (btnBack) btnBack.addEventListener('click', () => window.history.back());
+
+  // Close buttons → back to overview
+  ['#btn-close-warmup', '#btn-close-exercise', '#btn-close-rest'].forEach(sel => {
+    const btn = $(sel);
+    if (btn) btn.addEventListener('click', () => {
+      cancelTimer();
+      if (typeof VoiceService !== 'undefined') VoiceService.stop();
+      const video = $('#exercise-video');
+      if (video) { video.pause(); video.src = ''; }
+      currentIndex = 0;
+      showScreen('#screen-overview');
+    });
+  });
+
+  // Skip warmup
+  const btnSkip = $('#btn-skip-warmup');
+  if (btnSkip) btnSkip.addEventListener('click', () => {
+    currentIndex = 0;
+    startExercise(0);
+  });
+
+  // Pause / Resume
+  const btnPause = $('#btn-pause');
+  if (btnPause) btnPause.addEventListener('click', () => {
     if (isRunning) {
-      stopCountdown();
-    } else {
-      // Reanudar
-      isRunning = true;
-      pauseButton.textContent = 'Pausar';
-      if (!isRest && videoEl) {
-        videoEl.play();
-      }
-      startTimerLoop();
+      pauseTimer();
+      updatePauseIcon(true);
+    } else if (isPaused) {
+      resumeTimer('exercise');
+      updatePauseIcon(false);
     }
+  });
+
+  // Previous exercise
+  const btnPrev = $('#btn-prev');
+  if (btnPrev) btnPrev.addEventListener('click', () => {
+    cancelTimer();
+    if (typeof VoiceService !== 'undefined') VoiceService.stop();
+    if (currentIndex > 0) {
+      startExercise(currentIndex - 1);
+    } else {
+      startExercise(0);
+    }
+  });
+
+  // Next exercise
+  const btnNext = $('#btn-next');
+  if (btnNext) btnNext.addEventListener('click', () => {
+    cancelTimer();
+    if (typeof VoiceService !== 'undefined') VoiceService.stop();
+    startExercise(currentIndex + 1);
+  });
+
+  // Skip to next (from next-up card)
+  const btnSkipNext = $('#btn-skip-to-next');
+  if (btnSkipNext) btnSkipNext.addEventListener('click', () => {
+    cancelTimer();
+    if (typeof VoiceService !== 'undefined') VoiceService.stop();
+    startExercise(currentIndex + 1);
+  });
+
+  // Skip rest
+  const btnSkipRest = $('#btn-skip-rest');
+  if (btnSkipRest) btnSkipRest.addEventListener('click', () => {
+    cancelTimer();
+    if (typeof VoiceService !== 'undefined') VoiceService.stop();
+    startExercise(currentIndex + 1);
+  });
+
+  // Finish → back
+  const btnFinishBack = $('#btn-finish-back');
+  if (btnFinishBack) btnFinishBack.addEventListener('click', () => {
+    window.location.href = '/pages/mi-espacio.html';
   });
 }
 
-// — Final de la rutina —
-function finishRoutine() {
-  if (routineContent) routineContent.classList.add('finish');
-  if (titleEl) titleEl.textContent = 'Rutina completada';
-  if (descEl) descEl.textContent = 'Buen trabajo. Estira y toma un vaso de agua.';
-  // Ocultar temporizador
-  const timerContent = document.getElementById('timer-content');
-  if (timerContent) timerContent.style.display = 'none';
-  if (videoEl) videoEl.style.display = 'none';
+// ─── TTS visual link ───
+function linkTTS() {
+  if (typeof VoiceService === 'undefined') return;
+  VoiceService.onSpeakingStateChange = (isSpeaking) => {
+    const nameEl = $('#exercise-name');
+    const descEl = $('#exercise-desc');
+    [nameEl, descEl].forEach(el => {
+      if (!el) return;
+      if (isSpeaking) el.classList.add('tts-speaking');
+      else el.classList.remove('tts-speaking');
+    });
+  };
 }
 
-// Iniciar carga
+// ─── Init ───
+function init() {
+  loadRoutine().then(() => {
+    bindEvents();
+    linkTTS();
+  });
+}
+
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', loadRoutine);
+  document.addEventListener('DOMContentLoaded', init);
 } else {
-  loadRoutine();
+  init();
 }
