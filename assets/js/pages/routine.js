@@ -108,6 +108,11 @@ async function loadRoutine() {
         duration: ex.duration,
         rest: ex.rest
       };
+      
+      console.log(`[Routine] Resolviendo ejercicio: ${ex.exerciseId}`, {
+        hasCatalogInfo: !!catalog[ex.exerciseId],
+        finalVideoSrc: baseEx.videoSrc
+      });
 
       for (let i = 0; i < sets; i++) {
         const item = { ...baseEx };
@@ -237,10 +242,26 @@ function startExercise(index) {
   // Video
   const video = $('#exercise-video');
   if (video) {
+    console.log(`[Routine] Iniciando video para ${ex.title}: ${ex.videoSrc}`);
+    
+    // Error listener to diagnose black screen
+    video.onerror = () => {
+      console.error(`[Routine] Error de carga de video en ${ex.title}. URL: ${video.src}. Code: ${video.error ? video.error.code : 'unknown'}`);
+      // Simple fallback if URL is broken
+      if (video.src.includes('pexels.com') && !video.src.includes('video-files')) {
+         console.warn('[Routine] El enlace de Pexels parece ser una página, no un archivo directo.');
+      }
+    };
+
     video.src = ex.videoSrc;
+    video.load(); 
     video.loop = true;
     video.muted = true;
-    video.play().catch(() => { });
+    video.play().then(() => {
+      console.log(`[Routine] Video reproduciendo: ${ex.title}`);
+    }).catch(err => {
+      console.warn(`[Routine] Fallo al reproducir video: ${err.message}`);
+    });
   }
 
   // Info
