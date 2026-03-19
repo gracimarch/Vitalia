@@ -18,12 +18,14 @@
                 {
                     "exerciseId": "squat",
                     "duration": 60,
-                    "rest": 20
+                    "rest": 20,
+                    "sets": 2
                 },
                 {
                     "exerciseId": "lunges",
                     "duration": 60,
-                    "rest": 25
+                    "rest": 25,
+                    "sets": 2
                 },
                 {
                     "exerciseId": "glute_bridge",
@@ -33,7 +35,8 @@
                 {
                     "exerciseId": "knee_pushups",
                     "duration": 50,
-                    "rest": 25
+                    "rest": 25,
+                    "sets": 2
                 },
                 {
                     "exerciseId": "superman",
@@ -86,7 +89,7 @@
             "slug": "entrenamiento-en-15-minutos",
             "title": "Entrenamiento en 15 Minutos",
             "level": "Nivel Principiante-Intermedio",
-            "duration": "15 minutos de duración",
+            "duration": "10 minutos de duración",
             "introduction": "<p>Esta rutina está diseñada para personas con una agenda ocupada que quieren mejorar su estado físico. Activarás los principales grupos musculares (piernas, pecho, espalda, core) combinando ejercicios de fuerza funcional con intervalos de cardio.</p>",
             "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
             "preparation": "<p>Necesitas un espacio libre de aproximadamente 2 x 1.5 metros. No se requiere equipamiento; solo ropa cómoda y calzado deportivo. Si tienes una colchoneta, úsala para los ejercicios de suelo. Ten agua a mano para los descansos cortos. Como la rutina es breve, cada segundo cuenta: concéntrate en mantener una buena técnica desde el primer ejercicio. Cuando estés preparado, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
@@ -100,12 +103,14 @@
                 {
                     "exerciseId": "squat",
                     "duration": 40,
-                    "rest": 15
+                    "rest": 15,
+                    "sets": 2
                 },
                 {
                     "exerciseId": "pushups",
                     "duration": 35,
-                    "rest": 15
+                    "rest": 15,
+                    "sets": 2
                 },
                 {
                     "exerciseId": "superman",
@@ -149,7 +154,7 @@
             "title": "Movilidad y Fuerza en Silla",
             "level": "Nivel Principiante",
             "duration": "25 minutos de duración",
-            "introduction": "<p>Esta rutina está diseñada específicamente para personas que buscan mejorar su condición física desde una posición segura y estable. Es ideal para adultos mayores o personas con movilidad reducida que desean fortalecer sus músculos y mejorar su flexibilidad sin el impacto de ejercicios de pie convencionales. A través de una serie de movimientos controlados en silla, trabajaremos la postura, la fuerza de brazos y piernas, y la movilidad de la columna, promoviendo una mejor funcionalidad para las actividades diarias.</p>",
+            "introduction": "<p>Esta rutina está diseñada específicamente para personas que buscan mejorar su condición física desde una posición segura y estable. Es ideal para adultos mayores o personas con movilidad reducida que desean fortalecer sus músculos y mejorar su flexibilidad.</p>",
             "image": "assets/images/fitness/img-rutinas-mat-pesas.webp?v=2",
             "preparation": "<p>Necesitas una silla firme y estable (sin ruedas). Ubícala en un espacio despejado donde puedas mover los brazos y extender las piernas sin obstáculos. Siéntate en la mitad delantera de la silla con los pies bien apoyados en el suelo y la espalda erguida. Ten una botella de agua cerca para hidratarte en los descansos. Mantén una respiración fluida y detente si sientes cualquier dolor agudo. Cuando estés en posición, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
             "conclusion": "<p>¡Excelente trabajo! Has completado una sesión integral de movilidad y fuerza. Este tipo de ejercicio constante ayuda a mantener la independencia física y mejora la circulación. Recuerda que la movilidad articular es clave para evitar la rigidez y el dolor.</p><p>Te recomendamos realizar esta rutina de 3 a 5 veces por semana para ver mejores resultados en tu vitalidad diaria. Bebe un vaso de agua, relaja los hombros y disfruta de la energía renovada en tu cuerpo.</p>",
@@ -201,13 +206,9 @@
                 },
                 {
                     "exerciseId": "calf_raises",
-                    "duration": 45,
-                    "rest": 20
-                },
-                {
-                    "exerciseId": "calf_raises",
-                    "duration": 45,
-                    "rest": 20
+                    "duration": 60,
+                    "rest": 30,
+                    "sets": 3
                 },
                 {
                     "exerciseId": "chair_dips",
@@ -227,6 +228,70 @@
                 {
                     "exerciseId": "child_pose",
                     "duration": 120,
+                    "rest": 0
+                }
+            ]
+        },
+        {
+            "slug": "fuerza-silla-de-ruedas",
+            "title": "Entrenamiento de Fuerza para Personas en Silla de Ruedas",
+            "level": "Nivel Principiante",
+            "duration": "10 minutos de duración",
+            "introduction": "<p>Esta rutina de fuerza y movilidad ha sido diseñada específicamente para realizarse en posición sentada. El objetivo principal es fortalecer los músculos del tren superior (hombros, espalda, brazos) y mejorar la estabilidad del core, promoviendo una mejor postura y mayor independencia funcional.</p>",
+            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+            "preparation": "<p>Asegúrate de que tu silla o silla de ruedas esté en una posición estable y con los frenos puestos. Necesitarás una banda elástica y un par de mancuernas ligeras (o botellas de agua). Siéntate con la espalda erguida y mantén el espacio a tu alrededor despejado. Cuando estés en posición, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "conclusion": "<p>¡Excelente trabajo! Has completado una sesión integral de fuerza y movilidad. Mantener activo el tren superior es fundamental para la vitalidad diaria. No olvides hidratarte bien y realizar estos estiramientos cada vez que sientas tensión acumulada.</p><p>Te recomendamos realizar esta rutina 3 veces por semana para obtener mejores resultados. ¡Sigue adelante con tu entrenamiento!</p>",
+            "exercises": [
+                {
+                    "exerciseId": "shoulder_circles",
+                    "videoSrc": "https://www.pexels.com/video/4367439/",
+                    "duration": 45,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "seated_shoulder_press",
+                    "videoSrc": "https://www.pexels.com/video/4367541/",
+                    "duration": 40,
+                    "rest": 20,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "band_pull_apart",
+                    "videoSrc": "https://www.pexels.com/video/8837121/",
+                    "duration": 40,
+                    "rest": 20,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "seated_bicep_curl",
+                    "videoSrc": "https://www.pexels.com/video/6548005/",
+                    "duration": 40,
+                    "rest": 20,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "tricep_extension",
+                    "videoSrc": "https://www.pexels.com/video/6286166/",
+                    "duration": 40,
+                    "rest": 20,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "torso_twists",
+                    "videoSrc": "https://www.pexels.com/video/5310754/",
+                    "duration": 45,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "air_punches",
+                    "videoSrc": "https://www.pexels.com/video/8611523/",
+                    "duration": 45,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "seated_neck_stretch",
+                    "videoSrc": "https://www.pexels.com/video/8026876/",
+                    "duration": 45,
                     "rest": 0
                 }
             ]
