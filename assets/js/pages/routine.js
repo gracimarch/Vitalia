@@ -98,13 +98,28 @@ async function loadRoutine() {
     ejData.exercises.forEach(e => catalog[e.id] = e);
 
     // Merge: resolve title/description/videoSrc from catalog, with routine-level overrides
-    exercises = routineData.exercises.map(ex => ({
-      title: ex.title || catalog[ex.exerciseId]?.name || 'Ejercicio',
-      description: ex.description || catalog[ex.exerciseId]?.desc || '',
-      videoSrc: ex.videoSrc || catalog[ex.exerciseId]?.media?.url || '',
-      duration: ex.duration,
-      rest: ex.rest
-    }));
+    const expandedExercises = [];
+    routineData.exercises.forEach(ex => {
+      const sets = ex.sets || 1;
+      const baseEx = {
+        title: ex.title || catalog[ex.exerciseId]?.name || 'Ejercicio',
+        description: ex.description || catalog[ex.exerciseId]?.desc || '',
+        videoSrc: ex.videoSrc || catalog[ex.exerciseId]?.media?.url || '',
+        duration: ex.duration,
+        rest: ex.rest
+      };
+
+      for (let i = 0; i < sets; i++) {
+        const item = { ...baseEx };
+        // If there are multiple sets, we append the series number for clarity
+        if (sets > 1) {
+          item.title = `${item.title} (Serie ${i + 1}/${sets})`;
+        }
+        expandedExercises.push(item);
+      }
+    });
+
+    exercises = expandedExercises;
 
     document.title = routineData.title + ' | Vitalia';
 
