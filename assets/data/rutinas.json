@@ -1,35 +1,233 @@
 {
     "rutinas": [
         {
-            "slug": "ejercicio-en-15-min",
-            "title": "Ejercicio en 15 Minutos: Rutina rápida y completa para días ocupados",
+            "slug": "cuerpo-completo-en-casa",
+            "title": "Entrenamiento de Cuerpo Completo en Casa",
             "level": "Nivel Principiante",
-            "duration": "15 minutos de duración",
-            "introduction": "<p>Con esta rutina corta activarás tu sistema cardiovascular, fortalecerás los músculos principales y mejorarás tu flexibilidad. Procura realizar los ejercicios a tu propio ritmo, recuerda que puedes pausar el temporizador siempre que necesites. ¡Te recomendamos <strong class=\"underline\">repetir esta rutina tres veces a la semana</strong> para notar mejoras en tu resistencia y energía!</p>",
+            "duration": "20 minutos de duración",
+            "introduction": "<p>Esta rutina trabaja los principales grupos musculares del cuerpo: piernas, glúteos, pecho, espalda, hombros y core, mediante ejercicios funcionales de bajo impacto que no requieren equipamiento. Está diseñada para personas que se inician en el entrenamiento y buscan mejorar su condición física general desde casa. La sesión se estructura en un calentamiento activo, un bloque de fuerza funcional equilibrado y un cierre de movilidad para favorecer la recuperación.</p>",
             "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
-            "preparation": "<p>Antes de comenzar, asegúrate de usar ropa cómoda y calzado adecuado. Necesitarás un poco de espacio en el suelo y, si tienes, una colchoneta para los ejercicios en el suelo. Mantén una botella de agua cerca para hidratarte antes y después de la rutina. Esta rutina se enfoca en activar diferentes grupos musculculares con movimientos simples y efectivos. Cuando sientas que es momento de empezar a ejercitarte, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
-            "conclusion": "<p>Con esta rutina completaste un excelente trabajo. Has activado tu cuerpo, fortalecido los músculos clave y, lo más importante, te has acercado a tus objetivos. Si te resulta útil, puedes realizar esta rutina de 2 a 3 veces por semana para obtener mejores resultados.</p><p>Ahora, tómate un momento para hidratarte y realizar algunos estiramientos suaves. <strong class=\"underline\">Escuchar a tu cuerpo es fundamental</strong>, así que no dudes en tomarte el tiempo necesario para recuperarte antes de continuar con tus actividades diarias. ¡Buen trabajo!</p>",
+            "preparation": "<p>Busca un espacio despejado de al menos 2 x 2 metros con piso firme. No necesitas equipamiento especial, solo ropa cómoda y calzado deportivo. Si dispones de una colchoneta o esterilla, úsala para los ejercicios de suelo. Mantén una botella de agua cerca para hidratarte durante los descansos. Cuando estés en posición, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "conclusion": "<p>¡Excelente trabajo! Has completado un entrenamiento integral que activó todos los grupos musculares principales de tu cuerpo. Este tipo de rutina promueve la fuerza funcional, la estabilidad articular y la resistencia general.</p><p>Te recomendamos realizar esta rutina 3 veces por semana, dejando al menos un día de descanso entre sesiones para permitir la recuperación muscular. Hidrátate bien, realiza algunos estiramientos suaves adicionales si lo sientes necesario y asegúrate de incluir una comida equilibrada en las próximas horas.</p>",
             "exercises": [
                 {
-                    "title": "Marcha en el lugar",
-                    "description": "Párate con espalda recta, mirada al frente y eleva las rodillas a la altura de la cadera, moviendo los brazos al compás.",
-                    "videoSrc": "https://videos.pexels.com/video-files/10042798/10042798-hd_1920_1080_24fps.mp4",
-                    "duration": 30,
-                    "rest": 15
+                    "exerciseId": "jumping_jacks",
+                    "duration": 60,
+                    "rest": 20
                 },
                 {
-                    "title": "Sentadillas",
-                    "description": "Coloca los pies al ancho de hombros, flexiona rodillas y caderas como si te sentaras, mantén la espalda recta y empuja con los talones.",
-                    "videoSrc": "https://videos.pexels.com/video-files/12345678/sample-squat.mp4",
-                    "duration": 30,
-                    "rest": 15
+                    "exerciseId": "squat",
+                    "duration": 60,
+                    "rest": 20
                 },
                 {
-                    "title": "Flexiones modificadas",
-                    "description": "Manos al ancho de hombros y rodillas apoyadas, baja el pecho manteniendo los codos cerca del cuerpo y vuelve a subir sin bloquear los codos.",
-                    "videoSrc": "https://videos.pexels.com/video-files/23456789/sample-pushup.mp4",
-                    "duration": 20,
+                    "exerciseId": "lunges",
+                    "duration": 60,
+                    "rest": 25
+                },
+                {
+                    "exerciseId": "glute_bridge",
+                    "duration": 50,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "knee_pushups",
+                    "duration": 50,
+                    "rest": 25
+                },
+                {
+                    "exerciseId": "superman",
+                    "duration": 50,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "plank",
+                    "duration": 50,
+                    "rest": 25
+                },
+                {
+                    "exerciseId": "high_knees",
+                    "duration": 60,
+                    "rest": 25
+                },
+                {
+                    "exerciseId": "sumo_squat",
+                    "duration": 50,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "dead_bug",
+                    "duration": 50,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "step_ups",
+                    "duration": 50,
+                    "rest": 25
+                },
+                {
+                    "exerciseId": "bird_dog",
+                    "duration": 50,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "cobra_stretch",
+                    "duration": 60,
                     "rest": 10
+                },
+                {
+                    "exerciseId": "child_pose",
+                    "duration": 90,
+                    "rest": 0
+                }
+            ]
+        },
+        {
+            "slug": "entrenamiento-en-15-minutos",
+            "title": "Entrenamiento en 15 Minutos",
+            "level": "Nivel Principiante-Intermedio",
+            "duration": "15 minutos de duración",
+            "introduction": "<p>Esta rutina está diseñada para personas con una agenda ocupada que quieren mejorar su estado físico. Activarás los principales grupos musculares (piernas, pecho, espalda, core) combinando ejercicios de fuerza funcional con intervalos de cardio.</p>",
+            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+            "preparation": "<p>Necesitas un espacio libre de aproximadamente 2 x 1.5 metros. No se requiere equipamiento; solo ropa cómoda y calzado deportivo. Si tienes una colchoneta, úsala para los ejercicios de suelo. Ten agua a mano para los descansos cortos. Como la rutina es breve, cada segundo cuenta: concéntrate en mantener una buena técnica desde el primer ejercicio. Cuando estés preparado, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "conclusion": "<p>¡Rutina completada! En poco tiempo has activado tu cuerpo de forma integral, mejorando tu circulación, fuerza y resistencia. Este tipo de sesiones cortas son ideales para mantener la constancia, que es el factor más importante del progreso físico.</p><p>Te recomendamos realizar esta rutina entre 4 y 5 veces por semana para compensar su corta duración con mayor frecuencia. Hidrátate, realiza un par de estiramientos suaves de piernas y hombros, y retoma tu día con más energía.</p>",
+            "exercises": [
+                {
+                    "exerciseId": "jumping_jacks",
+                    "duration": 45,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "squat",
+                    "duration": 40,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "pushups",
+                    "duration": 35,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "superman",
+                    "duration": 35,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "mountain_climbers",
+                    "duration": 30,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "lunges",
+                    "duration": 40,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "plank",
+                    "duration": 40,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "high_knees",
+                    "duration": 40,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "crunch",
+                    "duration": 35,
+                    "rest": 10
+                },
+                {
+                    "exerciseId": "cobra_stretch",
+                    "duration": 45,
+                    "rest": 0
+                }
+            ]
+        },
+        {
+            "slug": "movilidad-y-fuerza-en-silla",
+            "title": "Movilidad y Fuerza en Silla",
+            "level": "Nivel Principiante",
+            "duration": "25 minutos de duración",
+            "introduction": "<p>Esta rutina está diseñada específicamente para personas que buscan mejorar su condición física desde una posición segura y estable. Es ideal para adultos mayores o personas con movilidad reducida que desean fortalecer sus músculos y mejorar su flexibilidad sin el impacto de ejercicios de pie convencionales. A través de una serie de movimientos controlados en silla, trabajaremos la postura, la fuerza de brazos y piernas, y la movilidad de la columna, promoviendo una mejor funcionalidad para las actividades diarias.</p>",
+            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+            "preparation": "<p>Necesitas una silla firme y estable (sin ruedas). Ubícala en un espacio despejado donde puedas mover los brazos y extender las piernas sin obstáculos. Siéntate en la mitad delantera de la silla con los pies bien apoyados en el suelo y la espalda erguida. Ten una botella de agua cerca para hidratarte en los descansos. Mantén una respiración fluida y detente si sientes cualquier dolor agudo. Cuando estés en posición, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "conclusion": "<p>¡Excelente trabajo! Has completado una sesión integral de movilidad y fuerza. Este tipo de ejercicio constante ayuda a mantener la independencia física y mejora la circulación. Recuerda que la movilidad articular es clave para evitar la rigidez y el dolor.</p><p>Te recomendamos realizar esta rutina de 3 a 5 veces por semana para ver mejores resultados en tu vitalidad diaria. Bebe un vaso de agua, relaja los hombros y disfruta de la energía renovada en tu cuerpo.</p>",
+            "exercises": [
+                {
+                    "exerciseId": "cat_cow",
+                    "duration": 60,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "hip_rotations",
+                    "duration": 60,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "calf_raises",
+                    "duration": 60,
+                    "rest": 30
+                },
+                {
+                    "exerciseId": "squat",
+                    "duration": 60,
+                    "rest": 30
+                },
+                {
+                    "exerciseId": "knee_pushups",
+                    "duration": 50,
+                    "rest": 30
+                },
+                {
+                    "exerciseId": "superman",
+                    "duration": 60,
+                    "rest": 30
+                },
+                {
+                    "exerciseId": "russian_twist",
+                    "duration": 50,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "bicycle_crunch",
+                    "duration": 50,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "high_knees",
+                    "duration": 60,
+                    "rest": 30
+                },
+                {
+                    "exerciseId": "calf_raises",
+                    "duration": 45,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "calf_raises",
+                    "duration": 45,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "chair_dips",
+                    "duration": 40,
+                    "rest": 30
+                },
+                {
+                    "exerciseId": "lunges",
+                    "duration": 60,
+                    "rest": 30
+                },
+                {
+                    "exerciseId": "dead_bug",
+                    "duration": 60,
+                    "rest": 30
+                },
+                {
+                    "exerciseId": "child_pose",
+                    "duration": 120,
+                    "rest": 0
                 }
             ]
         }

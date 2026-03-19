@@ -1,0 +1,22 @@
+{
+    "slug": "nombre-de-la-rutina",
+    "title": "Título Completo de la Rutina",
+    "level": "Nivel Principiante | Intermedio | Avanzado",
+    "duration": "X minutos de duración",
+    "introduction": "<p>Descripción introductoria: qué se trabaja, para quién es, cómo está estructurada.</p>",
+    "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+    "preparation": "<p>Espacio necesario, equipamiento si aplica. Cierre: <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+    "conclusion": "<p>Mensaje motivacional, frecuencia recomendada, consejos post rutina.</p>",
+    "exercises": [
+        {
+            "exerciseId": "id_del_ejercicio_en_ejercicios_json",
+            "duration": 45,
+            "rest": 15
+        },
+        {
+            "exerciseId": "otro_ejercicio",
+            "duration": 40,
+            "rest": 20
+        }
+    ]
+}

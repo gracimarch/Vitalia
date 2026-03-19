@@ -1,0 +1,892 @@
+{
+    "exercises": [
+        {
+            "id": "squat",
+            "name": "Sentadilla",
+            "desc": "Flexiona las rodillas y la cadera como si fueras a sentarte, manteniendo la espalda recta. Empuja con los talones para volver a subir.",
+            "movement_pattern": "squat",
+            "muscle_focus": [
+                "cuádriceps",
+                "glúteos"
+            ],
+            "secondary_muscles": [
+                "isquiotibiales",
+                "core"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "tren_inferior"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/8837221/"
+            }
+        },
+        {
+            "id": "sumo_squat",
+            "name": "Sentadilla Sumo",
+            "desc": "Con los pies en postura más amplia que una sentadilla normal y las puntas hacia afuera, desciende flexionando las rodillas en la dirección de los pies. Empuja con ambos talones para subir.",
+            "movement_pattern": "squat",
+            "muscle_focus": [
+                "glúteos",
+                "aductores"
+            ],
+            "secondary_muscles": [
+                "cuádriceps"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "tren_inferior"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/6525513/"
+            }
+        },
+        {
+            "id": "lunges",
+            "name": "Estocadas",
+            "desc": "Da un paso amplio al frente y flexiona ambas rodillas a 90 grados. Empuja con el pie delantero para volver y alterna la pierna.",
+            "movement_pattern": "lunge",
+            "muscle_focus": [
+                "cuádriceps",
+                "glúteos"
+            ],
+            "secondary_muscles": [
+                "isquiotibiales"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 3,
+            "tags": [
+                "tren_inferior",
+                "unilateral"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/6525491/"
+            }
+        },
+        {
+            "id": "bulgarian_split_squat",
+            "name": "Sentadilla Búlgara",
+            "desc": "Apoya el pie trasero en una superficie elevada y flexiona la pierna delantera hasta bajar la rodilla trasera cerca del suelo. Empuja con la pierna delantera para subir.",
+            "movement_pattern": "lunge",
+            "muscle_focus": [
+                "cuádriceps",
+                "glúteos"
+            ],
+            "secondary_muscles": [
+                "core"
+            ],
+            "difficulty": "intermedio",
+            "equipment": "ninguno",
+            "intensity": 4,
+            "tags": [
+                "tren_inferior"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "glute_bridge",
+            "name": "Puente de Glúteos",
+            "desc": "Acostado boca arriba con las rodillas flexionadas, eleva la cadera contrayendo los glúteos. Sostén un segundo arriba y baja con control.",
+            "movement_pattern": "hinge",
+            "muscle_focus": [
+                "glúteos"
+            ],
+            "secondary_muscles": [
+                "isquiotibiales",
+                "core"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "tren_inferior"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/6740157/"
+            }
+        },
+        {
+            "id": "hip_thrust",
+            "name": "Empuje de Cadera",
+            "desc": "Con la espalda alta apoyada en una superficie, eleva la cadera con el peso sobre ella, contrayendo los glúteos hasta alinear el torso con los muslos. Baja con control.",
+            "movement_pattern": "hinge",
+            "muscle_focus": [
+                "glúteos"
+            ],
+            "secondary_muscles": [
+                "isquiotibiales"
+            ],
+            "difficulty": "intermedio",
+            "equipment": "mancuerna",
+            "intensity": 3,
+            "tags": [
+                "tren_inferior"
+            ],
+            "media": {
+                "type": "video",
+                "url": ""
+            }
+        },
+        {
+            "id": "romanian_deadlift",
+            "name": "Peso Muerto Rumano",
+            "desc": "Con las piernas ligeramente flexionadas, inclina el torso hacia adelante empujando la cola hacia atrás. Sube contrayendo glúteos e isquiotibiales.",
+            "movement_pattern": "hinge",
+            "muscle_focus": [
+                "isquiotibiales",
+                "glúteos"
+            ],
+            "secondary_muscles": [
+                "zona_lumbar"
+            ],
+            "difficulty": "intermedio",
+            "equipment": "mancuerna",
+            "intensity": 4,
+            "tags": [
+                "tren_inferior"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "step_ups",
+            "name": "Subidas al Cajón",
+            "desc": "Sube a una superficie estable apoyando toda la planta del pie y empuja para elevar el cuerpo. Baja con control y alterna las piernas.",
+            "movement_pattern": "lunge",
+            "muscle_focus": [
+                "cuádriceps",
+                "glúteos"
+            ],
+            "secondary_muscles": [
+                "isquiotibiales"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 3,
+            "tags": [
+                "tren_inferior"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/6525487/"
+            }
+        },
+        {
+            "id": "wall_sit",
+            "name": "Sentadilla en Pared",
+            "desc": "Apoya la espalda contra la pared y desciende hasta que los muslos queden paralelos al suelo. Mantén la posición el tiempo indicado.",
+            "movement_pattern": "squat",
+            "muscle_focus": [
+                "cuádriceps"
+            ],
+            "secondary_muscles": [
+                "glúteos"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "tren_inferior",
+                "isométrico"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "https://images.pexels.com/photos/6740055/pexels-photo-6740055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            }
+        },
+        {
+            "id": "pushups",
+            "name": "Flexiones de Brazos",
+            "desc": "En posición de plancha alta, flexiona los codos bajando el pecho hacia el suelo y empuja para volver. Mantén el cuerpo en línea recta.",
+            "movement_pattern": "push",
+            "muscle_focus": [
+                "pecho",
+                "tríceps"
+            ],
+            "secondary_muscles": [
+                "hombros",
+                "core"
+            ],
+            "difficulty": "intermedio",
+            "equipment": "ninguno",
+            "intensity": 3,
+            "tags": [
+                "tren_superior"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/4945123/"
+            }
+        },
+        {
+            "id": "knee_pushups",
+            "name": "Flexiones de Rodillas",
+            "desc": "Apoya las rodillas en el suelo y realiza flexiones bajando el pecho hacia el suelo. Es una variante más accesible de la flexión tradicional.",
+            "movement_pattern": "push",
+            "muscle_focus": [
+                "pecho"
+            ],
+            "secondary_muscles": [
+                "tríceps"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "tren_superior"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/6286173/"
+            }
+        },
+        {
+            "id": "decline_pushups",
+            "name": "Flexiones Declinadas",
+            "desc": "Apoya los pies en una superficie elevada y las manos en el suelo. Realiza flexiones bajando el pecho al suelo, aumentando el trabajo de hombros y pecho.",
+            "movement_pattern": "push",
+            "muscle_focus": [
+                "pecho",
+                "hombros"
+            ],
+            "secondary_muscles": [
+                "tríceps"
+            ],
+            "difficulty": "avanzado",
+            "equipment": "superficie elevada",
+            "intensity": 4,
+            "tags": [
+                "tren_superior"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "chair_dips",
+            "name": "Fondos en Silla",
+            "desc": "Con las manos apoyadas en el borde de una silla y las piernas al frente, flexiona los codos bajando el cuerpo. Empuja para subir.",
+            "movement_pattern": "push",
+            "muscle_focus": [
+                "tríceps"
+            ],
+            "secondary_muscles": [
+                "hombros"
+            ],
+            "difficulty": "intermedio",
+            "equipment": "ninguno",
+            "intensity": 3,
+            "tags": [
+                "tren_superior"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "dumbbell_row",
+            "name": "Remo con Mancuerna",
+            "desc": "Inclinado hacia adelante con una mano apoyada, tira de la mancuerna hacia la cadera retrayendo el codo. Baja con control y repite.",
+            "movement_pattern": "pull",
+            "muscle_focus": [
+                "espalda"
+            ],
+            "secondary_muscles": [
+                "bíceps"
+            ],
+            "difficulty": "intermedio",
+            "equipment": "mancuerna",
+            "intensity": 4,
+            "tags": [
+                "tren_superior"
+            ],
+            "media": {
+                "type": "video",
+                "url": ""
+            }
+        },
+        {
+            "id": "superman",
+            "name": "Superman",
+            "desc": "Acostado boca abajo, eleva brazos y piernas del suelo al mismo tiempo contrayendo la espalda baja. Sostén un segundo y baja con control.",
+            "movement_pattern": "pull",
+            "muscle_focus": [
+                "zona_lumbar"
+            ],
+            "secondary_muscles": [
+                "glúteos"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "espalda"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/2376809/"
+            }
+        },
+        {
+            "id": "band_pull_apart",
+            "name": "Apertura con Banda",
+            "desc": "Sujeta la banda al frente con ambas manos y ábrela estirando los brazos hacia los lados. Junta las escápulas al final del movimiento.",
+            "movement_pattern": "pull",
+            "muscle_focus": [
+                "espalda_alta"
+            ],
+            "secondary_muscles": [
+                "hombros"
+            ],
+            "difficulty": "principiante",
+            "equipment": "banda",
+            "intensity": 2,
+            "tags": [
+                "tren_superior"
+            ],
+            "media": {
+                "type": "video",
+                "url": ""
+            }
+        },
+        {
+            "id": "plank",
+            "name": "Plancha",
+            "desc": "Apóyate sobre los antebrazos y las puntas de los pies, manteniendo el cuerpo en línea recta. Contrae el abdomen y sostén la posición.",
+            "movement_pattern": "core",
+            "muscle_focus": [
+                "core"
+            ],
+            "secondary_muscles": [
+                "hombros"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "core"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/6023273/"
+            }
+        },
+        {
+            "id": "side_plank",
+            "name": "Plancha Lateral",
+            "desc": "Apóyate sobre un antebrazo y el borde del pie, con el cuerpo en línea recta de lado. Contrae los oblicuos y mantén la cadera elevada.",
+            "movement_pattern": "core",
+            "muscle_focus": [
+                "oblicuos"
+            ],
+            "secondary_muscles": [
+                "core"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "core"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/6023266/"
+            }
+        },
+        {
+            "id": "dead_bug",
+            "name": "Bicho Muerto",
+            "desc": "Acostado boca arriba, extiende un brazo y la pierna opuesta sin tocar el suelo. Regresa al centro y alterna manteniendo la espalda baja pegada al piso.",
+            "movement_pattern": "core",
+            "muscle_focus": [
+                "core"
+            ],
+            "secondary_muscles": [],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "core"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/6892537/"
+            }
+        },
+        {
+            "id": "bird_dog",
+            "name": "Perro-Pájaro",
+            "desc": "En cuadrupedia, extiende un brazo al frente y la pierna opuesta hacia atrás formando una línea recta. Alterna los lados con control.",
+            "movement_pattern": "core",
+            "muscle_focus": [
+                "core"
+            ],
+            "secondary_muscles": [
+                "zona_lumbar"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "core"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "crunch",
+            "name": "Abdominal Crunch",
+            "desc": "Acostado boca arriba con las rodillas flexionadas, eleva los hombros del suelo contrayendo el abdomen. Baja con control sin tirar del cuello.",
+            "movement_pattern": "core",
+            "muscle_focus": [
+                "abdominales"
+            ],
+            "secondary_muscles": [],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "core"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/6525485/"
+            }
+        },
+        {
+            "id": "single_leg_raises",
+            "name": "Elevación de Piernas Alternas",
+            "desc": "Acostado boca arriba con las piernas juntas, eleva una por vez hasta formar un ángulo de 45 grados. Baja sin tocar el suelo y repite.",
+            "movement_pattern": "core",
+            "muscle_focus": [
+                "abdominales_inferiores"
+            ],
+            "secondary_muscles": [],
+            "difficulty": "intermedio",
+            "equipment": "ninguno",
+            "intensity": 3,
+            "tags": [
+                "core"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "russian_twist",
+            "name": "Giro Ruso",
+            "desc": "Sentado con las rodillas flexionadas y el torso inclinado hacia atrás, gira el tronco de lado a lado tocando el suelo con las manos.",
+            "movement_pattern": "core",
+            "muscle_focus": [
+                "oblicuos"
+            ],
+            "secondary_muscles": [
+                "core"
+            ],
+            "difficulty": "intermedio",
+            "equipment": "ninguno",
+            "intensity": 3,
+            "tags": [
+                "core"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "jumping_jacks",
+            "name": "Saltos de Estrella",
+            "desc": "Salta abriendo las piernas y elevando los brazos por encima de la cabeza. Regresa a la posición inicial y repite a ritmo constante.",
+            "movement_pattern": "cardio",
+            "muscle_focus": [
+                "cuerpo_completo"
+            ],
+            "secondary_muscles": [],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 3,
+            "tags": [
+                "cardio"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/5025960/"
+            }
+        },
+        {
+            "id": "burpees",
+            "name": "Burpees",
+            "desc": "Desde la posición de pie, agáchate apoyando las manos, lanza las piernas atrás, regresa y salta verticalmente. Repite sin pausas.",
+            "movement_pattern": "cuerpo_completo",
+            "muscle_focus": [
+                "cuerpo_completo"
+            ],
+            "secondary_muscles": [],
+            "difficulty": "avanzado",
+            "equipment": "ninguno",
+            "intensity": 5,
+            "tags": [
+                "cardio"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/8502843/"
+            }
+        },
+        {
+            "id": "mountain_climbers",
+            "name": "Escaladores",
+            "desc": "En posición de plancha alta, lleva las rodillas alternadamente hacia el pecho a ritmo rápido. Mantén la cadera estable y el abdomen firme.",
+            "movement_pattern": "cardio",
+            "muscle_focus": [
+                "core"
+            ],
+            "secondary_muscles": [
+                "piernas"
+            ],
+            "difficulty": "intermedio",
+            "equipment": "ninguno",
+            "intensity": 4,
+            "tags": [
+                "cardio"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/6525469/"
+            }
+        },
+        {
+            "id": "high_knees",
+            "name": "Rodillas al Pecho",
+            "desc": "Corre en el lugar elevando las rodillas lo más alto posible hacia el pecho. Acompaña el movimiento con los brazos a ritmo constante.",
+            "movement_pattern": "cardio",
+            "muscle_focus": [
+                "piernas"
+            ],
+            "secondary_muscles": [
+                "core"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 3,
+            "tags": [
+                "cardio"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/4258998/"
+            }
+        },
+        {
+            "id": "cobra_stretch",
+            "name": "Estiramiento de Cobra",
+            "desc": "Acostado boca abajo, apoya las palmas junto al pecho y empuja para elevar el torso abriendo el pecho. Mantén la cadera en el suelo.",
+            "movement_pattern": "movilidad",
+            "muscle_focus": [
+                "abdominales"
+            ],
+            "secondary_muscles": [
+                "zona_lumbar"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 1,
+            "tags": [
+                "movilidad",
+                "yoga"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/6326662/"
+            }
+        },
+        {
+            "id": "child_pose",
+            "name": "Postura del Niño",
+            "desc": "Siéntate sobre los talones y extiende los brazos hacia adelante apoyando las palmas en el suelo. Relaja el torso y respira profundamente.",
+            "movement_pattern": "movilidad",
+            "muscle_focus": [
+                "espalda"
+            ],
+            "secondary_muscles": [],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 1,
+            "tags": [
+                "movilidad",
+                "yoga"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/7500544/"
+            }
+        },
+        {
+            "id": "shoulder_taps",
+            "name": "Taps de Hombros",
+            "desc": "En posición de plancha alta, toca el hombro opuesto con una mano manteniendo la cadera estable. Alterna los lados sin balancear el cuerpo.",
+            "movement_pattern": "core",
+            "muscle_focus": [
+                "core"
+            ],
+            "secondary_muscles": [
+                "hombros"
+            ],
+            "difficulty": "intermedio",
+            "equipment": "ninguno",
+            "intensity": 3,
+            "tags": [
+                "core",
+                "estabilidad"
+            ],
+            "media": {
+                "type": "video",
+                "url": ""
+            }
+        },
+        {
+            "id": "hollow_hold",
+            "name": "Extensión Espinal",
+            "desc": "Acostado boca arriba, eleva hombros y piernas extendidas unos centímetros del suelo, formando una curva con el cuerpo. Presiona la zona lumbar contra el piso.",
+            "movement_pattern": "core",
+            "muscle_focus": [
+                "core"
+            ],
+            "secondary_muscles": [],
+            "difficulty": "intermedio",
+            "equipment": "ninguno",
+            "intensity": 4,
+            "tags": [
+                "core",
+                "isométrico"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "skater_jumps",
+            "name": "Saltos de Patinador",
+            "desc": "Salte lateralmente de un pie al otro, cruzando la pierna libre por detrás y flexionando la rodilla de apoyo. Acompaña con el movimiento de los brazos.",
+            "movement_pattern": "cardio",
+            "muscle_focus": [
+                "piernas",
+                "glúteo_medio"
+            ],
+            "secondary_muscles": [
+                "core"
+            ],
+            "difficulty": "intermedio",
+            "equipment": "ninguno",
+            "intensity": 4,
+            "tags": [
+                "cardio",
+                "lateral"
+            ],
+            "media": {
+                "type": "video",
+                "url": ""
+            }
+        },
+        {
+            "id": "calf_raises",
+            "name": "Elevaciones de Talón",
+            "desc": "Sobre una superficie elevada, apoyado en ambos pies, elévate sobre la punta de los pies contrayendo la pantorrilla. Baja con control.",
+            "movement_pattern": "push",
+            "muscle_focus": [
+                "pantorrillas"
+            ],
+            "secondary_muscles": [],
+            "difficulty": "intermedio",
+            "equipment": "escalón",
+            "intensity": 3,
+            "tags": [
+                "tren_inferior",
+                "equilibrio",
+                "unilateral"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/11121740/"
+            }
+        },
+        {
+            "id": "glute_kickbacks",
+            "name": "Patada de Glúteo",
+            "desc": "En posición de cuadrupedia, extiende una pierna hacia atrás elevándola con la rodilla flexionada, contrayendo el glúteo. Baja con control y alterna la pierna.",
+            "movement_pattern": "hinge",
+            "muscle_focus": [
+                "glúteos"
+            ],
+            "secondary_muscles": [
+                "isquiotibiales",
+                "core"
+            ],
+            "difficulty": "intermedio",
+            "equipment": "ninguno",
+            "intensity": 4,
+            "tags": [
+                "tren_inferior",
+                "unilateral"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "bicycle_crunch",
+            "name": "Crunch de Bicicleta",
+            "desc": "Acostado boca arriba, lleva el codo hacia la rodilla opuesta mientras extiendes la otra pierna. Alterna los lados con un movimiento fluido de pedaleo.",
+            "movement_pattern": "core",
+            "muscle_focus": [
+                "abdominales",
+                "oblicuos"
+            ],
+            "secondary_muscles": [
+                "core"
+            ],
+            "difficulty": "intermedio",
+            "equipment": "ninguno",
+            "intensity": 3,
+            "tags": [
+                "core",
+                "rotación"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/6525490/"
+            }
+        },
+        {
+            "id": "cat_cow",
+            "name": "Gato-Vaca",
+            "desc": "En cuadrupedia, arquea la espalda hacia arriba mirando al ombligo e iníciala hacia abajo mirando al frente. Sincroniza el movimiento con la respiración.",
+            "movement_pattern": "movilidad",
+            "muscle_focus": [
+                "columna",
+                "espalda"
+            ],
+            "secondary_muscles": [
+                "core"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 1,
+            "tags": [
+                "movilidad",
+                "yoga",
+                "relajación"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "hip_rotations",
+            "name": "Rotaciones de Cadera",
+            "desc": "Gira la cadea en círculos manteniendo los brazos en la cintura. Libera la tensión de la cadera.",
+            "movement_pattern": "movilidad",
+            "muscle_focus": [
+                "cadera"
+            ],
+            "secondary_muscles": [],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 1,
+            "tags": [
+                "movilidad",
+                "estiramiento"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "bicep_curls",
+            "name": "Curl de Bíceps",
+            "desc": "Flexiona los codos llevando las manos hacia los hombros. Mantén los codos pegados al cuerpo y sube y baja con control.",
+            "movement_pattern": "movilidad",
+            "muscle_focus": [
+                "bíceps"
+            ],
+            "secondary_muscles": [],
+            "difficulty": "avanzado",
+            "equipment": "mancuernas",
+            "intensity": 1,
+            "tags": [
+                "brazos",
+                "fuerza"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "strech_legs",
+            "name": "Estiramiento de Piernas",
+            "desc": "Sentado con ambas piernas extendidas, estira tus brazos hasta tocar las puntas de tus pies",
+            "movement_pattern": "movilidad",
+            "muscle_focus": [
+                "isquiotibiales"
+            ],
+            "secondary_muscles": [],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 1,
+            "tags": [
+                "piernas",
+                "estiramiento"
+            ],
+            "media": {
+                "type": "imagen",
+                "url": "assets/images/fitness/img-rutinas-mat-pesas.webp"
+            }
+        },
+        {
+            "id": "yoga_flow",
+            "name": "Flow de Yoga",
+            "desc": "Realiza una secuencia fluida de posturas de yoga, sincronizando cada movimiento con una respiración profunda para mejorar la flexibilidad y relajación.",
+            "movement_pattern": "movilidad",
+            "muscle_focus": [
+                "cuerpo_completo"
+            ],
+            "secondary_muscles": [],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 1,
+            "tags": [
+                "movilidad",
+                "yoga"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/4106310/"
+            }
+        }
+    ]
+}
