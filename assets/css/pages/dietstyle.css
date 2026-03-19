@@ -116,7 +116,6 @@ button {
     border: none;
     border-bottom: 1px solid var(--border);
     opacity: 0.5;
-    /* Lighter divider */
 }
 
 .schedule-stage__title {
