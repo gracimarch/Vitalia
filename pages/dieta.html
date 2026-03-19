@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#B571DE">
+    <meta name="theme-color" content="#80CACD">
     <title>Vitalia | Plan Alimenticio</title>
     <link rel="canonical">
 
@@ -21,92 +21,142 @@
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Estilos -->
+    <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/core/variables.css">
-    <link rel="stylesheet" href="/assets/css/core/layout.css">
-    <link rel="stylesheet" href="/assets/css/core/utilities.css">
-    <link rel="stylesheet" href="/assets/css/pages/shared-content-layout.css">
-    <link rel="stylesheet" href="/assets/css/core/common.css">
-    
     <link rel="stylesheet" href="/assets/css/pages/dietstyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
     <script src="/assets/js/core/router.js"></script>
 </head>
 
 <body>
 
+    <!-- Loader -->
     <div id="loader">
         <div class="spinner"></div>
     </div>
 
-    <div id="header-placeholder"></div>
+    <!-- ============================================ -->
+    <!-- HERO SECTION                                 -->
+    <!-- ============================================ -->
+    <section class="diet-hero" id="diet-hero">
+        <img class="diet-hero__img" id="diet-hero-img" src="" alt="">
+        <div class="diet-hero__overlay"></div>
 
-    <main class="diet-page">
-        <!-- Hero Section -->
-        <header class="diet-hero">
-            <div class="diet-hero__bg">
-                <figure class="image">
-                    <!-- Loaded dynamically -->
-                </figure>
-            </div>
-            <div class="diet-hero__overlay"></div>
-            <div class="diet-hero__content page-container">
-                <div class="title" data-aos="fade-up">
-                    <!-- Loaded dynamically -->
-                </div>
-            </div>
-        </header>
+        <!-- Back button -->
+        <a class="diet-back-btn" id="btn-back" href="/mi-espacio" aria-label="Volver">
+            <i class="bi bi-arrow-left"></i>
+        </a>
 
-        <section class="diet-intro-section page-container">
-            <div class="article glass-card" id="introduction" data-aos="fade-up" data-aos-delay="200">
+        <div class="diet-hero__content">
+            <p class="diet-hero__type" id="diet-hero-type"></p>
+            <h1 class="diet-hero__title" id="diet-hero-title"></h1>
+            <div class="diet-hero__badges" id="diet-hero-badges"></div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- TAB NAVIGATION                               -->
+    <!-- ============================================ -->
+    <nav class="diet-tabs-wrapper" role="tablist" aria-label="Secciones del plan">
+        <div class="diet-tabs">
+            <button class="diet-tab active" data-panel="panel-plan" role="tab" aria-selected="true" id="tab-plan">
+                <i class="bi bi-calendar3"></i> Plan
+            </button>
+            <button class="diet-tab" data-panel="panel-recipes" role="tab" aria-selected="false" id="tab-recipes">
+                <i class="bi bi-journal-richtext"></i> Recetas
+            </button>
+            <button class="diet-tab" data-panel="panel-variations" role="tab" aria-selected="false" id="tab-variations">
+                <i class="bi bi-shuffle"></i> Variaciones
+            </button>
+            <button class="diet-tab" data-panel="panel-shopping" role="tab" aria-selected="false" id="tab-shopping">
+                <i class="bi bi-bag3"></i> Lista de compras
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- MAIN CONTENT                                 -->
+    <!-- ============================================ -->
+    <main class="diet-content" id="diet-content">
+
+        <!-- PANEL 1: Plan -->
+        <section id="panel-plan" class="diet-panel active" role="tabpanel" aria-labelledby="tab-plan">
+
+            <!-- Introduction -->
+            <div class="diet-intro-card" id="diet-introduction">
+                <!-- Loaded dynamically -->
+            </div>
+
+            <p class="diet-section-title">Programa alimenticio</p>
+
+            <!-- Day pills navigation -->
+            <div class="day-pills" id="day-pills" role="tablist" aria-label="Días">
+                <!-- Loaded dynamically -->
+            </div>
+
+            <!-- Day panels (meal cards) -->
+            <div id="day-panels">
+                <!-- Loaded dynamically -->
+            </div>
+
+        </section>
+
+        <!-- PANEL 2: Recipes -->
+        <section id="panel-recipes" class="diet-panel" role="tabpanel" aria-labelledby="tab-recipes">
+            <p class="diet-section-title" style="padding-top:24px">Todas las recetas</p>
+            <div class="recipes-grid" id="recipes-grid">
                 <!-- Loaded dynamically -->
             </div>
         </section>
 
-        <section class="schedule-section">
-            <div class="schedule-container-wrapper">
-                <div class="schedule-container page-container">
-                    <!-- Loaded dynamically -->
-                </div>
+        <!-- PANEL 3: Variations -->
+        <section id="panel-variations" class="diet-panel" role="tabpanel" aria-labelledby="tab-variations">
+            <p class="diet-section-title" style="padding-top:24px">Adaptaciones del plan</p>
+            <div class="variations-list" id="variations-list">
+                <!-- Loaded dynamically -->
             </div>
         </section>
+
+        <!-- PANEL 4: Shopping list -->
+        <section id="panel-shopping" class="diet-panel" role="tabpanel" aria-labelledby="tab-shopping">
+            <p class="diet-section-title" style="padding-top:24px">Lista de compras</p>
+            <div class="shopping-list" id="shopping-list">
+                <!-- Loaded dynamically -->
+            </div>
+        </section>
+
     </main>
 
-    <div class="pagina-3">
-        <p class="darkscreen"></p>
-        <div class="recipes">
-            <!-- Loaded dynamically -->
+    <!-- ============================================ -->
+    <!-- RECIPE MODAL (DRAWER)                        -->
+    <!-- ============================================ -->
+    <div class="diet-modal-backdrop" id="recipe-modal-backdrop" role="dialog" aria-modal="true" aria-label="Receta">
+        <div class="diet-modal" id="recipe-modal">
+            <div class="diet-modal__handle"></div>
+            <img class="diet-modal__img" id="modal-img" src="" alt="">
+            <div class="diet-modal__body">
+                <div class="diet-modal__header">
+                    <h2 class="diet-modal__title" id="modal-title"></h2>
+                    <button class="diet-modal__close" id="modal-close-btn" aria-label="Cerrar receta">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+                <div class="diet-modal__time">
+                    <i class="bi bi-clock"></i>
+                    <span id="modal-time"></span>
+                </div>
+                <p class="diet-modal__ingredients-title">Ingredientes</p>
+                <ul class="diet-modal__ingredients" id="modal-ingredients"></ul>
+                <p class="diet-modal__instructions-title">Preparación</p>
+                <div class="diet-modal__instructions" id="modal-instructions"></div>
+            </div>
         </div>
     </div>
 
-    <div class="pagina-2 page-container">
-        <div class="diet-section-column" data-aos="fade-right">
-            <div class="article-title" id="variaciones">
-                <h2>Variaciones</h2>
-            </div>
-            <div class="article">
-                <ul><!-- Loaded dynamically --></ul>
-            </div>
-        </div>
-
-        <div class="diet-section-column" data-aos="fade-left">
-            <div class="article-title" id="lista-de-compras">
-                <h2>Lista de compras</h2>
-            </div>
-            <div class="article">
-                <!-- Loaded dynamically -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Pie de página-->
-    <div id="footer-placeholder"></div>
-    <script src="/assets/js/core/load-components.js"></script>
-
+    <!-- Scripts -->
+    <script src="/assets/js/core/router.js"></script>
     <script src="/assets/js/loaders/dieta-loader.js"></script>
-    <script src="/assets/js/pages/article.js"></script>
 
 </body>
 

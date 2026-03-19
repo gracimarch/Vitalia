@@ -1,29 +1,55 @@
 /**
- * Dieta Loader - Dynamic Content System
- * Loads diet content from JSON based on URL slug
+ * Dieta Loader — Redesigned Dynamic Content System
+ * Loads diet content from JSON and populates the new tabbed UI
  */
 
 (function () {
     'use strict';
 
+    const ICON_MAP = {
+        'desayuno':  'bi bi-sun',
+        'almuerzo':  'bi bi-cloud-sun',
+        'cena':      'bi bi-moon-stars',
+        'snack':     'bi bi-lightning-charge',
+        'merienda':  'bi bi-cup-hot',
+        'default':   'bi bi-egg-fried'
+    };
+
     function getSlugFromPath() {
-        if (window.VitaliaRouter) {
-            return window.VitaliaRouter.getSlug();
-        }
+        if (window.VitaliaRouter) return window.VitaliaRouter.getSlug();
         return null;
+    }
+
+    function getPath(path) {
+        if (!path) return '';
+        if (path.startsWith('http')) return path;
+        return path.startsWith('/') ? path : '/' + path;
+    }
+
+    function getMealIcon(label) {
+        const key = label.toLowerCase();
+        for (const [k, v] of Object.entries(ICON_MAP)) {
+            if (key.includes(k)) return v;
+        }
+        return ICON_MAP.default;
+    }
+
+    function getVariationIcon(type) {
+        const t = type.toLowerCase();
+        if (t.includes('gluten'))   return 'bi bi-shield-check';
+        if (t.includes('vegetar'))  return 'bi bi-leaf';
+        if (t.includes('vegano'))   return 'bi bi-tree';
+        if (t.includes('lácte') || t.includes('lacte')) return 'bi bi-droplet-half';
+        return 'bi bi-stars';
     }
 
     async function fetchDietas() {
         try {
-            // Absolute path
-            const url = '/assets/data/dietas.json';
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error('No se pudo cargar el archivo de datos');
-            }
+            const response = await fetch('/assets/data/dietas.json');
+            if (!response.ok) throw new Error('No se pudo cargar los datos');
             return await response.json();
-        } catch (error) {
-            console.error('Error cargando dietas:', error);
+        } catch (err) {
+            console.error('Error cargando dietas:', err);
             return null;
         }
     }
@@ -32,256 +58,316 @@
         return dietas.find(d => d.slug === slug);
     }
 
-    function renderDiet(dieta) {
-        const getPath = (path) => {
-            if (path.startsWith('http')) return path;
-            return path.startsWith('/') ? path : '/' + path;
-        };
-
-        // Title Section
+    /* ================================================
+       RENDER HERO
+       ================================================ */
+    function renderHero(dieta) {
         document.title = dieta.title + ' | Vitalia';
 
-        // Dynamic SEO meta tags
+        const img = document.getElementById('diet-hero-img');
+        if (img) {
+            img.src = getPath(dieta.image);
+            img.alt = dieta.title;
+        }
+
+        const typeEl = document.getElementById('diet-hero-type');
+        if (typeEl) typeEl.textContent = dieta.type || '';
+
+        const titleEl = document.getElementById('diet-hero-title');
+        if (titleEl) titleEl.textContent = dieta.title;
+
+        const badgesEl = document.getElementById('diet-hero-badges');
+        if (badgesEl && dieta.duration) {
+            badgesEl.innerHTML = `
+                <span class="diet-badge"><i class="bi bi-clock"></i> ${dieta.duration}</span>
+                ${dieta.schedule ? `<span class="diet-badge"><i class="bi bi-list-check"></i> ${dieta.schedule.length} comidas</span>` : ''}
+            `;
+        }
+
+        // SEO
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) metaDesc.setAttribute('content', dieta.introduction ? dieta.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : dieta.title);
 
-        const canonicalUrl = 'https://vitalia-selfcare.vercel.app/dietas/' + dieta.slug;
         const canonical = document.querySelector('link[rel="canonical"]');
-        if (canonical) canonical.setAttribute('href', canonicalUrl);
+        if (canonical) canonical.setAttribute('href', 'https://vitalia-selfcare.vercel.app/dietas/' + dieta.slug);
+    }
 
-        const ogImage = dieta.image ? (dieta.image.startsWith('http') ? dieta.image : 'https://vitalia-selfcare.vercel.app' + (dieta.image.startsWith('/') ? '' : '/') + dieta.image) : 'https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg';
-        const description = dieta.introduction ? dieta.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : dieta.title;
+    /* ================================================
+       RENDER INTRO
+       ================================================ */
+    function renderIntro(dieta) {
+        const el = document.getElementById('diet-introduction');
+        if (el && dieta.introduction) el.innerHTML = dieta.introduction;
+    }
 
-        const seoTags = {
-            'meta[property="og:title"]': dieta.title + ' | Vitalia',
-            'meta[property="og:description"]': description,
-            'meta[property="og:url"]': canonicalUrl,
-            'meta[property="og:image"]': ogImage,
-            'meta[property="og:type"]': 'article',
-            'meta[name="twitter:card"]': 'summary_large_image',
-            'meta[name="twitter:title"]': dieta.title + ' | Vitalia',
-            'meta[name="twitter:description"]': description,
-            'meta[name="twitter:image"]': ogImage
-        };
+    /* ================================================
+       RENDER SCHEDULE (Days + Meals)
+       ================================================ */
+    function renderSchedule(dieta) {
+        const pillsContainer  = document.getElementById('day-pills');
+        const panelsContainer = document.getElementById('day-panels');
+        if (!pillsContainer || !panelsContainer || !dieta.schedule) return;
 
-        Object.entries(seoTags).forEach(([selector, content]) => {
-            let el = document.querySelector(selector);
-            if (!el) {
-                el = document.createElement('meta');
-                const match = selector.match(/\[(\w+)="([^"]+)"\]/);
-                if (match) el.setAttribute(match[1], match[2]);
-                document.head.appendChild(el);
-            }
-            el.setAttribute('content', content);
+        pillsContainer.innerHTML  = '';
+        panelsContainer.innerHTML = '';
+
+        dieta.schedule.forEach((stage, idx) => {
+            // --- Pill ---
+            const pill = document.createElement('button');
+            pill.className  = 'day-pill' + (idx === 0 ? ' active' : '');
+            pill.textContent = stage.name;
+            pill.setAttribute('data-day', idx);
+            pill.setAttribute('role', 'tab');
+            pill.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
+            pill.setAttribute('aria-controls', `day-panel-${idx}`);
+            pillsContainer.appendChild(pill);
+
+            // --- Panel ---
+            const panel = document.createElement('div');
+            panel.className = 'day-panel' + (idx === 0 ? ' active' : '');
+            panel.id = `day-panel-${idx}`;
+            panel.setAttribute('role', 'tabpanel');
+
+            stage.options.forEach(slot => {
+                // Meal label
+                const labelEl = document.createElement('p');
+                labelEl.className = 'meal-label';
+                labelEl.textContent = slot.label;
+                panel.appendChild(labelEl);
+
+                // Cards
+                if (slot.cards) {
+                    slot.cards.forEach(card => {
+                        const cardEl = document.createElement('div');
+                        cardEl.className = 'meal-card' + (card.recipeId ? ' has-recipe' : '');
+                        if (card.recipeId) {
+                            cardEl.dataset.recipeId = card.recipeId;
+                            cardEl.setAttribute('role', 'button');
+                            cardEl.setAttribute('tabindex', '0');
+                            cardEl.title = 'Ver receta';
+                        }
+
+                        const iconHtml = card.icon
+                            ? `<img src="${getPath(card.icon)}" alt="">`
+                            : `<i class="${getMealIcon(slot.label)}"></i>`;
+
+                        cardEl.innerHTML = `
+                            <div class="meal-card__icon">${iconHtml}</div>
+                            <div class="meal-card__title">${card.title}</div>
+                            <div class="meal-card__footer">
+                                <span class="meal-card__time">
+                                    <i class="bi bi-clock"></i> ${card.time}
+                                </span>
+                                ${card.recipeId ? `
+                                    <span class="meal-card__recipe-btn">
+                                        Ver receta <i class="bi bi-arrow-right-short"></i>
+                                    </span>
+                                ` : ''}
+                            </div>
+                        `;
+
+                        if (card.recipeId) {
+                            cardEl.addEventListener('click', () => openRecipeModal(card.recipeId, dieta));
+                            cardEl.addEventListener('keydown', e => {
+                                if (e.key === 'Enter' || e.key === ' ') openRecipeModal(card.recipeId, dieta);
+                            });
+                        }
+
+                        panel.appendChild(cardEl);
+                    });
+                }
+            });
+
+            panelsContainer.appendChild(panel);
         });
-        const titleContainer = document.querySelector('.title');
-        if (titleContainer) {
-            titleContainer.innerHTML = `
-                <h3>${dieta.type}</h3>
-                <h1>${dieta.title}</h1>
-                <div class="reading-time">
-                    <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                    <p>Duración: ${dieta.duration}</p>
+
+        // Day-pill switching logic
+        pillsContainer.addEventListener('click', e => {
+            const clickedPill = e.target.closest('.day-pill');
+            if (!clickedPill) return;
+            const dayIdx = clickedPill.dataset.day;
+
+            document.querySelectorAll('.day-pill').forEach(p => {
+                p.classList.remove('active');
+                p.setAttribute('aria-selected', 'false');
+            });
+            document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+
+            clickedPill.classList.add('active');
+            clickedPill.setAttribute('aria-selected', 'true');
+            const targetPanel = document.getElementById(`day-panel-${dayIdx}`);
+            if (targetPanel) targetPanel.classList.add('active');
+        });
+    }
+
+    /* ================================================
+       RENDER RECIPES GRID
+       ================================================ */
+    function renderRecipesGrid(dieta) {
+        const grid = document.getElementById('recipes-grid');
+        if (!grid || !dieta.recipes) return;
+
+        grid.innerHTML = '';
+        dieta.recipes.forEach(recipe => {
+            const card = document.createElement('article');
+            card.className = 'recipe-card';
+
+            card.innerHTML = `
+                <div class="recipe-card__img-wrap">
+                    <img class="recipe-card__img" src="${getPath(recipe.image)}" alt="${recipe.title}" loading="lazy">
+                    <span class="recipe-card__overlay-tag">Receta</span>
+                </div>
+                <div class="recipe-card__body">
+                    <h3 class="recipe-card__title">${recipe.title}</h3>
+                    <div class="recipe-card__meta">
+                        <i class="bi bi-clock"></i> ${recipe.time}
+                    </div>
+                    <button class="recipe-card__open-btn" data-recipe-id="${recipe.id}" aria-label="Ver receta ${recipe.title}">
+                        <i class="bi bi-book-open"></i> Ver receta
+                    </button>
                 </div>
             `;
-        }
 
-        // Introduction
-        const introContainer = document.getElementById('introduction');
-        if (introContainer) {
-            introContainer.innerHTML = dieta.introduction;
-        }
+            card.querySelector('.recipe-card__open-btn').addEventListener('click', () => {
+                openRecipeModal(recipe.id, dieta);
+            });
 
-        // Image
-        const imageContainer = document.querySelector('.image');
-        if (imageContainer) {
-            imageContainer.innerHTML = `
-                <img src="${getPath(dieta.image)}" alt="Imagen representativa para ${dieta.title}">
+            grid.appendChild(card);
+        });
+    }
+
+    /* ================================================
+       RENDER VARIATIONS
+       ================================================ */
+    function renderVariations(dieta) {
+        const list = document.getElementById('variations-list');
+        if (!list || !dieta.variations) return;
+
+        list.innerHTML = '';
+        dieta.variations.forEach(v => {
+            const card = document.createElement('div');
+            card.className = 'variation-card';
+            card.innerHTML = `
+                <div class="variation-card__icon">
+                    <i class="${getVariationIcon(v.type)}"></i>
+                </div>
+                <div class="variation-card__type">${v.type}</div>
+                <p class="variation-card__desc">${v.description}</p>
             `;
+            list.appendChild(card);
+        });
+    }
+
+    /* ================================================
+       RENDER SHOPPING LIST
+       ================================================ */
+    function renderShoppingList(dieta) {
+        const list = document.getElementById('shopping-list');
+        if (!list || !dieta.shoppingList) return;
+
+        list.innerHTML = '';
+        Object.entries(dieta.shoppingList).forEach(([category, items]) => {
+            const item = document.createElement('label');
+            item.className = 'shopping-category';
+            item.innerHTML = `
+                <input type="checkbox" class="shopping-category__check" aria-label="Marcar ${category} como comprado">
+                <span class="shopping-category__label">
+                    <strong>${category}</strong>
+                    ${items}
+                </span>
+            `;
+            list.appendChild(item);
+        });
+    }
+
+    /* ================================================
+       RECIPE MODAL
+       ================================================ */
+    function openRecipeModal(recipeId, dieta) {
+        if (!dieta.recipes) return;
+        const recipe = dieta.recipes.find(r => r.id === recipeId);
+        if (!recipe) return;
+
+        const imgEl   = document.getElementById('modal-img');
+        const titleEl = document.getElementById('modal-title');
+        const timeEl  = document.getElementById('modal-time');
+        const ingEl   = document.getElementById('modal-ingredients');
+        const instrEl = document.getElementById('modal-instructions');
+
+        if (imgEl) {
+            imgEl.src = getPath(recipe.image);
+            imgEl.alt = recipe.title;
+        }
+        if (titleEl) titleEl.textContent = recipe.title;
+        if (timeEl)  timeEl.textContent  = recipe.time;
+        if (ingEl)   ingEl.innerHTML     = recipe.ingredients.map(i => `<li>${i}</li>`).join('');
+        if (instrEl) instrEl.innerHTML   = recipe.instructions;
+
+        const backdrop = document.getElementById('recipe-modal-backdrop');
+        if (backdrop) {
+            backdrop.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeRecipeModal() {
+        const backdrop = document.getElementById('recipe-modal-backdrop');
+        if (backdrop) {
+            backdrop.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    }
+
+    function attachModalListeners() {
+        const closeBtn  = document.getElementById('modal-close-btn');
+        const backdrop  = document.getElementById('recipe-modal-backdrop');
+        const modal     = document.getElementById('recipe-modal');
+
+        if (closeBtn) closeBtn.addEventListener('click', closeRecipeModal);
+
+        // Close on backdrop click (outside modal)
+        if (backdrop) {
+            backdrop.addEventListener('click', e => {
+                if (!modal.contains(e.target)) closeRecipeModal();
+            });
         }
 
-        // Schedule (Food Plan)
-        const scheduleContainer = document.querySelector('.schedule-container');
-        if (scheduleContainer && dieta.schedule) {
-            scheduleContainer.innerHTML = ''; // Clear existing
-            dieta.schedule.forEach(stage => {
-                const wrapper = document.createElement('div');
-                wrapper.className = 'schedule-stage__wrapper';
+        // Close on Escape
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeRecipeModal();
+        });
+    }
 
-                let optionsHtml = '';
-                stage.options.forEach(slot => {
-                    let cardsHtml = '';
-                    if (slot.cards) {
-                        slot.cards.forEach(card => {
-                            const buttonHtml = card.recipeId
-                                ? `<button class="open-recipe" data-target="${card.recipeId}">`
-                                : `<button>`;
+    /* ================================================
+       TAB NAVIGATION
+       ================================================ */
+    function attachTabListeners() {
+        const tabs = document.querySelectorAll('.diet-tab');
+        const panels = document.querySelectorAll('.diet-panel');
 
-                            cardsHtml += `
-                                ${buttonHtml}
-                                    <div class="guide-slot_card">
-                                        <h4 class="mealtitle">${card.title}</h4>
-                                        <figure class="author-wrapper">
-                                            <picture>
-                                                <img src="${getPath(card.icon)}" alt="" />
-                                            </picture>
-                                            <figcaption>${card.time}</figcaption>
-                                        </figure>
-                                    </div>
-                                </button>
-                            `;
-                        });
-                    }
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetPanelId = tab.dataset.panel;
 
-                    optionsHtml += `
-                        <div class="guide-slot">
-                            <p class="mealtime">${slot.label}</p>
-                            ${cardsHtml}
-                        </div>
-                    `;
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
                 });
+                panels.forEach(p => p.classList.remove('active'));
 
-                wrapper.innerHTML = `
-                    <hr class="divider" />
-                    <section class="schedule-stage">
-                        <div class="schedule-stage__title">
-                            <h3 class="weekday">${stage.name}</h3>
-                        </div>
-                        <div class="schedule-stage_guide-container">
-                            ${optionsHtml}
-                        </div>
-                    </section>
-                `;
-                scheduleContainer.appendChild(wrapper);
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+
+                const targetPanel = document.getElementById(targetPanelId);
+                if (targetPanel) targetPanel.classList.add('active');
             });
-            // Add final divider
-            const finalDivider = document.createElement('div');
-            finalDivider.className = 'schedule-stage__wrapper';
-            finalDivider.innerHTML = '<hr class="divider" />';
-            scheduleContainer.appendChild(finalDivider);
-        }
-
-        // Recipes (Modals)
-        const recipesContainer = document.querySelector('.recipes');
-        if (recipesContainer && dieta.recipes) {
-            recipesContainer.innerHTML = '';
-            dieta.recipes.forEach(recipe => {
-                const ingredientsList = recipe.ingredients.map(ing => `<li><strong>${ing}</strong></li>`).join('');
-
-                // Ensure image path is correct (absolute)
-                const recipeImage = getPath(recipe.image);
-                // Also ensure the hardcoded icon is absolute
-                const iconPath = "/assets/images/ui/icono-comida.webp";
-
-                const recipeHtml = `
-                    <div class="recipecontainer" id="${recipe.id}">
-                        <a class="close" href="#">X</a>
-                        <div class="recipemargin">
-                            <h6 class="rtitle">${recipe.title}</h6>
-                            <figure class="timealign">
-                                <picture>
-                                    <img src="${iconPath}" alt="" />
-                                </picture>
-                                <figcaption>${recipe.time}</figcaption>
-                            </figure>
-                            <img class="rimg" src="${recipeImage}" alt="Imagen de la receta">
-                            <ul>${ingredientsList}</ul>
-                            ${recipe.instructions}
-                        </div>
-                    </div>
-                `;
-                recipesContainer.insertAdjacentHTML('beforeend', recipeHtml);
-            });
-        }
-
-        // Variations
-        const variationsContainer = document.querySelector('.pagina-2 .article ul');
-        if (variationsContainer && dieta.variations) {
-            variationsContainer.innerHTML = dieta.variations.map(v =>
-                `<li><strong class="underline">${v.type}:</strong> ${v.description}</li>`
-            ).join('');
-        }
-
-        // Shopping List
-        const shoppingListContainer = document.querySelector('.pagina-2 .article:last-of-type');
-        if (shoppingListContainer && dieta.shoppingList) {
-            shoppingListContainer.innerHTML = '';
-            Object.entries(dieta.shoppingList).forEach(([category, items]) => {
-                const div = document.createElement('div');
-                div.innerHTML = `
-                    <input type="checkbox">
-                    <label><strong>${category}:</strong> ${items}</label>
-                `;
-                shoppingListContainer.appendChild(div);
-            });
-        }
-
-        // Re-attach event listeners for recipes
-        attachRecipeListeners();
-    }
-
-    function attachRecipeListeners() {
-        // Open buttons
-        document.querySelectorAll('.open-recipe').forEach(btn => {
-            btn.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('data-target');
-                const darkscreen = document.querySelector('.darkscreen');
-                if (darkscreen) {
-                    darkscreen.style.display = 'flex';
-                    darkscreen.style.position = 'fixed';
-                }
-
-                const modal = document.getElementById(targetId);
-                if (modal) {
-                    modal.style.display = 'flex';
-                    modal.style.position = 'fixed';
-                }
-            });
-        });
-
-        // Close buttons
-        const closeRecipe = (e) => {
-            e.preventDefault();
-            const recetaContenedor = e.target.closest('.recipecontainer');
-            if (recetaContenedor) {
-                recetaContenedor.style.display = 'none';
-            }
-            const darkscreen = document.querySelector('.darkscreen');
-            if (darkscreen) {
-                darkscreen.style.display = 'none';
-            }
-        };
-
-        document.querySelectorAll('.recipecontainer .close').forEach(btn => {
-            btn.addEventListener('click', closeRecipe);
         });
     }
 
-    // Main initialization
-    async function init() {
-        const slug = getSlugFromPath();
-        if (!slug) {
-            window.location.replace('/404.html');
-            return;
-        }
-
-        const data = await fetchDietas();
-
-        if (!data || !data.dietas) {
-            window.location.replace('/404.html');
-            return;
-        }
-
-        const dieta = findDietaBySlug(data.dietas, slug);
-        if (!dieta) {
-            window.location.replace('/404.html');
-            return;
-        }
-
-        renderDiet(dieta);
-
-        // Inject Schema JSON-LD (Recipe type for diets)
+    /* ================================================
+       SEO SCHEMA
+       ================================================ */
+    function injectSchema(dieta) {
         const schema = {
             "@context": "https://schema.org",
             "@type": "Article",
@@ -296,18 +382,51 @@
                     "@type": "ImageObject",
                     "url": "https://vitalia-selfcare.vercel.app/assets/images/ui/vitalia-logo.svg"
                 }
-            },
-            "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": 'https://vitalia-selfcare.vercel.app/dietas/' + dieta.slug
             }
         };
         const scriptTag = document.createElement('script');
         scriptTag.type = 'application/ld+json';
         scriptTag.textContent = JSON.stringify(schema);
         document.head.appendChild(scriptTag);
+    }
 
-        // Dispatch event for animations
+    /* ================================================
+       MAIN INIT
+       ================================================ */
+    async function init() {
+        const slug = getSlugFromPath();
+        if (!slug) {
+            window.location.replace('/404.html');
+            return;
+        }
+
+        const data = await fetchDietas();
+        if (!data || !data.dietas) {
+            window.location.replace('/404.html');
+            return;
+        }
+
+        const dieta = findDietaBySlug(data.dietas, slug);
+        if (!dieta) {
+            window.location.replace('/404.html');
+            return;
+        }
+
+        // Render all sections
+        renderHero(dieta);
+        renderIntro(dieta);
+        renderSchedule(dieta);
+        renderRecipesGrid(dieta);
+        renderVariations(dieta);
+        renderShoppingList(dieta);
+
+        // Attach interactions
+        attachModalListeners();
+        attachTabListeners();
+        injectSchema(dieta);
+
+        // Mark as loaded (hides loader)
+        document.body.classList.add('loaded');
         document.dispatchEvent(new Event('article-content-loaded'));
     }
 
