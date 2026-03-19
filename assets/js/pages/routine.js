@@ -14,8 +14,8 @@ let totalDurationMs = 0;
 let endTime = 0;
 let animationFrameId = null;
 let onSegmentComplete = null;
-let lastAnnouncedSecond = -1;
 let routineStartTime = 0;
+let descTimeout = null;
 
 // ─── DOM References (lazy, set after load) ───
 const $ = (sel) => document.querySelector(sel);
@@ -148,7 +148,7 @@ function renderOverview() {
   // Description
   const descEl = $('#overview-description');
   if (descEl && routineData.introduction) {
-      descEl.innerHTML = routineData.introduction;
+    descEl.innerHTML = routineData.introduction;
   }
 
   // Badges
@@ -240,7 +240,7 @@ function startExercise(index) {
     video.src = ex.videoSrc;
     video.loop = true;
     video.muted = true;
-    video.play().catch(() => {});
+    video.play().catch(() => { });
   }
 
   // Info
@@ -252,8 +252,12 @@ function startExercise(index) {
   // Show description briefly
   const center = $('.exercise-center');
   if (center) {
+    if (descTimeout) clearTimeout(descTimeout);
     center.classList.add('show-desc');
-    setTimeout(() => center.classList.remove('show-desc'), 8000); // Expanded from 4000 to 8000
+    descTimeout = setTimeout(() => {
+      center.classList.remove('show-desc');
+      descTimeout = null;
+    }, 8000);
   }
 
   // Next up
@@ -424,7 +428,7 @@ function resumeTimer(context) {
   endTime = performance.now() + remainingTimeMs;
 
   const video = $('#exercise-video');
-  if (video && context === 'exercise') video.play().catch(() => {});
+  if (video && context === 'exercise') video.play().catch(() => { });
 
   if (typeof VoiceService !== 'undefined') VoiceService.resume();
 
