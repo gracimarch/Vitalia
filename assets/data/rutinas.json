@@ -244,53 +244,45 @@
             "exercises": [
                 {
                     "exerciseId": "shoulder_circles",
-                    "videoSrc": "https://www.pexels.com/video/4367439/",
                     "duration": 45,
                     "rest": 20
                 },
                 {
                     "exerciseId": "seated_shoulder_press",
-                    "videoSrc": "https://www.pexels.com/video/4367541/",
                     "duration": 40,
                     "rest": 20,
                     "sets": 2
                 },
                 {
                     "exerciseId": "band_pull_apart",
-                    "videoSrc": "https://www.pexels.com/video/8837121/",
                     "duration": 40,
                     "rest": 20,
                     "sets": 2
                 },
                 {
                     "exerciseId": "seated_bicep_curl",
-                    "videoSrc": "https://www.pexels.com/video/6548005/",
                     "duration": 40,
                     "rest": 20,
                     "sets": 2
                 },
                 {
                     "exerciseId": "tricep_extension",
-                    "videoSrc": "https://www.pexels.com/video/6286166/",
                     "duration": 40,
                     "rest": 20,
                     "sets": 2
                 },
                 {
                     "exerciseId": "torso_twists",
-                    "videoSrc": "https://www.pexels.com/video/5310754/",
                     "duration": 45,
                     "rest": 20
                 },
                 {
                     "exerciseId": "air_punches",
-                    "videoSrc": "https://www.pexels.com/video/8611523/",
                     "duration": 45,
                     "rest": 20
                 },
                 {
                     "exerciseId": "seated_neck_stretch",
-                    "videoSrc": "https://www.pexels.com/video/8026876/",
                     "duration": 45,
                     "rest": 0
                 }
