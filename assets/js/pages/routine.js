@@ -17,58 +17,6 @@ let onSegmentComplete = null;
 let routineStartTime = 0;
 let descTimeout = null;
 
-// ─── Build Pexels embed URL from any Pexels page URL ───
-function buildVideoEmbedUrl(url) {
-  if (!url) return '';
-  // Extract numeric ID from URLs like:
-  // https://www.pexels.com/video/8837221/
-  // https://www.pexels.com/video/Some-Title-8837221/
-  // https://www.pexels.com/es-es/video/title-8837221/
-  const match = url.match(/[\/-](\d+)\/?$/);
-  if (match) {
-    return `https://player.vimeo.com/external/${match[1]}.sd.mp4?...`; // won't work, use Pexels embed
-  }
-  return '';
-}
-
-// ─── Get Pexels video ID from URL ───
-function getPexelsVideoId(url) {
-  if (!url) return null;
-  const match = url.match(/[\/-](\d{5,})\/?(?:[^/]*)$/);
-  return match ? match[1] : null;
-}
-
-// ─── Set video source on the iframe ───
-function setExerciseVideo(url) {
-  const iframe = $('#exercise-video');
-  if (!iframe) return;
-  
-  if (!url) {
-    iframe.src = 'about:blank';
-    return;
-  }
-  
-  // Extract the Pexels video ID and use the official embed URL
-  const id = getPexelsVideoId(url);
-  if (id) {
-    // Pexels embed URL — autoplay, muted, loop
-    iframe.src = `https://www.pexels.com/video/${id}/embed/?autoplay=1&mute=1&loop=1&background=1`;
-    console.log(`[Routine] Embed URL construida para ID ${id}:`, iframe.src);
-  } else {
-    // Fallback: try as-is (direct MP4)
-    iframe.src = url;
-    console.warn('[Routine] URL no reconocida como Pexels, usando directo:', url);
-  }
-}
-
-// ─── Stop video ───
-function stopExerciseVideo() {
-  const iframe = $('#exercise-video');
-  if (iframe) {
-    iframe.src = 'about:blank';
-  }
-}
-
 // ─── DOM References (lazy, set after load) ───
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => document.querySelectorAll(sel);
@@ -291,8 +239,14 @@ function startExercise(index) {
   const ex = exercises[index];
   showScreen('#screen-exercise');
 
-  // Video via iframe embed
-  setExerciseVideo(ex.videoSrc);
+  // Video
+  const video = $('#exercise-video');
+  if (video) {
+    video.src = ex.videoSrc;
+    video.loop = true;
+    video.muted = true;
+    video.play().catch(() => {});
+  }
 
   // Info
   const nameEl = $('#exercise-name');
@@ -465,7 +419,10 @@ function pauseTimer() {
   cancelAnimationFrame(animationFrameId);
   isRunning = false;
   isPaused = true;
-  // iframe videos can't be programmatically paused — just let it continue in bg
+
+  const video = $('#exercise-video');
+  if (video) video.pause();
+
   if (typeof VoiceService !== 'undefined') VoiceService.pause();
 }
 
@@ -476,10 +433,7 @@ function resumeTimer(context) {
   endTime = performance.now() + remainingTimeMs;
 
   const video = $('#exercise-video');
-  if (video && context === 'exercise') {
-    // Re-trigger embed for current exercise if needed
-    if (exercises[currentIndex]) setExerciseVideo(exercises[currentIndex].videoSrc);
-  }
+  if (video && context === 'exercise') video.play().catch(() => {});
 
   if (typeof VoiceService !== 'undefined') VoiceService.resume();
 
@@ -512,7 +466,8 @@ function bindEvents() {
     if (btn) btn.addEventListener('click', () => {
       cancelTimer();
       if (typeof VoiceService !== 'undefined') VoiceService.stop();
-      stopExerciseVideo();
+      const video = $('#exercise-video');
+      if (video) { video.pause(); video.src = ''; }
       currentIndex = 0;
       showScreen('#screen-overview');
     });
