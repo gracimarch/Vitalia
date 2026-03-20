@@ -45,7 +45,7 @@
 
         <!-- Back button -->
         <a class="diet-back-btn" id="btn-back" href="/mi-espacio" aria-label="Volver">
-            <i class="bi bi-arrow-left"></i>
+            <i class="bi bi-x-lg"></i>
         </a>
 
         <div class="diet-hero__content">
@@ -66,12 +66,6 @@
             <button class="diet-tab" data-panel="panel-recipes" role="tab" aria-selected="false" id="tab-recipes">
                 <i class="bi bi-journal-richtext"></i> Recetas
             </button>
-            <button class="diet-tab" data-panel="panel-variations" role="tab" aria-selected="false" id="tab-variations">
-                <i class="bi bi-shuffle"></i> Variaciones
-            </button>
-            <button class="diet-tab" data-panel="panel-shopping" role="tab" aria-selected="false" id="tab-shopping">
-                <i class="bi bi-bag3"></i> Lista de compras
-            </button>
         </div>
     </nav>
 
@@ -88,40 +82,69 @@
                 <!-- Loaded dynamically -->
             </div>
 
-            <p class="diet-section-title">Programa alimenticio</p>
+            <!-- Two-column layout: schedule + calendar -->
+            <div class="plan-layout">
 
-            <!-- Day pills navigation -->
-            <div class="day-pills" id="day-pills" role="tablist" aria-label="Días">
-                <!-- Loaded dynamically -->
-            </div>
+                <!-- Left: schedule -->
+                <div class="plan-layout__schedule">
+                    <p class="diet-section-title">Programa alimenticio</p>
 
-            <!-- Day panels (meal cards) -->
-            <div id="day-panels">
-                <!-- Loaded dynamically -->
+                    <!-- Day pills navigation -->
+                    <div class="day-pills" id="day-pills" role="tablist" aria-label="Días">
+                        <!-- Loaded dynamically -->
+                    </div>
+
+                    <!-- Day panels (meal cards) -->
+                    <div id="day-panels">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Right: compact calendar -->
+                <div class="plan-layout__calendar">
+                    <div id="diet-calendar-wrap"></div>
+                </div>
+
             </div>
 
         </section>
 
         <!-- PANEL 2: Recipes -->
         <section id="panel-recipes" class="diet-panel" role="tabpanel" aria-labelledby="tab-recipes">
-            <p class="diet-section-title" style="padding-top:24px">Todas las recetas</p>
+            <div class="recipes-panel-header">
+                <p class="diet-section-title" style="padding-top:24px; margin-bottom:0">Todas las recetas</p>
+
+                <!-- Diet filter dropdown (visual only) -->
+                <details class="diet-filter">
+                    <summary class="diet-filter__toggle">
+                        <i class="bi bi-magic"></i>
+                        <span>Adaptar plan</span>
+                        <i class="bi bi-chevron-down diet-filter__chevron"></i>
+                    </summary>
+                    <div class="diet-filter__menu">
+                        <label class="diet-filter__option">
+                            <input type="checkbox" class="diet-filter__check" disabled>
+                            <span class="diet-filter__pill">
+                                <i class="bi bi-shield-check"></i> Sin gluten
+                            </span>
+                        </label>
+                        <label class="diet-filter__option">
+                            <input type="checkbox" class="diet-filter__check" disabled>
+                            <span class="diet-filter__pill">
+                                <i class="bi bi-droplet-half"></i> Sin lácteos
+                            </span>
+                        </label>
+                        <label class="diet-filter__option">
+                            <input type="checkbox" class="diet-filter__check" disabled>
+                            <span class="diet-filter__pill">
+                                <i class="bi bi-flower1"></i> Vegetariano
+                            </span>
+                        </label>
+                    </div>
+                </details>
+            </div>
+
             <div class="recipes-grid" id="recipes-grid">
-                <!-- Loaded dynamically -->
-            </div>
-        </section>
-
-        <!-- PANEL 3: Variations -->
-        <section id="panel-variations" class="diet-panel" role="tabpanel" aria-labelledby="tab-variations">
-            <p class="diet-section-title" style="padding-top:24px">Adaptaciones del plan</p>
-            <div class="variations-list" id="variations-list">
-                <!-- Loaded dynamically -->
-            </div>
-        </section>
-
-        <!-- PANEL 4: Shopping list -->
-        <section id="panel-shopping" class="diet-panel" role="tabpanel" aria-labelledby="tab-shopping">
-            <p class="diet-section-title" style="padding-top:24px">Lista de compras</p>
-            <div class="shopping-list" id="shopping-list">
                 <!-- Loaded dynamically -->
             </div>
         </section>
@@ -132,24 +155,28 @@
     <!-- RECIPE MODAL (DRAWER)                        -->
     <!-- ============================================ -->
     <div class="diet-modal-backdrop" id="recipe-modal-backdrop" role="dialog" aria-modal="true" aria-label="Receta">
-        <div class="diet-modal" id="recipe-modal">
-            <div class="diet-modal__handle"></div>
-            <img class="diet-modal__img" id="modal-img" src="" alt="">
-            <div class="diet-modal__body">
-                <div class="diet-modal__header">
-                    <h2 class="diet-modal__title" id="modal-title"></h2>
-                    <button class="diet-modal__close" id="modal-close-btn" aria-label="Cerrar receta">
-                        <i class="bi bi-x-lg"></i>
-                    </button>
+        <div class="diet-modal-wrapper">
+            <!-- Close button — floats above the card -->
+            <button class="diet-modal__close" id="modal-close-btn" aria-label="Cerrar receta">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            <div class="diet-modal" id="recipe-modal">
+                <div class="diet-modal__img-wrap">
+                    <img class="diet-modal__img" id="modal-img" src="" alt="">
                 </div>
-                <div class="diet-modal__time">
-                    <i class="bi bi-clock"></i>
-                    <span id="modal-time"></span>
+                <div class="diet-modal__body">
+                    <div class="diet-modal__header">
+                        <h2 class="diet-modal__title" id="modal-title"></h2>
+                    </div>
+                    <div class="diet-modal__time">
+                        <i class="bi bi-clock"></i>
+                        <span id="modal-time"></span>
+                    </div>
+                    <p class="diet-modal__ingredients-title">Ingredientes</p>
+                    <ul class="diet-modal__ingredients" id="modal-ingredients"></ul>
+                    <p class="diet-modal__instructions-title">Preparación</p>
+                    <div class="diet-modal__instructions" id="modal-instructions"></div>
                 </div>
-                <p class="diet-modal__ingredients-title">Ingredientes</p>
-                <ul class="diet-modal__ingredients" id="modal-ingredients"></ul>
-                <p class="diet-modal__instructions-title">Preparación</p>
-                <div class="diet-modal__instructions" id="modal-instructions"></div>
             </div>
         </div>
     </div>
