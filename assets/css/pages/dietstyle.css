@@ -52,7 +52,9 @@ button {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 body.loaded #loader {
@@ -67,8 +69,8 @@ body.loaded #loader {
 .diet-hero {
     position: relative;
     width: 100%;
-    height: 56vh;
-    min-height: 340px;
+    height: 40vh;
+    min-height: 260px;
     overflow: hidden;
     flex-shrink: 0;
 }
@@ -80,51 +82,42 @@ body.loaded #loader {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transform: scale(1.05);
-    transition: transform 8s ease;
-}
-
-.diet-hero:hover .diet-hero__img {
-    transform: scale(1.0);
 }
 
 .diet-hero__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        160deg,
-        rgba(128, 202, 205, 0.40) 0%,
-        rgba(90, 60, 160, 0.35) 40%,
-        rgba(20, 10, 40, 0.72) 100%
-    );
+    background: linear-gradient(to bottom,
+            rgba(254, 251, 243, 0.05) 0%,
+            rgba(254, 251, 243, 0.4) 60%,
+            var(--bg-cream, #fefbf3) 100%);
     z-index: 1;
 }
 
-/* Back button */
+/* Back button — matches routine overview-back-btn */
 .diet-back-btn {
     position: absolute;
     top: 16px;
     left: 16px;
     z-index: 50;
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    transition: background 0.25s, transform 0.2s;
+    color: var(--text-color, #333);
+    font-size: 1.4rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background 0.25s, transform 0.2s, box-shadow 0.2s;
     text-decoration: none;
 }
 
 .diet-back-btn:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     transform: scale(1.08);
 }
 
@@ -135,6 +128,10 @@ body.loaded #loader {
     right: 0;
     padding: 32px 24px 28px;
     z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .diet-hero__type {
@@ -147,12 +144,13 @@ body.loaded #loader {
 }
 
 .diet-hero__title {
-    font-size: 1.9rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    line-height: 1.15;
-    color: #fff;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-    margin-bottom: 14px;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: var(--bg-cream, #fefbf3);
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 0 20px 0;
     max-width: 680px;
 }
 
@@ -160,26 +158,26 @@ body.loaded #loader {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    justify-content: center;
 }
 
 .diet-badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 30px;
-    padding: 5px 13px;
-    font-size: 0.8rem;
-    color: #fff;
-    font-weight: 500;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    color: var(--text-color, #333);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
 
 .diet-badge i {
-    font-size: 0.9rem;
-    color: #80CACD;
+    font-size: 1.1rem;
+    color: var(--cyan, #80CACD);
 }
 
 
@@ -260,8 +258,15 @@ body.loaded #loader {
 }
 
 @keyframes panelFadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -304,22 +309,25 @@ body.loaded #loader {
 }
 
 /* ---- Day pills nav ---- */
+/* ---- Day pills nav ---- */
 .day-pills {
     display: flex;
     gap: 8px;
     overflow-x: auto;
     scrollbar-width: none;
     padding-bottom: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
-.day-pills::-webkit-scrollbar { display: none; }
+.day-pills::-webkit-scrollbar {
+    display: none;
+}
 
 .day-pill {
     flex-shrink: 0;
-    padding: 8px 18px;
+    padding: 7px 16px;
     border-radius: 30px;
-    font-size: 0.78rem;
+    font-size: 0.75rem;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     background: rgba(255, 255, 255, 0.7);
@@ -351,54 +359,209 @@ body.loaded #loader {
 }
 
 .day-panel.active {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 14px;
-}
-
-/* ---- Meal option label ---- */
-.meal-label {
-    grid-column: 1 / -1;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #B571DE;
-    font-weight: 700;
-    margin-top: 8px;
-    margin-bottom: 2px;
-}
-
-/* ---- Meal card ---- */
-.meal-card {
-    background: rgba(255, 255, 255, 0.72);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(128, 202, 205, 0.15);
-    border-radius: 18px;
-    padding: 16px 18px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
+    gap: 8px;
+}
+
+/* ---- Plan two-column layout ---- */
+.plan-layout {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.plan-layout__schedule {
+    min-width: 0;
+}
+
+/* Compact calendar when in sidebar */
+.plan-layout__calendar .diet-cal {
+    padding: 14px 12px 12px;
+    margin: 0;
+}
+
+.plan-layout__calendar .diet-cal__top {
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.plan-layout__calendar .diet-cal__label {
+    font-size: 0.58rem;
+    letter-spacing: 1px;
+}
+
+.plan-layout__calendar .diet-cal__month-nav {
+    gap: 5px;
+}
+
+.plan-layout__calendar .diet-cal__month-name {
+    font-size: 0.7rem;
+    min-width: 88px;
+}
+
+.plan-layout__calendar .diet-cal__nav-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 0.65rem;
+}
+
+.plan-layout__calendar .diet-cal__wd {
+    font-size: 0.54rem;
+    padding: 2px 0;
+}
+
+.plan-layout__calendar .diet-cal__day {
+    font-size: 0.68rem;
+}
+
+.plan-layout__calendar .diet-cal__confirmed {
+    font-size: 0.63rem;
+    padding: 6px 9px;
+    gap: 5px;
+}
+
+/* Stack on small screens */
+@media (max-width: 560px) {
+    .plan-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =====================================================
+   TIMELINE — Meal sections
+   ===================================================== */
+
+.meal-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.meal-section__header {
+    display: flex;
+    align-items: center;
     gap: 10px;
 }
 
-.meal-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 28px rgba(43, 196, 188, 0.12);
-    border-color: rgba(128, 202, 205, 0.4);
+.meal-section__time {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted, #a0a0a0);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.meal-card.has-recipe {
-    border-left: 3px solid #80CACD;
+.meal-section__chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px 6px 10px;
+    border-radius: 30px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+    color: #fff;
+    flex-shrink: 0;
 }
 
-.meal-card__icon {
-    width: 40px;
-    height: 40px;
+.meal-section__chip i {
+    font-size: 0.95rem;
+}
+
+.meal-section__chip--desayuno {
+    background: linear-gradient(135deg, #f9a04e 0%, #f4c06b 100%);
+    box-shadow: 0 3px 10px rgba(249, 160, 78, 0.3);
+}
+
+.meal-section__chip--almuerzo {
+    background: linear-gradient(135deg, #80CACD 0%, #2bc4bc 100%);
+    box-shadow: 0 3px 10px rgba(43, 196, 188, 0.3);
+}
+
+.meal-section__chip--snack,
+.meal-section__chip--merienda {
+    background: linear-gradient(135deg, #a78bfa 0%, #B571DE 100%);
+    box-shadow: 0 3px 10px rgba(181, 113, 222, 0.3);
+}
+
+.meal-section__chip--cena {
+    background: linear-gradient(135deg, #4a5fc1 0%, #6d4fc1 100%);
+    box-shadow: 0 3px 10px rgba(74, 95, 193, 0.25);
+}
+
+.meal-section__chip--default {
+    background: linear-gradient(135deg, #80CACD 0%, #B571DE 100%);
+    box-shadow: 0 3px 10px rgba(128, 202, 205, 0.25);
+}
+
+.meal-section__line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, rgba(128, 202, 205, 0.3), transparent);
+}
+
+.meal-section__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-left: 4px;
+}
+
+.meal-option-sep {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 2px 20px;
+    color: var(--text-muted, #707070);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    opacity: 0.7;
+}
+
+.meal-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 16px;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(128, 202, 205, 0.12);
+    border-radius: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
+    margin-bottom: 6px;
+}
+
+.meal-item--recipe {
+    cursor: pointer;
+}
+
+.meal-item--recipe:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 22px rgba(43, 196, 188, 0.1);
+    border-color: rgba(128, 202, 205, 0.35);
+}
+
+.meal-item--recipe:hover .meal-item__arrow {
+    opacity: 1;
+    transform: translateX(2px);
+}
+
+.meal-item__icon {
+    width: 42px;
+    height: 42px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(128, 202, 205, 0.2) 0%, rgba(181, 113, 222, 0.15) 100%);
+    background: linear-gradient(135deg, rgba(128, 202, 205, 0.18) 0%, rgba(181, 113, 222, 0.12) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -406,169 +569,486 @@ body.loaded #loader {
     flex-shrink: 0;
 }
 
-.meal-card__icon img {
+.meal-item__icon img {
     width: 26px;
     height: 26px;
     object-fit: contain;
 }
 
-.meal-card__title {
+.meal-item__icon i {
+    font-size: 1.1rem;
+    color: #80CACD;
+}
+
+.meal-item__body {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.meal-item__title {
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--text-color, #333);
-    line-height: 1.35;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.meal-card__footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: auto;
-}
-
-.meal-card__time {
+.meal-item__time {
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     color: var(--text-muted, #707070);
 }
 
-.meal-card__time i {
+.meal-item__time i {
     color: #80CACD;
-    font-size: 0.8rem;
-}
-
-.meal-card__recipe-btn {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #2bc4bc;
-    font-family: 'Poppins', sans-serif;
-    opacity: 0;
-    transition: opacity 0.2s;
-}
-
-.meal-card:hover .meal-card__recipe-btn {
-    opacity: 1;
-}
-
-.meal-card__recipe-btn i {
     font-size: 0.75rem;
 }
 
+.meal-item__arrow {
+    font-size: 1.4rem;
+    color: #2bc4bc;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+/* =====================================================
+   CALENDAR SCHEDULING WIDGET
+   ===================================================== */
+.diet-cal {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(128, 202, 205, 0.18);
+    border-radius: 22px;
+    padding: 20px 20px 18px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+    margin: 0 0 24px;
+    user-select: none;
+}
+
+.diet-cal__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    gap: 8px;
+}
+
+.diet-cal__label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2bc4bc;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.diet-cal__label i {
+    font-size: 0.9rem;
+}
+
+.diet-cal__month-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.diet-cal__month-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-color, #333);
+    min-width: 120px;
+    text-align: center;
+}
+
+.diet-cal__nav-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(128, 202, 205, 0.12);
+    border: 1px solid rgba(128, 202, 205, 0.2);
+    color: #2bc4bc;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.diet-cal__nav-btn:hover {
+    background: rgba(128, 202, 205, 0.25);
+    transform: scale(1.1);
+}
+
+/* Weekday labels row */
+.diet-cal__weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 6px;
+}
+
+.diet-cal__wd {
+    text-align: center;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted, #707070);
+    padding: 4px 0;
+}
+
+/* Day grid */
+.diet-cal__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.diet-cal__day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-color, #333);
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s, transform 0.15s;
+    position: relative;
+}
+
+.diet-cal__day:hover:not(.diet-cal__day--other-month) {
+    background: rgba(128, 202, 205, 0.18);
+    transform: scale(1.12);
+}
+
+.diet-cal__day--other-month {
+    color: rgba(0, 0, 0, 0.2);
+    cursor: default;
+}
+
+/* Today ring */
+.diet-cal__day--today::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(43, 196, 188, 0.5);
+    pointer-events: none;
+}
+
+/* ── SINGLE DAY selection ── */
+.diet-cal__day--selected {
+    background: linear-gradient(135deg, #80CACD 0%, #2bc4bc 100%) !important;
+    color: #fff !important;
+    font-weight: 700;
+    box-shadow: 0 3px 12px rgba(43, 196, 188, 0.4);
+}
+
+.diet-cal__day--selected::after {
+    display: none;
+}
+
+/* ── WEEK selection ── */
+/* Middle days of a selected week */
+.diet-cal__day--week-mid {
+    background: rgba(181, 113, 222, 0.15);
+    color: #6b3ba8;
+    border-radius: 0;
+}
+
+/* Week start (Monday) */
+.diet-cal__day--week-start {
+    background: linear-gradient(135deg, #80CACD 0%, rgba(181, 113, 222, 0.7) 100%);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 50% 0 0 50%;
+    box-shadow: 0 3px 12px rgba(43, 196, 188, 0.3);
+}
+
+/* Week end (Sunday) */
+.diet-cal__day--week-end {
+    background: linear-gradient(135deg, rgba(181, 113, 222, 0.7) 0%, #B571DE 100%);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 0 50% 50% 0;
+    box-shadow: 0 3px 12px rgba(181, 113, 222, 0.3);
+}
+
+/* Confirmed badge shown after saving */
+.diet-cal__confirmed {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 9px 14px;
+    background: rgba(43, 196, 188, 0.08);
+    border: 1px solid rgba(43, 196, 188, 0.25);
+    border-radius: 12px;
+    font-size: 0.75rem;
+    color: #2bc4bc;
+    font-weight: 600;
+    animation: panelFadeIn 0.3s ease;
+}
+
+.diet-cal__confirmed i {
+    font-size: 1rem;
+}
+
+.diet-cal__confirmed-clear {
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: var(--text-muted, #707070);
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 400;
+}
+
+.diet-cal__confirmed-clear:hover {
+    color: #B571DE;
+}
+
+/* =====================================================
+   RECIPES PANEL HEADER + FILTER DROPDOWN
+   ===================================================== */
+.recipes-panel-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 24px;
+    margin-bottom: 20px;
+}
+
+/* Filter trigger */
+.diet-filter {
+    position: relative;
+}
+
+.diet-filter__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 14px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(128, 202, 205, 0.25);
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-color, #333);
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    white-space: nowrap;
+}
+
+.diet-filter__toggle::-webkit-details-marker {
+    display: none;
+}
+
+.diet-filter__toggle i:first-child {
+    color: #2bc4bc;
+    font-size: 0.9rem;
+}
+
+.diet-filter__chevron {
+    font-size: 0.65rem;
+    color: var(--text-muted, #707070);
+    transition: transform 0.22s ease;
+}
+
+.diet-filter[open] .diet-filter__toggle {
+    border-color: rgba(128, 202, 205, 0.5);
+    box-shadow: 0 0 0 3px rgba(43, 196, 188, 0.1);
+}
+
+.diet-filter[open] .diet-filter__chevron {
+    transform: rotate(180deg);
+}
+
+/* Dropdown menu */
+.diet-filter__menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(128, 202, 205, 0.2);
+    border-radius: 18px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 180px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    animation: panelFadeIn 0.18s ease;
+}
+
+.diet-filter__option {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    cursor: not-allowed;
+}
+
+.diet-filter__check {
+    display: none;
+    /* hidden — visual only */
+}
+
+.diet-filter__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-muted, #707070);
+    font-family: 'Poppins', sans-serif;
+    border: 1.5px solid transparent;
+    background: transparent;
+    transition: background 0.18s, color 0.18s, border-color 0.18s;
+    opacity: 0.75;
+}
+
+.diet-filter__pill i {
+    font-size: 0.9rem;
+    color: #B571DE;
+}
+
+.diet-filter__option:hover .diet-filter__pill {
+    background: rgba(128, 202, 205, 0.08);
+    color: #2bc4bc;
+    border-color: rgba(128, 202, 205, 0.2);
+    opacity: 1;
+}
+
+.diet-filter__option:hover .diet-filter__pill i {
+    color: #2bc4bc;
+}
 
 /* =====================================================
    PANEL 2: RECIPES GRID
    ===================================================== */
 .recipes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
-    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 0 24px;
 }
 
 .recipe-card {
-    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px 12px 12px;
+    background: rgba(255, 255, 255, 0.72);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(128, 202, 205, 0.15);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    border: 1px solid rgba(128, 202, 205, 0.12);
+    border-radius: 18px;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
 }
 
 .recipe-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 36px rgba(43, 196, 188, 0.15);
+    transform: translateX(4px);
+    box-shadow: 0 6px 22px rgba(43, 196, 188, 0.1);
+    border-color: rgba(128, 202, 205, 0.35);
 }
 
-.recipe-card__img-wrap {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4/3;
+.recipe-card:hover .recipe-card__arrow {
+    opacity: 1;
+    transform: translateX(2px);
+}
+
+/* Thumbnail — small rounded square */
+.recipe-card__thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(128, 202, 205, 0.3), rgba(181, 113, 222, 0.25));
+    flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(128, 202, 205, 0.25), rgba(181, 113, 222, 0.2));
 }
 
 .recipe-card__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    display: block;
 }
 
-.recipe-card:hover .recipe-card__img {
-    transform: scale(1.06);
-}
-
-.recipe-card__overlay-tag {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(43, 196, 188, 0.85);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    color: #fff;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 20px;
-}
-
+/* Body: title + time */
 .recipe-card__body {
-    padding: 14px 16px 16px;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .recipe-card__title {
     font-size: 0.88rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-color, #333);
-    margin-bottom: 8px;
-    line-height: 1.35;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    line-height: 1.3;
 }
 
 .recipe-card__meta {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.72rem;
+    gap: 5px;
+    font-size: 0.7rem;
     color: var(--text-muted, #707070);
-    margin-bottom: 12px;
 }
 
 .recipe-card__meta i {
     color: #80CACD;
+    font-size: 0.75rem;
 }
 
-.recipe-card__open-btn {
+/* Right arrow */
+.recipe-card__arrow {
+    font-size: 1.5rem;
+    color: #2bc4bc;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
-    width: 100%;
-    padding: 9px 0;
-    border-radius: 30px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    background: linear-gradient(90deg, #80CACD 0%, #2bc4bc 50%, #B571DE 150%);
-    background-size: 200%;
-    transition: background-position 0.4s ease, box-shadow 0.3s;
-    cursor: pointer;
 }
 
-.recipe-card__open-btn:hover {
-    background-position: 100%;
-    box-shadow: 0 4px 16px rgba(43, 196, 188, 0.35);
-}
 
 
 /* =====================================================
@@ -623,86 +1103,6 @@ body.loaded #loader {
     line-height: 1.55;
 }
 
-
-/* =====================================================
-   PANEL 4: SHOPPING LIST
-   ===================================================== */
-.shopping-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 24px 0;
-}
-
-.shopping-category {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(128, 202, 205, 0.15);
-    border-radius: 18px;
-    padding: 18px 20px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    transition: transform 0.25s, border-color 0.25s;
-}
-
-.shopping-category:hover {
-    transform: translateX(4px);
-    border-color: rgba(128, 202, 205, 0.4);
-}
-
-.shopping-category__check {
-    margin-top: 2px;
-    flex-shrink: 0;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid rgba(128, 202, 205, 0.5);
-    border-radius: 6px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.2s;
-    background: transparent;
-}
-
-.shopping-category__check:checked {
-    background: linear-gradient(135deg, #80CACD, #2bc4bc);
-    border-color: transparent;
-}
-
-.shopping-category__check:checked::after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 6px;
-    width: 5px;
-    height: 9px;
-    border: 2px solid #fff;
-    border-top: none;
-    border-left: none;
-    transform: rotate(45deg);
-}
-
-.shopping-category__label {
-    flex: 1;
-    font-size: 0.83rem;
-    color: var(--text-color, #333);
-    line-height: 1.6;
-}
-
-.shopping-category__label strong {
-    color: #2bc4bc;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 2px;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-
 /* =====================================================
    RECIPE MODAL (DRAWER STYLE)
    ===================================================== */
@@ -723,31 +1123,51 @@ body.loaded #loader {
     animation: backdropIn 0.3s ease;
 }
 
+/* Wrapper: button above + modal below, same width constraint */
+.diet-modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 600px;
+}
+
 @keyframes backdropIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .diet-modal {
     width: 100%;
     max-width: 600px;
     max-height: 88vh;
-    background: rgba(255, 253, 248, 0.97);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 24px 24px 0 0;
-    border: 1px solid rgba(128, 202, 205, 0.2);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(28px) saturate(1.6);
+    -webkit-backdrop-filter: blur(28px) saturate(1.6);
+    border-radius: 28px 28px 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.6);
     border-bottom: none;
-    box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.18);
-    overflow: hidden;
+    box-shadow: 0 -8px 50px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.8);
     display: flex;
     flex-direction: column;
     animation: drawerUp 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes drawerUp {
-    from { transform: translateY(80px); opacity: 0; }
-    to   { transform: translateY(0);    opacity: 1; }
+    from {
+        transform: translateY(80px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .diet-modal__handle {
@@ -759,17 +1179,28 @@ body.loaded #loader {
     flex-shrink: 0;
 }
 
+/* Image — inset with rounded corners (like reference card) */
+.diet-modal__img-wrap {
+    position: relative;
+    width: calc(100% - 24px);
+    height: 190px;
+    flex-shrink: 0;
+    margin: 16px 12px 0;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
 .diet-modal__img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
-    flex-shrink: 0;
-    margin-top: 8px;
+    display: block;
+    border-radius: 16px;
 }
 
 .diet-modal__body {
     overflow-y: auto;
-    padding: 20px 24px 32px;
+    padding: 16px 24px 36px;
     flex: 1;
     scrollbar-width: thin;
     scrollbar-color: rgba(128, 202, 205, 0.4) transparent;
@@ -792,22 +1223,28 @@ body.loaded #loader {
 }
 
 .diet-modal__close {
-    width: 34px;
-    height: 34px;
+    margin: 0 0 -35px -48px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.55);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    color: #555;
+    color: #333;
     flex-shrink: 0;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.15s;
     cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
 .diet-modal__close:hover {
-    background: rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.98);
+    transform: scale(1.08);
 }
 
 .diet-modal__time {
@@ -885,11 +1322,11 @@ body.loaded #loader {
    ===================================================== */
 @media (min-width: 768px) {
     .diet-hero {
-        height: 62vh;
+        height: 46vh;
     }
 
     .diet-hero__title {
-        font-size: 2.6rem;
+        font-size: 3.6rem;
     }
 
     .diet-hero__content {
@@ -929,15 +1366,20 @@ body.loaded #loader {
    ===================================================== */
 .shimmer {
     background: linear-gradient(90deg,
-        rgba(128, 202, 205, 0.08) 25%,
-        rgba(181, 113, 222, 0.1) 50%,
-        rgba(128, 202, 205, 0.08) 75%);
+            rgba(128, 202, 205, 0.08) 25%,
+            rgba(181, 113, 222, 0.1) 50%,
+            rgba(128, 202, 205, 0.08) 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
     border-radius: 12px;
 }
 
 @keyframes shimmer {
-    0%   { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
 }

@@ -7,12 +7,12 @@
     'use strict';
 
     const ICON_MAP = {
-        'desayuno':  'bi bi-sun',
-        'almuerzo':  'bi bi-cloud-sun',
-        'cena':      'bi bi-moon-stars',
-        'snack':     'bi bi-lightning-charge',
-        'merienda':  'bi bi-cup-hot',
-        'default':   'bi bi-egg-fried'
+        'desayuno': 'bi bi-sun',
+        'almuerzo': 'bi bi-cloud-sun',
+        'cena': 'bi bi-moon-stars',
+        'snack': 'bi bi-lightning-charge',
+        'merienda': 'bi bi-cup-hot',
+        'default': 'bi bi-egg-fried'
     };
 
     function getSlugFromPath() {
@@ -36,9 +36,9 @@
 
     function getVariationIcon(type) {
         const t = type.toLowerCase();
-        if (t.includes('gluten'))   return 'bi bi-shield-check';
-        if (t.includes('vegetar'))  return 'bi bi-leaf';
-        if (t.includes('vegano'))   return 'bi bi-tree';
+        if (t.includes('gluten')) return 'bi bi-shield-check';
+        if (t.includes('vegetar')) return 'bi bi-leaf';
+        if (t.includes('vegano')) return 'bi bi-tree';
         if (t.includes('lácte') || t.includes('lacte')) return 'bi bi-droplet-half';
         return 'bi bi-stars';
     }
@@ -100,23 +100,368 @@
         if (el && dieta.introduction) el.innerHTML = dieta.introduction;
     }
 
+
+    /* ================================================
+       CALENDAR SCHEDULING WIDGET
+       ================================================ */
+    const MONTH_NAMES_ES = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+        'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    const DAY_NAMES_ES = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+
+    function getPlanMode(dieta) {
+        const dur = (dieta.duration || '').toLowerCase();
+        if (dur.includes('semana')) return 'week';
+        return 'single';
+    }
+
+    function loadSavedSchedule(slug) {
+        try {
+            const raw = localStorage.getItem(`vitalia_plan_schedule_${slug}`);
+            return raw ? JSON.parse(raw) : null;
+        } catch { return null; }
+    }
+
+    function saveSchedule(slug, data) {
+        try {
+            localStorage.setItem(`vitalia_plan_schedule_${slug}`, JSON.stringify(data));
+            // Hook for future notification logic
+            document.dispatchEvent(new CustomEvent('diet-schedule-saved', { detail: data }));
+        } catch (e) { console.warn('No se pudo guardar en localStorage', e); }
+    }
+
+    function clearSchedule(slug) {
+        localStorage.removeItem(`vitalia_plan_schedule_${slug}`);
+        document.dispatchEvent(new CustomEvent('diet-schedule-saved', { detail: null }));
+    }
+
+    // Get Monday of the week that contains `date`
+    function getWeekStart(date) {
+        const d = new Date(date);
+        const day = d.getDay(); // 0=Sun ... 6=Sat
+        const diff = (day === 0) ? -6 : 1 - day; // adjust to Monday
+        d.setDate(d.getDate() + diff);
+        d.setHours(0, 0, 0, 0);
+        return d;
+    }
+
+    function isSameDay(a, b) {
+        return a.getFullYear() === b.getFullYear() &&
+            a.getMonth() === b.getMonth() &&
+            a.getDate() === b.getDate();
+    }
+
+    function toISODate(d) {
+        return d.toISOString().split('T')[0];
+    }
+
+    function formatDateLabel(isoDate, mode) {
+        const d = new Date(isoDate + 'T00:00:00');
+        const dayNames = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+        if (mode === 'week') {
+            const end = new Date(d);
+            end.setDate(end.getDate() + 6);
+            return `${dayNames[d.getDay()]} ${d.getDate()} ${MONTH_NAMES_ES[d.getMonth()]} → ${dayNames[end.getDay()]} ${end.getDate()} ${MONTH_NAMES_ES[end.getMonth()]}`;
+        }
+        return `${dayNames[d.getDay()]} ${d.getDate()} de ${MONTH_NAMES_ES[d.getMonth()]} ${d.getFullYear()}`;
+    }
+
+    function renderCalendar(dieta) {
+        const wrap = document.getElementById('diet-calendar-wrap');
+        if (!wrap) return;
+
+        const mode = getPlanMode(dieta);
+        const slug = dieta.slug;
+        const today = new Date(); today.setHours(0, 0, 0, 0);
+        let viewYear = today.getFullYear();
+        let viewMonth = today.getMonth();
+        let saved = loadSavedSchedule(slug);
+
+        // Selected state
+        let selectedDate = null; // ISO string for single; weekStart ISO for week
+
+        if (saved) {
+            selectedDate = saved.date || saved.startDate || null;
+        }
+
+        function buildGrid() {
+            const firstDay = new Date(viewYear, viewMonth, 1);
+            const lastDay = new Date(viewYear, viewMonth + 1, 0);
+
+            // Start grid on Monday
+            let startPad = firstDay.getDay() - 1; // 0=Sun becomes -1 → 6
+            if (startPad < 0) startPad = 6;
+
+            const cells = [];
+
+            // Prev-month padding cells
+            for (let i = startPad; i > 0; i--) {
+                const d = new Date(firstDay);
+                d.setDate(d.getDate() - i);
+                cells.push({ date: d, otherMonth: true });
+            }
+            // Current month days
+            for (let d = 1; d <= lastDay.getDate(); d++) {
+                cells.push({ date: new Date(viewYear, viewMonth, d), otherMonth: false });
+            }
+            // Next-month padding to complete last row
+            const remainder = cells.length % 7;
+            if (remainder > 0) {
+                for (let i = 1; i <= 7 - remainder; i++) {
+                    const d = new Date(lastDay);
+                    d.setDate(d.getDate() + i);
+                    cells.push({ date: d, otherMonth: true });
+                }
+            }
+
+            return cells;
+        }
+
+        function getWeekClsFor(date, selIso) {
+            if (!selIso) return null;
+            const weekStart = new Date(selIso + 'T00:00:00');
+            const weekEnd = new Date(weekStart); weekEnd.setDate(weekEnd.getDate() + 6);
+            const d = new Date(date); d.setHours(0, 0, 0, 0);
+            if (d < weekStart || d > weekEnd) return null;
+            if (isSameDay(d, weekStart)) return 'week-start';
+            if (isSameDay(d, weekEnd)) return 'week-end';
+            return 'week-mid';
+        }
+
+        function render() {
+            const cells = buildGrid();
+
+            const confirmedHtml = selectedDate ? `
+                <div class="diet-cal__confirmed">
+                    <i class="bi bi-check-circle-fill"></i>
+                    Programado: ${formatDateLabel(selectedDate, mode)}
+                    <span class="diet-cal__confirmed-clear" id="cal-clear">Cancelar</span>
+                </div>
+            ` : '';
+
+            wrap.innerHTML = `
+                <div class="diet-cal">
+                    <div class="diet-cal__top">
+                        <div class="diet-cal__label">
+                            <i class="bi bi-calendar3"></i>
+                            ${mode === 'week' ? 'Programar semana' : 'Programar día'}
+                        </div>
+                        <div class="diet-cal__month-nav">
+                            <button class="diet-cal__nav-btn" id="cal-prev" aria-label="Mes anterior">
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <span class="diet-cal__month-name">${MONTH_NAMES_ES[viewMonth]} ${viewYear}</span>
+                            <button class="diet-cal__nav-btn" id="cal-next" aria-label="Mes siguiente">
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="diet-cal__weekdays">
+                        ${DAY_NAMES_ES.map(d => `<div class="diet-cal__wd">${d}</div>`).join('')}
+                    </div>
+
+                    <div class="diet-cal__grid">
+                        ${cells.map(cell => {
+                const isOther = cell.otherMonth;
+                const isToday = isSameDay(cell.date, today);
+                const isoStr = toISODate(cell.date);
+                let cls = 'diet-cal__day';
+
+                if (isOther) {
+                    cls += ' diet-cal__day--other-month';
+                } else if (mode === 'single') {
+                    if (selectedDate && isoStr === selectedDate)
+                        cls += ' diet-cal__day--selected';
+                    else if (isToday)
+                        cls += ' diet-cal__day--today';
+                } else {
+                    const weekCls = getWeekClsFor(cell.date, selectedDate);
+                    if (weekCls)
+                        cls += ` diet-cal__day--${weekCls}`;
+                    else if (isToday)
+                        cls += ' diet-cal__day--today';
+                }
+
+                return `<div class="${cls}" data-iso="${isoStr}" data-other="${isOther}">${cell.date.getDate()}</div>`;
+            }).join('')}
+                    </div>
+
+                    ${confirmedHtml}
+                </div>
+            `;
+
+            // Grid click
+            wrap.querySelector('.diet-cal__grid').addEventListener('click', e => {
+                const cell = e.target.closest('.diet-cal__day');
+                if (!cell || cell.dataset.other === 'true') return;
+
+                const iso = cell.dataset.iso;
+
+                if (mode === 'single') {
+                    selectedDate = iso;
+                    saveSchedule(slug, { slug, type: 'single', date: iso });
+                } else {
+                    const clicked = new Date(iso + 'T00:00:00');
+                    const ws = getWeekStart(clicked);
+                    selectedDate = toISODate(ws);
+                    saveSchedule(slug, { slug, type: 'week', startDate: selectedDate });
+                }
+                render();
+            });
+
+            // Month navigation
+            wrap.querySelector('#cal-prev').addEventListener('click', () => {
+                viewMonth--;
+                if (viewMonth < 0) { viewMonth = 11; viewYear--; }
+                render();
+            });
+            wrap.querySelector('#cal-next').addEventListener('click', () => {
+                viewMonth++;
+                if (viewMonth > 11) { viewMonth = 0; viewYear++; }
+                render();
+            });
+
+            // Clear button
+            const clearBtn = wrap.querySelector('#cal-clear');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    selectedDate = null;
+                    clearSchedule(slug);
+                    render();
+                });
+            }
+        }
+
+        render();
+    }
+
+    /* ================================================
+       HELPERS — Timeline
+       ================================================ */
+    const DAYS_ES = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo', 'miercoles', 'sabado'];
+
+    function isMultiDay(schedule) {
+        if (!schedule || schedule.length === 0) return false;
+        return DAYS_ES.includes(schedule[0].name.toLowerCase());
+    }
+
+    function getChipClass(label) {
+        const l = label.toLowerCase();
+        if (l.includes('desayuno')) return 'desayuno';
+        if (l.includes('almuerzo') || l.includes('comida')) return 'almuerzo';
+        if (l.includes('cena')) return 'cena';
+        if (l.includes('snack') || l.includes('merienda')) return 'snack';
+        return 'default';
+    }
+
+    function buildMealItem(card, sectionLabel, dieta) {
+        const hasRecipe = !!card.recipeId;
+        const iconHtml = card.icon
+            ? `<img src="${getPath(card.icon)}" alt="">`
+            : `<i class="${getMealIcon(sectionLabel)}"></i>`;
+
+        const el = document.createElement('div');
+        el.className = 'meal-item' + (hasRecipe ? ' meal-item--recipe' : '');
+        if (hasRecipe) {
+            el.dataset.recipeId = card.recipeId;
+            el.setAttribute('role', 'button');
+            el.setAttribute('tabindex', '0');
+            el.title = 'Ver receta';
+        }
+
+        el.innerHTML = `
+            <div class="meal-item__icon">${iconHtml}</div>
+            <div class="meal-item__body">
+                <div class="meal-item__title">${card.title}</div>
+                <div class="meal-item__time">
+                    <i class="bi bi-clock"></i> ${card.time}
+                </div>
+            </div>
+            ${hasRecipe ? `<div class="meal-item__arrow"><i class="bi bi-arrow-right-short"></i></div>` : ''}
+        `;
+
+        if (hasRecipe) {
+            el.addEventListener('click', () => openRecipeModal(card.recipeId, dieta));
+            el.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') openRecipeModal(card.recipeId, dieta);
+            });
+        }
+        return el;
+    }
+
+    function getMealTimeLabel(label) {
+        const l = label.toLowerCase();
+        if (l.includes('desayuno'))  return '7–10 AM';
+        if (l.includes('almuerzo'))  return '12–2 PM';
+        if (l.includes('snack') || l.includes('merienda')) return '3–5 PM';
+        if (l.includes('cena'))      return '7–9 PM';
+        return '';
+    }
+
+    function buildMealSection(sectionName, options, dieta) {
+        const chipClass = getChipClass(sectionName);
+        const icon      = getMealIcon(sectionName);
+        const timeLabel = getMealTimeLabel(sectionName);
+
+        const section = document.createElement('div');
+        section.className = 'meal-section';
+        section.dataset.meal = chipClass; // e.g. "breakfast", "lunch", "snack", "dinner"
+
+        // Header: chip + optional time label + line
+        section.innerHTML = `
+            <div class="meal-section__header">
+                <div class="meal-section__chip meal-section__chip--${chipClass}">
+                    <i class="${icon}"></i>
+                    <span>${sectionName}</span>
+                </div>
+                ${timeLabel ? `<span class="meal-section__time">${timeLabel}</span>` : ''}
+                <div class="meal-section__line"></div>
+            </div>
+        `;
+
+        const cardsWrapper = document.createElement('div');
+        cardsWrapper.className = 'meal-section__cards';
+
+        options.forEach((opt, i) => {
+            // "ó" separator between alternatives
+            if (i > 0) {
+                const sep = document.createElement('div');
+                sep.className = 'meal-option-sep';
+                sep.innerHTML = '<span>también puedes elegir:</span>';
+                cardsWrapper.appendChild(sep);
+            }
+            // Cards for this option
+            if (opt.cards) {
+                opt.cards.forEach(card => {
+                    cardsWrapper.appendChild(buildMealItem(card, sectionName, dieta));
+                });
+            }
+        });
+
+        section.appendChild(cardsWrapper);
+        return section;
+    }
+
     /* ================================================
        RENDER SCHEDULE (Days + Meals)
        ================================================ */
     function renderSchedule(dieta) {
-        const pillsContainer  = document.getElementById('day-pills');
+        const pillsContainer = document.getElementById('day-pills');
         const panelsContainer = document.getElementById('day-panels');
         if (!pillsContainer || !panelsContainer || !dieta.schedule) return;
 
-        pillsContainer.innerHTML  = '';
+        pillsContainer.innerHTML = '';
         panelsContainer.innerHTML = '';
 
+        const multiDay = isMultiDay(dieta.schedule);
+
         dieta.schedule.forEach((stage, idx) => {
-            // --- Pill ---
+            // --- Day pill (always shown, label differs for single vs multi) ---
             const pill = document.createElement('button');
-            pill.className  = 'day-pill' + (idx === 0 ? ' active' : '');
+            pill.className = 'day-pill' + (idx === 0 ? ' active' : '');
             pill.textContent = stage.name;
-            pill.setAttribute('data-day', idx);
+            pill.dataset.day = idx;
             pill.setAttribute('role', 'tab');
             pill.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
             pill.setAttribute('aria-controls', `day-panel-${idx}`);
@@ -128,58 +473,28 @@
             panel.id = `day-panel-${idx}`;
             panel.setAttribute('role', 'tabpanel');
 
-            stage.options.forEach(slot => {
-                // Meal label
-                const labelEl = document.createElement('p');
-                labelEl.className = 'meal-label';
-                labelEl.textContent = slot.label;
-                panel.appendChild(labelEl);
-
-                // Cards
-                if (slot.cards) {
-                    slot.cards.forEach(card => {
-                        const cardEl = document.createElement('div');
-                        cardEl.className = 'meal-card' + (card.recipeId ? ' has-recipe' : '');
-                        if (card.recipeId) {
-                            cardEl.dataset.recipeId = card.recipeId;
-                            cardEl.setAttribute('role', 'button');
-                            cardEl.setAttribute('tabindex', '0');
-                            cardEl.title = 'Ver receta';
-                        }
-
-                        const iconHtml = card.icon
-                            ? `<img src="${getPath(card.icon)}" alt="">`
-                            : `<i class="${getMealIcon(slot.label)}"></i>`;
-
-                        cardEl.innerHTML = `
-                            <div class="meal-card__icon">${iconHtml}</div>
-                            <div class="meal-card__title">${card.title}</div>
-                            <div class="meal-card__footer">
-                                <span class="meal-card__time">
-                                    <i class="bi bi-clock"></i> ${card.time}
-                                </span>
-                                ${card.recipeId ? `
-                                    <span class="meal-card__recipe-btn">
-                                        Ver receta <i class="bi bi-arrow-right-short"></i>
-                                    </span>
-                                ` : ''}
-                            </div>
-                        `;
-
-                        if (card.recipeId) {
-                            cardEl.addEventListener('click', () => openRecipeModal(card.recipeId, dieta));
-                            cardEl.addEventListener('keydown', e => {
-                                if (e.key === 'Enter' || e.key === ' ') openRecipeModal(card.recipeId, dieta);
-                            });
-                        }
-
-                        panel.appendChild(cardEl);
-                    });
-                }
-            });
+            if (multiDay) {
+                // Multi-day: each option IS a meal time (Desayuno, Almuerzo, etc.)
+                // Options are individual meal times, cards within each are the actual meals
+                stage.options.forEach(opt => {
+                    panel.appendChild(
+                        buildMealSection(opt.label, [{ cards: opt.cards }], dieta)
+                    );
+                });
+            } else {
+                // Single-day: stage.name IS the meal time, options are alternatives
+                panel.appendChild(
+                    buildMealSection(stage.name, stage.options, dieta)
+                );
+            }
 
             panelsContainer.appendChild(panel);
         });
+
+        // Hide day pills wrapper if only 1 day (single-day diets)
+        if (dieta.schedule.length <= 1) {
+            pillsContainer.style.display = 'none';
+        }
 
         // Day-pill switching logic
         pillsContainer.addEventListener('click', e => {
@@ -204,6 +519,7 @@
        RENDER RECIPES GRID
        ================================================ */
     function renderRecipesGrid(dieta) {
+
         const grid = document.getElementById('recipes-grid');
         if (!grid || !dieta.recipes) return;
 
@@ -213,24 +529,21 @@
             card.className = 'recipe-card';
 
             card.innerHTML = `
-                <div class="recipe-card__img-wrap">
+                <div class="recipe-card__thumb">
                     <img class="recipe-card__img" src="${getPath(recipe.image)}" alt="${recipe.title}" loading="lazy">
-                    <span class="recipe-card__overlay-tag">Receta</span>
                 </div>
                 <div class="recipe-card__body">
                     <h3 class="recipe-card__title">${recipe.title}</h3>
                     <div class="recipe-card__meta">
                         <i class="bi bi-clock"></i> ${recipe.time}
                     </div>
-                    <button class="recipe-card__open-btn" data-recipe-id="${recipe.id}" aria-label="Ver receta ${recipe.title}">
-                        <i class="bi bi-book-open"></i> Ver receta
-                    </button>
+                </div>
+                <div class="recipe-card__arrow">
+                    <i class="bi bi-arrow-right-short"></i>
                 </div>
             `;
 
-            card.querySelector('.recipe-card__open-btn').addEventListener('click', () => {
-                openRecipeModal(recipe.id, dieta);
-            });
+            card.addEventListener('click', () => openRecipeModal(recipe.id, dieta));
 
             grid.appendChild(card);
         });
@@ -288,10 +601,10 @@
         const recipe = dieta.recipes.find(r => r.id === recipeId);
         if (!recipe) return;
 
-        const imgEl   = document.getElementById('modal-img');
+        const imgEl = document.getElementById('modal-img');
         const titleEl = document.getElementById('modal-title');
-        const timeEl  = document.getElementById('modal-time');
-        const ingEl   = document.getElementById('modal-ingredients');
+        const timeEl = document.getElementById('modal-time');
+        const ingEl = document.getElementById('modal-ingredients');
         const instrEl = document.getElementById('modal-instructions');
 
         if (imgEl) {
@@ -299,9 +612,9 @@
             imgEl.alt = recipe.title;
         }
         if (titleEl) titleEl.textContent = recipe.title;
-        if (timeEl)  timeEl.textContent  = recipe.time;
-        if (ingEl)   ingEl.innerHTML     = recipe.ingredients.map(i => `<li>${i}</li>`).join('');
-        if (instrEl) instrEl.innerHTML   = recipe.instructions;
+        if (timeEl) timeEl.textContent = recipe.time;
+        if (ingEl) ingEl.innerHTML = recipe.ingredients.map(i => `<li>${i}</li>`).join('');
+        if (instrEl) instrEl.innerHTML = recipe.instructions;
 
         const backdrop = document.getElementById('recipe-modal-backdrop');
         if (backdrop) {
@@ -319,9 +632,9 @@
     }
 
     function attachModalListeners() {
-        const closeBtn  = document.getElementById('modal-close-btn');
-        const backdrop  = document.getElementById('recipe-modal-backdrop');
-        const modal     = document.getElementById('recipe-modal');
+        const closeBtn = document.getElementById('modal-close-btn');
+        const backdrop = document.getElementById('recipe-modal-backdrop');
+        const modal = document.getElementById('recipe-modal');
 
         if (closeBtn) closeBtn.addEventListener('click', closeRecipeModal);
 
@@ -415,6 +728,7 @@
         // Render all sections
         renderHero(dieta);
         renderIntro(dieta);
+        renderCalendar(dieta);
         renderSchedule(dieta);
         renderRecipesGrid(dieta);
         renderVariations(dieta);
