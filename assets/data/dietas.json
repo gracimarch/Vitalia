@@ -2239,206 +2239,48 @@
             "introduction": "<p>Pensado para días donde cocinar resulta difícil o agotador. Incluye comidas que requieren pocos movimientos, utensilios simples y posibilidad de preparar en lote. Prioriza alimentos accesibles, fáciles de manipular y con buen valor nutricional sin demandar esfuerzo físico sostenido.</p>",
             "schedule": [
                 {
-                    "name": "Día 1",
+                    "name": "Lunes",
                     "meals": [
-                        {
-                            "type": "Desayuno",
-                            "recipeIds": [
-                                "yogur_granola"
-                            ]
-                        },
-                        {
-                            "type": "Almuerzo",
-                            "recipeIds": [
-                                "ensalada_completa"
-                            ]
-                        },
-                        {
-                            "type": "Snack",
-                            "recipeIds": [
-                                "fruta_secos"
-                            ]
-                        },
-                        {
-                            "type": "Cena",
-                            "recipeIds": [
-                                "ensalada_liviana_proteina"
-                            ]
-                        }
+                        { "type": "Desayuno", "recipeIds": ["yogur_granola"] },
+                        { "type": "Almuerzo", "recipeIds": ["ensalada_completa"] },
+                        { "type": "Snack", "recipeIds": ["fruta_secos"] },
+                        { "type": "Cena", "recipeIds": ["ensalada_liviana_proteina"] }
                     ]
                 },
                 {
-                    "name": "Día 2",
+                    "name": "Martes",
                     "meals": [
-                        {
-                            "type": "Desayuno",
-                            "recipeIds": [
-                                "tostadas_queso_mermelada"
-                            ]
-                        },
-                        {
-                            "type": "Almuerzo",
-                            "recipeIds": [
-                                "ensalada_garbanzos"
-                            ]
-                        },
-                        {
-                            "type": "Snack",
-                            "recipeIds": [
-                                "hummus_bastones_zanahoria"
-                            ]
-                        },
-                        {
-                            "type": "Cena",
-                            "recipeIds": [
-                                "omelette_verduras"
-                            ]
-                        }
+                        { "type": "Desayuno", "recipeIds": ["tostadas_queso_mermelada"] },
+                        { "type": "Almuerzo", "recipeIds": ["ensalada_garbanzos"] },
+                        { "type": "Snack", "recipeIds": ["hummus_bastones_zanahoria"] },
+                        { "type": "Cena", "recipeIds": ["omelette_verduras"] }
                     ]
                 },
                 {
-                    "name": "Día 3",
+                    "name": "Miércoles",
                     "meals": [
-                        {
-                            "type": "Desayuno",
-                            "recipeIds": [
-                                "smoothie_banana"
-                            ]
-                        },
-                        {
-                            "type": "Almuerzo",
-                            "recipeIds": [
-                                "wrap_pollo_verduras"
-                            ]
-                        },
-                        {
-                            "type": "Snack",
-                            "recipeIds": [
-                                "queso_fruta"
-                            ]
-                        },
-                        {
-                            "type": "Cena",
-                            "recipeIds": [
-                                "revuelto_verduras_huevo"
-                            ]
-                        }
+                        { "type": "Desayuno", "recipeIds": ["smoothie_banana"] },
+                        { "type": "Almuerzo", "recipeIds": ["wrap_pollo_verduras"] },
+                        { "type": "Snack", "recipeIds": ["queso_fruta"] },
+                        { "type": "Cena", "recipeIds": ["revuelto_verduras_huevo"] }
                     ]
                 },
                 {
-                    "name": "Día 4",
+                    "name": "Jueves",
                     "meals": [
-                        {
-                            "type": "Desayuno",
-                            "recipeIds": [
-                                "avena_fruta"
-                            ]
-                        },
-                        {
-                            "type": "Almuerzo",
-                            "recipeIds": [
-                                "pollo_plancha_ensalada"
-                            ]
-                        },
-                        {
-                            "type": "Snack",
-                            "recipeIds": [
-                                "yogur_con_semillas"
-                            ]
-                        },
-                        {
-                            "type": "Cena",
-                            "recipeIds": [
-                                "ensalada_garbanzos"
-                            ]
-                        }
+                        { "type": "Desayuno", "recipeIds": ["avena_fruta"] },
+                        { "type": "Almuerzo", "recipeIds": ["pollo_plancha_ensalada"] },
+                        { "type": "Snack", "recipeIds": ["yogur_con_semillas"] },
+                        { "type": "Cena", "recipeIds": ["ensalada_garbanzos"] }
                     ]
                 },
                 {
-                    "name": "Día 5",
+                    "name": "Viernes",
                     "meals": [
-                        {
-                            "type": "Desayuno",
-                            "recipeIds": [
-                                "chia_pudding"
-                            ]
-                        },
-                        {
-                            "type": "Almuerzo",
-                            "recipeIds": [
-                                "arroz_huevo_verduras"
-                            ]
-                        },
-                        {
-                            "type": "Snack",
-                            "recipeIds": [
-                                "tostadas_mantequilla_mani"
-                            ]
-                        },
-                        {
-                            "type": "Cena",
-                            "recipeIds": [
-                                "ensalada_liviana_proteina"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "Día 6",
-                    "meals": [
-                        {
-                            "type": "Desayuno",
-                            "recipeIds": [
-                                "tostadas_palta_huevo"
-                            ]
-                        },
-                        {
-                            "type": "Almuerzo",
-                            "recipeIds": [
-                                "omelette_verduras"
-                            ]
-                        },
-                        {
-                            "type": "Snack",
-                            "recipeIds": [
-                                "frutas_variadas"
-                            ]
-                        },
-                        {
-                            "type": "Cena",
-                            "recipeIds": [
-                                "wrap_pollo_verduras"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "Día 7",
-                    "meals": [
-                        {
-                            "type": "Desayuno",
-                            "recipeIds": [
-                                "licuado_frutilla"
-                            ]
-                        },
-                        {
-                            "type": "Almuerzo",
-                            "recipeIds": [
-                                "ensalada_completa"
-                            ]
-                        },
-                        {
-                            "type": "Snack",
-                            "recipeIds": [
-                                "chocolate_amargo_porcion"
-                            ]
-                        },
-                        {
-                            "type": "Cena",
-                            "recipeIds": [
-                                "arroz_huevo_verduras"
-                            ]
-                        }
+                        { "type": "Desayuno", "recipeIds": ["chia_pudding"] },
+                        { "type": "Almuerzo", "recipeIds": ["arroz_huevo_verduras"] },
+                        { "type": "Snack", "recipeIds": ["tostadas_mantequilla_mani"] },
+                        { "type": "Cena", "recipeIds": ["ensalada_liviana_proteina"] }
                     ]
                 }
             ]

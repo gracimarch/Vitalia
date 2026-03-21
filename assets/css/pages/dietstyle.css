@@ -462,13 +462,13 @@ body.loaded #loader {
 .meal-section__chip {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 6px 14px 6px 10px;
-    border-radius: 30px;
-    font-size: 0.72rem;
-    font-weight: 700;
+    gap: 10px;
+    padding: 10px 24px;
+    border-radius: 40px;
+    font-size: 0.95rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 1.2px;
     white-space: nowrap;
     color: #fff;
     flex-shrink: 0;
