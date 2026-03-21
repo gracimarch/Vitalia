@@ -137,8 +137,32 @@
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) metaDesc.setAttribute('content', dieta.introduction ? dieta.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : dieta.title);
 
+        const canonicalUrl = 'https://vitalia-selfcare.vercel.app/dietas/' + dieta.slug;
         const canonical = document.querySelector('link[rel="canonical"]');
-        if (canonical) canonical.setAttribute('href', 'https://vitalia-selfcare.vercel.app/dietas/' + dieta.slug);
+        if (canonical) canonical.setAttribute('href', canonicalUrl);
+
+        const ogImage = dieta.image ? (dieta.image.startsWith('http') ? dieta.image : 'https://vitalia-selfcare.vercel.app' + (dieta.image.startsWith('/') ? '' : '/') + dieta.image) : 'https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg';
+
+        const seoTags = {
+            'meta[property="og:title"]': dieta.title + ' | Vitalia',
+            'meta[property="og:description"]': dieta.introduction ? dieta.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : dieta.title,
+            'meta[property="og:url"]': canonicalUrl,
+            'meta[property="og:image"]': ogImage,
+            'meta[name="twitter:title"]': dieta.title + ' | Vitalia',
+            'meta[name="twitter:description"]': dieta.introduction ? dieta.introduction.replace(/<[^>]*>/g, '').substring(0, 160) : dieta.title,
+            'meta[name="twitter:image"]': ogImage
+        };
+
+        Object.entries(seoTags).forEach(([selector, content]) => {
+            let el = document.querySelector(selector);
+            if (!el) {
+                el = document.createElement('meta');
+                const match = selector.match(/\[(\w+)="([^"]+)"\]/);
+                if (match) el.setAttribute(match[1], match[2]);
+                document.head.appendChild(el);
+            }
+            el.setAttribute('content', content);
+        });
     }
 
     /* ================================================

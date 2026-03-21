@@ -203,7 +203,14 @@ function injectSEO() {
   setMeta('meta[property="og:title"]', 'content', routineData.title + ' | Vitalia');
   setMeta('meta[property="og:description"]', 'content', desc);
   setMeta('meta[property="og:image"]', 'content', ogImage);
+  setMeta('meta[property="og:url"]', 'content', 'https://vitalia-selfcare.vercel.app/rutinas/' + routineData.slug);
+  setMeta('meta[name="twitter:title"]', 'content', routineData.title + ' | Vitalia');
+  setMeta('meta[name="twitter:description"]', 'content', desc);
+  setMeta('meta[name="twitter:image"]', 'content', ogImage);
 
+  // Canonical
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.setAttribute('href', 'https://vitalia-selfcare.vercel.app/rutinas/' + routineData.slug);
   // JSON-LD
   const schema = { "@context": "https://schema.org", "@type": "ExercisePlan", "name": routineData.title, "description": desc, "image": ogImage, "url": 'https://vitalia-selfcare.vercel.app/rutinas/' + routineData.slug };
   const tag = document.createElement('script');

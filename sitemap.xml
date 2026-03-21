@@ -163,8 +163,34 @@
 
 <!-- Rutinas -->
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/rutinas/ejercicio-en-15-min</loc>
-  <lastmod>2026-03-07T21:05:00+00:00</lastmod>
+  <loc>https://vitalia-selfcare.vercel.app/rutinas/entrenamiento-en-15-minutos</loc>
+  <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/rutinas/cuerpo-completo-en-casa</loc>
+  <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/rutinas/movilidad-y-fuerza-en-silla</loc>
+  <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/rutinas/fuerza-silla-de-ruedas</loc>
+  <lastmod>2026-03-21T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+<!-- Dietas adicionales -->
+<url>
+  <loc>https://vitalia-selfcare.vercel.app/dietas/plan-de-comidas-con-minima-preparacion-y-cero-esfuerzo-fisico</loc>
+  <lastmod>2026-03-21T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
