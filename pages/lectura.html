@@ -46,38 +46,47 @@
     <div id="header-placeholder"></div>
 
     <!-- Contenido -->
-    <main class="page-container">
+    <main class="page-container" style="padding: 0; max-width: 100%;">
 
-        <div class="title">
-            <h3 id="article-category">Cargando...</h3>
-            <h1 id="article-title">Cargando artículo...</h1>
-            <div class="reading-time">
-                <i class="bi bi-clock" alt="Ícono de reloj"></i>
-                <p id="reading-time-text">-- minutos de lectura</p>
+        <section class="lectura-hero" id="lectura-hero">
+            <img class="lectura-hero__img" id="article-image" src="" alt="Imagen del Artículo" style="display: none;">
+            <div class="lectura-hero__overlay"></div>
+
+            <a class="lectura-back-btn" id="btn-back" href="/blog.html" aria-label="Volver">
+                <i class="bi bi-arrow-left"></i>
+            </a>
+
+            <div class="lectura-hero__content">
+                <p class="lectura-hero__type" id="article-category">Cargando...</p>
+                <h1 class="lectura-hero__title" id="article-title">Cargando artículo...</h1>
+                <div class="lectura-hero__badges">
+                    <div class="lectura-badge">
+                        <i class="bi bi-clock" alt="Ícono de reloj"></i>
+                        <span id="reading-time-text">-- minutos de lectura</span>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div id="introduction" class="article introduction-container">
-            <p>Cargando introducción...</p>
-        </div>
+        <div class="lectura-main-container">
+            <div id="introduction" class="article introduction-container lectura-intro-card">
+                <p>Cargando introducción...</p>
+            </div>
 
-        <div class="image">
-            <img id="article-image" src="" alt="Imagen del Artículo">
-        </div>
+            <div class="article-title">
+                <h2>Índice de subtítulos</h2>
+            </div>
 
-        <div class="article-title">
-            <h2>Índice de subtítulos</h2>
-        </div>
+            <div class="article">
+                <ol id="table-of-contents">
+                    <!-- Tabla de contenidos generada dinámicamente -->
+                </ol>
+            </div>
 
-        <div class="article">
-            <ol id="table-of-contents">
-                <!-- Tabla de contenidos generada dinámicamente -->
-            </ol>
-        </div>
-
-        <!-- Secciones del artículo se insertan dinámicamente aquí -->
-        <div id="article-content">
-            <!-- El contenido completo del artículo se cargará aquí -->
+            <!-- Secciones del artículo se insertan dinámicamente aquí -->
+            <div id="article-content" class="article-content-dynamic">
+                <!-- El contenido completo del artículo se cargará aquí -->
+            </div>
         </div>
 
     </main>

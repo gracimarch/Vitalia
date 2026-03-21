@@ -1,0 +1,1850 @@
+{
+    "meals": [
+        {
+            "id": "avena_fruta",
+            "name": "Avena con fruta y semillas",
+            "type": "meal",
+            "meal_time": [
+                "breakfast"
+            ],
+            "complexity": "simple",
+            "prep_time": 10,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "avena",
+                "leche",
+                "fruta",
+                "semillas"
+            ],
+            "recipe": [
+                "Cocinar la avena con la leche a fuego medio hasta que espese, removiendo todo el tiempo para evitar que se pegue. Servir y añadir fruta fresca y semillas por encima."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "dairy_free": {
+                    "replace": {
+                        "leche": "leche vegetal"
+                    }
+                },
+                "gluten_free": {
+                    "replace": {
+                        "avena": "avena sin gluten"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/43f68671-f3e2-408e-bb81-09e1ba0e9996"
+        },
+        {
+            "id": "yogur_granola",
+            "name": "Yogur con granola y miel",
+            "type": "meal",
+            "meal_time": [
+                "breakfast",
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "yogur",
+                "granola",
+                "miel"
+            ],
+            "recipe": [
+                "Colocar el yogur en un recipiente, añadir la granola y terminar con miel por encima. Mezclar ligeramente antes de consumir."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "dairy_free": {
+                    "replace": {
+                        "yogur": "yogur vegetal"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/803326e6-0f63-4162-b32b-5c53e0b49840"
+        },
+        {
+            "id": "tostadas_palta_huevo",
+            "name": "Tostadas con palta y huevo",
+            "type": "meal",
+            "meal_time": [
+                "breakfast"
+            ],
+            "complexity": "simple",
+            "prep_time": 10,
+            "calories_level": "moderado",
+            "protein_level": "alta",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "pan",
+                "palta",
+                "huevo"
+            ],
+            "recipe": [
+                "Tostar el pan, aplastar la palta y distribuirla encima. Añadir el huevo cocido o a la plancha y servir de inmediato."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "gluten_free": {
+                    "replace": {
+                        "pan": "pan sin gluten"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/718fb100-f516-450f-9dee-8b9d5d737084"
+        },
+        {
+            "id": "tostadas_queso_mermelada",
+            "name": "Tostadas con queso y mermelada",
+            "type": "meal",
+            "meal_time": [
+                "breakfast",
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "moderado",
+            "protein_level": "baja",
+            "goal": "mantenimiento",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "pan",
+                "queso untable",
+                "mermelada"
+            ],
+            "recipe": [
+                "Tostar el pan y untar primero el queso y luego una capa de mermelada. Consumir al momento."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "gluten_free": {
+                    "replace": {
+                        "pan": "pan sin gluten"
+                    }
+                },
+                "dairy_free": {
+                    "replace": {
+                        "queso untable": "queso vegetal"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/9ef1ee48-c6ce-404b-8172-52318086f854"
+        },
+        {
+            "id": "smoothie_banana",
+            "name": "Smoothie de banana",
+            "type": "drink",
+            "meal_time": [
+                "breakfast",
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "moderado",
+            "protein_level": "baja",
+            "goal": "alto_calorico",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "banana",
+                "1/2 taza de leche",
+                "2 cucharadas avena"
+            ],
+            "recipe": [
+                "Licuar la banana con la leche y la avena hasta lograr una textura homogénea y cremosa."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "dairy_free": {
+                    "replace": {
+                        "leche": "1/2 taza agua natural"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/d72591f4-8973-4f9e-98be-67817695cb3f"
+        },
+        {
+            "id": "licuado_frutilla",
+            "name": "Licuado de frutilla",
+            "type": "drink",
+            "meal_time": [
+                "breakfast",
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "liviano",
+            "protein_level": "baja",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "frutilla",
+                "yogur"
+            ],
+            "recipe": [
+                "Licuar las frutillas con el yogur hasta obtener una bebida suave y uniforme."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "dairy_free": {
+                    "replace": {
+                        "yogur": "yogur vegetal"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/d07e2157-6097-447f-9202-57b299ca2cb0"
+        },
+        {
+            "id": "panqueques_avena",
+            "name": "Panqueques de avena con banana y frutilla",
+            "type": "meal",
+            "meal_time": [
+                "breakfast",
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 15,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "1/2 taza de avena",
+                "frutilla",
+                "banana",
+                "1 huevo"
+            ],
+            "recipe": [
+                "Triturar los ingredientes hasta formar una mezcla y cocinar en sartén en pequeñas porciones hasta dorar de ambos lados."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "gluten_free": {
+                    "replace": {
+                        "avena": "avena sin gluten"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/e3e67514-e098-434c-b3e0-d02d3afffe55"
+        },
+        {
+            "id": "huevos_tostadas",
+            "name": "Huevos revueltos con tostadas",
+            "type": "meal",
+            "meal_time": [
+                "breakfast"
+            ],
+            "complexity": "simple",
+            "prep_time": 10,
+            "calories_level": "moderado",
+            "protein_level": "alta",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "huevo",
+                "pan"
+            ],
+            "recipe": [
+                "Cocinar los huevos revueltos en sartén y acompañar con pan tostado."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "gluten_free": {
+                    "replace": {
+                        "pan": "pan sin gluten"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/bd9cebba-2734-46ed-b101-4899b8323b55"
+        },
+        {
+            "id": "fruta_secos",
+            "name": "Fruta con frutos secos",
+            "type": "snack",
+            "meal_time": [
+                "snack",
+                "breakfast"
+            ],
+            "complexity": "simple",
+            "prep_time": 2,
+            "calories_level": "moderado",
+            "protein_level": "baja",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "fruta",
+                "frutos secos"
+            ],
+            "recipe": [],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/84e6fb88-934d-4b10-a9de-5252fa31a65c"
+        },
+        {
+            "id": "cafe_tostadas",
+            "name": "Café con tostadas",
+            "type": "meal",
+            "meal_time": [
+                "breakfast"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "liviano",
+            "protein_level": "baja",
+            "goal": "mantenimiento",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "café",
+                "pan"
+            ],
+            "recipe": [
+                "Preparar el café y acompañar con tostadas simples."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "gluten_free": {
+                    "replace": {
+                        "pan": "pan sin gluten"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/b7670d9c-53c6-47a2-882d-925402545325"
+        },
+        {
+            "id": "chia_pudding",
+            "name": "Pudding de chía",
+            "type": "meal",
+            "meal_time": [
+                "breakfast",
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "chía",
+                "leche o yogurt",
+                "fruta a gusto"
+            ],
+            "recipe": [
+                "Mezclar la chía con la leche/yogurt y dejar reposar 30 minutos hasta que tome consistencia gelatinosa, si se quiere, agregar fruta."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "dairy_free": {
+                    "replace": {
+                        "leche": "leche vegetal"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/743f1a52-59f4-4877-bdcd-96b9dfe9a41d"
+        },
+        {
+            "id": "batido_verde",
+            "name": "Batido verde",
+            "type": "drink",
+            "meal_time": [h
+                "breakfast",
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "liviano",
+            "protein_level": "baja",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "espinaca",
+                "manzana",
+                "limón"
+            ],
+            "recipe": [
+                "Licuar todos los ingredientes hasta obtener una bebida homogénea."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/8f3c5339-f033-408c-b6b7-56e881c4a0fe"
+        },
+        {
+            "id": "tacos",
+            "name": "Tacos caseros",
+            "type": "meal",
+            "meal_time": [
+                "lunch",
+                "dinner"
+            ],
+            "complexity": "media",
+            "prep_time": 20,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": false,
+                "gluten_free": false,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "tortillas",
+                "proteína",
+                "verduras"
+            ],
+            "recipe": [
+                "Cocinar la proteína elegida, preparar las verduras y armar las tortillas enrollando todos los ingredientes."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "vegetarian": {
+                    "replace": {
+                        "proteína": "legumbres"
+                    }
+                }
+            },
+            "variants": [
+                {
+                    "name": "con pollo",
+                    "ingredients": [
+                        "pollo"
+                    ]
+                },
+                {
+                    "name": "vegetarianos",
+                    "ingredients": [
+                        "garbanzos"
+                    ]
+                },
+                {
+                    "name": "fit",
+                    "ingredients": [
+                        "pollo grillado"
+                    ]
+                }
+            ],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/64d67240-de2f-4cb7-8ddb-410e10b2d01b"
+        },
+        {
+            "id": "canastitos",
+            "name": "Canastitos rellenos",
+            "type": "meal",
+            "meal_time": [
+                "lunch",
+                "dinner"
+            ],
+            "complexity": "media",
+            "prep_time": 30,
+            "calories_level": "alto",
+            "protein_level": "media",
+            "goal": "alto_calorico",
+            "tags": {
+                "vegetarian": false,
+                "gluten_free": false,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "masa empanada",
+                "relleno"
+            ],
+            "recipe": [
+                "Colocar la masa en moldes, rellenar y hornear hasta dorar."
+            ],
+            "adaptable": true,
+            "adaptations": {},
+            "variants": [
+                {
+                    "name": "con jamón y queso",
+                    "ingredients": [
+                        "jamón",
+                        "queso"
+                    ]
+                },
+                {
+                    "name": "vegetarianos",
+                    "ingredients": [
+                        "verduras"
+                    ]
+                },
+                {
+                    "name": "proteicos",
+                    "ingredients": [
+                        "pollo",
+                        "huevo"
+                    ]
+                }
+            ],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/f56d59c4-9cc7-4f67-bb30-6106da1fd72c"
+        },
+        {
+            "id": "hotcakes",
+            "name": "Hotcakes rápidos",
+            "type": "meal",
+            "meal_time": [
+                "breakfast",
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 10,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "banana",
+                "huevo",
+                "avena"
+            ],
+            "recipe": [
+                "Mezclar y cocinar en sartén hasta dorar."
+            ],
+            "adaptable": true,
+            "adaptations": {},
+            "variants": [
+                {
+                    "name": "con frutas",
+                    "ingredients": [
+                        "fruta"
+                    ]
+                },
+                {
+                    "name": "proteicos",
+                    "ingredients": [
+                        "proteína"
+                    ]
+                }
+            ],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/39cae373-cc15-49e6-9baa-b7301b45a054"
+        },
+        {
+            "id": "brownie_fit",
+            "name": "Brownie fit",
+            "type": "dessert",
+            "meal_time": [
+                "snack"
+            ],
+            "complexity": "media",
+            "prep_time": 25,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "banana",
+                "cacao",
+                "huevo",
+                "avena"
+            ],
+            "recipe": [
+                "Mezclar los ingredientes y hornear hasta que esté firme."
+            ],
+            "adaptable": true,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/ebc0a864-95ac-4e2d-94f8-08104b1a8406"
+        },
+        {
+            "id": "tiramisu",
+            "name": "Tiramisú casero fácil",
+            "type": "dessert",
+            "meal_time": [
+                "snack"
+            ],
+            "complexity": "media",
+            "prep_time": 20,
+            "calories_level": "alto",
+            "protein_level": "baja",
+            "goal": "alto_calorico",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "vainillas",
+                "café",
+                "crema"
+            ],
+            "recipe": [
+                "Armar capas de vainillas humedecidas en café con crema y refrigerar hasta que tome consistencia."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "helado",
+            "name": "Helado casero fácil",
+            "type": "dessert",
+            "meal_time": [
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "moderado",
+            "protein_level": "baja",
+            "goal": "mantenimiento",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "banana congelada",
+                "leche"
+            ],
+            "recipe": [
+                "Procesar la banana congelada con la leche hasta lograr textura cremosa."
+            ],
+            "adaptable": true,
+            "adaptations": {},
+            "variants": [
+                {
+                    "name": "de chocolate",
+                    "ingredients": [
+                        "cacao"
+                    ]
+                }
+            ],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/d41bb01c-ff5d-4f71-ad5b-630ad9e5780f"
+        },
+        {
+            "id": "ensalada_completa",
+            "name": "Ensalada completa",
+            "type": "meal",
+            "meal_time": [
+                "lunch"
+            ],
+            "complexity": "simple",
+            "prep_time": 15,
+            "calories_level": "moderado",
+            "protein_level": "alta",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": false,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "verduras",
+                "proteína",
+                "aderezo"
+            ],
+            "recipe": [
+                "Lavar y cortar las verduras. Mezclar con la proteína elegida (pollo, huevo o legumbres) y aderezar a gusto."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "vegetarian": {
+                    "replace": {
+                        "proteína": "legumbres"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "bowl_arroz_verduras",
+            "name": "Bowl de arroz con verduras y proteína",
+            "type": "meal",
+            "meal_time": [
+                "lunch"
+            ],
+            "complexity": "media",
+            "prep_time": 20,
+            "calories_level": "moderado",
+            "protein_level": "alta",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": false,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "arroz",
+                "verduras",
+                "proteína"
+            ],
+            "recipe": [
+                "Cocinar el arroz. Saltear las verduras y la proteína elegida en una sartén. Servir todo junto en un bowl."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "vegetarian": {
+                    "replace": {
+                        "proteína": "tofu o legumbres"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/a1b76ff3-78a0-43a4-bc93-aef5ef2063dc"
+        },
+        {
+            "id": "pollo_plancha_ensalada",
+            "name": "Pollo a la plancha con ensalada",
+            "type": "meal",
+            "meal_time": [
+                "lunch"
+            ],
+            "complexity": "simple",
+            "prep_time": 15,
+            "calories_level": "liviano",
+            "protein_level": "alta",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": false,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "pechuga de pollo",
+                "verduras para ensalada"
+            ],
+            "recipe": [
+                "Cocinar el pollo a la plancha con condimentos a gusto. Acompañar con una buena porción de ensalada fresca."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/e0f11b3c-5c1e-46d0-8d18-7bf0a460e2e8"
+        },
+        {
+            "id": "tarta_verduras",
+            "name": "Tarta casera de verduras",
+            "type": "meal",
+            "meal_time": [
+                "lunch",
+                "dinner"
+            ],
+            "complexity": "media",
+            "prep_time": 45,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "masa para tarta",
+                "verduras variadas",
+                "huevo",
+                "queso"
+            ],
+            "recipe": [
+                "Rellenar la masa de tarta con verduras pre-cocidas, huevo y trozos de queso. Hornear hasta que la masa esté dorada."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "gluten_free": {
+                    "replace": {
+                        "masa para tarta": "masa sin gluten"
+                    }
+                },
+                "dairy_free": {
+                    "replace": {
+                        "queso": "queso vegetal"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "pasta_salsa_vegetales",
+            "name": "Pasta con salsa de tomate y vegetales",
+            "type": "meal",
+            "meal_time": [
+                "lunch"
+            ],
+            "complexity": "media",
+            "prep_time": 25,
+            "calories_level": "alto",
+            "protein_level": "baja",
+            "goal": "alto_calorico",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "pasta",
+                "salsa de tomate",
+                "vegetales"
+            ],
+            "recipe": [
+                "Hervir la pasta. En otra olla, preparar una salsa de tomate agregando vegetales troceados. Mezclar y servir."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "gluten_free": {
+                    "replace": {
+                        "pasta": "pasta sin gluten"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/2138493d-c010-47cc-bc60-9ddefa8717a9"
+        },
+        {
+            "id": "lentejas_guisadas",
+            "name": "Lentejas guisadas",
+            "type": "meal",
+            "meal_time": [
+                "lunch",
+                "dinner"
+            ],
+            "complexity": "media",
+            "prep_time": 40,
+            "calories_level": "moderado",
+            "protein_level": "alta",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "lentejas",
+                "verduras",
+                "caldo"
+            ],
+            "recipe": [
+                "Guisar las lentejas con verduras picadas (zanahoria, cebolla, morrón) y caldo hasta que estén tiernas."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/ad9df59c-2423-4876-ad25-002135b810d3"
+        },
+        {
+            "id": "arroz_huevo_verduras",
+            "name": "Arroz con huevo y verduras salteadas",
+            "type": "meal",
+            "meal_time": [
+                "lunch",
+                "dinner"
+            ],
+            "complexity": "simple",
+            "prep_time": 20,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "arroz",
+                "huevo",
+                "verduras"
+            ],
+            "recipe": [
+                "Saltear las verduras, agregar el arroz cocido y finalmente el huevo, revolviendo hasta que se cocine por completo."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "wrap_pollo_verduras",
+            "name": "Wrap de pollo o verduras",
+            "type": "meal",
+            "meal_time": [
+                "lunch",
+                "dinner"
+            ],
+            "complexity": "simple",
+            "prep_time": 15,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": false,
+                "gluten_free": false,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "tortilla (wrap)",
+                "verduras",
+                "pollo o legumbres"
+            ],
+            "recipe": [
+                "Rellenar la tortilla con pollo a la plancha (o legumbres) y verduras frescas, enrollar y disfrutar."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "vegetarian": {
+                    "replace": {
+                        "pollo o legumbres": "legumbres"
+                    }
+                },
+                "gluten_free": {
+                    "replace": {
+                        "tortilla (wrap)": "tortilla sin gluten"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "sopa_verduras_proteina",
+            "name": "Sopa de verduras con proteína",
+            "type": "meal",
+            "meal_time": [
+                "lunch",
+                "dinner"
+            ],
+            "complexity": "media",
+            "prep_time": 30,
+            "calories_level": "liviano",
+            "protein_level": "alta",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": false,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "verduras variadas",
+                "caldo",
+                "pollo o pescado"
+            ],
+            "recipe": [
+                "Hervir verduras en caldo y agregar la proteína en trozos hasta que esté cocida."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "vegetarian": {
+                    "replace": {
+                        "pollo o pescado": "huevo o garbanzos"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "carne_horno_papas",
+            "name": "Carne al horno con papas",
+            "type": "meal",
+            "meal_time": [
+                "lunch"
+            ],
+            "complexity": "media",
+            "prep_time": 50,
+            "calories_level": "alto",
+            "protein_level": "alta",
+            "goal": "alto_calorico",
+            "tags": {
+                "vegetarian": false,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "carne magra",
+                "papas",
+                "condimentos"
+            ],
+            "recipe": [
+                "Colocar la carne y las papas cortadas en una fuente de horno, condimentar y asar hasta lograr el punto deseado."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "ensalada_garbanzos",
+            "name": "Ensalada de garbanzos",
+            "type": "meal",
+            "meal_time": [
+                "lunch",
+                "dinner"
+            ],
+            "complexity": "simple",
+            "prep_time": 10,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "garbanzos cocidos",
+                "tomate",
+                "pepino",
+                "cebolla"
+            ],
+            "recipe": [
+                "Mezclar los garbanzos con los vegetales cortados en una ensaladera y aderezar con una vinagreta ligera."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "omelette_verduras",
+            "name": "Omelette con verduras",
+            "type": "meal",
+            "meal_time": [
+                "lunch",
+                "dinner",
+                "breakfast"
+            ],
+            "complexity": "simple",
+            "prep_time": 10,
+            "calories_level": "liviano",
+            "protein_level": "alta",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "huevos",
+                "verduras"
+            ],
+            "recipe": [
+                "Batir los huevos y verter en una sartén caliente. Agrega las verduras y cierra a la mitad cocinando de ambos lados."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "milanesas_horno",
+            "name": "Milanesas al horno",
+            "type": "meal",
+            "meal_time": [
+                "lunch",
+                "dinner"
+            ],
+            "complexity": "media",
+            "prep_time": 25,
+            "calories_level": "moderado",
+            "protein_level": "alta",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": false,
+                "gluten_free": false,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "milanesas (carne o vegetal)",
+                "limón o aderezo ligero"
+            ],
+            "recipe": [
+                "Disponer las milanesas en una placa con muy poco aceite y hornear hasta dorar."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "vegetarian": {
+                    "replace": {
+                        "milanesas (carne o vegetal)": "milanesas de soja o berenjena"
+                    }
+                },
+                "gluten_free": {
+                    "replace": {
+                        "milanesas (carne o vegetal)": "milanesas con rebozador sin gluten"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "frutas_variadas",
+            "name": "Fruta (banana, manzana, naranja)",
+            "type": "snack",
+            "meal_time": [
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 2,
+            "calories_level": "liviano",
+            "protein_level": "baja",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "fruta de estación"
+            ],
+            "recipe": [
+                "Lavar y pelar la fruta si es necesario, lista para disfrutar."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/58f25690-ea06-4020-b0e1-8f034ea51904"
+        },
+        {
+            "id": "yogur_con_semillas",
+            "name": "Yogur con semillas",
+            "type": "snack",
+            "meal_time": [
+                "snack",
+                "breakfast"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "liviano",
+            "protein_level": "media",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "yogur",
+                "semillas mezcladas"
+            ],
+            "recipe": [
+                "Servir el yogur en un recipiente y espolvorear semillas por encima."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "dairy_free": {
+                    "replace": {
+                        "yogur": "yogur vegetal"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "punado_frutos_secos",
+            "name": "Puñado de frutos secos",
+            "type": "snack",
+            "meal_time": [
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 1,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "nueces, almendras o maní"
+            ],
+            "recipe": [
+                "Tomar un puñado directamente y disfrutar de su sano aporte calórico y proteico."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/738c565e-3623-4a49-9cd9-649b3c95147d"
+        },
+        {
+            "id": "tostadas_mantequilla_mani",
+            "name": "Tostadas con mantequilla de maní",
+            "type": "snack",
+            "meal_time": [
+                "snack",
+                "breakfast"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "alto",
+            "protein_level": "media",
+            "goal": "alto_calorico",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "pan",
+                "mantequilla de maní"
+            ],
+            "recipe": [
+                "Tostar el pan y esparcir una capa de mantequilla de maní."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "gluten_free": {
+                    "replace": {
+                        "pan": "pan sin gluten"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "licuado_banana_snack",
+            "name": "Licuado de banana",
+            "type": "drink",
+            "meal_time": [
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "moderado",
+            "protein_level": "baja",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "banana",
+                "leche"
+            ],
+            "recipe": [
+                "Licuar bien para lograr una consistencia cremosa, ideal para la merienda."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "dairy_free": {
+                    "replace": {
+                        "leche": "leche vegetal"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "barrita_avena_casera",
+            "name": "Barrita casera de avena",
+            "type": "snack",
+            "meal_time": [
+                "snack"
+            ],
+            "complexity": "media",
+            "prep_time": 20,
+            "calories_level": "moderado",
+            "protein_level": "baja",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "avena",
+                "miel o pasta de dátiles"
+            ],
+            "recipe": [
+                "Mezclar avena con la miel y aplastar en un molde cuadrado. Refrigerar o hornear y cortar en barritas."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "gluten_free": {
+                    "replace": {
+                        "avena": "avena libre de gluten"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "galletas_integrales_snack",
+            "name": "Galletas integrales caseras",
+            "type": "snack",
+            "meal_time": [
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "moderado",
+            "protein_level": "baja",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "harina integral",
+                "huevo",
+                "edulcorante",
+                "vainilla",
+                "aceite",
+                "polvo de hornear"
+            ],
+            "recipe": [
+                "Mezclar todos los ingredientes hasta formar una masa homogénea.",
+                "Dar forma de galletas y hornear a 180°C por 15-20 minutos.",
+                "Dejar enfriar y consumir."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "gluten_free": {
+                    "replace": {
+                        "harina integral": "harina sin gluten"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/4921106e-0c41-42e4-9826-79409a5bf184"
+        },
+        {
+            "id": "hummus_bastones_zanahoria",
+            "name": "Hummus con bastones de zanahoria",
+            "type": "snack",
+            "meal_time": [
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 10,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "hummus",
+                "zanahoria fresca"
+            ],
+            "recipe": [
+                "Cortar la zanahoria en tiras largas o bastones y usarlas para untar el hummus."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "queso_fruta",
+            "name": "Queso y fruta",
+            "type": "snack",
+            "meal_time": [
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": false
+            },
+            "ingredients": [
+                "queso (cubos o rodajas)",
+                "fruta fresca"
+            ],
+            "recipe": [
+                "Cortar ambas cosas en porciones pequeñas. El contraste dulce-salado es genial para meriendas rápidas."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "dairy_free": {
+                    "replace": {
+                        "queso (cubos o rodajas)": "quesos veganos"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/f7e14a6c-737c-4ce4-bf32-afb154fb6d93"
+        },
+        {
+            "id": "chocolate_amargo_porcion",
+            "name": "Porción de hocolate amargo",
+            "type": "snack",
+            "meal_time": [
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 1,
+            "calories_level": "liviano",
+            "protein_level": "baja",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [],
+            "recipe": [],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "ensalada_liviana_proteina",
+            "name": "Ensalada liviana con proteína",
+            "type": "meal",
+            "meal_time": [
+                "dinner"
+            ],
+            "complexity": "simple",
+            "prep_time": 10,
+            "calories_level": "liviano",
+            "protein_level": "alta",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": false,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "hojas verdes",
+                "pollo, atún o huevo"
+            ],
+            "recipe": [
+                "Armar la base con vegetales livianos de hoja, agregar la proteína e incorporar limón y especias."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "vegetarian": {
+                    "replace": {
+                        "pollo, atún o huevo": "tofu o legumbres livianas"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/6f9e6331-fd8f-4feb-a598-181054b18f8f"
+        },
+        {
+            "id": "sopa_verduras_dinner",
+            "name": "Sopa de verduras casera",
+            "type": "meal",
+            "meal_time": [
+                "dinner"
+            ],
+            "complexity": "media",
+            "prep_time": 30,
+            "calories_level": "liviano",
+            "protein_level": "baja",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "verduras surtidas",
+                "caldo"
+            ],
+            "recipe": [
+                "Hervir verduras preferidas en caldo hasta ablandar. Perfecta para terminar el día liviano."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "tortilla_papa_verduras",
+            "name": "Tortilla de papa o verduras",
+            "type": "meal",
+            "meal_time": [
+                "dinner",
+                "lunch"
+            ],
+            "complexity": "media",
+            "prep_time": 30,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "huevos",
+                "verduras picadas o papa"
+            ],
+            "recipe": [
+                "Sartén caliente, verduras o papas previamente cocidas mezcladas con huevo batido. Cocinar por lado y lado."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "verduras_horno_huevopollo",
+            "name": "Verduras al horno con huevo o pollo",
+            "type": "meal",
+            "meal_time": [
+                "dinner"
+            ],
+            "complexity": "simple",
+            "prep_time": 40,
+            "calories_level": "moderado",
+            "protein_level": "alta",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": false,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "verduras asadas",
+                "huevo o pollo"
+            ],
+            "recipe": [
+                "Colocar a hornear verduras; sobre el final, sumar los huevos encima o la porción de pollo hasta cocerse."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "vegetarian": {
+                    "replace": {
+                        "huevo o pollo": "huevo o legumbres tostadas"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "salteado_verduras_arroz",
+            "name": "Salteado de verduras con arroz o fideos",
+            "type": "meal",
+            "meal_time": [
+                "dinner",
+                "lunch"
+            ],
+            "complexity": "media",
+            "prep_time": 20,
+            "calories_level": "moderado",
+            "protein_level": "media",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": false,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "verduras estilo wok",
+                "arroz o fideos"
+            ],
+            "recipe": [
+                "Wok o sartén grande: fuerte fuego para los vegetales, salsa de soja opcional, e integración rápida con la base de hidrato."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "gluten_free": {
+                    "replace": {
+                        "arroz o fideos": "arroz sin gluten"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "pescado_horno_ensalada",
+            "name": "Pescado al horno con ensalada",
+            "type": "meal",
+            "meal_time": [
+                "dinner"
+            ],
+            "complexity": "media",
+            "prep_time": 25,
+            "calories_level": "liviano",
+            "protein_level": "alta",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": false,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "pescado blanco",
+                "verduras para la ensalada"
+            ],
+            "recipe": [
+                "Plancha u horno suave para el pescado, guarnición generosa de hojas y crudos."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/47c8f648-f6fe-4a59-9a40-ee56c25fb6bb"
+        },
+        {
+            "id": "revuelto_verduras_huevo",
+            "name": "Revuelto de verduras y huevo",
+            "type": "meal",
+            "meal_time": [
+                "dinner"
+            ],
+            "complexity": "simple",
+            "prep_time": 15,
+            "calories_level": "liviano",
+            "protein_level": "alta",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "huevo",
+                "zapallito, espinaca u otras verduras"
+            ],
+            "recipe": [
+                "Las verduras picadas a la sartén, en los últimos 3 minutos rompes huevos encima, revuelves sin parar y sirves."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/2503d30f-42e1-4d41-9913-4eb3cb13c0fe"
+        },
+        {
+            "id": "limonada_menta_jengibre",
+            "name": "Limonada de menta y jengibre",
+            "type": "drink",
+            "meal_time": [
+                "breakfast",
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "liviano",
+            "protein_level": "baja",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "jugo de limón",
+                "menta fresca",
+                "jengibre rallado",
+                "agua"
+            ],
+            "recipe": [
+                "Puedes licuar todo o sumergir rodajas finas de jengibre y hojitas de menta rotas en el agua tibia para soltar sabor."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/cd1c384a-bec5-4b94-93f4-1472b0db69c1"
+        },
+        {
+            "id": "jugo_natural_naranja",
+            "name": "Jugo natural de naranja",
+            "type": "drink",
+            "meal_time": [
+                "breakfast",
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "moderado",
+            "protein_level": "baja",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "naranjas frescas"
+            ],
+            "recipe": [
+                "Exprimir naranjas y servir el jugo frío. Simple, clásico y con las vitaminas en el momento."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "smoothie_frutas_mixtas",
+            "name": "Smoothie de frutas mixtas",
+            "type": "drink",
+            "meal_time": [
+                "breakfast",
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "moderado",
+            "protein_level": "baja",
+            "goal": "balanceado",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "mix de frutas (ej: frutillas, durazno, frutos rojos)",
+                "agua o leche",
+                "hielo"
+            ],
+            "recipe": [
+                "Echar los ingredientes en la licuadora. La fruta congelada le da mejor textura. Licuar hasta conseguir una mezcla cremosa homogénea."
+            ],
+            "adaptable": true,
+            "adaptations": {
+                "dairy_free": {
+                    "replace": {
+                        "agua o leche": "agua o leche vegetal"
+                    }
+                }
+            },
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/8ca616a8-2f34-4daa-9209-2568b0860e4f"
+        },
+        {
+            "id": "te_infusiones",
+            "name": "Té o infusiones aromáticas",
+            "type": "drink",
+            "meal_time": [
+                "breakfast",
+                "snack",
+                "dinner"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "liviano",
+            "protein_level": "baja",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "saquitos de té o infusiones",
+                "agua hirviendo"
+            ],
+            "recipe": [
+                "Agregar la infusión, verter agua caliente y dejar reposar el tiempo que marque el fabricante."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        },
+        {
+            "id": "cafe_solo",
+            "name": "Café",
+            "type": "drink",
+            "meal_time": [
+                "breakfast",
+                "snack"
+            ],
+            "complexity": "simple",
+            "prep_time": 5,
+            "calories_level": "liviano",
+            "protein_level": "baja",
+            "goal": "fit",
+            "tags": {
+                "vegetarian": true,
+                "gluten_free": true,
+                "dairy_free": true
+            },
+            "ingredients": [
+                "café molido o de filtro",
+                "agua"
+            ],
+            "recipe": [
+                "Preparar a tu gusto en la cafetera y tomarlo solo o con muy poca edulcoración."
+            ],
+            "adaptable": false,
+            "adaptations": {},
+            "variants": [],
+            "url": "https://d3p3fw3rutb1if.cloudfront.net/photos/21959b22-63f4-4557-add8-55eb1586a369"
+        }
+    ]
+}
