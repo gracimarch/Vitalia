@@ -110,11 +110,11 @@
 }
 
 .overview-title {
-    font-size: 2.2rem !important;
+    font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: -0.5px;
-    margin: 0 0 20px 0;
+    margin: 0 0 16px 0;
     color: var(--bg-cream, #fefbf3);
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -129,19 +129,19 @@
 .overview-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 30px;
     padding: 6px 14px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-color, #333);
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
 
 .overview-badge i {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--orange, #E1947F);
 }
 

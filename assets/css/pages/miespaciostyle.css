@@ -206,7 +206,7 @@
 
 .food-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(244, 162, 97, 0.3);
+    box-shadow: 0 10px 25px rgba(128, 202, 205, 0.3);
 }
 
 .food-card i {
@@ -412,7 +412,7 @@
 
 .routine-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(128, 202, 205, 0.3);
+    box-shadow: 0 10px 25px rgba(244, 162, 97, 0.3);
 }
 
 .routine-card i {

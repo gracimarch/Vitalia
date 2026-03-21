@@ -52,8 +52,7 @@
         <img src="/assets/favicons/vitalia-favicon.svg" alt="" aria-hidden="true" class="loader-logo">
     </div>
 
-    <!-- Encabezado -->
-    <div id="header-placeholder"></div>
+
 
     <!-- Contenido -->
     <main class="page-container" style="padding: 0; max-width: 100%;">
@@ -62,9 +61,9 @@
             <img class="lectura-hero__img" id="article-image" src="" alt="Imagen del Artículo" style="display: none;">
             <div class="lectura-hero__overlay"></div>
 
-            <a class="lectura-back-btn" id="btn-back" href="/blog" aria-label="Volver">
+            <button class="lectura-back-btn" id="btn-back" onclick="history.back()" aria-label="Volver">
                 <i class="bi bi-arrow-left"></i>
-            </a>
+            </button>
 
             <div class="lectura-hero__content">
                 <p class="lectura-hero__type" id="article-category">Cargando...</p>

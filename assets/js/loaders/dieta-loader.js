@@ -490,8 +490,8 @@
                     <i class="${icon}"></i>
                     <span>${sectionName}</span>
                 </div>
-                ${timeLabel ? `<span class="meal-section__time" style="font-weight: 700; color: #777; margin-left: 10px;">${timeLabel}</span>` : ''}
-                <div class="meal-section__line" style="margin-left: 10px; flex: 1; height: 1px; background: #eee;"></div>
+                ${timeLabel ? `<span class="meal-section__time">${timeLabel}</span>` : ''}
+                <div class="meal-section__line"></div>
             </div>
         `;
 
