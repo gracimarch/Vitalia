@@ -526,17 +526,20 @@
 
             if (multiDay) {
                 // Multi-day: each option IS a meal time (Desayuno, Almuerzo, etc.)
-                // Options are individual meal times, cards within each are the actual meals
-                stage.options.forEach(opt => {
-                    panel.appendChild(
-                        buildMealSection(opt.label, [{ cards: opt.cards }], dieta)
-                    );
-                });
+                if (stage.options) {
+                    stage.options.forEach(opt => {
+                        panel.appendChild(
+                            buildMealSection(opt.label, [{ cards: opt.cards }], dieta)
+                        );
+                    });
+                }
             } else {
                 // Single-day: stage.name IS the meal time, options are alternatives
-                panel.appendChild(
-                    buildMealSection(stage.name, stage.options, dieta)
-                );
+                if (stage.options) {
+                    panel.appendChild(
+                        buildMealSection(stage.name, stage.options, dieta)
+                    );
+                }
             }
 
             panelsContainer.appendChild(panel);
