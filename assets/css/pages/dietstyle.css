@@ -82,6 +82,7 @@ body.loaded #loader {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    filter: brightness(0.75) contrast(1.1);
 }
 
 .diet-hero__overlay {
@@ -1123,13 +1124,14 @@ body.loaded #loader {
     animation: backdropIn 0.3s ease;
 }
 
-/* Wrapper: button above + modal below, same width constraint */
+/* Wrapper: button above + modal below, centered in backdrop */
 .diet-modal-wrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
     max-width: 600px;
+    /* centering is handled by backdrop's justify-content: center */
 }
 
 @keyframes backdropIn {
@@ -1143,6 +1145,7 @@ body.loaded #loader {
 }
 
 .diet-modal {
+    position: relative; /* needed for absolute close btn on mobile */
     width: 100%;
     max-width: 600px;
     max-height: 88vh;
@@ -1223,7 +1226,7 @@ body.loaded #loader {
 }
 
 .diet-modal__close {
-    margin: 0 0 -35px -48px;
+    margin: 0 0 8px 14px; /* floats above card, 14px from left edge */
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -1246,6 +1249,23 @@ body.loaded #loader {
     background: rgba(255, 255, 255, 0.98);
     transform: scale(1.08);
 }
+
+/* Mobile/small tablets: X moves inside the card, top-left corner */
+@media (max-width: 640px) {
+    .diet-modal__close {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        margin: 0;
+        z-index: 10;
+    }
+
+    /* Shrink the above-card spacing since button is now inside */
+    .diet-modal-wrapper {
+        gap: 0;
+    }
+}
+
 
 .diet-modal__time {
     display: flex;

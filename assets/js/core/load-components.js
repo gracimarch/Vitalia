@@ -3,6 +3,32 @@
  * Loads header and footer partials dynamically and handles active link states.
  */
 
+/**
+ * Rewrites clean Vercel-style URLs to .html paths when running locally.
+ * On production, Vercel rewrites handle /mi-espacio → /pages/mi-espacio.html
+ * On localhost (python http.server) those rewrites don't exist, so we patch the HTML.
+ */
+function rewriteLinksForLocal(html) {
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (!isLocal) return html;
+
+    // Map: clean-URL href fragment → local .html path
+    // Handles both plain hrefs and anchor-suffixed hrefs (e.g. /mi-espacio#lecturas)
+    const rewrites = [
+        ['/mi-espacio', '/pages/mi-espacio.html'],
+        ['/blog',       '/pages/blog.html'],
+        ['/formulario', '/pages/form.html'],
+    ];
+
+    rewrites.forEach(([from, to]) => {
+        // Match href="<from>" and href="<from>#anything"
+        const pattern = new RegExp(`href="${from.replace('/', '\\/')}(#[^"]*)?"`,'g');
+        html = html.replace(pattern, (_, anchor) => `href="${to}${anchor || ''}"`);
+    });
+
+    return html;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const componentsPath = "/assets/partials/";
@@ -14,17 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return response.text();
         })
         .then(data => {
-            // Replace {{ROOT}} with empty string or / as we use absolute paths now
-            // But let's check if the templates use {{ROOT}}
-            // If templates have <a href="{{ROOT}}index.html">, we should replace it with "/"
-            const headerHTML = data.replace(/{{ROOT}}/g, "/");
+            const headerHTML = rewriteLinksForLocal(data.replace(/{{ROOT}}/g, "/"));
             const headerPlaceholder = document.getElementById("header-placeholder");
             if (headerPlaceholder) headerPlaceholder.innerHTML = headerHTML;
-
-            // Highlight Active Link
             highlightActiveLink();
-
-            // initialize Navbar Toggle
             initializeNavbarToggle();
         })
         .catch(err => console.error("Error loading header:", err));
@@ -36,16 +55,12 @@ document.addEventListener("DOMContentLoaded", function () {
             return response.text();
         })
         .then(data => {
-            const footerHTML = data.replace(/{{ROOT}}/g, "/");
+            const footerHTML = rewriteLinksForLocal(data.replace(/{{ROOT}}/g, "/"));
             const footerPlaceholder = document.getElementById("footer-placeholder");
             if (footerPlaceholder) {
                 footerPlaceholder.innerHTML = footerHTML;
-
-                // Set dynamic copyright year
                 const footerYear = document.getElementById('footer-year');
-                if (footerYear) {
-                    footerYear.textContent = new Date().getFullYear();
-                }
+                if (footerYear) footerYear.textContent = new Date().getFullYear();
             }
         })
         .catch(err => console.error("Error loading footer:", err));
