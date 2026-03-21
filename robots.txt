@@ -3,6 +3,6 @@ Allow: /
 Disallow: /assets/js/
 Disallow: /assets/css/
 Disallow: /assets/data/
-Disallow: /pages/
+Disallow: /assets/partials/
 
 Sitemap: https://vitalia-selfcare.vercel.app/sitemap.xml
