@@ -69,9 +69,12 @@ body {
     background: linear-gradient(135deg, #B571DE, #9d60cf);
     color: white;
     text-decoration: none;
+    border: none;
     border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 1rem;
+    cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(181, 113, 222, 0.3);
 }

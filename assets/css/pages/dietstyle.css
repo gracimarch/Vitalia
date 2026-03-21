@@ -145,13 +145,13 @@ body.loaded #loader {
 }
 
 .diet-hero__title {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 6vw, 2.3rem);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: -0.5px;
     color: var(--bg-cream, #fefbf3);
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin: 0 0 20px 0;
+    margin: 0 0 16px 0;
     max-width: 680px;
 }
 
@@ -165,19 +165,19 @@ body.loaded #loader {
 .diet-badge {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 30px;
     padding: 6px 14px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-color, #333);
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
 
 .diet-badge i {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--cyan, #80CACD);
 }
 
@@ -381,6 +381,7 @@ body.loaded #loader {
 .plan-layout__calendar .diet-cal {
     padding: 14px 12px 12px;
     margin: 0;
+    margin-top: 28px;
 }
 
 .plan-layout__calendar .diet-cal__top {
@@ -446,14 +447,15 @@ body.loaded #loader {
 .meal-section__header {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .meal-section__time {
     font-size: 0.6rem;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.8px;
+    line-height: 1;
     color: var(--text-muted, #a0a0a0);
     white-space: nowrap;
     flex-shrink: 0;
@@ -462,20 +464,23 @@ body.loaded #loader {
 .meal-section__chip {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px 24px;
-    border-radius: 40px;
-    font-size: 0.95rem;
-    font-weight: 800;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
+    line-height: 1;
     white-space: nowrap;
     color: #fff;
     flex-shrink: 0;
 }
 
 .meal-section__chip i {
-    font-size: 0.95rem;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
 }
 
 .meal-section__chip--desayuno {
@@ -514,7 +519,6 @@ body.loaded #loader {
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding-left: 4px;
 }
 
 .meal-option-sep {
@@ -1151,7 +1155,7 @@ body.loaded #loader {
 }
 
 .diet-modal {
-    position: relative; /* needed for absolute close btn on mobile */
+    position: relative;
     width: 100%;
     max-width: 600px;
     max-height: 88vh;
@@ -1194,7 +1198,7 @@ body.loaded #loader {
     width: calc(100% - 24px);
     height: 190px;
     flex-shrink: 0;
-    margin: 16px 12px 0;
+    margin: 12px 12px 0;
     overflow: hidden;
     border-radius: 16px;
 }
@@ -1232,14 +1236,17 @@ body.loaded #loader {
 }
 
 .diet-modal__close {
-    margin: 0 0 8px 14px; /* floats above card, 14px from left edge */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.82);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1254,22 +1261,6 @@ body.loaded #loader {
 .diet-modal__close:hover {
     background: rgba(255, 255, 255, 0.98);
     transform: scale(1.08);
-}
-
-/* Mobile/small tablets: X moves inside the card, top-left corner */
-@media (max-width: 640px) {
-    .diet-modal__close {
-        position: absolute;
-        top: 14px;
-        left: 14px;
-        margin: 0;
-        z-index: 10;
-    }
-
-    /* Shrink the above-card spacing since button is now inside */
-    .diet-modal-wrapper {
-        gap: 0;
-    }
 }
 
 

@@ -54,9 +54,9 @@
         <div class="diet-hero__overlay"></div>
 
         <!-- Back button -->
-        <a class="diet-back-btn" id="btn-back" href="/mi-espacio" aria-label="Volver">
-            <i class="bi bi-x-lg"></i>
-        </a>
+        <button class="diet-back-btn" id="btn-back" onclick="history.back()" aria-label="Volver">
+            <i class="bi bi-arrow-left"></i>
+        </button>
 
         <div class="diet-hero__content">
             <p class="diet-hero__type" id="diet-hero-type"></p>
@@ -166,11 +166,11 @@
     <!-- ============================================ -->
     <div class="diet-modal-backdrop" id="recipe-modal-backdrop" role="dialog" aria-modal="true" aria-label="Receta">
         <div class="diet-modal-wrapper">
-            <!-- Close button — floats above the card -->
-            <button class="diet-modal__close" id="modal-close-btn" aria-label="Cerrar receta">
-                <i class="bi bi-x-lg"></i>
-            </button>
             <div class="diet-modal" id="recipe-modal">
+                <!-- Close button — inside the card, overlapping the image -->
+                <button class="diet-modal__close" id="modal-close-btn" aria-label="Cerrar receta">
+                    <i class="bi bi-x-lg"></i>
+                </button>
                 <div class="diet-modal__img-wrap">
                     <img class="diet-modal__img" id="modal-img" src="" alt="">
                 </div>
