@@ -18,11 +18,20 @@ const VoiceService = {
       const voices = this.synth.getVoices();
       if(voices.length === 0) return;
       
+      // Priorizar la voz de hombre de Microsoft (Edge/Windows/Android)
+      const microsoftMaleVoice = voices.find(v => 
+        (v.name.includes('Microsoft') || v.name.includes('Edge')) && 
+        v.lang.startsWith('es') && 
+        /(Jorge|Raul|Pablo|Alvaro|Tomas|Diego|Gerardo|Antonio|Emilio|Dario|Federico|Dionisio|Alonso)/i.test(v.name)
+      );
+
       // Select the most natural sounding Spanish voice available
-      // TOP 1: Voces "Naturales" (Neuronales) de Microsoft Edge. Son gratuitas y de nivel humano (ej: "Microsoft Dalia Online (Natural)")
-      // TOP 2: Voz de Google (motor de Chrome/Android)
-      // TOP 3: Voces nativas Premium de Mac (Paulina / Monica)
-      this.voice = voices.find(v => v.name.includes('Natural') && v.lang.startsWith('es')) ||
+      // TOP 1: Voz masculina de Microsoft (a petición)
+      // TOP 2: Voces "Naturales" (Neuronales) de Microsoft Edge. Son gratuitas y de nivel humano.
+      // TOP 3: Voz de Google (motor de Chrome/Android)
+      // TOP 4: Voces nativas Premium de Mac (Paulina / Monica)
+      this.voice = microsoftMaleVoice ||
+                   voices.find(v => v.name.includes('Natural') && v.lang.startsWith('es')) ||
                    voices.find(v => v.name.includes('Online') && v.lang.startsWith('es')) ||
                    voices.find(v => v.name === 'Google español') ||
                    voices.find(v => v.name === 'Google español de Estados Unidos') ||
