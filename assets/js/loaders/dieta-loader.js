@@ -82,7 +82,9 @@
                                         time: rec.prep_time ? `Listo en ${rec.prep_time} minutos` : '',
                                         image: rec.url || '',
                                         ingredients: rec.ingredients || [],
-                                        instructions: (rec.recipe || []).map(p => `<p>${p}</p>`).join('')
+                                        instructions: Array.isArray(rec.recipe) 
+                                            ? rec.recipe.map(p => `<p>${p}</p>`).join('') 
+                                            : `<p>${rec.recipe || ''}</p>`
                                     });
                                 }
                                 
