@@ -407,7 +407,7 @@
             "id": "batido_verde",
             "name": "Batido verde",
             "type": "drink",
-            "meal_time": [h
+            "meal_time": [
                 "breakfast",
                 "snack"
             ],
