@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         initSection('alimentacion-list', nutritionItems, 'dieta');
         initSection('salud-mental-list', mentalHealthItems, 'salud-mental');
 
+        // Build global search index
+        const allBlogItems = buildSearchIndex(lecturasData.lecturas, dietasData.dietas, rutinasData.rutinas);
+
+        // Initialize search
+        initSearch(allBlogItems);
+
     } catch (error) {
         console.error('Error loading blog content:', error);
     }
@@ -135,11 +141,176 @@ function createCard(item, stylePrefix, index) {
         <div class="heading-time">
             <h3>${item.title}</h3>
             <div class="reading-time">
-                <i class="bi bi-clock"></i>
+                <i class="fa-solid fa-clock"></i>
                 <span>${timeText}</span>
             </div>
         </div>
     `;
 
     return a;
+}
+
+/* =========================================
+   SEARCH FUNCTIONALITY
+   ========================================= */
+
+function normalizeText(text) {
+    return text
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+}
+
+function buildSearchIndex(lecturas, dietas, rutinas) {
+    const items = [];
+
+    lecturas.forEach(item => {
+        items.push({
+            ...item,
+            _stylePrefix: getStylePrefixForLectura(item.category),
+            _searchText: normalizeText([
+                item.title,
+                item.category || '',
+                item.description || '',
+                item.keywords || '',
+                'lectura articulo'
+            ].join(' '))
+        });
+    });
+
+    dietas.forEach(item => {
+        items.push({
+            ...item,
+            _stylePrefix: 'dieta',
+            _searchText: normalizeText([
+                item.title,
+                item.type || '',
+                item.duration || '',
+                'dieta alimentacion plan',
+            ].join(' '))
+        });
+    });
+
+    rutinas.forEach(item => {
+        items.push({
+            ...item,
+            _stylePrefix: 'ejercicio',
+            _searchText: normalizeText([
+                item.title,
+                item.level || '',
+                item.duration || '',
+                'rutina ejercicio entrenamiento',
+            ].join(' '))
+        });
+    });
+
+    return items;
+}
+
+function getStylePrefixForLectura(category) {
+    if (!category) return 'productividad';
+    const cat = normalizeText(category);
+    if (cat.includes('productividad')) return 'productividad';
+    if (cat.includes('actividad fisica') || cat.includes('movilidad')) return 'ejercicio';
+    if (cat.includes('habitos alimenticios') || cat.includes('alimentic')) return 'dieta';
+    if (cat.includes('salud mental') || cat.includes('bienestar')) return 'salud-mental';
+    return 'productividad';
+}
+
+// Sections to hide/show when searching
+const BLOG_CONTENT_SELECTORS = [
+    '#productividad', '#ejercicios', '#alimentaciones', '#salud-mental',
+    '.lecturas',
+    '.ejercicios',
+    '.thanks'
+];
+
+function initSearch(allItems) {
+    const input = document.getElementById('blog-search-input');
+    const clearBtn = document.getElementById('search-clear');
+    const resultsCount = document.getElementById('search-results-count');
+    const resultsSection = document.getElementById('search-results-section');
+    const resultsGrid = document.getElementById('search-results-grid');
+    const noResults = document.getElementById('search-no-results');
+
+    if (!input) return;
+
+    let debounceTimer = null;
+
+    const toggleBlogContent = (visible) => {
+        BLOG_CONTENT_SELECTORS.forEach(selector => {
+            document.querySelectorAll(selector).forEach(el => {
+                if (visible) {
+                    el.classList.remove('blog-content-hidden');
+                } else {
+                    el.classList.add('blog-content-hidden');
+                }
+            });
+        });
+    };
+
+    const performSearch = (query) => {
+        const normalized = normalizeText(query.trim());
+
+        if (!normalized) {
+            // Clear search
+            resultsSection.style.display = 'none';
+            resultsGrid.innerHTML = '';
+            noResults.style.display = 'none';
+            resultsCount.textContent = '';
+            clearBtn.style.display = 'none';
+            toggleBlogContent(true);
+            return;
+        }
+
+        clearBtn.style.display = 'flex';
+        toggleBlogContent(false);
+        resultsSection.style.display = 'block';
+
+        // Split query into words for multi-term matching
+        const terms = normalized.split(/\s+/).filter(t => t.length > 1);
+
+        const matches = allItems.filter(item => {
+            return terms.every(term => item._searchText.includes(term));
+        });
+
+        // Render results
+        resultsGrid.innerHTML = '';
+
+        if (matches.length > 0) {
+            noResults.style.display = 'none';
+            matches.forEach((item, index) => {
+                const card = createCard(item, item._stylePrefix, index);
+                resultsGrid.appendChild(card);
+            });
+            resultsCount.textContent = `${matches.length} resultado${matches.length !== 1 ? 's' : ''} encontrado${matches.length !== 1 ? 's' : ''}`;
+        } else {
+            noResults.style.display = 'block';
+            resultsCount.textContent = '';
+        }
+    };
+
+    // Input event with debounce
+    input.addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            performSearch(input.value);
+        }, 300);
+    });
+
+    // Clear button
+    clearBtn.addEventListener('click', () => {
+        input.value = '';
+        performSearch('');
+        input.focus();
+    });
+
+    // Allow Escape key to clear
+    input.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            input.value = '';
+            performSearch('');
+            input.blur();
+        }
+    });
 }

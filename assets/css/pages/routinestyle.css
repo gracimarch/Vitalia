@@ -179,7 +179,7 @@
     justify-content: center;
     gap: 10px;
     width: 100%;
-    padding: 16px 2.5rem;
+    padding: 22px 2.5rem; /* Increased height */
     margin: 8px 0 32px;
     border: none;
     border-radius: 50px;
@@ -194,7 +194,7 @@
 }
 
 .overview-start-btn i {
-    font-size: 1.4rem;
+    font-size: 1.15rem; /* Decreased icon size */
 }
 
 .overview-start-btn:hover {

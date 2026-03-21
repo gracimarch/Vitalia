@@ -34,7 +34,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/core/variables.css">
     <link rel="stylesheet" href="/assets/css/pages/dietstyle.css?v=1.1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <script src="/assets/js/core/router.js"></script>
 </head>
@@ -55,7 +55,7 @@
 
         <!-- Back button -->
         <button class="diet-back-btn" id="btn-back" onclick="history.back()" aria-label="Volver">
-            <i class="bi bi-arrow-left"></i>
+            <i class="fa-solid fa-arrow-left"></i>
         </button>
 
         <div class="diet-hero__content">
@@ -71,10 +71,10 @@
     <nav class="diet-tabs-wrapper" role="tablist" aria-label="Secciones del plan">
         <div class="diet-tabs">
             <button class="diet-tab active" data-panel="panel-plan" role="tab" aria-selected="true" id="tab-plan">
-                <i class="bi bi-calendar3"></i> Plan
+                <i class="fa-regular fa-calendar"></i> Plan
             </button>
             <button class="diet-tab" data-panel="panel-recipes" role="tab" aria-selected="false" id="tab-recipes">
-                <i class="bi bi-journal-richtext"></i> Recetas
+                <i class="fa-solid fa-book-open"></i> Recetas
             </button>
         </div>
     </nav>
@@ -127,27 +127,27 @@
                 <!-- Diet filter dropdown (visual only) -->
                 <details class="diet-filter">
                     <summary class="diet-filter__toggle">
-                        <i class="bi bi-magic"></i>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
                         <span>Adaptar plan</span>
-                        <i class="bi bi-chevron-down diet-filter__chevron"></i>
+                        <i class="fa-solid fa-chevron-down diet-filter__chevron"></i>
                     </summary>
                     <div class="diet-filter__menu">
                         <label class="diet-filter__option">
                             <input type="checkbox" class="diet-filter__check" disabled>
                             <span class="diet-filter__pill">
-                                <i class="bi bi-shield-check"></i> Sin gluten
+                                <i class="fa-solid fa-shield-halved"></i> Sin gluten
                             </span>
                         </label>
                         <label class="diet-filter__option">
                             <input type="checkbox" class="diet-filter__check" disabled>
                             <span class="diet-filter__pill">
-                                <i class="bi bi-droplet-half"></i> Sin lácteos
+                                <i class="fa-solid fa-tint"></i> Sin lácteos
                             </span>
                         </label>
                         <label class="diet-filter__option">
                             <input type="checkbox" class="diet-filter__check" disabled>
                             <span class="diet-filter__pill">
-                                <i class="bi bi-flower1"></i> Vegetariano
+                                <i class="fa-solid fa-leaf"></i> Vegetariano
                             </span>
                         </label>
                     </div>
@@ -169,7 +169,7 @@
             <div class="diet-modal" id="recipe-modal">
                 <!-- Close button — inside the card, overlapping the image -->
                 <button class="diet-modal__close" id="modal-close-btn" aria-label="Cerrar receta">
-                    <i class="bi bi-x-lg"></i>
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
                 <div class="diet-modal__img-wrap">
                     <img class="diet-modal__img" id="modal-img" src="" alt="">
@@ -179,7 +179,7 @@
                         <h2 class="diet-modal__title" id="modal-title"></h2>
                     </div>
                     <div class="diet-modal__time">
-                        <i class="bi bi-clock"></i>
+                        <i class="fa-solid fa-clock"></i>
                         <span id="modal-time"></span>
                     </div>
                     <p class="diet-modal__ingredients-title">Ingredientes</p>

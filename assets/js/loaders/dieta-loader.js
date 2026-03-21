@@ -7,12 +7,12 @@
     'use strict';
 
     const ICON_MAP = {
-        'desayuno': 'bi bi-sun',
-        'almuerzo': 'bi bi-cloud-sun',
-        'cena': 'bi bi-moon-stars',
-        'snack': 'bi bi-lightning-charge',
-        'merienda': 'bi bi-cup-hot',
-        'default': 'bi bi-egg-fried'
+        'desayuno': '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16"><path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/></svg>',
+        'almuerzo': '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-sun-fill" viewBox="0 0 16 16"><path d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5z"/><path d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708zm1.734 3.374a2 2 0 1 1 3.296 2.198q.3.423.516.898a3 3 0 1 0-4.84-3.225q.529.017 1.028.129m4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377M14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"/></svg>',
+        'cena': '<i class="fa-solid fa-moon"></i>',
+        'snack': '<i class="fa-solid fa-bolt"></i>',
+        'merienda': '<i class="fa-solid fa-mug-hot"></i>',
+        'default': '<i class="fa-solid fa-egg"></i>'
     };
 
     function getSlugFromPath() {
@@ -36,11 +36,11 @@
 
     function getVariationIcon(type) {
         const t = type.toLowerCase();
-        if (t.includes('gluten')) return 'bi bi-shield-check';
-        if (t.includes('vegetar')) return 'bi bi-leaf';
-        if (t.includes('vegano')) return 'bi bi-tree';
-        if (t.includes('lácte') || t.includes('lacte')) return 'bi bi-droplet-half';
-        return 'bi bi-stars';
+        if (t.includes('gluten')) return 'fa-solid fa-shield-halved';
+        if (t.includes('vegetar')) return 'fa-solid fa-leaf';
+        if (t.includes('vegano')) return 'fa-solid fa-tree';
+        if (t.includes('lácte') || t.includes('lacte')) return 'fa-solid fa-tint';
+        return 'fa-solid fa-star';
     }
 
     async function fetchDietasAndRecetas() {
@@ -128,8 +128,8 @@
         const badgesEl = document.getElementById('diet-hero-badges');
         if (badgesEl && dieta.duration) {
             badgesEl.innerHTML = `
-                <span class="diet-badge"><i class="bi bi-clock"></i> ${dieta.duration}</span>
-                ${dieta.schedule ? `<span class="diet-badge"><i class="bi bi-list-check"></i> ${dieta.schedule.length} comidas</span>` : ''}
+                <span class="diet-badge"><i class="fa-solid fa-clock"></i> ${dieta.duration}</span>
+                ${dieta.schedule ? `<span class="diet-badge"><i class="fa-solid fa-tasks"></i> ${dieta.schedule.length} comidas</span>` : ''}
             `;
         }
 
@@ -232,7 +232,7 @@
         const dayNames = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
         if (mode === 'week') {
             const end = new Date(d);
-            end.setDate(end.getDate() + 6);
+            end.setDate(end.getDate() + 4);
             return `${dayNames[d.getDay()]} ${d.getDate()} ${MONTH_NAMES_ES[d.getMonth()]} → ${dayNames[end.getDay()]} ${end.getDate()} ${MONTH_NAMES_ES[end.getMonth()]}`;
         }
         return `${dayNames[d.getDay()]} ${d.getDate()} de ${MONTH_NAMES_ES[d.getMonth()]} ${d.getFullYear()}`;
@@ -292,7 +292,7 @@
         function getWeekClsFor(date, selIso) {
             if (!selIso) return null;
             const weekStart = new Date(selIso + 'T00:00:00');
-            const weekEnd = new Date(weekStart); weekEnd.setDate(weekEnd.getDate() + 6);
+            const weekEnd = new Date(weekStart); weekEnd.setDate(weekEnd.getDate() + 4);
             const d = new Date(date); d.setHours(0, 0, 0, 0);
             if (d < weekStart || d > weekEnd) return null;
             if (isSameDay(d, weekStart)) return 'week-start';
@@ -305,7 +305,7 @@
 
             const confirmedHtml = selectedDate ? `
                 <div class="diet-cal__confirmed">
-                    <i class="bi bi-check-circle-fill"></i>
+                    <i class="fa-solid fa-check-circle-fill"></i>
                     Programado: ${formatDateLabel(selectedDate, mode)}
                     <span class="diet-cal__confirmed-clear" id="cal-clear">Cancelar</span>
                 </div>
@@ -315,16 +315,16 @@
                 <div class="diet-cal">
                     <div class="diet-cal__top">
                         <div class="diet-cal__label">
-                            <i class="bi bi-calendar3"></i>
+                            <i class="fa-regular fa-calendar"></i>
                             ${mode === 'week' ? 'Programar semana' : 'Programar día'}
                         </div>
                         <div class="diet-cal__month-nav">
                             <button class="diet-cal__nav-btn" id="cal-prev" aria-label="Mes anterior">
-                                <i class="bi bi-chevron-left"></i>
+                                <i class="fa-solid fa-chevron-left"></i>
                             </button>
                             <span class="diet-cal__month-name">${MONTH_NAMES_ES[viewMonth]} ${viewYear}</span>
                             <button class="diet-cal__nav-btn" id="cal-next" aria-label="Mes siguiente">
-                                <i class="bi bi-chevron-right"></i>
+                                <i class="fa-solid fa-chevron-right"></i>
                             </button>
                         </div>
                     </div>
@@ -337,11 +337,14 @@
                         ${cells.map(cell => {
                 const isOther = cell.otherMonth;
                 const isToday = isSameDay(cell.date, today);
+                const isPast = cell.date < today && !isSameDay(cell.date, today);
                 const isoStr = toISODate(cell.date);
                 let cls = 'diet-cal__day';
 
                 if (isOther) {
                     cls += ' diet-cal__day--other-month';
+                } else if (isPast) {
+                    cls += ' diet-cal__day--past';
                 } else if (mode === 'single') {
                     if (selectedDate && isoStr === selectedDate)
                         cls += ' diet-cal__day--selected';
@@ -355,7 +358,7 @@
                         cls += ' diet-cal__day--today';
                 }
 
-                return `<div class="${cls}" data-iso="${isoStr}" data-other="${isOther}">${cell.date.getDate()}</div>`;
+                return `<div class="${cls}" data-iso="${isoStr}" data-other="${isOther}" data-past="${isPast}">${cell.date.getDate()}</div>`;
             }).join('')}
                     </div>
 
@@ -366,7 +369,7 @@
             // Grid click
             wrap.querySelector('.diet-cal__grid').addEventListener('click', e => {
                 const cell = e.target.closest('.diet-cal__day');
-                if (!cell || cell.dataset.other === 'true') return;
+                if (!cell || cell.dataset.other === 'true' || cell.dataset.past === 'true') return;
 
                 const iso = cell.dataset.iso;
 
@@ -375,8 +378,7 @@
                     saveSchedule(slug, { slug, type: 'single', date: iso });
                 } else {
                     const clicked = new Date(iso + 'T00:00:00');
-                    const ws = getWeekStart(clicked);
-                    selectedDate = toISODate(ws);
+                    selectedDate = toISODate(clicked);
                     saveSchedule(slug, { slug, type: 'week', startDate: selectedDate });
                 }
                 render();
@@ -434,7 +436,7 @@
         const imgClass = isRealPhoto ? 'class="meal-item__photo"' : '';
         const iconHtml = card.icon
             ? `<img src="${getPath(card.icon)}" alt="" ${imgClass}>`
-            : `<i class="${getMealIcon(sectionLabel)}"></i>`;
+            : getMealIcon(sectionLabel);
 
         const el = document.createElement('div');
         el.className = 'meal-item' + (hasRecipe ? ' meal-item--recipe' : '');
@@ -450,10 +452,10 @@
             <div class="meal-item__body">
                 <div class="meal-item__title">${card.title}</div>
                 <div class="meal-item__time">
-                    <i class="bi bi-clock"></i> ${card.time}
+                    <i class="fa-solid fa-clock"></i> ${card.time}
                 </div>
             </div>
-            ${hasRecipe ? `<div class="meal-item__arrow"><i class="bi bi-arrow-right-short"></i></div>` : ''}
+            ${hasRecipe ? `<div class="meal-item__arrow"><i class="fa-solid fa-arrow-right"></i></div>` : ''}
         `;
 
         if (hasRecipe) {
@@ -487,7 +489,7 @@
         section.innerHTML = `
             <div class="meal-section__header">
                 <div class="meal-section__chip meal-section__chip--${chipClass}">
-                    <i class="${icon}"></i>
+                    ${icon}
                     <span>${sectionName}</span>
                 </div>
                 ${timeLabel ? `<span class="meal-section__time">${timeLabel}</span>` : ''}
@@ -531,11 +533,32 @@
 
         const multiDay = isMultiDay(dieta.schedule);
 
+        let startDate = null;
+        if (multiDay) {
+            try {
+                const saved = localStorage.getItem(`vitalia_plan_schedule_${dieta.slug}`);
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    if (parsed.startDate) {
+                        startDate = new Date(parsed.startDate + 'T00:00:00');
+                    }
+                }
+            } catch (e) {}
+        }
+        const dayNamesMap = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+
         dieta.schedule.forEach((stage, idx) => {
             // --- Day pill (always shown, label differs for single vs multi) ---
             const pill = document.createElement('button');
             pill.className = 'day-pill' + (idx === 0 ? ' active' : '');
-            pill.textContent = stage.name;
+            
+            let displayName = stage.name;
+            if (multiDay && startDate) {
+                const currentDay = new Date(startDate);
+                currentDay.setDate(currentDay.getDate() + idx);
+                displayName = dayNamesMap[currentDay.getDay()];
+            }
+            pill.textContent = displayName;
             pill.dataset.day = idx;
             pill.setAttribute('role', 'tab');
             pill.setAttribute('aria-selected', idx === 0 ? 'true' : 'false');
@@ -613,11 +636,11 @@
                 <div class="recipe-card__body">
                     <h3 class="recipe-card__title">${recipe.title}</h3>
                     <div class="recipe-card__meta">
-                        <i class="bi bi-clock"></i> ${recipe.time}
+                        <i class="fa-solid fa-clock"></i> ${recipe.time}
                     </div>
                 </div>
                 <div class="recipe-card__arrow">
-                    <i class="bi bi-arrow-right-short"></i>
+                    <i class="fa-solid fa-arrow-right"></i>
                 </div>
             `;
 
@@ -817,6 +840,11 @@
         attachModalListeners();
         attachTabListeners();
         injectSchema(dieta);
+
+        // Re-render schedule when calendar selection changes
+        document.addEventListener('diet-schedule-saved', () => {
+            renderSchedule(dieta);
+        });
 
         // Mark as loaded (hides loader)
         document.body.classList.add('loaded');

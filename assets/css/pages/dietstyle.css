@@ -295,7 +295,7 @@ body.loaded #loader {
 
 .diet-intro-card p strong,
 .diet-intro-card .underline {
-    color: #2bc4bc;
+    color: var(--teal);
     font-weight: 600;
 }
 
@@ -341,15 +341,15 @@ body.loaded #loader {
 }
 
 .day-pill:hover {
-    border-color: #80CACD;
-    color: #2bc4bc;
+    border-color: var(--cyan);
+    color: var(--teal);
     background: rgba(128, 202, 205, 0.08);
 }
 
 .day-pill.active {
     background: linear-gradient(135deg, #80CACD 0%, #2bc4bc 100%);
     border-color: transparent;
-    color: #fff;
+    color: var(--white);
     box-shadow: 0 4px 14px rgba(43, 196, 188, 0.3);
 }
 
@@ -464,8 +464,8 @@ body.loaded #loader {
 .meal-section__chip {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 14px;
+    gap: 8px;
+    padding: 8px 12px;
     border-radius: 30px;
     font-size: 0.7rem;
     font-weight: 700;
@@ -473,12 +473,15 @@ body.loaded #loader {
     letter-spacing: 1px;
     line-height: 1;
     white-space: nowrap;
-    color: #fff;
+    color: var(--white);
     flex-shrink: 0;
 }
 
-.meal-section__chip i {
-    font-size: 0.75rem;
+.meal-section__chip i,
+.meal-section__chip svg {
+    font-size: 0.95rem;
+    width: 0.95rem;
+    height: 0.95rem;
     display: flex;
     align-items: center;
 }
@@ -586,9 +589,12 @@ body.loaded #loader {
     object-fit: cover;
 }
 
-.meal-item__icon i {
+.meal-item__icon i,
+.meal-item__icon svg {
     font-size: 1.1rem;
-    color: #80CACD;
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--cyan);
 }
 
 .meal-item__body {
@@ -746,12 +752,13 @@ body.loaded #loader {
     position: relative;
 }
 
-.diet-cal__day:hover:not(.diet-cal__day--other-month) {
+.diet-cal__day:hover:not(.diet-cal__day--other-month):not(.diet-cal__day--past) {
     background: rgba(128, 202, 205, 0.18);
     transform: scale(1.12);
 }
 
-.diet-cal__day--other-month {
+.diet-cal__day--other-month,
+.diet-cal__day--past {
     color: rgba(0, 0, 0, 0.2);
     cursor: default;
 }
@@ -781,15 +788,15 @@ body.loaded #loader {
 /* ── WEEK selection ── */
 /* Middle days of a selected week */
 .diet-cal__day--week-mid {
-    background: rgba(181, 113, 222, 0.15);
-    color: #6b3ba8;
+    background: rgba(181, 113, 222, 0.15) !important;
+    color: #6b3ba8 !important;
     border-radius: 0;
 }
 
 /* Week start (Monday) */
 .diet-cal__day--week-start {
-    background: linear-gradient(135deg, #80CACD 0%, rgba(181, 113, 222, 0.7) 100%);
-    color: #fff;
+    background: linear-gradient(135deg, #80CACD 0%, rgba(181, 113, 222, 0.7) 100%) !important;
+    color: #fff !important;
     font-weight: 700;
     border-radius: 50% 0 0 50%;
     box-shadow: 0 3px 12px rgba(43, 196, 188, 0.3);
@@ -797,8 +804,8 @@ body.loaded #loader {
 
 /* Week end (Sunday) */
 .diet-cal__day--week-end {
-    background: linear-gradient(135deg, rgba(181, 113, 222, 0.7) 0%, #B571DE 100%);
-    color: #fff;
+    background: linear-gradient(135deg, rgba(181, 113, 222, 0.7) 0%, #B571DE 100%) !important;
+    color: #fff !important;
     font-weight: 700;
     border-radius: 0 50% 50% 0;
     box-shadow: 0 3px 12px rgba(181, 113, 222, 0.3);

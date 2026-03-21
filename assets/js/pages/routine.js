@@ -162,9 +162,9 @@ function renderOverview() {
     const totalSeconds = exercises.reduce((sum, ex) => sum + ex.duration + ex.rest, 0);
     const totalMin = Math.ceil(totalSeconds / 60);
     badges.innerHTML = `
-      <span class="overview-badge"><i class="bi bi-clock"></i> ${totalMin} min</span>
-      <span class="overview-badge"><i class="bi bi-bar-chart"></i> ${routineData.level}</span>
-      <span class="overview-badge"><i class="bi bi-lightning"></i> ${exercises.length} ejercicios</span>
+      <span class="overview-badge"><i class="fa-solid fa-clock"></i> ${totalMin} min</span>
+      <span class="overview-badge"><i class="fa-solid fa-chart-simple"></i> ${routineData.level}</span>
+      <span class="overview-badge"><i class="fa-solid fa-bolt"></i> ${exercises.length} ejercicios</span>
     `;
   }
 
@@ -176,7 +176,7 @@ function renderOverview() {
       // Exercise item
       html += `
         <div class="overview-exercise-item">
-          <div class="overview-exercise-thumb"><i class="bi bi-play-circle"></i></div>
+          <div class="overview-exercise-thumb"><i class="fa-regular fa-circle-play"></i></div>
           <div class="overview-exercise-info">
             <div class="overview-exercise-name">${ex.title}</div>
             <div class="overview-exercise-duration">${formatDuration(ex.duration)}</div>
@@ -451,9 +451,9 @@ function updatePauseIcon(paused) {
   const icon = $('#pause-icon');
   if (!icon) return;
   if (paused) {
-    icon.className = 'bi bi-play-fill';
+    icon.className = 'fa-solid fa-play';
   } else {
-    icon.className = 'bi bi-pause-fill';
+    icon.className = 'fa-solid fa-pause';
   }
 }
 

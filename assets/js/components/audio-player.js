@@ -149,20 +149,20 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (cAudio !== audio && cBtn) {
                             cAudio.pause();
                             const cIcon = cBtn.querySelector('i');
-                            if (cIcon) cIcon.className = 'bi bi-play-fill';
+                            if (cIcon) cIcon.className = 'fa-solid fa-play';
                             cBtn.classList.remove('playing');
                         }
                     });
                 }
 
                 audio.play();
-                if (icon) icon.className = 'bi bi-pause-fill';
+                if (icon) icon.className = 'fa-solid fa-pause';
                 btn.classList.add('playing');
                 currentAudio = audio;
                 // currentAudioButton = btn; // Keep separate to avoid img vs i conflicts
             } else {
                 audio.pause();
-                if (icon) icon.className = 'bi bi-play-fill';
+                if (icon) icon.className = 'fa-solid fa-play';
                 btn.classList.remove('playing');
                 currentAudio = null;
             }
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Reset on End
         audio.addEventListener('ended', () => {
-            if (icon) icon.className = 'bi bi-play-fill';
+            if (icon) icon.className = 'fa-solid fa-play';
             if (progressBar) progressBar.style.width = '0%';
             if (currentTimeDisplay) currentTimeDisplay.textContent = '0:00';
             btn.classList.remove('playing');

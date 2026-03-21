@@ -604,14 +604,23 @@ body.loaded .loader-container {
     text-decoration: none;
 }
 
+.article-card svg.bi-arrow-up-right,
+.food-card svg.bi-arrow-up-right,
+.routine-card svg.bi-arrow-up-right,
+.card-icon svg.bi-arrow-up-right,
+.article-image svg.bi-arrow-up-right,
+.article-header svg.bi-arrow-up-right {
+    color: var(--white);
+    fill: var(--white);
+    opacity: 0.9;
+}
+
 .social-icon i {
     font-size: 20px;
     color: var(--white);
     transition: transform 0.3s ease;
     line-height: 1;
-    /* Fix vertical centering */
     display: flex;
-    /* Helps with some icon sets */
 }
 
 .social-icon:hover {

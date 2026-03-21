@@ -256,7 +256,7 @@ const App = () => {
                         >
                             <Card style={{ background: '#fefbf3', color: '#333', display: 'flex', flexDirection: 'column', padding: '30px', justifyContent: 'center', alignItems: 'center', filter: 'drop-shadow(0px 15px 30px rgba(0,0,0,0.1))', border: '1px solid #eee' }}>
                                 <div style={{ background: 'rgba(157, 96, 207, 0.1)', borderRadius: '50%', padding: '15px', marginBottom: '20px' }}>
-                                    <i className="bi bi-person-heart" style={{ fontSize: '30px', color: '#9d60cf' }}></i>
+                                    <i className="fa-solid fa-heart" style={{ fontSize: '30px', color: '#9d60cf' }}></i>
                                 </div>
                                 <h3 style={{ color: '#9d60cf', marginBottom: '15px', fontWeight: '600' }}>Personalización Real</h3>
                                 <p style={{ textAlign: 'center', color: '#666' }}>
@@ -266,7 +266,7 @@ const App = () => {
 
                             <Card style={{ background: '#fff', color: '#333', display: 'flex', flexDirection: 'column', padding: '30px', justifyContent: 'center', alignItems: 'center', filter: 'drop-shadow(0px 15px 30px rgba(0,0,0,0.1))', border: '1px solid #eee' }}>
                                 <div style={{ background: 'rgba(128, 202, 205, 0.1)', borderRadius: '50%', padding: '15px', marginBottom: '20px' }}>
-                                    <i className="bi bi-people" style={{ fontSize: '30px', color: '#80CACD' }}></i>
+                                    <i className="fa-solid fa-users" style={{ fontSize: '30px', color: '#80CACD' }}></i>
                                 </div>
                                 <h3 style={{ color: '#80CACD', marginBottom: '15px', fontWeight: '600' }}>Comunidad Activa</h3>
                                 <p style={{ textAlign: 'center', color: '#666' }}>
@@ -276,7 +276,7 @@ const App = () => {
 
                             <Card style={{ background: '#E1947F', color: '#fff', display: 'flex', flexDirection: 'column', padding: '30px', justifyContent: 'center', alignItems: 'center', filter: 'drop-shadow(0px 15px 30px rgba(0,0,0,0.1))', border: 'none' }}>
                                 <div style={{ background: 'rgba(255, 255, 255, 0.2)', borderRadius: '50%', padding: '15px', marginBottom: '20px' }}>
-                                    <i className="bi bi-graph-up-arrow" style={{ fontSize: '30px', color: '#fff' }}></i>
+                                    <i className="fa-solid fa-chart-simple" style={{ fontSize: '30px', color: '#fff' }}></i>
                                 </div>
                                 <h3 style={{ color: '#fff', marginBottom: '15px', fontWeight: '600' }}>Progreso Visual</h3>
                                 <p style={{ textAlign: 'center', color: 'rgba(255,255,255,0.9)' }}>

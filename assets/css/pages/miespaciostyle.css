@@ -25,9 +25,8 @@
 }
 
 .section-icon {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
+    font-size: 1.6rem;
+    color: var(--text-color, #333);
 }
 
 .section-subtitle {
@@ -525,8 +524,8 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    color: white;
-    font-size: 2.2rem;
+    color: var(--white);
+    font-size: 1.5rem;
     flex-shrink: 0;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -544,7 +543,7 @@
 /* Meditation Gradients - Cycling Cyan, Purple, Orange with Radial Effects */
 .meditation-btn {
     /* Base background if gradients fail or for transition */
-    background: #80cacd;
+    background: var(--cyan);
 }
 
 /* 1. Cyan Dominant */
@@ -600,7 +599,7 @@
 .meditation-title {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #333;
+    color: var(--text-color);
     line-height: 1.3;
     margin: 0 0 0.75rem 0;
 }
@@ -615,7 +614,7 @@
 .current-time,
 .total-time {
     font-size: 0.8rem;
-    color: #999;
+    color: var(--text-muted);
     font-variant-numeric: tabular-nums;
     min-width: 35px;
     text-align: center;
@@ -624,7 +623,7 @@
 .progress-container {
     flex-grow: 1;
     height: 6px;
-    background: #eee;
+    background: var(--border-color);
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
@@ -668,13 +667,7 @@
 .progress-container:active .progress-bar,
 .progress-container.dragging .progress-bar {
     transition: background 0.2s ease;
-    /* Remove width transition when dragging */
 }
-
-/*.progress-container:hover .progress-bar,
-.progress-container:active .progress-bar {
-    background: var(--purple, #9d60cf);
-}*/
 
 .section-gap-top {
     margin-top: 5rem !important;
@@ -682,40 +675,271 @@
 }
 
 /* =========================================
-   6. THANKS SECTION
+   6. THANKS SECTION (Redesign)
    ========================================= */
 
-.thanks {
-    background-color: transparent;
-    padding: 1rem 1rem;
-    margin-top: 1rem;
+.thanks-redesign {
+    padding: 4rem 1.5rem 3rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
+    overflow: hidden;
 }
 
-.thanks-section {
-    text-align: center;
-    max-width: 900px;
+.thanks-redesign-inner {
+    position: relative;
+    max-width: 720px;
     margin: 0 auto;
-}
-
-.thanks-heading {
-    font-family: var(--font-secondary, 'Zilla Slab', serif);
-    color: var(--purple-light);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.thanks-subtext {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    font-family: var(--fonts-primary);
     text-align: center;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Floating icon wrappers (Positioning & CSS Animation) */
+.thanks-float-wrapper {
+    position: absolute;
+    z-index: 1;
+}
+
+.thanks-float-1 {
+    top: -10px;
+    right: 15%;
+    animation: thanksFloat1 4s ease-in-out infinite alternate;
+}
+
+.thanks-float-2 {
+    bottom: 10px;
+    left: 8%;
+    animation: thanksFloat2 3.5s ease-in-out infinite alternate;
+}
+
+.thanks-float-3 {
+    top: 5%;
+    left: 5%;
+    animation: thanksFloat3 4.5s ease-in-out infinite alternate;
+}
+
+.thanks-float-4 {
+    bottom: 10%;
+    right: 8%;
+    animation: thanksFloat4 3.8s ease-in-out infinite alternate;
+}
+
+.thanks-float-5 {
+    top: -20px;
+    left: 30%;
+    animation: thanksFloat5 3.2s ease-in-out infinite alternate;
+}
+
+/* Visuals & JS Magnet Transform */
+
+.thanks-float-icon {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+/* Icon Styles */
+.icon-1 {
+    /* Heart */
+    background: linear-gradient(135deg, #bfa0e0, #a675d1);
+    width: 52px;
+    height: 52px;
+    font-size: 1.15rem;
+}
+
+.icon-2 {
+    /* Dumbbell */
+    background: #fff;
+    border: 2.5px solid #80cacd;
+    color: #5fb3b6;
+    width: 46px;
+    height: 46px;
+    font-size: 1rem;
+}
+
+.icon-3 {
+    /* Bowl-rice */
+    background: linear-gradient(135deg, #f4a261, #e76f51);
+    width: 56px;
+    height: 56px;
+    font-size: 1.2rem;
+}
+
+.icon-4 {
+    /* Spa */
+    background: #fff;
+    border: 2.5px solid #345e8a;
+    color: #1d3557;
+    width: 48px;
+    height: 48px;
+    font-size: 1.05rem;
+}
+
+.icon-5 {
+    /* Lightbulb */
+    background: #fff;
+    border: 2.5px solid #E1947F;
+    color: #d67a64;
+    width: 42px;
+    height: 42px;
+    font-size: 0.95rem;
+}
+
+/* Float animations — varied bobbing & tilts */
+@keyframes thanksFloat1 {
+    0% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    100% {
+        transform: translateY(-10px) rotate(12deg);
+    }
+}
+
+@keyframes thanksFloat2 {
+    0% {
+        transform: translateY(0) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(-9px) rotate(-10deg);
+    }
+}
+
+@keyframes thanksFloat3 {
+    0% {
+        transform: translateY(0) rotate(-6deg);
+    }
+
+    100% {
+        transform: translateY(-14px) rotate(4deg);
+    }
+}
+
+@keyframes thanksFloat4 {
+    0% {
+        transform: translateY(0) rotate(4deg);
+    }
+
+    100% {
+        transform: translateY(-11px) rotate(-12deg);
+    }
+}
+
+@keyframes thanksFloat5 {
+    0% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    100% {
+        transform: translateY(-8px) rotate(14deg);
+    }
+}
+
+/* Text */
+.thanks-redesign-text {
+    position: relative;
+    z-index: 2;
+}
+
+.thanks-redesign-heading {
+    font-family: var(--font-secondary, 'Zilla Slab', serif);
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-color, #333);
+    margin: 0 0 0.75rem;
+    line-height: 1.2;
+}
+
+.thanks-bye {
+    display: inline-block;
+    font-family: var(--font-secondary, 'Zilla Slab', serif);
+    font-style: italic;
+    font-weight: 700;
+    background-image: linear-gradient(135deg, #E1947F, #a675d1, #80CACD);
+    background-size: 200% 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: thanksGradient 4s ease-in-out infinite alternate;
+}
+
+@keyframes thanksGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.thanks-redesign-sub {
+    color: var(--text-muted, #707070);
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .thanks-redesign {
+        padding: 3rem 1rem 2rem;
+    }
+
+    .thanks-redesign-heading {
+        font-size: 1.8rem;
+    }
+
+    .thanks-float-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+    }
+
+    .thanks-float-1 {
+        right: 5%;
+        top: -10px;
+    }
+
+    .thanks-float-2 {
+        left: 2%;
+        width: 34px;
+        height: 34px;
+    }
+
+    .thanks-float-3 {
+        left: 3%;
+        width: 42px;
+        height: 42px;
+    }
+
+    .thanks-float-4 {
+        right: 2%;
+        width: 36px;
+        height: 36px;
+    }
+
+    .thanks-float-5 {
+        left: 15%;
+        width: 32px;
+        height: 32px;
+    }
 }
 
 .icon-arrow {
     font-size: 1.2rem;
-    color: #333;
+    color: inherit;
 }
 
 #greeting-root {

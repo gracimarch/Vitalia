@@ -29,9 +29,8 @@ section+.reading {
 }
 
 .reading-icon {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
+    font-size: 1.6rem;
+    color: var(--text-color, #333);
 }
 
 .reading-heading {
@@ -56,40 +55,77 @@ section+.reading {
 }
 
 /* =========================================
-   2. CATEGORY NAV BLOCKS (Top Section)
+   2. BLOG HERO
    ========================================= */
 
-.articles {
-    padding: 2rem 0;
+.blog-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 1.5rem;
+    margin-top: -60px;
+    margin-bottom: 1rem;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
 }
 
-.nav-tabs-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
+.blog-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse at 15% 20%, rgba(181, 113, 222, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 30%, rgba(128, 202, 205, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 90%, rgba(225, 148, 127, 0.1) 0%, transparent 50%),
+        linear-gradient(180deg, #fefbf3 0%, #f9f4ec 100%);
 }
 
-.featured-heading {
-    font-family: var(--font-secondary);
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    margin-top: 0;
+.blog-hero-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent 0%, var(--bg-cream, #fefbf3) 100%);
+    pointer-events: none;
+}
+
+.blog-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
-    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
 
+.blog-hero-title {
+    font-family: var(--font-secondary, 'Zilla Slab', serif);
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin: 0;
     display: inline-block;
-    background-image: linear-gradient(45deg, #7dd191, #54afe4, var(--purple-light), var(--purple-light));
+    background-image: linear-gradient(45deg, #E1947F, #9d60cf, #80CACD, #E1947F);
+    background-size: 300% 100%;
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-    animation: gradientAnimation 4s linear infinite;
-    animation-direction: alternate;
-    background-size: 300% 100%;
+    animation: heroGradient 8s linear infinite alternate;
 }
 
-@keyframes gradientAnimation {
+.blog-hero-subtitle {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text-muted, #707070);
+    margin: 0 0 1rem;
+    opacity: 0.85;
+}
+
+@keyframes heroGradient {
     0% {
         background-position: 0% 50%;
     }
@@ -99,71 +135,123 @@ section+.reading {
     }
 }
 
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+/* Pills inside hero */
+.blog-hero .categories-pill-row {
+    margin-top: 0.75rem;
 }
 
-.category-card {
+/* Search inside hero */
+.blog-hero .search-wrapper {
+    width: 100%;
+    max-width: 560px;
+}
+
+@media (max-width: 768px) {
+    .blog-hero {
+        padding: 3.5rem 1rem 2rem;
+    }
+
+    .blog-hero-title {
+        font-size: 2rem;
+    }
+
+    .blog-hero-subtitle {
+        font-size: 1rem;
+    }
+}
+
+.categories-pill-row {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    position: relative;
-    min-height: 220px;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    color: var(--white);
-    text-align: center;
+.category-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 50px;
+    padding: 0.5rem 1.25rem 0.5rem 0.5rem;
     text-decoration: none;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+.category-pill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
 }
 
-.card-icon {
-    margin-bottom: 1rem;
-    position: relative;
-    z-index: 2;
+.pill-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
     transition: transform 0.3s ease;
 }
 
-.category-card:hover .card-icon {
-    transform: scale(1.1) rotate(5deg);
+.pill-icon i {
+    font-size: 1.15rem;
+    color: #fff;
 }
 
-.card-icon img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1)) brightness(0) invert(1);
-}
-
-.card-content {
-    position: relative;
-    z-index: 2;
-}
-
-.category-card h3 {
-    font-size: 1.5rem;
+.pill-text {
+    font-size: 1.05rem;
     font-weight: 600;
-    margin: 0 0 0.5rem 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--text-color, #333);
+    margin-right: 0.5rem;
 }
 
-.category-card p {
-    font-size: 0.95rem;
-    margin: 0;
-    opacity: 0.9;
-    font-weight: 300;
+/* Base Colors for Pill Icons using Vitalia Palette */
+.productiv-pill .pill-icon {
+    background: linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%);
+    box-shadow: 0 4px 10px rgba(166, 117, 209, 0.3);
 }
+
+.productiv-pill:hover {
+    border-color: rgba(166, 117, 209, 0.3);
+}
+
+.ejercita-pill .pill-icon {
+    background: linear-gradient(135deg, #80cacd 0%, #5fb3b6 100%);
+    box-shadow: 0 4px 10px rgba(128, 202, 205, 0.3);
+}
+
+.ejercita-pill:hover {
+    border-color: rgba(128, 202, 205, 0.3);
+}
+
+.alimentate-pill .pill-icon {
+    background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+    box-shadow: 0 4px 10px rgba(231, 111, 81, 0.3);
+}
+
+.alimentate-pill:hover {
+    border-color: rgba(231, 111, 81, 0.3);
+}
+
+.salud-pill .pill-icon {
+    background: linear-gradient(135deg, #345e8a 0%, #1d3557 100%);
+    box-shadow: 0 4px 10px rgba(29, 53, 87, 0.3);
+}
+
+.salud-pill:hover {
+    border-color: rgba(29, 53, 87, 0.3);
+}
+
+/* =========================================
+   3. SHARED CARD STYLES (.block & Backgrounds)
+   ========================================= */
 
 .block {
     position: relative;
@@ -175,7 +263,7 @@ section+.reading {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Category Backgrounds */
+/* Base Category Backgrounds (Used by individual cards) */
 .bg-productiv {
     background:
         radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.45) 0%, transparent 55%),
@@ -200,8 +288,8 @@ section+.reading {
 .bg-salud {
     background:
         radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.3) 0%, transparent 55%),
-        radial-gradient(circle at 0% 100%, rgba(225, 148, 127, 0.3) 0%, transparent 55%),
-        linear-gradient(135deg, #2A9D8F 0%, #264653 100%);
+        radial-gradient(circle at 0% 100%, rgba(42, 157, 143, 0.2) 0%, transparent 55%),
+        linear-gradient(135deg, #2c4a6e 0%, #1d3557 100%);
 }
 
 /* =========================================
@@ -382,14 +470,14 @@ section+.reading {
 .bg-salud-mental-1 {
     background:
         radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.3) 0%, transparent 55%),
-        radial-gradient(circle at 0% 100%, rgba(225, 148, 127, 0.3) 0%, transparent 55%),
-        linear-gradient(135deg, #2A9D8F 0%, #264653 100%);
+        radial-gradient(circle at 0% 100%, rgba(42, 157, 143, 0.2) 0%, transparent 55%),
+        linear-gradient(135deg, #2c4a6e 0%, #1d3557 100%);
 }
 
 .bg-salud-mental-2 {
     background:
-        radial-gradient(circle at 50% 50%, rgba(128, 202, 205, 0.3) 0%, transparent 65%),
-        linear-gradient(135deg, #264653 0%, #2A9D8F 100%);
+        radial-gradient(circle at 50% 50%, rgba(128, 202, 205, 0.2) 0%, transparent 65%),
+        linear-gradient(135deg, #1d3557 0%, #345e8a 100%);
 }
 
 .bg-salud-mental-3 {
@@ -565,10 +653,195 @@ section+.reading {
     box-shadow: 0 4px 12px rgba(38, 70, 83, 0.4);
 }
 
+/* =========================================
+   7. SEARCH BAR
+   ========================================= */
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(0, 0, 0, 0.06);
+    border-radius: 50px;
+    padding: 0.1rem 1.25rem;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-input-container:focus-within {
+    border-color: var(--purple-soft);
+    box-shadow:
+        0 4px 20px rgba(181, 113, 222, 0.15),
+        0 0 0 3px rgba(181, 113, 222, 0.08);
+    background: #ffffff;
+}
+
+.search-icon {
+    font-size: 1.1rem;
+    color: var(--text-muted, #707070);
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+}
+
+.search-input-container:focus-within .search-icon {
+    color: var(--purple, #B571DE);
+}
+
+#blog-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-color, #333);
+    padding: 0.85rem 0.75rem;
+    width: 100%;
+}
+
+#blog-search-input::placeholder {
+    color: var(--text-muted, #707070);
+    opacity: 0.65;
+    font-weight: 300;
+}
+
+.search-clear-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted, #707070);
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+    opacity: 0;
+    animation: fadeInClear 0.2s ease forwards;
+}
+
+@keyframes fadeInClear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.search-clear-btn:hover {
+    background: rgba(0, 0, 0, 0.06);
+    color: var(--text-color, #333);
+}
+
+.search-clear-btn i {
+    font-size: 0.85rem;
+}
+
+.search-results-count {
+    text-align: center;
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-muted, #707070);
+    margin: 0.75rem 0 0;
+    min-height: 1.3em;
+    opacity: 0.8;
+}
+
+/* Search Results Grid */
+.search-results-section {
+    padding: 0 0 3rem;
+}
+
+.search-results-section .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.search-results-section .block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 240px;
+    padding: 2rem;
+    text-align: left;
+}
+
+.search-results-section .block p {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.search-results-section .block h3 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin-bottom: auto;
+    text-shadow: none;
+}
+
+/* No Results State */
+.search-no-results {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--text-muted, #707070);
+}
+
+.search-no-results i {
+    font-size: 3rem;
+    opacity: 0.25;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.search-no-results p {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 0 0.3rem;
+    color: var(--text-color, #333);
+}
+
+.search-no-results span {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 0.9rem;
+    font-weight: 300;
+    opacity: 0.7;
+}
+
+/* Blog content sections - toggleable */
+.blog-content-hidden {
+    display: none !important;
+}
+
 @media (max-width: 768px) {
 
     .lecturas .container,
     .ejercicios .container {
         grid-template-columns: 1fr;
+    }
+
+    .search-results-section .container {
+        grid-template-columns: 1fr;
+    }
+
+    #blog-search-input {
+        font-size: 0.9rem;
     }
 }
