@@ -104,7 +104,7 @@ const ChecklistComponent = () => {
                             background: item.checked ? '#9d60cf' : 'transparent',
                             transition: 'all 0.2s ease'
                         }}>
-                            {item.checked && <i className="bi bi-check text-white" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', color: '#fff', lineHeight: 1 }}></i>}
+                            {item.checked && <i className="fa-solid fa-check text-white" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', color: '#fff', lineHeight: 1 }}></i>}
                         </div>
 
                         {/* Text */}
@@ -321,7 +321,7 @@ window.vitaliaBentoData = [
                 <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                     <div className="magic-bento-card__header">
                         <div className="magic-bento-card__label" style={{ color: '#777' }}>Receta</div>
-                        <i className="bi bi-arrow-up-right" style={{ fontSize: '1.2rem', color: '#333' }}></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" className="bi-arrow-up-right" style={{ fontSize: '1.2rem', color: '#333' }}><path fillRule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" /></svg>
                     </div>
                     <div>
                         <h5 className="bento-card-subtitle">{recommendation.plan}</h5>
@@ -365,12 +365,12 @@ window.vitaliaBentoData = [
                 <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                     <div className="magic-bento-card__header">
                         <div className="magic-bento-card__label" style={{ color: '#777' }}>Recurso recomendado</div>
-                        <i className="bi bi-arrow-up-right" style={{ fontSize: '1.2rem', color: '#333' }}></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" className="bi-arrow-up-right" style={{ fontSize: '1.2rem', color: '#333' }}><path fillRule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" /></svg>
                     </div>
                     <div className="d-flex flex-row align-items-end justify-content-between">
                         <div>
                             <h2 className="bento-big-title">{recommendation.title}</h2>
-                            <p className="bento-text-muted"><i className="bi bi-clock me-1"></i> {recommendation.time}</p>
+                            <p className="bento-text-muted"><i className="fa-regular fa-clock"></i> {recommendation.time}</p>
                         </div>
                     </div>
                 </div>
@@ -386,7 +386,7 @@ window.vitaliaBentoData = [
             <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div className="magic-bento-card__header">
                     <div className="magic-bento-card__label" style={{ color: '#777' }}>Acceso Rápido</div>
-                    <i className="bi bi-arrow-down-right" style={{ fontSize: '1.2rem', color: '#333' }}></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" className="bi bi-arrow-down-right" viewBox="0 0 16 16" style={{ fontSize: '1.2rem', color: '#333' }}><path fillRule="evenodd" d="M14 13.5a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1 0-1h4.793L2.146 2.854a.5.5 0 1 1 .708-.708L13 12.293V7.5a.5.5 0 0 1 1 0z" /></svg>
                 </div>
                 <div>
                     <h3 className="bento-heading">Meditaciones</h3>
@@ -408,7 +408,7 @@ window.vitaliaBentoData = [
             <div style={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                 <div className="magic-bento-card__header">
                     <div className="magic-bento-card__label" style={{ color: '#777' }}>Rutina Recomendada</div>
-                    <i className="bi bi-arrow-up-right" style={{ fontSize: '1.2rem', color: '#333' }}></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" className="bi-arrow-up-right" style={{ fontSize: '1.2rem', color: '#333' }}><path fillRule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" /></svg>
                 </div>
                 <div style={{ marginTop: 'auto' }}>
                     <h5 className="bento-card-subtitle">Nivel Principiante</h5>

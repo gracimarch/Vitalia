@@ -20,7 +20,7 @@
     <script src="/assets/js/core/main.js" defer></script>
     <script src="/assets/js/core/router.js"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="stylesheet" href="/assets/css/pages/blogstyle.css">
 
@@ -56,53 +56,67 @@
 
     <main class="page-container" id="welcome">
 
-        <!-- Lecturas -->
-        <section class="reading" id="lecturas">
-            <div class="reading-section">
-                <h2 class="featured-heading">Categorías Destacadas</h2>
-                <p class="reading-subtext">Accede rápidamente a los temas que más interesan a nuestra comunidad</p>
+        <!-- Blog Hero -->
+        <section class="blog-hero" id="lecturas">
+            <div class="blog-hero-bg"></div>
+            <div class="blog-hero-content">
+                <h1 class="blog-hero-title">Explora Nuestro Blog</h1>
+                <p class="blog-hero-subtitle">Artículos, planes y rutinas para tu bienestar integral</p>
+
+                <!-- Barra de Búsqueda -->
+                <div class="search-wrapper">
+                    <div class="search-input-container">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" id="blog-search-input" placeholder="Buscar artículos, dietas, rutinas..."
+                            autocomplete="off">
+                        <button class="search-clear-btn" id="search-clear" aria-label="Limpiar búsqueda"
+                            style="display:none;">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <p class="search-results-count" id="search-results-count"></p>
+                </div>
+
+                <!-- Category Pills -->
+                <div class="categories-pill-row">
+                    <a href="#productividad" class="category-pill productiv-pill" id="productiv">
+                        <div class="pill-icon">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <span class="pill-text">Productividad</span>
+                    </a>
+
+                    <a href="#ejercicios" class="category-pill ejercita-pill" id="ejercita">
+                        <div class="pill-icon">
+                            <i class="fa-solid fa-dumbbell"></i>
+                        </div>
+                        <span class="pill-text">Ejercicio</span>
+                    </a>
+
+                    <a href="#alimentaciones" class="category-pill alimentate-pill" id="alimentate">
+                        <div class="pill-icon">
+                            <i class="fa-solid fa-bowl-rice"></i>
+                        </div>
+                        <span class="pill-text">Alimentación</span>
+                    </a>
+
+                    <a href="#salud-mental" class="category-pill salud-pill" id="salud">
+                        <div class="pill-icon">
+                            <i class="fa-solid fa-spa"></i>
+                        </div>
+                        <span class="pill-text">Salud Mental</span>
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- Artículos que te llevan a las distintas secciones de la página -->
-        <section class="articles" id="lecturas-recomendadas">
-            <div class="container category-grid">
-                <a href="#productividad" class="category-card brightness bg-productiv" id="productiv">
-                    <div class="card-icon">
-                        <img src="/assets/images/ui/icono-lectura.svg" alt="Ícono Productividad">
-                    </div>
-                    <div class="card-content">
-                        <h3>Productividad</h3>
-                        <p>Optimiza tu tiempo y energía</p>
-                    </div>
-                </a>
-                <a href="#ejercicios" class="category-card brightness bg-ejercita" id="ejercita">
-                    <div class="card-icon">
-                        <img src="/assets/images/ui/icono-rutina.webp" alt="Ícono Ejercicio">
-                    </div>
-                    <div class="card-content">
-                        <h3>Ejercicio</h3>
-                        <p>Movimiento y vitalidad</p>
-                    </div>
-                </a>
-                <a href="#alimentaciones" class="category-card brightness bg-alimentate" id="alimentate">
-                    <div class="card-icon">
-                        <img src="/assets/images/ui/icono-plan.svg" alt="Ícono Alimentación">
-                    </div>
-                    <div class="card-content">
-                        <h3>Alimentación</h3>
-                        <p>Nutrición consciente</p>
-                    </div>
-                </a>
-                <a href="#salud-mental" class="category-card brightness bg-salud" id="salud">
-                    <div class="card-icon">
-                        <img src="/assets/images/ui/icono-meditacion.webp" alt="Ícono Salud Mental">
-                    </div>
-                    <div class="card-content">
-                        <h3>Salud Mental</h3>
-                        <p>Equilibrio y bienestar</p>
-                    </div>
-                </a>
+        <!-- Resultados de búsqueda -->
+        <section class="search-results-section" id="search-results-section" style="display:none;">
+            <div class="container" id="search-results-grid"></div>
+            <div class="search-no-results" id="search-no-results" style="display:none;">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <p>No se encontraron resultados</p>
+                <span>Intenta con otro término de búsqueda</span>
             </div>
         </section>
 
@@ -110,7 +124,7 @@
         <section class="reading" id="productividad">
             <div class="reading-section">
                 <div class="reading-content">
-                    <img src="/assets/images/ui/icono-lectura.svg" alt="Ícono de lectura" class="reading-icon">
+                    <i class="fa-solid fa-lightbulb reading-icon"></i>
                     <h2 class="reading-heading">Productividad</h2>
                 </div>
                 <p class="reading-subtext">Accede rápidamente a los temas que más interesan a nuestra comunidad</p>
@@ -128,7 +142,7 @@
         <section class="reading" id="ejercicios">
             <div class="reading-section">
                 <div class="reading-content">
-                    <img src="/assets/images/ui/icono-rutina.webp" alt="" aria-hidden="true" class="reading-icon">
+                    <i class="fa-solid fa-dumbbell reading-icon" aria-hidden="true"></i>
                     <h2 class="reading-heading">Actividad Física y Movilidad</h2>
                 </div>
                 <p class="reading-subtext">Accede rápidamente a los temas que más interesan a nuestra comunidad</p>
@@ -146,7 +160,7 @@
         <section class="reading" id="alimentaciones">
             <div class="reading-section">
                 <div class="reading-content">
-                    <img src="/assets/images/ui/icono-plan.svg" alt="" aria-hidden="true" class="reading-icon">
+                    <i class="fa-solid fa-bowl-rice reading-icon" aria-hidden="true"></i>
                     <h2 class="reading-heading">Hábitos Alimenticios</h2>
                 </div>
                 <p class="reading-subtext">Accede rápidamente a los temas que más interesan a nuestra comunidad</p>
@@ -164,7 +178,7 @@
         <section class="reading" id="salud-mental">
             <div class="reading-section">
                 <div class="reading-content">
-                    <img src="/assets/images/ui/icono-lectura.svg" alt="" aria-hidden="true" class="reading-icon">
+                    <i class="fa-solid fa-spa reading-icon" aria-hidden="true"></i>
                     <h2 class="reading-heading">Salud Mental y Bienestar</h2>
                 </div>
                 <p class="reading-subtext">Accede rápidamente a los temas que más interesan a nuestra comunidad</p>
@@ -178,16 +192,6 @@
             </div>
         </section>
 
-        <!-- Agradecimiento -->
-        <section class="thanks">
-            <div class="thanks-section">
-                <div class="thanks-content">
-                    <h2 class="thanks-heading">¡Gracias por Elegirnos!</h2>
-                </div>
-                <p class="thanks-subtext">Recuerda que actualizamos nuestra página todas las semanas con nuevo contenido
-                    para tu bienestar. Vuelve pronto y no te pierdas lo que tenemos para ti.</p>
-            </div>
-        </section>
 
     </main>
 
@@ -235,6 +239,7 @@
     <div id="footer-placeholder"></div>
     <script src="/assets/js/core/load-components.js"></script>
 
+    <script src="/assets/js/effects/magnetic-icons.js"></script>
     <script src="/assets/js/pages/blog.js"></script>
 </body>
 
