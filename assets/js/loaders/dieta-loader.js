@@ -43,19 +43,66 @@
         return 'bi bi-stars';
     }
 
-    async function fetchDietas() {
+    async function fetchDietasAndRecetas() {
         try {
-            const response = await fetch('/assets/data/dietas.json');
-            if (!response.ok) throw new Error('No se pudo cargar los datos');
-            return await response.json();
+            const [dietasRes, recetasRes] = await Promise.all([
+                fetch('/assets/data/dietas.json'),
+                fetch('/assets/data/recetas.json')
+            ]);
+            if (!dietasRes.ok || !recetasRes.ok) throw new Error('No se pudo cargar los datos');
+            const dietasData = await dietasRes.json();
+            const recetasData = await recetasRes.json();
+            return { dietas: dietasData.dietas, recetas: recetasData.meals || [] };
         } catch (err) {
-            console.error('Error cargando dietas:', err);
+            console.error('Error cargando datos:', err);
             return null;
         }
     }
 
     function findDietaBySlug(dietas, slug) {
         return dietas.find(d => d.slug === slug);
+    }
+
+    function normalizeDiet(dieta, recetas) {
+        if (!dieta.recipes) dieta.recipes = [];
+
+        if (dieta.schedule) {
+            dieta.schedule.forEach(day => {
+                if (day.meals && !day.options) {
+                    day.options = day.meals.map(meal => {
+                        return {
+                            label: meal.type,
+                            cards: (meal.recipeIds || []).map(recId => {
+                                const rec = recetas.find(r => r.id === recId) || {};
+                                
+                                if (!dieta.recipes.find(r => r.id === recId)) {
+                                    dieta.recipes.push({
+                                        id: recId,
+                                        title: rec.name || 'Receta Desconocida',
+                                        time: rec.prep_time ? `Listo en ${rec.prep_time} minutos` : '',
+                                        image: rec.url || '',
+                                        ingredients: rec.ingredients || [],
+                                        instructions: (rec.recipe || []).map(p => `<p>${p}</p>`).join('')
+                                    });
+                                }
+                                
+                                let defaultIcon = rec.url || "assets/images/ui/icono-comida.webp";
+                                if (!rec.url && (meal.type.toLowerCase().includes('desayuno') || meal.type.toLowerCase().includes('snack'))) {
+                                    defaultIcon = "assets/images/ui/icono-rayo.webp";
+                                }
+
+                                return {
+                                    title: rec.name || 'Receta Desconocida',
+                                    time: rec.prep_time ? `Listo en ${rec.prep_time} minutos` : '',
+                                    icon: defaultIcon,
+                                    recipeId: recId
+                                };
+                            })
+                        };
+                    });
+                }
+            });
+        }
     }
 
     /* ================================================
@@ -357,8 +404,10 @@
 
     function buildMealItem(card, sectionLabel, dieta) {
         const hasRecipe = !!card.recipeId;
+        const isRealPhoto = card.icon && (card.icon.includes('http') || !card.icon.includes('icono-'));
+        const imgClass = isRealPhoto ? 'class="meal-item__photo"' : '';
         const iconHtml = card.icon
-            ? `<img src="${getPath(card.icon)}" alt="">`
+            ? `<img src="${getPath(card.icon)}" alt="" ${imgClass}>`
             : `<i class="${getMealIcon(sectionLabel)}"></i>`;
 
         const el = document.createElement('div');
@@ -713,13 +762,14 @@
             return;
         }
 
-        const data = await fetchDietas();
+        const data = await fetchDietasAndRecetas();
         if (!data || !data.dietas) {
             window.location.replace('/404.html');
             return;
         }
 
         const dieta = findDietaBySlug(data.dietas, slug);
+        if (dieta) normalizeDiet(dieta, data.recetas);
         if (!dieta) {
             window.location.replace('/404.html');
             return;
