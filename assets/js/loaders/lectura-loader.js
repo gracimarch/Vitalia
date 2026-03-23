@@ -241,6 +241,17 @@
         generateTableOfContents(lectura);
         generateArticleContent(lectura);
 
+        // Render recommended articles
+        if (typeof getRecommendedArticles === 'function' && typeof renderRecommendedArticles === 'function') {
+            const recommended = getRecommendedArticles(data.lecturas, lectura, 2);
+            if (recommended.length > 0) {
+                const sidebarContainer = document.getElementById('recommended-sidebar');
+                const bottomContainer = document.getElementById('recommended-bottom');
+                if (sidebarContainer) renderRecommendedArticles(recommended, sidebarContainer);
+                if (bottomContainer) renderRecommendedArticles(recommended, bottomContainer);
+            }
+        }
+
         // Inject Schema JSON-LD
         const schema = {
             "@context": "https://schema.org",
