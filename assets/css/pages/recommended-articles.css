@@ -1,0 +1,298 @@
+/* =====================================================
+   RECOMMENDED ARTICLES - "Seguí explorando"
+   Consistent with Vitalia's editorial style
+   ===================================================== */
+
+/* --- Section container --- */
+.recommended-articles {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Header --- */
+.recommended-articles__header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.recommended-articles__line {
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin: 0 auto 1.25rem;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--cyan, #80CACD), var(--purple-soft, #b38ddc));
+    opacity: 0.7;
+}
+
+.recommended-articles__title {
+    font-family: var(--font-secondary, 'Zilla Slab', serif);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color, #333);
+    margin: 0 0 0.4rem;
+    letter-spacing: -0.3px;
+}
+
+.recommended-articles__subtitle {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-muted, #707070);
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* --- Grid (2 columns on desktop) --- */
+.recommended-articles__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+/* --- Card --- */
+.recommended-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text-color, #333);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.recommended-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Card Image Area --- */
+.recommended-card__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.recommended-card__image {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+
+.recommended-card:hover .recommended-card__image {
+    transform: scale(1.06);
+}
+
+.recommended-card__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 40%,
+        rgba(0, 0, 0, 0.08) 100%
+    );
+    pointer-events: none;
+}
+
+.recommended-card__image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- Card Body --- */
+.recommended-card__body {
+    padding: 1.25rem 1.35rem 1.35rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.recommended-card__category {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--cyan, #80CACD);
+    margin-bottom: 0.5rem;
+}
+
+.recommended-card__title {
+    font-family: var(--font-secondary, 'Zilla Slab', serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text-color, #333);
+    margin: 0 0 0.6rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.recommended-card__excerpt {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 0.82rem;
+    font-weight: 300;
+    line-height: 1.55;
+    color: var(--text-muted, #707070);
+    margin: 0 0 1rem;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.recommended-card__cta {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--purple-soft, #b38ddc);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: auto;
+    transition: color 0.3s ease, gap 0.3s ease;
+}
+
+.recommended-card__cta i {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.recommended-card:hover .recommended-card__cta {
+    color: var(--purple, #B571DE);
+}
+
+.recommended-card:hover .recommended-card__cta i {
+    transform: translateX(3px);
+}
+
+/* --- Glow border (reuse .brightness pattern) --- */
+.recommended-card.brightness::after {
+    border-radius: 18px;
+}
+
+/* --- Desktop sidebar layout --- */
+@media (min-width: 1024px) {
+    .lectura-main-container {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 3rem;
+        max-width: 1200px;
+    }
+
+    .lectura-main-content {
+        min-width: 0;
+    }
+
+    .recommended-articles-bottom {
+        display: none !important;
+    }
+
+    .recommended-articles-sidebar {
+        position: sticky;
+        top: 100px;
+        align-self: start;
+        padding-top: 30px;
+    }
+
+    .recommended-articles-sidebar .recommended-articles__grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .recommended-articles-sidebar .recommended-articles__title {
+        font-size: 1.3rem;
+    }
+
+    .recommended-articles-sidebar .recommended-articles__subtitle {
+        font-size: 0.82rem;
+    }
+
+    .recommended-articles-sidebar .recommended-articles__header {
+        margin-bottom: 1.5rem;
+    }
+
+    .recommended-articles-sidebar .recommended-card__image-wrap {
+        height: 130px;
+    }
+
+    .recommended-articles-sidebar .recommended-card__body {
+        padding: 1rem 1.1rem 1.1rem;
+    }
+
+    .recommended-articles-sidebar .recommended-card__title {
+        font-size: 0.95rem;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    .recommended-articles-sidebar .recommended-card__excerpt {
+        font-size: 0.78rem;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    .recommended-articles-sidebar .recommended-card__cta {
+        font-size: 0.75rem;
+    }
+}
+
+/* --- Mobile & Tablet: put at bottom, 1 column --- */
+@media (max-width: 1023px) {
+    .recommended-articles-sidebar {
+        display: none;
+    }
+
+    .recommended-articles-bottom {
+        margin-top: 3rem;
+        padding-top: 2rem;
+    }
+
+    .recommended-articles-bottom .recommended-articles__grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}
+
+/* --- Mobile stacking for very small screens --- */
+@media (max-width: 600px) {
+    .recommended-articles-bottom .recommended-articles__title {
+        font-size: 1.5rem;
+    }
+}
+
+/* --- Fade-in animation --- */
+.recommended-articles {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: recommendedFadeIn 0.6s ease-out 0.3s forwards;
+}
+
+@keyframes recommendedFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

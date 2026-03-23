@@ -16,12 +16,13 @@
     <link rel="stylesheet" href="/assets/css/core/layout.css">
     <link rel="stylesheet" href="/assets/css/core/utilities.css">
     <link rel="stylesheet" href="/assets/css/pages/shared-content-layout.css?v=1.2">
+    <link rel="stylesheet" href="/assets/css/pages/recommended-articles.css?v=1.0">
     <link href="/assets/css/core/common.css" rel="stylesheet">
     <script src="/assets/js/core/main.js" defer></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    
+
 
     <link rel="icon" href="/assets/favicons/vitalia-favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="/assets/favicons/vitalia-favicon.png" type="image/png">
@@ -33,13 +34,11 @@
     <meta name="robots" content="index, follow">
 
     <meta property="og:title" content="Vitalia | Lectura">
-    <meta property="og:description"
-        content="Explora nuestras lecturas sobre bienestar integral en Vitalia.">
+    <meta property="og:description" content="Explora nuestras lecturas sobre bienestar integral en Vitalia.">
     <meta property="og:image" content="https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg">
     <meta property="og:url" content="https://vitalia-selfcare.vercel.app/lecturas/">
     <meta name="twitter:title" content="Vitalia | Lectura">
-    <meta name="twitter:description"
-        content="Explora nuestras lecturas sobre bienestar integral en Vitalia.">
+    <meta name="twitter:description" content="Explora nuestras lecturas sobre bienestar integral en Vitalia.">
     <meta name="twitter:image" content="https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg">
 
     <script src="/assets/js/core/router.js"></script>
@@ -49,7 +48,7 @@
 
     <!-- Pantalla de carga -->
     <div id="loader" class="loader-container">
-        <img src="/assets/favicons/vitalia-favicon.svg" alt="" aria-hidden="true" class="loader-logo">
+        <img src="/assets/favicons/vitalia-favicon.png" alt="" aria-hidden="true" class="loader-logo">
     </div>
 
 
@@ -78,24 +77,33 @@
         </section>
 
         <div class="lectura-main-container">
-            <div id="introduction" class="article introduction-container lectura-intro-card">
-                <p>Cargando introducción...</p>
+            <div class="lectura-main-content">
+                <div id="introduction" class="article introduction-container lectura-intro-card">
+                    <p>Cargando introducción...</p>
+                </div>
+
+                <div class="article-title">
+                    <h2>Índice de subtítulos</h2>
+                </div>
+
+                <div class="article">
+                    <ol id="table-of-contents">
+                        <!-- Tabla de contenidos generada dinámicamente -->
+                    </ol>
+                </div>
+
+                <!-- Secciones del artículo se insertan dinámicamente aquí -->
+                <div id="article-content" class="article-content-dynamic">
+                    <!-- El contenido completo del artículo se cargará aquí -->
+                </div>
+
+                <!-- Artículos recomendados (mobile / tablet) -->
+                <div id="recommended-bottom" class="recommended-articles-bottom"></div>
             </div>
 
-            <div class="article-title">
-                <h2>Índice de subtítulos</h2>
-            </div>
-
-            <div class="article">
-                <ol id="table-of-contents">
-                    <!-- Tabla de contenidos generada dinámicamente -->
-                </ol>
-            </div>
-
-            <!-- Secciones del artículo se insertan dinámicamente aquí -->
-            <div id="article-content" class="article-content-dynamic">
-                <!-- El contenido completo del artículo se cargará aquí -->
-            </div>
+            <!-- Artículos recomendados (desktop sidebar) -->
+            <aside id="recommended-sidebar" class="recommended-articles-sidebar" aria-label="Artículos recomendados">
+            </aside>
         </div>
 
     </main>
@@ -103,6 +111,7 @@
     <!-- Pie de página-->
     <div id="footer-placeholder"></div>
     <script src="/assets/js/core/load-components.js"></script>
+    <script src="/assets/js/utils/recommended-articles.js"></script>
     <script src="/assets/js/pages/article.js"></script>
 
     <!-- Dynamic content loader -->
