@@ -996,10 +996,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    background: rgba(10, 10, 18, 0.92);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
@@ -1011,29 +1011,31 @@
 }
 
 .sq-breath-phase {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #fff;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin: 0;
-    min-height: 2rem;
+    min-height: 1.6rem;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
     transition: opacity 0.3s ease;
 }
 
 .sq-breath-wrapper {
     position: relative;
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .sq-breath-svg {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     overflow: visible;
+    filter: drop-shadow(0 0 10px rgba(225, 148, 127, 0.3));
 }
 
 .sq-breath-progress {
@@ -1043,19 +1045,20 @@
 
 .sq-breath-count {
     position: absolute;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 300;
     color: #fff;
     font-variant-numeric: tabular-nums;
-    text-shadow: 0 0 20px rgba(225, 148, 127, 0.4);
+    text-shadow: 0 2px 16px rgba(0,0,0,0.5);
     pointer-events: none;
 }
 
 .sq-breath-hint {
-    font-size: 0.72rem;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.55);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     margin: 0;
     font-weight: 400;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
 }
