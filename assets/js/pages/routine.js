@@ -353,14 +353,10 @@ function startExercise(index) {
   // Video
   const video = $('#exercise-video');
   if (video) {
-    if (isBreathing) {
-      video.src = ''; video.pause();
-    } else {
-      video.src = ex.videoSrc;
-      video.loop = true;
-      video.muted = true;
-      video.play().catch(() => {});
-    }
+    video.src = ex.videoSrc;
+    video.loop = true;
+    video.muted = true;
+    video.play().catch(() => {});
   }
 
   // Info
@@ -369,15 +365,19 @@ function startExercise(index) {
   if (nameEl) nameEl.textContent = ex.title;
   if (descEl) descEl.textContent = ex.description;
 
-  // Show description briefly
+  // Show description briefly (skip for square breathing — overlay takes over)
   const center = $('.exercise-center');
   if (center) {
     if (descTimeout) clearTimeout(descTimeout);
-    center.classList.add('show-desc');
-    descTimeout = setTimeout(() => {
+    if (!isBreathing) {
+      center.classList.add('show-desc');
+      descTimeout = setTimeout(() => {
+        center.classList.remove('show-desc');
+        descTimeout = null;
+      }, 8000);
+    } else {
       center.classList.remove('show-desc');
-      descTimeout = null;
-    }, 8000);
+    }
   }
 
   // Next up
