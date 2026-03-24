@@ -223,65 +223,75 @@
                     "exerciseId": "cat_cow",
                     "duration": 60,
                     "rest": 20,
-                    "sets": 2
+                    "sets": 1
                 },
                 {
                     "exerciseId": "bird_dog",
-                    "duration": 50,
-                    "rest": 25,
-                    "sets": 2
+                    "duration": 60,
+                    "rest": 20,
+                    "sets": 1
                 },
                 {
                     "exerciseId": "glute_bridge",
-                    "duration": 50,
-                    "rest": 25,
-                    "sets": 2
+                    "duration": 60,
+                    "rest": 20,
+                    "sets": 1
                 },
                 {
                     "exerciseId": "plank",
                     "duration": 40,
-                    "rest": 30,
+                    "rest": 20,
                     "sets": 3
                 },
                 {
                     "exerciseId": "side_plank",
+                    "title": "Plancha Lateral (Lado Izquierdo)",
                     "duration": 30,
                     "rest": 20,
-                    "sets": 4
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "side_plank",
+                    "title": "Plancha Lateral (Lado Derecho)",
+                    "duration": 30,
+                    "rest": 20,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "shoulder_taps",
+                    "duration": 40,
+                    "rest": 20,
+                    "sets": 3
                 },
                 {
                     "exerciseId": "dead_bug",
-                    "duration": 50,
-                    "rest": 25,
+                    "duration": 40,
+                    "rest": 20,
                     "sets": 3
                 },
                 {
                     "exerciseId": "crunch",
-                    "duration": 45,
-                    "rest": 25,
+                    "duration": 40,
+                    "rest": 20,
                     "sets": 3
                 },
                 {
                     "exerciseId": "single_leg_raises",
                     "duration": 40,
-                    "rest": 30,
-                    "sets": 2
-                },
-                {
-                    "exerciseId": "russian_twist",
-                    "duration": 40,
-                    "rest": 30,
+                    "rest": 20,
                     "sets": 2
                 },
                 {
                     "exerciseId": "cobra_stretch",
                     "duration": 60,
-                    "rest": 20
+                    "rest": 20,
+                    "sets": 1
                 },
                 {
                     "exerciseId": "child_pose",
-                    "duration": 120,
-                    "rest": 0
+                    "duration": 90,
+                    "rest": 0,
+                    "sets": 1
                 }
             ]
         }
