@@ -986,20 +986,18 @@
 }
 
 /* =========================================
-   SQUARE BREATHING OVERLAY
+   SQUARE BREATHING OVERLAY (ADVANCED)
    ========================================= */
 .sq-breath-overlay {
     position: absolute;
     inset: 0;
     z-index: 20;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
+    background: rgba(0, 0, 0, 0.45); /* Translucent enough to see video */
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
@@ -1010,55 +1008,90 @@
     pointer-events: auto;
 }
 
-.sq-breath-phase {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin: 0;
-    min-height: 1.6rem;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
-    transition: opacity 0.3s ease;
-}
-
-.sq-breath-wrapper {
+.sq-breath-container {
     position: relative;
-    width: 120px;
-    height: 120px;
+    width: 240px; /* Space for SVG + labels */
+    height: 240px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.sq-breath-svg {
-    width: 120px;
-    height: 120px;
-    overflow: visible;
-    filter: drop-shadow(0 0 10px rgba(225, 148, 127, 0.3));
+/* Outer Labels */
+.sq-breath-label {
+    position: absolute;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
 }
 
-.sq-breath-progress {
-    transition: stroke-dashoffset 0.05s linear, stroke 0.4s ease;
-    transform-origin: center;
+.sq-breath-label.active {
+    color: #fff;
+    font-weight: 700;
+    transform: scale(1.05);
+}
+.sq-breath-label--top.active { text-shadow: 0 0 12px rgba(128, 202, 205, 0.8); }
+.sq-breath-label--right.active { text-shadow: 0 0 12px rgba(225, 148, 127, 0.8); }
+.sq-breath-label--bottom.active { text-shadow: 0 0 12px rgba(160, 216, 184, 0.8); }
+.sq-breath-label--left.active { text-shadow: 0 0 12px rgba(196, 163, 224, 0.8); }
+
+.sq-breath-label--top { top: -8px; left: 50%; transform: translateX(-50%); }
+.sq-breath-label--right { right: -60px; top: 50%; transform: translateY(-50%) rotate(90deg); }
+.sq-breath-label--bottom { bottom: -8px; left: 50%; transform: translateX(-50%); }
+.sq-breath-label--left { left: -60px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
+
+/* SVG Canvas */
+.sq-breath-svg-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.sq-breath-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.sq-side-path {
+    transition: stroke-dashoffset 4s linear; /* Default, overridden in JS when reset */
+}
+
+.sq-side-path.glow {
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* Center Content */
+.sq-breath-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.sq-breath-phase-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    transition: opacity 0.3s ease;
 }
 
 .sq-breath-count {
-    position: absolute;
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-weight: 300;
     color: #fff;
     font-variant-numeric: tabular-nums;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.5);
-    pointer-events: none;
-}
-
-.sq-breath-hint {
-    font-size: 0.65rem;
-    color: rgba(255, 255, 255, 0.55);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin: 0;
-    font-weight: 400;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    line-height: 1;
 }
