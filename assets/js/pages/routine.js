@@ -270,6 +270,7 @@ async function loadRoutine() {
     routineData.exercises.forEach(ex => {
       const sets = ex.sets || 1;
       const baseEx = {
+        exerciseId: ex.exerciseId,
         title: ex.title || catalog[ex.exerciseId]?.name || 'Ejercicio',
         description: ex.description || catalog[ex.exerciseId]?.desc || '',
         videoSrc: ex.videoSrc || catalog[ex.exerciseId]?.media?.url || '',
