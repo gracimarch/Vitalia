@@ -313,80 +313,74 @@
             "exercises": [
                 {
                     "exerciseId": "square_breathing",
-                    "title": "Respiración Cuadrada",
                     "duration": 60,
-                    "rest": 0,
-                    "sets": 4
+                    "rest": 10,
+                    "sets": 2
                 },
                 {
                     "exerciseId": "cat_cow",
-                    "title": "Gato-Vaca",
                     "duration": 60,
                     "rest": 15,
                     "sets": 2
                 },
                 {
                     "exerciseId": "torso_twists",
-                    "title": "Giros de Torso Suaves",
+                    "title": "Giros Suaves de Torso",
+                    "duration": 60,
+                    "rest": 15,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "worlds_greatest_stretch",
+                    "title": "Estiramiento del Mundo (Izquierdo)",
                     "duration": 60,
                     "rest": 15,
                     "sets": 1
                 },
                 {
                     "exerciseId": "worlds_greatest_stretch",
-                    "title": "Estiramiento Adaptado (Lado Izquierdo)",
+                    "title": "Estiramiento del Mundo (Derecho)",
                     "duration": 60,
                     "rest": 15,
-                    "sets": 1
-                },
-                {
-                    "exerciseId": "worlds_greatest_stretch",
-                    "title": "Estiramiento Adaptado (Lado Derecho)",
-                    "duration": 60,
-                    "rest": 20,
                     "sets": 1
                 },
                 {
                     "exerciseId": "downward_dog",
-                    "title": "Perro Boca Abajo",
-                    "duration": 45,
+                    "duration": 60,
                     "rest": 15,
                     "sets": 2
                 },
                 {
                     "exerciseId": "cobra_stretch",
-                    "title": "Cobra",
-                    "duration": 45,
-                    "rest": 15,
-                    "sets": 2
-                },
-                {
-                    "exerciseId": "child_pose",
-                    "title": "Postura del Niño Activa",
                     "duration": 60,
                     "rest": 15,
                     "sets": 2
                 },
                 {
                     "exerciseId": "side_stretch",
-                    "title": "Estiramiento Lateral (Sostenido)",
+                    "title": "Estiramiento Lateral (Izquierdo)",
                     "duration": 60,
                     "rest": 15,
-                    "sets": 2
+                    "sets": 1
+                },
+                {
+                    "exerciseId": "side_stretch",
+                    "title": "Estiramiento Lateral (Derecho)",
+                    "duration": 60,
+                    "rest": 15,
+                    "sets": 1
+                },
+                {
+                    "exerciseId": "seated_neck_stretch",
+                    "duration": 60,
+                    "rest": 15,
+                    "sets": 1
                 },
                 {
                     "exerciseId": "child_pose",
-                    "title": "Postura del Niño",
                     "duration": 60,
                     "rest": 0,
-                    "sets": 3
-                },
-                {
-                    "exerciseId": "square_breathing",
-                    "title": "Respiración Consciente y Gratitud",
-                    "duration": 60,
-                    "rest": 0,
-                    "sets": 4
+                    "sets": 2
                 }
             ]
         },
