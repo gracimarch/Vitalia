@@ -313,14 +313,14 @@
             "exercises": [
                 {
                     "exerciseId": "square_breathing",
-                    "title": "Llegada y Respiración Cuadrada",
+                    "title": "Respiración Cuadrada",
                     "duration": 60,
                     "rest": 0,
                     "sets": 4
                 },
                 {
                     "exerciseId": "cat_cow",
-                    "title": "Gato-Vaca (Movilidad Suave)",
+                    "title": "Gato-Vaca",
                     "duration": 60,
                     "rest": 15,
                     "sets": 2
@@ -348,14 +348,14 @@
                 },
                 {
                     "exerciseId": "downward_dog",
-                    "title": "Perro Boca Abajo (Flow Lento)",
+                    "title": "Perro Boca Abajo",
                     "duration": 45,
                     "rest": 15,
                     "sets": 2
                 },
                 {
                     "exerciseId": "cobra_stretch",
-                    "title": "Cobra (Transición Lenta)",
+                    "title": "Cobra",
                     "duration": 45,
                     "rest": 15,
                     "sets": 2
@@ -376,17 +376,135 @@
                 },
                 {
                     "exerciseId": "child_pose",
-                    "title": "Postura del Niño (Relajación Profunda)",
+                    "title": "Postura del Niño",
                     "duration": 60,
                     "rest": 0,
                     "sets": 3
                 },
                 {
                     "exerciseId": "square_breathing",
-                    "title": "Cierre: Respiración Consciente y Gratitud",
+                    "title": "Respiración Consciente y Gratitud",
                     "duration": 60,
                     "rest": 0,
                     "sets": 4
+                }
+            ]
+        },
+        {
+            "slug": "calistenia-outdoor-fuerza",
+            "title": "Rutina de calistenia al aire libre para fuerza y resistencia",
+            "level": "Nivel Intermedio",
+            "duration": "40 minutos de duración",
+            "warmup_text": "Realiza rotaciones amplias de brazos y activa tus tobillos. Prepárate para ganar fuerza usando solo tu entorno.",
+            "introduction": "<p>Rutina basada en peso corporal diseñada para realizarse en espacios abiertos (parques, plazas o tu propio jardín). Mejora fuerza, coordinación y resistencia utilizando únicamente el entorno como recurso. A diferencia de rutinas básicas en circuito, esta sesión cuenta con un bloque robusto de fuerza antes del estímulo metabólico, lo que asegura progresos reales.</p>",
+            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+            "preparation": "<p>Busca un parque o espacio exterior con piso firme donde puedas moverte sin chocar. Para el ejercicio de remo, asegúrate de contar con una banda de resistencia o bien utiliza una barra baja (estilo parque de calistenia). Mantente bien hidratado, usa calzado con buen agarre y respira profundo. Cuando estés en posición, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "conclusion": "<p>¡Excelente entrenamiento! Mantener la fuerza y resistencia con calistenia es una de las mejores formas de crear atleticismo real. Al haber separado la fuerza del bloque HIIT, le diste a tu cuerpo el estímulo perfecto en cada vía energética. Te recomendamos realizar esta rutina unas 3 veces por semana. Estira bien y come nutritivo para recuperarte.</p>",
+            "exercises": [
+                {
+                    "exerciseId": "jumping_jacks",
+                    "title": "Activación: Jumping Jacks",
+                    "duration": 60,
+                    "rest": 15,
+                    "sets": 1
+                },
+                {
+                    "exerciseId": "shoulder_circles",
+                    "title": "Movilidad: Rotación de Hombros",
+                    "duration": 60,
+                    "rest": 15,
+                    "sets": 1
+                },
+                {
+                    "exerciseId": "calf_raises",
+                    "title": "Activación: Elevaciones de Talón",
+                    "duration": 45,
+                    "rest": 15,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "plank",
+                    "title": "Core Ligero: Plancha",
+                    "duration": 40,
+                    "rest": 20,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "pushups",
+                    "title": "Fuerza 1: Flexiones de Brazos",
+                    "duration": 45,
+                    "rest": 45,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "band_row",
+                    "title": "Fuerza 2: Remo (Banda o Barra)",
+                    "duration": 45,
+                    "rest": 45,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "lunges",
+                    "title": "Fuerza 3: Estocadas",
+                    "duration": 45,
+                    "rest": 45,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "hollow_hold",
+                    "title": "Fuerza 4: Extensión Espinal (Hollow Hold)",
+                    "duration": 40,
+                    "rest": 20,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "burpees",
+                    "title": "HIIT 1: Burpees",
+                    "duration": 30,
+                    "rest": 15,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "mountain_climbers",
+                    "title": "HIIT 2: Escaladores",
+                    "duration": 30,
+                    "rest": 15,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "skater_jumps",
+                    "title": "HIIT 3: Saltos de Patinador",
+                    "duration": 30,
+                    "rest": 15,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "shoulder_taps",
+                    "title": "HIIT 4: Taps de Hombros Rápidos",
+                    "duration": 30,
+                    "rest": 15,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "downward_dog",
+                    "title": "Enfriamiento: Perro Boca Abajo",
+                    "duration": 60,
+                    "rest": 15,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "worlds_greatest_stretch",
+                    "title": "Movilidad Final: Estiramiento Completo",
+                    "duration": 60,
+                    "rest": 15,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "square_breathing",
+                    "title": "Regulación: Respiración Cuadrada",
+                    "duration": 60,
+                    "rest": 0,
+                    "sets": 3
                 }
             ]
         }
