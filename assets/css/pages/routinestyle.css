@@ -984,3 +984,78 @@
         width: calc(100% - 32px);
     }
 }
+
+/* =========================================
+   SQUARE BREATHING OVERLAY
+   ========================================= */
+.sq-breath-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(10, 10, 18, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.sq-breath-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sq-breath-phase {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+    min-height: 2rem;
+    transition: opacity 0.3s ease;
+}
+
+.sq-breath-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sq-breath-svg {
+    width: 180px;
+    height: 180px;
+    overflow: visible;
+}
+
+.sq-breath-progress {
+    transition: stroke-dashoffset 0.05s linear, stroke 0.4s ease;
+    transform-origin: center;
+}
+
+.sq-breath-count {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 300;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 0 20px rgba(225, 148, 127, 0.4);
+    pointer-events: none;
+}
+
+.sq-breath-hint {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: 400;
+}
