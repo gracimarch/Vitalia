@@ -207,6 +207,83 @@
                     "rest": 0
                 }
             ]
+        },
+        {
+            "slug": "abdomen-y-estabilidad-core",
+            "title": "Rutina enfocada en abdomen y estabilidad del core en casa",
+            "level": "Nivel Principiante",
+            "duration": "30 minutos de duración",
+            "warmup_text": "Realiza suaves giros de torso y rotaciones de cadera. Inhala profundo y exhala para preparar tu centro antes de empezar.",
+            "introduction": "<p>Esta rutina está diseñada para fortalecer, tonificar el abdomen y mejorar la estabilidad corporal de forma segura. Al tener un núcleo fuerte, mejorarás tu postura y reducirás el riesgo de lesiones en tu día a día. Es ideal para nivel principiante, ya que se centra en movimientos controlados sin impacto articular.</p>",
+            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+            "preparation": "<p>Solo necesitas un espacio de 2 x 1.5 metros y mucha motivación. Se recomienda encarecidamente el uso de una colchoneta o esterilla, ya que la mayor parte del trabajo se realiza en el suelo. Mantén una botella de agua a la mano y concéntrate en la respiración durante cada contracción abdominal. Cuando estés en posición, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "conclusion": "<p>¡Excelente trabajo! Has completado una sesión fundamental para tu estabilidad y fuerza abdominal. Recuerda que la constancia y una buena alimentación son las claves para ver resultados en el core. Te recomendamos realizar esta rutina 2 a 3 veces por semana, dejando siempre un día de descanso en medio para la recuperación muscular.</p>",
+            "exercises": [
+                {
+                    "exerciseId": "cat_cow",
+                    "duration": 60,
+                    "rest": 20,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "bird_dog",
+                    "duration": 50,
+                    "rest": 25,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "glute_bridge",
+                    "duration": 50,
+                    "rest": 25,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "plank",
+                    "duration": 40,
+                    "rest": 30,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "side_plank",
+                    "duration": 30,
+                    "rest": 20,
+                    "sets": 4
+                },
+                {
+                    "exerciseId": "dead_bug",
+                    "duration": 50,
+                    "rest": 25,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "crunch",
+                    "duration": 45,
+                    "rest": 25,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "single_leg_raises",
+                    "duration": 40,
+                    "rest": 30,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "russian_twist",
+                    "duration": 40,
+                    "rest": 30,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "cobra_stretch",
+                    "duration": 60,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "child_pose",
+                    "duration": 120,
+                    "rest": 0
+                }
+            ]
         }
     ]
 }
