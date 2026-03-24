@@ -6,7 +6,7 @@
             "level": "Nivel Principiante",
             "duration": "20 minutos de duración",
             "introduction": "<p>Esta rutina trabaja los principales grupos musculares del cuerpo: piernas, glúteos, pecho, espalda, hombros y core, mediante ejercicios funcionales de bajo impacto que no requieren equipamiento. Está diseñada para personas que se inician en el entrenamiento y buscan mejorar su condición física general desde casa. La sesión se estructura en un calentamiento activo, un bloque de fuerza funcional equilibrado y un cierre de movilidad para favorecer la recuperación.</p>",
-            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+            "image": "https://d3p3fw3rutb1if.cloudfront.net/photos/27bcfff9-76fe-41c6-8480-7496231cd4a0",
             "preparation": "<p>Busca un espacio despejado de al menos 2 x 2 metros con piso firme. No necesitas equipamiento especial, solo ropa cómoda y calzado deportivo. Si dispones de una colchoneta o esterilla, úsala para los ejercicios de suelo. Mantén una botella de agua cerca para hidratarte durante los descansos. Cuando estés en posición, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
             "warmup_text": "Haz rotaciones de hombros y muñecas. Activa tu cuerpo con un trote suave en el lugar.",
             "conclusion": "<p>¡Excelente trabajo! Has completado un entrenamiento integral que activó todos los grupos musculares principales de tu cuerpo. Este tipo de rutina promueve la fuerza funcional, la estabilidad articular y la resistencia general.</p><p>Te recomendamos realizar esta rutina 3 veces por semana, dejando al menos un día de descanso entre sesiones para permitir la recuperación muscular. Hidrátate bien, realiza algunos estiramientos suaves adicionales si lo sientes necesario y asegúrate de incluir una comida equilibrada en las próximas horas.</p>",
@@ -307,7 +307,7 @@
             "duration": "30 minutos de duración",
             "warmup_text": "Siéntate en postura cómoda. Cierra los ojos y comienza a observar tu respiración natural sin modificarla. Deja que tu mente llegue al presente.",
             "introduction": "<p>Sesión de movimientos lentos combinados con respiración consciente para reducir el estrés y mejorar la concentración. Esta rutina está enfocada íntegramente en tu bienestar general y en regular tu sistema nervioso para salir del estado de alerta y entrar en un estado de relajación profunda.</p>",
-            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+            "image": "https://d3p3fw3rutb1if.cloudfront.net/photos/800fefd6-325d-48d2-9ed8-117763434049",
             "preparation": "<p>Busca un lugar tranquilo donde nadie te interrumpa. Utiliza una esterilla o colchoneta cómoda, ya que pasaremos tiempo en el suelo. Apaga las notificaciones de tu teléfono. Puedes poner música muy suave de fondo si lo deseas. Cuando sientas que es tu momento, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
             "conclusion": "<p>Has hecho un trabajo maravilloso para ti y tu salud mental. Siente esa calma profunda en tu cuerpo y de mente fresca, y llévatela al resto de tu día. Te recomendamos realizar esta rutina siempre que sientas picos de estrés o al final de tu jornada para dormir mejor. Mantente hidratado y descansa con gratitud.</p>",
             "exercises": [
@@ -391,111 +391,98 @@
             "duration": "40 minutos de duración",
             "warmup_text": "Realiza rotaciones amplias de brazos y activa tus tobillos. Prepárate para ganar fuerza usando solo tu entorno.",
             "introduction": "<p>Rutina basada en peso corporal diseñada para realizarse en espacios abiertos (parques, plazas o tu propio jardín). Mejora fuerza, coordinación y resistencia utilizando únicamente el entorno como recurso. A diferencia de rutinas básicas en circuito, esta sesión cuenta con un bloque robusto de fuerza antes del estímulo metabólico, lo que asegura progresos reales.</p>",
-            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+            "image": "https://d3p3fw3rutb1if.cloudfront.net/photos/50760f45-6a01-4bb0-8d6d-39fe391f5a74",
             "preparation": "<p>Busca un parque o espacio exterior con piso firme donde puedas moverte sin chocar. Para el ejercicio de remo, asegúrate de contar con una banda de resistencia o bien utiliza una barra baja (estilo parque de calistenia). Mantente bien hidratado, usa calzado con buen agarre y respira profundo. Cuando estés en posición, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
             "conclusion": "<p>¡Excelente entrenamiento! Mantener la fuerza y resistencia con calistenia es una de las mejores formas de crear atleticismo real. Al haber separado la fuerza del bloque HIIT, le diste a tu cuerpo el estímulo perfecto en cada vía energética. Te recomendamos realizar esta rutina unas 3 veces por semana. Estira bien y come nutritivo para recuperarte.</p>",
             "exercises": [
                 {
                     "exerciseId": "jumping_jacks",
-                    "title": "Activación: Jumping Jacks",
                     "duration": 60,
                     "rest": 15,
                     "sets": 1
                 },
                 {
                     "exerciseId": "shoulder_circles",
-                    "title": "Movilidad: Rotación de Hombros",
                     "duration": 60,
                     "rest": 15,
                     "sets": 1
                 },
                 {
                     "exerciseId": "calf_raises",
-                    "title": "Activación: Elevaciones de Talón",
                     "duration": 45,
                     "rest": 15,
                     "sets": 2
                 },
                 {
                     "exerciseId": "plank",
-                    "title": "Core Ligero: Plancha",
                     "duration": 40,
                     "rest": 20,
                     "sets": 2
                 },
                 {
                     "exerciseId": "pushups",
-                    "title": "Fuerza 1: Flexiones de Brazos",
                     "duration": 45,
                     "rest": 45,
                     "sets": 3
                 },
                 {
                     "exerciseId": "band_row",
-                    "title": "Fuerza 2: Remo (Banda o Barra)",
+                    "title": "Remo (Banda o Barra Libre)",
                     "duration": 45,
                     "rest": 45,
                     "sets": 3
                 },
                 {
                     "exerciseId": "lunges",
-                    "title": "Fuerza 3: Estocadas",
                     "duration": 45,
                     "rest": 45,
                     "sets": 3
                 },
                 {
                     "exerciseId": "hollow_hold",
-                    "title": "Fuerza 4: Extensión Espinal (Hollow Hold)",
                     "duration": 40,
                     "rest": 20,
                     "sets": 3
                 },
                 {
                     "exerciseId": "burpees",
-                    "title": "HIIT 1: Burpees",
                     "duration": 30,
                     "rest": 15,
                     "sets": 3
                 },
                 {
                     "exerciseId": "mountain_climbers",
-                    "title": "HIIT 2: Escaladores",
                     "duration": 30,
                     "rest": 15,
                     "sets": 3
                 },
                 {
                     "exerciseId": "skater_jumps",
-                    "title": "HIIT 3: Saltos de Patinador",
                     "duration": 30,
                     "rest": 15,
                     "sets": 3
                 },
                 {
                     "exerciseId": "shoulder_taps",
-                    "title": "HIIT 4: Taps de Hombros Rápidos",
                     "duration": 30,
                     "rest": 15,
                     "sets": 3
                 },
                 {
                     "exerciseId": "downward_dog",
-                    "title": "Enfriamiento: Perro Boca Abajo",
                     "duration": 60,
                     "rest": 15,
                     "sets": 2
                 },
                 {
                     "exerciseId": "worlds_greatest_stretch",
-                    "title": "Movilidad Final: Estiramiento Completo",
+                    "title": "Estiramiento del Mundo",
                     "duration": 60,
                     "rest": 15,
                     "sets": 2
                 },
                 {
                     "exerciseId": "square_breathing",
-                    "title": "Regulación: Respiración Cuadrada",
                     "duration": 60,
                     "rest": 0,
                     "sets": 3

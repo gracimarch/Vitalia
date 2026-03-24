@@ -47,6 +47,102 @@ function getWarmupDetail(routine) {
   return 'Respira profundo, prepara tu espacio y concéntrate en tu cuerpo.';
 }
 
+// ─── Square Breathing Module ───
+const SquareBreathing = (() => {
+  const TOTAL_PERIMETER = 536; // matches SVG stroke-dasharray
+  const PHASE_DURATION  = 4000; // 4 s per phase
+  // phases: label, voice, hint, color, perimeter consumed at end of phase
+  const PHASES = [
+    { label: 'INHALA',   hint: '4 segundos', voice: 'Inhala…',              stroke: '#80CACD', pct: 0.25 },
+    { label: 'SOSTIENE', hint: 'retención',   voice: 'Sostiene el aire…',   stroke: '#E1947F', pct: 0.50 },
+    { label: 'EXHALA',   hint: '4 segundos', voice: 'Exhala lentamente…',  stroke: '#a0d8b8', pct: 0.75 },
+    { label: 'SOSTIENE', hint: 'pulmones vacíos', voice: 'Vacío… y de nuevo…', stroke: '#c4a3e0', pct: 1.00 },
+  ];
+
+  let _active  = false;
+  let _raf     = null;
+  let _phaseIdx = 0;
+  let _cycleStart = 0;
+  let _overlay, _phaseEl, _countEl, _hintEl, _progressEl;
+
+  function _dom() {
+    _overlay    = document.getElementById('sq-breath-overlay');
+    _phaseEl    = document.getElementById('sq-breath-phase');
+    _countEl    = document.getElementById('sq-breath-count');
+    _hintEl     = document.getElementById('sq-breath-hint');
+    _progressEl = document.getElementById('sq-breath-progress');
+  }
+
+  function _setPhase(idx) {
+    const p = PHASES[idx];
+    if (_phaseEl) _phaseEl.textContent = p.label;
+    if (_hintEl)  _hintEl.textContent  = p.hint;
+    if (_progressEl) _progressEl.setAttribute('stroke', p.stroke);
+  }
+
+  function _loop(now) {
+    if (!_active) return;
+    const elapsed = now - _cycleStart;
+    const fullCycle = PHASES.length * PHASE_DURATION; // 16s
+    const cycleElapsed = elapsed % fullCycle;
+
+    const phaseIdx = Math.floor(cycleElapsed / PHASE_DURATION);
+    const phaseElapsed = cycleElapsed % PHASE_DURATION;
+    const phasePct = phaseElapsed / PHASE_DURATION;
+
+    // Update phase label / color when crossing boundary
+    if (phaseIdx !== _phaseIdx) {
+      _phaseIdx = phaseIdx;
+      _setPhase(_phaseIdx);
+      // Voice cue at start of each phase
+      if (typeof VoiceService !== 'undefined') {
+        VoiceService.speak(PHASES[_phaseIdx].voice, true);
+      }
+    }
+
+    // Countdown seconds inside phase
+    const secLeft = Math.ceil((PHASE_DURATION - phaseElapsed) / 1000);
+    if (_countEl) _countEl.textContent = secLeft;
+
+    // Stroke animation — fill perimeter fraction
+    if (_progressEl) {
+      const prevPct = phaseIdx > 0 ? PHASES[phaseIdx - 1].pct : 0;
+      const thisPct = prevPct + (PHASES[phaseIdx].pct - prevPct) * phasePct;
+      const offset  = TOTAL_PERIMETER * (1 - thisPct);
+      _progressEl.setAttribute('stroke-dashoffset', offset.toFixed(1));
+    }
+
+    _raf = requestAnimationFrame(_loop);
+  }
+
+  function start() {
+    if (_active) return;
+    _dom();
+    if (!_overlay) return;
+    _active = true;
+    _phaseIdx = -1; // force update on first frame
+    _cycleStart = performance.now();
+    if (_progressEl) _progressEl.setAttribute('stroke-dashoffset', TOTAL_PERIMETER);
+    _overlay.classList.add('active');
+    // Speak intro
+    if (typeof VoiceService !== 'undefined') {
+      setTimeout(() => VoiceService.speak('Respiración cuadrada. Sigue el cuadrado con tu respiración.', true), 300);
+    }
+    _raf = requestAnimationFrame(_loop);
+  }
+
+  function stop() {
+    _active = false;
+    if (_raf) cancelAnimationFrame(_raf);
+    _raf = null;
+    if (_overlay) _overlay.classList.remove('active');
+    if (_progressEl) _progressEl.setAttribute('stroke-dashoffset', TOTAL_PERIMETER);
+  }
+
+  return { start, stop, isActive: () => _active };
+})();
+
+
 // ─── Screen Manager ───
 function showScreen(id) {
   $$('.screen').forEach(s => s.classList.remove('active'));
@@ -249,13 +345,22 @@ function startExercise(index) {
   const ex = exercises[index];
   showScreen('#screen-exercise');
 
+  // Stop square breathing if previous exercise was breathing
+  SquareBreathing.stop();
+
+  // Square breathing special mode
+  const isBreathing = ex.exerciseId === 'square_breathing';
   // Video
   const video = $('#exercise-video');
   if (video) {
-    video.src = ex.videoSrc;
-    video.loop = true;
-    video.muted = true;
-    video.play().catch(() => {});
+    if (isBreathing) {
+      video.src = ''; video.pause();
+    } else {
+      video.src = ex.videoSrc;
+      video.loop = true;
+      video.muted = true;
+      video.play().catch(() => {});
+    }
   }
 
   // Info
@@ -288,8 +393,13 @@ function startExercise(index) {
   // Update pause icon
   updatePauseIcon(false);
 
-  // TTS
-  if (typeof VoiceService !== 'undefined') {
+  // Activate square breathing animation overlay
+  if (isBreathing) {
+    SquareBreathing.start();
+  }
+
+  // TTS (skip for square_breathing since it has its own guided voice)
+  if (!isBreathing && typeof VoiceService !== 'undefined') {
     const intro = EXERCISE_INTROS[index % EXERCISE_INTROS.length];
     const prefix = index === 0 ? 'Empezamos la rutina. ' : '';
     VoiceService.speak(`${prefix}${intro} ${ex.title}. ${ex.description}`);
@@ -297,6 +407,7 @@ function startExercise(index) {
 
   // Timer
   startCountdown(ex.duration, ex.duration, () => {
+    SquareBreathing.stop();
     if (ex.rest > 0) {
       startRest(index);
     } else {
@@ -382,7 +493,10 @@ function tick(context) {
   // 3-2-1 countdown voice
   const sec = Math.ceil(remainingTimeMs / 1000);
   if (sec <= 3 && sec > 0 && sec !== lastAnnouncedSecond) {
-    if (typeof VoiceService !== 'undefined') VoiceService.speak(sec.toString(), true);
+    // Suppress default countdown during square breathing (it has its own voice)
+    if (!SquareBreathing.isActive()) {
+      if (typeof VoiceService !== 'undefined') VoiceService.speak(sec.toString(), true);
+    }
     lastAnnouncedSecond = sec;
   }
 

@@ -108,6 +108,26 @@
             <p class="exercise-desc" id="exercise-desc"></p>
         </div>
 
+        <!-- Square Breathing Overlay (special UI for square_breathing exercise) -->
+        <div class="sq-breath-overlay" id="sq-breath-overlay" aria-hidden="true">
+            <p class="sq-breath-phase" id="sq-breath-phase">Inhala</p>
+            <div class="sq-breath-wrapper">
+                <svg class="sq-breath-svg" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <!-- Background square -->
+                    <rect x="10" y="10" width="140" height="140" rx="18" ry="18"
+                          fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="3"/>
+                    <!-- Animated progress stroke: perimeter = 4*(140-3) = 548 approx, using 4*134=536 -->
+                    <rect class="sq-breath-progress" id="sq-breath-progress"
+                          x="10" y="10" width="140" height="140" rx="18" ry="18"
+                          fill="none" stroke="#E1947F" stroke-width="4"
+                          stroke-dasharray="536" stroke-dashoffset="536"
+                          stroke-linecap="round"/>
+                </svg>
+                <span class="sq-breath-count" id="sq-breath-count">4</span>
+            </div>
+            <p class="sq-breath-hint" id="sq-breath-hint">4 segundos</p>
+        </div>
+
         <!-- Controls -->
         <div class="exercise-controls">
             <button class="control-btn" id="btn-prev" aria-label="Anterior">
