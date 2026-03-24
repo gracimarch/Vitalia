@@ -49,67 +49,115 @@ function getWarmupDetail(routine) {
 
 // ─── Square Breathing Module ───
 const SquareBreathing = (() => {
-  const TOTAL_PERIMETER = 536; // matches SVG stroke-dasharray
-  const PHASE_DURATION  = 4000; // 4 s per phase
-  // phases: label, voice, hint, color, perimeter consumed at end of phase
+  const PHASE_MS  = 4000;
+  const SIDE_LEN  = 148; // stroke-dasharray length of each line
   const PHASES = [
-    { label: 'INHALA',   hint: '4 segundos', voice: 'Inhala…',              stroke: '#80CACD', pct: 0.25 },
-    { label: 'SOSTIENE', hint: 'retención',   voice: 'Sostiene el aire…',   stroke: '#E1947F', pct: 0.50 },
-    { label: 'EXHALA',   hint: '4 segundos', voice: 'Exhala lentamente…',  stroke: '#a0d8b8', pct: 0.75 },
-    { label: 'SOSTIENE', hint: 'pulmones vacíos', voice: 'Vacío… y de nuevo…', stroke: '#c4a3e0', pct: 1.00 },
+    { text: 'INHALA', voice: 'Inhala…', pathId: 'sq-side-0', labelId: 'sq-label-0', getDotPos: pct => ({ x: 26 + 148 * pct, y: 10 }) },
+    { text: 'SOSTIENE', voice: 'Sostiene el aire…', pathId: 'sq-side-1', labelId: 'sq-label-1', getDotPos: pct => ({ x: 190, y: 26 + 148 * pct }) },
+    { text: 'EXHALA', voice: 'Exhala lentamente…', pathId: 'sq-side-2', labelId: 'sq-label-2', getDotPos: pct => ({ x: 174 - 148 * pct, y: 190 }) },
+    { text: 'SOSTIENE', voice: 'Sostiene…', pathId: 'sq-side-3', labelId: 'sq-label-3', getDotPos: pct => ({ x: 10, y: 174 - 148 * pct }) },
   ];
 
   let _active  = false;
   let _raf     = null;
-  let _phaseIdx = 0;
+  let _phaseIdx = -1;
   let _cycleStart = 0;
-  let _overlay, _phaseEl, _countEl, _hintEl, _progressEl;
+  let _pausedAt = 0;
+  let _isPaused = false;
+  let _overlay, _centerPhase, _centerCount, _dot;
 
   function _dom() {
-    _overlay    = document.getElementById('sq-breath-overlay');
-    _phaseEl    = document.getElementById('sq-breath-phase');
-    _countEl    = document.getElementById('sq-breath-count');
-    _hintEl     = document.getElementById('sq-breath-hint');
-    _progressEl = document.getElementById('sq-breath-progress');
+    _overlay     = document.getElementById('sq-breath-overlay');
+    _centerPhase = document.getElementById('sq-breath-phase');
+    _centerCount = document.getElementById('sq-breath-count');
+    _dot         = document.getElementById('sq-breath-dot');
   }
 
-  function _setPhase(idx) {
-    const p = PHASES[idx];
-    if (_phaseEl) _phaseEl.textContent = p.label;
-    if (_hintEl)  _hintEl.textContent  = p.hint;
-    if (_progressEl) _progressEl.setAttribute('stroke', p.stroke);
+  function _resetUI() {
+    // Reset all paths to empty state (no animation transition during reset)
+    PHASES.forEach((p) => {
+      const pathEl = document.getElementById(p.pathId);
+      const labelEl = document.getElementById(p.labelId);
+      if (pathEl) {
+        pathEl.style.transition = 'none';
+        pathEl.setAttribute('stroke-dashoffset', SIDE_LEN);
+        pathEl.classList.remove('glow');
+      }
+      if (labelEl) labelEl.classList.remove('active');
+    });
+    if (_dot) _dot.setAttribute('opacity', '0');
   }
 
   function _loop(now) {
-    if (!_active) return;
+    if (!_active || _isPaused) return;
     const elapsed = now - _cycleStart;
-    const fullCycle = PHASES.length * PHASE_DURATION; // 16s
-    const cycleElapsed = elapsed % fullCycle;
+    const phaseIdx = Math.floor(elapsed / PHASE_MS) % 4;
+    const phaseElapsed = elapsed % PHASE_MS;
+    const phasePct = phaseElapsed / PHASE_MS;
 
-    const phaseIdx = Math.floor(cycleElapsed / PHASE_DURATION);
-    const phaseElapsed = cycleElapsed % PHASE_DURATION;
-    const phasePct = phaseElapsed / PHASE_DURATION;
-
-    // Update phase label / color when crossing boundary
+    // Cross boundary to new phase
     if (phaseIdx !== _phaseIdx) {
       _phaseIdx = phaseIdx;
-      _setPhase(_phaseIdx);
-      // Voice cue at start of each phase
+
+      // Update DOM for new phase
+      if (_centerPhase) _centerPhase.textContent = PHASES[_phaseIdx].text;
+      
+      PHASES.forEach((p, i) => {
+        const pathEl = document.getElementById(p.pathId);
+        const labelEl = document.getElementById(p.labelId);
+        if (!pathEl || !labelEl) return;
+        
+        if (i < _phaseIdx) {
+          // completely filled
+          pathEl.style.transition = 'none';
+          pathEl.setAttribute('stroke-dashoffset', '0');
+          pathEl.classList.remove('glow');
+          labelEl.classList.remove('active');
+        } else if (i === _phaseIdx) {
+          // active phase
+          pathEl.style.transition = 'stroke-dashoffset 0.1s linear';
+          pathEl.classList.add('glow');
+          labelEl.classList.add('active');
+          if (_dot) _dot.setAttribute('opacity', '1');
+        } else {
+          // empty future phases
+          pathEl.style.transition = 'none';
+          pathEl.setAttribute('stroke-dashoffset', SIDE_LEN);
+          pathEl.classList.remove('glow');
+          labelEl.classList.remove('active');
+        }
+      });
+
+      // Special wrap-around logic for dot transition (going 3 -> 0)
+      if (_phaseIdx === 0 && elapsed > PHASE_MS) {
+        // Reset the previous lines to 0
+        PHASES.forEach(p => {
+          const el = document.getElementById(p.pathId);
+          if (el) el.setAttribute('stroke-dashoffset', SIDE_LEN);
+        });
+      }
+
+      // Voice
       if (typeof VoiceService !== 'undefined') {
         VoiceService.speak(PHASES[_phaseIdx].voice, true);
       }
     }
 
-    // Countdown seconds inside phase
-    const secLeft = Math.ceil((PHASE_DURATION - phaseElapsed) / 1000);
-    if (_countEl) _countEl.textContent = secLeft;
+    // Continuous updates
+    const currentPath = document.getElementById(PHASES[_phaseIdx].pathId);
+    if (currentPath) {
+      const offset = SIDE_LEN * (1 - phasePct);
+      currentPath.setAttribute('stroke-dashoffset', offset.toFixed(2));
+    }
 
-    // Stroke animation — fill perimeter fraction
-    if (_progressEl) {
-      const prevPct = phaseIdx > 0 ? PHASES[phaseIdx - 1].pct : 0;
-      const thisPct = prevPct + (PHASES[phaseIdx].pct - prevPct) * phasePct;
-      const offset  = TOTAL_PERIMETER * (1 - thisPct);
-      _progressEl.setAttribute('stroke-dashoffset', offset.toFixed(1));
+    if (_dot) {
+      const pos = PHASES[_phaseIdx].getDotPos(phasePct);
+      _dot.setAttribute('cx', pos.x.toFixed(1));
+      _dot.setAttribute('cy', pos.y.toFixed(1));
+    }
+
+    if (_centerCount) {
+      _centerCount.textContent = Math.ceil((PHASE_MS - phaseElapsed) / 1000);
     }
 
     _raf = requestAnimationFrame(_loop);
@@ -120,26 +168,47 @@ const SquareBreathing = (() => {
     _dom();
     if (!_overlay) return;
     _active = true;
-    _phaseIdx = -1; // force update on first frame
+    _isPaused = false;
+    _phaseIdx = -1;
+    _resetUI();
     _cycleStart = performance.now();
-    if (_progressEl) _progressEl.setAttribute('stroke-dashoffset', TOTAL_PERIMETER);
     _overlay.classList.add('active');
-    // Speak intro
-    if (typeof VoiceService !== 'undefined') {
-      setTimeout(() => VoiceService.speak('Respiración cuadrada. Sigue el cuadrado con tu respiración.', true), 300);
-    }
+    
+    // Initial instruction (delay slightly to avoid overlapping with general voice)
+    setTimeout(() => {
+      if (_active && typeof VoiceService !== 'undefined') {
+        VoiceService.speak('Respiración cuadrada, sigue el ritmo.', true);
+      }
+    }, 800);
+
+    _raf = requestAnimationFrame(_loop);
+  }
+
+  function pause() {
+    if (!_active || _isPaused) return;
+    _isPaused = true;
+    _pausedAt = performance.now();
+    if (_raf) cancelAnimationFrame(_raf);
+  }
+
+  function resume() {
+    if (!_active || !_isPaused) return;
+    const now = performance.now();
+    _cycleStart += (now - _pausedAt);
+    _isPaused = false;
     _raf = requestAnimationFrame(_loop);
   }
 
   function stop() {
     _active = false;
+    _isPaused = false;
     if (_raf) cancelAnimationFrame(_raf);
     _raf = null;
     if (_overlay) _overlay.classList.remove('active');
-    if (_progressEl) _progressEl.setAttribute('stroke-dashoffset', TOTAL_PERIMETER);
+    _resetUI();
   }
 
-  return { start, stop, isActive: () => _active };
+  return { start, pause, resume, stop, isActive: () => _active };
 })();
 
 
@@ -547,6 +616,7 @@ function pauseTimer() {
   const video = $('#exercise-video');
   if (video) video.pause();
 
+  if (SquareBreathing.isActive()) SquareBreathing.pause();
   if (typeof VoiceService !== 'undefined') VoiceService.pause();
 }
 
@@ -559,6 +629,7 @@ function resumeTimer(context) {
   const video = $('#exercise-video');
   if (video && context === 'exercise') video.play().catch(() => {});
 
+  if (SquareBreathing.isActive()) SquareBreathing.resume();
   if (typeof VoiceService !== 'undefined') VoiceService.resume();
 
   tick(context);

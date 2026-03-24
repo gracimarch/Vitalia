@@ -108,24 +108,47 @@
             <p class="exercise-desc" id="exercise-desc"></p>
         </div>
 
-        <!-- Square Breathing Overlay (special UI for square_breathing exercise) -->
+        <!-- Square Breathing Overlay -->
         <div class="sq-breath-overlay" id="sq-breath-overlay" aria-hidden="true">
-            <p class="sq-breath-phase" id="sq-breath-phase">Inhala</p>
-            <div class="sq-breath-wrapper">
-                <svg class="sq-breath-svg" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <!-- Background square -->
-                    <rect x="10" y="10" width="140" height="140" rx="18" ry="18"
-                          fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="3"/>
-                    <!-- Animated progress stroke: perimeter = 4*(140-3) = 548 approx, using 4*134=536 -->
-                    <rect class="sq-breath-progress" id="sq-breath-progress"
-                          x="10" y="10" width="140" height="140" rx="18" ry="18"
-                          fill="none" stroke="#E1947F" stroke-width="4"
-                          stroke-dasharray="536" stroke-dashoffset="536"
-                          stroke-linecap="round"/>
-                </svg>
-                <span class="sq-breath-count" id="sq-breath-count">4</span>
+            <div class="sq-breath-container">
+                <!-- Side labels -->
+                <div class="sq-breath-label sq-breath-label--top" id="sq-label-0">INHALA 4s</div>
+                <div class="sq-breath-label sq-breath-label--right" id="sq-label-1">SOSTIENE 4s</div>
+                <div class="sq-breath-label sq-breath-label--bottom" id="sq-label-2">EXHALA 4s</div>
+                <div class="sq-breath-label sq-breath-label--left" id="sq-label-3">SOSTIENE 4s</div>
+
+                <div class="sq-breath-svg-wrapper">
+                    <svg class="sq-breath-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background square (faint) -->
+                        <rect x="10" y="10" width="180" height="180" rx="16" ry="16" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="4"/>
+                        
+                        <!-- 4 Animated sides -->
+                        <!-- Top (Inhale): left to right -->
+                        <path id="sq-side-0" d="M 26 10 L 174 10" stroke="#80CACD" stroke-width="6" stroke-linecap="round" fill="none" stroke-dasharray="148" stroke-dashoffset="148" class="sq-side-path sq-side-top"/>
+                        <!-- Right (Hold): top to bottom -->
+                        <path id="sq-side-1" d="M 190 26 L 190 174" stroke="#E1947F" stroke-width="6" stroke-linecap="round" fill="none" stroke-dasharray="148" stroke-dashoffset="148" class="sq-side-path sq-side-right"/>
+                        <!-- Bottom (Exhale): right to left -->
+                        <path id="sq-side-2" d="M 174 190 L 26 190" stroke="#a0d8b8" stroke-width="6" stroke-linecap="round" fill="none" stroke-dasharray="148" stroke-dashoffset="148" class="sq-side-path sq-side-bottom"/>
+                        <!-- Left (Hold): bottom to top -->
+                        <path id="sq-side-3" d="M 10 174 L 10 26" stroke="#c4a3e0" stroke-width="6" stroke-linecap="round" fill="none" stroke-dasharray="148" stroke-dashoffset="148" class="sq-side-path sq-side-left"/>
+
+                        <!-- Corner dots (optional, for aesthetics) -->
+                        <circle cx="10" cy="10" r="4" fill="rgba(255,255,255,0.2)"/>
+                        <circle cx="190" cy="10" r="4" fill="rgba(255,255,255,0.2)"/>
+                        <circle cx="190" cy="190" r="4" fill="rgba(255,255,255,0.2)"/>
+                        <circle cx="10" cy="190" r="4" fill="rgba(255,255,255,0.2)"/>
+                        
+                        <!-- Glowing indicator dot -->
+                        <circle id="sq-breath-dot" cx="10" cy="10" r="6" fill="#fff" opacity="0"/>
+                    </svg>
+
+                    <!-- Center counter -->
+                    <div class="sq-breath-center">
+                        <div class="sq-breath-phase-text" id="sq-breath-phase">INHALA</div>
+                        <div class="sq-breath-count" id="sq-breath-count">4</div>
+                    </div>
+                </div>
             </div>
-            <p class="sq-breath-hint" id="sq-breath-hint">4 segundos</p>
         </div>
 
         <!-- Controls -->
