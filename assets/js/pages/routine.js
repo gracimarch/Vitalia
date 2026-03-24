@@ -36,7 +36,10 @@ const EXERCISE_INTROS = [
 ];
 
 // ─── Warmup messages by routine type ───
-function getWarmupDetail(slug) {
+function getWarmupDetail(routine) {
+  if (routine.warmup_text) return routine.warmup_text;
+  
+  const slug = routine.slug || '';
   if (slug.includes('yoga')) return 'Cierra los ojos, respira profundo tres veces y permite que tu cuerpo se relaje.';
   if (slug.includes('hiit') || slug.includes('cardio')) return 'Activa tu core, haz algunas rotaciones de cadera y prepárate para darlo todo.';
   if (slug.includes('fuerza') || slug.includes('cuerpo-completo')) return 'Haz rotaciones de hombros y muñecas. Activa tu cuerpo con un trote suave en el lugar.';
@@ -225,10 +228,10 @@ function startWarmup() {
   routineStartTime = Date.now();
 
   const detail = $('#warmup-detail');
-  if (detail) detail.textContent = getWarmupDetail(routineData.slug);
+  if (detail) detail.textContent = getWarmupDetail(routineData);
 
   if (typeof VoiceService !== 'undefined') {
-    VoiceService.speak('¿Preparado? ' + getWarmupDetail(routineData.slug));
+    VoiceService.speak('¿Preparado? ' + getWarmupDetail(routineData));
   }
 
   // 30 second warmup

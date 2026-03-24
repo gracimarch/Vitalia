@@ -8,6 +8,7 @@
             "introduction": "<p>Esta rutina trabaja los principales grupos musculares del cuerpo: piernas, glúteos, pecho, espalda, hombros y core, mediante ejercicios funcionales de bajo impacto que no requieren equipamiento. Está diseñada para personas que se inician en el entrenamiento y buscan mejorar su condición física general desde casa. La sesión se estructura en un calentamiento activo, un bloque de fuerza funcional equilibrado y un cierre de movilidad para favorecer la recuperación.</p>",
             "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
             "preparation": "<p>Busca un espacio despejado de al menos 2 x 2 metros con piso firme. No necesitas equipamiento especial, solo ropa cómoda y calzado deportivo. Si dispones de una colchoneta o esterilla, úsala para los ejercicios de suelo. Mantén una botella de agua cerca para hidratarte durante los descansos. Cuando estés en posición, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "warmup_text": "Haz rotaciones de hombros y muñecas. Activa tu cuerpo con un trote suave en el lugar.",
             "conclusion": "<p>¡Excelente trabajo! Has completado un entrenamiento integral que activó todos los grupos musculares principales de tu cuerpo. Este tipo de rutina promueve la fuerza funcional, la estabilidad articular y la resistencia general.</p><p>Te recomendamos realizar esta rutina 3 veces por semana, dejando al menos un día de descanso entre sesiones para permitir la recuperación muscular. Hidrátate bien, realiza algunos estiramientos suaves adicionales si lo sientes necesario y asegúrate de incluir una comida equilibrada en las próximas horas.</p>",
             "exercises": [
                 {
@@ -93,6 +94,7 @@
             "introduction": "<p>Esta rutina está diseñada para personas con una agenda ocupada que quieren mejorar su estado físico. Activarás los principales grupos musculares (piernas, pecho, espalda, core) combinando ejercicios de fuerza funcional con intervalos de cardio.</p>",
             "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
             "preparation": "<p>Necesitas un espacio libre de aproximadamente 2 x 1.5 metros. No se requiere equipamiento; solo ropa cómoda y calzado deportivo. Si tienes una colchoneta, úsala para los ejercicios de suelo. Ten agua a mano para los descansos cortos. Como la rutina es breve, cada segundo cuenta: concéntrate en mantener una buena técnica desde el primer ejercicio. Cuando estés preparado, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "warmup_text": "Activa tu core con giros de tronco suaves y realiza rotaciones de cadera para entrar en calor rápidamente.",
             "conclusion": "<p>¡Rutina completada! En poco tiempo has activado tu cuerpo de forma integral, mejorando tu circulación, fuerza y resistencia. Este tipo de sesiones cortas son ideales para mantener la constancia, que es el factor más importante del progreso físico.</p><p>Te recomendamos realizar esta rutina entre 4 y 5 veces por semana para compensar su corta duración con mayor frecuencia. Hidrátate, realiza un par de estiramientos suaves de piernas y hombros, y retoma tu día con más energía.</p>",
             "exercises": [
                 {
@@ -150,89 +152,6 @@
             ]
         },
         {
-            "slug": "movilidad-y-fuerza-en-silla",
-            "title": "Movilidad y Fuerza en Silla",
-            "level": "Nivel Principiante",
-            "duration": "25 minutos de duración",
-            "introduction": "<p>Esta rutina está diseñada específicamente para personas que buscan mejorar su condición física desde una posición segura y estable. Es ideal para adultos mayores o personas con movilidad reducida que desean fortalecer sus músculos y mejorar su flexibilidad.</p>",
-            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp?v=2",
-            "preparation": "<p>Necesitas una silla firme y estable (sin ruedas). Ubícala en un espacio despejado donde puedas mover los brazos y extender las piernas sin obstáculos. Siéntate en la mitad delantera de la silla con los pies bien apoyados en el suelo y la espalda erguida. Ten una botella de agua cerca para hidratarte en los descansos. Mantén una respiración fluida y detente si sientes cualquier dolor agudo. Cuando estés en posición, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
-            "conclusion": "<p>¡Excelente trabajo! Has completado una sesión integral de movilidad y fuerza. Este tipo de ejercicio constante ayuda a mantener la independencia física y mejora la circulación. Recuerda que la movilidad articular es clave para evitar la rigidez y el dolor.</p><p>Te recomendamos realizar esta rutina de 3 a 5 veces por semana para ver mejores resultados en tu vitalidad diaria. Bebe un vaso de agua, relaja los hombros y disfruta de la energía renovada en tu cuerpo.</p>",
-            "exercises": [
-                {
-                    "exerciseId": "cat_cow",
-                    "duration": 60,
-                    "rest": 15
-                },
-                {
-                    "exerciseId": "hip_rotations",
-                    "duration": 60,
-                    "rest": 15
-                },
-                {
-                    "exerciseId": "calf_raises",
-                    "duration": 60,
-                    "rest": 30
-                },
-                {
-                    "exerciseId": "squat",
-                    "duration": 60,
-                    "rest": 30
-                },
-                {
-                    "exerciseId": "knee_pushups",
-                    "duration": 50,
-                    "rest": 30
-                },
-                {
-                    "exerciseId": "superman",
-                    "duration": 60,
-                    "rest": 30
-                },
-                {
-                    "exerciseId": "russian_twist",
-                    "duration": 50,
-                    "rest": 20
-                },
-                {
-                    "exerciseId": "bicycle_crunch",
-                    "duration": 50,
-                    "rest": 20
-                },
-                {
-                    "exerciseId": "high_knees",
-                    "duration": 60,
-                    "rest": 30
-                },
-                {
-                    "exerciseId": "calf_raises",
-                    "duration": 60,
-                    "rest": 30,
-                    "sets": 3
-                },
-                {
-                    "exerciseId": "chair_dips",
-                    "duration": 40,
-                    "rest": 30
-                },
-                {
-                    "exerciseId": "lunges",
-                    "duration": 60,
-                    "rest": 30
-                },
-                {
-                    "exerciseId": "dead_bug",
-                    "duration": 60,
-                    "rest": 30
-                },
-                {
-                    "exerciseId": "child_pose",
-                    "duration": 120,
-                    "rest": 0
-                }
-            ]
-        },
-        {
             "slug": "fuerza-silla-de-ruedas",
             "title": "Entrenamiento de Fuerza para Personas en Silla de Ruedas",
             "level": "Nivel Principiante",
@@ -240,6 +159,7 @@
             "introduction": "<p>Esta rutina de fuerza y movilidad ha sido diseñada específicamente para realizarse en posición sentada. El objetivo principal es fortalecer los músculos del tren superior (hombros, espalda, brazos) y mejorar la estabilidad del core, promoviendo una mejor postura y mayor independencia funcional.</p>",
             "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
             "preparation": "<p>Asegúrate de que tu silla o silla de ruedas esté en una posición estable y con los frenos puestos. Necesitarás una banda elástica y un par de mancuernas ligeras (o botellas de agua). Siéntate con la espalda erguida y mantén el espacio a tu alrededor despejado. Cuando estés en posición, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "warmup_text": "Enfócate en rotaciones de hombros y muñecas. Realiza estiramientos laterales suaves de cuello para liberar tensión antes de empezar.",
             "conclusion": "<p>¡Excelente trabajo! Has completado una sesión integral de fuerza y movilidad. Mantener activo el tren superior es fundamental para la vitalidad diaria. No olvides hidratarte bien y realizar estos estiramientos cada vez que sientas tensión acumulada.</p><p>Te recomendamos realizar esta rutina 3 veces por semana para obtener mejores resultados. ¡Sigue adelante con tu entrenamiento!</p>",
             "exercises": [
                 {
