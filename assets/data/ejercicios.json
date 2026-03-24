@@ -1049,6 +1049,79 @@
                 "type": "video",
                 "url": "https://www.pexels.com/download/video/8026876/"
             }
+        },
+        {
+            "id": "square_breathing",
+            "name": "Respiración Cuadrada (4-4-4-4)",
+            "desc": "Inhala profundamente por 4 segundos, sostén el aire 4 segundos, exhala lentamente por 4 segundos, y mantén los pulmones vacíos 4 segundos antes de repetir. Concéntrate en el conteo.",
+            "movement_pattern": "respiracion",
+            "muscle_focus": [
+                "diafragma"
+            ],
+            "secondary_muscles": [
+                "core"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 1,
+            "tags": [
+                "respiracion",
+                "relajacion",
+                "yoga"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/4491932/"
+            }
+        },
+        {
+            "id": "downward_dog",
+            "name": "Perro Boca Abajo",
+            "desc": "Desde posición de cuadrupedia, eleva la cadera hacia el techo formando una 'V' invertida con tu cuerpo. Empuja activamente el suelo con tus manos y alarga la espalda. Busca acercar suavemente los talones al piso, aunque no lleguen.",
+            "movement_pattern": "movilidad",
+            "muscle_focus": [
+                "isquiotibiales",
+                "espalda"
+            ],
+            "secondary_muscles": [
+                "hombros",
+                "pantorrillas"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "yoga",
+                "estiramiento"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/3196291/"
+            }
+        },
+        {
+            "id": "worlds_greatest_stretch",
+            "name": "Mayor Estiramiento del Mundo (Caminata a Plancha)",
+            "desc": "Desde posición de plancha, da un paso amplio llevando un pie al lado de tus manos. Gira el torso suavemente y eleva el brazo opuesto hacia el techo. Baja el brazo, regresa a plancha y cambia de lado con control y sin prisas.",
+            "movement_pattern": "movilidad",
+            "muscle_focus": [
+                "cuerpo_completo"
+            ],
+            "secondary_muscles": [
+                "cadera",
+                "espalda_alta"
+            ],
+            "difficulty": "principiante",
+            "equipment": "ninguno",
+            "intensity": 2,
+            "tags": [
+                "movilidad",
+                "estiramiento"
+            ],
+            "media": {
+                "type": "video",
+                "url": "https://www.pexels.com/download/video/7890696/"
+            }
         }
     ]
 }

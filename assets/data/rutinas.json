@@ -212,7 +212,7 @@
             "slug": "abdomen-y-estabilidad-core",
             "title": "Rutina enfocada en abdomen y estabilidad del core en casa",
             "level": "Nivel Principiante",
-            "duration": "30 minutos de duración",
+            "duration": "40 minutos de duración",
             "warmup_text": "Realiza suaves giros de torso y rotaciones de cadera. Inhala profundo y exhala para preparar tu centro antes de empezar.",
             "introduction": "<p>Esta rutina está diseñada para fortalecer, tonificar el abdomen y mejorar la estabilidad corporal de forma segura. Al tener un núcleo fuerte, mejorarás tu postura y reducirás el riesgo de lesiones en tu día a día. Es ideal para nivel principiante, ya que se centra en movimientos controlados sin impacto articular.</p>",
             "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
@@ -288,10 +288,105 @@
                     "sets": 1
                 },
                 {
+                    "exerciseId": "superman",
+                    "duration": 30,
+                    "rest": 20
+                },
+                {
                     "exerciseId": "child_pose",
                     "duration": 90,
                     "rest": 0,
                     "sets": 1
+                }
+            ]
+        },
+        {
+            "slug": "yoga-suave-relajacion",
+            "title": "Yoga suave para relajación y enfoque mental",
+            "level": "Nivel Principiante",
+            "duration": "30 minutos de duración",
+            "warmup_text": "Siéntate en postura cómoda. Cierra los ojos y comienza a observar tu respiración natural sin modificarla. Deja que tu mente llegue al presente.",
+            "introduction": "<p>Sesión de movimientos lentos combinados con respiración consciente para reducir el estrés y mejorar la concentración. Esta rutina está enfocada íntegramente en tu bienestar general y en regular tu sistema nervioso para salir del estado de alerta y entrar en un estado de relajación profunda.</p>",
+            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+            "preparation": "<p>Busca un lugar tranquilo donde nadie te interrumpa. Utiliza una esterilla o colchoneta cómoda, ya que pasaremos tiempo en el suelo. Apaga las notificaciones de tu teléfono. Puedes poner música muy suave de fondo si lo deseas. Cuando sientas que es tu momento, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "conclusion": "<p>Has hecho un trabajo maravilloso para ti y tu salud mental. Siente esa calma profunda en tu cuerpo y de mente fresca, y llévatela al resto de tu día. Te recomendamos realizar esta rutina siempre que sientas picos de estrés o al final de tu jornada para dormir mejor. Mantente hidratado y descansa con gratitud.</p>",
+            "exercises": [
+                {
+                    "exerciseId": "square_breathing",
+                    "title": "Llegada y Respiración Cuadrada",
+                    "duration": 60,
+                    "rest": 0,
+                    "sets": 4
+                },
+                {
+                    "exerciseId": "cat_cow",
+                    "title": "Gato-Vaca (Movilidad Suave)",
+                    "duration": 60,
+                    "rest": 15,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "torso_twists",
+                    "title": "Giros de Torso Suaves",
+                    "duration": 60,
+                    "rest": 15,
+                    "sets": 1
+                },
+                {
+                    "exerciseId": "worlds_greatest_stretch",
+                    "title": "Estiramiento Adaptado (Lado Izquierdo)",
+                    "duration": 60,
+                    "rest": 15,
+                    "sets": 1
+                },
+                {
+                    "exerciseId": "worlds_greatest_stretch",
+                    "title": "Estiramiento Adaptado (Lado Derecho)",
+                    "duration": 60,
+                    "rest": 20,
+                    "sets": 1
+                },
+                {
+                    "exerciseId": "downward_dog",
+                    "title": "Perro Boca Abajo (Flow Lento)",
+                    "duration": 45,
+                    "rest": 15,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "cobra_stretch",
+                    "title": "Cobra (Transición Lenta)",
+                    "duration": 45,
+                    "rest": 15,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "child_pose",
+                    "title": "Postura del Niño Activa",
+                    "duration": 60,
+                    "rest": 15,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "side_stretch",
+                    "title": "Estiramiento Lateral (Sostenido)",
+                    "duration": 60,
+                    "rest": 15,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "child_pose",
+                    "title": "Postura del Niño (Relajación Profunda)",
+                    "duration": 60,
+                    "rest": 0,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "square_breathing",
+                    "title": "Cierre: Respiración Consciente y Gratitud",
+                    "duration": 60,
+                    "rest": 0,
+                    "sets": 4
                 }
             ]
         }
