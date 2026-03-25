@@ -2284,6 +2284,136 @@
                     ]
                 }
             ]
+        },
+        {
+            "slug": "plan-entrenamiento-recuperacion",
+            "title": "Plan para días de entrenamiento con foco en recuperación",
+            "type": "fit",
+            "duration": "1 día",
+            "image": "assets/images/diet/training.webp",
+            "introduction": "<p>Organiza las comidas alrededor del entrenamiento, priorizando proteína y energía antes y después de la actividad. Incluye opciones que ayudan a rendir mejor y recuperarse sin necesidad de suplementos complejos.</p>",
+            "schedule": [
+                {
+                    "name": "Día 1",
+                    "meals": [
+                        { "type": "Desayuno", "recipeIds": ["tostadas_palta_huevo"] },
+                        { "type": "Almuerzo", "recipeIds": ["bowl_arroz_verduras"] },
+                        { "type": "Snack", "recipeIds": ["panqueques_avena"] },
+                        { "type": "Cena", "recipeIds": ["carne_horno_papas"] }
+                    ]
+                }
+            ]
+        },
+        {
+            "slug": "plan-semanas-ocupadas",
+            "title": "Plan para semanas ocupadas con comidas rápidas",
+            "type": "práctico",
+            "duration": "7 días",
+            "image": "assets/images/diet/busy.webp",
+            "introduction": "<p>Diseñado para quienes tienen poco tiempo y necesitan resolver su alimentación sin complicarse. Todas las comidas son rápidas o reutilizables, evitando depender de delivery o ultraprocesados.</p>",
+            "schedule": [
+                {
+                    "name": "Día 1",
+                    "meals": [
+                        { "type": "Desayuno", "recipeIds": ["yogur_granola"] },
+                        { "type": "Almuerzo", "recipeIds": ["ensalada_completa"] },
+                        { "type": "Snack", "recipeIds": ["fruta_secos"] },
+                        { "type": "Cena", "recipeIds": ["wrap_pollo_verduras"] }
+                    ]
+                },
+                {
+                    "name": "Día 2",
+                    "meals": [
+                        { "type": "Desayuno", "recipeIds": ["tostadas_queso_mermelada"] },
+                        { "type": "Almuerzo", "recipeIds": ["omelette_verduras"] },
+                        { "type": "Snack", "recipeIds": ["licuado_frutilla"] },
+                        { "type": "Cena", "recipeIds": ["sopa_verduras_proteina"] }
+                    ]
+                },
+                {
+                    "name": "Día 3",
+                    "meals": [
+                        { "type": "Desayuno", "recipeIds": ["avena_fruta"] },
+                        { "type": "Almuerzo", "recipeIds": ["tacos"] },
+                        { "type": "Snack", "recipeIds": ["queso_fruta"] },
+                        { "type": "Cena", "recipeIds": ["ensalada_liviana_proteina"] }
+                    ]
+                },
+                {
+                    "name": "Día 4",
+                    "meals": [
+                        { "type": "Desayuno", "recipeIds": ["cafe_tostadas"] },
+                        { "type": "Almuerzo", "recipeIds": ["ensalada_garbanzos"] },
+                        { "type": "Snack", "recipeIds": ["barrita_avena_casera"] },
+                        { "type": "Cena", "recipeIds": ["pollo_plancha_ensalada"] }
+                    ]
+                },
+                {
+                    "name": "Día 5",
+                    "meals": [
+                        { "type": "Desayuno", "recipeIds": ["huevos_tostadas"] },
+                        { "type": "Almuerzo", "recipeIds": ["arroz_huevo_verduras"] },
+                        { "type": "Snack", "recipeIds": ["yogur_con_semillas"] },
+                        { "type": "Cena", "recipeIds": ["tortilla_papa_verduras"] }
+                    ]
+                },
+                {
+                    "name": "Día 6",
+                    "meals": [
+                        { "type": "Desayuno", "recipeIds": ["tostadas_palta_huevo"] },
+                        { "type": "Almuerzo", "recipeIds": ["lentejas_guisadas"] },
+                        { "type": "Snack", "recipeIds": ["punado_frutos_secos"] },
+                        { "type": "Cena", "recipeIds": ["verduras_horno_huevopollo"] }
+                    ]
+                },
+                {
+                    "name": "Día 7",
+                    "meals": [
+                        { "type": "Desayuno", "recipeIds": ["chia_pudding"] },
+                        { "type": "Almuerzo", "recipeIds": ["tarta_verduras"] },
+                        { "type": "Snack", "recipeIds": ["hummus_bastones_zanahoria"] },
+                        { "type": "Cena", "recipeIds": ["sopa_verduras_dinner"] }
+                    ]
+                }
+            ]
+        },
+        {
+            "slug": "plan-alto-foco-mental",
+            "title": "Plan para días de estudio/trabajo de muchas horas",
+            "type": "liviano",
+            "duration": "1 día",
+            "image": "assets/images/diet/focus.webp",
+            "introduction": "<p>Incluye comidas que evitan somnolencia y mantienen tu concentración intacta. Ideal para jornadas largas de estudio o trabajo mental intenso.</p>",
+            "schedule": [
+                {
+                    "name": "Día 1",
+                    "meals": [
+                        { "type": "Desayuno", "recipeIds": ["chia_pudding"] },
+                        { "type": "Almuerzo", "recipeIds": ["pollo_plancha_ensalada"] },
+                        { "type": "Snack", "recipeIds": ["punado_frutos_secos"] },
+                        { "type": "Cena", "recipeIds": ["ensalada_liviana_proteina"] }
+                    ]
+                }
+            ]
+        },
+        {
+            "slug": "plan-estabilidad-energetica",
+            "title": "Plan de estabilidad energética sin azúcar añadida",
+            "type": "equilibrado",
+            "duration": "1 día",
+            "image": "assets/images/diet/nosugar.webp",
+            "introduction": "<p>Diseñado para reducir la dependencia del azúcar. Incluye comidas saladas en la mañana y opciones que estabilizan energía y disminuyen dramáticamente los picos de hambre dulce durante el día.</p>",
+            "schedule": [
+                {
+                    "name": "Día 1",
+                    "meals": [
+                        { "type": "Desayuno", "recipeIds": ["huevos_tostadas"] },
+                        { "type": "Almuerzo", "recipeIds": ["lentejas_guisadas"] },
+                        { "type": "Snack", "recipeIds": ["chocolate_amargo_porcion"] },
+                        { "type": "Cena", "recipeIds": ["omelette_verduras"] }
+                    ]
+                }
+            ]
         }
     ]
 }
