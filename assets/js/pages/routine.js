@@ -341,14 +341,17 @@ function renderOverview() {
   const list = $('#overview-exercise-list');
   if (list) {
     let html = '<span class="overview-group-label">Ejercicios</span>';
-    exercises.forEach((ex, i) => {
+    routineData.exercises.forEach((ex, i) => {
+      const sets = ex.sets > 1 ? `<br><span style="font-size: 0.8rem; opacity: 0.7;">${ex.sets} series</span>` : '';
+      const finalTitle = ex.title || catalog[ex.exerciseId]?.name || 'Ejercicio';
+      
       // Exercise item
       html += `
         <div class="overview-exercise-item">
           <div class="overview-exercise-thumb"><i class="fa-regular fa-circle-play"></i></div>
           <div class="overview-exercise-info">
-            <div class="overview-exercise-name">${ex.title}</div>
-            <div class="overview-exercise-duration">${formatDuration(ex.duration)}</div>
+            <div class="overview-exercise-name">${finalTitle}</div>
+            <div class="overview-exercise-duration">${formatDuration(ex.duration)} ${sets}</div>
           </div>
         </div>
       `;
