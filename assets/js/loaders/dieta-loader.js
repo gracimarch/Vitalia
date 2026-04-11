@@ -59,22 +59,24 @@
         }
     }
 
-    function findDietaBySlug(dietas, slug) {
-        return dietas.find(d => d.slug === slug);
-    }
-
     function normalizeDiet(dieta, recetas) {
         if (!dieta.recipes) dieta.recipes = [];
 
+        // If the diet already has the modernized 'meals' structure, we ensure 
+        // it's compatible with the legacy renderer by mapping it back to 'options' 
+        // if necessary, or we just ensure the recipes array is populated.
         if (dieta.schedule) {
             dieta.schedule.forEach(day => {
+                // If the new structure is present, ensure options exists for the renderer
                 if (day.meals && !day.options) {
                     day.options = day.meals.map(meal => {
                         return {
                             label: meal.type,
                             cards: (meal.recipeIds || []).map(recId => {
+                                // Find recipe details from the global recipes database
                                 const rec = recetas.find(r => r.id === recId) || {};
                                 
+                                // Ensure this recipe is available specifically for this diet's context
                                 if (!dieta.recipes.find(r => r.id === recId)) {
                                     dieta.recipes.push({
                                         id: recId,
@@ -88,6 +90,7 @@
                                     });
                                 }
                                 
+                                // Set a fallback icon if photo is missing
                                 let defaultIcon = rec.url || "assets/images/ui/icono-comida.webp";
                                 if (!rec.url && (meal.type.toLowerCase().includes('desayuno') || meal.type.toLowerCase().includes('snack'))) {
                                     defaultIcon = "assets/images/ui/icono-rayo.webp";
