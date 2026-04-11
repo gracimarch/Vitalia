@@ -249,10 +249,10 @@ async function loadRoutine() {
 
     // Fetch both files in parallel
     const [rutRes, ejRes] = await Promise.all([
-      fetch('/assets/data/rutinas.json'),
+      fetch('/assets/data/rutina.json'),
       fetch('/assets/data/ejercicios.json')
     ]);
-    if (!rutRes.ok) throw new Error('No se pudo cargar rutinas.json');
+    if (!rutRes.ok) throw new Error('No se pudo cargar rutina.json');
     if (!ejRes.ok) throw new Error('No se pudo cargar ejercicios.json');
 
     const rutData = await rutRes.json();

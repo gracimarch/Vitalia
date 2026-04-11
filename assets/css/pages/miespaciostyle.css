@@ -355,12 +355,10 @@
     justify-content: space-between;
     position: relative;
     aspect-ratio: auto;
-    min-height: 800px;
-    padding: 1.5em;
+    min-height: 300px;
     color: var(--white);
-    text-decoration: none;
-    overflow: hidden;
     transition: all 0.3s ease;
+    padding: 1.5em;
 }
 
 .routine-card:hover {
@@ -372,8 +370,7 @@
     color: var(--white) !important;
 }
 
-/* Food Card Gradients - Cyan Dominant (#80cacd) */
-/* 1. Cyan Base + Purple & Cream */
+
 .food-card:nth-child(1) {
     background:
         radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%),
@@ -384,7 +381,6 @@
     /* Cyan */
 }
 
-/* 2. Cyan Base + Purple & Orange */
 .food-card:nth-child(2) {
     background:
         radial-gradient(circle at 50% 50%, rgba(157, 96, 207, 0.25) 0%, transparent 60%),
@@ -937,7 +933,7 @@
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    padding: 2rem !important;
+    padding: 1.5rem !important;
     border-radius: 20px !important;
     text-decoration: none !important;
     color: #fff !important;

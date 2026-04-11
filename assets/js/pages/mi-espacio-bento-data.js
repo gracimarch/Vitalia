@@ -417,6 +417,6 @@ window.vitaliaBentoData = [
                 </div>
             </div>
         ),
-        onClick: () => window.location.href = '/rutinas/ejercicio-en-15-min'
+        onClick: () => window.location.href = '/rutinas/entrenamiento-en-15-minutos'
     }
 ];
