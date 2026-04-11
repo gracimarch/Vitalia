@@ -10,106 +10,64 @@
             "schedule": [
                 {
                     "name": "Desayuno",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Tostadas integrales con aguacate y huevo pochado",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe1"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "recipe1"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Yogurt con frutillas y miel",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Opción 2",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Almuerzo",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Ensalada de quinoa con pollo y espinacas",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe2"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "recipe2"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Wrap de vegetales con hummus",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe3"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "recipe3"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Snack",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Batido de plátano",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "recipe4"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "recipe4"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Mix de frutos secos y pasas",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Opción 2",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Cena",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Sopa de verduras reconfortante",
-                                    "time": "Listo en 25 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe5"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "recipe5"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Ensalada tibia de salmón y aguacate",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe6"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "recipe6"
                             ]
                         }
                     ]
@@ -230,107 +188,66 @@
             "schedule": [
                 {
                     "name": "Desayuno",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Avena Express con Frutas",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "recipe1"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "recipe1"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Batido Verde Refrescante",
-                                    "time": "Listo en 7 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe2"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "recipe2"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Almuerzo",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Wrap de Pavo y Vegetales",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe3"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "recipe3"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Ensalada de Quinoa y Pollo",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe4"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "recipe4"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Snack",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Yogurt con Granola y Miel",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Opción 1",
+                            "recipeIds": []
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Barra de Frutas Casera",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe6"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "recipe6"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Cena",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Salmón a la Plancha con Verduras",
-                                    "time": "Listo en 25 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe7"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "recipe7"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Tacos de Lechuga con Tofu",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe8"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "recipe8"
                             ]
                         }
                     ]
@@ -462,246 +379,137 @@
             "schedule": [
                 {
                     "name": "Lunes",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Smoothie verde",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe1"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe1"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Ensalada con pollo a la plancha",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe2"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe2"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Arroz integral con vegetales y pechuga de pollo",
-                                    "time": "Listo en 40 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe3"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe3"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Manzana con almendras",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Martes",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Batido de leche con fresas y avena",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe4"
-                                },
-                                {
-                                    "title": "Pan con queso",
-                                    "time": "Listo en 1 minuto",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe4"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Salmón a la plancha con arroz y brócoli",
-                                    "time": "Listo en 25 min",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe5"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe5"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Revuelto de huevos con cebolla y espinacas",
-                                    "time": "Listo en 10 min",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe6"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe6"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Yogurt con plátano",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Miércoles",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Avena con frutas y yogurt",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe7"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe7"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Arroz integral con tofu y vegetales",
-                                    "time": "Listo en 25 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe8"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe8"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Ensalada de garbanzos con vegetales frescos",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe9"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe9"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Pera con queso fresco",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Jueves",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Batido de leche con mango y avena",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe10"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe10"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Ensalada templada de salmón con espárragos",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe11"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe11"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Sopa ligera de lentejas y verduras",
-                                    "time": "Listo en 30 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe12"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe12"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Palitos de zanahoria",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Viernes",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Smoothie de mango y pera",
-                                    "time": "Listo en 7 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe13"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe13"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Wrap de pollo y vegetales",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe14"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe14"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Ensalada de atún con vegetales frescos",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe15"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe15"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Torta en taza saludable de chocolate",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "recipe16"
-                                }
+                            "type": "Snack",
+                            "recipeIds": [
+                                "recipe16"
                             ]
                         }
                     ]
@@ -966,239 +774,132 @@
             "schedule": [
                 {
                     "name": "Lunes",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Tostadas integrales con aguacate y tomate",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": []
+                        },
+                        {
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe1"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Buddha bowl de quinoa y vegetales",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe1"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe2"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Crema de calabaza y jengibre",
-                                    "time": "Listo en 30 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe2"
-                                }
-                            ]
-                        },
-                        {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Plátano con mantequilla de almendras",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Martes",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Smoothie de espinaca, plátano y kiwi",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "recipe3"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe3"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Tacos con lechuga con garbanzos y maíz",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe4"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe4"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Pasta integral con pesto de albahaca y espinacas",
-                                    "time": "Listo en 25 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe5"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe5"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Rodajas de pepino con hummus",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Miércoles",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Parfait de yogurt vegano con granola y frutas",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "recipe6"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe6"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Ensalada tibia de lentejas y vegetales asados",
-                                    "time": "Listo en 30 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe7"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe7"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Sopa fría de pepino y menta",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe8"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe8"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Palitos de zanahoria",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Jueves",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Batido de remolacha, manzana y jengibre",
-                                    "time": "Listo en 7 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe9"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe9"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Wrap vegano de hummus y vegetales",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe10"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe10"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Curry de garbanzos y espinacas",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe11"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe11"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Nueces y pasas",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Viernes",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Leche de almendra con avena y frutos rojos",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": []
+                        },
+                        {
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe12"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Bowl de falafel con tabulé y salsa tahini",
-                                    "time": "Listo en 25 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe12"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe13"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Pizza de coliflor con vegetales",
-                                    "time": "Listo en 35 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe13"
-                                }
-                            ]
-                        },
-                        {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Rodajas de manzana con canela",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 }
@@ -1410,97 +1111,55 @@
             "schedule": [
                 {
                     "name": "Sábado",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Porridge de avena con leche de almendra y frutas",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe15"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe15"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Ensalada mediterránea de garbanzos y vegetales",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe16"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe16"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Estofado de ternera con verduras",
-                                    "time": "Listo en 40 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe17"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe17"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Rodaja de piña fresca",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Domingo",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Smoothie bowl de frutas tropicales",
-                                    "time": "Listo en 7 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe18"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe18"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Quiche sin lactosa de espinacas y champiñones",
-                                    "time": "Listo en 30 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe19"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe19"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Sopa minestrone sin queso",
-                                    "time": "Listo en 35 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe20"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe20"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Mix de frutos secos",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 }
@@ -1603,240 +1262,134 @@
             "schedule": [
                 {
                     "name": "Lunes",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Chia pudding con leche de coco y frutas",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "recipe1"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe1"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Ensalada de quinoa con garbanzos y verduras asadas",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe2"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe2"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Sopa fría de pepino y menta",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe3"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe3"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Rodajas de manzana con mantequilla de almendra",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Martes",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Smoothie bowl de mango y plátano",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "recipe4"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe4"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Tacos de lechuga con carne de res y pico de gallo",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe5"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe5"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Pollo al curry con leche de coco",
-                                    "time": "Listo en 30 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe6"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe6"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Palitos de zanahoria",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Miércoles",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Tostadas integrales con aguacate y tomate",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": []
+                        },
+                        {
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe7"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Buddha bowl con arroz integral, tofu marinado y verduras frescas",
-                                    "time": "Listo en 25 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe7"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe8"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Lasaña vegetal con láminas de berenjena",
-                                    "time": "Listo en 35 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe8"
-                                }
-                            ]
-                        },
-                        {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Nueces y uvas",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Jueves",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Parfait de granola con yogur sin lactosa y frutas",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "recipe9"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe9"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Ensalada tibia de lentejas con espinacas y zanahoria",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe10"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe10"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Filete de pescado al horno con salsa de limón y alcaparras",
-                                    "time": "Listo en 25 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe11"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe11"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Rodajas de pepino con sal y limón",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 },
                 {
                     "name": "Viernes",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Batido verde de espinaca, manzana y jengibre",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "recipe12"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe12"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Wrap de pavo y vegetales en tortilla sin lactosa",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe13"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe13"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Crema de calabaza y jengibre",
-                                    "time": "Listo en 30 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe14"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe14"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Mandarina fresca",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
-                            ]
+                            "type": "Snack",
+                            "recipeIds": []
                         }
                     ]
                 }
@@ -2056,71 +1609,31 @@
             "schedule": [
                 {
                     "name": "Plan Diario",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Opción 1: Batido de plátano y avena con leche caliente",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "recipe1"
-                                },
-                                {
-                                    "title": "Opción 2: Yogurt con frutas y miel",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "recipe1"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Opción 1: Ensalada de pavo con quinoa y espinacas",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe2"
-                                },
-                                {
-                                    "title": "Opción 2: Wrap de pollo, aguacate y hojas verdes",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe3"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "recipe2",
+                                "recipe3"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Opción 1: Nueces y cerezas deshidratadas",
-                                    "time": "Listo inmediatamente",
-                                    "icon": "assets/images/ui/icono-rayo.webp"
-                                },
-                                {
-                                    "title": "Opción 2: Barrita de avena y almendras casera",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "recipe4"
-                                }
+                            "type": "Snack",
+                            "recipeIds": [
+                                "recipe4"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Opción 1: Filete de salmón con ensalada de aguacate y espinacas",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe5"
-                                },
-                                {
-                                    "title": "Opción 2: Arroz integral con pavo y verduras asadas",
-                                    "time": "Listo en 25 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "recipe6"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "recipe5",
+                                "recipe6"
                             ]
                         }
                     ]
@@ -2239,148 +1752,23 @@
             "schedule": [
                 {
                     "name": "Lunes",
-                    "meals": [
-                        {
-                            "type": "Desayuno",
-                            "recipeIds": [
-                                "yogur_granola"
-                            ]
-                        },
-                        {
-                            "type": "Almuerzo",
-                            "recipeIds": [
-                                "ensalada_completa"
-                            ]
-                        },
-                        {
-                            "type": "Snack",
-                            "recipeIds": [
-                                "fruta_secos"
-                            ]
-                        },
-                        {
-                            "type": "Cena",
-                            "recipeIds": [
-                                "ensalada_liviana_proteina"
-                            ]
-                        }
-                    ]
+                    "meals": []
                 },
                 {
                     "name": "Martes",
-                    "meals": [
-                        {
-                            "type": "Desayuno",
-                            "recipeIds": [
-                                "tostadas_queso_mermelada"
-                            ]
-                        },
-                        {
-                            "type": "Almuerzo",
-                            "recipeIds": [
-                                "ensalada_garbanzos"
-                            ]
-                        },
-                        {
-                            "type": "Snack",
-                            "recipeIds": [
-                                "hummus_bastones_zanahoria"
-                            ]
-                        },
-                        {
-                            "type": "Cena",
-                            "recipeIds": [
-                                "omelette_verduras"
-                            ]
-                        }
-                    ]
+                    "meals": []
                 },
                 {
                     "name": "Miércoles",
-                    "meals": [
-                        {
-                            "type": "Desayuno",
-                            "recipeIds": [
-                                "smoothie_banana"
-                            ]
-                        },
-                        {
-                            "type": "Almuerzo",
-                            "recipeIds": [
-                                "wrap_pollo_verduras"
-                            ]
-                        },
-                        {
-                            "type": "Snack",
-                            "recipeIds": [
-                                "queso_fruta"
-                            ]
-                        },
-                        {
-                            "type": "Cena",
-                            "recipeIds": [
-                                "revuelto_verduras_huevo"
-                            ]
-                        }
-                    ]
+                    "meals": []
                 },
                 {
                     "name": "Jueves",
-                    "meals": [
-                        {
-                            "type": "Desayuno",
-                            "recipeIds": [
-                                "avena_fruta"
-                            ]
-                        },
-                        {
-                            "type": "Almuerzo",
-                            "recipeIds": [
-                                "pollo_plancha_ensalada"
-                            ]
-                        },
-                        {
-                            "type": "Snack",
-                            "recipeIds": [
-                                "yogur_con_semillas"
-                            ]
-                        },
-                        {
-                            "type": "Cena",
-                            "recipeIds": [
-                                "ensalada_garbanzos"
-                            ]
-                        }
-                    ]
+                    "meals": []
                 },
                 {
                     "name": "Viernes",
-                    "meals": [
-                        {
-                            "type": "Desayuno",
-                            "recipeIds": [
-                                "chia_pudding"
-                            ]
-                        },
-                        {
-                            "type": "Almuerzo",
-                            "recipeIds": [
-                                "arroz_huevo_verduras"
-                            ]
-                        },
-                        {
-                            "type": "Snack",
-                            "recipeIds": [
-                                "tostadas_mantequilla_mani"
-                            ]
-                        },
-                        {
-                            "type": "Cena",
-                            "recipeIds": [
-                                "ensalada_liviana_proteina"
-                            ]
-                        }
-                    ]
+                    "meals": []
                 }
             ]
         },
@@ -2394,108 +1782,68 @@
             "schedule": [
                 {
                     "name": "Desayuno",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Verduras al horno con huevo o pollo",
-                                    "time": "Listo en 40 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "verduras_horno_huevopollo"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "verduras_horno_huevopollo"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Wrap de pollo o verduras",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "wrap_pollo_verduras"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "wrap_pollo_verduras"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Almuerzo",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Pollo a la plancha con ensalada",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "pollo_plancha_ensalada"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "pollo_plancha_ensalada"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Huevos revueltos con tostadas",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "huevos_tostadas"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "huevos_tostadas"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Snack",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Licuado de frutilla",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "licuado_frutilla"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "licuado_frutilla"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Puñado de frutos secos",
-                                    "time": "Listo en 1 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "punado_frutos_secos"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "punado_frutos_secos"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Cena",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Pescado al horno con ensalada",
-                                    "time": "Listo en 25 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "pescado_horno_ensalada"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "pescado_horno_ensalada"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Tostadas con palta y huevo",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "tostadas_palta_huevo"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "tostadas_palta_huevo"
                             ]
                         }
                     ]
@@ -2512,245 +1860,145 @@
             "schedule": [
                 {
                     "name": "Lunes",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Wrap de pollo o verduras",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "wrap_pollo_verduras"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "wrap_pollo_verduras"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Licuado de frutilla",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "licuado_frutilla"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "licuado_frutilla"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Licuado de banana",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "licuado_banana_snack"
-                                }
+                            "type": "Snack",
+                            "recipeIds": [
+                                "licuado_banana_snack"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Tostadas con mantequilla de maní",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "tostadas_mantequilla_mani"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "tostadas_mantequilla_mani"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Martes",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Batido verde",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "batido_verde"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "batido_verde"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Yogur con granola y miel",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "yogur_granola"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "yogur_granola"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Fruta (banana, manzana, naranja)",
-                                    "time": "Listo en 2 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "frutas_variadas"
-                                }
+                            "type": "Snack",
+                            "recipeIds": [
+                                "frutas_variadas"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Panqueques de avena con banana y frutilla",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "panqueques_avena"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "panqueques_avena"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Miércoles",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Puñado de frutos secos",
-                                    "time": "Listo en 1 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "punado_frutos_secos"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "punado_frutos_secos"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Verduras al horno con huevo o pollo",
-                                    "time": "Listo en 40 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "verduras_horno_huevopollo"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "verduras_horno_huevopollo"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Jugo natural de naranja",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "jugo_natural_naranja"
-                                }
+                            "type": "Snack",
+                            "recipeIds": [
+                                "jugo_natural_naranja"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Carne al horno con papas",
-                                    "time": "Listo en 50 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "carne_horno_papas"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "carne_horno_papas"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Jueves",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Sopa de verduras con proteína",
-                                    "time": "Listo en 30 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "sopa_verduras_proteina"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "sopa_verduras_proteina"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Yogur con semillas",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "yogur_con_semillas"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "yogur_con_semillas"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Porción de hocolate amargo",
-                                    "time": "Listo en 1 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "chocolate_amargo_porcion"
-                                }
+                            "type": "Snack",
+                            "recipeIds": [
+                                "chocolate_amargo_porcion"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Pescado al horno con ensalada",
-                                    "time": "Listo en 25 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "pescado_horno_ensalada"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "pescado_horno_ensalada"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Viernes",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Desayuno",
-                            "cards": [
-                                {
-                                    "title": "Queso y fruta",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "queso_fruta"
-                                }
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "queso_fruta"
                             ]
                         },
                         {
-                            "label": "Almuerzo",
-                            "cards": [
-                                {
-                                    "title": "Huevos revueltos con tostadas",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "huevos_tostadas"
-                                }
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "huevos_tostadas"
                             ]
                         },
                         {
-                            "label": "Snack",
-                            "cards": [
-                                {
-                                    "title": "Café",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "cafe_solo"
-                                }
+                            "type": "Snack",
+                            "recipeIds": [
+                                "cafe_solo"
                             ]
                         },
                         {
-                            "label": "Cena",
-                            "cards": [
-                                {
-                                    "title": "Hummus con bastones de zanahoria",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "hummus_bastones_zanahoria"
-                                }
+                            "type": "Cena",
+                            "recipeIds": [
+                                "hummus_bastones_zanahoria"
                             ]
                         }
                     ]
@@ -2767,108 +2015,68 @@
             "schedule": [
                 {
                     "name": "Desayuno",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Pescado al horno con ensalada",
-                                    "time": "Listo en 25 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "pescado_horno_ensalada"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "pescado_horno_ensalada"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Ensalada completa",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "ensalada_completa"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "ensalada_completa"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Almuerzo",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Fruta con frutos secos",
-                                    "time": "Listo en 2 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "fruta_secos"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "fruta_secos"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Pollo a la plancha con ensalada",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "pollo_plancha_ensalada"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "pollo_plancha_ensalada"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Snack",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Puñado de frutos secos",
-                                    "time": "Listo en 1 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "punado_frutos_secos"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "punado_frutos_secos"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Barrita casera de avena",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "barrita_avena_casera"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "barrita_avena_casera"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Cena",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Ensalada liviana con proteína",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "ensalada_liviana_proteina"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "ensalada_liviana_proteina"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Ensalada de garbanzos",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "ensalada_garbanzos"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "ensalada_garbanzos"
                             ]
                         }
                     ]
@@ -2885,108 +2093,68 @@
             "schedule": [
                 {
                     "name": "Desayuno",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Panqueques de avena con banana y frutilla",
-                                    "time": "Listo en 15 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "panqueques_avena"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "panqueques_avena"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Barrita casera de avena",
-                                    "time": "Listo en 20 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "barrita_avena_casera"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "barrita_avena_casera"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Almuerzo",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Avena con fruta y semillas",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "avena_fruta"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "avena_fruta"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Ensalada de garbanzos",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "ensalada_garbanzos"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "ensalada_garbanzos"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Snack",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Batido verde",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "batido_verde"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "batido_verde"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Galletas integrales caseras",
-                                    "time": "Listo en 5 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "galletas_integrales_snack"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "galletas_integrales_snack"
                             ]
                         }
                     ]
                 },
                 {
                     "name": "Cena",
-                    "options": [
+                    "meals": [
                         {
-                            "label": "Opción 1",
-                            "cards": [
-                                {
-                                    "title": "Lentejas guisadas",
-                                    "time": "Listo en 40 minutos",
-                                    "icon": "assets/images/ui/icono-comida.webp",
-                                    "recipeId": "lentejas_guisadas"
-                                }
+                            "type": "Opción 1",
+                            "recipeIds": [
+                                "lentejas_guisadas"
                             ]
                         },
                         {
-                            "label": "Opción 2",
-                            "cards": [
-                                {
-                                    "title": "Omelette con verduras",
-                                    "time": "Listo en 10 minutos",
-                                    "icon": "assets/images/ui/icono-rayo.webp",
-                                    "recipeId": "omelette_verduras"
-                                }
+                            "type": "Opción 2",
+                            "recipeIds": [
+                                "omelette_verduras"
                             ]
                         }
                     ]
