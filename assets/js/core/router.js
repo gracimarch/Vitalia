@@ -6,8 +6,12 @@
 window.VitaliaRouter = (function () {
     'use strict';
 
+    // Enhanced local detection: matches localhost, 127.0.0.1, 192.168.x.x, 10.x.x.x, 172.16-31.x.x,
+    // or any hostname that resolves to a local IP or has no dots (like custom local domains).
     const isLocal = window.location.hostname === 'localhost' || 
                     window.location.hostname === '127.0.0.1' ||
+                    window.location.hostname.includes('local') ||
+                    !window.location.hostname.includes('.') ||
                     /^127\.\d+\.\d+\.\d+$/.test(window.location.hostname) ||
                     /^10\.\d+\.\d+\.\d+$/.test(window.location.hostname) ||
                     /^172\.(1[6-9]|2\d|3[01])\.\d+\.\d+$/.test(window.location.hostname) ||
@@ -31,9 +35,13 @@ window.VitaliaRouter = (function () {
         if (isLocal) {
             const redirectedPath = sessionStorage.getItem('vitalia_redirected_path');
             if (redirectedPath) {
+                console.log('[VitaliaRouter] Local fallback detected. Restoring clean URL:', redirectedPath);
                 // Restore the clean URL in the address bar
                 window.history.replaceState(null, '', redirectedPath);
-                sessionStorage.removeItem('vitalia_redirected_path');
+                // We keep it in session for a moment so getSlug can use it as fallback if needed
+                // but we'll clear it after any initial processing if possible.
+                // For now, let's keep it until explicitly cleared by the page controller or a timeout
+                setTimeout(() => sessionStorage.removeItem('vitalia_redirected_path'), 1000);
             }
         }
         updateCanonical();
@@ -84,17 +92,29 @@ window.VitaliaRouter = (function () {
         const path = window.location.pathname;
         const parts = path.split('/').filter(p => p !== '');
 
-        // If we have at least 2 parts (e.g., ['lecturas', 'my-slug'])
+        // 1. Try to extract from current URL (Clean URL mode / Vercel Production)
         if (parts.length >= 2) {
             const firstPart = parts[0];
             if (ROUTE_MAP[firstPart]) {
-                return parts[1].replace('.html', '');
+                const slugCandidate = parts[1].replace('.html', '');
+                if (slugCandidate) return slugCandidate;
             }
         }
 
-        // Fallback for query params if ever needed
+        // 2. Fallback: Check Query Parameters (e.g., ?slug=my-slug)
         const params = new URLSearchParams(window.location.search);
-        return params.get('slug');
+        const querySlug = params.get('slug');
+        if (querySlug) return querySlug;
+
+        // 3. Fallback: Check Session Storage (Local dev 404 fallback)
+        // This is crucial if getSlug() is called before the history.replaceState has fully updated the location object
+        const savedPath = sessionStorage.getItem('vitalia_redirected_path');
+        if (savedPath) {
+            const savedParts = savedPath.split('/').filter(p => p !== '');
+            if (savedParts.length >= 2) return savedParts[1].replace('.html', '');
+        }
+
+        return null;
     }
 
     /**

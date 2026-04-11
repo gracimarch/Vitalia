@@ -1,4 +1,3 @@
-/* ---------- RESET & BASE ---------- */
 .routine-body {
     margin: 0;
     padding: 0;
@@ -26,19 +25,16 @@
     display: flex;
 }
 
-/* Shared close / back btn — light variant (overview, warmup, finish) */
 .screen-close-btn,
 .overview-back-btn {
     position: absolute;
     top: 16px;
     left: 16px;
     z-index: 50;
-    background: rgba(255, 255, 255, 0.85);
-    /* Stronger contrast background */
+    background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     width: 48px;
-    /* Larger hit area */
     height: 48px;
     display: flex;
     align-items: center;
@@ -67,7 +63,6 @@
     background: var(--bg-cream, #fefbf3);
 }
 
-/* Hero */
 .overview-hero {
     position: relative;
     width: 100%;
@@ -140,13 +135,12 @@
     color: var(--orange, #E1947F);
 }
 
-/* Body */
+
 .overview-body {
     padding: 0 20px 40px;
     flex: 1;
 }
 
-/* Stylish Description */
 .overview-description {
     margin: 24px auto 32px;
     max-width: 700px;

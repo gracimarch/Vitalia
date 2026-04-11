@@ -80,10 +80,7 @@
     position: relative;
     aspect-ratio: auto;
     min-height: 160px;
-
-    padding: 1.25em;
     border: none;
-    border-radius: 20px;
     color: var(--white, #fff);
     text-decoration: none;
     overflow: hidden;
@@ -139,51 +136,32 @@
     color: var(--white) !important;
 }
 
-/* Liquid Gradient Variations using Vitalia Palette - SOFTER VERSION */
-/* Base Purple softened: #af7add to #c8a2e8 */
-
-/* 1. Purple Base + Orange & Cyan */
 .article-card:nth-child(1) {
     background:
         radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.45) 0%, transparent 55%),
-        /* Softer Orange */
         radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 55%),
-        /* Softer Cyan */
         linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%);
-    /* Soft Purple */
 }
 
-/* 2. Purple Base + Cream & Cyan */
 .article-card:nth-child(2) {
     background:
         radial-gradient(circle at 50% 50%, rgba(128, 202, 205, 0.25) 0%, transparent 65%),
-        /* Softer Cyan */
         radial-gradient(circle at 100% 100%, rgba(253, 251, 247, 0.4) 0%, transparent 45%),
-        /* Cream */
         linear-gradient(45deg, #a675d1 0%, #bfa0e0 100%);
-    /* Soft Purple */
 }
 
-/* 3. Purple Base + Orange & Cream */
 .article-card:nth-child(3) {
     background:
         radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%),
-        /* Cream */
         radial-gradient(circle at 100% 50%, rgba(225, 148, 127, 0.35) 0%, transparent 55%),
-        /* Softer Orange */
         linear-gradient(180deg, #bfa0e0 0%, #a170d0 100%);
-    /* Soft Purple */
 }
 
-/* 4. Purple Base + Orange & Cyan Mix */
 .article-card:nth-child(4) {
     background:
         radial-gradient(circle at 80% 20%, rgba(128, 202, 205, 0.35) 0%, transparent 50%),
-        /* Softer Cyan */
         radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%),
-        /* Softer Orange */
         linear-gradient(120deg, #a675d1 0%, #bfa0e0 100%);
-    /* Soft Purple */
 }
 
 .food-card {
@@ -193,10 +171,6 @@
     position: relative;
     aspect-ratio: auto;
     min-height: 160px;
-
-    padding: 1.25em;
-    border: none;
-    border-radius: 20px;
     color: var(--white);
     text-decoration: none;
     overflow: hidden;
@@ -381,11 +355,8 @@
     justify-content: space-between;
     position: relative;
     aspect-ratio: auto;
-    min-height: 400px;
-
+    min-height: 800px;
     padding: 1.5em;
-    border: none;
-    border-radius: 20px;
     color: var(--white);
     text-decoration: none;
     overflow: hidden;
@@ -472,7 +443,6 @@
     opacity: 1;
 }
 
-/* Meditations Grid & Cards */
 .meditations-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -523,43 +493,29 @@
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Meditation Gradients - Cycling Cyan, Purple, Orange with Radial Effects */
 .meditation-btn {
-    /* Base background if gradients fail or for transition */
     background: var(--cyan);
 }
 
-/* 1. Cyan Dominant */
 .meditation-card:nth-child(3n+1) .meditation-btn {
     background:
         radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.5) 0%, transparent 50%),
-        /* Purple */
         radial-gradient(circle at 0% 100%, rgba(253, 251, 247, 0.4) 0%, transparent 50%),
-        /* Cream */
         linear-gradient(135deg, #80cacd 0%, #5fb3b6 100%);
-    /* Cyan Base */
 }
 
-/* 2. Purple Dominant */
 .meditation-card:nth-child(3n+2) .meditation-btn {
     background:
         radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.5) 0%, transparent 55%),
-        /* Orange */
         radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.4) 0%, transparent 55%),
-        /* Cyan */
         linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%);
-    /* Purple Base */
 }
 
-/* 3. Orange Dominant */
 .meditation-card:nth-child(3n+3) .meditation-btn {
     background:
         radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.5) 0%, transparent 50%),
-        /* Purple */
         radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.4) 0%, transparent 50%),
-        /* Cyan */
         linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
-    /* Orange Base */
 }
 
 
@@ -657,10 +613,6 @@
     padding-top: 0 !important;
 }
 
-/* =========================================
-   6. THANKS SECTION (Redesign)
-   ========================================= */
-
 .thanks-redesign {
     padding: 4rem 1.5rem 3rem;
     margin-top: 3rem;
@@ -679,7 +631,6 @@
     justify-content: center;
 }
 
-/* Floating icon wrappers (Positioning & CSS Animation) */
 .thanks-float-wrapper {
     position: absolute;
     z-index: 1;
@@ -728,7 +679,6 @@
     will-change: transform;
 }
 
-/* Icon Styles */
 .icon-1 {
     /* Heart */
     background: linear-gradient(135deg, #bfa0e0, #a675d1);
@@ -987,7 +937,6 @@
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    min-height: 180px !important;
     padding: 2rem !important;
     border-radius: 20px !important;
     text-decoration: none !important;
@@ -1008,7 +957,6 @@
     text-transform: uppercase !important;
 }
 
-/* Specific Gradients - Restored */
 .article-card:nth-child(1) {
     background: radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.45) 0%, transparent 55%), radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 55%), linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%) !important;
 }

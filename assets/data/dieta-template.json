@@ -1,40 +1,236 @@
 {
+    // EJEMPLO PARA PLAN SEMANAL (5 días siempre, no 7)
     "slug": "nombre-del-plan",
     "title": "Título del Plan Alimenticio",
     "type": "Tipo de Alimentación: Ej. Balanceada",
-    "duration": "Ej: 1 día / 1 semana",
+    "duration": "Semanal",
     "image": "assets/images/ruta-a-la-portada-del-plan.webp",
-    "introduction": "<p>Breve descripción introductoria sobre los objetivos y beneficios de este plan.</p>",
+    "introduction": "<p>Breve descripción introductoria en menos de un párrafo sobre los objetivos y beneficios de este plan.</p>",
     "schedule": [
         {
-            "name": "Día 1",
+            "name": "Lunes",
             "meals": [
                 {
                     "type": "Desayuno",
                     "recipeIds": [
-                        "id_receta_1",
-                        "id_receta_2"
+                        "recipe_id"
                     ]
                 },
                 {
                     "type": "Almuerzo",
                     "recipeIds": [
-                        "id_receta_3"
+                        "recipe_id"
                     ]
                 },
                 {
                     "type": "Snack",
                     "recipeIds": [
-                        "id_receta_4"
+                        "recipe_id"
                     ]
                 },
                 {
                     "type": "Cena",
                     "recipeIds": [
-                        "id_receta_5"
+                        "recipe_id"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Martes",
+            "meals": [
+                {
+                    "type": "Desayuno",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Almuerzo",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Snack",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Cena",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Miércoles",
+            "meals": [
+                {
+                    "type": "Desayuno",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Almuerzo",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Snack",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Cena",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Jueves",
+            "meals": [
+                {
+                    "type": "Desayuno",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Almuerzo",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Snack",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Cena",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Viernes",
+            "meals": [
+                {
+                    "type": "Desayuno",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Almuerzo",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Snack",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Cena",
+                    "recipeIds": [
+                        "recipe_id"
                     ]
                 }
             ]
         }
     ]
-}
+},
+{
+    //EJEMPLO PARA PLAN DE 1 DÍA (2 opciones por comida del día)
+    "slug": "nombre-del-plan",
+    "title": "Título del Plan Alimenticio",
+    "type": "Tipo de Alimentación: Ej. Balanceada",
+    "duration": "1 día",
+    "image": "assets/images/ruta-a-la-portada-del-plan.webp",
+    "introduction": "<p>Breve descripción introductoria en menos de un párrafo sobre los objetivos y beneficios de este plan.</p>",
+    "schedule": [
+        {
+            "name": "Desayuno",
+            "meals": [
+                {
+                    "type": "Opción 1",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                },
+                {
+                    "type": "Opción 2",
+                    "recipeIds": [
+                        "recipe_id"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Almuerzo",
+            "meals": [
+                {
+                    "type": "Opción 1",
+                    "recipeIds": [
+                        "recipe_id"
+                    }
+                ]
+            },
+            {
+                "type": "Opción 2",
+                "recipeIds": [
+                    "recipe_id"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Snack",
+        "meals": [
+            {
+                "type": "Opción 1",
+                "recipeIds": [
+                    "recipe_id"
+                ]
+            },
+            {
+                "type": "Opción 2",
+                "recipeIds": [
+                    "recipe_id"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Cena",
+        "meals": [
+            {
+                "type": "Opción 1",
+                "recipeIds": [
+                    "recipe_id"
+                ]
+            },
+            {
+                "type": "Opción 2",
+                "recipeIds": [
+                    "recipe_id"
+                ]
+            }
+        ]
+    }
+]
+},
