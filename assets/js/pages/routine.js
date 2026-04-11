@@ -6,6 +6,7 @@
 // ─── State ───
 let routineData = null;
 let exercises = [];
+let catalog = {};
 let currentIndex = 0;
 let isRunning = false;
 let isPaused = false;
@@ -262,7 +263,7 @@ async function loadRoutine() {
     if (!routineData) { window.location.replace('/404.html'); return; }
 
     // Build exercise catalog: id → exercise object
-    const catalog = {};
+    catalog = {};
     ejData.exercises.forEach(e => catalog[e.id] = e);
 
     // Merge: resolve title/description/videoSrc from catalog, with routine-level overrides
