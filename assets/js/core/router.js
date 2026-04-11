@@ -6,7 +6,12 @@
 window.VitaliaRouter = (function () {
     'use strict';
 
-    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const isLocal = window.location.hostname === 'localhost' || 
+                    window.location.hostname === '127.0.0.1' ||
+                    /^127\.\d+\.\d+\.\d+$/.test(window.location.hostname) ||
+                    /^10\.\d+\.\d+\.\d+$/.test(window.location.hostname) ||
+                    /^172\.(1[6-9]|2\d|3[01])\.\d+\.\d+$/.test(window.location.hostname) ||
+                    /^192\.168\.\d+\.\d+$/.test(window.location.hostname);
 
     // Config: Mapping of prefixes to templates
     const ROUTE_MAP = {
