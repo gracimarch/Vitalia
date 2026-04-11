@@ -11,16 +11,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const rutinasData = await rutinasRes.json();
 
         // Categorize Data
-        const productivityItems = lecturasData.lecturas.filter(l => l.category === 'Productividad');
-        const mentalHealthItems = lecturasData.lecturas.filter(l => l.category === 'Salud mental y bienestar');
-
-        // Merge Diets + Nutrition Articles
-        const nutritionArticles = lecturasData.lecturas.filter(l => l.category === 'Hábitos alimenticios');
-        const nutritionItems = [...nutritionArticles, ...dietasData.dietas];
-
-        // Merge Routines + Fitness Articles
-        const fitnessArticles = lecturasData.lecturas.filter(l => l.category === 'Actividad física y movilidad');
-        const fitnessItems = [...rutinasData.rutinas, ...fitnessArticles];
+        const productivityItems = lecturasData.lecturas.filter(l => (l.category || '').toLowerCase() === 'productividad');
+        const mentalHealthItems = lecturasData.lecturas.filter(l => (l.category || '').toLowerCase() === 'salud mental y bienestar');
+        const nutritionItems = lecturasData.lecturas.filter(l => (l.category || '').toLowerCase() === 'hábitos alimenticios');
+        const fitnessItems = lecturasData.lecturas.filter(l => (l.category || '').toLowerCase() === 'actividad física y movilidad');
 
         // Initialize Sections
         initSection('productividad-list', productivityItems, 'productividad');
@@ -28,8 +22,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         initSection('alimentacion-list', nutritionItems, 'dieta');
         initSection('salud-mental-list', mentalHealthItems, 'salud-mental');
 
-        // Build global search index
-        const allBlogItems = buildSearchIndex(lecturasData.lecturas, dietasData.dietas, rutinasData.rutinas);
+        // Build global search index (ARTICLES ONLY)
+        const allBlogItems = buildSearchIndex(lecturasData.lecturas);
 
         // Initialize search
         initSearch(allBlogItems);
@@ -161,7 +155,7 @@ function normalizeText(text) {
         .replace(/[\u0300-\u036f]/g, '');
 }
 
-function buildSearchIndex(lecturas, dietas, rutinas) {
+function buildSearchIndex(lecturas) {
     const items = [];
 
     lecturas.forEach(item => {
@@ -174,32 +168,6 @@ function buildSearchIndex(lecturas, dietas, rutinas) {
                 item.description || '',
                 item.keywords || '',
                 'lectura articulo'
-            ].join(' '))
-        });
-    });
-
-    dietas.forEach(item => {
-        items.push({
-            ...item,
-            _stylePrefix: 'dieta',
-            _searchText: normalizeText([
-                item.title,
-                item.type || '',
-                item.duration || '',
-                'dieta alimentacion plan',
-            ].join(' '))
-        });
-    });
-
-    rutinas.forEach(item => {
-        items.push({
-            ...item,
-            _stylePrefix: 'ejercicio',
-            _searchText: normalizeText([
-                item.title,
-                item.level || '',
-                item.duration || '',
-                'rutina ejercicio entrenamiento',
             ].join(' '))
         });
     });
