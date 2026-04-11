@@ -400,7 +400,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
                         }
                     ]
                 },
@@ -427,7 +429,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "yogur_con_semillas"
+                            ]
                         }
                     ]
                 },
@@ -454,7 +458,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
                         }
                     ]
                 },
@@ -481,7 +487,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "yogur_con_semillas"
+                            ]
                         }
                     ]
                 },
@@ -793,7 +801,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
                         }
                     ]
                 },
@@ -820,7 +830,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "hummus_bastones_zanahoria"
+                            ]
                         }
                     ]
                 },
@@ -847,7 +859,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
                         }
                     ]
                 },
@@ -874,7 +888,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "hummus_bastones_zanahoria"
+                            ]
                         }
                     ]
                 },
@@ -899,7 +915,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
                         }
                     ]
                 }
@@ -1132,7 +1150,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
                         }
                     ]
                 },
@@ -1159,7 +1179,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "tostadas_mantequilla_mani"
+                            ]
                         }
                     ]
                 }
@@ -1283,7 +1305,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
                         }
                     ]
                 },
@@ -1310,7 +1334,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "tostadas_mantequilla_mani"
+                            ]
                         }
                     ]
                 },
@@ -1335,7 +1361,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
                         }
                     ]
                 },
@@ -1362,7 +1390,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "tostadas_mantequilla_mani"
+                            ]
                         }
                     ]
                 },
@@ -1389,7 +1419,9 @@
                         },
                         {
                             "type": "Snack",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
                         }
                     ]
                 }
@@ -1752,23 +1784,148 @@
             "schedule": [
                 {
                     "name": "Lunes",
-                    "meals": []
+                    "meals": [
+                        {
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "yogur_granola"
+                            ]
+                        },
+                        {
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "ensalada_completa"
+                            ]
+                        },
+                        {
+                            "type": "Snack",
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
+                        },
+                        {
+                            "type": "Cena",
+                            "recipeIds": [
+                                "sopa_verduras_proteina"
+                            ]
+                        }
+                    ]
                 },
                 {
                     "name": "Martes",
-                    "meals": []
+                    "meals": [
+                        {
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "tostadas_palta_huevo"
+                            ]
+                        },
+                        {
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "wrap_pollo_verduras"
+                            ]
+                        },
+                        {
+                            "type": "Snack",
+                            "recipeIds": [
+                                "yogur_con_semillas"
+                            ]
+                        },
+                        {
+                            "type": "Cena",
+                            "recipeIds": [
+                                "omelette_verduras"
+                            ]
+                        }
+                    ]
                 },
                 {
                     "name": "Miércoles",
-                    "meals": []
+                    "meals": [
+                        {
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "avena_fruta"
+                            ]
+                        },
+                        {
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "bowl_arroz_verduras"
+                            ]
+                        },
+                        {
+                            "type": "Snack",
+                            "recipeIds": [
+                                "tostadas_mantequilla_mani"
+                            ]
+                        },
+                        {
+                            "type": "Cena",
+                            "recipeIds": [
+                                "tortilla_papa_verduras"
+                            ]
+                        }
+                    ]
                 },
                 {
                     "name": "Jueves",
-                    "meals": []
+                    "meals": [
+                        {
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "smoothie_banana"
+                            ]
+                        },
+                        {
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "pollo_plancha_ensalada"
+                            ]
+                        },
+                        {
+                            "type": "Snack",
+                            "recipeIds": [
+                                "licuado_banana_snack"
+                            ]
+                        },
+                        {
+                            "type": "Cena",
+                            "recipeIds": [
+                                "verduras_horno_huevopollo"
+                            ]
+                        }
+                    ]
                 },
                 {
                     "name": "Viernes",
-                    "meals": []
+                    "meals": [
+                        {
+                            "type": "Desayuno",
+                            "recipeIds": [
+                                "huevos_tostadas"
+                            ]
+                        },
+                        {
+                            "type": "Almuerzo",
+                            "recipeIds": [
+                                "lentejas_guisadas"
+                            ]
+                        },
+                        {
+                            "type": "Snack",
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
+                        },
+                        {
+                            "type": "Cena",
+                            "recipeIds": [
+                                "revuelto_verduras_huevo"
+                            ]
+                        }
+                    ]
                 }
             ]
         },
