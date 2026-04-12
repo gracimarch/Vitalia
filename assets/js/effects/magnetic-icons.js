@@ -5,15 +5,15 @@
 (function () {
     if (!window.matchMedia('(pointer: fine)').matches) return;
 
-    // --- 1. Thanks Section Floating Icons ---
-    const section = document.querySelector('.thanks-redesign-inner');
-    const floatIcons = document.querySelectorAll('.thanks-float-icon');
+    // --- 1. Floating Icons (Thanks Section & 404 Page) ---
+    const floatIcons = document.querySelectorAll('.thanks-float-icon, .float-icon');
+    const floatContainer = document.querySelector('.thanks-redesign-inner') || document.body;
     
-    if (section && floatIcons.length) {
+    if (floatIcons.length && floatContainer) {
         const STRENGTH_FLOAT = 0.45;
         const RADIUS_FLOAT = 120;
         
-        section.addEventListener('mousemove', e => {
+        floatContainer.addEventListener('mousemove', e => {
             floatIcons.forEach(icon => {
                 const wrapper = icon.parentElement;
                 const rect = wrapper.getBoundingClientRect();
@@ -34,7 +34,7 @@
             });
         });
 
-        section.addEventListener('mouseleave', () => {
+        floatContainer.addEventListener('mouseleave', () => {
             floatIcons.forEach(icon => {
                 icon.style.transform = '';
             });
