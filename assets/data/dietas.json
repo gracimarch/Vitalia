@@ -19,7 +19,9 @@
                         },
                         {
                             "type": "Opción 2",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "avena_fruta"
+                            ]
                         }
                     ]
                 },
@@ -51,7 +53,9 @@
                         },
                         {
                             "type": "Opción 2",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
                         }
                     ]
                 },
@@ -225,7 +229,9 @@
                     "meals": [
                         {
                             "type": "Opción 1",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "frutas_variadas"
+                            ]
                         },
                         {
                             "type": "Opción 2",
@@ -785,7 +791,9 @@
                     "meals": [
                         {
                             "type": "Desayuno",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "chia_pudding"
+                            ]
                         },
                         {
                             "type": "Almuerzo",
@@ -899,7 +907,9 @@
                     "meals": [
                         {
                             "type": "Desayuno",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "panqueques_avena"
+                            ]
                         },
                         {
                             "type": "Almuerzo",
@@ -1345,7 +1355,9 @@
                     "meals": [
                         {
                             "type": "Desayuno",
-                            "recipeIds": []
+                            "recipeIds": [
+                                "tostadas_palta_huevo"
+                            ]
                         },
                         {
                             "type": "Almuerzo",
@@ -2021,13 +2033,13 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "wrap_pollo_verduras"
+                                "cafe_tostadas"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "licuado_frutilla"
+                                "wrap_pollo_verduras"
                             ]
                         },
                         {
@@ -2039,7 +2051,7 @@
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "tostadas_mantequilla_mani"
+                                "omelette_verduras"
                             ]
                         }
                     ]
@@ -2056,7 +2068,7 @@
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "yogur_granola"
+                                "ensalada_completa"
                             ]
                         },
                         {
@@ -2068,7 +2080,7 @@
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "panqueques_avena"
+                                "arroz_huevo_verduras"
                             ]
                         }
                     ]
@@ -2079,13 +2091,13 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "punado_frutos_secos"
+                                "yogur_granola"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "verduras_horno_huevopollo"
+                                "pollo_plancha_ensalada"
                             ]
                         },
                         {
@@ -2097,7 +2109,7 @@
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "carne_horno_papas"
+                                "salteado_verduras_arroz"
                             ]
                         }
                     ]
@@ -2108,13 +2120,13 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "sopa_verduras_proteina"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "yogur_con_semillas"
+                                "sopa_verduras_proteina"
                             ]
                         },
                         {
@@ -2137,13 +2149,13 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "queso_fruta"
+                                "huevos_tostadas"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "huevos_tostadas"
+                                "ensalada_garbanzos"
                             ]
                         },
                         {
@@ -2155,7 +2167,7 @@
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "hummus_bastones_zanahoria"
+                                "ensalada_liviana_proteina"
                             ]
                         }
                     ]
