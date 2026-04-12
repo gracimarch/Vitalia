@@ -823,7 +823,7 @@
             return;
         }
 
-        const dieta = findDietaBySlug(data.dietas, slug);
+        const dieta = data.dietas.find(d => d.slug === slug);
         if (dieta) normalizeDiet(dieta, data.recetas);
         if (!dieta) {
             window.location.replace('/404.html');

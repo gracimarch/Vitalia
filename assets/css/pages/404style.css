@@ -26,7 +26,7 @@ body {
 .error-code {
     font-size: clamp(6rem, 20vw, 10rem);
     font-weight: 700;
-    background: linear-gradient(135deg, #B571DE 0%, #80CACD 50%, #E1947F 100%);
+    background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -48,17 +48,46 @@ body {
 }
 
 .error-title {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-    font-weight: 600;
+    font-family: 'Zilla Slab', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
     color: #333;
     margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.error-highlight {
+    display: inline-block;
+    font-size: inherit;
+    font-family: 'Zilla Slab', serif;
+    font-style: italic;
+    font-weight: 700;
+    background-image: linear-gradient(135deg, #E1947F, #a675d1, #80CACD);
+    background-size: 200% 100%;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: gradientShift 4s ease-in-out infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 .error-message {
-    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 300;
     color: #707070;
     margin-bottom: 2rem;
     line-height: 1.6;
+    opacity: 0.85;
 }
 
 .btn-home {
@@ -66,7 +95,7 @@ body {
     align-items: center;
     gap: 8px;
     padding: 14px 32px;
-    background: linear-gradient(135deg, #B571DE, #9d60cf);
+    background: linear-gradient(135deg, #f4a261, #e76f51);
     color: white;
     text-decoration: none;
     border: none;
@@ -76,49 +105,18 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(181, 113, 222, 0.3);
+    box-shadow: 0 4px 20px rgba(244, 162, 101, 0.3);
 }
 
 .btn-home:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(181, 113, 222, 0.5);
+    box-shadow: 0 6px 30px rgba(244, 162, 101, 0.5);
 }
 
 .btn-home svg {
     width: 18px;
     height: 18px;
     fill: white;
-}
-
-.decoration {
-    position: fixed;
-    border-radius: 50%;
-    opacity: 0.08;
-    pointer-events: none;
-}
-
-.decoration-1 {
-    width: 300px;
-    height: 300px;
-    background: #B571DE;
-    top: -80px;
-    right: -80px;
-}
-
-.decoration-2 {
-    width: 200px;
-    height: 200px;
-    background: #80CACD;
-    bottom: -60px;
-    left: -60px;
-}
-
-.decoration-3 {
-    width: 150px;
-    height: 150px;
-    background: #E1947F;
-    top: 40%;
-    left: -40px;
 }
 
 .logo-link {
@@ -129,9 +127,191 @@ body {
 .logo-link img {
     height: 36px;
     opacity: 0.7;
+    filter: brightness(0);
     transition: opacity 0.3s ease;
 }
 
 .logo-link:hover img {
     opacity: 1;
+}
+
+/* Floating Circles from Gracias! */
+.float-wrapper {
+    position: absolute;
+    z-index: 1;
+}
+
+.float-icon {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.icon-1 {
+    background: linear-gradient(135deg, #bfa0e0, #a675d1);
+    width: 60px;
+    height: 60px;
+    font-size: 1.3rem;
+}
+
+.icon-2 {
+    background: #fff;
+    border: 2.5px solid #80cacd;
+    color: #5fb3b6;
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+}
+
+.icon-3 {
+    background: linear-gradient(135deg, #f4a261, #e76f51);
+    width: 65px;
+    height: 65px;
+    font-size: 1.4rem;
+}
+
+.icon-4 {
+    background: #fff;
+    border: 2.5px solid #345e8a;
+    color: #1d3557;
+    width: 55px;
+    height: 55px;
+    font-size: 1.2rem;
+}
+
+.icon-5 {
+    background: #fff;
+    border: 2.5px solid #E1947F;
+    color: #d67a64;
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+}
+
+/* Positions relative to absolute window bounds */
+.float-1 {
+    top: 15%;
+    right: 15%;
+    animation: floatAnim1 4s ease-in-out infinite alternate;
+}
+
+.float-2 {
+    bottom: 20%;
+    left: 10%;
+    animation: floatAnim2 3.5s ease-in-out infinite alternate;
+}
+
+.float-3 {
+    top: 20%;
+    left: 15%;
+    animation: floatAnim3 4.5s ease-in-out infinite alternate;
+}
+
+.float-4 {
+    bottom: 15%;
+    right: 12%;
+    animation: floatAnim4 3.8s ease-in-out infinite alternate;
+}
+
+.float-5 {
+    top: 10%;
+    left: 40%;
+    animation: floatAnim5 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes floatAnim1 {
+    from {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-10px, 15px) rotate(10deg);
+    }
+}
+
+@keyframes floatAnim2 {
+    from {
+        transform: translate(0, 0) rotate(-5deg);
+    }
+
+    to {
+        transform: translate(15px, -10px) rotate(5deg);
+    }
+}
+
+@keyframes floatAnim3 {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(-15px, -15px) scale(1.05);
+    }
+}
+
+@keyframes floatAnim4 {
+    from {
+        transform: translate(0, 0) rotate(0);
+    }
+
+    to {
+        transform: translate(10px, 10px) rotate(-10deg);
+    }
+}
+
+@keyframes floatAnim5 {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(0, 20px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .float-icon {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 0.95rem !important;
+    }
+
+    .float-1 {
+        right: 5%;
+        top: 10%;
+    }
+
+    .float-2 {
+        left: 5%;
+        bottom: 10%;
+    }
+
+    .float-3 {
+        left: 8%;
+        top: 15%;
+    }
+
+    .float-4 {
+        right: 5%;
+        bottom: 15%;
+    }
+
+    .float-5 {
+        left: 25%;
+        top: 8%;
+    }
+
+    .error-title {
+        font-size: 1.8rem;
+    }
+
+    .error-code {
+        font-size: 6rem;
+    }
 }

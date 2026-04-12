@@ -14,7 +14,7 @@
                         {
                             "type": "Opción 1",
                             "recipeIds": [
-                                "recipe1"
+                                "avena_fruta"
                             ]
                         },
                         {
@@ -31,13 +31,13 @@
                         {
                             "type": "Opción 1",
                             "recipeIds": [
-                                "recipe2"
+                                "avena_fruta"
                             ]
                         },
                         {
                             "type": "Opción 2",
                             "recipeIds": [
-                                "recipe3"
+                                "avena_fruta"
                             ]
                         }
                     ]
@@ -48,7 +48,7 @@
                         {
                             "type": "Opción 1",
                             "recipeIds": [
-                                "recipe4"
+                                "avena_fruta"
                             ]
                         },
                         {
@@ -65,13 +65,13 @@
                         {
                             "type": "Opción 1",
                             "recipeIds": [
-                                "recipe5"
+                                "avena_fruta"
                             ]
                         },
                         {
                             "type": "Opción 2",
                             "recipeIds": [
-                                "recipe6"
+                                "avena_fruta"
                             ]
                         }
                     ]
@@ -196,13 +196,13 @@
                         {
                             "type": "Opción 1",
                             "recipeIds": [
-                                "recipe1"
+                                "huevos_tostadas"
                             ]
                         },
                         {
                             "type": "Opción 2",
                             "recipeIds": [
-                                "recipe2"
+                                "huevos_tostadas"
                             ]
                         }
                     ]
@@ -213,13 +213,13 @@
                         {
                             "type": "Opción 1",
                             "recipeIds": [
-                                "recipe3"
+                                "huevos_tostadas"
                             ]
                         },
                         {
                             "type": "Opción 2",
                             "recipeIds": [
-                                "recipe4"
+                                "huevos_tostadas"
                             ]
                         }
                     ]
@@ -236,7 +236,7 @@
                         {
                             "type": "Opción 2",
                             "recipeIds": [
-                                "recipe6"
+                                "huevos_tostadas"
                             ]
                         }
                     ]
@@ -247,13 +247,13 @@
                         {
                             "type": "Opción 1",
                             "recipeIds": [
-                                "recipe7"
+                                "huevos_tostadas"
                             ]
                         },
                         {
                             "type": "Opción 2",
                             "recipeIds": [
-                                "recipe8"
+                                "huevos_tostadas"
                             ]
                         }
                     ]
@@ -389,19 +389,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe1"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe2"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe3"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
@@ -418,19 +418,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe4"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe5"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe6"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
@@ -447,19 +447,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe7"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe8"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe9"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
@@ -476,19 +476,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe10"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe11"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe12"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
@@ -505,25 +505,25 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe13"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe14"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe15"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Snack",
                             "recipeIds": [
-                                "recipe16"
+                                "tostadas_palta_huevo"
                             ]
                         }
                     ]
@@ -798,13 +798,13 @@
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe1"
+                                "avena_fruta"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe2"
+                                "avena_fruta"
                             ]
                         },
                         {
@@ -821,19 +821,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe3"
+                                "avena_fruta"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe4"
+                                "avena_fruta"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe5"
+                                "avena_fruta"
                             ]
                         },
                         {
@@ -850,19 +850,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe6"
+                                "avena_fruta"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe7"
+                                "avena_fruta"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe8"
+                                "avena_fruta"
                             ]
                         },
                         {
@@ -879,19 +879,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe9"
+                                "avena_fruta"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe10"
+                                "avena_fruta"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe11"
+                                "avena_fruta"
                             ]
                         },
                         {
@@ -914,13 +914,13 @@
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe12"
+                                "avena_fruta"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe13"
+                                "avena_fruta"
                             ]
                         },
                         {
@@ -1143,19 +1143,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe15"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe16"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe17"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
@@ -1172,19 +1172,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe18"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe19"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe20"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
@@ -1298,19 +1298,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe1"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe2"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe3"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
@@ -1327,19 +1327,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe4"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe5"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe6"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
@@ -1362,13 +1362,13 @@
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe7"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe8"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
@@ -1385,19 +1385,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe9"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe10"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe11"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
@@ -1414,19 +1414,19 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe12"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe13"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe14"
+                                "tostadas_palta_huevo"
                             ]
                         },
                         {
@@ -1657,27 +1657,27 @@
                         {
                             "type": "Desayuno",
                             "recipeIds": [
-                                "recipe1"
+                                "te_infusiones"
                             ]
                         },
                         {
                             "type": "Almuerzo",
                             "recipeIds": [
-                                "recipe2",
-                                "recipe3"
+                                "te_infusiones",
+                                "sopa_verduras_dinner"
                             ]
                         },
                         {
                             "type": "Snack",
                             "recipeIds": [
-                                "recipe4"
+                                "te_infusiones"
                             ]
                         },
                         {
                             "type": "Cena",
                             "recipeIds": [
-                                "recipe5",
-                                "recipe6"
+                                "te_infusiones",
+                                "sopa_verduras_dinner"
                             ]
                         }
                     ]
