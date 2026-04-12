@@ -9,6 +9,10 @@ import os
 
 PORT = 3000
 
+# Debug mode: set DEBUG_MODE=false to disable the /debug route.
+# Defaults to True for local development convenience.
+DEBUG_MODE = os.environ.get('DEBUG_MODE', 'true').lower() in ('true', '1', 'yes')
+
 # Must match vercel.json rewrites (prefix → template HTML)
 REWRITES = {
     'rutinas':     '/pages/rutina.html',
@@ -35,6 +39,15 @@ class VitaliaHandler(http.server.SimpleHTTPRequestHandler):
 
         if parts:
             prefix = parts[0]
+
+            # Debug route — only available when DEBUG_MODE is enabled
+            if prefix == 'debug':
+                if DEBUG_MODE:
+                    self.path = '/pages/debug.html'
+                    return super().do_GET()
+                else:
+                    self.path = '/404.html'
+                    return super().do_GET()
 
             # Match a known rewrite prefix
             if prefix in REWRITES:
@@ -67,5 +80,11 @@ if __name__ == '__main__':
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     with socketserver.TCPServer(('', PORT), VitaliaHandler) as httpd:
         httpd.allow_reuse_address = True
-        print(f'\n✅  Vitalia Dev Server → http://localhost:{PORT}\n')
+        print(f'\n✅  Vitalia Dev Server → http://localhost:{PORT}')
+        if DEBUG_MODE:
+            print(f'🐛  Debug Inspector  → http://localhost:{PORT}/debug')
+        else:
+            print('🔒  Debug mode disabled (set DEBUG_MODE=true to enable)')
+        print()
         httpd.serve_forever()
+

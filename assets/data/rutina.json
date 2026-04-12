@@ -88,9 +88,9 @@
         },
         {
             "slug": "entrenamiento-en-15-minutos",
-            "title": "Entrenamiento en 15 Minutos",
+            "title": "Entrenamiento de Cardio en 15 Minutos",
             "level": "Nivel Principiante-Intermedio",
-            "duration": "10 minutos de duración",
+            "duration": "15 minutos de duración",
             "introduction": "<p>Esta rutina está diseñada para personas con una agenda ocupada que quieren mejorar su estado físico. Activarás los principales grupos musculares (piernas, pecho, espalda, core) combinando ejercicios de fuerza funcional con intervalos de cardio.</p>",
             "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
             "preparation": "<p>Necesitas un espacio libre de aproximadamente 2 x 1.5 metros. No se requiere equipamiento; solo ropa cómoda y calzado deportivo. Si tienes una colchoneta, úsala para los ejercicios de suelo. Ten agua a mano para los descansos cortos. Como la rutina es breve, cada segundo cuenta: concéntrate en mantener una buena técnica desde el primer ejercicio. Cuando estés preparado, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
@@ -155,7 +155,7 @@
             "slug": "fuerza-silla-de-ruedas",
             "title": "Entrenamiento de Fuerza para Personas en Silla de Ruedas",
             "level": "Nivel Principiante",
-            "duration": "10 minutos de duración",
+            "duration": "15 minutos de duración",
             "introduction": "<p>Esta rutina de fuerza y movilidad ha sido diseñada específicamente para realizarse en posición sentada. El objetivo principal es fortalecer los músculos del tren superior (hombros, espalda, brazos) y mejorar la estabilidad del core, promoviendo una mejor postura y mayor independencia funcional.</p>",
             "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
             "preparation": "<p>Asegúrate de que tu silla o silla de ruedas esté en una posición estable y con los frenos puestos. Necesitarás una banda elástica y un par de mancuernas ligeras (o botellas de agua). Siéntate con la espalda erguida y mantén el espacio a tu alrededor despejado. Cuando estés en posición, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
@@ -212,7 +212,7 @@
             "slug": "abdomen-y-estabilidad-core",
             "title": "Rutina enfocada en abdomen y estabilidad del core en casa",
             "level": "Nivel Principiante",
-            "duration": "40 minutos de duración",
+            "duration": "25 minutos de duración",
             "warmup_text": "Realiza suaves giros de torso y rotaciones de cadera. Inhala profundo y exhala para preparar tu centro antes de empezar.",
             "introduction": "<p>Esta rutina está diseñada para fortalecer, tonificar el abdomen y mejorar la estabilidad corporal de forma segura. Al tener un núcleo fuerte, mejorarás tu postura y reducirás el riesgo de lesiones en tu día a día. Es ideal para nivel principiante, ya que se centra en movimientos controlados sin impacto articular.</p>",
             "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
@@ -304,7 +304,7 @@
             "slug": "yoga-suave-relajacion",
             "title": "Yoga suave para relajación y enfoque mental",
             "level": "Nivel Principiante",
-            "duration": "30 minutos de duración",
+            "duration": "25 minutos de duración",
             "warmup_text": "Siéntate en postura cómoda. Cierra los ojos y comienza a observar tu respiración natural sin modificarla. Deja que tu mente llegue al presente.",
             "introduction": "<p>Sesión de movimientos lentos combinados con respiración consciente para reducir el estrés y mejorar la concentración. Esta rutina está enfocada íntegramente en tu bienestar general y en regular tu sistema nervioso para salir del estado de alerta y entrar en un estado de relajación profunda.</p>",
             "image": "https://d3p3fw3rutb1if.cloudfront.net/photos/800fefd6-325d-48d2-9ed8-117763434049",
@@ -486,6 +486,220 @@
                     "duration": 60,
                     "rest": 0,
                     "sets": 3
+                }
+            ]
+        },
+        {
+            "slug": "movilidad-fuerza-suave-adultos-mayores",
+            "title": "Movilidad y Fuerza Suave para Adultos Mayores",
+            "level": "Nivel Principiante",
+            "duration": "30 minutos de duración",
+            "introduction": "<p>Esta rutina está diseñada específicamente para fortalecer las articulaciones, mejorar la postura y ganar seguridad en el movimiento sin someter al cuerpo a impacto o posiciones inestables. Fomenta la autonomía y la movilidad funcional para las actividades diarias.</p>",
+            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+            "preparation": "<p>Solo necesitas una silla estable sin ruedas para algunos ejercicios de equilibrio o pausa. Mantén siempre tu respiración fluida, no la contengas. Si sientes molestia aguda en alguna articulación, sáltate ese ejercicio. Cuando te sientas listo/a, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "warmup_text": "Inhala profundo, siente cómo se expanden tus costillas e inicia con movimientos lentos prestando atención a tu cuerpo.",
+            "conclusion": "<p>¡Gran trabajo! Mantenerse en movimiento es fundamental. Has trabajado tu equilibrio, fuerza y flexibilidad de forma segura y consciente.</p><p>Te recomendamos hacer esta rutina de 2 a 3 veces por semana, siempre escuchando a tu cuerpo. Recuerda beber agua y celebrar este paso hacia tu bienestar integral.</p>",
+            "exercises": [
+                {
+                    "exerciseId": "seated_neck_stretch",
+                    "duration": 40,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "shoulder_circles",
+                    "duration": 40,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "torso_twists",
+                    "duration": 40,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "calf_raises",
+                    "duration": 40,
+                    "rest": 20,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "glute_bridge",
+                    "duration": 40,
+                    "rest": 20,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "band_pull_apart",
+                    "duration": 40,
+                    "rest": 20,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "cat_cow",
+                    "duration": 60,
+                    "rest": 20
+                },
+                {
+                    "exerciseId": "child_pose",
+                    "duration": 60,
+                    "rest": 0
+                }
+            ]
+        },
+        {
+            "slug": "fuerza-inferior-gluteos-casa",
+            "title": "Fuerza de Tren Inferior Enfocada en Glúteos en Casa",
+            "level": "Nivel Principiante-Intermedio",
+            "duration": "40 minutos de duración",
+            "introduction": "<p>Diseñada para optimizar el estímulo del tren inferior dándole máximo énfasis a los glúteos e isquiotibiales a través de patrones combinados bilaterales y unilaterales, reduciendo el enfoque genérico de cuádriceps.</p>",
+            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+            "preparation": "<p>Prepara un espacio despejado. Si dispones de una banda de resistencia o mancuernas, puedes sumarlas en los ejercicios principales, de lo contrario tu propio peso funcionará excelente. Asegúrate de concentrarte en apretar los glúteos en la fase final de cada repetición. <strong class=\"underline\">Presiona el botón \"Comenzar rutina\".</strong></p>",
+            "warmup_text": "Activa tus glúteos de manera consciente. Concentra la mente en el músculo antes de mover.",
+            "conclusion": "<p>¡Rutina finalizada! El trabajo enfocado en los glúteos no solo aporta estética, sino que es clave para la salud lumbar, la postura y generar fuerza funcional para el resto del cuerpo.</p><p>Descansa las piernas, come algo nutritivo rico en proteínas y carbohidratos, y deja al menos un día de descanso entre este entrenamiento y el próximo del tren inferior.</p>",
+            "exercises": [
+                {
+                    "exerciseId": "hip_rotations",
+                    "duration": 45,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "glute_bridge",
+                    "duration": 50,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "hip_thrust",
+                    "duration": 50,
+                    "rest": 20,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "bulgarian_split_squat",
+                    "duration": 50,
+                    "rest": 20,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "romanian_deadlift",
+                    "duration": 50,
+                    "rest": 20,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "sumo_squat",
+                    "duration": 50,
+                    "rest": 20,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "glute_kickbacks",
+                    "duration": 40,
+                    "rest": 20,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "strech_legs",
+                    "duration": 60,
+                    "rest": 0
+                }
+            ]
+        },
+        {
+            "slug": "traccion-fuerza-espalda-postura",
+            "title": "Rutina de Tracción para Fortalecer Espalda y Mejorar Postura",
+            "level": "Nivel Principiante-Intermedio",
+            "duration": "30 minutos de duración",
+            "introduction": "<p>Esta sesión terapéutica se centra en fortalecer los músculos de la espalda encargados de mantener una buena posición corporal, contrarrestando el efecto nocivo de las largas horas en pantallas a través de la retracción escapular y la estabilidad del core.</p>",
+            "image": "assets/images/fitness/img-rutinas-mat-pesas.webp",
+            "preparation": "<p>Consigue una banda elástica de intensidad ligera a media. Concéntrate más en el control del movimiento (juntar los omóplatos, mantener el pecho erguido) que en la velocidad. Cuando estés posicionado, <strong class=\"underline\">presiona el botón \"Comenzar rutina\".</strong></p>",
+            "warmup_text": "Lleva la atención a tu zona escapular. Siente cómo se deslizan los omóplatos sobre tus costillas.",
+            "conclusion": "<p>¡Sesión completada! Tu espalda alta y estabilizadores profundos están activos. El fortalecimiento continuo de los patrones de tracción transformará naturalmente tu alineación postural con el tiempo.</p><p>Puedes repetir esta rutina 2 veces a la semana o complementarla con tus días de entrenamiento habituales.</p>",
+            "exercises": [
+                {
+                    "exerciseId": "shoulder_circles",
+                    "duration": 45,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "band_pull_apart",
+                    "duration": 45,
+                    "rest": 20,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "band_row",
+                    "duration": 50,
+                    "rest": 20,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "bird_dog",
+                    "duration": 50,
+                    "rest": 20,
+                    "sets": 3
+                },
+                {
+                    "exerciseId": "plank",
+                    "duration": 45,
+                    "rest": 20,
+                    "sets": 2
+                },
+                {
+                    "exerciseId": "cat_cow",
+                    "duration": 60,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "child_pose",
+                    "duration": 60,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "downward_dog",
+                    "duration": 60,
+                    "rest": 0
+                }
+            ]
+        },
+        {
+            "slug": "movilidad-suave-antes-de-dormir",
+            "title": "Movilidad Suave para Antes de Dormir",
+            "level": "Nivel Principiante",
+            "duration": "20 minutos de duración",
+            "introduction": "<p>Una rutina de descompresión física y mental diseñada específicamente para apagar el sistema nervioso simpático. No activarás músculos agresivamente; esta sesión utiliza posturas sostenidas y respiración profunda para que tu cuerpo entienda que es hora de descansar.</p>",
+            "image": "https://d3p3fw3rutb1if.cloudfront.net/photos/800fefd6-325d-48d2-9ed8-117763434049",
+            "preparation": "<p>Baja las luces de la habitación. Si es posible, no uses música pesada. Ponte ropa abrigada y cómoda, colócate sobre una alfombra o colchoneta e intenta eliminar cualquier distracción. <strong class=\"underline\">Presiona el botón \"Comenzar rutina\".</strong></p>",
+            "warmup_text": "Cierra los ojos. Vamos a pausar el caos del día y conectar internamente.",
+            "conclusion": "<p>Tu cuerpo está libre de tensiones superficiales y tu mente ha bajado las revoluciones.</p><p>La consistencia en este tipo de desconexión nocturna promete un sueño significativamente más profundo. ¡Que descanses!</p>",
+            "exercises": [
+                {
+                    "exerciseId": "square_breathing",
+                    "duration": 120,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "seated_neck_stretch",
+                    "duration": 60,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "side_stretch",
+                    "duration": 60,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "strech_legs",
+                    "duration": 60,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "cat_cow",
+                    "duration": 60,
+                    "rest": 15
+                },
+                {
+                    "exerciseId": "child_pose",
+                    "duration": 120,
+                    "rest": 0
                 }
             ]
         }
