@@ -23,10 +23,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         const scoreData = scoreSnap.data();
+        console.log("Firestore datos encontrados:", scoreData);
         
         // Verificar si los arrays están vacíos
         const isEmpty = (!scoreData.planes_alimenticios?.length && !scoreData.rutinas?.length && !scoreData.articulos?.length);
         if (isEmpty) {
+            console.log("Los arrays de recomendación están vacíos. Mostrando botón de refrescar.");
             mostrarEmptyState();
             return;
         }
@@ -83,21 +85,23 @@ document.addEventListener('DOMContentLoaded', async () => {
                     btn.disabled = true;
                     btn.textContent = 'Generando con IA... (puede tardar)';
                     try {
-                        const res = await fetch('/api/v1/scores/generate', {
+                        console.log("Solicitando score a backend para uid:", user.uid);
+                        const res = await fetch('https://vitalia-core-api.onrender.com/api/v1/scores/generate', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify({ uid: user.uid })
                         });
+                        console.log("Respuesta de backend:", res.status);
                         if (res.ok) {
                             msg.textContent = '¡Recomendaciones generadas! Recargando...';
                             msg.style.color = 'var(--primary)';
                             setTimeout(() => window.location.reload(), 1500);
                         } else {
-                            throw new Error('Fallo en la API');
+                            throw new Error('Fallo en la API, status: ' + res.status);
                         }
                     } catch (err) {
-                        console.error(err);
-                        msg.textContent = 'Ocurrió un error. Intenta nuevamente.';
+                        console.error("Error al generar recomendaciones:", err);
+                        msg.textContent = 'Ocurrió un error de conexión con la IA. Intenta nuevamente.';
                         msg.style.color = 'red';
                         btn.disabled = false;
                         btn.textContent = 'Generar mis recomendaciones de IA';
@@ -107,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
     } catch (error) {
-        console.error("Error cargando recomendaciones:", error);
+        console.error("Error cargando recomendaciones principales:", error);
     }
 });
 
