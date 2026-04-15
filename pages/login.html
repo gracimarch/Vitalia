@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#B571DE">
+    <title>Iniciar Sesión en Vitalia | Tu Web de Bienestar</title>
+    <link rel="canonical" href="https://vitalia-selfcare.vercel.app/login">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/core/variables.css?v=20260323">
+    <link rel="stylesheet" href="/assets/css/core/layout.css?v=20260323">
+    <link rel="stylesheet" href="/assets/css/core/utilities.css?v=20260323">
+    <link href="/assets/css/core/common.css?v=20260323" rel="stylesheet">
+    <script src="/assets/js/core/main.js?v=20260323" defer></script>
+    <script src="/assets/js/core/router.js?v=20260323"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/toastify.css?v=20260323">
+
+    <link rel="stylesheet" href="/assets/css/pages/formstyle.css?v=20260323">
+    <link rel="stylesheet" href="/assets/css/pages/landingstyles.css?v=20260323">
+
+    <link rel="icon" href="/assets/favicons/vitalia-favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="/assets/favicons/loader-vitalia.svg" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/favicons/loader-vitalia.svg">
+
+    <meta name="description" content="Inicia sesión en Vitalia y continúa con tu plan de bienestar personalizado.">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script type="module" src="/assets/js/auth/firebase.js?v=20260323"></script>
+    
+    <!-- Auth State Observer -->
+    <script type="module" src="/assets/js/auth/auth-state.js?v=20260323"></script>
+</head>
+
+<body>
+
+    <!-- Pantalla de carga -->
+    <div id="loader" class="loader-container">
+        <img src="/assets/favicons/loader-vitalia.svg" alt="" aria-hidden="true" class="loader-logo">
+    </div>
+
+    <main class="page-container">
+        <div class="wrapper">
+            <div class="form-left-panel">
+                <div id="logo" class="logo-container">
+                    <a href="/">
+                        <img src="/assets/images/ui/vitalia-logo.svg" alt="Vitalia Logo" style="max-width: 150px;">
+                    </a>
+                </div>
+                <div id="liquid-container"></div>
+                <img src="/assets/images/hero/flor.webp" class="hero-flower flower-left" alt="" aria-hidden="true">
+                <img src="/assets/images/hero/flores.webp" class="hero-flower flower-right" alt="" aria-hidden="true">
+            </div>
+            <div class="form-right-panel">
+                <div class="formulario">
+
+                    <div id="title" class="title-container" style="margin-top: 2rem;">
+                        <h1>Bienvenido de nuevo</h1>
+                        <p>Inicia sesión para continuar tu transformación hacia el bienestar integral.</p>
+                    </div>
+
+                    <div class="form-and-image">
+                        <form action="" id="loginForm">
+                            <section class="section active" id="section1">
+                                <div class="form-row-width">
+                                    <div class="form-holder">
+                                        <input type="email" placeholder="Correo electrónico" class="form-control" id="loginEmail" required>
+                                    </div>
+                                    <div class="form-holder">
+                                        <input type="password" placeholder="Contraseña" class="form-control" id="loginPassword" required>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <div class="buttons" style="margin-top: 1rem;">
+                                <button type="submit" class="send-btn" id="loginBtn" style="width: 100%;">Iniciar Sesión</button>
+                            </div>
+                            
+                            <div style="text-align: center; margin-top: 2rem; color: #555;">
+                                <p>¿No tienes una cuenta aún? <br/> <a href="/formulario" style="color: var(--primary); text-decoration: underline; font-weight: bold;">Regístrate aquí</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="/assets/js/auth/login.js?v=20260323"></script>
+
+    <!-- Three.js for Liquid Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="/assets/js/effects/liquid-background.js?v=20260323"></script>
+
+    <!-- Importar Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</body>
+
+</html>

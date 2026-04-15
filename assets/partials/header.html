@@ -29,12 +29,20 @@
                     </li>
                 </ul>
                 <div class="d-none d-lg-flex align-items-center">
+                    <a class="nav-link" href="{{ROOT}}login" id="nav-login-btn" style="display: none; font-weight: 500; margin-right: 15px;">Iniciar sesión</a>
+                    <a class="nav-link text-danger" href="#" id="nav-logout-btn" style="display: none; font-weight: 500; margin-right: 15px;">Cerrar sesión</a>
                     <a class="nav-link premium-link" href="{{ROOT}}#premium">
                         <img src="{{ROOT}}assets/images/ui/icono-corona.svg" alt="Premium" class="premium">
                     </a>
                 </div>
                 <div class="d-lg-none">
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ROOT}}login" id="nav-mobile-login-btn" style="display: none;">Iniciar sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-danger" href="#" id="nav-mobile-logout-btn" style="display: none;">Cerrar sesión</a>
+                        </li>
                         <li class="nav-item last-nav-item" id="last-nav-item">
                             <a class="nav-link" href="{{ROOT}}#premium">Planes de suscripción</a>
                         </li>
