@@ -55,6 +55,8 @@ export async function handleSubmit() {
         // Guardar datos en Firestore, en la colección "users"
         await setDoc(doc(db, "users", user.uid), userData);
 
+        showToast("Generando tus recomendaciones con IA, esto puede tardar un momento...", "success");
+
         // Generar recomendaciones personalizadas en el backend
         try {
             await fetch(`${API_BASE_URL}/api/v1/scores/generate`, {
@@ -79,12 +81,12 @@ export async function handleSubmit() {
             console.warn("No se pudieron generar las recomendaciones:", scoreError);
         }
 
-        showToast("Registro exitoso. ¡Bienvenido!", "success");
+        showToast("¡Registro completado! Entrando a tu espacio...", "success");
 
         // Redirigir después de guardar en Firestore
         setTimeout(() => {
             window.location.href = "../mi-espacio.html";
-        }, 2000);
+        }, 1500);
 
     } catch (error) {
         console.error("Error en el registro:", error);
