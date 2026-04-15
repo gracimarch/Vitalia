@@ -3,6 +3,8 @@ import { auth, db } from '../auth/firebase.js';
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 import { showToast } from './form-validation.js';
 
+const API_BASE_URL = "https://vitalia-core-api.onrender.com";
+
 export async function handleSubmit() {
     const email = $('#email').val();
     const password = $('#password').val();
@@ -50,8 +52,32 @@ export async function handleSubmit() {
             userData.otherRestrictions = otrosEspecificar;
         }
 
-        // Guardar datos en Firestore, en una colección "users"
+        // Guardar datos en Firestore, en la colección "users"
         await setDoc(doc(db, "users", user.uid), userData);
+
+        // Generar recomendaciones personalizadas en el backend
+        try {
+            await fetch(`${API_BASE_URL}/api/v1/scores/generate`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    uid: user.uid,
+                    disability: userData.disability,
+                    physicalActivity: userData.physicalActivity,
+                    diet: userData.diet,
+                    restrictions: userData.restrictions,
+                    wellbeingGoals: userData.wellbeingGoals,
+                    obstacles: userData.obstacles,
+                    sleepQuality: userData.sleepQuality,
+                    stressLevel: userData.stressLevel,
+                    dailyRoutine: userData.dailyRoutine,
+                    lifestyle: userData.lifestyle,
+                }),
+            });
+        } catch (scoreError) {
+            // No bloqueamos el registro si falla la generación de score
+            console.warn("No se pudieron generar las recomendaciones:", scoreError);
+        }
 
         showToast("Registro exitoso. ¡Bienvenido!", "success");
 
