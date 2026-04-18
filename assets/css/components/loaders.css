@@ -57,11 +57,6 @@
 }
 
 /* Landing Script */
-.header.transparent-mode {
-    background-color: transparent !important;
-    backdrop-filter: none !important;
-    border-bottom: none !important;
-}
 
 .body-no-scroll {
     overflow: hidden !important;
