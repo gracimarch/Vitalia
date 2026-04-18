@@ -271,7 +271,7 @@ th:first-child {
 }
 
 .lectura-back-btn {
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 20px;
     z-index: 10;

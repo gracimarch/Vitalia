@@ -97,7 +97,7 @@ body.loaded #loader {
 
 /* Back button — matches routine overview-back-btn */
 .diet-back-btn {
-    position: absolute;
+    position: fixed;
     top: 16px;
     left: 16px;
     z-index: 50;
