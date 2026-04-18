@@ -1,43 +1,45 @@
 /* =========================================
    1. DUAL-STATE HEADER LOGIC
    ========================================= */
+
 .header {
     transition: background-color 0.3s ease, padding 0.3s ease, transform 0.3s ease;
 }
 
-.header.transparent-mode {
-    background-color: rgba(255, 255, 255, 0.05) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    box-shadow: none !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+/* Estado inicial / scroll en hero: header transparente */
+.header:not(.header-scrolled) {
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.header.transparent-mode .nav-link {
-    color: rgba(255, 255, 255, 0.95) !important;
+.header:not(.header-scrolled) .nav-link {
+    color: rgba(255, 255, 255, 0.95);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-weight: 500;
 }
 
-.header.transparent-mode .nav-link:hover {
-    color: var(--white) !important;
+.header:not(.header-scrolled) .nav-link:hover {
+    color: var(--white);
     opacity: 1;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
     transform: translateY(-1px);
 }
 
-.header.transparent-mode .navbar-svg-icon .toggler-line {
+.header:not(.header-scrolled) .navbar-svg-icon .toggler-line {
     stroke: var(--white) !important;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
-.header.transparent-mode .navbar-toggler:not(.collapsed) .toggler-line {
+.header:not(.header-scrolled) .navbar-toggler:not(.collapsed) .toggler-line {
     stroke: var(--text-color) !important;
-    filter: none !important;
+    filter: none;
 }
 
-.header.transparent-mode .navbar-brand .logo,
-.header.transparent-mode .premium {
+.header:not(.header-scrolled) .navbar-brand .logo,
+.header:not(.header-scrolled) .premium {
     filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
@@ -74,6 +76,7 @@
 .btn {
     display: inline-flex;
     align-items: center;
+    gap: 0.5rem;
 
     margin-top: 30px;
     padding: 0.8rem 2.5rem;
@@ -284,7 +287,13 @@
    4. FEATURES & SECTIONS
    ========================================= */
 .reading {
-    padding: 10px 0 0;
+    padding: 5rem 0 0;
+}
+
+@media (max-width: 768px) {
+    .reading {
+        padding: 2.5rem 0 0;
+    }
 }
 
 .reading-section {
@@ -666,11 +675,11 @@ body {
 }
 
 @media (max-width: 991px) {
-    .header.transparent-mode .nav-link {
+    .header:not(.header-scrolled) .nav-link {
         color: var(--black) !important;
     }
 
-    .header.transparent-mode .nav-link:hover {
+    .header:not(.header-scrolled) .nav-link:hover {
         color: var(--black) !important;
     }
 }
@@ -687,6 +696,8 @@ body {
 #magic-bento-root {
     min-height: 800px;
     contain: content;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
 }
 
 #faq-list-root {
@@ -702,6 +713,8 @@ body {
 @media (max-width: 768px) {
     #magic-bento-root {
         min-height: 1400px;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
     }
 }
 

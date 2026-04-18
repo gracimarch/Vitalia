@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
             function checkHeaderVisibility() {
                 const triggerHeight = window.innerHeight - 50; // Buffer
                 if (window.scrollY < triggerHeight) {
-                    header.classList.add('transparent-mode');
+                    header.classList.remove('header-scrolled');
                 } else {
-                    header.classList.remove('transparent-mode');
+                    header.classList.add('header-scrolled');
                 }
             }
 
@@ -42,15 +42,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const header = document.querySelector('.header');
         if (header) {
             // Check immediately
-            if (window.scrollY < window.innerHeight - 50) {
-                header.classList.add('transparent-mode');
+            if (window.scrollY >= window.innerHeight - 50) {
+                header.classList.add('header-scrolled');
             }
 
             window.addEventListener('scroll', () => {
                 if (window.scrollY < window.innerHeight - 50) {
-                    header.classList.add('transparent-mode');
+                    header.classList.remove('header-scrolled');
                 } else {
-                    header.classList.remove('transparent-mode');
+                    header.classList.add('header-scrolled');
                 }
             });
         }
