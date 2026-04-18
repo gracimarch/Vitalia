@@ -1,5 +1,50 @@
+# ── OS ──────────────────────────────────────────────
 .DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Node ────────────────────────────────────────────
 node_modules/
 dist/
-.env
 npm-debug.log*
+yarn-error.log*
+*.log
+
+# ── Env / Secrets ───────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Python ──────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.Python
+*.egg-info/
+.eggs/
+venv/
+.venv/
+
+# ── Scripts de ejecución única (data fixtures) ───────
+fix_recipes.py
+transform_recetas.py
+test.py
+test.js
+
+# ── Editores ─────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── Misc ─────────────────────────────────────────────
+*.tmp
+*.temp
+*.bak
+*.orig
+*.cache
