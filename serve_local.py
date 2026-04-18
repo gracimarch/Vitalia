@@ -43,7 +43,7 @@ class VitaliaHandler(http.server.SimpleHTTPRequestHandler):
             # Debug route — only available when DEBUG_MODE is enabled
             if prefix == 'debug':
                 if DEBUG_MODE:
-                    self.path = '/pages/debug.html'
+                    self.path = '/dev/debug.html'
                     return super().do_GET()
                 else:
                     self.path = '/404.html'
