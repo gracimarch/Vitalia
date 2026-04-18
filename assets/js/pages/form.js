@@ -102,6 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
         updateButtons();
     }
 
+    let highestStep = 0;
+
     // --- EVENT LISTENERS ---
 
     document.querySelectorAll(".next-btn").forEach(button => {
@@ -109,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (currentStep < sections.length - 1) {
                 if (validateSection(currentStep)) {
                     currentStep++;
+                    highestStep = Math.max(highestStep, currentStep);
                     showSection(currentStep);
                 }
             }
@@ -118,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".prev-btn").forEach(button => {
         button.addEventListener("click", () => {
             if (currentStep > 0) {
-                prevButton.classList.remove('active');
                 currentStep--;
                 showSection(currentStep);
             }
@@ -127,12 +129,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     steps.forEach((step, index) => {
         step.addEventListener("click", () => {
+            if (index === currentStep) return;
+
             if (index < currentStep) {
                 currentStep = index;
                 showSection(currentStep);
-            } else if (index > currentStep) {
-                if (index === currentStep + 1 && validateSection(currentStep)) {
+            } else if (index <= highestStep) {
+                if (validateSection(currentStep)) {
                     currentStep = index;
+                    showSection(currentStep);
+                }
+            } else if (index === highestStep + 1) {
+                // If they are clicking the next available dot linearly
+                if (currentStep === highestStep && validateSection(currentStep)) {
+                    currentStep = index;
+                    highestStep = Math.max(highestStep, currentStep);
                     showSection(currentStep);
                 }
             }

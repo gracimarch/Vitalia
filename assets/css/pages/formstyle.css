@@ -166,8 +166,7 @@ body.loaded .loader-container {
 
 .form-right-panel {
     width: 60%;
-    padding: 30px 30px 30px 40px;
-    /* Right padding reduced to create room for scrollbar */
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -175,7 +174,6 @@ body.loaded .loader-container {
     z-index: 10;
     height: 100%;
     overflow: hidden;
-    /* Clip the panel itself */
 }
 
 .hero-flower {
@@ -217,11 +215,9 @@ body.loaded .loader-container {
     padding: 0;
     width: 100%;
     height: 100%;
-    /* Fill the panel */
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    /* Required for children to scroll */
 }
 
 .logo-container img {
@@ -352,8 +348,7 @@ body.loaded .loader-container {
 .form-row-scroll {
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
-    /* Space between content and scrollbar */
+    padding-right: 20px;
     flex: 1;
     min-height: 0;
     overflow-y: auto;
@@ -543,21 +538,11 @@ input.otro-text:focus {
 .prev-btn,
 .next-btn,
 .send-btn {
-    font-family: inherit;
-    background-color: var(--white);
-    color: var(--text-color);
-    padding: 15px 50px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
     margin-top: 10px;
-    transition: all 0.3s ease;
-    font-weight: 500;
     box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
-    border: none;
+    font-size: 15px;
 }
 
-.prev-btn:hover,
 .next-btn:hover,
 .send-btn:hover {
     background-color: var(--purple);
@@ -771,6 +756,12 @@ button {
     align-items: center;
     justify-content: center;
     gap: 8px;
+    line-height: 1.5;
+    /* Ensures text height is consistent */
+    min-height: 48px;
+    /* Force minimum identical height */
+    box-sizing: border-box;
+    /* Include padding/borders in height calc */
 }
 
 .prev-btn {
@@ -780,7 +771,8 @@ button {
 }
 
 .prev-btn:hover {
-    background: rgba(181, 113, 222, 0.1);
+    background-color: rgba(181, 113, 222, 0.1) !important;
+    color: var(--purple) !important;
     transform: translateX(-3px);
 }
 
@@ -794,7 +786,6 @@ button {
 .next-btn:hover,
 .send-btn:hover {
     background: var(--purple-hover);
-    transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(181, 113, 222, 0.4);
 }
 
