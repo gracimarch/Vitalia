@@ -6,7 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#B571DE">
     <title id="page-title">Vitalia | Lectura</title>
-    <link rel="canonical" href="https://vitalia-selfcare.vercel.app/lecturas/">
+    <!-- Canonical dinámico: el JS lo actualiza con el slug real -->
+    <link rel="canonical" id="canonical-url" href="https://vitalia-selfcare.vercel.app/lecturas/">
+    <script>
+        // Actualiza el canonical y OG URL con el slug real antes de que cargue el contenido
+        (function() {
+            var slug = window.location.pathname;
+            var canonical = document.getElementById('canonical-url');
+            if (canonical) canonical.href = 'https://vitalia-selfcare.vercel.app' + slug;
+        })();
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap"
@@ -33,10 +42,12 @@
     <meta id="meta-keywords" name="keywords" content="bienestar, salud, productividad, vitalia">
     <meta name="robots" content="index, follow">
 
+    <meta property="og:type" content="article">
     <meta property="og:title" content="Vitalia | Lectura">
     <meta property="og:description" content="Explora nuestras lecturas sobre bienestar integral en Vitalia.">
     <meta property="og:image" content="https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg">
     <meta property="og:url" content="https://vitalia-selfcare.vercel.app/lecturas/">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Vitalia | Lectura">
     <meta name="twitter:description" content="Explora nuestras lecturas sobre bienestar integral en Vitalia.">
     <meta name="twitter:image" content="https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg">

@@ -5,8 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#E1947F">
-    <title>Vitalia | Rutina</title>
-    <link rel="canonical" href="https://vitalia-selfcare.vercel.app/rutinas/">
+    <title id="page-title">Vitalia | Rutina</title>
+    <!-- Canonical dinámico: el JS lo actualiza con el slug real -->
+    <link rel="canonical" id="canonical-url" href="https://vitalia-selfcare.vercel.app/rutinas/">
+    <script>
+        (function() {
+            var slug = window.location.pathname;
+            var canonical = document.getElementById('canonical-url');
+            if (canonical) canonical.href = 'https://vitalia-selfcare.vercel.app' + slug;
+        })();
+    </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -25,11 +33,13 @@
     <meta name="keywords" content="rutina, ejercicio, fitness, salud, vitalia">
     <meta name="robots" content="index, follow">
 
+    <meta property="og:type" content="article">
     <meta property="og:title" content="Vitalia | Rutina de Ejercicios">
     <meta property="og:description"
         content="Rutina de ejercicios guiada para tu bienestar físico. Ejercicios personalizados con Vitalia.">
     <meta property="og:image" content="https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg">
     <meta property="og:url" content="https://vitalia-selfcare.vercel.app/rutinas/">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Vitalia | Rutina de Ejercicios">
     <meta name="twitter:description"
         content="Rutina de ejercicios guiada para tu bienestar físico. Ejercicios personalizados con Vitalia.">
