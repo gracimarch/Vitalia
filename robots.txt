@@ -1,8 +1,13 @@
 User-agent: *
 Allow: /
-Disallow: /assets/js/
-Disallow: /assets/css/
-Disallow: /assets/data/
+
+# Bloquear páginas de usuario privadas
+Disallow: /mi-espacio
+Disallow: /login
+
+# Bloquear recursos internos no indexables
 Disallow: /assets/partials/
+Disallow: /assets/data/
+Disallow: /dev/
 
 Sitemap: https://vitalia-selfcare.vercel.app/sitemap.xml
