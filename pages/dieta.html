@@ -5,19 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#80CACD">
-    <title>Vitalia | Plan Alimenticio</title>
-    <link rel="canonical" href="https://vitalia-selfcare.vercel.app/dietas/">
+    <title id="page-title">Vitalia | Plan Alimenticio</title>
+    <!-- Canonical dinámico: el JS lo actualiza con el slug real -->
+    <link rel="canonical" id="canonical-url" href="https://vitalia-selfcare.vercel.app/dietas/">
+    <script>
+        (function() {
+            var slug = window.location.pathname;
+            var canonical = document.getElementById('canonical-url');
+            if (canonical) canonical.href = 'https://vitalia-selfcare.vercel.app' + slug;
+        })();
+    </script>
+
+    <meta name="robots" content="index, follow">
 
     <meta name="description"
         content="Plan para mantener altos niveles de energía y vitalidad con una dieta de alimentos integrales, ricos en nutrientes y antioxidantes.">
     <meta name="keywords"
         content="energía, vitalidad, dieta saludable, alimentos integrales, nutrientes, antioxidantes, salud general">
 
+    <meta property="og:type" content="article">
     <meta property="og:title" content="Vitalia | Plan Alimenticio">
     <meta property="og:description"
         content="Plan para mantener altos niveles de energía y vitalidad con una dieta de alimentos integrales, ricos en nutrientes y antioxidantes.">
     <meta property="og:image" content="https://vitalia-selfcare.vercel.app/assets/images/ui/og-vitalia.jpg">
     <meta property="og:url" content="https://vitalia-selfcare.vercel.app/dietas/">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Vitalia | Plan Alimenticio">
     <meta name="twitter:description"
         content="Plan para mantener altos niveles de energía y vitalidad con una dieta de alimentos integrales, ricos en nutrientes y antioxidantes.">
