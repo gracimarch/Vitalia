@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Vitalia | Debug Inspector</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/pages/debugstyle.css">
+    <link rel="icon" href="/assets/favicons/vitalia-favicon.svg" type="image/svg+xml">
+
+    <style>
+        /* Inline critical – avoids FOUC */
+        body { margin: 0; padding: 0; background: #0e1117; }
+    </style>
+</head>
+
+<body class="debug-page">
+
+    <!-- Banner -->
+    <header class="debug-banner">
+        <a href="/" class="debug-back">
+            <i class="fa-solid fa-arrow-left"></i> Volver al inicio
+        </a>
+        <div class="debug-banner__badge">
+            <i class="fa-solid fa-bug"></i> Development Only
+        </div>
+        <h1 class="debug-banner__title">Vitalia Debug Inspector</h1>
+        <p class="debug-banner__subtitle">Vista completa de todos los recursos — datos sin filtrar</p>
+
+        <!-- Search -->
+        <div class="debug-search">
+            <i class="fa-solid fa-magnifying-glass debug-search__icon"></i>
+            <input type="text"
+                   id="debug-search-input"
+                   class="debug-search__input"
+                   placeholder="Buscar por slug, título, categoría…"
+                   autocomplete="off">
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Stats -->
+        <div class="debug-stats">
+            <div class="debug-stat">
+                <div class="debug-stat__icon debug-stat__icon--articles">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div>
+                    <div class="debug-stat__label">Artículos</div>
+                    <div class="debug-stat__count" id="stat-articles">—</div>
+                </div>
+            </div>
+
+            <div class="debug-stat">
+                <div class="debug-stat__icon debug-stat__icon--routines">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+                <div>
+                    <div class="debug-stat__label">Rutinas</div>
+                    <div class="debug-stat__count" id="stat-routines">—</div>
+                </div>
+            </div>
+
+            <div class="debug-stat">
+                <div class="debug-stat__icon debug-stat__icon--diets">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div>
+                    <div class="debug-stat__label">Planes de dieta</div>
+                    <div class="debug-stat__count" id="stat-diets">—</div>
+                </div>
+            </div>
+
+            <div class="debug-stat">
+                <div class="debug-stat__icon debug-stat__icon--issues">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <div>
+                    <div class="debug-stat__label">Campos con problemas</div>
+                    <div class="debug-stat__count" id="stat-issues">—</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── Articles ── -->
+        <section class="debug-section" id="section-articles">
+            <div class="debug-section__header">
+                <i class="fa-solid fa-book-open debug-section__icon debug-section__icon--articles"></i>
+                <h2 class="debug-section__title">Artículos (lecturas.json)</h2>
+                <span class="debug-section__count">—</span>
+            </div>
+            <div class="debug-grid"></div>
+        </section>
+
+        <!-- ── Routines ── -->
+        <section class="debug-section" id="section-routines">
+            <div class="debug-section__header">
+                <i class="fa-solid fa-dumbbell debug-section__icon debug-section__icon--routines"></i>
+                <h2 class="debug-section__title">Rutinas de ejercicio (rutina.json)</h2>
+                <span class="debug-section__count">—</span>
+            </div>
+            <div class="debug-grid"></div>
+        </section>
+
+        <!-- ── Diets ── -->
+        <section class="debug-section" id="section-diets">
+            <div class="debug-section__header">
+                <i class="fa-solid fa-utensils debug-section__icon debug-section__icon--diets"></i>
+                <h2 class="debug-section__title">Planes de dieta (dietas.json)</h2>
+                <span class="debug-section__count">—</span>
+            </div>
+            <div class="debug-grid"></div>
+        </section>
+
+    </main>
+
+    <!-- Footer note -->
+    <footer style="text-align:center;padding:40px 20px;color:#484f58;font-size:12px;border-top:1px solid #21262d;">
+        Esta página solo está disponible en modo de desarrollo (DEBUG_MODE=true).
+        No se muestra en producción.
+    </footer>
+
+    <script src="/assets/js/pages/debug.js"></script>
+
+</body>
+
+</html>
