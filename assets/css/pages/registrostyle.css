@@ -1,0 +1,760 @@
+/* =============================================================
+   VITALIA — REGISTRO / CREAR CUENTA — PAGE STYLES
+   Hereda la identidad visual del login (aurora, colores, tipografía)
+   Estilos específicos: multi-step, radios, checkboxes, progress bar
+   ============================================================= */
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    background-color: #f0eef8;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ── Loader ───────────────────────────────────────────────── */
+.loader-container {
+    position: fixed;
+    inset: 0;
+    background-color: var(--bg-main, #f0eef8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+body.loaded .loader-container { display: none; }
+
+/* ── Page wrapper ─────────────────────────────────────────── */
+.reg-page {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 24px;
+    overflow-x: hidden;
+    background:
+        radial-gradient(ellipse 60% 50% at 10% 20%, rgba(181, 113, 222, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 90% 80%, rgba(128, 202, 205, 0.10) 0%, transparent 60%),
+        #f0eef8;
+}
+
+/* ── Card (two-panel split, floating) ─────────────────────── */
+.reg-card {
+    display: flex;
+    width: 100%;
+    max-width: 1040px;
+    /* Fixed height so the card never resizes between steps */
+    height: 740px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow:
+        0 4px 6px rgba(0,0,0,.04),
+        0 20px 60px rgba(181, 113, 222, .14),
+        0 40px 80px rgba(0,0,0,.07);
+    background: #fff;
+    animation: regCardEnter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes regCardEnter {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Left Panel — Aurora (same as login) ──────────────────── */
+.reg-left {
+    position: relative;
+    width: 38%;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px 32px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #6825c2 0%, #B571DE 40%, #80CACD 75%, #e8a598 100%);
+}
+
+/* Aurora blobs */
+.reg-left::before,
+.reg-left::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.55;
+    animation: regBlobDrift 9s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+.reg-left::before {
+    width: 340px; height: 340px;
+    top: -90px; left: -90px;
+    background: radial-gradient(circle, rgba(128, 202, 205, 0.7) 0%, rgba(107, 37, 194, 0.4) 70%);
+    animation-duration: 10s;
+}
+.reg-left::after {
+    width: 300px; height: 300px;
+    bottom: -70px; right: -70px;
+    background: radial-gradient(circle, rgba(225, 148, 127, 0.7) 0%, rgba(181, 113, 222, 0.3) 70%);
+    animation-duration: 13s;
+    animation-direction: alternate-reverse;
+}
+@keyframes regBlobDrift {
+    0%   { transform: translate(0,  0)   scale(1); }
+    33%  { transform: translate(30px, 40px) scale(1.08); }
+    66%  { transform: translate(-20px, 25px) scale(0.95); }
+    100% { transform: translate(15px, -30px) scale(1.05); }
+}
+
+/* Noise texture */
+.reg-left-noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Flowers */
+.reg-left-flowers {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+.reg-flower {
+    position: absolute;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.reg-flower-left {
+    bottom: -12%;
+    left: -18%;
+    top: auto;
+    height: 95%;
+    width: auto;
+    opacity: 0.5;
+    filter: saturate(0.7) brightness(1.1);
+}
+.reg-flower-right {
+    bottom: -8%;
+    right: -22%;
+    top: auto;
+    height: 80%;
+    width: auto;
+    opacity: 0.4;
+    filter: saturate(0.6) brightness(1.2);
+}
+
+/* Logo */
+.reg-left-logo {
+    position: relative;
+    z-index: 2;
+}
+.reg-left-logo a { display: inline-block; text-decoration: none; }
+.reg-left-logo img {
+    width: 130px;
+    filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.2));
+    transition: transform 0.3s ease;
+}
+.reg-left-logo img:hover { transform: scale(1.03); }
+
+/* Copy block */
+.reg-left-copy {
+    position: relative;
+    z-index: 2;
+    color: rgba(255,255,255,0.95);
+}
+.reg-left-quote {
+    font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 10px;
+}
+.reg-left-headline {
+    font-family: var(--font-secondary);
+    font-size: clamp(1.3rem, 2.2vw, 1.85rem);
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.reg-left-headline em { font-style: italic; opacity: 0.9; }
+
+/* Steps hint on the left */
+.reg-left-steps {
+    display: flex;
+    gap: 6px;
+    margin-top: 20px;
+    align-items: center;
+}
+.reg-left-step-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.35);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.reg-left-step-dot.current {
+    background: rgba(255,255,255,0.9);
+    transform: scale(1.3);
+}
+.reg-left-step-dot.done {
+    background: rgba(255,255,255,0.6);
+}
+
+/* ── Right Panel — Form ───────────────────────────────────── */
+.reg-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    position: relative;
+    min-width: 0;
+    /* No scroll here — only .reg-sections-wrap scrolls */
+    overflow: hidden;
+}
+
+.reg-right::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181,113,222,0.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ── Progress Bar ─────────────────────────────────────────── */
+.reg-progress-bar {
+    display: flex;
+    align-items: center;
+    padding: 24px clamp(28px, 5vw, 52px) 0;
+    gap: 0;
+}
+.reg-progress-step {
+    flex: 1;
+    height: 4px;
+    background: #ede9f5;
+    border-radius: 4px;
+    transition: background 0.35s ease;
+    position: relative;
+    cursor: pointer;
+}
+.reg-progress-step + .reg-progress-step {
+    margin-left: 6px;
+}
+.reg-progress-step.active {
+    background: linear-gradient(90deg, #9d4fe3, var(--purple));
+}
+.reg-progress-step.done {
+    background: var(--purple);
+    opacity: 0.5;
+}
+.reg-progress-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px clamp(28px, 5vw, 52px) 0;
+}
+.reg-progress-label span { color: var(--purple); }
+
+/* ── Section container ────────────────────────────────────── */
+.reg-sections-wrap {
+    flex: 1;
+    padding: clamp(20px, 3vw, 36px) clamp(28px, 5vw, 52px);
+    position: relative;
+    /* Only the questions area scrolls */
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* Thin scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(181,113,222,0.3) transparent;
+    min-height: 0;
+}
+
+/* ── Section header ───────────────────────────────────────── */
+.reg-section-header {
+    margin-bottom: 20px;
+}
+.reg-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 6px;
+}
+.reg-eyebrow-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--purple);
+    animation: regDotPulse 2s ease-in-out infinite;
+}
+@keyframes regDotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(0.7); }
+}
+
+.reg-title {
+    font-family: var(--font-secondary);
+    font-size: clamp(1.55rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0 0 6px;
+    line-height: 1.15;
+}
+.reg-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ── Sections (multi-step) ────────────────────────────────── */
+/* .section is added by JS (form.js) — kept as alias of .reg-section */
+.reg-section,
+.section {
+    display: none;
+}
+.reg-section.active,
+.section.active {
+    display: block;
+    animation: regFadeIn 0.35s ease both;
+}
+
+@keyframes regFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* fade-out / fade-in classes toggled by form.js navigation */
+.reg-section.fade-in,
+.section.fade-in {
+    animation: regFadeIn 0.3s ease both;
+}
+@keyframes regFadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+.reg-section.fade-out,
+.section.fade-out {
+    animation: regFadeOut 0.2s ease both;
+}
+
+/* ── Floating Label Inputs (same as login) ────────────────── */
+.reg-field {
+    position: relative;
+    margin-bottom: 14px;
+}
+.reg-field label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: all 0.22s cubic-bezier(0.4,0,0.2,1);
+    padding: 0 4px;
+    z-index: 1;
+}
+.reg-input {
+    width: 100%;
+    padding: 24px 16px 8px;
+    border: 1.5px solid #e0dced;
+    border-radius: 14px;
+    background: #faf9fc;
+    font-size: 0.88rem;
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    line-height: 1.4;
+    min-height: 58px;
+    appearance: none;
+    -webkit-appearance: none;
+}
+.reg-input:focus + label,
+.reg-input:not(:placeholder-shown) + label {
+    top: 8px;
+    transform: translateY(0);
+    transform: translateX(-2.5px);
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--purple);
+    letter-spacing: 0.03em;
+}
+.reg-input:focus {
+    background: #fff;
+    border-color: var(--purple);
+    box-shadow: 0 0 0 4px rgba(181, 113, 222, 0.12);
+}
+
+/* Select */
+select.reg-input {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B571DE' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+select.reg-input:focus { border-color: var(--purple); box-shadow: 0 0 0 4px rgba(181, 113, 222, 0.12); }
+
+/* Selects don't support :placeholder-shown — reset label to default (non-floating)
+   position when the field has no real value and isn't focused.
+   JS adds .has-value once the user picks an option. */
+select.reg-input:not(:focus):not(.has-value) + label {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0;
+}
+
+/* Row layouts */
+.reg-row {
+    display: flex;
+    gap: 12px;
+}
+.reg-row .reg-field { flex: 1; }
+
+/* Password wrap */
+.reg-input-wrap { position: relative; }
+.reg-input-wrap .reg-input { padding-right: 48px; }
+.reg-toggle-pw {
+    position: absolute;
+    right: 14px; top: 50%;
+    transform: translateY(-50%);
+    background: none; border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 4px;
+    display: flex; align-items: center;
+    transition: color 0.2s ease;
+    z-index: 2;
+}
+.reg-toggle-pw:hover { color: var(--purple); }
+.reg-toggle-pw svg { width: 18px; height: 18px; }
+
+/* ── Question labels ──────────────────────────────────────── */
+.reg-question {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0 0 10px;
+    line-height: 1.45;
+}
+
+/* ── Choice chips (radio / checkbox) ─────────────────────── */
+.reg-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+.reg-choices.inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.reg-choice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1.5px solid #e0dced;
+    border-radius: 12px;
+    background: #faf9fc;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    font-size: 0.84rem;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+.reg-choice:hover {
+    border-color: rgba(181, 113, 222, 0.5);
+    background: rgba(181, 113, 222, 0.04);
+}
+.reg-choice input[type="radio"],
+.reg-choice input[type="checkbox"] {
+    width: 16px; height: 16px;
+    accent-color: var(--purple);
+    flex-shrink: 0;
+    cursor: pointer;
+    margin: 0;
+    vertical-align: middle;
+    position: relative;
+    top: 0;
+}
+.reg-choice:has(input:checked) {
+    border-color: var(--purple);
+    background: rgba(181, 113, 222, 0.07);
+    box-shadow: 0 0 0 3px rgba(181, 113, 222, 0.1);
+}
+
+/* ── Terms checkbox ───────────────────────────────────────── */
+.reg-terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1.5px solid #e0dced;
+    border-radius: 12px;
+    background: #faf9fc;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin-top: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+.reg-terms:has(input:checked) { border-color: var(--purple); }
+.reg-terms input[type="checkbox"] {
+    width: 16px; height: 16px;
+    accent-color: var(--purple);
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+}
+.reg-terms a {
+    color: var(--purple);
+    text-decoration: none;
+    font-weight: 500;
+}
+.reg-terms a:hover { text-decoration: underline; }
+
+/* ── "Other" text input ───────────────────────────────────── */
+.reg-other-input {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 14px;
+    border: 1.5px solid #e0dced;
+    border-radius: 10px;
+    background: #faf9fc;
+    font-size: 0.84rem;
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.reg-other-input:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px rgba(181, 113, 222, 0.1);
+}
+.reg-other-input:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ── Navigation buttons ───────────────────────────────────── */
+.reg-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: clamp(16px, 3vw, 24px) clamp(28px, 5vw, 52px) clamp(24px, 4vw, 40px);
+    border-top: 1px solid #f0edf8;
+    background: #fff;
+}
+
+.reg-btn-prev {
+    padding: 14px 26px;
+    min-width: 130px;
+    border: 1.5px solid #e0dced;
+    border-radius: 14px;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    white-space: nowrap;
+}
+.reg-btn-prev:hover {
+    border-color: var(--purple);
+    color: var(--purple);
+    background: rgba(181,113,222,0.04);
+}
+
+/* form.js uses .hidden to fade-out then sets display:none via animationend */
+.reg-nav .hidden {
+    animation: btnFadeOut 0.2s ease forwards !important;
+}
+@keyframes btnFadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to   { opacity: 0; transform: scale(0.95); }
+}
+/* form.js uses .active to fade-in after setting display:inline-block */
+.reg-nav .active {
+    animation: btnFadeIn 0.22s ease both;
+}
+@keyframes btnFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.reg-btn-next,
+.reg-btn-submit {
+    flex: 1;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 14px;
+    background: var(--purple);
+    color: #fff;
+    font-size: 0.85rem;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 6px 24px rgba(181, 113, 222, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.reg-btn-next:hover,
+.reg-btn-submit:hover {
+    background-color: var(--purple-hover);
+    box-shadow: 0 10px 30px rgba(181, 113, 222, 0.45);
+    transform: translateY(-2px);
+}
+.reg-btn-next:active,
+.reg-btn-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 16px rgba(181, 113, 222, 0.3);
+}
+.reg-btn-next:disabled,
+.reg-btn-submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ── Spinner ──────────────────────────────────────────────── */
+.btn-spinner {
+    width: 16px; height: 16px;
+    border: 2.5px solid rgba(255,255,255,0.35);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: regSpin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+@keyframes regSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* ── Login link ───────────────────────────────────────────── */
+.reg-login-row {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    padding: 0 clamp(28px,5vw,52px) 20px;
+}
+.reg-login-row a {
+    color: var(--purple);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.reg-login-row a:hover { color: var(--purple-hover); text-decoration: underline; }
+
+/* ── Toastify overrides ───────────────────────────────────── */
+.toastify {
+    font-family: var(--font-primary);
+    border-radius: 12px;
+    font-size: 0.93rem;
+    font-weight: 500;
+    padding: 12px 20px;
+}
+
+/* Error toast — needs !important to override Toastify's inline style="background:transparent" */
+.toast-error {
+    background: linear-gradient(135deg, #e53e5a, #ff6b81) !important;
+    box-shadow: 0 4px 24px rgba(229, 62, 90, 0.35) !important;
+    color: #fff !important;
+    border-radius: 12px !important;
+}
+
+/* Success toast */
+.toast-success {
+    background: linear-gradient(135deg, #7c3aed, #B571DE) !important;
+    box-shadow: 0 4px 24px rgba(181, 113, 222, 0.4) !important;
+    color: #fff !important;
+    border-radius: 12px !important;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 820px) {
+    /* Full-screen, no floating card — same as login */
+    .reg-page {
+        padding: 0;
+        align-items: stretch;
+    }
+
+    .reg-card {
+        flex-direction: column;
+        border-radius: 0;
+        height: auto;
+        min-height: 100svh;
+        box-shadow: none;
+        animation: none;
+    }
+
+    /* Panel izquierdo — franja superior */
+    .reg-left {
+        width: 100%;
+        min-height: 200px;
+        max-height: 240px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 24px 28px;
+    }
+    .reg-left-logo img { width: 100px; }
+    .reg-left-headline { font-size: 1.1rem; }
+    .reg-flower-right { bottom: -10%; right: -15%; height: 110%; opacity: 0.25; }
+    .reg-flower-left  { bottom: -15%; left: -12%; height: 130%; opacity: 0.4; }
+
+    /* Panel derecho — sin scroll interno, la página entera scrollea */
+    .reg-right { overflow: visible; flex: 1; }
+    .reg-sections-wrap {
+        overflow-y: visible;
+        max-height: none;
+        padding: 18px 24px;
+    }
+
+    .reg-progress-bar { padding: 18px 24px 0; }
+    .reg-progress-label { padding: 8px 24px 0; }
+    .reg-nav { padding: 14px 24px 20px; }
+    .reg-login-row { padding: 0 24px 20px; }
+}
+
+@media (max-width: 480px) {
+    .reg-left { max-height: 200px; padding: 18px 20px; }
+    .reg-left-logo img { width: 90px; }
+    .reg-left-steps { display: none; }
+    .reg-row { flex-direction: column; gap: 0; }
+    .reg-btn-prev { padding: 14px 18px; font-size: 0.82rem; }
+    .reg-sections-wrap { padding: 16px 20px; }
+    .reg-progress-bar { padding: 16px 20px 0; }
+    .reg-progress-label { padding: 6px 20px 0; }
+    .reg-nav { padding: 12px 20px 18px; }
+    .reg-login-row { padding: 0 20px 18px; }
+}
