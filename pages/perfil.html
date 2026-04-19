@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#B571DE">
+    <title>Vitalia | Mi Perfil</title>
+    <link rel="canonical" href="https://vitalia-selfcare.vercel.app/perfil">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/core/variables.css?v=20260420">
+    <link rel="stylesheet" href="/assets/css/core/layout.css?v=20260420">
+    <link rel="stylesheet" href="/assets/css/core/utilities.css?v=20260420">
+    <link rel="stylesheet" href="/assets/css/core/common.css?v=20260420">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Auth: protección de ruta -->
+    <script src="/assets/js/core/router.js?v=20260420"></script>
+    <script src="/assets/js/core/main.js?v=20260420" defer></script>
+    <script type="module" src="/assets/js/auth/firebase.js?v=20260420"></script>
+    <script type="module" src="/assets/js/auth/auth-state.js?v=20260420"></script>
+
+    <link rel="icon" href="/assets/favicons/vitalia-favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="/assets/favicons/loader-vitalia.svg" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/favicons/loader-vitalia.svg">
+
+    <meta name="description" content="Gestiona tu perfil y preferencias en Vitalia.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <style>
+        /* ── Profile page styles ── */
+        .profile-page {
+            min-height: 100vh;
+            background: var(--bg-main, #f8f7ff);
+            padding-top: 90px; /* account for fixed header */
+        }
+
+        .profile-container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 2.5rem 1.25rem 4rem;
+        }
+
+        /* Hero */
+        .profile-hero {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background: linear-gradient(135deg, var(--primary, #B571DE), #80CACD);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            color: #fff;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-hero::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .profile-hero-avatar {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+            border: 3px solid rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 0;
+        }
+
+        .profile-hero-info h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 4px;
+            line-height: 1.2;
+        }
+
+        .profile-hero-email {
+            font-size: 0.875rem;
+            opacity: 0.85;
+            margin: 0;
+        }
+
+        .profile-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Cards */
+        .profile-card {
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.07);
+            padding: 1.75rem 2rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        }
+
+        .profile-card-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--primary, #B571DE);
+            margin: 0 0 1.25rem;
+        }
+
+        .profile-field {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .profile-field:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .profile-field-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(181, 113, 222, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary, #B571DE);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .profile-field-content {
+            flex: 1;
+        }
+
+        .profile-field-label {
+            font-size: 0.775rem;
+            color: #888;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .profile-field-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary, #1a1a2e);
+        }
+
+        /* Skeleton loaders */
+        .profile-skeleton {
+            height: 18px;
+            border-radius: 6px;
+            background: linear-gradient(90deg, #f0eff8 25%, #e6e4f5 50%, #f0eff8 75%);
+            background-size: 200% 100%;
+            animation: skeleton-shimmer 1.4s ease-in-out infinite;
+            width: 60%;
+        }
+
+        .profile-skeleton.wide { width: 85%; }
+
+        @keyframes skeleton-shimmer {
+            0%   { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Preferences tags */
+        .profile-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .profile-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 0.775rem;
+            font-weight: 500;
+            background: rgba(181, 113, 222, 0.1);
+            color: var(--primary, #B571DE);
+            border: 1px solid rgba(181, 113, 222, 0.2);
+        }
+
+        /* Actions */
+        .profile-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .profile-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 20px;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .profile-btn-primary {
+            background: var(--primary, #B571DE);
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(181, 113, 222, 0.35);
+        }
+
+        .profile-btn-primary:hover {
+            background: var(--primary-dark, #9b55c8);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 16px rgba(181, 113, 222, 0.5);
+        }
+
+        .profile-btn-outline {
+            background: transparent;
+            color: #e03e3e;
+            border: 1.5px solid #e03e3e;
+        }
+
+        .profile-btn-outline:hover {
+            background: rgba(224, 62, 62, 0.06);
+        }
+
+        /* Error state */
+        .profile-error {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #888;
+        }
+
+        .profile-error i {
+            font-size: 2.5rem;
+            color: var(--primary, #B571DE);
+            margin-bottom: 1rem;
+        }
+
+        /* Helpers */
+        .text-muted { color: #999; font-style: italic; }
+
+        @media (max-width: 600px) {
+            .profile-hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+
+            .profile-card {
+                padding: 1.25rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Pantalla de carga -->
+    <div id="loader" class="loader-container">
+        <img src="/assets/favicons/loader-vitalia.svg" alt="" aria-hidden="true" class="loader-logo">
+    </div>
+
+    <div id="header-placeholder"></div>
+
+    <main class="profile-page" id="main-content">
+        <div class="profile-container">
+
+            <!-- Hero -->
+            <div class="profile-hero" id="profile-hero">
+                <div class="profile-hero-avatar" id="profile-avatar">?</div>
+                <div class="profile-hero-info">
+                    <h1 id="profile-display-name">
+                        <span class="profile-skeleton wide"></span>
+                    </h1>
+                    <p class="profile-hero-email" id="profile-email">
+                        <span class="profile-skeleton"></span>
+                    </p>
+                    <div class="profile-hero-badge">
+                        <i class="fa-solid fa-leaf"></i>
+                        Miembro Vitalia
+                    </div>
+                </div>
+            </div>
+
+            <!-- Datos personales -->
+            <div class="profile-card">
+                <p class="profile-card-title"><i class="fa-solid fa-user" style="margin-right:6px"></i>Datos personales</p>
+
+                <div class="profile-field">
+                    <div class="profile-field-icon"><i class="fa-solid fa-id-card"></i></div>
+                    <div class="profile-field-content">
+                        <div class="profile-field-label">Nombre completo</div>
+                        <div class="profile-field-value" id="field-fullname"><span class="profile-skeleton"></span></div>
+                    </div>
+                </div>
+
+                <div class="profile-field">
+                    <div class="profile-field-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="profile-field-content">
+                        <div class="profile-field-label">Correo electrónico</div>
+                        <div class="profile-field-value" id="field-email"><span class="profile-skeleton"></span></div>
+                    </div>
+                </div>
+
+                <div class="profile-field">
+                    <div class="profile-field-icon"><i class="fa-solid fa-earth-americas"></i></div>
+                    <div class="profile-field-content">
+                        <div class="profile-field-label">País</div>
+                        <div class="profile-field-value" id="field-country"><span class="profile-skeleton"></span></div>
+                    </div>
+                </div>
+
+                <div class="profile-field">
+                    <div class="profile-field-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <div class="profile-field-content">
+                        <div class="profile-field-label">Miembro desde</div>
+                        <div class="profile-field-value" id="field-created"><span class="profile-skeleton"></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferencias de bienestar -->
+            <div class="profile-card">
+                <p class="profile-card-title"><i class="fa-solid fa-heart-pulse" style="margin-right:6px"></i>Preferencias de bienestar</p>
+
+                <div class="profile-field">
+                    <div class="profile-field-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <div class="profile-field-content">
+                        <div class="profile-field-label">Actividad física</div>
+                        <div class="profile-field-value" id="field-activity"><span class="profile-skeleton"></span></div>
+                    </div>
+                </div>
+
+                <div class="profile-field">
+                    <div class="profile-field-icon"><i class="fa-solid fa-bowl-rice"></i></div>
+                    <div class="profile-field-content">
+                        <div class="profile-field-label">Tipo de dieta</div>
+                        <div class="profile-field-value" id="field-diet"><span class="profile-skeleton"></span></div>
+                    </div>
+                </div>
+
+                <div class="profile-field">
+                    <div class="profile-field-icon"><i class="fa-solid fa-moon"></i></div>
+                    <div class="profile-field-content">
+                        <div class="profile-field-label">Calidad de sueño</div>
+                        <div class="profile-field-value" id="field-sleep"><span class="profile-skeleton"></span></div>
+                    </div>
+                </div>
+
+                <div class="profile-field">
+                    <div class="profile-field-icon"><i class="fa-solid fa-brain"></i></div>
+                    <div class="profile-field-content">
+                        <div class="profile-field-label">Nivel de estrés</div>
+                        <div class="profile-field-value" id="field-stress"><span class="profile-skeleton"></span></div>
+                    </div>
+                </div>
+
+                <div class="profile-field">
+                    <div class="profile-field-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="profile-field-content">
+                        <div class="profile-field-label">Objetivos de bienestar</div>
+                        <div class="profile-tags" id="field-goals"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acciones -->
+            <div class="profile-card">
+                <p class="profile-card-title"><i class="fa-solid fa-gear" style="margin-right:6px"></i>Cuenta</p>
+                <div class="profile-actions">
+                    <a href="/mi-espacio" class="profile-btn profile-btn-primary">
+                        <i class="fa-solid fa-table-cells-large"></i>
+                        Ir a mi espacio
+                    </a>
+                    <button class="profile-btn profile-btn-outline" id="profile-logout-btn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Cerrar sesión
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/assets/js/core/load-components.js?v=20260420"></script>
+    <script type="module" src="/assets/js/pages/perfil.js?v=20260420"></script>
+
+</body>
+
+</html>
