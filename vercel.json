@@ -9,7 +9,11 @@
             "destination": "/pages/mi-espacio.html"
         },
         {
-            "source": "/formulario",
+            "source": "/iniciar-sesion",
+            "destination": "/pages/login.html"
+        },
+        {
+            "source": "/crear-cuenta",
             "destination": "/pages/form.html"
         },
         {

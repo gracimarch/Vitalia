@@ -15,9 +15,10 @@ function rewriteLinksForLocal(html) {
     // Map: clean-URL href fragment → local .html path
     // Handles both plain hrefs and anchor-suffixed hrefs (e.g. /mi-espacio#lecturas)
     const rewrites = [
-        ['/mi-espacio', '/pages/mi-espacio.html'],
-        ['/blog',       '/pages/blog.html'],
-        ['/formulario', '/pages/form.html'],
+        ['/mi-espacio',    '/pages/mi-espacio.html'],
+        ['/blog',          '/pages/blog.html'],
+        ['/iniciar-sesion', '/pages/login.html'],
+        ['/crear-cuenta',  '/pages/form.html'],
     ];
 
     rewrites.forEach(([from, to]) => {

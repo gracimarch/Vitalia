@@ -13,12 +13,13 @@
     'use strict';
 
     var ROUTE_MAP = {
-        'lecturas':   '/pages/lectura.html',
-        'dietas':     '/pages/dieta.html',
-        'rutinas':    '/pages/rutina.html',
-        'blog':       '/pages/blog.html',
-        'mi-espacio': '/pages/mi-espacio.html',
-        'formulario': '/pages/form.html'
+        'lecturas':     '/pages/lectura.html',
+        'dietas':       '/pages/dieta.html',
+        'rutinas':      '/pages/rutina.html',
+        'blog':         '/pages/blog.html',
+        'mi-espacio':   '/pages/mi-espacio.html',
+        'iniciar-sesion': '/pages/login.html',
+        'crear-cuenta': '/pages/form.html'
     };
 
     var path  = window.location.pathname;
