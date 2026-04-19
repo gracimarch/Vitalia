@@ -25,7 +25,8 @@ window.VitaliaRouter = (function () {
         'blog': '/pages/blog.html',
         'mi-espacio': '/pages/mi-espacio.html',
         'iniciar-sesion': '/pages/login.html',
-        'crear-cuenta': '/pages/form.html'
+        'crear-cuenta': '/pages/form.html',
+        'perfil': '/pages/perfil.html'
     };
 
     /**

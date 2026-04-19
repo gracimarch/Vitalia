@@ -27,6 +27,10 @@
         {
             "source": "/rutinas/:slug",
             "destination": "/pages/rutina.html"
+        },
+        {
+            "source": "/perfil",
+            "destination": "/pages/perfil.html"
         }
     ],
     "headers": [

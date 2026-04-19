@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+        { "source": "/blog",              "destination": "/pages/blog.html" },
+        { "source": "/mi-espacio",        "destination": "/pages/mi-espacio.html" },
+        { "source": "/iniciar-sesion",    "destination": "/pages/login.html" },
+        { "source": "/crear-cuenta",      "destination": "/pages/form.html" },
+        { "source": "/perfil",            "destination": "/pages/perfil.html" },
+        { "source": "/lecturas/:slug",    "destination": "/pages/lectura.html" },
+        { "source": "/dietas/:slug",      "destination": "/pages/dieta.html" },
+        { "source": "/rutinas/:slug",     "destination": "/pages/rutina.html" }
+    ]
+}
