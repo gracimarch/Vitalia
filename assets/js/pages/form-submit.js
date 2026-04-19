@@ -5,7 +5,14 @@ import { showToast } from './form-validation.js';
 
 const API_BASE_URL = "https://vitalia-core-api.onrender.com";
 
+let isSubmitting = false;
+
 export async function handleSubmit() {
+    if (isSubmitting) return;
+
+    const submitBtn = document.querySelector('.send-btn');
+    const originalBtnText = submitBtn ? submitBtn.textContent : '';
+
     const email = $('#email').val();
     const password = $('#password').val();
     const confirmPassword = $('#confirmPassword').val();
@@ -15,6 +22,16 @@ export async function handleSubmit() {
         return;
     }
 
+    // --- Loading state ON ---
+    isSubmitting = true;
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+            <span class="btn-spinner"></span>
+            Creando tu cuenta...
+        `;
+    }
+
     try {
         // Registrar usuario en Firebase Auth
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -22,6 +39,7 @@ export async function handleSubmit() {
 
         if (!user || !user.uid) {
             showToast("Error al obtener la información del usuario.", "error");
+            resetBtn(submitBtn, originalBtnText);
             return;
         }
 
@@ -85,7 +103,8 @@ export async function handleSubmit() {
 
         // Redirigir después de guardar en Firestore
         setTimeout(() => {
-            window.location.href = "../mi-espacio.html";
+            const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            window.location.href = isLocal ? '/pages/mi-espacio.html' : '/mi-espacio';
         }, 1500);
 
     } catch (error) {
@@ -95,9 +114,18 @@ export async function handleSubmit() {
         if (error.code === 'auth/email-already-in-use') {
             errorMsg = "El correo electrónico ya está en uso.";
         } else if (error.code === 'auth/weak-password') {
-            errorMsg = "La contraseña es muy débil.";
+            errorMsg = "La contraseña debe tener al menos 6 caracteres.";
         }
 
-        showToast("Error al registrar usuario: " + errorMsg, "error");
+        showToast("Error al registrar: " + errorMsg, "error");
+        resetBtn(submitBtn, originalBtnText);
+    }
+}
+
+function resetBtn(btn, text) {
+    isSubmitting = false;
+    if (btn) {
+        btn.disabled = false;
+        btn.textContent = text;
     }
 }
