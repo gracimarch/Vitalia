@@ -13,9 +13,19 @@ export function sanitizeInput(str) {
 }
 
 export function showToast(message, type = "error") {
+    // Limitar a un máximo de 3 toasts en pantalla a la vez
+    const existingToasts = document.querySelectorAll('.toastify');
+    if (existingToasts.length >= 3) {
+        // Eliminamos los más antiguos para dejar espacio (nos quedamos máximo con 2 antes de agregar uno nuevo)
+        for (let i = 0; i <= existingToasts.length - 3; i++) {
+            existingToasts[i].remove();
+        }
+    }
+
     Toastify({
         text: message,
         duration: 3000,
+        close: true,
         gravity: "top",
         position: "center",
         stopOnFocus: true,
@@ -180,14 +190,12 @@ function validateStep5() {
 }
 
 export function validateSection(index) {
-    // // TEMPORARILY DISABLED FOR UI TESTING
-    // switch (index) {
-    //     case 0: return validateStep1();
-    //     case 1: return validateStep2();
-    //     case 2: return validateStep3();
-    //     case 3: return validateStep4();
-    //     case 4: return validateStep5();
-    //     default: return true;
-    // }
-    return true;
+    switch (index) {
+        case 0: return validateStep1();
+        case 1: return validateStep2();
+        case 2: return validateStep3();
+        case 3: return validateStep4();
+        case 4: return validateStep5();
+        default: return true;
+    }
 }

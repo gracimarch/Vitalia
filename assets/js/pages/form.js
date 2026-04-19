@@ -100,6 +100,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         updateButtons();
+
+        // Sync left panel dots + progress bar
+        if (typeof window.updateRegUI === 'function') {
+            window.updateRegUI(index, sections.length);
+        }
     }
 
     let highestStep = 0;
@@ -188,25 +193,17 @@ document.addEventListener("DOMContentLoaded", function () {
     otrosEspecificar.disabled = true;
 
     // --- FORM SUBMIT INTERCEPTION ---
+    // Single handler on form submit (avoids double-fire with a separate click listener)
     const form = document.getElementById('myForm');
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             if (validateSection(sections.length - 1)) {
                 handleSubmit();
-            } else {
-                e.stopImmediatePropagation();
-                return false;
             }
         });
     }
 
-    sendButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (validateSection(currentStep)) {
-            handleSubmit();
-        } else {
-            e.stopPropagation();
-        }
-    });
+    // sendButton is type="submit" inside the form — no extra click listener needed.
+    // Clicking it triggers the form's submit event above.
 });

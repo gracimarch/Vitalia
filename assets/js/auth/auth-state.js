@@ -14,14 +14,25 @@ export const getUserSession = () => {
 document.addEventListener('DOMContentLoaded', () => {
     onAuthStateChanged(auth, (user) => {
         const currentPath = window.location.pathname.replace(/\/$/, "");
-        
-        // Verifica si estamos en la ruta protegida y no hay sesión activa
+        const isLocal = (typeof VitaliaRouter !== 'undefined') ? VitaliaRouter.isLocal() :
+            (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+
+        // Rutas protegidas — redirige a login si no hay sesión
         const protectedRoutes = ['/mi-espacio', '/pages/mi-espacio.html'];
         const isProtectedRoute = protectedRoutes.some(route => currentPath.includes(route));
 
         if (!user && isProtectedRoute) {
-            const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-            window.location.href = isLocal ? '/pages/login.html' : '/login';
+            window.location.href = isLocal ? '/pages/login.html' : '/iniciar-sesion';
+            return;
+        }
+
+        // Rutas de auth — redirige a mi-espacio si ya hay sesión activa
+        const authOnlyRoutes = ['/iniciar-sesion', '/pages/login.html', '/crear-cuenta', '/pages/form.html'];
+        const isAuthOnlyRoute = authOnlyRoutes.some(route => currentPath.includes(route));
+
+        if (user && isAuthOnlyRoute) {
+            window.location.href = isLocal ? '/pages/mi-espacio.html' : '/mi-espacio';
+            return;
         }
 
         // Manejar visibilidad de botones del header (que carga asíncronamente)
