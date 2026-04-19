@@ -21,9 +21,28 @@
     <link href="/assets/css/core/common.css?v=20260323" rel="stylesheet">
     <script src="/assets/js/core/main.js?v=20260323" defer></script>
 
+    <!-- Auth: detectar estado de sesión en todas las páginas (incluido index) -->
+    <script src="/assets/js/core/router.js?v=20260323"></script>
+    <script type="module" src="/assets/js/auth/firebase.js?v=20260323"></script>
+    <script type="module" src="/assets/js/auth/auth-state.js?v=20260323"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="stylesheet" href="/assets/css/pages/landingstyles.css?v=20260323">
+
+    <!-- Critical: prevent header flash on landing page load -->
+    <style>
+        .page-landing .header {
+            background: transparent !important;
+            border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+            box-shadow: none !important;
+        }
+        .page-landing .header.header-scrolled {
+            background: rgba(254, 251, 243, 0.88) !important;
+            border-bottom-color: rgba(0, 0, 0, 0.06) !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04) !important;
+        }
+    </style>
 
     <link rel="icon" href="/assets/favicons/vitalia-favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="/assets/favicons/loader-vitalia.svg" type="image/png">
@@ -59,7 +78,7 @@
 
 </head>
 
-<body>
+<body class="page-landing">
     <!-- Pantalla de carga -->
     <div id="loader" class="loader-container">
         <img src="/assets/favicons/loader-vitalia.svg" alt="" aria-hidden="true" class="loader-logo">
