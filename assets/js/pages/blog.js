@@ -1,18 +1,32 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    // Show skeleton loaders while data loads
+    ['productividad-list', 'ejercicios-list', 'alimentacion-list', 'salud-mental-list'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = `
+            <div class="blog-skeleton-card"></div>
+            <div class="blog-skeleton-card"></div>
+            <div class="blog-skeleton-card"></div>
+        `;
+    });
+
     try {
         const [lecturasRes, dietasRes] = await Promise.all([
             fetch('/assets/data/lecturas.json'),
             fetch('/assets/data/dietas.json')
         ]);
 
-        const lecturasData = await lecturasRes.json();
-        const dietasData = await dietasRes.json();
+        if (!lecturasRes.ok) throw new Error('No se pudo cargar lecturas.json');
 
-        // Categorize Data
-        const productivityItems = lecturasData.lecturas.filter(l => (l.category || '').toLowerCase() === 'productividad');
-        const mentalHealthItems = lecturasData.lecturas.filter(l => (l.category || '').toLowerCase() === 'salud mental y bienestar');
-        const nutritionItems = lecturasData.lecturas.filter(l => (l.category || '').toLowerCase() === 'hábitos alimenticios');
-        const fitnessItems = lecturasData.lecturas.filter(l => (l.category || '').toLowerCase() === 'actividad física y movilidad');
+        const lecturasData = await lecturasRes.json();
+
+        // ── FIX: normalizar categoría para comparación case-insensitive ──
+        const normalize = (str) => (str || '').toLowerCase()
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+
+        const productivityItems  = lecturasData.lecturas.filter(l => normalize(l.category) === 'productividad');
+        const mentalHealthItems  = lecturasData.lecturas.filter(l => normalize(l.category) === 'salud mental y bienestar');
+        const nutritionItems     = lecturasData.lecturas.filter(l => normalize(l.category) === 'habitos alimenticios');
+        const fitnessItems       = lecturasData.lecturas.filter(l => normalize(l.category) === 'actividad fisica y movilidad');
 
         // Initialize Sections
         initSection('productividad-list', productivityItems, 'productividad');
@@ -28,6 +42,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     } catch (error) {
         console.error('Error loading blog content:', error);
+        // Show error state in all sections
+        ['productividad-list', 'ejercicios-list', 'alimentacion-list', 'salud-mental-list'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.innerHTML = `
+                <div class="blog-empty-state">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <p>No se pudo cargar el contenido. Intenta recargar la página.</p>
+                </div>
+            `;
+        });
     }
 });
 
@@ -37,6 +61,19 @@ function initSection(containerId, items, stylePrefix) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
+    // ── Limpiar skeletons antes de renderizar ──
+    container.innerHTML = '';
+
+    // Si no hay artículos en esta categoría, mostrar mensaje
+    if (!items || items.length === 0) {
+        container.innerHTML = `
+            <div class="blog-empty-state" style="grid-column:1/-1">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <p>No hay artículos disponibles en esta categoría aún.</p>
+            </div>`;
+        return;
+    }
+
     let renderedCount = 0;
 
     const collapse = () => {
@@ -44,21 +81,15 @@ function initSection(containerId, items, stylePrefix) {
         renderedCount = 0;
         renderBatch();
 
-        // Scroll back to container with some offset for header
         const headerOffset = 100;
         const elementPosition = container.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-        });
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     };
 
     const renderBatch = () => {
         const batch = items.slice(renderedCount, renderedCount + BATCH_SIZE);
 
-        // Append items
         if (batch.length > 0) {
             batch.forEach((item, index) => {
                 const globalIndex = renderedCount + index;
@@ -68,23 +99,18 @@ function initSection(containerId, items, stylePrefix) {
             renderedCount += batch.length;
         }
 
-        // Manage Button
         let btn = container.parentNode.querySelector('.load-more-btn');
 
-        // Check if we still have items to load
         if (renderedCount < items.length) {
             if (!btn) {
                 btn = document.createElement('button');
                 btn.className = `load-more-btn btn-${stylePrefix}`;
-                // Insert after the container
                 container.parentNode.insertBefore(btn, container.nextSibling);
             }
             btn.textContent = 'Ver más';
             btn.onclick = renderBatch;
         } else {
-            // All items loaded
             if (items.length > BATCH_SIZE) {
-                // If we have more items than the initial batch, show "See Less"
                 if (!btn) {
                     btn = document.createElement('button');
                     btn.className = `load-more-btn btn-${stylePrefix}`;
@@ -93,7 +119,6 @@ function initSection(containerId, items, stylePrefix) {
                 btn.textContent = 'Ver menos';
                 btn.onclick = collapse;
             } else {
-                // If total items <= BATCH_SIZE, no button needed
                 if (btn) btn.remove();
             }
         }

@@ -845,3 +845,42 @@ section+.reading {
         font-size: 0.9rem;
     }
 }
+
+/* =========================================
+   8. SKELETON LOADERS & EMPTY STATES
+   ========================================= */
+
+.blog-skeleton-card {
+    border-radius: 20px;
+    min-height: 220px;
+    background: linear-gradient(90deg, #ede9f5 25%, #e0d9f0 50%, #ede9f5 75%);
+    background-size: 200% 100%;
+    animation: blog-skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes blog-skeleton-shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.blog-empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3.5rem 1rem;
+    color: var(--text-muted, #888);
+}
+
+.blog-empty-state i {
+    font-size: 2rem;
+    opacity: 0.4;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.blog-empty-state p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    color: var(--text-muted, #888);
+    opacity: 0.8;
+}
