@@ -27,12 +27,6 @@ __pycache__/
 venv/
 .venv/
 
-# ── Scripts de ejecución única (data fixtures) ───────
-fix_recipes.py
-transform_recetas.py
-test.py
-test.js
-
 # ── Editores ─────────────────────────────────────────
 .vscode/
 .idea/
