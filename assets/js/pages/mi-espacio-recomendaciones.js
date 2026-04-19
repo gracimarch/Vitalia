@@ -83,7 +83,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (btn) {
                 btn.addEventListener('click', async () => {
                     btn.disabled = true;
-                    btn.textContent = 'Generando con IA... (puede tardar)';
+                    btn.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi-arrow-up-right" style="margin-right: 8px; animation: spin 1s linear infinite;">
+                            <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/>
+                        </svg> Generando con IA...`;
+                    msg.innerHTML = '⏳ El servidor de IA se está activando, esto puede tardar <strong>hasta 60 segundos</strong> la primera vez. Espera un momento...';
+                    msg.style.color = '#888';
+
                     try {
                         console.log("Solicitando score a backend para uid:", user.uid);
                         const res = await fetch('https://vitalia-core-api.onrender.com/api/v1/scores/generate', {
@@ -93,18 +99,35 @@ document.addEventListener('DOMContentLoaded', async () => {
                         });
                         console.log("Respuesta de backend:", res.status);
                         if (res.ok) {
-                            msg.textContent = '¡Recomendaciones generadas! Recargando...';
+                            msg.textContent = '✅ ¡Recomendaciones generadas! Recargando tu espacio...';
                             msg.style.color = 'var(--primary)';
-                            setTimeout(() => window.location.reload(), 1500);
+                            // Polling: verificar cada 4s hasta que el doc exista en Firestore
+                            let attempts = 0;
+                            const pollInterval = setInterval(async () => {
+                                attempts++;
+                                try {
+                                    const checkSnap = await getDoc(doc(db, "scores", user.uid));
+                                    if (checkSnap.exists()) {
+                                        clearInterval(pollInterval);
+                                        window.location.reload();
+                                    } else if (attempts >= 10) {
+                                        clearInterval(pollInterval);
+                                        window.location.reload();
+                                    }
+                                } catch (_) { clearInterval(pollInterval); window.location.reload(); }
+                            }, 4000);
                         } else {
                             throw new Error('Fallo en la API, status: ' + res.status);
                         }
                     } catch (err) {
                         console.error("Error al generar recomendaciones:", err);
-                        msg.textContent = 'Ocurrió un error de conexión con la IA. Intenta nuevamente.';
+                        msg.textContent = 'Ocurrió un error de conexión. Intenta de nuevo en unos segundos.';
                         msg.style.color = 'red';
                         btn.disabled = false;
-                        btn.textContent = 'Generar mis recomendaciones de IA';
+                        btn.innerHTML = `
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi-arrow-up-right" style="margin-right: 8px;">
+                                <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/>
+                            </svg> Generar mis recomendaciones de IA`;
                     }
                 });
             }
