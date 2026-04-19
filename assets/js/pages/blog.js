@@ -1,14 +1,12 @@
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        const [lecturasRes, dietasRes, rutinasRes] = await Promise.all([
+        const [lecturasRes, dietasRes] = await Promise.all([
             fetch('/assets/data/lecturas.json'),
-            fetch('/assets/data/dietas.json'),
-            fetch('/assets/data/rutinas.json')
+            fetch('/assets/data/dietas.json')
         ]);
 
         const lecturasData = await lecturasRes.json();
         const dietasData = await dietasRes.json();
-        const rutinasData = await rutinasRes.json();
 
         // Categorize Data
         const productivityItems = lecturasData.lecturas.filter(l => (l.category || '').toLowerCase() === 'productividad');
