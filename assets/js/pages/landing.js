@@ -21,7 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
             window.addEventListener('scroll', checkHeaderVisibility);
 
             function checkHeaderVisibility() {
-                const triggerHeight = window.innerHeight - 50; // Buffer
+                // Dynamically calculate threshold based on hero section height if present
+                const hero = document.querySelector('.welcome');
+                let triggerHeight = window.innerHeight * 0.15; // default fallback
+                if (hero) {
+                    triggerHeight = hero.offsetHeight - 80; // trigger just before hero ends
+                }
+
                 if (window.scrollY < triggerHeight) {
                     header.classList.remove('header-scrolled');
                 } else {
@@ -41,13 +47,18 @@ document.addEventListener('DOMContentLoaded', function () {
         // Fallback if placeholder doesn't exist (unlikely)
         const header = document.querySelector('.header');
         if (header) {
+            const getFallbackTrigger = () => {
+                const hero = document.querySelector('.welcome');
+                return hero ? hero.offsetHeight - 80 : window.innerHeight * 0.15;
+            };
+
             // Check immediately
-            if (window.scrollY >= window.innerHeight - 50) {
+            if (window.scrollY >= getFallbackTrigger()) {
                 header.classList.add('header-scrolled');
             }
 
             window.addEventListener('scroll', () => {
-                if (window.scrollY < window.innerHeight - 50) {
+                if (window.scrollY < getFallbackTrigger()) {
                     header.classList.remove('header-scrolled');
                 } else {
                     header.classList.add('header-scrolled');

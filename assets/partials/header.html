@@ -1,54 +1,191 @@
-<header class="header">
+<header class="header" id="site-header">
     <a href="#main-content" class="skip-to-content">Saltar al contenido</a>
-    <div class="container" id="nav-header">
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="{{ROOT}}">
-                <img src="{{ROOT}}assets/images/ui/vitalia-logo.svg" alt="Vitalia Logo" class="logo" width="140"
-                    height="32">
+
+    <div class="header-inner">
+
+        <!-- ── LEFT: Logo ───────────────────────────────── -->
+        <a class="navbar-brand" href="{{ROOT}}" aria-label="Vitalia — Inicio">
+            <img src="{{ROOT}}assets/images/ui/vitalia-logo.svg" alt="Vitalia Logo" class="logo" width="130" height="30">
+        </a>
+
+        <!-- ── CENTER: Nav links ───────────────────────── -->
+        <nav class="header-nav" aria-label="Navegación principal">
+            <a class="header-nav-link" href="{{ROOT}}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Inicio
             </a>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <svg class="navbar-svg-icon navbar-rotate navbar-anim-x" viewBox="0 0 100 100" width="80">
-                    <path class="toggler-line top"
-                        d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
-                    <path class="toggler-line middle" d="m 70,50 h -40" />
-                    <path class="toggler-line bottom"
-                        d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
-                </svg>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item first-nav-item" id="first-nav-item">
-                        <a class="nav-link" href="{{ROOT}}">Acerca de</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ROOT}}blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ROOT}}mi-espacio">Mi espacio</a>
-                    </li>
-                </ul>
-                <div class="d-none d-lg-flex align-items-center">
-                    <a class="nav-link" href="{{ROOT}}login" id="nav-login-btn" style="display: none; font-weight: 500; margin-right: 15px;">Iniciar sesión</a>
-                    <a class="nav-link text-danger" href="#" id="nav-logout-btn" style="display: none; font-weight: 500; margin-right: 15px;">Cerrar sesión</a>
-                    <a class="nav-link premium-link" href="{{ROOT}}#premium">
-                        <img src="{{ROOT}}assets/images/ui/icono-corona.svg" alt="Premium" class="premium">
+            <a class="header-nav-link" href="{{ROOT}}blog">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                Blog
+            </a>
+            <!-- Mi espacio: siempre visible, comportamiento dinámico según auth -->
+            <a class="header-nav-link header-nav-link--espacio" href="{{ROOT}}mi-espacio" id="nav-mi-espacio-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18" class="espacio-icon"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+                Mi espacio
+            </a>
+        </nav>
+
+        <!-- ── RIGHT: Auth zone ─────────────────────────── -->
+        <div class="header-auth" id="header-auth">
+
+            <!-- Estado: NO logueado -->
+            <div id="nav-guest-btns" class="nav-guest-btns">
+                <a class="nav-login-link" href="{{ROOT}}iniciar-sesion" id="nav-login-btn">Iniciar sesión</a>
+                <a class="nav-btn-signup" href="{{ROOT}}crear-cuenta" id="nav-signup-btn">Crear cuenta</a>
+            </div>
+
+            <!-- Estado: Logueado — Avatar + Dropdown -->
+            <div id="nav-user-menu" class="nav-user-menu" style="display:none;">
+                <button class="nav-avatar-btn" id="nav-user-trigger" aria-expanded="false" aria-haspopup="true" aria-label="Menú de usuario">
+                    <!-- Avatar inicial -->
+                    <span class="nav-avatar" id="nav-user-avatar">?</span>
+                    <!-- Badge corona premium (oculta por defecto) -->
+                    <span class="nav-avatar-crown" id="nav-avatar-crown" aria-label="Usuario premium" hidden>
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 19l2-7 4 4 4-7 4 7 4-4 2 7H2z"/></svg>
+                    </span>
+                </button>
+
+                <!-- Dropdown panel -->
+                <div class="nav-user-dropdown" id="nav-user-dropdown" role="menu" aria-label="Opciones de usuario">
+
+                    <!-- Header del dropdown: info del usuario -->
+                    <div class="nav-dropdown-header">
+                        <span class="nav-dropdown-avatar" id="nav-dropdown-avatar">?</span>
+                        <div class="nav-dropdown-info">
+                            <span class="nav-dropdown-name" id="nav-dropdown-name">Usuario</span>
+                            <span class="nav-dropdown-email" id="nav-dropdown-email">usuario@email.com</span>
+                        </div>
+                    </div>
+
+                    <div class="nav-dropdown-divider"></div>
+
+                    <!-- Items de navegación -->
+                    <a class="nav-dropdown-item" href="{{ROOT}}mi-espacio" role="menuitem">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+                        Mi espacio
                     </a>
-                </div>
-                <div class="d-lg-none">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ROOT}}login" id="nav-mobile-login-btn" style="display: none;">Iniciar sesión</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-danger" href="#" id="nav-mobile-logout-btn" style="display: none;">Cerrar sesión</a>
-                        </li>
-                        <li class="nav-item last-nav-item" id="last-nav-item">
-                            <a class="nav-link" href="{{ROOT}}#premium">Planes de suscripción</a>
-                        </li>
-                    </ul>
+                    <a class="nav-dropdown-item" href="{{ROOT}}perfil" role="menuitem">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        Configuración
+                    </a>
+
+                    <!-- Plan: cambia según estado premium (gestionado por JS) -->
+                    <a class="nav-dropdown-item nav-dropdown-item--plan" href="{{ROOT}}#premium" id="nav-dropdown-plan-link" role="menuitem">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="nav-plan-icon"><path d="M2 19l2-7 4 4 4-7 4 7 4-4 2 7H2z"/></svg>
+                        <span id="nav-dropdown-plan-label">Mejorar plan</span>
+                    </a>
+
+                    <div class="nav-dropdown-divider"></div>
+
+                    <button class="nav-dropdown-item nav-dropdown-item--danger" id="nav-logout-btn" role="menuitem">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                        Cerrar sesión
+                    </button>
                 </div>
             </div>
-        </nav>
+        </div>
+
+        <!-- ── HAMBURGER (mobile only) ──────────────────── -->
+        <button class="nav-hamburger" id="nav-hamburger" aria-expanded="false" aria-controls="nav-mobile-panel" aria-label="Abrir menú">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
     </div>
+
+    <!-- ══════════════════════════════════════════════
+         MOBILE PANEL (drawer lateral)
+         ══════════════════════════════════════════════ -->
+    <div class="nav-mobile-overlay" id="nav-mobile-overlay" aria-hidden="true"></div>
+
+    <aside class="nav-mobile-panel" id="nav-mobile-panel" aria-label="Menú de navegación móvil" aria-hidden="true">
+
+        <!-- Panel header -->
+        <div class="nav-mobile-panel-header">
+            <img src="{{ROOT}}assets/images/ui/vitalia-logo.svg" alt="Vitalia" class="nav-mobile-logo" width="110">
+            <button class="nav-mobile-close" id="nav-mobile-close" aria-label="Cerrar menú">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+
+        <!-- User info block (logueado) -->
+        <div class="nav-mobile-user-block" id="nav-mobile-user-block" style="display:none;">
+            <div class="nav-mobile-user-inner">
+                <div class="nav-mobile-avatar-wrap">
+                    <span class="nav-mobile-avatar" id="nav-mobile-avatar">?</span>
+                    <span class="nav-mobile-crown" id="nav-mobile-crown" hidden>
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 19l2-7 4 4 4-7 4 7 4-4 2 7H2z"/></svg>
+                    </span>
+                </div>
+                <div class="nav-mobile-user-info">
+                    <span class="nav-mobile-user-name" id="nav-mobile-name">Usuario</span>
+                    <span class="nav-mobile-user-email" id="nav-mobile-email">usuario@email.com</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guest buttons (no logueado) -->
+        <div class="nav-mobile-guest-block" id="nav-mobile-guest-block">
+            <a class="nav-mobile-btn nav-mobile-btn--primary" href="{{ROOT}}crear-cuenta">Crear cuenta</a>
+            <a class="nav-mobile-btn nav-mobile-btn--ghost" href="{{ROOT}}iniciar-sesion">Iniciar sesión</a>
+        </div>
+
+        <div class="nav-mobile-divider"></div>
+
+        <!-- Navigation links -->
+        <nav class="nav-mobile-nav" aria-label="Navegación móvil">
+            <a class="nav-mobile-link" href="{{ROOT}}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                Inicio
+            </a>
+            <a class="nav-mobile-link" href="{{ROOT}}blog">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                Blog
+            </a>
+            <a class="nav-mobile-link nav-mobile-link--espacio" href="{{ROOT}}mi-espacio" id="nav-mobile-espacio-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="espacio-icon"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+                Mi espacio
+            </a>
+        </nav>
+
+        <!-- User-only actions (logueado) -->
+        <div class="nav-mobile-user-actions" id="nav-mobile-user-actions" style="display:none;">
+            <div class="nav-mobile-divider"></div>
+            <a class="nav-mobile-link" href="{{ROOT}}perfil">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                Configuración
+            </a>
+            <a class="nav-mobile-link nav-mobile-link--plan" href="{{ROOT}}#premium" id="nav-mobile-plan-link">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="nav-plan-icon"><path d="M2 19l2-7 4 4 4-7 4 7 4-4 2 7H2z"/></svg>
+                <span id="nav-mobile-plan-label">Mejorar plan</span>
+            </a>
+            <button class="nav-mobile-link nav-mobile-link--danger" id="nav-mobile-logout-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                Cerrar sesión
+            </button>
+        </div>
+
+    </aside>
+
+    <!-- ══════════════════════════════════════════════
+         INTERSTICIAL "MI ESPACIO" (no logueado)
+         ══════════════════════════════════════════════ -->
+    <div class="espacio-interstitial" id="espacio-interstitial" aria-modal="true" role="dialog" aria-labelledby="espacio-interstitial-title" aria-hidden="true" style="display:none;">
+        <div class="espacio-interstitial-backdrop" id="espacio-interstitial-backdrop"></div>
+        <div class="espacio-interstitial-card">
+            <button class="espacio-interstitial-close" id="espacio-interstitial-close" aria-label="Cerrar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="espacio-interstitial-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h2 class="espacio-interstitial-title" id="espacio-interstitial-title">Tu espacio personalizado te espera</h2>
+            <p class="espacio-interstitial-desc">Accede a lecturas, rutinas de ejercicio, meditaciones y planes de alimentación diseñados especialmente para ti.</p>
+            <div class="espacio-interstitial-actions">
+                <a class="espacio-btn espacio-btn--primary" href="{{ROOT}}crear-cuenta">Crear cuenta gratis</a>
+                <a class="espacio-btn espacio-btn--ghost" href="{{ROOT}}iniciar-sesion">Ya tengo cuenta</a>
+            </div>
+        </div>
+    </div>
+
 </header>
