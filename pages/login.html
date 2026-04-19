@@ -6,98 +6,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#B571DE">
     <title>Iniciar Sesión en Vitalia | Tu Web de Bienestar</title>
-    <link rel="canonical" href="https://vitalia-selfcare.vercel.app/login">
+    <link rel="canonical" href="https://vitalia-selfcare.vercel.app/iniciar-sesion">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/core/variables.css?v=20260323">
-    <link rel="stylesheet" href="/assets/css/core/layout.css?v=20260323">
-    <link rel="stylesheet" href="/assets/css/core/utilities.css?v=20260323">
-    <link href="/assets/css/core/common.css?v=20260323" rel="stylesheet">
-    <script src="/assets/js/core/main.js?v=20260323" defer></script>
-    <script src="/assets/js/core/router.js?v=20260323"></script>
-    <link rel="stylesheet" type="text/css" href="/assets/css/vendor/toastify.css?v=20260323">
+    <!-- Core styles -->
+    <link rel="stylesheet" href="/assets/css/core/variables.css?v=20260420">
+    <link rel="stylesheet" href="/assets/css/core/layout.css?v=20260420">
+    <link rel="stylesheet" href="/assets/css/core/utilities.css?v=20260420">
+    <link rel="stylesheet" href="/assets/css/core/common.css?v=20260420">
 
-    <link rel="stylesheet" href="/assets/css/pages/formstyle.css?v=20260323">
-    <link rel="stylesheet" href="/assets/css/pages/landingstyles.css?v=20260323">
+    <!-- Page-specific style -->
+    <link rel="stylesheet" href="/assets/css/pages/loginstyle.css?v=20260420">
 
+    <!-- Vendor -->
+    <link rel="stylesheet" href="/assets/css/vendor/toastify.css?v=20260420">
+
+    <!-- Favicons -->
     <link rel="icon" href="/assets/favicons/vitalia-favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="/assets/favicons/loader-vitalia.svg" type="image/png">
     <link rel="apple-touch-icon" href="/assets/favicons/loader-vitalia.svg">
 
+    <!-- SEO -->
     <meta name="description" content="Inicia sesión en Vitalia y continúa con tu plan de bienestar personalizado.">
     <meta name="robots" content="noindex, nofollow">
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
-    <script type="module" src="/assets/js/auth/firebase.js?v=20260323"></script>
-    
-    <!-- Auth State Observer -->
-    <script type="module" src="/assets/js/auth/auth-state.js?v=20260323"></script>
+    <!-- Scripts -->
+    <script src="/assets/js/core/router.js?v=20260420"></script>
+    <script src="/assets/js/core/main.js?v=20260420" defer></script>
+    <script type="module" src="/assets/js/auth/firebase.js?v=20260420"></script>
+    <script type="module" src="/assets/js/auth/auth-state.js?v=20260420"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </head>
 
 <body>
 
-    <!-- Pantalla de carga -->
+    <!-- Loading screen -->
     <div id="loader" class="loader-container">
         <img src="/assets/favicons/loader-vitalia.svg" alt="" aria-hidden="true" class="loader-logo">
     </div>
 
-    <main class="page-container">
-        <div class="wrapper">
-            <div class="form-left-panel">
-                <div id="logo" class="logo-container">
+    <!-- ════════════════════════════════════════════
+         LOGIN PAGE
+         ════════════════════════════════════════════ -->
+    <main class="login-page">
+        <div class="login-card">
+
+            <!-- ── Left panel ─────────────────────────────── -->
+            <aside class="login-left" aria-hidden="true">
+
+                <!-- Noise overlay -->
+                <div class="login-left-noise"></div>
+
+                <!-- Flower decorations -->
+                <div class="login-left-flowers">
+                    <img src="/assets/images/hero/flor.webp"   class="login-flower login-flower-left"  alt="">
+                    <img src="/assets/images/hero/flores.webp" class="login-flower login-flower-right" alt="">
+                </div>
+
+                <!-- Logo -->
+                <div class="login-left-logo">
                     <a href="/">
-                        <img src="/assets/images/ui/vitalia-logo.svg" alt="Vitalia Logo" style="max-width: 150px;">
+                        <img src="/assets/images/ui/vitalia-logo.svg" alt="Vitalia — inicio">
                     </a>
                 </div>
-                <div id="liquid-container"></div>
-                <img src="/assets/images/hero/flor.webp" class="hero-flower flower-left" alt="" aria-hidden="true">
-                <img src="/assets/images/hero/flores.webp" class="hero-flower flower-right" alt="" aria-hidden="true">
-            </div>
-            <div class="form-right-panel">
-                <div class="formulario">
 
-                    <div id="title" class="title-container" style="margin-top: 2rem;">
-                        <h1>Bienvenido de nuevo</h1>
-                        <p>Inicia sesión para continuar tu transformación hacia el bienestar integral.</p>
-                    </div>
+                <!-- Copy -->
+                <div class="login-left-copy">
+                    <p class="login-left-quote">Tu espacio de bienestar</p>
+                    <h2 class="login-left-headline">
+                        Bienvenido de vuelta.<br>
+                        <em>Sigue cuidándote</em>.
+                    </h2>
 
-                    <div class="form-and-image">
-                        <form action="" id="loginForm">
-                            <section class="section active" id="section1">
-                                <div class="form-row-width">
-                                    <div class="form-holder">
-                                        <input type="email" placeholder="Correo electrónico" class="form-control" id="loginEmail" required>
-                                    </div>
-                                    <div class="form-holder">
-                                        <input type="password" placeholder="Contraseña" class="form-control" id="loginPassword" required>
-                                    </div>
-                                </div>
-                            </section>
-
-                            <div class="buttons" style="margin-top: 1rem;">
-                                <button type="submit" class="send-btn" id="loginBtn" style="width: 100%;">Iniciar Sesión</button>
-                            </div>
-                            
-                            <div style="text-align: center; margin-top: 2rem; color: #555;">
-                                <p>¿No tienes una cuenta aún? <br/> <a href="/formulario" style="color: var(--primary); text-decoration: underline; font-weight: bold;">Regístrate aquí</a></p>
-                            </div>
-                        </form>
+                    <div class="login-left-badges">
+                        <span class="wellness-badge">
+                            <!-- heart icon -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            Bienestar emocional
+                        </span>
+                        <span class="wellness-badge">
+                            <!-- sparkles icon -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+                            IA personalizada
+                        </span>
+                        <span class="wellness-badge">
+                            <!-- leaf icon -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 22c-.36 1 .53 1.93 1.46 1.54C13 21 17.5 16.5 17 8z"/></svg>
+                            Hábitos saludables
+                        </span>
                     </div>
                 </div>
-            </div>
+
+            </aside>
+
+            <!-- ── Right panel — Form ──────────────────────── -->
+            <section class="login-right">
+
+                <div class="login-form-header">
+                    <div class="login-eyebrow">
+                        <span class="login-eyebrow-dot"></span>
+                        Acceso seguro
+                    </div>
+                    <h1 class="login-title">Bienvenido de nuevo</h1>
+                    <p class="login-subtitle">
+                        Inicia sesión para continuar tu transformación<br>
+                        hacia el bienestar integral.
+                    </p>
+                </div>
+
+                <form id="loginForm" class="login-form" novalidate>
+
+                    <!-- Email -->
+                    <div class="login-field">
+                        <div class="login-input-wrap">
+                            <input
+                                type="email"
+                                id="loginEmail"
+                                class="login-input"
+                                placeholder=" "
+                                autocomplete="email"
+                                required
+                            >
+                            <label for="loginEmail">Correo electrónico</label>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="login-field">
+                        <div class="login-input-wrap">
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                class="login-input"
+                                placeholder=" "
+                                autocomplete="current-password"
+                                required
+                            >
+                            <label for="loginPassword">Contraseña</label>
+
+                            <!-- Toggle visibility -->
+                            <button
+                                type="button"
+                                class="login-toggle-pw"
+                                id="togglePasswordBtn"
+                                aria-label="Mostrar/ocultar contraseña"
+                                title="Mostrar contraseña"
+                            >
+                                <!-- eye icon -->
+                                <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Forgot password -->
+                    <div class="login-forgot">
+                        <a href="#" id="forgotPasswordLink">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="login-submit-wrap">
+                        <button type="submit" class="login-btn" id="loginBtn">
+                            Iniciar sesión
+                        </button>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="login-divider">o</div>
+
+                    <!-- Register link -->
+                    <p class="login-signup-row">
+                        ¿No tienes cuenta?&nbsp;
+                        <a href="/crear-cuenta">Regístrate gratis</a>
+                    </p>
+
+                </form>
+
+                <!-- Wellness reassurance strip 
+                <div class="login-wellness-strip">
+                    <div class="login-wellness-strip-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <p class="login-wellness-strip-text">
+                        <strong>Tu información está protegida.</strong>
+                        Usamos cifrado de extremo a extremo y nunca compartimos tus datos.
+                    </p>
+                </div>-->
+
+            </section>
         </div>
     </main>
 
-    <script type="module" src="/assets/js/auth/login.js?v=20260323"></script>
+    <!-- Auth scripts -->
+    <script type="module" src="/assets/js/auth/login.js?v=20260420"></script>
 
-    <!-- Three.js for Liquid Background -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-    <script src="/assets/js/effects/liquid-background.js?v=20260323"></script>
+    <!-- Password toggle micro-interaction -->
+    <script>
+        (function () {
+            const btn = document.getElementById('togglePasswordBtn');
+            const input = document.getElementById('loginPassword');
+            if (!btn || !input) return;
 
-    <!-- Importar Toastify -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+            const eyeOpen  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
+            const eyeClosed = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>`;
+
+            btn.addEventListener('click', function () {
+                const isPassword = input.type === 'password';
+                input.type  = isPassword ? 'text' : 'password';
+                btn.innerHTML = isPassword ? eyeClosed : eyeOpen;
+                btn.title     = isPassword ? 'Ocultar contraseña' : 'Mostrar contraseña';
+            });
+        })();
+    </script>
 
 </body>
 
