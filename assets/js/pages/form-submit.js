@@ -77,7 +77,8 @@ export async function handleSubmit() {
 
         // Generar recomendaciones personalizadas en el backend
         try {
-            await fetch(`${API_BASE_URL}/api/v1/scores/generate`, {
+            console.log("⏳ Solicitando generación de score en la API para:", user.uid);
+            const scoreRes = await fetch(`${API_BASE_URL}/api/v1/scores/generate`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -94,9 +95,19 @@ export async function handleSubmit() {
                     lifestyle: userData.lifestyle,
                 }),
             });
+            const scoreText = await scoreRes.text();
+            console.log("-----------------------------------------");
+            console.log("📡 DEBUGGING API REGISTER");
+            console.log("API Score Status:", scoreRes.status);
+            console.log("API Score Body:", scoreText);
+            console.log("-----------------------------------------");
+
+            if (!scoreRes.ok) {
+                console.warn("⚠️ La API devolvió error al intentar crear el score. Revisa tu backend.");
+            }
         } catch (scoreError) {
             // No bloqueamos el registro si falla la generación de score
-            console.warn("No se pudieron generar las recomendaciones:", scoreError);
+            console.warn("No se pudieron generar las recomendaciones (Error de RED o Timeout):", scoreError);
         }
 
         showToast("¡Registro completado! Entrando a tu espacio...", "success");
