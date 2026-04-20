@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // ── Actualiza el header cuando el partial ya esté inyectado ──
         const updateHeaderUI = () => {
             const guestBtns = document.getElementById('nav-guest-btns');
-            const userMenu  = document.getElementById('nav-user-menu');
+            const userMenu = document.getElementById('nav-user-menu');
 
             // Si el header aún no se ha inyectado, reintentar
             if (!guestBtns && !userMenu) return false;
@@ -71,14 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // — Determinar nombre de display —
                 const displayName = user.displayName || user.email || '';
-                const shortName   = displayName.includes('@')
+                const shortName = displayName.includes('@')
                     ? displayName.split('@')[0]
                     : displayName.split(' ')[0];
                 const initial = shortName.charAt(0).toUpperCase() || '?';
 
                 // ─── DESKTOP: ocultar guest, mostrar user menu ───
                 if (guestBtns) guestBtns.style.display = 'none';
-                if (userMenu)  userMenu.style.display  = 'flex';
+                if (userMenu) userMenu.style.display = 'flex';
 
                 // ─── DESKTOP: poblar avatar ───
                 const avatarEl = document.getElementById('nav-user-avatar');
@@ -88,27 +88,32 @@ document.addEventListener('DOMContentLoaded', () => {
                 const crownEl = document.getElementById('nav-avatar-crown');
                 if (crownEl) {
                     if (isPremium) crownEl.removeAttribute('hidden');
-                    else           crownEl.setAttribute('hidden', '');
+                    else crownEl.setAttribute('hidden', '');
                 }
 
                 // ─── DESKTOP: dropdown header (nombre + email) ───
                 const dropAvatarEl = document.getElementById('nav-dropdown-avatar');
-                const dropNameEl   = document.getElementById('nav-dropdown-name');
-                const dropEmailEl  = document.getElementById('nav-dropdown-email');
+                const dropNameEl = document.getElementById('nav-dropdown-name');
+                const dropEmailEl = document.getElementById('nav-dropdown-email');
                 if (dropAvatarEl) dropAvatarEl.textContent = initial;
-                if (dropNameEl)   dropNameEl.textContent   = shortName || user.email;
-                if (dropEmailEl)  dropEmailEl.textContent  = user.email;
+                if (dropNameEl) dropNameEl.textContent = shortName || user.email;
+                if (dropEmailEl) dropEmailEl.textContent = user.email;
 
                 // ─── DESKTOP: plan label en dropdown ───
                 const planLabelEl = document.getElementById('nav-dropdown-plan-label');
-                const planLinkEl  = document.getElementById('nav-dropdown-plan-link');
-                if (planLabelEl) planLabelEl.textContent = isPremium ? 'Mi plan 👑' : 'Mejorar plan 👑';
-                if (planLinkEl && isPremium) {
-                    planLinkEl.href = '/perfil'; // si es premium, va a su perfil de plan
+                const planLinkEl = document.getElementById('nav-dropdown-plan-link');
+                if (planLabelEl) planLabelEl.textContent = isPremium ? 'Mi plan' : 'Mejorar plan';
+                if (planLinkEl) {
+                    if (isPremium) {
+                        planLinkEl.href = '/perfil'; // si es premium, va a su perfil de plan
+                        planLinkEl.classList.add('is-premium');
+                    } else {
+                        planLinkEl.classList.remove('is-premium');
+                    }
                 }
 
                 // ─── DESKTOP: toggle dropdown ───
-                const trigger  = document.getElementById('nav-user-trigger');
+                const trigger = document.getElementById('nav-user-trigger');
                 const dropdown = document.getElementById('nav-user-dropdown');
                 if (trigger && dropdown && !trigger._vitaliaDropdown) {
                     trigger._vitaliaDropdown = true;
@@ -143,33 +148,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 // ─── MOBILE: user block visible, guest hidden ───
-                const mobileUserBlock    = document.getElementById('nav-mobile-user-block');
-                const mobileGuestBlock   = document.getElementById('nav-mobile-guest-block');
-                const mobileUserActions  = document.getElementById('nav-mobile-user-actions');
-                if (mobileUserBlock)   mobileUserBlock.style.display  = 'block';
-                if (mobileGuestBlock)  mobileGuestBlock.style.display = 'none';
+                const mobileUserBlock = document.getElementById('nav-mobile-user-block');
+                const mobileGuestBlock = document.getElementById('nav-mobile-guest-block');
+                const mobileUserActions = document.getElementById('nav-mobile-user-actions');
+                if (mobileUserBlock) mobileUserBlock.style.display = 'block';
+                if (mobileGuestBlock) mobileGuestBlock.style.display = 'none';
                 if (mobileUserActions) mobileUserActions.style.display = 'flex';
 
                 // ─── MOBILE: avatar + nombre + email ───
-                const mobileAvatar  = document.getElementById('nav-mobile-avatar');
-                const mobileName    = document.getElementById('nav-mobile-name');
-                const mobileEmail   = document.getElementById('nav-mobile-email');
+                const mobileAvatar = document.getElementById('nav-mobile-avatar');
+                const mobileName = document.getElementById('nav-mobile-name');
+                const mobileEmail = document.getElementById('nav-mobile-email');
                 if (mobileAvatar) mobileAvatar.textContent = initial;
-                if (mobileName)   mobileName.textContent   = shortName || user.email;
-                if (mobileEmail)  mobileEmail.textContent  = user.email;
+                if (mobileName) mobileName.textContent = shortName || user.email;
+                if (mobileEmail) mobileEmail.textContent = user.email;
 
                 // ─── MOBILE: badge corona ───
                 const mobileCrown = document.getElementById('nav-mobile-crown');
                 if (mobileCrown) {
                     if (isPremium) mobileCrown.removeAttribute('hidden');
-                    else           mobileCrown.setAttribute('hidden', '');
+                    else mobileCrown.setAttribute('hidden', '');
                 }
 
                 // ─── MOBILE: plan label ───
                 const mobilePlanLabel = document.getElementById('nav-mobile-plan-label');
-                const mobilePlanLink  = document.getElementById('nav-mobile-plan-link');
-                if (mobilePlanLabel) mobilePlanLabel.textContent = isPremium ? 'Mi plan 👑' : 'Mejorar plan 👑';
-                if (mobilePlanLink && isPremium) mobilePlanLink.href = '/perfil';
+                const mobilePlanLink = document.getElementById('nav-mobile-plan-link');
+                if (mobilePlanLabel) mobilePlanLabel.textContent = isPremium ? 'Mi plan 👑' : 'Mejorar plan';
+                if (mobilePlanLink) {
+                    if (isPremium) {
+                        mobilePlanLink.href = '/perfil';
+                        mobilePlanLink.classList.add('is-premium');
+                    } else {
+                        mobilePlanLink.classList.remove('is-premium');
+                    }
+                }
 
                 // ─── MOBILE: logout ───
                 const mobileLogoutBtn = document.getElementById('nav-mobile-logout-btn');
@@ -197,14 +209,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // — Desktop: mostrar guest, ocultar user menu —
                 if (guestBtns) guestBtns.style.display = 'flex';
-                if (userMenu)  userMenu.style.display  = 'none';
+                if (userMenu) userMenu.style.display = 'none';
 
                 // — Mobile: mostrar guest block, ocultar user block —
-                const mobileUserBlock    = document.getElementById('nav-mobile-user-block');
-                const mobileGuestBlock   = document.getElementById('nav-mobile-guest-block');
-                const mobileUserActions  = document.getElementById('nav-mobile-user-actions');
-                if (mobileUserBlock)   mobileUserBlock.style.display  = 'none';
-                if (mobileGuestBlock)  mobileGuestBlock.style.display = 'flex';
+                const mobileUserBlock = document.getElementById('nav-mobile-user-block');
+                const mobileGuestBlock = document.getElementById('nav-mobile-guest-block');
+                const mobileUserActions = document.getElementById('nav-mobile-user-actions');
+                if (mobileUserBlock) mobileUserBlock.style.display = 'none';
+                if (mobileGuestBlock) mobileGuestBlock.style.display = 'flex';
                 if (mobileUserActions) mobileUserActions.style.display = 'none';
 
                 // — "Mi espacio" → mostrar lock + intersticial en lugar de navegar —
@@ -248,16 +260,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ── Mobile panel (drawer) ──────────────────────────────────
 function initMobilePanel() {
-    const hamburger   = document.getElementById('nav-hamburger');
-    const panel       = document.getElementById('nav-mobile-panel');
-    const overlay     = document.getElementById('nav-mobile-overlay');
-    const closeBtn    = document.getElementById('nav-mobile-close');
+    const hamburger = document.getElementById('nav-hamburger');
+    const panel = document.getElementById('nav-mobile-panel');
+    const overlay = document.getElementById('nav-mobile-overlay');
+    const closeBtn = document.getElementById('nav-mobile-close');
     if (!hamburger || !panel || !overlay) return;
 
     // ★ KEY FIX: Move panel & overlay to <body> so their position:fixed
     //   is resolved relative to the VIEWPORT, not the header's bounding box.
     //   Without this, the panel height was constrained to the header's ~62px.
-    if (panel.parentElement !== document.body)   document.body.appendChild(panel);
+    if (panel.parentElement !== document.body) document.body.appendChild(panel);
     if (overlay.parentElement !== document.body) document.body.appendChild(overlay);
 
     function openPanel() {
@@ -291,7 +303,7 @@ function initMobilePanel() {
         isOpen ? closePanel() : openPanel();
     });
 
-    if (closeBtn)  closeBtn.addEventListener('click', closePanel);
+    if (closeBtn) closeBtn.addEventListener('click', closePanel);
     overlay.addEventListener('click', closePanel);
 
     // Close on Escape
@@ -311,8 +323,8 @@ function initMobilePanel() {
 // ── Intersticial "Mi espacio" (no logueado) ──────────────
 function initEspacioInterstitial() {
     const interstitial = document.getElementById('espacio-interstitial');
-    const backdrop     = document.getElementById('espacio-interstitial-backdrop');
-    const closeBtn     = document.getElementById('espacio-interstitial-close');
+    const backdrop = document.getElementById('espacio-interstitial-backdrop');
+    const closeBtn = document.getElementById('espacio-interstitial-close');
 
     if (!interstitial) return;
 
@@ -361,7 +373,7 @@ function initEspacioInterstitial() {
 
     // Close on backdrop / close button / Escape
     if (backdrop) backdrop.addEventListener('click', closeInterstitial);
-    if (closeBtn)  closeBtn.addEventListener('click', closeInterstitial);
+    if (closeBtn) closeBtn.addEventListener('click', closeInterstitial);
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && interstitial.classList.contains('is-open')) closeInterstitial();
     });

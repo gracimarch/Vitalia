@@ -1,4 +1,4 @@
-@import url('variables.css');
+@import url('../core/variables.css');
 
 .card-grid {
     display: grid;

@@ -558,6 +558,11 @@ body.loaded .loader-container {
 }
 
 /* Premium crown badge */
+.nav-avatar-crown[hidden],
+.nav-mobile-crown[hidden] {
+    display: none !important;
+}
+
 .nav-avatar-crown {
     position: absolute;
     top: -4px;
@@ -699,10 +704,14 @@ body.loaded .loader-container {
 
 .nav-dropdown-item--plan svg,
 .nav-plan-icon {
-    color: #e8a010;
     opacity: 1 !important;
     width: 16px;
     height: 16px;
+}
+
+.nav-dropdown-item--plan.is-premium svg,
+.is-premium .nav-plan-icon {
+    color: #e8a010;
 }
 
 .nav-dropdown-item--plan:hover {
@@ -1049,8 +1058,11 @@ body.loaded .loader-container {
 }
 
 .nav-mobile-link--plan svg {
-    color: #e8a010;
     opacity: 1;
+}
+
+.nav-mobile-link--plan.is-premium svg {
+    color: #e8a010;
 }
 
 /* Danger */
