@@ -95,7 +95,8 @@
     transition: all 0.3s ease;
 }
 
-.btn i {
+.btn i,
+.btn svg {
     margin-right: 8px;
     font-size: 1rem;
     vertical-align: middle;
