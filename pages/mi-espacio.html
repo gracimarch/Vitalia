@@ -282,15 +282,18 @@
                 </div>
                 
                 <!-- Estado vacío / Refrescar UI -->
-                <div id="empty-scores-state" style="display: none; text-align: center; margin-top: 4rem; padding: 2rem; background: var(--surface-1); border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
-                    <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
-                    <h3 style="margin-bottom: 0.5rem; font-family: 'Zilla Slab', serif; font-size: 2rem;">Casi listo</h3>
-                    <p style="color: #666; margin-bottom: 2rem; font-size: 1.1rem;">Aún no tienes recomendaciones personalizadas generadas. Haz clic abajo para obtenerlas al instante.</p>
-                    <button class="btn btn-primary" id="refresh-recommendations-btn" style="border: none; cursor: pointer;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi-arrow-up-right" style="margin-right: 8px;"><path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/></svg>
-                        Generar recomendaciones de IA
-                    </button>
-                    <p id="refresh-recommendations-msg" style="margin-top: 1.5rem; font-size: 0.95rem;"></p>
+                <div id="empty-scores-state" class="empty-scores-container" style="display: none;">
+                    <div class="empty-scores-content">
+                        <div class="empty-scores-icon">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3>Casi listo</h3>
+                        <p>Aún no tienes recomendaciones personalizadas generadas. Haz clic abajo para obtenerlas al instante.</p>
+                        <button class="empty-scores-btn" id="refresh-recommendations-btn">
+                            Generar recomendaciones
+                        </button>
+                        <p id="refresh-recommendations-msg" class="empty-scores-msg"></p>
+                    </div>
                 </div>
             </div>
         </section>

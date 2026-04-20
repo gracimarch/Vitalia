@@ -1,4 +1,4 @@
-import { db } from '../auth/firebase.js';
+import { db, auth } from '../auth/firebase.js';
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 import { getUserSession } from '../auth/auth-state.js';
 
@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Referencias a los contenedores
     const lecturasGrid = document.getElementById('dynamic-readings-list');
-    const rutinasGrid  = document.getElementById('dynamic-routines-list');
-    const dietasGrid   = document.getElementById('dynamic-food-list');
-    const emptyState   = document.getElementById('empty-scores-state');
+    const rutinasGrid = document.getElementById('dynamic-routines-list');
+    const dietasGrid = document.getElementById('dynamic-food-list');
+    const emptyState = document.getElementById('empty-scores-state');
 
     // ── Función central: eliminar skeletons y mostrar estado vacío ──
     function mostrarEmptyState() {
@@ -40,7 +40,14 @@ document.addEventListener('DOMContentLoaded', async () => {
                     body: JSON.stringify({ uid: user.uid })
                 });
 
-                if (!res.ok) throw new Error('Fallo en la API, status: ' + res.status);
+                const rawResponse = await res.text();
+                console.log("-----------------------------------------");
+                console.log("📡 DEBUGGING API RE-GENERATOR");
+                console.log("Status Code:", res.status);
+                console.log("Response Body:", rawResponse);
+                console.log("-----------------------------------------");
+
+                if (!res.ok) throw new Error('Fallo en la API, status: ' + res.status + ' Detalle: ' + rawResponse);
 
                 if (msg) {
                     msg.textContent = '✅ ¡Recomendaciones generadas! Recargando tu espacio...';
@@ -81,8 +88,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // ── Eliminar los skeleton-cards de todos los grids ──
     function clearSkeletons() {
         if (lecturasGrid) lecturasGrid.innerHTML = '';
-        if (rutinasGrid)  rutinasGrid.innerHTML  = '';
-        if (dietasGrid)   dietasGrid.innerHTML   = '';
+        if (rutinasGrid) rutinasGrid.innerHTML = '';
+        if (dietasGrid) dietasGrid.innerHTML = '';
     }
 
     // ── Mensaje de sección vacía cuando hay score pero sin items para ese slug ──
@@ -105,8 +112,18 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
+        // 1. Verificar UID actual
+        console.log("-----------------------------------------");
+        console.log("🔍 DEBUGGING FIRESTORE SCORES");
+        console.log("UID actual (getUserSession):", user.uid);
+        console.log("UID actual (auth.currentUser):", auth?.currentUser?.uid);
+        console.log("Colección consultada: 'scores'");
+        console.log("ID del documento:", user.uid);
+        console.log("Ruta exacta:", `scores/${user.uid}`);
+        console.log("-----------------------------------------");
+
         // Consultar el "score" (recomendaciones)
-        const scoreRef  = doc(db, 'scores', user.uid);
+        const scoreRef = doc(db, 'scores', user.uid);
         const scoreSnap = await getDoc(scoreRef);
 
         if (!scoreSnap.exists() || !scoreSnap.data()) {
@@ -138,8 +155,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             fetch('/assets/data/lecturas.json').then(r => r.ok ? r.json() : { lecturas: [] })
         ]);
 
-        const catDietas   = resDietas.dietas   || [];
-        const catRutinas  = resRutinas.rutinas  || [];
+        const catDietas = resDietas.dietas || [];
+        const catRutinas = resRutinas.rutinas || [];
         const catLecturas = resLecturas.lecturas || [];
 
         // ── RENDER LECTURAS ──
@@ -216,17 +233,14 @@ function createLecturaCard(item) {
     card.className = 'article-card';
 
     const category = item.category || 'Bienestar';
-    const title    = item.title    || 'Artículo';
+    const title = item.title || 'Artículo';
     const duration = item.readingTime || '5 min';
 
     card.innerHTML = `
-        <div class="article-header">
-            <span class="article-category">${category}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi-arrow-up-right icon-arrow"><path fillRule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/></svg>
-        </div>
-        <div>
-            <h3 class="article-title">${title}</h3>
-            <div class="article-meta">
+        <p>${category}</p>
+        <div class="heading-time">
+            <h3>${title}</h3>
+            <div class="reading-time">
                 <i class="fa-solid fa-clock"></i>
                 <span>${duration}</span>
             </div>
@@ -257,13 +271,10 @@ function createRutinaCard(item) {
     card.href = `/rutinas/${item.slug}`;
     card.className = 'routine-card';
     card.innerHTML = `
-        <div class="article-header">
-            <span class="article-category">${item.level || 'General'}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"><path fillRule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/></svg>
-        </div>
-        <div>
-            <h3 class="article-title">${item.title}</h3>
-            <div class="article-meta">
+        <p>${item.level || 'General'}</p>
+        <div class="heading-time">
+            <h3>${item.title}</h3>
+            <div class="reading-time">
                 <i class="fa-solid fa-clock"></i>
                 <span>${item.duration || 'Variable'}</span>
             </div>
@@ -281,13 +292,10 @@ function createDietaCard(item) {
     if (item.duration) summaryDuracion = item.duration.toLowerCase().includes('semana') ? 'Plan Semanal' : 'Plan Diario';
 
     card.innerHTML = `
-        <div class="article-header">
-            <span class="article-category">${item.type || 'Equilibrada'}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi-arrow-up-right" style="font-size: 1.2rem; color: #333;"><path fillRule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/></svg>
-        </div>
-        <div>
-            <h3 class="article-title">${item.title}</h3>
-            <div class="article-meta">
+        <p>${item.type || 'Equilibrada'}</p>
+        <div class="heading-time">
+            <h3>${item.title}</h3>
+            <div class="reading-time">
                 <i class="fa-solid fa-clock"></i>
                 <span>${summaryDuracion}</span>
             </div>

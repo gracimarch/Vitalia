@@ -41,50 +41,30 @@
     opacity: 0.7;
 }
 
-.articles-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-@media (min-width: 768px) {
-    .articles-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
+.articles-grid,
 .routines-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
     margin-bottom: 2rem;
-}
-
-@media (min-width: 600px) {
-    .routines-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .routines-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
 }
 
 .article-card {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
     position: relative;
     aspect-ratio: auto;
-    min-height: 160px;
+    min-height: 240px;
+    padding: 2rem;
     border: none;
+    border-radius: 20px;
     color: var(--white, #fff);
     text-decoration: none;
     overflow: hidden;
     transition: all 0.3s ease;
+    text-align: left;
 }
 
 .article-card:hover {
@@ -92,48 +72,48 @@
     box-shadow: 0 10px 25px rgba(100, 50, 200, 0.3);
 }
 
-.article-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
-}
-
-.article-category {
-    color: rgba(255, 255, 255, 0.9);
+.article-card p,
+.food-card p,
+.routine-card p {
+    margin: 0 0 0.5rem 0;
     font-size: 0.85rem;
     font-weight: 500;
-    letter-spacing: 0.5px;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
 }
 
-.article-title {
-    margin: 0 0 0.5rem 0;
+.article-card h3,
+.food-card h3,
+.routine-card h3 {
+    margin: 0 0 auto 0;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    text-shadow: none;
     color: var(--white);
-    font-size: 1.4rem;
     font-weight: 700;
-    line-height: 1.2;
 }
 
-.article-meta {
+.reading-time {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin-top: auto;
-    color: rgba(255, 255, 255, 0.9);
+    margin-top: 1.5rem;
     font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 600;
-    letter-spacing: 0.05em;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 1;
 }
 
-.article-meta i {
-    margin-right: 0;
+.reading-time i {
     font-size: 1rem;
+    margin: 0;
 }
 
-.article-card i {
-    color: var(--white) !important;
+.reading-time span {
+    margin: 0;
 }
 
 .article-card:nth-child(1) {
@@ -167,14 +147,19 @@
 .food-card {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
     position: relative;
     aspect-ratio: auto;
-    min-height: 160px;
-    color: var(--white);
+    min-height: 240px;
+    padding: 2rem;
+    border: none;
+    border-radius: 20px;
+    color: var(--white, #fff);
     text-decoration: none;
     overflow: hidden;
     transition: all 0.3s ease;
+    text-align: left;
 }
 
 .food-card:hover {
@@ -345,20 +330,27 @@
     opacity: 1;
 }
 
-.blog-info-card .btn i {
-    margin-right: 0.5rem;
+.blog-info-card .btn i,
+.blog-info-card .btn svg {
+    margin-right: 8px;
 }
 
 .routine-card {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
     position: relative;
     aspect-ratio: auto;
-    min-height: 300px;
-    color: var(--white);
+    min-height: 240px;
+    padding: 2rem;
+    border: none;
+    border-radius: 20px;
+    color: var(--white, #fff);
+    text-decoration: none;
+    overflow: hidden;
     transition: all 0.3s ease;
-    padding: 1.5em;
+    text-align: left;
 }
 
 .routine-card:hover {
@@ -909,94 +901,113 @@
     margin-bottom: 4rem;
 }
 
-.articles-grid,
-.routines-grid,
-.meditations-grid {
-    display: grid !important;
-    gap: 1.5rem !important;
-    margin-bottom: 3rem !important;
+/* Empty State Styles */
+.empty-scores-container {
+    margin-top: 4rem;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.6));
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-@media (min-width: 768px) {
-    .articles-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-    }
-
-    .meditations-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
+.empty-scores-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(166, 117, 209, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
 }
 
-.article-card,
-.food-card,
-.routine-card {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-    padding: 1.5rem !important;
-    border-radius: 20px !important;
-    text-decoration: none !important;
-    color: #fff !important;
-    transition: all 0.3s ease !important;
-    background: linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%) !important;
+.empty-scores-container::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(128, 202, 205, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
 }
 
-.article-title {
-    color: #fff !important;
-    font-weight: 700 !important;
-    margin-bottom: 0.5rem !important;
+.empty-scores-content {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.article-category {
-    color: rgba(255, 255, 255, 0.9) !important;
-    font-size: 0.85rem !important;
-    text-transform: uppercase !important;
+.empty-scores-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--cyan, #80cacd), #5fb3b6);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    box-shadow: 0 10px 25px rgba(128, 202, 205, 0.4);
 }
 
-.article-card:nth-child(1) {
-    background: radial-gradient(circle at 100% 0%, rgba(225, 148, 127, 0.45) 0%, transparent 55%), radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 55%), linear-gradient(135deg, #bfa0e0 0%, #a675d1 100%) !important;
+.empty-scores-content h3 {
+    font-family: var(--font-secondary, 'Zilla Slab', serif);
+    font-size: 2.2rem;
+    color: var(--text-color, #333);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
 }
 
-.article-card:nth-child(2) {
-    background: radial-gradient(circle at 50% 50%, rgba(128, 202, 205, 0.25) 0%, transparent 65%), radial-gradient(circle at 100% 100%, rgba(253, 251, 247, 0.4) 0%, transparent 45%), linear-gradient(45deg, #a675d1 0%, #bfa0e0 100%) !important;
+.empty-scores-content p {
+    color: var(--text-muted, #666);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
 }
 
-.article-card:nth-child(3) {
-    background: radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%), radial-gradient(circle at 100% 50%, rgba(225, 148, 127, 0.35) 0%, transparent 55%), linear-gradient(180deg, #bfa0e0 0%, #a170d0 100%) !important;
+.empty-scores-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.1rem 2.8rem;
+    background: linear-gradient(135deg, var(--black, #222) 0%, #444 100%);
+    color: var(--white, #fff);
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.article-card:nth-child(4) {
-    background: radial-gradient(circle at 80% 20%, rgba(128, 202, 205, 0.35) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%), linear-gradient(120deg, #a675d1 0%, #bfa0e0 100%) !important;
+.empty-scores-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(135deg, #000 0%, #333 100%);
 }
 
-.routine-card:nth-child(1) {
-    background: radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%), radial-gradient(circle at 0% 100%, rgba(128, 202, 205, 0.35) 0%, transparent 50%), linear-gradient(135deg, #f4a261 0%, #e76f51 100%) !important;
+.empty-scores-btn i {
+    font-size: 1.1rem;
+    color: #ffd700;
 }
 
-.routine-card:nth-child(2) {
-    background: radial-gradient(circle at 50% 50%, rgba(253, 251, 247, 0.3) 0%, transparent 60%), radial-gradient(circle at 100% 100%, rgba(157, 96, 207, 0.3) 0%, transparent 45%), linear-gradient(45deg, #e9c46a 0%, #f4a261 100%) !important;
+.empty-scores-msg {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-muted, #777);
+    min-height: 1.5em; /* to prevent layout shift */
 }
 
-.routine-card:nth-child(3) {
-    background: radial-gradient(circle at 0% 0%, rgba(128, 202, 205, 0.35) 0%, transparent 45%), radial-gradient(circle at 100% 50%, rgba(253, 251, 247, 0.3) 0%, transparent 55%), linear-gradient(180deg, #f4a261 0%, #e76f51 100%) !important;
-}
-
-.routine-card:nth-child(4) {
-    background: radial-gradient(circle at 80% 20%, rgba(157, 96, 207, 0.35) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(225, 148, 127, 0.35) 0%, transparent 50%), linear-gradient(120deg, #e76f51 0%, #f4a261 100%) !important;
-}
-
-.food-card:nth-child(1) {
-    background: radial-gradient(circle at 100% 0%, rgba(157, 96, 207, 0.4) 0%, transparent 50%), radial-gradient(circle at 0% 100%, rgba(253, 251, 247, 0.3) 0%, transparent 50%), linear-gradient(135deg, #80cacd 0%, #5fb3b6 100%) !important;
-}
-
-.food-card:nth-child(2) {
-    background: radial-gradient(circle at 50% 50%, rgba(157, 96, 207, 0.25) 0%, transparent 60%), radial-gradient(circle at 100% 100%, rgba(225, 148, 127, 0.3) 0%, transparent 45%), linear-gradient(45deg, #6ec0c3 0%, #80cacd 100%) !important;
-}
-
-.food-card:nth-child(3) {
-    background: radial-gradient(circle at 0% 0%, rgba(253, 251, 247, 0.3) 0%, transparent 45%), radial-gradient(circle at 100% 50%, rgba(157, 96, 207, 0.3) 0%, transparent 55%), linear-gradient(180deg, #80cacd 0%, #5fb3b6 100%) !important;
-}
-
-.food-card:nth-child(4) {
-    background: radial-gradient(circle at 80% 20%, rgba(157, 96, 207, 0.35) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(253, 251, 247, 0.3) 0%, transparent 50%), linear-gradient(120deg, #74c7ca 0%, #80cacd 100%) !important;
-}
+/* End of overrides */
