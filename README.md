@@ -213,7 +213,7 @@ El proyecto está en **producción activa** y es accesible públicamente en [vit
 
 ### ✅ Implementado y funcional
 - Landing page completa con hero WebGL, FAQ, planes de precios y Magic Bento
-- Sistema de autenticación completo (registro, login, logout, rutas protegidas)
+- Sistema de autenticación completo (registro, login, logout, recuperación de contraseña, rutas protegidas)
 - Formulario de registro con validación y 10+ campos de bienestar
 - Dashboard "Mi Espacio" con recomendaciones personalizadas por IA
 - Blog con búsqueda, filtros por categoría y carga progresiva
@@ -226,7 +226,6 @@ El proyecto está en **producción activa** y es accesible públicamente en [vit
 - Responsive design completo (desktop + mobile)
 
 ### 🚧 En progreso / pendiente
-- **Login** — el formulario de inicio de sesión existe y está diseñado, pero `login.js` está vacío: la lógica de `signInWithEmailAndPassword` está pendiente de implementación
 - **Plan premium** — la detección de usuario premium (`detectPremium`) siempre retorna `false`; la integración real con Firestore/custom claims está como TODO en el código
 - **Integración de pagos** — los planes de suscripción se muestran en la UI pero no hay pasarela de pago conectada
 
@@ -234,14 +233,12 @@ El proyecto está en **producción activa** y es accesible públicamente en [vit
 
 ## 🗺️ Próximas mejoras / Roadmap
 
-- [ ] **Implementar login funcional** — completar `login.js` con `signInWithEmailAndPassword` *(próxima prioridad)*
-- [ ] **Recuperación de contraseña** — el enlace "¿Olvidaste tu contraseña?" existe en el UI pero no tiene lógica implementada
-- [ ] **Sistema premium real** — conectar la detección de plan premium con Firestore o Firebase Custom Claims
-- [ ] **Integración de pagos** — conectar los planes de suscripción con un procesador de pagos (Stripe, MercadoPago, etc.)
 - [ ] **Edición de perfil** — permitir al usuario actualizar sus datos y regenerar recomendaciones
-- [ ] **Externalizar credenciales de Firebase** — mover la configuración a variables de entorno
 - [ ] **Meditaciones personalizadas** — actualmente son estáticas; podrían vincularse al score de IA del usuario
 - [ ] **PWA** — agregar Service Worker y manifest para experiencia offline
+- [ ] **Sistema premium real** — conectar la detección de plan premium con Firestore o Firebase Custom Claims
+- [ ] **Integración de pagos** — conectar los planes de suscripción con un procesador de pagos (Stripe, MercadoPago, etc.)
+- [ ] **Externalizar credenciales de Firebase** — mover la configuración a variables de entorno
 
 <br />
 
