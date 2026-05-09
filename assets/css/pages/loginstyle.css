@@ -344,11 +344,31 @@ body.loaded .loader-container { display: none; }
     transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
     line-height: 1.4;
     min-height: 58px;
+    cursor: text;
 }
 
-/* Float the label when focused or filled */
+/* ── Autofill override — impide que el navegador pinte su propio fondo ── */
+.login-input:-webkit-autofill,
+.login-input:-webkit-autofill:hover,
+.login-input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px #faf9fc inset !important;
+    -webkit-text-fill-color: var(--text-color, #2d2346) !important;
+    caret-color: var(--text-color, #2d2346);
+    transition: background-color 9999s ease-in-out 0s, border-color 0.25s ease, box-shadow 0.25s ease;
+    border-color: #e0dced;
+}
+
+.login-input:-webkit-autofill:focus {
+    -webkit-box-shadow:
+        0 0 0 1000px #fff inset,
+        0 0 0 4px rgba(181, 113, 222, 0.12) !important;
+    border-color: var(--purple) !important;
+}
+
+/* Float the label when focused, filled, or autofilled */
 .login-input:focus + label,
-.login-input:not(:placeholder-shown) + label {
+.login-input:not(:placeholder-shown) + label,
+.login-input:-webkit-autofill + label {
     top: 8px;
     transform: translateY(0);
     transform: translateX(-2.5px);
@@ -537,6 +557,43 @@ body.loaded .loader-container { display: none; }
     border-radius: 12px;
     font-size: 0.93rem;
     font-weight: 500;
+    padding: 12px 20px;
+}
+
+.toast-error {
+    background: linear-gradient(135deg, #e53e5a, #ff6b81) !important;
+    box-shadow: 0 4px 24px rgba(229, 62, 90, 0.35) !important;
+    color: #fff !important;
+    border-radius: 12px !important;
+}
+
+.toast-success {
+    background: linear-gradient(135deg, #7c3aed, #B571DE) !important;
+    box-shadow: 0 4px 24px rgba(181, 113, 222, 0.4) !important;
+    color: #fff !important;
+    border-radius: 12px !important;
+}
+
+/* ── Button loading spinner ───────────────────────────────── */
+.login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2.5px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: loginSpin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes loginSpin {
+    to { transform: rotate(360deg); }
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
