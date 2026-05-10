@@ -169,7 +169,7 @@
                     <h2>Error</h2>
                     <h1>Lectura no encontrada</h1>
                     <p>Lo sentimos, la lectura que buscas no existe o ha sido movida.</p>
-                    <a href="/blog.html" style="text-decoration: underline; color: #7134A2;">Volver al blog</a>
+                    <a href="/blog" style="text-decoration: underline; color: #7134A2;">Volver al blog</a>
                 </div>
             `;
         }
@@ -190,7 +190,7 @@
         if (introDiv) {
             introDiv.innerHTML = `
                 <p>Lo sentimos, la lectura que buscas no existe o ha sido movida.</p>
-                <p><a href="/blog.html" style="color: var(--purple-light); text-decoration: underline;">Volver al blog</a></p>
+                <p><a href="/blog" style="color: var(--purple-light); text-decoration: underline;">Volver al blog</a></p>
             `;
         }
 

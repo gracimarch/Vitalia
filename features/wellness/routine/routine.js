@@ -731,7 +731,7 @@ function bindEvents() {
   // Finish → back
   const btnFinishBack = $('#btn-finish-back');
   if (btnFinishBack) btnFinishBack.addEventListener('click', () => {
-    window.location.href = '/pages/mi-espacio.html';
+    window.location.href = '/mi-espacio';
   });
 }
 

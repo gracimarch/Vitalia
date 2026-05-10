@@ -3,10 +3,11 @@ Allow: /
 
 # Bloquear páginas de usuario privadas
 Disallow: /mi-espacio
-Disallow: /login
+Disallow: /iniciar-sesion
+Disallow: /perfil
 
 # Bloquear recursos internos no indexables
-Disallow: /assets/partials/
+Disallow: /assets/shared/partials/
 Disallow: /assets/data/
 Disallow: /dev/
 
