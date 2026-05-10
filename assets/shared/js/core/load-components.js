@@ -14,7 +14,7 @@ function rewriteLinksForLocal(html) {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const componentsPath = "/assets/partials/";
+    const componentsPath = "/assets/shared/partials/";
 
     // Load Header
     fetch(componentsPath + "header.html")
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!isHomePage) {
         const chatbotScript = document.createElement("script");
-        chatbotScript.src = "/assets/js/core/chatbot.js";
+        chatbotScript.src = "/assets/shared/js/core/chatbot.js";
         document.body.appendChild(chatbotScript);
     }
 });
