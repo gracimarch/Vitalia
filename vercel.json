@@ -31,6 +31,14 @@
         {
             "source": "/perfil",
             "destination": "/pages/perfil.html"
+        },
+        {
+            "source": "/privacidad",
+            "destination": "/pages/privacidad.html"
+        },
+        {
+            "source": "/terminos",
+            "destination": "/pages/terminos.html"
         }
     ],
     "headers": [

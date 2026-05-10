@@ -1,0 +1,638 @@
+/* =========================================
+   LEGAL PAGES — Política de Privacidad &
+   Términos y Condiciones
+   Vitalia Design System · Premium Edition
+   ========================================= */
+
+/* ── 1. PAGE LAYOUT ─────────────────────── */
+.legal-page {
+    padding-bottom: 5rem;
+    background: var(--bg-main, #fffcf4);
+}
+
+/* ── 2. HERO ─────────────────────────────── */
+.legal-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 5.5rem 1.5rem 5rem;
+    margin-top: -60px;
+    margin-bottom: 3.5rem;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    text-align: center;
+}
+
+.legal-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse at 12% 15%, rgba(181, 113, 222, 0.18) 0%, transparent 52%),
+        radial-gradient(ellipse at 88% 25%, rgba(128, 202, 205, 0.16) 0%, transparent 48%),
+        radial-gradient(ellipse at 50% 95%, rgba(225, 148, 127, 0.12) 0%, transparent 45%),
+        radial-gradient(ellipse at 35% 70%, rgba(43, 196, 188, 0.07) 0%, transparent 40%),
+        linear-gradient(160deg, #fdfaf6 0%, #fef9f2 50%, #f8f3ee 100%);
+}
+
+/* Thin iridescent accent bar at top of hero */
+.legal-hero-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg,
+            var(--purple, #B571DE) 0%,
+            var(--cyan, #80CACD) 50%,
+            var(--soft-orange, #E1947F) 100%);
+    opacity: 0.85;
+}
+
+.legal-hero-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent 0%, var(--bg-main, #fffcf4) 100%);
+    pointer-events: none;
+}
+
+.legal-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* Stylish pill badge above icon */
+.legal-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 50px;
+    background: rgba(181, 113, 222, 0.1);
+    border: 1px solid rgba(181, 113, 222, 0.2);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--purple, #B571DE);
+}
+
+.legal-hero-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: var(--purple, #B571DE);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.35rem;
+    box-shadow:
+        var(--shadow-purple),
+        0 0 0 6px rgba(181, 113, 222, 0.08);
+    transition: transform var(--transition-slow);
+}
+
+.legal-hero-icon:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+.legal-hero-icon i {
+    font-size: 1.6rem;
+    color: var(--white);
+}
+
+.legal-hero-title {
+    font-family: var(--font-secondary, 'Zilla Slab', serif);
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--black, #1a1a1a);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+.legal-hero-meta {
+    font-size: 0.82rem;
+    color: var(--text-muted, #707070);
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.legal-hero-meta::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--soft-orange, #E1947F);
+    opacity: 0.8;
+}
+
+.legal-hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-subtitle, #868686);
+    margin: 0;
+    max-width: 540px;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* ── 3. ARTICLE WRAPPER ──────────────────── */
+.legal-article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* ── 4. INTRO PARAGRAPH ──────────────────── */
+.legal-intro {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--text-color, #333);
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 2rem 1.5rem 1.75rem;
+    background: rgba(181, 113, 222, 0.05);
+    border-left: 3px solid var(--purple, #B571DE);
+    border-radius: 0 14px 14px 0;
+    position: relative;
+}
+
+/* ── 5. TABLE OF CONTENTS ─────────────────── */
+.legal-toc {
+    background: var(--white);
+    border: 1px solid rgba(181, 113, 222, 0.12);
+    border-radius: 18px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 3rem;
+    box-shadow:
+        0 2px 20px rgba(0, 0, 0, 0.04),
+        0 0 0 1px rgba(128, 202, 205, 0.06) inset;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Thin accent bar along top */
+.legal-toc::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--purple, #B571DE);
+    border-radius: 18px 18px 0 0;
+    opacity: 0.45;
+}
+
+.legal-toc-title {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted, #707070);
+    margin: 0 0 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.legal-toc-title i {
+    color: var(--purple, #B571DE);
+    font-size: 0.8rem;
+}
+
+.legal-toc-list {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem 1.5rem;
+}
+
+.legal-toc-list li {
+    font-size: 0.875rem;
+    counter-increment: toc-counter;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legal-toc-list li::before {
+    content: counter(toc-counter, decimal-leading-zero);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--purple-light, #ae7dd7);
+    opacity: 0.7;
+    min-width: 20px;
+    font-variant-numeric: tabular-nums;
+}
+
+.legal-toc-list {
+    counter-reset: toc-counter;
+}
+
+.legal-toc-list a {
+    color: var(--text-color, #333);
+    text-decoration: none;
+    transition: color var(--transition-base);
+    font-weight: 400;
+    padding: 0.25rem 0;
+    display: block;
+    line-height: 1.4;
+}
+
+.legal-toc-list a:hover {
+    color: var(--purple, #B571DE);
+}
+
+/* ── 6. SECTION ──────────────────────────── */
+.legal-section {
+    margin-bottom: 0;
+    scroll-margin-top: 90px;
+    padding: 2.5rem 0 2rem;
+    position: relative;
+}
+
+/* Subtle separator between sections */
+.legal-section+.legal-section {
+    border-top: 1px solid rgba(181, 113, 222, 0.08);
+}
+
+/* ── 6a. SECTION TITLE ───────────────────── */
+.legal-section-title {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--black, #1a1a1a);
+    margin: 0 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+/* ── 6b. SECTION NUMBER — Solid badge ─── */
+.legal-section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 34px;
+    height: 34px;
+    padding: 0 0.15rem;
+    border-radius: 10px;
+    background: var(--purple, #B571DE);
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+    transition: opacity var(--transition-base);
+}
+
+.legal-section-title:hover .legal-section-number {
+    opacity: 0.82;
+}
+
+/* Double-digit numbers get a slightly wider badge */
+.legal-section-number:not(:empty):where([data-n="10"],
+    [data-n="11"], [data-n="12"], [data-n="13"],
+    [data-n="14"], [data-n="15"], [data-n="16"]) {
+    min-width: 38px;
+    font-size: 0.7rem;
+}
+
+/* ── 6c. SUBSECTION TITLES ───────────────── */
+.legal-subsection-title {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 0.97rem;
+    font-weight: 600;
+    color: var(--text-color, #333);
+    margin: 1.75rem 0 0.65rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legal-subsection-title::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    border-radius: 2px;
+    background: var(--cyan, #80CACD);
+    flex-shrink: 0;
+}
+
+.legal-h4 {
+    font-family: var(--font-primary, 'Poppins', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted, #707070);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 1.25rem 0 0.5rem;
+}
+
+.legal-section p {
+    font-size: 0.975rem;
+    line-height: 1.85;
+    color: var(--text-color, #333);
+    margin-bottom: 1rem;
+}
+
+/* ── 7. LIST ─────────────────────────────── */
+.legal-list {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-bottom: 1.25rem;
+}
+
+.legal-list li {
+    font-size: 0.965rem;
+    line-height: 1.75;
+    color: var(--text-color, #333);
+    padding: 0.6rem 0.85rem 0.6rem 1rem;
+    position: relative;
+    background: rgba(181, 113, 222, 0.025);
+    border-radius: 8px;
+    border-left: 2.5px solid transparent;
+    transition: background var(--transition-base), border-color var(--transition-base);
+}
+
+.legal-list li:hover {
+    background: rgba(181, 113, 222, 0.05);
+    border-left-color: rgba(181, 113, 222, 0.35);
+}
+
+/* Bullet dots */
+.legal-list li::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--purple-light, #ae7dd7);
+}
+
+/* Ordered list items — use counter */
+ol.legal-list {
+    counter-reset: legal-ol;
+}
+
+ol.legal-list li {
+    counter-increment: legal-ol;
+    padding-left: 2.5rem;
+}
+
+ol.legal-list li::before {
+    content: counter(legal-ol);
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--purple, #B571DE);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ── 8. TABLE ────────────────────────────── */
+.legal-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-radius: 14px;
+    box-shadow:
+        0 2px 16px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(181, 113, 222, 0.08);
+}
+
+.legal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.legal-table thead {
+    background: var(--bg-table-header, #eefffe);
+}
+
+.legal-table th {
+    padding: 0.9rem 1.3rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--purple-dark, #693a87);
+    border-bottom: 1px solid rgba(181, 113, 222, 0.12);
+}
+
+.legal-table td {
+    padding: 0.85rem 1.3rem;
+    color: var(--text-color, #333);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    line-height: 1.65;
+    font-size: 0.925rem;
+}
+
+.legal-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.legal-table tbody tr:hover {
+    background: rgba(181, 113, 222, 0.04);
+}
+
+/* ── 9. CALLOUT ──────────────────────────── */
+.legal-callout {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: linear-gradient(135deg,
+            rgba(128, 202, 205, 0.08) 0%,
+            rgba(43, 196, 188, 0.05) 100%);
+    border: 1px solid rgba(128, 202, 205, 0.25);
+    border-radius: 14px;
+    padding: 1.35rem 1.6rem;
+    margin-top: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.legal-callout::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--cyan, #80CACD);
+    border-radius: 14px 0 0 14px;
+}
+
+.legal-callout i {
+    color: var(--teal, #2bc4bc);
+    font-size: 1.1rem;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+}
+
+.legal-callout p {
+    margin: 0 !important;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--text-color, #333);
+}
+
+/* ── 10. CONTACT BUTTON ───────────────────── */
+.legal-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-top: 1.25rem;
+    padding: 0.9rem 1.85rem;
+    background: var(--purple, #B571DE);
+    color: var(--white);
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: background var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+    box-shadow: 0 4px 18px rgba(181, 113, 222, 0.28);
+}
+
+.legal-contact-btn:hover {
+    background: var(--purple-dark, #693a87);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(181, 113, 222, 0.38);
+    color: var(--white);
+}
+
+/* ── 11. CROSS-LINK CARD ──────────────────── */
+.legal-also {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 3.5rem;
+    padding: 1.5rem 2rem;
+    background: var(--white);
+    border: 1px solid rgba(181, 113, 222, 0.14);
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+}
+
+.legal-also p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-muted, #707070);
+    font-weight: 500;
+}
+
+.legal-also-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--purple, #B571DE);
+    text-decoration: none;
+    transition: gap var(--transition-base), color var(--transition-base);
+}
+
+.legal-also-link:hover {
+    gap: 0.8rem;
+    color: var(--purple-dark, #693a87);
+}
+
+.legal-also-link i:last-child {
+    font-size: 0.8rem;
+    transition: transform var(--transition-base);
+}
+
+.legal-also-link:hover i:last-child {
+    transform: translateX(3px);
+}
+
+/* ── 12. RESPONSIVE ──────────────────────── */
+@media (max-width: 768px) {
+    .legal-hero {
+        padding: 4.5rem 1rem 3.5rem;
+    }
+
+    .legal-hero-title {
+        font-size: 1.9rem;
+    }
+
+    .legal-hero-subtitle {
+        font-size: 0.975rem;
+    }
+
+    .legal-article {
+        padding: 0 0.25rem;
+    }
+
+    .legal-intro {
+        padding: 1.25rem 1.25rem;
+    }
+
+    .legal-toc {
+        padding: 1.4rem 1.25rem;
+    }
+
+    .legal-toc-list {
+        grid-template-columns: 1fr;
+    }
+
+    .legal-section-title {
+        font-size: 1.1rem;
+    }
+
+    .legal-section-number {
+        min-width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        font-size: 0.68rem;
+    }
+
+    .legal-also {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.25rem;
+    }
+}

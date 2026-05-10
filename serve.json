@@ -7,6 +7,8 @@
         { "source": "/perfil",            "destination": "/pages/perfil.html" },
         { "source": "/lecturas/:slug",    "destination": "/pages/lectura.html" },
         { "source": "/dietas/:slug",      "destination": "/pages/dieta.html" },
-        { "source": "/rutinas/:slug",     "destination": "/pages/rutina.html" }
+        { "source": "/rutinas/:slug",     "destination": "/pages/rutina.html" },
+        { "source": "/privacidad",        "destination": "/pages/privacidad.html" },
+        { "source": "/terminos",          "destination": "/pages/terminos.html" }
     ]
 }
