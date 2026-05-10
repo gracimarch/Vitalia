@@ -186,7 +186,7 @@ section+.reading {
 .category-pill:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    background: #ffffff;
+    background: var(--white);
 }
 
 .pill-icon {
@@ -202,7 +202,7 @@ section+.reading {
 
 .pill-icon i {
     font-size: 1.15rem;
-    color: #fff;
+    color: var(--white);
 }
 
 .pill-text {
@@ -258,7 +258,7 @@ section+.reading {
     border-radius: 20px;
     overflow: hidden;
     text-decoration: none;
-    color: white;
+    color: var(--white);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -602,11 +602,11 @@ section+.reading {
     font-family: var(--font-primary);
     font-weight: 600;
     font-size: 1rem;
-    border-radius: 50px;
+    border-radius: var(--radius-full);
     cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid #ccc;
-    color: #555;
+    transition: all var(--transition-slow);
+    border: 2px solid var(--border-color);
+    color: var(--text-muted);
 }
 
 .btn-productividad {
@@ -627,7 +627,7 @@ section+.reading {
 
 .btn-ejercicio:hover {
     background-color: var(--cyan);
-    color: #fff;
+    color: var(--white);
     box-shadow: 0 4px 12px rgba(128, 202, 205, 0.4);
 }
 
@@ -638,7 +638,7 @@ section+.reading {
 
 .btn-dieta:hover {
     background-color: var(--orange-soft);
-    color: #fff;
+    color: var(--white);
     box-shadow: 0 4px 12px rgba(244, 162, 97, 0.4);
 }
 
@@ -649,7 +649,7 @@ section+.reading {
 
 .btn-salud-mental:hover {
     background-color: var(--teal-dark);
-    color: #fff;
+    color: var(--white);
     box-shadow: 0 4px 12px rgba(38, 70, 83, 0.4);
 }
 
@@ -678,7 +678,7 @@ section+.reading {
     box-shadow:
         0 4px 20px rgba(181, 113, 222, 0.15),
         0 0 0 3px rgba(181, 113, 222, 0.08);
-    background: #ffffff;
+    background: var(--white);
 }
 
 .search-icon {

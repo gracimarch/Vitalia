@@ -2,7 +2,7 @@
     display: inline-block;
     margin: 0;
     color: var(--black, #000);
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     font-size: 1.8rem;
     font-weight: 600;
 }
@@ -34,7 +34,7 @@
     margin-bottom: 2rem;
     padding: 0 1.5rem;
     color: var(--text-dark, #333);
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     font-size: 1.25rem;
     font-weight: 300;
     text-align: center;
@@ -60,7 +60,7 @@
     padding: 2rem;
     border: none;
     border-radius: 20px;
-    color: var(--white, #fff);
+    color: var(--white);
     text-decoration: none;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -155,7 +155,7 @@
     padding: 2rem;
     border: none;
     border-radius: 20px;
-    color: var(--white, #fff);
+    color: var(--white);
     text-decoration: none;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -233,7 +233,7 @@
     margin-top: 2rem;
     padding: 2.5rem 2rem;
 
-    background: var(--white, #FFFFFF);
+    background: var(--white);
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
@@ -258,7 +258,7 @@
 
 .blog-info-card p {
     margin-bottom: 0;
-    color: #666;
+    color: var(--text-muted);
     font-size: 1rem;
 }
 
@@ -346,7 +346,7 @@
     padding: 2rem;
     border: none;
     border-radius: 20px;
-    color: var(--white, #fff);
+    color: var(--white);
     text-decoration: none;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -519,7 +519,7 @@
     align-items: center;
     gap: 0.5rem;
     font-size: 0.85rem;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 0.25rem;
 }
 
@@ -661,7 +661,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--white);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform;
@@ -677,9 +677,9 @@
 
 .icon-2 {
     /* Dumbbell */
-    background: #fff;
-    border: 2.5px solid #80cacd;
-    color: #5fb3b6;
+    background: var(--white);
+    border: 2.5px solid var(--cyan);
+    color: var(--cyan-hover);
     width: 46px;
     height: 46px;
     font-size: 1rem;
@@ -695,7 +695,7 @@
 
 .icon-4 {
     /* Spa */
-    background: #fff;
+    background: var(--white);
     border: 2.5px solid #345e8a;
     color: #1d3557;
     width: 48px;
@@ -705,8 +705,8 @@
 
 .icon-5 {
     /* Lightbulb */
-    background: #fff;
-    border: 2.5px solid #E1947F;
+    background: var(--white);
+    border: 2.5px solid var(--soft-orange);
     color: #d67a64;
     width: 42px;
     height: 42px;
@@ -951,7 +951,7 @@
     height: 80px;
     margin: 0 auto 1.5rem;
     background: linear-gradient(135deg, var(--cyan, #80cacd), #5fb3b6);
-    color: white;
+    color: var(--white);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -981,7 +981,7 @@
     justify-content: center;
     padding: 1.1rem 2.8rem;
     background: linear-gradient(135deg, var(--black, #222) 0%, #444 100%);
-    color: var(--white, #fff);
+    color: var(--white);
     font-family: var(--font-primary, 'Poppins', sans-serif);
     font-size: 1.1rem;
     font-weight: 600;
@@ -995,7 +995,7 @@
 .empty-scores-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-    background: linear-gradient(135deg, #000 0%, #333 100%);
+    background: linear-gradient(135deg, var(--black) 0%, #333 100%);
 }
 
 .empty-scores-btn i {

@@ -17,7 +17,7 @@
     border: 1px solid rgba(0, 0, 0, 0.08);
 
     /* Visual */
-    background-color: var(--white, #FFFFFF);
+    background-color: var(--white);
     color: var(--text-color, #333);
     overflow: visible;
     transform-style: preserve-3d;
@@ -53,7 +53,7 @@
 
 .faq-answer {
     padding: 0 25px 25px 25px;
-    color: var(--black, #000);
+    color: var(--black);
     line-height: 1.6;
 }
 
@@ -77,8 +77,8 @@
     /* Visual */
     padding: 1.5rem;
     border: 1px solid rgba(0, 0, 0, 0.08);
-    background-color: var(--white, #FFFFFF);
-    color: var(--black, #000);
+    background-color: var(--white);
+    color: var(--black);
     overflow: hidden;
 
     /* Custom Props */
@@ -90,7 +90,7 @@
 
 .pricing-title {
     margin-bottom: 0.5rem;
-    color: #666;
+    color: var(--text-muted);
     font-size: 1rem;
     font-weight: 600;
 }
@@ -102,14 +102,14 @@
 }
 
 .pricing-price {
-    color: var(--black, #000);
+    color: var(--black);
     font-size: 2rem;
     font-weight: 700;
 }
 
 .pricing-period {
     margin-left: 5px;
-    color: #666;
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
 

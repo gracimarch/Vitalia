@@ -18,7 +18,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', Calibri, sans-serif;
+    font-family: var(--font-primary);
     background: var(--bg-cream, #fefbf3);
     color: var(--text-color, #333);
     -webkit-font-smoothing: antialiased;
@@ -221,7 +221,7 @@ body.loaded #loader {
     white-space: nowrap;
     border-bottom: 2.5px solid transparent;
     transition: color 0.25s, border-color 0.25s;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     cursor: pointer;
 }
 
@@ -230,12 +230,12 @@ body.loaded #loader {
 }
 
 .diet-tab:hover {
-    color: #80CACD;
+    color: var(--cyan);
 }
 
 .diet-tab.active {
-    color: #2bc4bc;
-    border-bottom-color: #2bc4bc;
+    color: var(--teal);
+    border-bottom-color: var(--teal);
 }
 
 
@@ -290,7 +290,7 @@ body.loaded #loader {
 .diet-intro-card p {
     font-size: 0.88rem;
     line-height: 1.7;
-    color: #666;
+    color: var(--text-muted);
 }
 
 .diet-intro-card p strong,
@@ -330,7 +330,7 @@ body.loaded #loader {
     border-radius: 30px;
     font-size: 0.75rem;
     font-weight: 600;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -347,10 +347,10 @@ body.loaded #loader {
 }
 
 .day-pill.active {
-    background: linear-gradient(135deg, #80CACD 0%, #2bc4bc 100%);
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--teal) 100%);
     border-color: transparent;
     color: var(--white);
-    box-shadow: 0 4px 14px rgba(43, 196, 188, 0.3);
+    box-shadow: var(--shadow-cyan);
 }
 
 /* ---- Day panel ---- */
@@ -669,7 +669,7 @@ body.loaded #loader {
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #2bc4bc;
+    color: var(--teal);
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -703,7 +703,7 @@ body.loaded #loader {
     justify-content: center;
     background: rgba(128, 202, 205, 0.12);
     border: 1px solid rgba(128, 202, 205, 0.2);
-    color: #2bc4bc;
+    color: var(--teal);
     font-size: 0.8rem;
     cursor: pointer;
     transition: background 0.2s, transform 0.15s;
@@ -775,8 +775,8 @@ body.loaded #loader {
 
 /* ── SINGLE DAY selection ── */
 .diet-cal__day--selected {
-    background: linear-gradient(135deg, #80CACD 0%, #2bc4bc 100%) !important;
-    color: #fff !important;
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--teal) 100%) !important;
+    color: var(--white) !important;
     font-weight: 700;
     box-shadow: 0 3px 12px rgba(43, 196, 188, 0.4);
 }
@@ -796,7 +796,7 @@ body.loaded #loader {
 /* Week start (Monday) */
 .diet-cal__day--week-start {
     background: linear-gradient(135deg, #80CACD 0%, rgba(181, 113, 222, 0.7) 100%) !important;
-    color: #fff !important;
+    color: var(--white) !important;
     font-weight: 700;
     border-radius: 50% 0 0 50%;
     box-shadow: 0 3px 12px rgba(43, 196, 188, 0.3);
@@ -805,7 +805,7 @@ body.loaded #loader {
 /* Week end (Sunday) */
 .diet-cal__day--week-end {
     background: linear-gradient(135deg, rgba(181, 113, 222, 0.7) 0%, #B571DE 100%) !important;
-    color: #fff !important;
+    color: var(--white) !important;
     font-weight: 700;
     border-radius: 0 50% 50% 0;
     box-shadow: 0 3px 12px rgba(181, 113, 222, 0.3);
@@ -841,7 +841,7 @@ body.loaded #loader {
 }
 
 .diet-cal__confirmed-clear:hover {
-    color: #B571DE;
+    color: var(--purple);
 }
 
 /* =====================================================
@@ -874,7 +874,7 @@ body.loaded #loader {
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--text-color, #333);
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     cursor: pointer;
     list-style: none;
     user-select: none;
@@ -887,7 +887,7 @@ body.loaded #loader {
 }
 
 .diet-filter__toggle i:first-child {
-    color: #2bc4bc;
+    color: var(--teal);
     font-size: 0.9rem;
 }
 
@@ -948,7 +948,7 @@ body.loaded #loader {
     font-size: 0.78rem;
     font-weight: 500;
     color: var(--text-muted, #707070);
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     border: 1.5px solid transparent;
     background: transparent;
     transition: background 0.18s, color 0.18s, border-color 0.18s;
@@ -962,13 +962,13 @@ body.loaded #loader {
 
 .diet-filter__option:hover .diet-filter__pill {
     background: rgba(128, 202, 205, 0.08);
-    color: #2bc4bc;
+    color: var(--teal);
     border-color: rgba(128, 202, 205, 0.2);
     opacity: 1;
 }
 
 .diet-filter__option:hover .diet-filter__pill i {
-    color: #2bc4bc;
+    color: var(--teal);
 }
 
 /* =====================================================
@@ -1059,7 +1059,7 @@ body.loaded #loader {
 /* Right arrow */
 .recipe-card__arrow {
     font-size: 1.5rem;
-    color: #2bc4bc;
+    color: var(--teal);
     opacity: 0;
     transition: opacity 0.2s, transform 0.2s;
     flex-shrink: 0;
@@ -1117,7 +1117,7 @@ body.loaded #loader {
 
 .variation-card__desc {
     font-size: 0.8rem;
-    color: #777;
+    color: var(--text-muted);
     line-height: 1.55;
 }
 
@@ -1290,7 +1290,7 @@ body.loaded #loader {
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #B571DE;
+    color: var(--purple);
     font-weight: 700;
     margin-bottom: 10px;
 }
@@ -1328,16 +1328,16 @@ body.loaded #loader {
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #B571DE;
+    color: var(--purple);
     font-weight: 700;
     margin-bottom: 10px;
 }
 
 .diet-modal__instructions {
     font-size: 0.83rem;
-    color: #666;
+    color: var(--text-muted);
     line-height: 1.7;
-    font-family: 'Zilla Slab', serif;
+    font-family: var(--font-secondary);
 }
 
 

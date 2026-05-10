@@ -12,7 +12,7 @@ body {
     font-family: var(--font-primary);
     margin: 0;
     padding: 0;
-    background-color: #f0eef8;
+    background-color: var(--bg-login);
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -21,7 +21,7 @@ body {
 .loader-container {
     position: fixed;
     inset: 0;
-    background-color: var(--bg-main, #f0eef8);
+    background-color: var(--bg-login);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +40,7 @@ body.loaded .loader-container { display: none; }
     background:
         radial-gradient(ellipse 60% 50% at 10% 20%, rgba(181, 113, 222, 0.12) 0%, transparent 60%),
         radial-gradient(ellipse 50% 60% at 90% 80%, rgba(128, 202, 205, 0.10) 0%, transparent 60%),
-        #f0eef8;
+        var(--bg-login);
 }
 
 /* ── Card (two-panel split, floating) ─────────────────────── */
@@ -50,13 +50,13 @@ body.loaded .loader-container { display: none; }
     max-width: 1040px;
     /* Fixed height so the card never resizes between steps */
     height: 740px;
-    border-radius: 28px;
+    border-radius: var(--radius-xl);
     overflow: hidden;
     box-shadow:
         0 4px 6px rgba(0,0,0,.04),
         0 20px 60px rgba(181, 113, 222, .14),
         0 40px 80px rgba(0,0,0,.07);
-    background: #fff;
+    background: var(--white);
     animation: regCardEnter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -214,7 +214,7 @@ body.loaded .loader-container { display: none; }
     flex: 1;
     display: flex;
     flex-direction: column;
-    background: #ffffff;
+    background: var(--white);
     position: relative;
     min-width: 0;
     /* No scroll here — only .reg-sections-wrap scrolls */
@@ -375,8 +375,8 @@ body.loaded .loader-container { display: none; }
     width: 100%;
     padding: 24px 16px 8px;
     border: 1.5px solid #e0dced;
-    border-radius: 14px;
-    background: #faf9fc;
+    border-radius: var(--radius-md);
+    background: var(--bg-input);
     font-size: 0.88rem;
     font-family: var(--font-primary);
     color: var(--text-color);
@@ -398,7 +398,7 @@ body.loaded .loader-container { display: none; }
     letter-spacing: 0.03em;
 }
 .reg-input:focus {
-    background: #fff;
+    background: var(--white);
     border-color: var(--purple);
     box-shadow: 0 0 0 4px rgba(181, 113, 222, 0.12);
 }
@@ -477,8 +477,8 @@ select.reg-input:not(:focus):not(.has-value) + label {
     gap: 10px;
     padding: 10px 14px;
     border: 1.5px solid #e0dced;
-    border-radius: 12px;
-    background: #faf9fc;
+    border-radius: var(--radius-md);
+    background: var(--bg-input);
     cursor: pointer;
     transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     font-size: 0.84rem;
@@ -513,8 +513,8 @@ select.reg-input:not(:focus):not(.has-value) + label {
     gap: 10px;
     padding: 12px 14px;
     border: 1.5px solid #e0dced;
-    border-radius: 12px;
-    background: #faf9fc;
+    border-radius: var(--radius-md);
+    background: var(--bg-input);
     font-size: 0.82rem;
     color: var(--text-muted);
     line-height: 1.55;
@@ -543,8 +543,8 @@ select.reg-input:not(:focus):not(.has-value) + label {
     margin-top: 6px;
     padding: 10px 14px;
     border: 1.5px solid #e0dced;
-    border-radius: 10px;
-    background: #faf9fc;
+    border-radius: var(--radius-sm);
+    background: var(--bg-input);
     font-size: 0.84rem;
     font-family: var(--font-primary);
     color: var(--text-color);
@@ -567,7 +567,7 @@ select.reg-input:not(:focus):not(.has-value) + label {
     gap: 10px;
     padding: clamp(16px, 3vw, 24px) clamp(28px, 5vw, 52px) clamp(24px, 4vw, 40px);
     border-top: 1px solid #f0edf8;
-    background: #fff;
+    background: var(--white);
 }
 
 .reg-btn-prev {
@@ -612,9 +612,9 @@ select.reg-input:not(:focus):not(.has-value) + label {
     flex: 1;
     padding: 14px 24px;
     border: none;
-    border-radius: 14px;
+    border-radius: var(--radius-md);
     background: var(--purple);
-    color: #fff;
+    color: var(--white);
     font-size: 0.85rem;
     font-family: var(--font-primary);
     font-weight: 600;
@@ -622,8 +622,8 @@ select.reg-input:not(:focus):not(.has-value) + label {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 6px 24px rgba(181, 113, 222, 0.35);
+    transition: background-color var(--transition-slow), box-shadow var(--transition-slow), transform var(--transition-base);
+    box-shadow: var(--shadow-purple);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -651,7 +651,7 @@ select.reg-input:not(:focus):not(.has-value) + label {
 .btn-spinner {
     width: 16px; height: 16px;
     border: 2.5px solid rgba(255,255,255,0.35);
-    border-top-color: #fff;
+    border-top-color: var(--white);
     border-radius: 50%;
     animation: regSpin 0.7s linear infinite;
     flex-shrink: 0;
@@ -686,18 +686,18 @@ select.reg-input:not(:focus):not(.has-value) + label {
 
 /* Error toast — needs !important to override Toastify's inline style="background:transparent" */
 .toast-error {
-    background: linear-gradient(135deg, #e53e5a, #ff6b81) !important;
+    background: linear-gradient(135deg, var(--color-error), #ff6b81) !important;
     box-shadow: 0 4px 24px rgba(229, 62, 90, 0.35) !important;
-    color: #fff !important;
-    border-radius: 12px !important;
+    color: var(--white) !important;
+    border-radius: var(--radius-md) !important;
 }
 
 /* Success toast */
 .toast-success {
-    background: linear-gradient(135deg, #7c3aed, #B571DE) !important;
+    background: linear-gradient(135deg, #7c3aed, var(--purple)) !important;
     box-shadow: 0 4px 24px rgba(181, 113, 222, 0.4) !important;
-    color: #fff !important;
-    border-radius: 12px !important;
+    color: var(--white) !important;
+    border-radius: var(--radius-md) !important;
 }
 
 /* ── Responsive ───────────────────────────────────────────── */

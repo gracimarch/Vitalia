@@ -5,9 +5,9 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #fffcf4;
-    color: #333;
+    font-family: var(--font-primary);
+    background: var(--bg-main);
+    color: var(--text-color);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -48,10 +48,10 @@ body {
 }
 
 .error-title {
-    font-family: 'Zilla Slab', serif;
+    font-family: var(--font-secondary);
     font-size: 2.4rem;
     font-weight: 700;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 0.75rem;
     line-height: 1.2;
 }
@@ -59,10 +59,10 @@ body {
 .error-highlight {
     display: inline-block;
     font-size: inherit;
-    font-family: 'Zilla Slab', serif;
+    font-family: var(--font-secondary);
     font-style: italic;
     font-weight: 700;
-    background-image: linear-gradient(135deg, #E1947F, #a675d1, #80CACD);
+    background-image: linear-gradient(135deg, var(--soft-orange), #a675d1, var(--cyan));
     background-size: 200% 100%;
     color: transparent;
     -webkit-background-clip: text;
@@ -81,10 +81,10 @@ body {
 }
 
 .error-message {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-primary);
     font-size: 1.05rem;
     font-weight: 300;
-    color: #707070;
+    color: var(--text-muted);
     margin-bottom: 2rem;
     line-height: 1.6;
     opacity: 0.85;
@@ -95,16 +95,16 @@ body {
     align-items: center;
     gap: 8px;
     padding: 14px 32px;
-    background: linear-gradient(135deg, #f4a261, #e76f51);
-    color: white;
+    background: linear-gradient(135deg, var(--orange-soft), #e76f51);
+    color: var(--white);
     text-decoration: none;
     border: none;
-    border-radius: 50px;
-    font-family: 'Poppins', sans-serif;
+    border-radius: var(--radius-full);
+    font-family: var(--font-primary);
     font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-slow);
     box-shadow: 0 4px 20px rgba(244, 162, 101, 0.3);
 }
 
@@ -116,7 +116,7 @@ body {
 .btn-home svg {
     width: 18px;
     height: 18px;
-    fill: white;
+    fill: var(--white);
 }
 
 .logo-link {
@@ -146,7 +146,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: var(--white);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     will-change: transform;
@@ -160,9 +160,9 @@ body {
 }
 
 .icon-2 {
-    background: #fff;
-    border: 2.5px solid #80cacd;
-    color: #5fb3b6;
+    background: var(--white);
+    border: 2.5px solid var(--cyan);
+    color: var(--cyan-hover);
     width: 50px;
     height: 50px;
     font-size: 1.1rem;
@@ -176,7 +176,7 @@ body {
 }
 
 .icon-4 {
-    background: #fff;
+    background: var(--white);
     border: 2.5px solid #345e8a;
     color: #1d3557;
     width: 55px;
@@ -185,8 +185,8 @@ body {
 }
 
 .icon-5 {
-    background: #fff;
-    border: 2.5px solid #E1947F;
+    background: var(--white);
+    border: 2.5px solid var(--soft-orange);
     color: #d67a64;
     width: 48px;
     height: 48px;

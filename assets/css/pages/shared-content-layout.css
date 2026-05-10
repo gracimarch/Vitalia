@@ -114,7 +114,7 @@
 }
 
 .article {
-    font-family: 'Zilla Slab', Times New Roman, serif;
+    font-family: var(--font-secondary);
     font-size: 20px;
     margin: 40px 0;
     text-align: justify;
@@ -163,14 +163,14 @@ td {
 }
 
 td {
-    font-family: 'Zilla Slab', Times New Roman, serif;
+    font-family: var(--font-secondary);
     font-size: 16px;
 }
 
 th {
     background-color: var(--bg-table-header);
 
-    font-family: 'Poppins', Calibri, sans-serif;
+    font-family: var(--font-primary);
     font-size: 16px;
 }
 
@@ -181,7 +181,7 @@ th:first-child {
     background-color: var(--bg-table-header);
 
     z-index: 6;
-    font-family: 'Poppins', Calibri, sans-serif;
+    font-family: var(--font-primary);
 }
 
 @media (max-width: 600px) {
@@ -234,7 +234,7 @@ th:first-child {
         background-color: var(--bg-table-header);
 
         z-index: 1;
-        font-family: 'Poppins', Calibri, sans-serif;
+        font-family: var(--font-primary);
         font-size: 15px;
     }
 }
@@ -379,13 +379,13 @@ th:first-child {
 .lectura-intro-card p {
     font-size: 1rem;
     line-height: 1.7;
-    color: #666;
+    color: var(--text-muted);
     margin: 0;
 }
 
 .lectura-intro-card p strong,
 .lectura-intro-card .underline {
-    color: #2bc4bc;
+    color: var(--teal);
     font-weight: 600;
 }
 

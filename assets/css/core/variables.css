@@ -1,6 +1,6 @@
 :root {
     /* ===== COLORS ===== */
-    /* Primary Purgle */
+    /* Primary Purple */
     --purple: #B571DE;
     --purple-hover: #734697;
     --purple-light: #ae7dd7;
@@ -36,10 +36,34 @@
     --bg-wrapper: #fffbf7;
     --bg-table-header: #eefffe;
     --bg-cream: #fefbf3;
+    --bg-login: #f0eef8;       /* Lavender bg — login & registro pages */
+    --bg-input: #faf9fc;       /* Input/form field background */
 
     /* ===== TYPOGRAPHY ===== */
     --font-primary: 'Poppins', Calibri, sans-serif;
     --font-secondary: 'Zilla Slab', Times New Roman, serif;
+
+    /* ===== BORDER RADIUS ===== */
+    --radius-sm:   8px;
+    --radius-md:   12px;
+    --radius-lg:   20px;
+    --radius-xl:   28px;
+    --radius-full: 50px;
+
+    /* ===== SHADOWS ===== */
+    --shadow-sm:     0 2px 12px rgba(0, 0, 0, 0.06);
+    --shadow-md:     0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-purple: 0 6px 24px rgba(181, 113, 222, 0.35);
+    --shadow-cyan:   0 4px 14px rgba(43, 196, 188, 0.3);
+
+    /* ===== TRANSITIONS ===== */
+    --transition-base: 0.2s ease;
+    --transition-slow: 0.3s ease;
+
+    /* ===== SEMANTIC COLORS ===== */
+    --color-danger: #d73a3a;   /* Danger/destructive actions */
+    --color-error:  #e53e5a;   /* Error toasts & alerts */
+    --gold:         #e8a010;   /* Premium/crown gold accent */
 
     /* ===== MAGIC BENTO (Dynamic Grid) ===== */
     --hue: 27;
