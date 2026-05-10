@@ -85,11 +85,23 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // ── Eliminar los skeleton-cards de todos los grids ──
+    // ── Eliminar los skeleton-cards con fade-out suave ──
     function clearSkeletons() {
-        if (lecturasGrid) lecturasGrid.innerHTML = '';
-        if (rutinasGrid) rutinasGrid.innerHTML = '';
-        if (dietasGrid) dietasGrid.innerHTML = '';
+        [lecturasGrid, rutinasGrid, dietasGrid].forEach(grid => {
+            if (!grid) return;
+            grid.querySelectorAll('.skeleton-card').forEach(sk => sk.classList.add('loaded'));
+            // Wait for the CSS opacity transition (350ms) then clear
+            setTimeout(() => { if (grid) grid.innerHTML = ''; }, 360);
+        });
+    }
+
+    // ── Fade out skeletons then run a render callback ──
+    function fadeAndRender(grid, renderFn) {
+        if (!grid) return;
+        grid.querySelectorAll('.skeleton-card').forEach(sk => sk.classList.add('loaded'));
+        setTimeout(() => {
+            if (grid) { grid.innerHTML = ''; renderFn(); }
+        }, 360);
     }
 
     // ── Mensaje de sección vacía cuando hay score pero sin items para ese slug ──
@@ -161,58 +173,52 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // ── RENDER LECTURAS ──
         if (lecturasGrid && scoreData.articulos?.length) {
-            lecturasGrid.innerHTML = '';
-            const rendered = [];
-            scoreData.articulos.slice(0, 4).forEach(slug => {
-                const item = catLecturas.find(i => i.slug === slug);
-                if (item) {
-                    lecturasGrid.appendChild(createLecturaCard(item));
-                    rendered.push(slug);
+            fadeAndRender(lecturasGrid, () => {
+                const rendered = [];
+                scoreData.articulos.slice(0, 4).forEach(slug => {
+                    const item = catLecturas.find(i => i.slug === slug);
+                    if (item) { lecturasGrid.appendChild(createLecturaCard(item)); rendered.push(slug); }
+                });
+                if (rendered.length === 0) {
+                    renderEmptySection(lecturasGrid, 'No encontramos las lecturas recomendadas. Genera nuevas recomendaciones.');
+                } else {
+                    agregarTarjetaBlog(lecturasGrid);
                 }
             });
-            if (rendered.length === 0) {
-                renderEmptySection(lecturasGrid, 'No encontramos las lecturas recomendadas. Genera nuevas recomendaciones.');
-            } else {
-                agregarTarjetaBlog(lecturasGrid);
-            }
         } else if (lecturasGrid) {
-            renderEmptySection(lecturasGrid, 'Aún no tienes lecturas recomendadas.');
+            fadeAndRender(lecturasGrid, () => renderEmptySection(lecturasGrid, 'Aún no tienes lecturas recomendadas.'));
         }
 
         // ── RENDER RUTINAS ──
         if (rutinasGrid && scoreData.rutinas?.length) {
-            rutinasGrid.innerHTML = '';
-            const rendered = [];
-            scoreData.rutinas.slice(0, 4).forEach(slug => {
-                const item = catRutinas.find(i => i.slug === slug);
-                if (item) {
-                    rutinasGrid.appendChild(createRutinaCard(item));
-                    rendered.push(slug);
+            fadeAndRender(rutinasGrid, () => {
+                const rendered = [];
+                scoreData.rutinas.slice(0, 4).forEach(slug => {
+                    const item = catRutinas.find(i => i.slug === slug);
+                    if (item) { rutinasGrid.appendChild(createRutinaCard(item)); rendered.push(slug); }
+                });
+                if (rendered.length === 0) {
+                    renderEmptySection(rutinasGrid, 'No encontramos las rutinas recomendadas. Genera nuevas recomendaciones.');
                 }
             });
-            if (rendered.length === 0) {
-                renderEmptySection(rutinasGrid, 'No encontramos las rutinas recomendadas. Genera nuevas recomendaciones.');
-            }
         } else if (rutinasGrid) {
-            renderEmptySection(rutinasGrid, 'Aún no tienes rutinas recomendadas.');
+            fadeAndRender(rutinasGrid, () => renderEmptySection(rutinasGrid, 'Aún no tienes rutinas recomendadas.'));
         }
 
         // ── RENDER DIETAS ──
         if (dietasGrid && scoreData.planes_alimenticios?.length) {
-            dietasGrid.innerHTML = '';
-            const rendered = [];
-            scoreData.planes_alimenticios.slice(0, 4).forEach(slug => {
-                const item = catDietas.find(i => i.slug === slug);
-                if (item) {
-                    dietasGrid.appendChild(createDietaCard(item));
-                    rendered.push(slug);
+            fadeAndRender(dietasGrid, () => {
+                const rendered = [];
+                scoreData.planes_alimenticios.slice(0, 4).forEach(slug => {
+                    const item = catDietas.find(i => i.slug === slug);
+                    if (item) { dietasGrid.appendChild(createDietaCard(item)); rendered.push(slug); }
+                });
+                if (rendered.length === 0) {
+                    renderEmptySection(dietasGrid, 'No encontramos los planes alimenticios recomendados. Genera nuevas recomendaciones.');
                 }
             });
-            if (rendered.length === 0) {
-                renderEmptySection(dietasGrid, 'No encontramos los planes alimenticios recomendados. Genera nuevas recomendaciones.');
-            }
         } else if (dietasGrid) {
-            renderEmptySection(dietasGrid, 'Aún no tienes planes alimenticios recomendados.');
+            fadeAndRender(dietasGrid, () => renderEmptySection(dietasGrid, 'Aún no tienes planes alimenticios recomendados.'));
         }
 
     } catch (error) {

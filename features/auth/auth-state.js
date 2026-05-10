@@ -1,5 +1,6 @@
 import { auth } from './firebase.js';
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+import { injectGradientAvatar } from '../../assets/shared/js/utils/gradient-avatar.js';
 
 // ─────────────────────────────────────────────────────────────
 // getUserSession — promesa única del estado de auth
@@ -80,9 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (guestBtns) guestBtns.style.display = 'none';
                 if (userMenu) userMenu.style.display = 'flex';
 
-                // ─── DESKTOP: poblar avatar ───
+                // ─── DESKTOP: poblar avatar (gradient procedural) ───
                 const avatarEl = document.getElementById('nav-user-avatar');
-                if (avatarEl) avatarEl.textContent = initial;
+                injectGradientAvatar(avatarEl, user.uid, 34);
 
                 // ─── DESKTOP: badge corona ───
                 const crownEl = document.getElementById('nav-avatar-crown');
@@ -95,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const dropAvatarEl = document.getElementById('nav-dropdown-avatar');
                 const dropNameEl = document.getElementById('nav-dropdown-name');
                 const dropEmailEl = document.getElementById('nav-dropdown-email');
-                if (dropAvatarEl) dropAvatarEl.textContent = initial;
+                injectGradientAvatar(dropAvatarEl, user.uid, 36);
                 if (dropNameEl) dropNameEl.textContent = shortName || user.email;
                 if (dropEmailEl) dropEmailEl.textContent = user.email;
 
@@ -159,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const mobileAvatar = document.getElementById('nav-mobile-avatar');
                 const mobileName = document.getElementById('nav-mobile-name');
                 const mobileEmail = document.getElementById('nav-mobile-email');
-                if (mobileAvatar) mobileAvatar.textContent = initial;
+                injectGradientAvatar(mobileAvatar, user.uid, 42);
                 if (mobileName) mobileName.textContent = shortName || user.email;
                 if (mobileEmail) mobileEmail.textContent = user.email;
 

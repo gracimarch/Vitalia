@@ -2,6 +2,7 @@ import { db, auth } from '../auth/firebase.js';
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 import { signOut } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
 import { getUserSession } from '../auth/auth-state.js';
+import { injectGradientAvatar } from '../../assets/shared/js/utils/gradient-avatar.js';
 
 // ── Helpers de label ──────────────────────────────────────────────────
 const ACTIVITY_LABELS = {
@@ -95,12 +96,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         const displayName = user.displayName || email.split('@')[0] || 'Usuario';
         const initial = displayName.charAt(0).toUpperCase();
 
-        // Avatar y nombre en el hero
+        // Avatar y nombre en el hero (gradient procedural)
         const avatarEl = document.getElementById('profile-avatar');
         const nameEl = document.getElementById('profile-display-name');
         const emailEl = document.getElementById('profile-email');
 
-        if (avatarEl) avatarEl.textContent = initial;
+        injectGradientAvatar(avatarEl, user.uid, 76);
         if (nameEl) nameEl.textContent = displayName;
         if (emailEl) emailEl.textContent = email;
 
@@ -133,7 +134,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Actualizar héroe con nombre real
         if (nameEl) nameEl.textContent = fullName;
-        if (avatarEl) avatarEl.textContent = fullName.charAt(0).toUpperCase();
+        // Avatar already rendered from user.uid — no need to re-render on name change
 
         // Campos
         setText('field-fullname', fullName);
@@ -147,6 +148,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Objetivos como etiquetas
         setTags('field-goals', data.wellbeingGoals);
+        const statGoals = document.getElementById('stat-goals-count');
+        if (statGoals && data.wellbeingGoals) {
+            statGoals.textContent = data.wellbeingGoals.length || '0';
+        }
 
     } catch (error) {
         console.error('[Perfil] Error cargando datos:', error);
