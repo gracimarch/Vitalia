@@ -41,12 +41,27 @@
     opacity: 0.7;
 }
 
-.articles-grid,
+/* Lecturas & Planes Alimenticios — 2×2 grid of wide horizontal rectangles */
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Rutinas — 4×1 single-column vertical rectangles */
 .routines-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .article-card {
@@ -55,8 +70,8 @@
     align-items: flex-start;
     justify-content: space-between;
     position: relative;
-    aspect-ratio: auto;
-    min-height: 240px;
+    /* Wide horizontal rectangle proportions */
+    min-height: 180px;
     padding: 2rem;
     border: none;
     border-radius: 20px;
@@ -150,8 +165,7 @@
     align-items: flex-start;
     justify-content: space-between;
     position: relative;
-    aspect-ratio: auto;
-    min-height: 240px;
+    min-height: 180px;
     padding: 2rem;
     border: none;
     border-radius: 20px;
@@ -337,13 +351,14 @@
 
 .routine-card {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
     position: relative;
-    aspect-ratio: auto;
-    min-height: 240px;
-    padding: 2rem;
+    /* Vertical rectangle — tall and narrow layout in single column */
+    min-height: 120px;
+    padding: 1.75rem 2rem;
     border: none;
     border-radius: 20px;
     color: var(--white);
@@ -354,12 +369,46 @@
 }
 
 .routine-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(244, 162, 97, 0.3);
 }
 
 .routine-card i {
     color: var(--white) !important;
+}
+
+/* Inner content layout for horizontal routine cards */
+.routine-card .heading-time {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.routine-card > p {
+    /* Level/category badge on left */
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+    white-space: nowrap;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    flex-shrink: 0;
+}
+
+.routine-card h3 {
+    margin: 0 !important;
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.routine-card .reading-time {
+    margin-top: 0.25rem;
 }
 
 
