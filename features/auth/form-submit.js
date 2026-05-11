@@ -73,7 +73,7 @@ export async function handleSubmit() {
         // Guardar datos en Firestore, en la colección "users"
         await setDoc(doc(db, "users", user.uid), userData);
 
-        showToast("Generando tus recomendaciones con IA, esto puede tardar un momento...", "success");
+        showToast("Generando tus recomendaciones personalizadas, esto puede tardar un momento...", "success");
 
         // Generar recomendaciones personalizadas en el backend
         try {
