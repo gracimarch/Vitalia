@@ -2,12 +2,12 @@
 
 # 💜 Vitalia
 
-### Tu plataforma integral de bienestar físico y mental, impulsada por IA.
+### Tu plataforma integral de bienestar físico y mental, con recomendaciones personalizadas.
 
 <br />
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel&logoColor=white)](https://vitalia-selfcare.vercel.app/)
-[![Made with JS](https://img.shields.io/badge/Stack-HTML%20%7C%20CSS%20%7C%20JS%20%7C%20React-purple)](#-tecnologías-utilizadas)
+[![Made with JS](https://img.shields.io/badge/Stack-HTML%20%7C%20CSS%20%7C%20JS-purple)](#-tecnologías-utilizadas)
 [![Firebase Auth](https://img.shields.io/badge/Auth-Firebase-orange?logo=firebase&logoColor=white)](#-tecnologías-utilizadas)
 [![License](https://img.shields.io/badge/Licencia-Propietaria-334155)](#-licencia)
 
@@ -25,7 +25,7 @@
 
 ## 📖 Descripción
 
-**Vitalia** es una plataforma web de bienestar integral que combina salud física, mental y nutricional en un solo lugar. A través de un formulario de registro detallado, Vitalia recopila información sobre el estilo de vida, nivel de actividad física, dieta, calidad de sueño y objetivos de bienestar del usuario. Con estos datos, un **backend con IA** genera recomendaciones personalizadas de artículos, rutinas de ejercicio y planes alimenticios.
+**Vitalia** es una plataforma web de bienestar integral que combina salud física, mental y nutricional en un solo lugar. A través de un formulario de registro detallado, Vitalia recopila información sobre el estilo de vida, nivel de actividad física, dieta, calidad de sueño y objetivos de bienestar del usuario. Con estos datos, un **backend propio** genera recomendaciones personalizadas de artículos, rutinas de ejercicio y planes alimenticios.
 
 El resultado es un espacio privado ("Mi Espacio") donde cada usuario recibe contenido curado y relevante para sus necesidades específicas.
 
@@ -36,7 +36,7 @@ El resultado es un espacio privado ("Mi Espacio") donde cada usuario recibe cont
 Muchas personas quieren mejorar su bienestar pero se pierden entre la enorme cantidad de información genérica disponible en internet. Vitalia resuelve esto al:
 
 - **Centralizar** recursos de bienestar físico, mental y nutricional en un solo lugar.
-- **Personalizar** las recomendaciones según el perfil real de cada usuario, usando inteligencia artificial.
+- **Personalizar** las recomendaciones según el perfil real de cada usuario, basadas en su estilo de vida y objetivos.
 - **Simplificar** el acceso a rutinas guiadas, planes alimenticios completos y artículos especializados.
 - **Incluir** contenido accesible, con rutinas adaptadas para personas con movilidad reducida y personas en silla de ruedas.
 
@@ -53,7 +53,7 @@ Muchas personas quieren mejorar su bienestar pero se pierden entre la enorme can
 - Rutas protegidas: "Mi Espacio" y "Perfil" solo accesibles con sesión activa
 - Modal intersticial cuando un usuario no logueado intenta acceder a contenido protegido
 
-### 🤖 Recomendaciones personalizadas con IA
+### 🎯 Recomendaciones personalizadas
 - Al registrarse, se envían los datos del usuario a una API externa (`vitalia-core-api` en Render)
 - La API genera un "score" con recomendaciones de artículos, rutinas y planes alimenticios
 - Las recomendaciones se almacenan en Firestore y se muestran dinámicamente en "Mi Espacio"
@@ -121,7 +121,7 @@ Muchas personas quieren mejorar su bienestar pero se pierden entre la enorme can
 | **3D / WebGL** | Three.js r128 (shaders GLSL personalizados) |
 | **Autenticación** | Firebase Authentication |
 | **Base de datos** | Cloud Firestore |
-| **Backend IA** | API externa en Render (`vitalia-core-api`) |
+| **Backend** | API externa en Render (`vitalia-core-api`) |
 | **Chatbot** | Smartsupp |
 | **Iconografía** | Font Awesome 6 |
 | **Tipografía** | Google Fonts (Poppins + Zilla Slab) |
@@ -164,45 +164,56 @@ La configuración de Firebase está incluida directamente en el código fuente (
 
 ## 📁 Estructura del proyecto
 
+El proyecto sigue una **arquitectura orientada a features**: cada módulo agrupa su CSS y JS en una carpeta propia dentro de `features/`. Los estilos y scripts compartidos (variables, layout, utilidades, partials) viven en `assets/shared/`.
+
 ```
 Vitalia/
-├── index.html                  # Landing page principal
-├── 404.html                    # Página de error personalizada
-├── pages/                      # Páginas HTML
-│   ├── blog.html               # Blog con artículos categorizados
-│   ├── mi-espacio.html         # Dashboard privado del usuario
-│   ├── perfil.html             # Perfil del usuario
-│   ├── login.html              # Inicio de sesión
-│   ├── form.html               # Formulario de registro (crear cuenta)
-│   ├── lectura.html            # Template dinámico para artículos
-│   ├── dieta.html              # Template dinámico para planes alimenticios
-│   └── rutina.html             # Template dinámico para rutinas de ejercicio
+├── index.html                       # Landing page principal
+├── 404.html                         # Página de error personalizada
+├── pages/                           # Páginas HTML
+│   ├── blog.html                    # Blog con artículos categorizados
+│   ├── mi-espacio.html              # Dashboard privado del usuario
+│   ├── perfil.html                  # Perfil del usuario
+│   ├── login.html                   # Inicio de sesión
+│   ├── form.html                    # Formulario de registro (crear cuenta)
+│   ├── lectura.html                 # Template dinámico para artículos
+│   ├── dieta.html                   # Template dinámico para planes alimenticios
+│   └── rutina.html                  # Template dinámico para rutinas de ejercicio
+├── features/                        # Módulos de la aplicación (CSS + JS por feature)
+│   ├── landing/                     # Estilos y lógica de la landing page
+│   ├── auth/                        # Firebase config, login, registro y validaciones
+│   ├── blog/                        # Blog: lógica de filtros, búsqueda y partículas
+│   ├── mi-espacio/                  # Dashboard: bento, saludo, recomendaciones
+│   ├── profile/                     # Página de perfil del usuario
+│   ├── wellness/                    # Visor de rutinas, lecturas y planes alimenticios
+│   │   ├── routine/                 # Lógica del visor de rutinas
+│   │   ├── reading/                 # Loader de artículos
+│   │   └── diet/                   # Loader de dietas
+│   ├── legal/                       # Estilos de la página legal
+│   └── 404/                        # Estilos y router de la página de error
 ├── assets/
-│   ├── css/
-│   │   ├── core/               # Variables, layout, utilidades, estilos comunes
-│   │   ├── pages/              # Estilos por página
-│   │   ├── components/         # Estilos de componentes React (Bento, Gradient, etc.)
-│   │   └── vendor/             # Estilos de terceros (Toastify)
-│   ├── js/
-│   │   ├── auth/               # Firebase config, auth-state, login
-│   │   ├── core/               # Router, loader, chatbot, main
-│   │   ├── components/         # Componentes React (FAQ, Bento, pricing, audio player)
-│   │   ├── effects/            # Efectos visuales (liquid WebGL, partículas, scroll, magnetic)
-│   │   ├── loaders/            # Loaders dinámicos para dietas y lecturas
-│   │   ├── pages/              # Lógica específica por página
-│   │   └── utils/              # Servicios auxiliares (voz TTS, artículos recomendados)
-│   ├── data/                   # Catálogos JSON (lecturas, dietas, rutinas, ejercicios, recetas)
-│   ├── audios/meditaciones/    # Audios originales de meditación guiada
-│   ├── images/                 # Imágenes organizadas por categoría
-│   ├── partials/               # Header y footer reutilizables (carga dinámica)
-│   ├── favicons/               # Iconos de la app
-│   └── legal/                  # Política de privacidad y términos (PDFs)
-├── dev/                        # Herramientas de debug
-├── vercel.json                 # Configuración de deploy (rewrites + cache headers)
-├── serve.json                  # Configuración de desarrollo local (rewrites)
-├── sitemap.xml                 # Mapa del sitio para SEO
-├── robots.txt                  # Directivas para crawlers
-└── package.json                # Dependencia: @vercel/speed-insights
+│   ├── shared/                      # Recursos compartidos entre features
+│   │   ├── css/                     # Sistema de diseño global
+│   │   │   ├── variables.css        # Tokens de color, tipografía y espaciado
+│   │   │   ├── common.css           # Estilos base, header, footer y componentes comunes
+│   │   │   ├── layout.css           # Grid y estructura general
+│   │   │   ├── utilities.css        # Clases de utilidad
+│   │   │   └── vendor/              # Estilos de terceros (Toastify)
+│   │   ├── js/                      # Scripts compartidos
+│   │   │   ├── auth-state.js        # Guard de rutas y estado de sesión
+│   │   │   ├── firebase.js          # Configuración de Firebase
+│   │   │   └── ...                  # Loader, chatbot, efectos, utils, etc.
+│   │   └── partials/                # Header y footer reutilizables (carga dinámica)
+│   ├── data/                        # Catálogos JSON (lecturas, dietas, rutinas, recetas)
+│   ├── audios/meditaciones/         # Audios originales de meditación guiada
+│   ├── images/                      # Imágenes organizadas por categoría
+│   └── favicons/                    # Iconos de la app
+├── dev/                             # Herramientas de debug
+├── vercel.json                      # Configuración de deploy (rewrites + cache headers)
+├── serve.json                       # Configuración de desarrollo local (rewrites)
+├── sitemap.xml                      # Mapa del sitio para SEO
+├── robots.txt                       # Directivas para crawlers
+└── package.json                     # Dependencia: @vercel/speed-insights
 ```
 
 <br />
@@ -215,7 +226,7 @@ El proyecto está en **producción activa** y es accesible públicamente en [vit
 - Landing page completa con hero WebGL, FAQ, planes de precios y Magic Bento
 - Sistema de autenticación completo (registro, login, logout, recuperación de contraseña, rutas protegidas)
 - Formulario de registro con validación y 10+ campos de bienestar
-- Dashboard "Mi Espacio" con recomendaciones personalizadas por IA
+- Dashboard "Mi Espacio" con recomendaciones personalizadas basadas en el perfil del usuario
 - Blog con búsqueda, filtros por categoría y carga progresiva
 - Visor de rutinas interactivo con temporizador, voz guiada y respiración cuadrada
 - Reproductor de meditaciones con 8 audios originales
@@ -234,7 +245,7 @@ El proyecto está en **producción activa** y es accesible públicamente en [vit
 ## 🗺️ Próximas mejoras / Roadmap
 
 - [ ] **Edición de perfil** — permitir al usuario actualizar sus datos y regenerar recomendaciones
-- [ ] **Meditaciones personalizadas** — actualmente son estáticas; podrían vincularse al score de IA del usuario
+- [ ] **Meditaciones personalizadas** — actualmente son estáticas; podrían vincularse al perfil y score del usuario
 - [ ] **PWA** — agregar Service Worker y manifest para experiencia offline
 - [ ] **Sistema premium real** — conectar la detección de plan premium con Firestore o Firebase Custom Claims
 - [ ] **Integración de pagos** — conectar los planes de suscripción con un procesador de pagos (Stripe, MercadoPago, etc.)
@@ -242,7 +253,16 @@ El proyecto está en **producción activa** y es accesible públicamente en [vit
 
 <br />
 
-## 👥 Contacto
+## 👥 Autoras
+
+Vitalia es desarrollado y mantenido por:
+
+| | Nombre | GitHub | LinkedIn |
+|---|---|---|---|
+| 🌸 | **Graciana March** | [@gracimarch](https://github.com/gracimarch) | [gracimarch](https://www.linkedin.com/in/gracimarch/) |
+| 🌿 | **Josefina Marsala** | [@jossmarsala](https://github.com/jossmarsala) | [josmarsala](https://www.linkedin.com/in/josmarsala/) |
+
+### Contacto del proyecto
 
 - 💌 **Email:** [vitalia.selfcare@gmail.com](mailto:vitalia.selfcare@gmail.com)
 - 📸 **Instagram:** [@vitalia.web](https://www.instagram.com/vitalia.web/)
@@ -251,8 +271,8 @@ El proyecto está en **producción activa** y es accesible públicamente en [vit
 
 | Repositorio | Descripción | Stack |
 |---|---|---|
-| **Vitalia** (este repo) | Frontend web | HTML, CSS, JS, React |
-| [vitalia-core-api](https://github.com/jossmarsala/vitalia-core-api) | Backend & lógica de recomendaciones IA | Python, FastAPI, Firebase |
+| **Vitalia** (este repo) | Frontend web | HTML, CSS, JS |
+| [vitalia-core-api](https://github.com/jossmarsala/vitalia-core-api) | Backend & lógica de recomendaciones personalizadas | Python, FastAPI, Firebase |
 
 <br />
 
@@ -271,5 +291,5 @@ Se incluyen documentos legales adicionales en `assets/legal/`:
 ---
 
 <div align="center">
-  <i>Construyendo mejores mañanas 💜</i>
+  <i>Acompañando tu bienestar todos los días 💜</i>
 </div>
