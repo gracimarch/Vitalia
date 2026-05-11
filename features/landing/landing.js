@@ -76,21 +76,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const CURRENT_CLASS = "current";
         const NEXT_CLASS = "next";
 
-        function setWidths() {
-            const wordsWidths = Array.from(words).map((word) => word.offsetWidth);
-            const maxWordsWidth = Math.max(...wordsWidths);
-            wrapper.style.setProperty("--width", `${maxWordsWidth}px`);
-            wrapper.style.setProperty("--width-mobile", `${maxWordsWidth}px`);
+        function updateWidth() {
+            const activeWord = wrapper.querySelector("span." + CURRENT_CLASS);
+            if (activeWord) {
+                const width = activeWord.offsetWidth;
+                wrapper.style.setProperty("--width", `${width}px`);
+                wrapper.style.setProperty("--width-mobile", `${width}px`);
+            }
         }
 
         // Recalculate on load to ensure fonts are ready
-        window.addEventListener('load', setWidths);
+        window.addEventListener('load', updateWidth);
 
         // Recalculate on resize to adapt to responsive font changes
-        window.addEventListener('resize', setWidths);
+        window.addEventListener('resize', updateWidth);
 
         // Also run immediately just in case
-        setWidths();
+        updateWidth();
 
         setInterval(() => {
             const currentWord = wrapper.querySelector("span.current");
@@ -104,6 +106,8 @@ document.addEventListener('DOMContentLoaded', function () {
             nextNextWord.classList.add(NEXT_CLASS);
             wrapper.style.setProperty("--color", nextWord.dataset.color);
             wrapper.style.setProperty("--color-bg", nextWord.dataset.bgColor);
+            
+            updateWidth();
         }, 1500);
     }
 

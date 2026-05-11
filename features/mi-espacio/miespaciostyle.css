@@ -56,8 +56,18 @@
     margin-bottom: 2rem;
 }
 
+@media (max-width: 1024px) {
+    .routines-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .articles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .routines-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -1076,6 +1086,7 @@
     overflow: hidden;
     position: relative;
 
+    /* Matches .article-card and .food-card min-height */
     min-height: 180px;
     background:
         linear-gradient(105deg,
@@ -1091,8 +1102,66 @@
     transition: opacity 0.4s ease;
 }
 
+/* ── Lecturas: shimmer púrpura ── */
+#dynamic-readings-list .skeleton-card {
+    background:
+        linear-gradient(105deg,
+            #f0ecf7 0%,
+            #f0ecf7 30%,
+            #e2d4f5 48%,
+            #d4c0ef 50%,
+            #e2d4f5 52%,
+            #f0ecf7 70%,
+            #f0ecf7 100%);
+    background-size: 400% 100%;
+    animation: skeletonShimmerPurple 2.5s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmerPurple {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+}
+
+/* ── Rutinas: shimmer naranja/cálido ── */
 .routines-grid .skeleton-card {
-    min-height: 120px;
+    /* Matches .routine-card min-height (was 120px — caused 160px CLS) */
+    min-height: 280px;
+    background:
+        linear-gradient(105deg,
+            #fdf3ec 0%,
+            #fdf3ec 30%,
+            #fae1cc 48%,
+            #f7ceac 50%,
+            #fae1cc 52%,
+            #fdf3ec 70%,
+            #fdf3ec 100%);
+    background-size: 400% 100%;
+    animation: skeletonShimmerOrange 2.5s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmerOrange {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+}
+
+/* ── Planes alimenticios: shimmer cyan/teal ── */
+#dynamic-food-list .skeleton-card {
+    background:
+        linear-gradient(105deg,
+            #eaf7f7 0%,
+            #eaf7f7 30%,
+            #ceeced 48%,
+            #b8e3e4 50%,
+            #ceeced 52%,
+            #eaf7f7 70%,
+            #eaf7f7 100%);
+    background-size: 400% 100%;
+    animation: skeletonShimmerCyan 2.5s ease-in-out infinite;
+}
+
+@keyframes skeletonShimmerCyan {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
 }
 
 .skeleton-card::before,
@@ -1104,22 +1173,48 @@
     background: rgba(255, 255, 255, 0.55);
 }
 
-/* Title line */
+/*
+  Real cards use justify-content: space-between with content pushed to the
+  bottom (.heading-time at the end of the flex column). Skeleton lines are
+  mirrored to the bottom to match this layout and prevent visible repositioning.
+*/
+
+/* Heading line — mirrors h3 position near bottom */
 .skeleton-card::before {
-    top: 1.75rem;
-    width: 55%;
+    bottom: 2.5rem;
+    top: auto;
+    width: 65%;
     height: 14px;
 }
 
-/* Subtitle / meta line */
+/* Category / reading-time line — just below the heading */
 .skeleton-card::after {
-    top: 3.25rem;
-    width: 35%;
+    bottom: 1.5rem;
+    top: auto;
+    width: 30%;
     height: 10px;
     opacity: 0.7;
 }
 
-/* Fade-out class added by JS (optional) */
+/* Routine cards have a badge at the top — add a top line via the category badge position */
+.routines-grid .skeleton-card::before {
+    /* Level badge near the top */
+    bottom: auto;
+    top: 1.75rem;
+    width: 28%;
+    height: 12px;
+}
+
+.routines-grid .skeleton-card::after {
+    /* Title near bottom */
+    bottom: 2.5rem;
+    top: auto;
+    width: 60%;
+    height: 14px;
+    opacity: 0.85;
+}
+
+/* Fade-out class added by JS */
 .skeleton-card.loaded {
     opacity: 0;
     pointer-events: none;

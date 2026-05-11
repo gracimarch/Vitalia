@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     ['productividad-list', 'ejercicios-list', 'alimentacion-list', 'salud-mental-list'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.innerHTML = `
-            <div class="blog-skeleton-card"></div>
-            <div class="blog-skeleton-card"></div>
-            <div class="blog-skeleton-card"></div>
+            <div class="blog-skeleton-card"><div class="blog-skeleton-category"></div></div>
+            <div class="blog-skeleton-card"><div class="blog-skeleton-category"></div></div>
+            <div class="blog-skeleton-card"><div class="blog-skeleton-category"></div></div>
         `;
     });
 

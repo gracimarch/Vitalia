@@ -852,15 +852,93 @@ section+.reading {
 
 .blog-skeleton-card {
     border-radius: 20px;
-    min-height: 220px;
-    background: linear-gradient(90deg, #ede9f5 25%, #e0d9f0 50%, #ede9f5 75%);
-    background-size: 200% 100%;
-    animation: blog-skeleton-shimmer 1.5s ease-in-out infinite;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    position: relative;
+    /* Matches .block min-height in blog */
+    min-height: 240px;
+    background: linear-gradient(105deg, #f0ecf7 0%, #f0ecf7 30%, #e6ddf2 48%, #ddd4ea 50%, #e6ddf2 52%, #f0ecf7 70%, #f0ecf7 100%);
+    background-size: 400% 100%;
+    animation: blogSkeletonShimmer 2.5s ease-in-out infinite;
+    transition: opacity 0.4s ease;
 }
 
-@keyframes blog-skeleton-shimmer {
-    0%   { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+/* Lines simulating heading & time */
+.blog-skeleton-card::before,
+.blog-skeleton-card::after,
+.blog-skeleton-category {
+    content: '';
+    position: absolute;
+    left: 2rem; /* matches block padding */
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Category line (top) */
+.blog-skeleton-category {
+    top: 2rem;
+    width: 25%;
+    height: 12px;
+}
+
+/* Heading line (bottom area) */
+.blog-skeleton-card::before {
+    bottom: 3.5rem;
+    width: 70%;
+    height: 16px;
+}
+
+/* Time line (bottom) */
+.blog-skeleton-card::after {
+    bottom: 2rem;
+    width: 30%;
+    height: 12px;
+    opacity: 0.7;
+}
+
+@keyframes blogSkeletonShimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+}
+
+/* ── Productividad (Lecturas): shimmer púrpura ── */
+#productividad-list .blog-skeleton-card {
+    background:
+        linear-gradient(105deg,
+            #f0ecf7 0%, #f0ecf7 30%,
+            #e2d4f5 48%, #d4c0ef 50%, #e2d4f5 52%,
+            #f0ecf7 70%, #f0ecf7 100%);
+    background-size: 400% 100%;
+}
+
+/* ── Ejercicios: shimmer cyan/teal ── */
+#ejercicios-list .blog-skeleton-card {
+    background:
+        linear-gradient(105deg,
+            #eaf7f7 0%, #eaf7f7 30%,
+            #ceeced 48%, #b8e3e4 50%, #ceeced 52%,
+            #eaf7f7 70%, #eaf7f7 100%);
+    background-size: 400% 100%;
+}
+
+/* ── Alimentación: shimmer naranja/cálido ── */
+#alimentacion-list .blog-skeleton-card {
+    background:
+        linear-gradient(105deg,
+            #fdf3ec 0%, #fdf3ec 30%,
+            #fae1cc 48%, #f7ceac 50%, #fae1cc 52%,
+            #fdf3ec 70%, #fdf3ec 100%);
+    background-size: 400% 100%;
+}
+
+/* ── Salud Mental: shimmer azul marino/navy ── */
+#salud-mental-list .blog-skeleton-card {
+    background:
+        linear-gradient(105deg,
+            #eff2f6 0%, #eff2f6 30%,
+            #d6e1ed 48%, #c0d0e3 50%, #d6e1ed 52%,
+            #eff2f6 70%, #eff2f6 100%);
+    background-size: 400% 100%;
 }
 
 .blog-empty-state {
