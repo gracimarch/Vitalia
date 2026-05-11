@@ -452,7 +452,7 @@
    (Stays dark for video contrast)
    ========================================= */
 .screen--exercise {
-    background: #0d0d0d;
+    background: var(--background-dark);
     overflow: hidden;
 }
 
@@ -517,7 +517,7 @@
     font-size: 1.1rem;
     font-weight: 700;
     margin: 0;
-    color: #f7f7f7 !important;
+    color: var(--white) !important;
     text-shadow: 0 0 4px rgba(225, 148, 127, 0.08);
     letter-spacing: 0.3px;
     white-space: nowrap;

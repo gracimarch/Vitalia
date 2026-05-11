@@ -40,7 +40,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: #060010;
+    background-color: var(--background-dark);
     z-index: -1;
 }
 

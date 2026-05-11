@@ -241,7 +241,7 @@ body.loaded .loader-container { display: none; }
 .reg-progress-step {
     flex: 1;
     height: 4px;
-    background: #ede9f5;
+    background: var(--bg-login);
     border-radius: 4px;
     transition: background 0.35s ease;
     position: relative;

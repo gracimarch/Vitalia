@@ -355,7 +355,7 @@ body.loaded .loader-container { display: none; }
     -webkit-text-fill-color: var(--text-color, #2d2346) !important;
     caret-color: var(--text-color, #2d2346);
     transition: background-color 9999s ease-in-out 0s, border-color 0.25s ease, box-shadow 0.25s ease;
-    border-color: #e0dced;
+    border-color: var(--bg-login);
 }
 
 .login-input:-webkit-autofill:focus {
@@ -488,7 +488,7 @@ body.loaded .loader-container { display: none; }
     content: '';
     flex: 1;
     height: 1px;
-    background: #ede9f5;
+    background: var(--bg-login);
 }
 
 /* ── Sign-up footer ───────────────────────────────────────── */

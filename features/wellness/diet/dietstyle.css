@@ -46,7 +46,7 @@ button {
     width: 44px;
     height: 44px;
     border: 3px solid rgba(128, 202, 205, 0.25);
-    border-top-color: #80CACD;
+    border-top-color: var(--cyan);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
 }
@@ -624,13 +624,13 @@ body.loaded #loader {
 }
 
 .meal-item__time i {
-    color: #80CACD;
+    color: var(--cyan);
     font-size: 0.75rem;
 }
 
 .meal-item__arrow {
     font-size: 1.4rem;
-    color: #2bc4bc;
+    color: var(--teal);
     opacity: 0;
     transition: opacity 0.2s, transform 0.2s;
     flex-shrink: 0;
@@ -789,7 +789,7 @@ body.loaded #loader {
 /* Middle days of a selected week */
 .diet-cal__day--week-mid {
     background: rgba(181, 113, 222, 0.15) !important;
-    color: #6b3ba8 !important;
+    color: var(--purple-dark) !important;
     border-radius: 0;
 }
 
@@ -822,7 +822,7 @@ body.loaded #loader {
     border: 1px solid rgba(43, 196, 188, 0.25);
     border-radius: 12px;
     font-size: 0.75rem;
-    color: #2bc4bc;
+    color: var(--teal);
     font-weight: 600;
     animation: panelFadeIn 0.3s ease;
 }
@@ -957,7 +957,7 @@ body.loaded #loader {
 
 .diet-filter__pill i {
     font-size: 0.9rem;
-    color: #B571DE;
+    color: var(--purple);
 }
 
 .diet-filter__option:hover .diet-filter__pill {
@@ -1052,7 +1052,7 @@ body.loaded #loader {
 }
 
 .recipe-card__meta i {
-    color: #80CACD;
+    color: var(--cyan);
     font-size: 0.75rem;
 }
 
@@ -1105,13 +1105,13 @@ body.loaded #loader {
     justify-content: center;
     margin-bottom: 10px;
     font-size: 1.1rem;
-    color: #B571DE;
+    color: var(--purple);
 }
 
 .variation-card__type {
     font-size: 0.82rem;
     font-weight: 700;
-    color: #B571DE;
+    color: var(--purple);
     margin-bottom: 6px;
 }
 
@@ -1258,7 +1258,7 @@ body.loaded #loader {
     align-items: center;
     justify-content: center;
     font-size: 1rem;
-    color: #333;
+    color: var(--text-color);
     flex-shrink: 0;
     transition: background 0.2s, transform 0.15s;
     cursor: pointer;
@@ -1283,7 +1283,7 @@ body.loaded #loader {
 }
 
 .diet-modal__time i {
-    color: #80CACD;
+    color: var(--cyan);
 }
 
 .diet-modal__ingredients-title {
@@ -1308,7 +1308,7 @@ body.loaded #loader {
     align-items: center;
     gap: 8px;
     font-size: 0.82rem;
-    color: #555;
+    color: var(--text-subtitle);
     padding: 8px 12px;
     background: rgba(128, 202, 205, 0.07);
     border-radius: 10px;

@@ -261,7 +261,7 @@
 .bento-reflection-text {
     font-size: 21px;
     font-weight: 400;
-    color: #333;
+    color: var(--text-color);
     margin: 0 0 0.25em;
     line-height: 1.3;
     overflow: visible;
@@ -271,14 +271,14 @@
 .bento-card-title {
     font-weight: 600;
     margin: 0;
-    color: #333;
+    color: var(--text-color);
     font-size: 1rem;
     line-height: 1.2;
 }
 
 .bento-card-subtitle {
     font-weight: 500;
-    color: #777;
+    color: var(--text-muted);
     margin-bottom: 0.2rem;
     font-size: 0.85rem;
 }
@@ -291,7 +291,7 @@
 }
 
 .bento-text-muted {
-    color: #666;
+    color: var(--text-muted);
     margin: 0;
     font-size: 0.9rem;
 }
@@ -308,7 +308,7 @@
 .bento-heading {
     font-weight: 700;
     margin: 0;
-    color: #333;
+    color: var(--text-color);
     font-size: 1.4rem;
     line-height: 1.2;
 }

@@ -614,7 +614,7 @@
     left: 0;
     height: 100%;
     width: var(--hover-pos);
-    background: #d4d4d4;
+    background: var(--border-color);
     pointer-events: none;
     z-index: 1;
     opacity: 0;
@@ -740,8 +740,8 @@
 .icon-4 {
     /* Spa */
     background: var(--white);
-    border: 2.5px solid #345e8a;
-    color: #1d3557;
+    border: 2.5px solid var(--navy-border);
+    color: var(--navy);
     width: 48px;
     height: 48px;
     font-size: 1.05rem;
@@ -751,7 +751,7 @@
     /* Lightbulb */
     background: var(--white);
     border: 2.5px solid var(--soft-orange);
-    color: #d67a64;
+    color: var(--soft-orange-dark);
     width: 42px;
     height: 42px;
     font-size: 0.95rem;
@@ -1044,7 +1044,7 @@
 
 .empty-scores-btn i {
     font-size: 1.1rem;
-    color: #ffd700;
+    color: var(--gold);
 }
 
 .empty-scores-msg {

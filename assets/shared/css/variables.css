@@ -14,9 +14,12 @@
     --teal-hover: #20b3ab;
     --teal-light: #c9fff3;
     --teal-dark: #264653;
+    --navy: #1d3557;
+    --navy-border: #345e8a;
 
     /* Accents */
     --soft-orange: #E1947F;
+    --soft-orange-dark: #d67a64;
     --orange-soft: #f4a261;
 
     /* Neutrals */
@@ -36,8 +39,8 @@
     --bg-wrapper: #fffbf7;
     --bg-table-header: #eefffe;
     --bg-cream: #fefbf3;
-    --bg-login: #f0eef8;       /* Lavender bg — login & registro pages */
-    --bg-input: #faf9fc;       /* Input/form field background */
+    --bg-login: #f0eef8;
+    --bg-input: #faf9fc;
 
     /* ===== TYPOGRAPHY ===== */
     --font-primary: 'Poppins', Calibri, sans-serif;
@@ -61,9 +64,9 @@
     --transition-slow: 0.3s ease;
 
     /* ===== SEMANTIC COLORS ===== */
-    --color-danger: #d73a3a;   /* Danger/destructive actions */
-    --color-error:  #e53e5a;   /* Error toasts & alerts */
-    --gold:         #e8a010;   /* Premium/crown gold accent */
+    --color-danger: #d73a3a;
+    --color-error: #e53e5a;
+    --gold: #e8a010;
 
     /* ===== MAGIC BENTO (Dynamic Grid) ===== */
     --hue: 27;

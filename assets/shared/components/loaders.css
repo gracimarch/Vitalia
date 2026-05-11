@@ -40,7 +40,7 @@
 
 .error-link {
     text-decoration: underline;
-    color: #7134A2;
+    color: var(--purple-dark);
 }
 
 .error-link-purple {
