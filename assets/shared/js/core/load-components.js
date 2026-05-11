@@ -27,9 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const headerPlaceholder = document.getElementById("header-placeholder");
             if (headerPlaceholder) headerPlaceholder.innerHTML = headerHTML;
             highlightActiveLink();
-            // initializeNavbarToggle is now handled by auth-state.js (new header design)
-
-
+            // Disparar evento para que auth-state.js u otros scripts sepan que el header ya existe
+            document.dispatchEvent(new Event('headerLoaded'));
         })
         .catch(err => console.error("Error loading header:", err));
 
@@ -64,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function highlightActiveLink() {
     const currentPath = window.location.pathname;
-    const pageName    = currentPath.split("/").pop() || "index";
-    const cleanPath   = currentPath.replace(/\/$/, "").replace(".html", "").replace("/pages", "");
+    const pageName = currentPath.split("/").pop() || "index";
+    const cleanPath = currentPath.replace(/\/$/, "").replace(".html", "").replace("/pages", "");
 
     // ── New header nav links (.header-nav-link) ──
     const headerNavLinks = document.querySelectorAll(".header-nav-link");

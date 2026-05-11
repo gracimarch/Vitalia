@@ -85,9 +85,6 @@ Muchas personas quieren mejorar su bienestar pero se pierden entre la enorme can
 - Reproductor de audio personalizado con barra de progreso interactiva (drag & scrub)
 - Control de reproducción: un solo audio a la vez, con indicador de estado
 
-### 💬 Chat de soporte
-- Chatbot integrado vía Smartsupp en todas las páginas excepto la landing
-
 ### 🎨 Experiencia visual y UX
 - Hero con efecto **líquido WebGL** (Three.js + custom shaders GLSL) interactivo
 - Componentes React renderizados en cliente: Magic Bento, FAQ dinámicas, tarjetas de precios, texto con gradiente animado
@@ -122,7 +119,7 @@ Muchas personas quieren mejorar su bienestar pero se pierden entre la enorme can
 | **Autenticación** | Firebase Authentication |
 | **Base de datos** | Cloud Firestore |
 | **Backend** | API externa en Render (`vitalia-core-api`) |
-| **Chatbot** | Smartsupp |
+
 | **Iconografía** | Font Awesome 6 |
 | **Tipografía** | Google Fonts (Poppins + Zilla Slab) |
 | **Notificaciones** | Toastify.js |
@@ -202,7 +199,7 @@ Vitalia/
 │   │   ├── js/                      # Scripts compartidos
 │   │   │   ├── auth-state.js        # Guard de rutas y estado de sesión
 │   │   │   ├── firebase.js          # Configuración de Firebase
-│   │   │   └── ...                  # Loader, chatbot, efectos, utils, etc.
+│   │   │   └── ...                  # Loader, efectos, utils, etc.
 │   │   └── partials/                # Header y footer reutilizables (carga dinámica)
 │   ├── data/                        # Catálogos JSON (lecturas, dietas, rutinas, recetas)
 │   ├── audios/meditaciones/         # Audios originales de meditación guiada

@@ -247,16 +247,47 @@ document.addEventListener('DOMContentLoaded', () => {
 // initHeaderInteractions — llamado desde load-components.js
 // después de inyectar el header
 // ─────────────────────────────────────────────────────────────
+
+let _headerInitialized = false;
+
+function tryInitHeader() {
+    if (_headerInitialized) return;
+    const hamburger = document.getElementById('nav-hamburger');
+    const panel = document.getElementById('nav-mobile-panel');
+    const overlay = document.getElementById('nav-mobile-overlay');
+    if (!hamburger || !panel || !overlay) return; // aún no está listo
+    _headerInitialized = true;
+    initMobilePanel();
+    initEspacioInterstitial();
+    initHighlightNav();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Esperar a que el header esté disponible
+    // Primer intento: esperar header con setInterval (páginas ligeras)
+    let waitAttempts = 0;
+    const MAX_WAIT_ATTEMPTS = 100; // 8 segundos máximo (80ms * 100)
     const waitForHeader = setInterval(() => {
-        const hamburger = document.getElementById('nav-hamburger');
-        if (!hamburger) return;
-        clearInterval(waitForHeader);
-        initMobilePanel();
-        initEspacioInterstitial();
-        initHighlightNav();
+        waitAttempts++;
+        if (waitAttempts >= MAX_WAIT_ATTEMPTS) {
+            clearInterval(waitForHeader);
+            console.warn('[Vitalia] Header móvil no se encontró tras esperar.');
+            return;
+        }
+        tryInitHeader();
+        if (_headerInitialized) clearInterval(waitForHeader);
     }, 80);
+});
+
+// Segundo intento: evento personalizado disparado por load-components.js (más confiable)
+document.addEventListener('headerLoaded', () => {
+    // Pequeño timeout para asegurar que el DOM se haya repintado tras innerHTML
+    setTimeout(tryInitHeader, 10);
+});
+
+// Tercer intento: cuando TODOS los recursos han cargado
+window.addEventListener('load', () => {
+    if (_headerInitialized) return;
+    setTimeout(tryInitHeader, 50);
 });
 
 // ── Mobile panel (drawer) ──────────────────────────────────
