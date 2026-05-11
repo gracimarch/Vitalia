@@ -11,7 +11,7 @@ const cardData = [
     {
         color: '#FFFFFF',
         title: 'Planes personalizados',
-        description: 'Algoritmo inteligente que se adapta a tu estilo de vida',
+        description: 'Recomendaciones adaptadas a tu estilo de vida y objetivos',
         label: 'Bienestar a tu medida',
         glowColor: '128, 202, 205' // --cyan
     },
@@ -24,9 +24,9 @@ const cardData = [
     },
     {
         color: '#FFFFFF',
-        title: 'Viti: Chatbot IA',
+        title: 'Viti: Chat de soporte',
         description: 'Tu asistente personal, adaptado a tu ritmo de vida.',
-        label: 'Soporte Inteligente',
+        label: 'Soporte personalizado',
         glowColor: '225, 148, 127' // --soft-orange
     },
     {
