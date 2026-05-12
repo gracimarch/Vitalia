@@ -2,8 +2,7 @@ import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebase
 import { auth, db } from './firebase.js';
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 import { showToast } from './form-validation.js';
-
-const API_BASE_URL = "https://vitalia-core-api.onrender.com";
+import { API_BASE_URL } from '../../assets/shared/js/config/env.js';
 
 let isSubmitting = false;
 

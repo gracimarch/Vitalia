@@ -155,7 +155,14 @@ La aplicación estará disponible en `http://localhost:3000`.
 
 ### Variables de entorno
 
-La configuración de Firebase está incluida directamente en el código fuente (`firebase.js`). Para un entorno de producción propio, se recomienda externalizar estas credenciales en variables de entorno.
+Dado que Vitalia es un sitio estático sin proceso de build, las variables de entorno no se inyectan automáticamente en tiempo de ejecución.
+
+Todas las configuraciones y variables dependientes del entorno se gestionan de forma centralizada en un único archivo:
+`assets/shared/js/config/env.js`
+
+Puedes utilizar el archivo `.env.example` proporcionado como referencia para conocer todas las variables configurables. Si en el futuro el proyecto migra a un bundler como Vite o Webpack, estas variables podrán ser consumidas desde un archivo `.env` tradicional.
+
+> **Nota:** La configuración de Firebase está expuesta en `env.js` porque es **pública por diseño** de acuerdo con la documentación oficial de Firebase. La seguridad se gestiona a través de las Reglas de Seguridad en Firestore y Firebase Auth.
 
 <br />
 
@@ -197,6 +204,7 @@ Vitalia/
 │   │   │   ├── utilities.css        # Clases de utilidad
 │   │   │   └── vendor/              # Estilos de terceros (Toastify)
 │   │   ├── js/                      # Scripts compartidos
+│   │   │   ├── config/              # Configuraciones centralizadas (env.js)
 │   │   │   ├── auth-state.js        # Guard de rutas y estado de sesión
 │   │   │   ├── firebase.js          # Configuración de Firebase
 │   │   │   └── ...                  # Loader, efectos, utils, etc.
@@ -232,6 +240,7 @@ El proyecto está en **producción activa** y es accesible públicamente en [vit
 - Página 404 personalizada
 - SEO completo (sitemap, structured data, meta tags)
 - Responsive design completo (desktop + mobile)
+- Configuración y variables de entorno centralizadas
 
 ### 🚧 En progreso / pendiente
 - **Plan premium** — la detección de usuario premium (`detectPremium`) siempre retorna `false`; la integración real con Firestore/custom claims está como TODO en el código
@@ -246,7 +255,6 @@ El proyecto está en **producción activa** y es accesible públicamente en [vit
 - [ ] **PWA** — agregar Service Worker y manifest para experiencia offline
 - [ ] **Sistema premium real** — conectar la detección de plan premium con Firestore o Firebase Custom Claims
 - [ ] **Integración de pagos** — conectar los planes de suscripción con un procesador de pagos (Stripe, MercadoPago, etc.)
-- [ ] **Externalizar credenciales de Firebase** — mover la configuración a variables de entorno
 
 <br />
 

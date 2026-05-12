@@ -1,6 +1,7 @@
 import { db, auth } from '../auth/firebase.js';
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore.js";
 import { getUserSession } from '../auth/auth-state.js';
+import { API_BASE_URL } from '../../assets/shared/js/config/env.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
 
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 const user = await getUserSession();
                 if (!user) throw new Error('Sin sesión');
 
-                const res = await fetch('https://vitalia-core-api.onrender.com/api/v1/scores/generate', {
+                const res = await fetch(`${API_BASE_URL}/api/v1/scores/generate`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ uid: user.uid })
