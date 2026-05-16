@@ -1,0 +1,262 @@
+/* ═══════════════════════════════════════════════════════════════
+   VITALIA — ARTICLE PAGE STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Reading progress bar */
+.article-progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  z-index: 9999;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Page wrapper */
+.article-page {
+  min-height: 100vh;
+  background: var(--bg-main, #faf8ff);
+}
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.article-hero {
+  position: relative;
+  height: clamp(320px, 50vh, 500px);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.article-hero-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.article-hero-fallback {
+  position: absolute; inset: 0;
+}
+.article-hero-overlay {
+  position: absolute; inset: 0;
+  z-index: 1;
+}
+.article-hero-content {
+  position: relative; z-index: 2;
+  width: 100%; max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 36px;
+}
+
+/* Breadcrumb */
+.article-breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.82rem; margin-bottom: 12px;
+}
+.article-breadcrumb a {
+  color: rgba(255,255,255,0.8); text-decoration: none;
+  transition: color 0.2s ease;
+}
+.article-breadcrumb a:hover { color: #fff; }
+.article-breadcrumb span { color: rgba(255,255,255,0.5); }
+.article-bc-cat { font-weight: 600; }
+
+.article-hero-title {
+  font-family: var(--font-secondary);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0 0 16px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+
+.article-hero-meta {
+  display: flex; align-items: center; gap: 12px;
+  flex-wrap: wrap;
+}
+.article-cat-badge {
+  display: inline-block; padding: 4px 14px;
+  border-radius: 50px; font-size: 0.72rem; font-weight: 600;
+  color: #fff; letter-spacing: 0.04em;
+}
+.article-meta-item {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 0.8rem; color: rgba(255,255,255,0.8);
+}
+
+/* ── Body layout ──────────────────────────────────────────── */
+.article-body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  align-items: start;
+}
+
+/* ── TOC Sidebar ──────────────────────────────────────────── */
+.article-toc {
+  position: sticky;
+  top: 96px;
+  background: var(--white, #fff);
+  border: 1px solid rgba(181,113,222,0.1);
+  border-radius: var(--radius-xl, 20px);
+  padding: 22px 20px;
+  box-shadow: 0 4px 24px rgba(181,113,222,0.07);
+}
+.article-toc-title {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-muted); margin: 0 0 14px;
+}
+.article-toc-list {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 4px;
+  counter-reset: toc-counter;
+}
+.article-toc-list li { counter-increment: toc-counter; }
+.article-toc-link {
+  display: block;
+  padding: 6px 10px 6px 12px;
+  font-size: 0.8rem; color: var(--text-muted);
+  text-decoration: none; line-height: 1.4;
+  border-left: 2px solid transparent;
+  border-radius: 0 6px 6px 0;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.article-toc-link:hover { color: var(--purple); background: rgba(181,113,222,0.05); }
+.article-toc-link.active {
+  font-weight: 600;
+  background: rgba(181,113,222,0.06);
+}
+.article-toc-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 20px; padding-top: 16px;
+  border-top: 1px solid rgba(181,113,222,0.1);
+  font-size: 0.78rem; color: var(--text-muted);
+  text-decoration: none; font-weight: 500;
+  transition: color 0.2s ease;
+}
+.article-toc-back:hover { color: var(--purple); }
+
+/* ── Article content ──────────────────────────────────────── */
+.article-content { min-width: 0; }
+
+.article-section {
+  margin-bottom: 48px;
+  animation: sectionFadeIn 0.5s ease both;
+}
+@keyframes sectionFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.article-section-title {
+  font-family: var(--font-secondary);
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--section-color, var(--purple));
+  border-image: linear-gradient(90deg, var(--section-color, var(--purple)), transparent) 1;
+}
+
+/* ── Prose styles (for dangerouslySetInnerHTML) ───────────── */
+.article-prose { color: var(--text-color); line-height: 1.8; font-size: 0.95rem; }
+.article-prose p      { margin: 0 0 1.2em; }
+.article-prose ul,
+.article-prose ol     { padding-left: 1.4em; margin: 0 0 1.2em; }
+.article-prose li     { margin-bottom: 0.5em; }
+.article-prose strong { font-weight: 600; color: var(--text-color); }
+.article-prose a      { color: var(--purple); text-decoration: underline; text-underline-offset: 3px; }
+.article-prose a:hover { color: var(--purple-hover); }
+.article-prose .underline { text-decoration: underline; text-underline-offset: 3px; }
+.article-prose em    { font-style: italic; }
+
+/* ── Tags ─────────────────────────────────────────────────── */
+.article-tags {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 8px; padding: 24px 0;
+  border-top: 1px solid rgba(181,113,222,0.1);
+  margin-top: 24px;
+}
+.article-tags-label {
+  font-size: 0.78rem; font-weight: 600; color: var(--text-muted);
+}
+.article-tag {
+  padding: 4px 12px;
+  background: rgba(181,113,222,0.08);
+  border: 1px solid rgba(181,113,222,0.15);
+  border-radius: 50px;
+  font-size: 0.75rem; color: var(--purple);
+  font-weight: 500;
+}
+
+/* ── CTA card ─────────────────────────────────────────────── */
+.article-cta {
+  display: flex; align-items: center; gap: 20px;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, rgba(181,113,222,0.07) 0%, rgba(128,202,205,0.06) 100%);
+  border: 1px solid rgba(181,113,222,0.14);
+  border-radius: var(--radius-xl, 20px);
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.article-cta-icon {
+  width: 48px; height: 48px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(181,113,222,0.3);
+}
+.article-cta-title { font-weight: 700; color: var(--text-color); margin: 0 0 4px; font-size: 1rem; }
+.article-cta-text  { font-size: 0.83rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+.article-cta-btn {
+  padding: 11px 24px; border: none; border-radius: 50px;
+  font-size: 0.85rem; font-family: var(--font-primary); font-weight: 600;
+  color: #fff; text-decoration: none; white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(181,113,222,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-left: auto;
+}
+.article-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(181,113,222,0.45); }
+
+/* ── Back nav ─────────────────────────────────────────────── */
+.article-nav-footer {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 24px 60px;
+}
+.article-nav-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.85rem; color: var(--text-muted); text-decoration: none;
+  font-weight: 500; transition: color 0.2s ease;
+}
+.article-nav-back:hover { color: var(--purple); }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .article-body {
+    grid-template-columns: 1fr;
+    padding: 32px 20px 60px;
+    gap: 24px;
+  }
+  .article-toc {
+    position: static;
+    order: -1; /* show above content on mobile */
+  }
+  .article-toc-list { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .article-toc-link {
+    border-left: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 4px 4px 0 0;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+  .article-toc-back { margin-top: 12px; }
+}
+@media (max-width: 600px) {
+  .article-hero-content { padding: 0 16px 28px; }
+  .article-hero-title   { font-size: 1.5rem; }
+  .article-body         { padding: 24px 16px 48px; }
+  .article-cta          { flex-direction: column; text-align: center; }
+  .article-cta-btn      { margin-left: 0; width: 100%; text-align: center; }
+}

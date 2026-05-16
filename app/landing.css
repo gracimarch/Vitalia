@@ -1,0 +1,96 @@
+/* Hero Section */
+/* Note: header transparency is handled via inline styles in Header.tsx */
+
+.herosection-container { padding: 10vh; }
+
+.welcome {
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    position: relative; width: 100%;
+    height: 100svh; /* small-viewport-height: stable on mobile browsers */
+    min-height: 600px;
+    margin: 0 !important; padding: 0 !important; overflow: hidden;
+}
+
+.hero-composition { position: relative; overflow: hidden; width: 100%; }
+
+.hero-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100vh;
+    min-width: 100%; min-height: 100vh; object-fit: cover; object-position: center center;
+    z-index: 0; transform: scale(1.15); pointer-events: none;
+}
+
+.hero-flower {
+    position: absolute; top: 20%; z-index: 2; pointer-events: none; width: auto;
+}
+.flower-left { left: 0; height: 100vh; }
+.flower-right { right: 0; height: 100vh; }
+
+@media (min-width: 1025px) {
+    .flower-left { left: 0%; height: 90vh; }
+    .flower-right { right: -2%; height: 90vh; }
+}
+@media (max-width: 1024px) {
+    .flower-left { left: -1%; height: 90vh; }
+    .flower-right { right: -1%; height: 90vh; }
+}
+@media (max-width: 768px) {
+    .hero-flower { opacity: 0.9; height: auto; }
+    .flower-left { left: -10%; width: 60vw; max-width: 300px; bottom: 0; top: auto; }
+    .flower-right { right: -10%; width: 60vw; max-width: 300px; bottom: 0; top: auto; }
+}
+
+.hero-content { position: relative; z-index: 3; }
+
+.text-main h1 {
+    font-family: var(--font-primary); font-weight: 700; font-size: 80px;
+    letter-spacing: -1px; line-height: 1.1; text-align: center;
+}
+.text-main h4 { margin-top: 30px; font-weight: 300; font-size: 23px; }
+
+@media (max-width: 1200px) {
+    .text-main h1 { font-size: 65px; }
+    .text-main h4 { font-size: 21px; }
+}
+@media (max-width: 1024px) {
+    .text-main h1 { font-size: 55px; }
+    .text-main h4 { font-size: 19px; }
+}
+@media (max-width: 768px) {
+    .text-main h1 { font-size: 45px; }
+    .text-main h4 { font-size: 18px; }
+}
+@media (max-width: 480px) {
+    .text-main h1 { font-size: 36px; }
+    .text-main h4 { font-size: 16px; }
+}
+
+.btn-hero {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-top: 30px; padding: 0.8rem 2.5rem;
+    border: 2px solid var(--white); border-radius: 50px;
+    background-color: transparent; color: var(--white);
+    font-family: var(--font-primary); font-size: 1.1rem; font-weight: 600;
+    text-decoration: none; cursor: pointer; transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.btn-hero svg { margin-right: 8px; font-size: 1rem; vertical-align: middle; }
+.btn-hero:hover {
+    transform: translateY(-2px); background-color: var(--white); color: var(--purple-light);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) { .btn-hero { padding: 8px 16px; font-size: 16px; } }
+@media (max-width: 480px) { .btn-hero { padding: 7px 14px; } }
+
+/* Reading Sections */
+.reading-section { padding: 20px; text-align: center; }
+.reading-heading { margin: 0; font-size: 32px; }
+.reading-subtext { margin: 10px 0; color: var(--text-muted); font-size: 19.2px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+@media (max-width: 1200px) {
+    .reading-heading { font-size: 22px; }
+    .reading-subtext { font-size: 15px; }
+}
+
+/* gradient-txt-vitalia is defined in globals.css — no override needed here */
+
+/* decoration-container is defined in globals.css */

@@ -1,0 +1,68 @@
+{
+  "meditaciones": [
+    {
+      "id": "matutina",
+      "title": "Meditación Matutina",
+      "description": "Empieza tu día con intención y claridad mental.",
+      "duration": "5 min",
+      "src": "/assets/audios/meditaciones/meditacionMatutina_plan1y9y6.mp3",
+      "color": "#80CACD"
+    },
+    {
+      "id": "empezar_positivo",
+      "title": "Empieza positivamente",
+      "description": "Una guía para afrontar la jornada con optimismo.",
+      "duration": "10 min",
+      "src": "/assets/audios/meditaciones/empezarPositivamente_plan6y7.mp3",
+      "color": "#B571DE"
+    },
+    {
+      "id": "ansiedad",
+      "title": "Aliviar Ansiedad",
+      "description": "Respiraciones guiadas para momentos de mucho estrés.",
+      "duration": "3 min",
+      "src": "/assets/audios/meditaciones/respiracionesAliviarAnsiedad_plan7.mp3",
+      "color": "#E1947F"
+    },
+    {
+      "id": "tension",
+      "title": "Soltar Tensiones",
+      "description": "Escaneo corporal para liberar tensión física.",
+      "duration": "8 min",
+      "src": "/assets/audios/meditaciones/meditacionSoltarTension_plan6y7.mp3",
+      "color": "#F4B9B2"
+    },
+    {
+      "id": "dormir",
+      "title": "Relajación para Dormir",
+      "description": "Desconecta tu mente y prepárate para un descanso profundo.",
+      "duration": "10 min",
+      "src": "/assets/audios/meditaciones/relajacionCortaDormir_plan2y6y8y9.mp3",
+      "color": "#4B3F72"
+    },
+    {
+      "id": "paz",
+      "title": "Siéntete Seguro y en Paz",
+      "description": "Meditación para encontrar refugio interior.",
+      "duration": "12 min",
+      "src": "/assets/audios/meditaciones/sienteSeguroyPaz_plan4y6y7.mp3",
+      "color": "#80CACD"
+    },
+    {
+      "id": "luz",
+      "title": "Luz Interior",
+      "description": "Conecta con tu propia energía vital.",
+      "duration": "11 min",
+      "src": "/assets/audios/meditaciones/conectaLuzInterior_plan4.mp3",
+      "color": "#B571DE"
+    },
+    {
+      "id": "express",
+      "title": "Relajación Express",
+      "description": "Pausa de 1 minuto para resetear tu enfoque.",
+      "duration": "1 min",
+      "src": "/assets/audios/meditaciones/Relajacion_1minuto_plan2y6.mp3",
+      "color": "#E1947F"
+    }
+  ]
+}

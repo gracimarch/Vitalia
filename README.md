@@ -7,13 +7,13 @@
 <br />
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel&logoColor=white)](https://vitalia-selfcare.vercel.app/)
-[![Made with JS](https://img.shields.io/badge/Stack-HTML%20%7C%20CSS%20%7C%20JS-purple)](#-tecnologías-utilizadas)
+[![Made with Next.js](https://img.shields.io/badge/Stack-Next.js%20%7C%20React%20%7C%20CSS-purple)](#-tecnologías-utilizadas)
 [![Firebase Auth](https://img.shields.io/badge/Auth-Firebase-orange?logo=firebase&logoColor=white)](#-tecnologías-utilizadas)
 [![License](https://img.shields.io/badge/Licencia-Propietaria-334155)](#-licencia)
 
 <br />
 
-<img src="assets/images/ui/og-vitalia.jpg" alt="Vista previa de Vitalia" width="800" style="border-radius: 12px; box-shadow: 0px 4px 16px rgba(0,0,0,0.12);" />
+<img src="/assets/images/ui/og-vitalia.jpg" alt="Vista previa de Vitalia" width="800" style="border-radius: 12px; box-shadow: 0px 4px 16px rgba(0,0,0,0.12);" />
 
 <br />
 
@@ -50,8 +50,7 @@ Muchas personas quieren mejorar su bienestar pero se pierden entre la enorme can
 - Registro con formulario detallado de bienestar (actividad física, dieta, estrés, sueño, objetivos, etc.)
 - Inicio de sesión con email y contraseña (Firebase Authentication)
 - Perfil de usuario con resumen de datos personales y de bienestar
-- Rutas protegidas: "Mi Espacio" y "Perfil" solo accesibles con sesión activa
-- Modal intersticial cuando un usuario no logueado intenta acceder a contenido protegido
+- Rutas protegidas: "Mi Espacio" y "Perfil" solo accesibles con sesión activa gestionadas con Next.js Middleware
 
 ### 🎯 Recomendaciones personalizadas
 - Al registrarse, se envían los datos del usuario a una API externa (`vitalia-core-api` en Render)
@@ -62,8 +61,7 @@ Muchas personas quieren mejorar su bienestar pero se pierden entre la enorme can
 ### 📚 Blog de contenido
 - Biblioteca de artículos organizados en cuatro categorías: Productividad, Salud Mental, Hábitos Alimenticios y Actividad Física
 - Sistema de búsqueda en tiempo real con debounce y normalización de acentos
-- Carga progresiva de artículos ("Ver más" / "Ver menos")
-- Cada artículo se renderiza desde un catálogo JSON estático
+- Cada artículo se renderiza dinámicamente en App Router desde contenido local o remoto
 
 ### 🏋️ Rutinas de ejercicio interactivas
 - Visor de rutinas con **máquina de estados** completa: vista previa → calentamiento → ejercicio → descanso → finalización
@@ -76,9 +74,9 @@ Muchas personas quieren mejorar su bienestar pero se pierden entre la enorme can
 - Rutinas inclusivas: "Movilidad y fuerza en silla" y "Fuerza silla de ruedas"
 
 ### 🍽️ Planes alimenticios
-- Catálogo de dietas con recetas detalladas cargadas desde JSON
+- Catálogo de dietas con recetas detalladas
 - Variedad de planes: vegetarianos, sin lácteos, energéticos, para ansiedad, para días ocupados, etc.
-- Renderizado dinámico con sistema de loaders
+- Renderizado dinámico
 
 ### 🧘 Meditaciones guiadas
 - 8 audios de meditación originales integrados en "Mi Espacio"
@@ -86,23 +84,19 @@ Muchas personas quieren mejorar su bienestar pero se pierden entre la enorme can
 - Control de reproducción: un solo audio a la vez, con indicador de estado
 
 ### 🎨 Experiencia visual y UX
-- Hero con efecto **líquido WebGL** (Three.js + custom shaders GLSL) interactivo
-- Componentes React renderizados en cliente: Magic Bento, FAQ dinámicas, tarjetas de precios, texto con gradiente animado
-- Animaciones de scroll (GSAP), iconos magnéticos, partículas flotantes
+- Diseño cohesivo implementado en Next.js con Server y Client Components
+- Hero interactivo con efectos visuales dinámicos
+- Animaciones de componentes, iconos, partículas flotantes y transiciones (Framer Motion / GSAP)
 - Saludo contextual dinámico (Buenos días / Buenas tardes / Buenas noches)
-- Frase diaria de bienestar con botones para compartir en LinkedIn, Twitter y WhatsApp
-- Pantalla de carga con logo animado
-- Header sticky con auto-hide al hacer scroll
-- Diseño responsive completo con panel móvil (drawer) dedicado
-- Página 404 personalizada con iconos magnéticos flotantes
+- Header inteligente con auto-hide al hacer scroll y diseño responsivo
+- Interfaz completamente adaptada para dispositivos móviles
 
 ### ⚙️ SEO y rendimiento
-- Sitemap XML completo, robots.txt configurado
-- Structured Data (JSON-LD) en landing y páginas de contenido
-- Meta tags Open Graph y Twitter Cards en todas las páginas
-- URLs limpias con rewrites (Vercel + serve.json para desarrollo local)
-- Cache headers optimizados por tipo de recurso
+- Migrado a **Next.js App Router** para un rendimiento y SEO óptimos
+- Sitemap XML autogenerado y robots.txt configurado
+- URLs limpias nativas y ruteo basado en archivos
 - Vercel Analytics y Speed Insights integrados
+- Renderizado híbrido (SSR / SSG / CSR) asegurando una rápida carga de contenido
 
 <br />
 
@@ -110,19 +104,16 @@ Muchas personas quieren mejorar su bienestar pero se pierden entre la enorme can
 
 | Capa | Tecnología |
 |------|-----------|
-| **Estructura** | HTML5 semántico |
-| **Estilos** | CSS3 (CSS Variables, Grid, Flexbox, animaciones) |
-| **Lógica** | JavaScript ES6+ (módulos nativos) |
-| **Componentes UI** | React 18 + Babel (transpilación en cliente) |
-| **Animaciones** | GSAP 3, Framer Motion 10 |
-| **3D / WebGL** | Three.js r128 (shaders GLSL personalizados) |
+| **Estructura/Framework** | Next.js 16 (App Router), React 19 |
+| **Estilos** | Vanilla CSS (CSS Modules / CSS Variables) |
+| **Lógica** | TypeScript / JavaScript ES6+ |
+| **Animaciones** | Framer Motion, GSAP 3 |
+| **3D / WebGL** | Three.js |
 | **Autenticación** | Firebase Authentication |
 | **Base de datos** | Cloud Firestore |
 | **Backend** | API externa en Render (`vitalia-core-api`) |
-
-| **Iconografía** | Font Awesome 6 |
-| **Tipografía** | Google Fonts (Poppins + Zilla Slab) |
-| **Notificaciones** | Toastify.js |
+| **Iconografía** | Font Awesome 6, SVGs integrados |
+| **Tipografía** | Google Fonts (next/font) |
 | **Deploy** | Vercel |
 | **Analítica** | Vercel Analytics + Speed Insights |
 
@@ -132,8 +123,8 @@ Muchas personas quieren mejorar su bienestar pero se pierden entre la enorme can
 
 ### Prerrequisitos
 
-- [Node.js](https://nodejs.org/) (v16 o superior)
-- Un navegador moderno (Chrome, Edge, Firefox)
+- [Node.js](https://nodejs.org/) (v18 o superior)
+- Un navegador moderno
 
 ### Pasos
 
@@ -145,116 +136,77 @@ cd Vitalia
 # 2. Instalar dependencias
 npm install
 
-# 3. Servir localmente con URLs limpias
-npx serve .
+# 3. Servir localmente
+npm run dev
 ```
-
-> El archivo `serve.json` ya está configurado con los rewrites necesarios para que las URLs limpias (`/blog`, `/mi-espacio`, `/lecturas/:slug`, etc.) funcionen en desarrollo local igual que en producción.
 
 La aplicación estará disponible en `http://localhost:3000`.
 
 ### Variables de entorno
 
-Dado que Vitalia es un sitio estático sin proceso de build, las variables de entorno no se inyectan automáticamente en tiempo de ejecución.
+Crea un archivo `.env.local` en la raíz del proyecto para definir las credenciales de Firebase.
 
-Todas las configuraciones y variables dependientes del entorno se gestionan de forma centralizada en un único archivo:
-`assets/shared/js/config/env.js`
-
-Puedes utilizar el archivo `.env.example` proporcionado como referencia para conocer todas las variables configurables. Si en el futuro el proyecto migra a un bundler como Vite o Webpack, estas variables podrán ser consumidas desde un archivo `.env` tradicional.
-
-> **Nota:** La configuración de Firebase está expuesta en `env.js` porque es **pública por diseño** de acuerdo con la documentación oficial de Firebase. La seguridad se gestiona a través de las Reglas de Seguridad en Firestore y Firebase Auth.
+```env
+NEXT_PUBLIC_FIREBASE_API_KEY=tu_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=tu_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=tu_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=tu_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=tu_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=tu_app_id
+```
 
 <br />
 
 ## 📁 Estructura del proyecto
 
-El proyecto sigue una **arquitectura orientada a features**: cada módulo agrupa su CSS y JS en una carpeta propia dentro de `features/`. Los estilos y scripts compartidos (variables, layout, utilidades, partials) viven en `assets/shared/`.
+El proyecto utiliza **Next.js App Router**, organizando la estructura por dominios y características:
 
 ```
 Vitalia/
-├── index.html                       # Landing page principal
-├── 404.html                         # Página de error personalizada
-├── pages/                           # Páginas HTML
-│   ├── blog.html                    # Blog con artículos categorizados
-│   ├── mi-espacio.html              # Dashboard privado del usuario
-│   ├── perfil.html                  # Perfil del usuario
-│   ├── login.html                   # Inicio de sesión
-│   ├── form.html                    # Formulario de registro (crear cuenta)
-│   ├── lectura.html                 # Template dinámico para artículos
-│   ├── dieta.html                   # Template dinámico para planes alimenticios
-│   └── rutina.html                  # Template dinámico para rutinas de ejercicio
-├── features/                        # Módulos de la aplicación (CSS + JS por feature)
-│   ├── landing/                     # Estilos y lógica de la landing page
-│   ├── auth/                        # Firebase config, login, registro y validaciones
-│   ├── blog/                        # Blog: lógica de filtros, búsqueda y partículas
-│   ├── mi-espacio/                  # Dashboard: bento, saludo, recomendaciones
-│   ├── profile/                     # Página de perfil del usuario
-│   ├── wellness/                    # Visor de rutinas, lecturas y planes alimenticios
-│   │   ├── routine/                 # Lógica del visor de rutinas
-│   │   ├── reading/                 # Loader de artículos
-│   │   └── diet/                   # Loader de dietas
-│   ├── legal/                       # Estilos de la página legal
-│   └── 404/                        # Estilos y router de la página de error
-├── assets/
-│   ├── shared/                      # Recursos compartidos entre features
-│   │   ├── css/                     # Sistema de diseño global
-│   │   │   ├── variables.css        # Tokens de color, tipografía y espaciado
-│   │   │   ├── common.css           # Estilos base, header, footer y componentes comunes
-│   │   │   ├── layout.css           # Grid y estructura general
-│   │   │   ├── utilities.css        # Clases de utilidad
-│   │   │   └── vendor/              # Estilos de terceros (Toastify)
-│   │   ├── js/                      # Scripts compartidos
-│   │   │   ├── config/              # Configuraciones centralizadas (env.js)
-│   │   │   ├── auth-state.js        # Guard de rutas y estado de sesión
-│   │   │   ├── firebase.js          # Configuración de Firebase
-│   │   │   └── ...                  # Loader, efectos, utils, etc.
-│   │   └── partials/                # Header y footer reutilizables (carga dinámica)
-│   ├── data/                        # Catálogos JSON (lecturas, dietas, rutinas, recetas)
-│   ├── audios/meditaciones/         # Audios originales de meditación guiada
-│   ├── images/                      # Imágenes organizadas por categoría
-│   └── favicons/                    # Iconos de la app
-├── dev/                             # Herramientas de debug
-├── vercel.json                      # Configuración de deploy (rewrites + cache headers)
-├── serve.json                       # Configuración de desarrollo local (rewrites)
-├── sitemap.xml                      # Mapa del sitio para SEO
-├── robots.txt                       # Directivas para crawlers
-└── package.json                     # Dependencia: @vercel/speed-insights
+├── app/                           # App Router: páginas, layouts y rutas API
+│   ├── (auth)/                    # Grupo de rutas de autenticación
+│   ├── blog/                      # Sistema de blog dinámico
+│   ├── mi-espacio/                # Dashboard de usuario (Ruta protegida)
+│   ├── rutinas/                   # Visor de rutinas
+│   ├── dietas/                    # Visor de dietas
+│   └── lecturas/                  # Visor de artículos y contenido
+├── components/                    # Componentes React reutilizables (UI)
+├── features/                      # Lógica y hooks agrupados por característica de negocio
+├── lib/                           # Utilidades, configuración (Firebase) y helpers
+├── public/                        # Activos estáticos públicos (imágenes, audios)
+├── styles/                        # Sistema de diseño CSS global y variables
+├── .env.local                     # Variables de entorno locales
+├── next.config.ts                 # Configuración de Next.js
+└── package.json                   # Dependencias y scripts
 ```
 
 <br />
 
 ## 📊 Estado actual del proyecto
 
-El proyecto está en **producción activa** y es accesible públicamente en [vitalia-selfcare.vercel.app](https://vitalia-selfcare.vercel.app/).
+El proyecto fue recientemente **migrado a Next.js (App Router)** logrando paridad de funciones, mejor rendimiento, y un código mucho más mantenible.
 
 ### ✅ Implementado y funcional
-- Landing page completa con hero WebGL, FAQ, planes de precios y Magic Bento
-- Sistema de autenticación completo (registro, login, logout, recuperación de contraseña, rutas protegidas)
-- Formulario de registro con validación y 10+ campos de bienestar
-- Dashboard "Mi Espacio" con recomendaciones personalizadas basadas en el perfil del usuario
-- Blog con búsqueda, filtros por categoría y carga progresiva
-- Visor de rutinas interactivo con temporizador, voz guiada y respiración cuadrada
-- Reproductor de meditaciones con 8 audios originales
-- Planes alimenticios con recetas completas
-- Perfil de usuario con datos de Firestore
-- Página 404 personalizada
-- SEO completo (sitemap, structured data, meta tags)
-- Responsive design completo (desktop + mobile)
-- Configuración y variables de entorno centralizadas
+- Integración completa con el App Router de Next.js
+- Sistema de autenticación con Firebase (registro, login, logout, middleware de protección de rutas)
+- Dashboard "Mi Espacio" con recomendaciones basadas en perfil de usuario
+- Blog, Visor de rutinas interactivas, Planes alimenticios, y Meditaciones
+- Componentes UI modernizados sin emojis nativos (usando iconos profesionales)
+- Animaciones portadas a React, rendimiento optimizado y código limpiado de dependencias obsoletas
+- SEO y URLs funcionales nativas en Next.js
 
 ### 🚧 En progreso / pendiente
-- **Plan premium** — la detección de usuario premium (`detectPremium`) siempre retorna `false`; la integración real con Firestore/custom claims está como TODO en el código
-- **Integración de pagos** — los planes de suscripción se muestran en la UI pero no hay pasarela de pago conectada
+- **Plan premium** — Integración real con Firestore/custom claims
+- **Integración de pagos** — Conexión con un procesador de pagos para planes de suscripción
 
 <br />
 
 ## 🗺️ Próximas mejoras / Roadmap
 
 - [ ] **Edición de perfil** — permitir al usuario actualizar sus datos y regenerar recomendaciones
-- [ ] **Meditaciones personalizadas** — actualmente son estáticas; podrían vincularse al perfil y score del usuario
-- [ ] **PWA** — agregar Service Worker y manifest para experiencia offline
-- [ ] **Sistema premium real** — conectar la detección de plan premium con Firestore o Firebase Custom Claims
-- [ ] **Integración de pagos** — conectar los planes de suscripción con un procesador de pagos (Stripe, MercadoPago, etc.)
+- [ ] **Meditaciones personalizadas** — vincular al perfil y score del usuario
+- [ ] **PWA** — soporte progresivo
+- [ ] **Integración de pagos / Premium real**
 
 <br />
 
@@ -264,8 +216,8 @@ Vitalia es desarrollado y mantenido por:
 
 | | Nombre | GitHub | LinkedIn |
 |---|---|---|---|
-| 🌸 | **Graciana March** | [@gracimarch](https://github.com/gracimarch) | [gracimarch](https://www.linkedin.com/in/gracimarch/) |
-| 🌿 | **Josefina Marsala** | [@jossmarsala](https://github.com/jossmarsala) | [josmarsala](https://www.linkedin.com/in/josmarsala/) |
+| 🌷 | **Graciana March** | [@gracimarch](https://github.com/gracimarch) | [gracimarch](https://www.linkedin.com/in/gracimarch/) |
+| 🌻 | **Josefina Marsala** | [@jossmarsala](https://github.com/jossmarsala) | [josmarsala](https://www.linkedin.com/in/josmarsala/) |
 
 ### Contacto del proyecto
 
@@ -276,8 +228,8 @@ Vitalia es desarrollado y mantenido por:
 
 | Repositorio | Descripción | Stack |
 |---|---|---|
-| **Vitalia** (este repo) | Frontend web | HTML, CSS, JS |
-| [vitalia-core-api](https://github.com/jossmarsala/vitalia-core-api) | Backend & lógica de recomendaciones personalizadas | Python, FastAPI, Firebase |
+| **Vitalia** (este repo) | Frontend web | Next.js, React, TypeScript, CSS |
+| [vitalia-core-api](https://github.com/jossmarsala/vitalia-core-api) | Backend & recomendaciones | Python, FastAPI, Firebase |
 
 <br />
 
@@ -286,10 +238,6 @@ Vitalia es desarrollado y mantenido por:
 Este proyecto es **propietario** — todos los derechos reservados © 2026 Graciana March & Josefina Marsala.
 
 No está permitida su reproducción, distribución ni modificación sin autorización expresa de las autoras. Ver [LICENSE](./LICENSE) para más detalles.
-
-Se incluyen documentos legales adicionales en `assets/legal/`:
-- Política de privacidad
-- Términos y condiciones
 
 <br />
 
