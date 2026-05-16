@@ -13,7 +13,7 @@
 
 <br />
 
-<img src="/assets/images/ui/og-vitalia.jpg" alt="Vista previa de Vitalia" width="800" style="border-radius: 12px; box-shadow: 0px 4px 16px rgba(0,0,0,0.12);" />
+<img src="/public/assets/images/ui/og-vitalia.jpg" alt="Vista previa de Vitalia" width="800" style="border-radius: 12px; box-shadow: 0px 4px 16px rgba(0,0,0,0.12);" />
 
 <br />
 
