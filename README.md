@@ -171,7 +171,7 @@ Vitalia/
 │   ├── dietas/                    # Visor de dietas
 │   └── lecturas/                  # Visor de artículos y contenido
 ├── components/                    # Componentes React reutilizables (UI)
-├── features/                      # Lógica y hooks agrupados por característica de negocio
+├── features/                      # Lógica y estilos vanilla 
 ├── lib/                           # Utilidades, configuración (Firebase) y helpers
 ├── public/                        # Activos estáticos públicos (imágenes, audios)
 ├── styles/                        # Sistema de diseño CSS global y variables

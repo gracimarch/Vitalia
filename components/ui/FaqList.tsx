@@ -101,7 +101,7 @@ const FAQItem = ({ item, isOpen, onClick }: { item: any, isOpen: boolean, onClic
           }}
           aria-hidden={!isOpen}
         >
-          <div className="answer" style={{ color: '#000', padding: '0 40px 40px 40px', lineHeight: '1.6' }}>
+          <div className="answer" style={{ color: '#000', padding: '0 2.5rem 1.25rem 1.25rem', lineHeight: '1.6', fontSize: '1.05rem', fontFamily: 'var(--font-secondary)' }}>
             {item.answer}
           </div>
         </div>

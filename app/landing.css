@@ -45,22 +45,29 @@
     font-family: var(--font-primary); font-weight: 700; font-size: 80px;
     letter-spacing: -1px; line-height: 1.1; text-align: center;
 }
+.text-main h1 .rotating-word {
+    font-size: 90px;
+}
 .text-main h4 { margin-top: 30px; font-weight: 300; font-size: 23px; }
 
 @media (max-width: 1200px) {
     .text-main h1 { font-size: 65px; }
+    .text-main h1 .rotating-word { font-size: 75px; }
     .text-main h4 { font-size: 21px; }
 }
 @media (max-width: 1024px) {
     .text-main h1 { font-size: 55px; }
+    .text-main h1 .rotating-word { font-size: 65px; }
     .text-main h4 { font-size: 19px; }
 }
 @media (max-width: 768px) {
     .text-main h1 { font-size: 45px; }
+    .text-main h1 .rotating-word { font-size: 55px; }
     .text-main h4 { font-size: 18px; }
 }
 @media (max-width: 480px) {
     .text-main h1 { font-size: 36px; }
+    .text-main h1 .rotating-word { font-size: 44px; }
     .text-main h4 { font-size: 16px; }
 }
 
@@ -73,7 +80,7 @@
     text-decoration: none; cursor: pointer; transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-.btn-hero svg { margin-right: 8px; font-size: 1rem; vertical-align: middle; }
+.btn-hero svg { font-size: 1rem; vertical-align: middle; }
 .btn-hero:hover {
     transform: translateY(-2px); background-color: var(--white); color: var(--purple-light);
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);

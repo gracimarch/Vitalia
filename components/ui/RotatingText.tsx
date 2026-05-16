@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const words = [
@@ -11,44 +11,86 @@ const words = [
 
 export default function RotatingText() {
   const [index, setIndex] = useState(0);
+  const [width, setWidth] = useState<number | 'auto'>('auto');
+  const measureRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (measureRef.current) {
+      setWidth(measureRef.current.offsetWidth);
+    }
+  }, [index]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (measureRef.current) {
+        setWidth(measureRef.current.offsetWidth);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
-    }, 2500);
+    }, 1500);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <motion.span 
-      layout
-      transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+      className="words-wrapper"
+      animate={{ width }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
       style={{
-        display: 'inline-flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        display: 'inline-block',
         position: 'relative',
-        verticalAlign: 'bottom',
+        verticalAlign: 'middle',
         overflow: 'hidden',
-        padding: '0.1em 0',
+        padding: '0 10px',
+        boxSizing: 'content-box',
+        height: '1.2em',
       }}
     >
+      <span 
+        ref={measureRef}
+        className="rotating-word"
+        aria-hidden="true"
+        style={{
+          visibility: 'hidden',
+          position: 'absolute',
+          whiteSpace: 'nowrap',
+          fontFamily: 'var(--font-secondary)',
+          fontWeight: 600,
+          fontStyle: 'italic',
+          lineHeight: 1,
+        }}
+      >
+        {words[index].text}
+      </span>
+
       <AnimatePresence mode="popLayout">
         <motion.span
           key={index}
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -30, opacity: 0 }}
-          transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+          initial={{ y: '100%', x: '-50%', opacity: 0 }}
+          animate={{ y: '0%', x: '-50%', opacity: 1 }}
+          exit={{ y: '-100%', x: '-50%', opacity: 0 }}
+          transition={{ 
+            y: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] },
+            opacity: { duration: 0.25, delay: 0.25, ease: 'linear' }
+          }}
           style={{
             display: 'inline-block',
+            position: 'absolute',
+            left: '50%',
             whiteSpace: 'nowrap',
             fontFamily: 'var(--font-secondary)',
             fontWeight: 600,
             fontStyle: 'italic',
             lineHeight: 1,
-            paddingBottom: '0.1em',
+            marginTop: '-6px',
           }}
+          className="rotating-word"
         >
           {words[index].text}
         </motion.span>
@@ -56,3 +98,4 @@ export default function RotatingText() {
     </motion.span>
   );
 }
+
