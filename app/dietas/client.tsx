@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import AuthGuard from '@/components/auth/AuthGuard';
 import '@/app/blog/blog.css'; // Reusing the magic bento grid cards styles from blog
 
 interface Dieta {
@@ -81,6 +82,7 @@ function DietaCard({ dieta, index }: { dieta: Dieta; index: number }) {
 
 export default function DietasClient({ dietas }: Props) {
   return (
+    <AuthGuard>
     <div className="blog-wrapper">
       <header className="blog-hero">
         <div className="blog-hero-inner">
@@ -104,5 +106,6 @@ export default function DietasClient({ dietas }: Props) {
         )}
       </main>
     </div>
+    </AuthGuard>
   );
 }

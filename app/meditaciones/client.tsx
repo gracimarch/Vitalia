@@ -2,6 +2,7 @@
 
 import { Suspense, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import AuthGuard from '@/components/auth/AuthGuard';
 import '@/app/blog/blog.css'; // Reusing the magic bento grid cards styles
 import './meditaciones.css'; // specific styles for audio
 import { logSession } from '@/lib/progress';
@@ -109,6 +110,7 @@ function MeditacionesGrid({ meditations }: { meditations: Meditation[] }) {
 
 export default function MeditacionClient({ meditations }: Props) {
   return (
+    <AuthGuard>
     <div className="blog-page">
       <header className="blog-hero">
         <div className="blog-hero-inner">
@@ -130,5 +132,6 @@ export default function MeditacionClient({ meditations }: Props) {
         )}
       </main>
     </div>
+    </AuthGuard>
   );
 }

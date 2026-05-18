@@ -8,182 +8,104 @@
 <!-- Core Pages -->
 <url>
   <loc>https://vitalia-selfcare.vercel.app/</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
+  <lastmod>2026-05-17T00:00:00+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.0</priority>
 </url>
 <url>
   <loc>https://vitalia-selfcare.vercel.app/blog</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
+  <lastmod>2026-05-17T00:00:00+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.9</priority>
 </url>
 <url>
   <loc>https://vitalia-selfcare.vercel.app/crear-cuenta</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
+  <lastmod>2026-05-17T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
 
-<!-- Blog Articles (Lecturas) -->
+<!-- Blog Articles (Lecturas) — páginas públicas -->
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/pausas-activas</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/pausas-activas</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/enfoque-integral-trabajo</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/enfoque-integral-trabajo</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/autocuidado-habitos</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/autocuidado-habitos</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/siestas-cortas</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/siestas-cortas</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/tecnicas-estres</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/tecnicas-estres</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/alimentacion-consciente</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/alimentacion-consciente</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/actividad-fisica-facil</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/actividad-fisica-facil</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/vida-sostenible</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/vida-sostenible</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/dieta-plantas</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/dieta-plantas</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/rutina-nocturna</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/rutina-nocturna</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/tecnica-15-minutos</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/tecnica-15-minutos</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/mente-activa</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/mente-activa</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/nutricion-discapacidad</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/nutricion-discapacidad</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
 <url>
-  <loc>https://vitalia-selfcare.vercel.app/lecturas/relajacion-movilidad</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-
-<!-- Dietas -->
-<url>
-  <loc>https://vitalia-selfcare.vercel.app/dietas/aliviar-la-ansiedad-en-dias-estresantes</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://vitalia-selfcare.vercel.app/dietas/dias-ocupados</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://vitalia-selfcare.vercel.app/dietas/energia-y-vitalidad</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://vitalia-selfcare.vercel.app/dietas/express-vegetariana</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://vitalia-selfcare.vercel.app/dietas/fin-de-semana-sin-lacteos</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://vitalia-selfcare.vercel.app/dietas/sin-lacteos</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://vitalia-selfcare.vercel.app/dietas/sueno-reparador</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-
-<!-- Rutinas -->
-<url>
-  <loc>https://vitalia-selfcare.vercel.app/rutinas/entrenamiento-en-15-minutos</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://vitalia-selfcare.vercel.app/rutinas/cuerpo-completo-en-casa</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://vitalia-selfcare.vercel.app/rutinas/movilidad-y-fuerza-en-silla</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://vitalia-selfcare.vercel.app/rutinas/fuerza-silla-de-ruedas</loc>
-  <lastmod>2026-04-18T00:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.6</priority>
-</url>
-
-<!-- Dietas adicionales -->
-<url>
-  <loc>https://vitalia-selfcare.vercel.app/dietas/plan-de-comidas-con-minima-preparacion-y-cero-esfuerzo-fisico</loc>
+  <loc>https://vitalia-selfcare.vercel.app/blog/relajacion-movilidad</loc>
   <lastmod>2026-04-18T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
@@ -192,13 +114,13 @@
 <!-- Legal Pages -->
 <url>
   <loc>https://vitalia-selfcare.vercel.app/privacidad</loc>
-  <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+  <lastmod>2026-05-17T00:00:00+00:00</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.3</priority>
 </url>
 <url>
   <loc>https://vitalia-selfcare.vercel.app/terminos</loc>
-  <lastmod>2026-05-10T00:00:00+00:00</lastmod>
+  <lastmod>2026-05-17T00:00:00+00:00</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.3</priority>
 </url>

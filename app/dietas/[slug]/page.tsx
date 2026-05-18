@@ -6,6 +6,7 @@ import recetasData from '@/public/data/recetas.json';
 import '@/app/blog/[slug]/article.css';
 import './dieta.css';
 import DietaViewer from './DietaViewer';
+import AuthWrapper from './AuthWrapper';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -42,6 +43,7 @@ export default async function DietaPage({ params }: Props) {
     : `/${dieta.image.replace(/^\.\.\//, '')}`;
 
   return (
+    <AuthWrapper>
     <div className="article-page">
       <header className="article-hero">
         <img src={imgUrl} alt={dieta.title} className="article-hero-img" />
@@ -65,5 +67,6 @@ export default async function DietaPage({ params }: Props) {
         </article>
       </div>
     </div>
+    </AuthWrapper>
   );
 }

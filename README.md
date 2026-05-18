@@ -50,7 +50,7 @@ Muchas personas quieren mejorar su bienestar pero se pierden entre la enorme can
 - Registro con formulario detallado de bienestar (actividad física, dieta, estrés, sueño, objetivos, etc.)
 - Inicio de sesión con email y contraseña (Firebase Authentication)
 - Perfil de usuario con resumen de datos personales y de bienestar
-- Rutas protegidas: "Mi Espacio" y "Perfil" solo accesibles con sesión activa gestionadas con Next.js Middleware
+- Rutas protegidas: "Mi Espacio", "Perfil", Rutinas, Dietas y Meditaciones solo accesibles con sesión activa (via `AuthGuard` client-side)
 
 ### 🎯 Recomendaciones personalizadas
 - Al registrarse, se envían los datos del usuario a una API externa (`vitalia-core-api` en Render)
@@ -206,6 +206,7 @@ El proyecto fue recientemente **migrado a Next.js (App Router)** logrando parida
 - [ ] **Edición de perfil** — permitir al usuario actualizar sus datos y regenerar recomendaciones
 - [ ] **Meditaciones personalizadas** — vincular al perfil y score del usuario
 - [ ] **PWA** — soporte progresivo
+- [ ] **Protección server-side con cookies** — migrar la auth guard de client-side a Next.js Middleware usando una cookie HTTP-only propia (escrita al hacer login con Firebase y verificada en el servidor), eliminando el flash del loader en rutas protegidas y añadiendo una capa de seguridad real antes de que el HTML llegue al cliente
 - [ ] **Integración de pagos / Premium real**
 
 <br />

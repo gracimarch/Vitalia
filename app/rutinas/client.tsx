@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import AuthGuard from '@/components/auth/AuthGuard';
 import '@/app/blog/blog.css'; // Reusing the same magic bento grid cards styles from blog
 
 interface Rutina {
@@ -81,6 +82,7 @@ function RutinaCard({ rutina, index }: { rutina: Rutina; index: number }) {
 
 export default function RutinasClient({ rutinas }: Props) {
   return (
+    <AuthGuard>
     <div className="blog-wrapper">
       <header className="blog-hero">
         <div className="blog-hero-inner">
@@ -104,5 +106,6 @@ export default function RutinasClient({ rutinas }: Props) {
         )}
       </main>
     </div>
+    </AuthGuard>
   );
 }

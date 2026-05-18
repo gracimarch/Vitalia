@@ -7,6 +7,7 @@ import '@/app/blog/[slug]/article.css';
 import './rutina.css'; // specific styles for the routine view
 import CompleteSessionButton from './CompleteSessionButton';
 import RoutinePlayer from './RoutinePlayer';
+import AuthWrapper from './AuthWrapper';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -47,6 +48,7 @@ export default async function RutinaPage({ params }: Props) {
     : `/${rutina.image.replace(/^\.\.\//, '')}`;
 
   return (
+    <AuthWrapper>
     <div className="article-page">
       <header className="article-hero">
         <img src={imgUrl} alt={rutina.title} className="article-hero-img" />
@@ -131,5 +133,6 @@ export default async function RutinaPage({ params }: Props) {
         </Link>
       </nav>
     </div>
+    </AuthWrapper>
   );
 }
