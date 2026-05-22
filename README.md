@@ -134,10 +134,10 @@ git clone https://github.com/gracimarch/Vitalia.git
 cd Vitalia
 
 # 2. Instalar dependencias
-npm install
+pnpm install
 
 # 3. Servir localmente
-npm run dev
+pnpm dev
 ```
 
 La aplicación estará disponible en `http://localhost:3000`.

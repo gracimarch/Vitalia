@@ -8,7 +8,6 @@
   top: 0; left: 0;
   height: 3px;
   z-index: 9999;
-  transition: width 0.1s linear;
   border-radius: 0 2px 2px 0;
 }
 

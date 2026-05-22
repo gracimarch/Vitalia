@@ -86,8 +86,8 @@ export default function Home() {
 
       {/* Premium */}
       <section className="reading" id="premium">
-        <div className="container pt-4 pb-5">
-          <div className="reading-section" style={{ textAlign: 'center', margin: '0 auto' }}>
+        <div className="container pt-0 pb-0">
+          <div className="reading-section pb-2 pt-2" style={{ textAlign: 'center', margin: '0 auto' }}>
             <p className="reading-subtext">Planes de suscripción</p>
             <div>
               <h2 className="reading-heading wobble gradient-txt-vitalia">Lleva tu experiencia al siguiente nivel</h2>

@@ -3,7 +3,7 @@
 .profile-page {
     min-height: 100vh;
     background: var(--bg-cream);
-    padding-top: 90px;
+    padding-top: 32px;
 }
 
 .profile-container {
@@ -18,13 +18,8 @@
     align-items: center;
     gap: 1.75rem;
     background:
-        linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)),
-        radial-gradient(
-            ellipse 140% 120% at 20% 110%,
-            var(--soft-orange) 0%,
-            var(--purple) 45%,
-            var(--teal) 100%
-        );
+        radial-gradient(circle at 100% 0%, var(--soft-orange) 0%, transparent 60%),
+        linear-gradient(130deg, var(--purple) 0%, var(--cyan) 75%);
     border-radius: 24px;
     padding: 2.25rem 2.5rem;
     color: var(--white);
