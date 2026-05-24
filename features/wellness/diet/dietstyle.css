@@ -1125,21 +1125,32 @@ body.loaded #loader {
    RECIPE MODAL (DRAWER STYLE)
    ===================================================== */
 .diet-modal-backdrop {
-    display: none;
+    display: flex;
     position: fixed;
     inset: 0;
     background: rgba(10, 5, 25, 0.55);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: 500;
     align-items: center;
     justify-content: center;
     padding: 24px;
+    /* Usa opacity+visibility igual que .espacio-interstitial para que
+       backdrop-filter pueda animar suavemente (display:none lo impide) */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.diet-modal-backdrop.open {
-    display: flex;
-    animation: backdropIn 0.3s ease;
+.diet-modal-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.diet-modal-backdrop.closing {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 /* Wrapper: button above + modal below, centered in backdrop */

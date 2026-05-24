@@ -462,8 +462,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.8rem; color: rgba(255,255,255,0.45);
 }
 .footer-legal-links { display: flex; gap: 1rem; }
-.footer-legal-link { color: rgba(255,255,255,0.45); font-size: 0.8rem; transition: color var(--transition-base); }
-.footer-legal-link:hover { color: var(--white); }
+.footer-legal-link { color: rgba(255,255,255,0.45); font-size: 0.8rem; transition: color var(--transition-base), text-decoration-color var(--transition-base); text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 3px; }
+.footer-legal-link:hover { color: var(--white); text-decoration-color: rgba(255,255,255,0.7); }
 
 /* ── Reading section ── */
 .reading { padding: 3rem 0; }

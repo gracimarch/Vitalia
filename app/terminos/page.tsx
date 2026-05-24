@@ -14,12 +14,14 @@ export default function TerminosPage() {
       <section className="legal-hero">
         <div className="legal-hero-bg"></div>
         <div className="legal-hero-content">
-          <div className="legal-hero-icon">
+          <div className="legal-hero-badge">
             <i className="fa-solid fa-file-contract"></i>
+            Documento legal
           </div>
-          <h1 className="legal-hero-title">Términos y Condiciones</h1>
+          <h1 className="legal-hero-title">Términos y <span>Condiciones</span></h1>
           <p className="legal-hero-meta">Última actualización: 8 de mayo de 2026</p>
         </div>
+        <div className="legal-hero-divider"></div>
       </section>
 
       <article className="legal-article">

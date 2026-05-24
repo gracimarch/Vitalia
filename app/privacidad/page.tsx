@@ -14,12 +14,14 @@ export default function PrivacidadPage() {
       <section className="legal-hero">
         <div className="legal-hero-bg"></div>
         <div className="legal-hero-content">
-          <div className="legal-hero-icon">
+          <div className="legal-hero-badge">
             <i className="fa-solid fa-shield-halved"></i>
+            Documento legal
           </div>
-          <h1 className="legal-hero-title">Política de Privacidad</h1>
+          <h1 className="legal-hero-title">Política de <span>Privacidad</span></h1>
           <p className="legal-hero-meta">Última actualización: 8 de mayo de 2026</p>
         </div>
+        <div className="legal-hero-divider"></div>
       </section>
 
       <article className="legal-article">
