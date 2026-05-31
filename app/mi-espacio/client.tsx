@@ -504,7 +504,7 @@ function Dashboard({ rutinas, dietas, meditaciones, lecturas }: DashboardProps) 
   const toggleChecklist = (id: number) => {
     setChecklist(prev => {
       const next = prev.map(item => item.id === id ? { ...item, checked: !item.checked } : item);
-      
+
       const newlyChecked = next.find(i => i.id === id)?.checked;
       if (newlyChecked) {
         markActiveDay();
@@ -624,7 +624,7 @@ function Dashboard({ rutinas, dietas, meditaciones, lecturas }: DashboardProps) 
         });
       });
     };
-    
+
     loadProgress();
     window.addEventListener('vitalia-progress-updated', loadProgress);
     return () => window.removeEventListener('vitalia-progress-updated', loadProgress);

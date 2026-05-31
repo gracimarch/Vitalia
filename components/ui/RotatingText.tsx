@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const words = [
@@ -11,10 +11,12 @@ const words = [
 
 export default function RotatingText() {
   const [index, setIndex] = useState(0);
+  const [isFirst, setIsFirst] = useState(true);
   const [width, setWidth] = useState<number | 'auto'>('auto');
   const measureRef = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
+  // useLayoutEffect: mide el ancho ANTES del primer paint, evitando el efecto "expand"
+  useLayoutEffect(() => {
     if (measureRef.current) {
       setWidth(measureRef.current.offsetWidth);
     }
@@ -32,16 +34,18 @@ export default function RotatingText() {
 
   useEffect(() => {
     const interval = setInterval(() => {
+      setIsFirst(false);
       setIndex((prev) => (prev + 1) % words.length);
     }, 1500);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <motion.span 
+    <motion.span
       className="words-wrapper"
       animate={{ width }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
+      // Sin animación de ancho en la carga inicial
+      transition={isFirst ? { duration: 0 } : { duration: 0.8, ease: 'easeOut' }}
       style={{
         display: 'inline-block',
         position: 'relative',
@@ -52,7 +56,7 @@ export default function RotatingText() {
         height: '1.2em',
       }}
     >
-      <span 
+      <span
         ref={measureRef}
         className="rotating-word"
         aria-hidden="true"
@@ -72,12 +76,13 @@ export default function RotatingText() {
       <AnimatePresence mode="popLayout">
         <motion.span
           key={index}
-          initial={{ y: '100%', x: '-50%', opacity: 0 }}
+          // Primera palabra: aparece directamente en posición, sin animación de entrada
+          initial={{ y: isFirst ? '0%' : '100%', x: '-50%', opacity: isFirst ? 1 : 0 }}
           animate={{ y: '0%', x: '-50%', opacity: 1 }}
           exit={{ y: '-100%', x: '-50%', opacity: 0 }}
-          transition={{ 
+          transition={{
             y: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] },
-            opacity: { duration: 0.25, delay: 0.25, ease: 'linear' }
+            opacity: { duration: 0.25, delay: 0.25, ease: 'linear' },
           }}
           style={{
             display: 'inline-block',
@@ -98,4 +103,3 @@ export default function RotatingText() {
     </motion.span>
   );
 }
-

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useId } from 'react';
 
 // Seeded PRNG (mulberry32)
 function createRng(seed: string) {
@@ -87,6 +87,7 @@ interface GradientAvatarProps {
 }
 
 export default function GradientAvatar({ uid, size = 40, className = '' }: GradientAvatarProps) {
+    const instanceId = useId().replace(/:/g, '');
     const data = useMemo(() => {
         const rng = createRng(uid || 'vitalia-default');
         const groupIdx = Math.floor(rng() * PALETTE_GROUPS.length);
@@ -112,8 +113,6 @@ export default function GradientAvatar({ uid, size = 40, className = '' }: Gradi
         const g2cx = Math.round(jitter(rng, 65, 20));
         const g2cy = Math.round(jitter(rng, 65, 20));
         const g2r = Math.round(jitter(rng, 60, 15));
-
-        const gradientId = `va${Math.floor(rng() * 1e8)}`;
 
         const faceCx = 50 + jitter(rng, 0, 3);
         const faceCy = 50 + jitter(rng, 2, 3);
@@ -143,9 +142,9 @@ export default function GradientAvatar({ uid, size = 40, className = '' }: Gradi
             eyesMarkup = (
                 <>
                     <path d={`M${lx - eyeWidth / 2} ${eyeY} Q${lx} ${eyeY - eyeArc} ${lx + eyeWidth / 2} ${eyeY}`}
-                          fill="none" stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.4" strokeLinecap="round"/>
+                        fill="none" stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.4" strokeLinecap="round" />
                     <path d={`M${rx - eyeWidth / 2} ${eyeY} Q${rx} ${eyeY - eyeArc} ${rx + eyeWidth / 2} ${eyeY}`}
-                          fill="none" stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.4" strokeLinecap="round"/>
+                        fill="none" stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.4" strokeLinecap="round" />
                 </>
             );
         } else if (eyeStyle < 0.7) {
@@ -154,9 +153,9 @@ export default function GradientAvatar({ uid, size = 40, className = '' }: Gradi
             eyesMarkup = (
                 <>
                     <line x1={lx - eyeWidth / 2} y1={eyeY} x2={lx + eyeWidth / 2} y2={eyeY}
-                          stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.4" strokeLinecap="round"/>
+                        stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.4" strokeLinecap="round" />
                     <line x1={rx - eyeWidth / 2} y1={eyeY} x2={rx + eyeWidth / 2} y2={eyeY}
-                          stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.4" strokeLinecap="round"/>
+                        stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.4" strokeLinecap="round" />
                 </>
             );
         } else {
@@ -165,58 +164,57 @@ export default function GradientAvatar({ uid, size = 40, className = '' }: Gradi
             eyesMarkup = (
                 <>
                     <path d={`M${lx - eyeWidth / 2} ${eyeY} Q${lx} ${eyeY + eyeArc} ${lx + eyeWidth / 2} ${eyeY}`}
-                          fill="none" stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.4" strokeLinecap="round"/>
+                        fill="none" stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.4" strokeLinecap="round" />
                     <path d={`M${rx - eyeWidth / 2} ${eyeY} Q${rx} ${eyeY + eyeArc} ${rx + eyeWidth / 2} ${eyeY}`}
-                          fill="none" stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.4" strokeLinecap="round"/>
+                        fill="none" stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.4" strokeLinecap="round" />
                 </>
             );
         }
 
         const smileMarkup = (
             <path d={`M${faceCx - smileWidth / 2} ${smileY} Q${faceCx} ${smileY + smileArc} ${faceCx + smileWidth / 2} ${smileY}`}
-                  fill="none" stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.2" strokeLinecap="round"/>
+                fill="none" stroke={`rgba(60,40,80,${faceAlpha})`} strokeWidth="2.2" strokeLinecap="round" />
         );
 
         const blushMarkup = showBlush ? (
             <>
                 <circle cx={faceCx - eyeSpacing - 1} cy={blushY} r={blushR}
-                        fill={`rgba(255,160,160,${blushOpacity})`} />
+                    fill={`rgba(255,160,160,${blushOpacity})`} />
                 <circle cx={faceCx + eyeSpacing + 1} cy={blushY} r={blushR}
-                        fill={`rgba(255,160,160,${blushOpacity})`} />
+                    fill={`rgba(255,160,160,${blushOpacity})`} />
             </>
         ) : null;
 
         return {
-            gradientId,
             c1, c2, c3,
             g1cx, g1cy, g1r,
             g2cx, g2cy, g2r,
             eyesMarkup, smileMarkup, blushMarkup
         };
-    }, [uid]);
+    }, [uid, instanceId]);
 
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
-             width={size} height={size} role="img" aria-label="Avatar de usuario"
-             className={className}
-             style={{ display: 'block', borderRadius: '50%', flexShrink: 0 }}>
+            width={size} height={size} role="img" aria-label="Avatar de usuario"
+            className={className}
+            style={{ display: 'block', borderRadius: '50%', flexShrink: 0 }}>
             <defs>
-                <radialGradient id={`${data.gradientId}a`} cx={`${data.g1cx}%`} cy={`${data.g1cy}%`} r={`${data.g1r}%`}>
-                    <stop offset="0%" stopColor={hsl(data.c1.h, data.c1.s, data.c1.l)}/>
-                    <stop offset="100%" stopColor={hsl(data.c2.h, data.c2.s, data.c2.l)}/>
+                <radialGradient id={`${instanceId}a`} cx={`${data.g1cx}%`} cy={`${data.g1cy}%`} r={`${data.g1r}%`}>
+                    <stop offset="0%" stopColor={hsl(data.c1.h, data.c1.s, data.c1.l)} />
+                    <stop offset="100%" stopColor={hsl(data.c2.h, data.c2.s, data.c2.l)} />
                 </radialGradient>
-                <radialGradient id={`${data.gradientId}b`} cx={`${data.g2cx}%`} cy={`${data.g2cy}%`} r={`${data.g2r}%`}>
-                    <stop offset="0%" stopColor={hsl(data.c3.h, data.c3.s, data.c3.l)} stopOpacity="0.85"/>
-                    <stop offset="100%" stopColor={hsl(data.c2.h, data.c2.s, Math.min(85, data.c2.l + 12))} stopOpacity="0"/>
+                <radialGradient id={`${instanceId}b`} cx={`${data.g2cx}%`} cy={`${data.g2cy}%`} r={`${data.g2r}%`}>
+                    <stop offset="0%" stopColor={hsl(data.c3.h, data.c3.s, data.c3.l)} stopOpacity="0.85" />
+                    <stop offset="100%" stopColor={hsl(data.c2.h, data.c2.s, Math.min(85, data.c2.l + 12))} stopOpacity="0" />
                 </radialGradient>
-                <radialGradient id={`${data.gradientId}c`} cx="50%" cy="30%" r="50%">
-                    <stop offset="0%" stopColor="rgba(255,255,255,0.35)"/>
-                    <stop offset="100%" stopColor="rgba(255,255,255,0)"/>
+                <radialGradient id={`${instanceId}c`} cx="50%" cy="30%" r="50%">
+                    <stop offset="0%" stopColor="rgba(255,255,255,0.35)" />
+                    <stop offset="100%" stopColor="rgba(255,255,255,0)" />
                 </radialGradient>
             </defs>
-            <circle cx="50" cy="50" r="50" fill={`url(#${data.gradientId}a)`}/>
-            <circle cx="50" cy="50" r="50" fill={`url(#${data.gradientId}b)`}/>
-            <circle cx="50" cy="50" r="50" fill={`url(#${data.gradientId}c)`}/>
+            <circle cx="50" cy="50" r="50" fill={`url(#${instanceId}a)`} />
+            <circle cx="50" cy="50" r="50" fill={`url(#${instanceId}b)`} />
+            <circle cx="50" cy="50" r="50" fill={`url(#${instanceId}c)`} />
             <g className="vitalia-avatar-face">
                 {data.eyesMarkup}
                 {data.smileMarkup}
