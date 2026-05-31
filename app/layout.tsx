@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { AuthProvider } from '@/lib/auth-context';
 import Header from '@/components/layout/Header';
 import FooterWrapper from '@/components/layout/FooterWrapper';
@@ -54,6 +55,7 @@ export default function RootLayout({
           </MainWrapper>
           <FooterWrapper />
         </AuthProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
