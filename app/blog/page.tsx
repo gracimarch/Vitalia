@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import BlogClient from './client';
 import lecturas from '@/public/data/lecturas.json';
 
@@ -18,5 +19,9 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage() {
-  return <BlogClient articles={lecturas.lecturas} />;
+  return (
+    <Suspense fallback={null}>
+      <BlogClient articles={lecturas.lecturas} />
+    </Suspense>
+  );
 }

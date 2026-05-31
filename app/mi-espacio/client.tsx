@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
@@ -450,9 +451,28 @@ interface DashboardProps {
 
 function Dashboard({ rutinas, dietas, meditaciones, lecturas }: DashboardProps) {
   const { user, logout } = useAuth();
+  const searchParams = useSearchParams();
   const [activeTab, setActiveTab] = useState<TabId>('inicio');
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [checklist, setChecklist] = useState<{ id: number; text: string; checked: boolean }[]>([]);
+
+  /* Sync tab from URL query param on first render */
+  useEffect(() => {
+    const tabMap: Record<string, TabId> = {
+      lecturas:      'inicio',
+      ejercicios:    'rutinas',
+      meditaciones:  'meditacion',
+      alimentaciones:'dietas',
+      // also accept the tab IDs directly
+      inicio:        'inicio',
+      rutinas:       'rutinas',
+      meditacion:    'meditacion',
+      dietas:        'dietas',
+      progreso:      'progreso',
+    };
+    const t = searchParams.get('tab');
+    if (t && tabMap[t]) setActiveTab(tabMap[t]);
+  }, [searchParams]);
 
   // Score state
   const [scoreState, setScoreState] = useState<ScoreState>('loading');

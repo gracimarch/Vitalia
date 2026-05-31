@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import './blog.css';
 
@@ -120,8 +121,15 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
    BLOG PAGE CLIENT
    ══════════════════════════════════════════════════════════ */
 export default function BlogClient({ articles }: Props) {
+  const searchParams = useSearchParams();
   const [search, setSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState('Todos');
+
+  /* Sync category from URL query param on first render */
+  useEffect(() => {
+    const cat = searchParams.get('categoria');
+    if (cat) setActiveCategory(cat);
+  }, [searchParams]);
 
   /* Unique categories */
   const categories = useMemo(() => {

@@ -60,6 +60,13 @@ export default function Header() {
     return () => document.removeEventListener('keydown', handler);
   }, []);
 
+  // Abrir interstitial desde el Footer (custom event)
+  useEffect(() => {
+    const handler = () => setInterstitialOpen(true);
+    window.addEventListener('vitalia:open-interstitial', handler);
+    return () => window.removeEventListener('vitalia:open-interstitial', handler);
+  }, []);
+
   const isLanding = pathname === '/';
   const shortName = user?.displayName
     ? user.displayName.split(' ')[0]

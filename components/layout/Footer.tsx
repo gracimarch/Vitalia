@@ -1,8 +1,20 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useAuth } from '@/lib/auth-context';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { user } = useAuth();
+
+  /** Si no está logueado, abre el modal en vez de navegar */
+  const handleEspacioClick = (e: React.MouseEvent) => {
+    if (!user) {
+      e.preventDefault();
+      window.dispatchEvent(new CustomEvent('vitalia:open-interstitial'));
+    }
+  };
 
   return (
     <footer className="footer">
@@ -31,32 +43,35 @@ export default function Footer() {
           {/* Spacer col */}
           <div className="col-lg-1 d-none d-lg-block"></div>
 
+          {/* Vitalia */}
           <div className="col-lg-2 col-md-6 mb-3 div-space">
-            <h3 className="footer-heading">Blog</h3>
-            <ul className="footer-nav-list">
-              <li className="footer-nav-item"><Link href="/blog#productividad" className="footer-nav-link">Productividad</Link></li>
-              <li className="footer-nav-item"><Link href="/blog#ejercicios" className="footer-nav-link">Actividad física</Link></li>
-              <li className="footer-nav-item"><Link href="/blog#alimentaciones" className="footer-nav-link">Hábitos alimenticios</Link></li>
-              <li className="footer-nav-item"><Link href="/blog#salud-mental" className="footer-nav-link">Salud mental</Link></li>
-            </ul>
-          </div>
-
-          <div className="col-lg-2 col-md-6 mb-3">
-            <h3 className="footer-heading">Mi espacio</h3>
-            <ul className="footer-nav-list">
-              <li className="footer-nav-item"><Link href="/mi-espacio#lecturas" className="footer-nav-link">Artículos</Link></li>
-              <li className="footer-nav-item"><Link href="/mi-espacio#ejercicios" className="footer-nav-link">Rutinas</Link></li>
-              <li className="footer-nav-item"><Link href="/mi-espacio#meditaciones" className="footer-nav-link">Meditaciones</Link></li>
-              <li className="footer-nav-item"><Link href="/mi-espacio#alimentaciones" className="footer-nav-link">Planes</Link></li>
-            </ul>
-          </div>
-
-          <div className="col-lg-2 col-md-6 mb-3">
             <h3 className="footer-heading">Vitalia</h3>
             <ul className="footer-nav-list">
               <li className="footer-nav-item"><Link href="/#que-es-vitalia" className="footer-nav-link">¿Qué es Vitalia?</Link></li>
               <li className="footer-nav-item"><Link href="/#preguntas-frecuentes" className="footer-nav-link">FAQ</Link></li>
               <li className="footer-nav-item"><Link href="/#premium" className="footer-nav-link">Planes Premium</Link></li>
+            </ul>
+          </div>
+
+          {/* Blog */}
+          <div className="col-lg-2 col-md-6 mb-3">
+            <h3 className="footer-heading">Blog</h3>
+            <ul className="footer-nav-list">
+              <li className="footer-nav-item"><Link href="/blog?categoria=Productividad" className="footer-nav-link">Productividad</Link></li>
+              <li className="footer-nav-item"><Link href="/blog?categoria=Actividad%20f%C3%ADsica%20y%20movilidad" className="footer-nav-link">Actividad física</Link></li>
+              <li className="footer-nav-item"><Link href="/blog?categoria=H%C3%A1bitos%20alimenticios" className="footer-nav-link">Hábitos alimenticios</Link></li>
+              <li className="footer-nav-item"><Link href="/blog?categoria=Salud%20mental%20y%20bienestar" className="footer-nav-link">Salud mental</Link></li>
+            </ul>
+          </div>
+
+          {/* Mi espacio */}
+          <div className="col-lg-2 col-md-6 mb-3">
+            <h3 className="footer-heading">Mi espacio</h3>
+            <ul className="footer-nav-list">
+              <li className="footer-nav-item"><Link href="/mi-espacio?tab=lecturas" className="footer-nav-link" onClick={handleEspacioClick}>Artículos</Link></li>
+              <li className="footer-nav-item"><Link href="/mi-espacio?tab=ejercicios" className="footer-nav-link" onClick={handleEspacioClick}>Rutinas</Link></li>
+              <li className="footer-nav-item"><Link href="/mi-espacio?tab=meditaciones" className="footer-nav-link" onClick={handleEspacioClick}>Meditaciones</Link></li>
+              <li className="footer-nav-item"><Link href="/mi-espacio?tab=alimentaciones" className="footer-nav-link" onClick={handleEspacioClick}>Planes</Link></li>
             </ul>
           </div>
 

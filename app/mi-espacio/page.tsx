@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import MiEspacioClient from './client';
 import rutinaData from '@/public/data/rutina.json';
 import dietasData from '@/public/data/dietas.json';
@@ -13,11 +14,13 @@ export const metadata: Metadata = {
 
 export default function MiEspacioPage() {
   return (
-    <MiEspacioClient
-      rutinas={rutinaData.rutinas}
-      dietas={dietasData.dietas}
-      meditaciones={meditacionData.meditaciones}
-      lecturas={lecturasData.lecturas}
-    />
+    <Suspense fallback={null}>
+      <MiEspacioClient
+        rutinas={rutinaData.rutinas}
+        dietas={dietasData.dietas}
+        meditaciones={meditacionData.meditaciones}
+        lecturas={lecturasData.lecturas}
+      />
+    </Suspense>
   );
 }
