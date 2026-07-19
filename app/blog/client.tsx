@@ -27,9 +27,9 @@ function stripHtml(html: string) {
 
 /* ── Category badge color ───────────────────────────────────── */
 const CAT_COLORS: Record<string, string> = {
-  'Productividad':              '#B571DE',
-  'Salud mental y bienestar':  '#80CACD',
-  'Hábitos alimenticios':       '#E1947F',
+  'Productividad': '#B571DE',
+  'Salud mental y bienestar': '#80CACD',
+  'Hábitos alimenticios': '#E1947F',
   'Actividad física y movilidad': '#7c3aed',
 };
 function catColor(cat: string) { return CAT_COLORS[cat] ?? '#B571DE'; }
@@ -63,10 +63,10 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
   return (
     <article
       className="blog-card"
-      style={{ 
-        '--card-accent': color, 
-        '--card-accent-rgb': hexToRgb(color), 
-        animationDelay: `${index * 0.06}s` 
+      style={{
+        '--card-accent': color,
+        '--card-accent-rgb': hexToRgb(color),
+        animationDelay: `${index * 0.06}s`
       } as React.CSSProperties}
       aria-label={article.title}
     >
@@ -90,8 +90,8 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
         ) : (
           <div className="blog-card-thumb-fallback">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} aria-hidden>
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
             </svg>
           </div>
         )}
@@ -104,12 +104,12 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
         <p className="blog-card-excerpt">{preview}…</p>
         <footer className="blog-card-footer">
           <span className="blog-card-time">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width={14} height={14} aria-hidden><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width={14} height={14} aria-hidden><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
             {article.readingTime}
           </span>
           <Link href={`/blog/${article.slug}`} className="blog-card-link" aria-label={`Leer: ${article.title}`}>
             Leer artículo
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width={14} height={14} aria-hidden><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width={14} height={14} aria-hidden><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
           </Link>
         </footer>
       </div>
@@ -156,12 +156,9 @@ export default function BlogClient({ articles }: Props) {
       {/* ── Hero header ───────────────────────────────────── */}
       <header className="blog-hero">
         <div className="blog-hero-inner">
-          <div className="blog-hero-eyebrow">
-            <span className="blog-hero-dot" />
-            Vitalia Blog
-          </div>
+
           <h1 className="blog-hero-title">
-            Tu guía de <span className="blog-hero-gradient">bienestar integral</span>
+            Explora nuestro blog
           </h1>
           <p className="blog-hero-subtitle">
             Artículos escritos por especialistas para acompañarte en tu camino hacia
@@ -171,7 +168,7 @@ export default function BlogClient({ articles }: Props) {
           {/* Search */}
           <div className="blog-search-wrap">
             <svg className="blog-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width={18} height={18} aria-hidden>
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
             <input
               id="blogSearch"
@@ -228,7 +225,7 @@ export default function BlogClient({ articles }: Props) {
         ) : (
           <div className="blog-empty">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} width={48} height={48} aria-hidden>
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
             <p>No se encontraron artículos para <strong>"{search}"</strong>.</p>
             <button className="blog-reset-btn" onClick={() => { setSearch(''); setActiveCategory('Todos'); }}>

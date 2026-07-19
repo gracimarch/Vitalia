@@ -14,13 +14,13 @@
   overflow: hidden;
   padding: 100px 24px 64px;
   text-align: center;
-  background: linear-gradient(
-    160deg,
-    rgba(181, 113, 222, 0.06) 0%,
-    rgba(128, 202, 205, 0.04) 50%,
-    transparent 100%
-  );
-  border-bottom: 1px solid rgba(181, 113, 222, 0.1);
+  background:
+    radial-gradient(ellipse 65% 70% at 2%   0%,   rgba(181, 113, 222, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 60% at 98%  5%,   rgba(128, 202, 205, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 45% at 20%  95%,  rgba(225, 148, 127, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 45% at 80%  90%,  rgba(128, 202, 205, 0.08) 0%, transparent 55%),
+    linear-gradient(to bottom, #faf7ff 0%, #fdf6fb 35%, var(--bg-main, #faf8ff) 100%);
+  border-bottom: none;
 }
 
 .blog-hero-inner {
@@ -34,20 +34,20 @@
 .blog-hero-blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(90px);
   pointer-events: none;
   z-index: 1;
 }
 .blog-hero-blob--1 {
-  width: 500px; height: 500px;
-  top: -200px; left: -150px;
-  background: radial-gradient(circle, rgba(181, 113, 222, 0.12), transparent 70%);
+  width: 520px; height: 520px;
+  top: -180px; left: -160px;
+  background: radial-gradient(circle, rgba(181, 113, 222, 0.20), transparent 70%);
   animation: blogBlob 12s ease-in-out infinite alternate;
 }
 .blog-hero-blob--2 {
-  width: 400px; height: 400px;
-  bottom: -150px; right: -100px;
-  background: radial-gradient(circle, rgba(128, 202, 205, 0.1), transparent 70%);
+  width: 420px; height: 420px;
+  bottom: -160px; right: -110px;
+  background: radial-gradient(circle, rgba(230, 180, 255, 0.18), transparent 70%);
   animation: blogBlob 10s ease-in-out infinite alternate-reverse;
 }
 @keyframes blogBlob {
