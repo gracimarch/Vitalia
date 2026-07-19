@@ -55,21 +55,6 @@
   100% { transform: translate(40px, 30px) scale(1.1); }
 }
 
-.blog-hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--purple);
-  margin-bottom: 16px;
-}
-.blog-hero-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--purple);
-  animation: heroDotPulse 2s ease-in-out infinite;
-}
-@keyframes heroDotPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%       { opacity: 0.4; transform: scale(0.7); }
-}
 
 .blog-hero-title {
   font-family: var(--font-secondary);
@@ -79,13 +64,6 @@
   line-height: 1.15;
   margin: 0 0 16px;
 }
-.blog-hero-gradient {
-  background: linear-gradient(135deg, var(--purple), var(--cyan, #80CACD));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .blog-hero-subtitle {
   font-size: 1rem;
   color: var(--text-muted);

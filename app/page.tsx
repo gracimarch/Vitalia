@@ -32,7 +32,7 @@ export default function Home() {
 
           <LiquidBackground />
 
-          <div className="hero-content d-flex justify-content-center align-items-center h-100">
+          <div className="hero-content d-flex justify-content-center align-items-center">
             <div className="text-white text-main px-3">
               <h1 className="mb-3">
                 Vitalia, el cambio que <br /> <RotatingText /> en tu vida
@@ -68,7 +68,7 @@ export default function Home() {
           <div className="row">
             {/* Left Column: Title & Subtitle */}
             <div className="col-lg-5 col-md-5 mb-4 mb-md-0">
-              <div className="reading-section faq-header" style={{ textAlign: 'left', padding: 0 }}>
+              <div className="reading-section" style={{ textAlign: 'left', padding: 0 }}>
                 <p className="reading-subtext">Preguntas frecuentes</p>
                 <div>
                   <h2 className="reading-heading wobble gradient-txt-vitalia">¿Tienes alguna duda? Nosotros te respondemos</h2>
@@ -86,8 +86,8 @@ export default function Home() {
 
       {/* Premium */}
       <section className="reading" id="premium">
-        <div className="container pt-0 pb-0">
-          <div className="reading-section pb-2 pt-2" style={{ textAlign: 'center', margin: '0 auto' }}>
+        <div className="container">
+          <div className="reading-section" style={{ textAlign: 'center', margin: '0 auto' }}>
             <p className="reading-subtext">Planes de suscripción</p>
             <div>
               <h2 className="reading-heading wobble gradient-txt-vitalia">Lleva tu experiencia al siguiente nivel</h2>

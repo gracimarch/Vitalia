@@ -1,8 +1,6 @@
 /* Hero Section */
 /* Note: header transparency is handled via inline styles in Header.tsx */
 
-.herosection-container { padding: 10vh; }
-
 .welcome {
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     position: relative; width: 100%;
