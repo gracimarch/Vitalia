@@ -77,7 +77,7 @@ export default function Footer() {
 
           <div className="col-12 mt-4">
             <div className="footer-bottom">
-              <p className="mb-0">&copy; 2024–<span suppressHydrationWarning>{currentYear}</span> Vitalia. Todos los derechos reservados.</p>
+              <p className="mb-0">&copy; <span suppressHydrationWarning>{currentYear}</span> Vitalia. Todos los derechos reservados.</p>
               <div className="footer-legal-links">
                 <Link href="/privacidad" className="footer-legal-link">Privacidad</Link>
                 <Link href="/terminos" className="footer-legal-link">Términos</Link>
