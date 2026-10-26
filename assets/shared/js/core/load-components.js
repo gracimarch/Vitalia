@@ -5,11 +5,29 @@
 
 /**
  * Rewrites clean Vercel-style URLs to .html paths when running locally.
- * NOTE: As of serve.json implementation, local environment now supports clean URLs natively.
- * This rewrite is now disabled to ensure consistency across environments.
+ * Active on localhost/127.0.0.1 so python http.server can serve pages correctly.
  */
 function rewriteLinksForLocal(html) {
-    return html; // Return HTML as-is, preserve all clean URLs
+    const isLocalDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (!isLocalDev) return html;
+
+    // Rewrite clean URLs to .html paths for python http.server compatibility
+    // Order matters: longer prefixes first to avoid partial matches
+    const rewrites = [
+        [/href="\/mi-espacio(#[^"]*)?"/, (m, hash) => `href="/pages/mi-espacio.html${hash || ''}"`],
+        [/href="\/iniciar-sesion([^"]*)"/, (m, rest) => `href="/pages/login.html${rest}"`],
+        [/href="\/crear-cuenta([^"]*)"/, (m, rest) => `href="/pages/form.html${rest}"`],
+        [/href="\/perfil([^"]*)"/, (m, rest) => `href="/pages/perfil.html${rest}"`],
+        [/href="\/blog(#[^"]*)?"/, (m, hash) => `href="/pages/blog.html${hash || ''}"`],
+        [/href="\/privacidad([^"]*)"/, (m, rest) => `href="/pages/privacidad.html${rest}"`],
+        [/href="\/terminos([^"]*)"/, (m, rest) => `href="/pages/terminos.html${rest}"`],
+    ];
+
+    let result = html;
+    for (const [pattern, replacer] of rewrites) {
+        result = result.replace(new RegExp(pattern.source, 'g'), replacer);
+    }
+    return result;
 }
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const protectedRoutes = ['/mi-espacio', '/pages/mi-espacio.html', '/perfil', '/pages/perfil.html'];
         const isProtectedRoute = protectedRoutes.some(route => currentPath.includes(route));
 
-        if (!user && isProtectedRoute) {
+        const isLocalDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        if (!user && isProtectedRoute && !isLocalDev) {
             window.location.href = '/iniciar-sesion';
             return;
         }
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const authOnlyRoutes = ['/iniciar-sesion', '/pages/login.html', '/crear-cuenta', '/pages/form.html'];
         const isAuthOnlyRoute = authOnlyRoutes.some(route => currentPath.includes(route));
 
-        if (user && isAuthOnlyRoute) {
+        if (user && isAuthOnlyRoute && !isLocalDev) {
             window.location.href = '/mi-espacio';
             return;
         }
@@ -381,11 +382,14 @@ function initEspacioInterstitial() {
         document.body.classList.remove('no-scroll');
     }
 
+    const _isLocalDev = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
     // Desktop nav "Mi espacio" — intercept si no logueado
     const espacioLink = document.getElementById('nav-mi-espacio-link');
     if (espacioLink) {
+        if (_isLocalDev) espacioLink.href = '/pages/mi-espacio.html';
         espacioLink.addEventListener('click', (e) => {
-            if (!espacioLink._userLoggedIn) {
+            if (!espacioLink._userLoggedIn && !_isLocalDev) {
                 e.preventDefault();
                 openInterstitial();
             }
@@ -395,8 +399,9 @@ function initEspacioInterstitial() {
     // Mobile nav "Mi espacio" — intercept si no logueado
     const mobileEspacioLink = document.getElementById('nav-mobile-espacio-link');
     if (mobileEspacioLink) {
+        if (_isLocalDev) mobileEspacioLink.href = '/pages/mi-espacio.html';
         mobileEspacioLink.addEventListener('click', (e) => {
-            if (!mobileEspacioLink._userLoggedIn) {
+            if (!mobileEspacioLink._userLoggedIn && !_isLocalDev) {
                 e.preventDefault();
                 openInterstitial();
             }

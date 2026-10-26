@@ -10,39 +10,68 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     try {
-        const [lecturasRes, dietasRes] = await Promise.all([
+        const [lecturasRes, dietasRes, rutinasRes] = await Promise.all([
             fetch('/assets/data/lecturas.json'),
-            fetch('/assets/data/dietas.json')
+            fetch('/assets/data/dietas.json'),
+            fetch('/assets/data/rutina.json')
         ]);
 
         if (!lecturasRes.ok) throw new Error('No se pudo cargar lecturas.json');
 
         const lecturasData = await lecturasRes.json();
+        const dietasData = dietasRes.ok ? await dietasRes.json() : { dietas: [] };
+        const rutinasData = rutinasRes.ok ? await rutinasRes.json() : { rutinas: [] };
 
-        // ── FIX: normalizar categoría para comparación case-insensitive ──
+        const allLecturas = lecturasData.lecturas || [];
+        const allDietas   = dietasData.dietas || [];
+        const allRutinas  = rutinasData.rutinas || [];
+
+        // ── Normalizar categoría para comparación case-insensitive ──
         const normalize = (str) => (str || '').toLowerCase()
             .normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
 
-        const productivityItems  = lecturasData.lecturas.filter(l => normalize(l.category) === 'productividad');
-        const mentalHealthItems  = lecturasData.lecturas.filter(l => normalize(l.category) === 'salud mental y bienestar');
-        const nutritionItems     = lecturasData.lecturas.filter(l => normalize(l.category) === 'habitos alimenticios');
-        const fitnessItems       = lecturasData.lecturas.filter(l => normalize(l.category) === 'actividad fisica y movilidad');
+        // 1. Productividad
+        const productivityItems = allLecturas.filter(l => normalize(l.category) === 'productividad');
 
-        // Initialize Sections
+        // 2. Salud mental y bienestar
+        const mentalHealthItems = allLecturas.filter(l => normalize(l.category) === 'salud mental y bienestar');
+
+        // 3. Actividad física y movilidad (Artículos + Rutinas de ejercicio)
+        const fitnessArticles = allLecturas.filter(l => normalize(l.category) === 'actividad fisica y movilidad');
+        const fitnessItems = [
+            ...(allRutinas.slice(0, 2)),      // Top 2 rutinas interactivas
+            ...fitnessArticles,              // Artículo de movilidad adaptada
+            ...(allRutinas.slice(2))         // Resto de rutinas (yoga, core, calistenia, etc.)
+        ];
+
+        // 4. Hábitos alimenticios (Artículos + Planes de alimentación)
+        const nutritionArticles = allLecturas.filter(l => normalize(l.category) === 'habitos alimenticios');
+        const featuredDietSlugs = ['energia-y-vitalidad', 'aliviar-la-ansiedad-en-dias-estresantes', 'express-vegetariana', 'dias-ocupados'];
+        const featuredDiets = allDietas.filter(d => featuredDietSlugs.includes(d.slug));
+        const otherDiets    = allDietas.filter(d => !featuredDietSlugs.includes(d.slug));
+
+        const nutritionItems = [
+            ...(nutritionArticles.slice(0, 1)), // Artículo Alimentación Consciente
+            ...(featuredDiets.slice(0, 2)),      // Planes Energía y Antiestrés
+            ...(nutritionArticles.slice(1)),    // Dieta a Base de Plantas, Nutrición y Discapacidad
+            ...(featuredDiets.slice(2)),        // Express Vegetariana, Días Ocupados
+            ...otherDiets                       // Resto de planes
+        ];
+
+        // Inicializar secciones
         initSection('productividad-list', productivityItems, 'productividad');
         initSection('ejercicios-list', fitnessItems, 'ejercicio');
         initSection('alimentacion-list', nutritionItems, 'dieta');
         initSection('salud-mental-list', mentalHealthItems, 'salud-mental');
 
-        // Build global search index (ARTICLES ONLY)
-        const allBlogItems = buildSearchIndex(lecturasData.lecturas);
+        // Construir índice de búsqueda global (Lecturas + Dietas + Rutinas)
+        const allBlogItems = buildSearchIndex(allLecturas, allDietas, allRutinas);
 
-        // Initialize search
+        // Inicializar búsqueda
         initSearch(allBlogItems);
 
     } catch (error) {
         console.error('Error loading blog content:', error);
-        // Show error state in all sections
         ['productividad-list', 'ejercicios-list', 'alimentacion-list', 'salud-mental-list'].forEach(id => {
             const el = document.getElementById(id);
             if (el) el.innerHTML = `
@@ -61,10 +90,8 @@ function initSection(containerId, items, stylePrefix) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    // ── Limpiar skeletons antes de renderizar ──
     container.innerHTML = '';
 
-    // Si no hay artículos en esta categoría, mostrar mensaje
     if (!items || items.length === 0) {
         container.innerHTML = `
             <div class="blog-empty-state" style="grid-column:1/-1">
@@ -124,35 +151,43 @@ function initSection(containerId, items, stylePrefix) {
         }
     };
 
-    // Initial Render
     renderBatch();
 }
 
 function createCard(item, stylePrefix, index) {
     const a = document.createElement('a');
 
-    // Determine URL
+    // Determinar URL
     let url = '#';
     if (item.slug) {
-        if (item.schedule) url = `/dietas/${item.slug}`; // Detect Diet
-        else if (item.exercises) url = `/rutinas/${item.slug}`; // Detect Routine
-        else url = `/lecturas/${item.slug}`; // Default Article
+        if (item.schedule) url = `/dietas/${item.slug}`;      // Dieta
+        else if (item.exercises) url = `/rutinas/${item.slug}`; // Rutina
+        else url = `/lecturas/${item.slug}`;                  // Lectura
     }
 
-    // Determine Gradient Class (cycle 1-4)
+    // Clase de gradiente (cicla 1 a 4)
     const gradientIndex = (index % 4) + 1;
     a.className = `block brightness bg-${stylePrefix}-${gradientIndex}`;
     a.href = url;
-    // Add IDs for specific override potential, though unique IDs per dynamic item is tricky.
-    // We'll skip ID generation on the card itself to avoid conflicts, relies on class styling.
 
-    // Determine Subtitle (Category/Level/Type)
-    let subtitle = item.category || item.level || (item.type ? item.type.replace('Tipo de Alimentación: ', '') : 'General');
+    // Subtítulo descriptivo (Categoría / Nivel / Tipo de alimentación)
+    let subtitle = 'General';
+    if (item.exercises) {
+        subtitle = item.level ? `Rutina · ${item.level.replace(/^Nivel\s*/i, '')}` : 'Rutina de Ejercicio';
+    } else if (item.schedule) {
+        subtitle = item.type ? `Plan · ${item.type.replace(/^Tipo de [aA]limentación:\s*/i, '')}` : 'Plan de Alimentación';
+    } else if (item.category) {
+        subtitle = item.category;
+    }
 
-    // Determine Time text
-    let timeText = item.readingTime || item.duration || 'N/A';
+    // Duración o tiempo de lectura
+    let timeText = 'N/A';
+    if (item.readingTime) {
+        timeText = item.readingTime;
+    } else if (item.duration) {
+        timeText = item.duration.replace(/\s*de duración/i, '');
+    }
 
-    // HTML Structure
     a.innerHTML = `
         <p>${subtitle}</p>
         <div class="heading-time">
@@ -178,10 +213,10 @@ function normalizeText(text) {
         .replace(/[\u0300-\u036f]/g, '');
 }
 
-function buildSearchIndex(lecturas) {
+function buildSearchIndex(lecturas, dietas, rutinas) {
     const items = [];
 
-    lecturas.forEach(item => {
+    (lecturas || []).forEach(item => {
         items.push({
             ...item,
             _stylePrefix: getStylePrefixForLectura(item.category),
@@ -190,7 +225,33 @@ function buildSearchIndex(lecturas) {
                 item.category || '',
                 item.description || '',
                 item.keywords || '',
-                'lectura articulo'
+                'lectura articulo blog bienestar'
+            ].join(' '))
+        });
+    });
+
+    (dietas || []).forEach(item => {
+        items.push({
+            ...item,
+            _stylePrefix: 'dieta',
+            _searchText: normalizeText([
+                item.title,
+                item.type || '',
+                item.description || '',
+                'dieta alimentacion nutricion comida receta plan habitos'
+            ].join(' '))
+        });
+    });
+
+    (rutinas || []).forEach(item => {
+        items.push({
+            ...item,
+            _stylePrefix: 'ejercicio',
+            _searchText: normalizeText([
+                item.title,
+                item.level || '',
+                item.description || '',
+                'rutina ejercicio actividad fisica entrenamiento workout fitness movilidad'
             ].join(' '))
         });
     });
@@ -202,13 +263,12 @@ function getStylePrefixForLectura(category) {
     if (!category) return 'productividad';
     const cat = normalizeText(category);
     if (cat.includes('productividad')) return 'productividad';
-    if (cat.includes('actividad fisica') || cat.includes('movilidad')) return 'ejercicio';
-    if (cat.includes('habitos alimenticios') || cat.includes('alimentic')) return 'dieta';
+    if (cat.includes('actividad fisica') || cat.includes('movilidad') || cat.includes('ejercicio')) return 'ejercicio';
+    if (cat.includes('habitos alimenticios') || cat.includes('alimentic') || cat.includes('dieta')) return 'dieta';
     if (cat.includes('salud mental') || cat.includes('bienestar')) return 'salud-mental';
     return 'productividad';
 }
 
-// Sections to hide/show when searching
 const BLOG_CONTENT_SELECTORS = [
     '#productividad', '#ejercicios', '#alimentaciones', '#salud-mental',
     '.lecturas',
@@ -244,7 +304,6 @@ function initSearch(allItems) {
         const normalized = normalizeText(query.trim());
 
         if (!normalized) {
-            // Clear search
             resultsSection.style.display = 'none';
             resultsGrid.innerHTML = '';
             noResults.style.display = 'none';
@@ -258,14 +317,12 @@ function initSearch(allItems) {
         toggleBlogContent(false);
         resultsSection.style.display = 'block';
 
-        // Split query into words for multi-term matching
         const terms = normalized.split(/\s+/).filter(t => t.length > 1);
 
         const matches = allItems.filter(item => {
             return terms.every(term => item._searchText.includes(term));
         });
 
-        // Render results
         resultsGrid.innerHTML = '';
 
         if (matches.length > 0) {
@@ -281,7 +338,6 @@ function initSearch(allItems) {
         }
     };
 
-    // Input event with debounce
     input.addEventListener('input', () => {
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
@@ -289,14 +345,12 @@ function initSearch(allItems) {
         }, 300);
     });
 
-    // Clear button
     clearBtn.addEventListener('click', () => {
         input.value = '';
         performSearch('');
         input.focus();
     });
 
-    // Allow Escape key to clear
     input.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             input.value = '';
