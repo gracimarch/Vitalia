@@ -10,7 +10,6 @@ npm-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 *.log
-# pnpm-lock.yaml should be committed — do NOT ignore it
 .pnpm-store/
 
 # ── Env / Secrets ───────────────────────────────────
@@ -18,19 +17,7 @@ pnpm-debug.log*
 .env.*
 !.env.example
 
-# ── Python ──────────────────────────────────────────
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.pyc
-.Python
-*.egg-info/
-.eggs/
-venv/
-.venv/
-
-# ── Editores ─────────────────────────────────────────
+# ── Editores & Herramientas ─────────────────────────
 .vscode/
 .idea/
 *.suo
@@ -38,22 +25,23 @@ venv/
 *.njsproj
 *.sln
 *.sw?
+AGENTS.md
 
-# ── Misc ─────────────────────────────────────────────
+# ── Misc & Logs ─────────────────────────────────────
 *.tmp
 *.temp
 *.bak
 *.orig
 *.cache
 
-# ── Next.js ─────────────────────────────────────────
+# ── Next.js & Builds ────────────────────────────────
 .next/
 out/
 build/
+.turbo/
 
 # ── TypeScript ──────────────────────────────────────
 *.tsbuildinfo
 
 # ── Vercel ──────────────────────────────────────────
 .vercel/
-AGENTS.md
